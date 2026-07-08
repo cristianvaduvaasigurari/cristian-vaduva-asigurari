@@ -1,12 +1,14 @@
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
-import { ContactForm } from "@/components/sections/contact-form";
-import { Building2, TrendingUp, Key, Search } from "lucide-react";
 import { Metadata } from "next";
+import { Building2, Key, Search, Gem, ShieldCheck } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
+import { ContactForm } from "@/components/sections/contact-form";
 
 export const metadata: Metadata = {
   title: "Real Estate | Cristian Văduva",
-  description: "Servicii imobiliare premium, reprezentare cumpărători/vânzători și analiză de piață.",
+  description: "Luxury Real Estate, Buyer & Seller Representation, Off-market properties și Investment Advisory.",
 };
 
 export default function RealEstatePage() {
@@ -15,32 +17,76 @@ export default function RealEstatePage() {
       <Navbar />
       
       <main className="flex-1 pt-32 pb-16">
-        <div className="container mx-auto px-4">
-          <div className="mb-24 text-center max-w-4xl mx-auto">
-            <h1 className="text-5xl md:text-7xl font-heading font-bold mb-8">
-              Real Estate
-            </h1>
-            <p className="text-xl text-muted-foreground leading-relaxed">
-              Dincolo de tranzacții. Consultanță de top pentru investiții, proprietăți de lux și optimizarea portofoliilor imobiliare.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-24 max-w-6xl mx-auto">
-            {[
-              { icon: Key, title: "Reprezentare Cumpărător / Vânzător", desc: "Expertiză dedicată pentru a asigura cele mai bune condiții, indiferent de care parte a tranzacției te afli." },
-              { icon: Building2, title: "Proprietăți de Lux", desc: "Acces la un portofoliu exclusivist de reședințe premium, de multe ori off-market." },
-              { icon: TrendingUp, title: "Investiții Imobiliare", desc: "Analiză de randament (ROI), identificarea oportunităților și strategii de exit." },
-              { icon: Search, title: "Analiză de Piață", desc: "Rapoarte detaliate și studii de fezabilitate pentru proiecte mari și dezvoltări." }
-            ].map((item, i) => (
-              <div key={i} className="glass p-10 rounded-[3rem]">
-                <item.icon className="w-10 h-10 text-blue-500 mb-6" />
-                <h3 className="text-2xl font-bold mb-4">{item.title}</h3>
-                <p className="text-muted-foreground">{item.desc}</p>
-              </div>
-            ))}
+        {/* Hero Section */}
+        <div className="container mx-auto px-4 text-center max-w-4xl mb-24">
+          <span className="inline-block px-4 py-2 rounded-full bg-emerald-500/10 text-emerald-400 font-heading text-sm font-bold tracking-widest uppercase mb-6 border border-emerald-500/20">
+            Powered by AiXLuxury & Home Find
+          </span>
+          <h1 className="text-5xl md:text-7xl font-heading font-bold mb-8 leading-tight tracking-tight">
+            Luxury Real Estate & <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-500">Investment Advisory.</span>
+          </h1>
+          <p className="text-xl font-light text-muted-foreground mb-10">
+            Acces exclusiv la proprietăți off-market, reprezentare la cele mai înalte standarde și strategii de achiziție bazate pe randament.
+          </p>
+          <div className="flex flex-col sm:flex-row justify-center gap-4">
+            <Button size="lg" className="rounded-full bg-emerald-600 hover:bg-emerald-700 px-8" asChild>
+              <Link href="https://aixluxury.com" target="_blank">Explorează AiXLuxury</Link>
+            </Button>
+            <Button size="lg" variant="outline" className="rounded-full border-white/10 hover:bg-white/5 px-8" asChild>
+              <Link href="https://real-estate-platform-brown.vercel.app/" target="_blank">Platforma Home Find</Link>
+            </Button>
           </div>
         </div>
-        <ContactForm />
+
+        {/* Services Grid */}
+        <div className="container mx-auto px-4 max-w-6xl mb-32">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="glass p-10 rounded-[2rem] border border-white/5 hover:border-emerald-500/30 transition-colors group">
+              <Key className="w-12 h-12 text-emerald-500 mb-6 group-hover:scale-110 transition-transform" />
+              <h3 className="text-2xl font-bold font-heading mb-4 text-white">Buyer Representation</h3>
+              <p className="text-muted-foreground leading-relaxed">
+                Reprezentăm exclusiv interesele cumpărătorului. Analizăm piața, filtrăm zgomotul și negociem agresiv pentru a securiza proprietatea ideală la cel mai corect preț. Fără conflicte de interese.
+              </p>
+            </div>
+
+            <div className="glass p-10 rounded-[2rem] border border-white/5 hover:border-blue-500/30 transition-colors group">
+              <Building2 className="w-12 h-12 text-blue-500 mb-6 group-hover:scale-110 transition-transform" />
+              <h3 className="text-2xl font-bold font-heading mb-4 text-white">Seller Representation</h3>
+              <p className="text-muted-foreground leading-relaxed">
+                Marketing premium pentru proprietăți de lux. Prin rețeaua noastră privată și platformele AiXLuxury / Home Find, targetăm direct cumpărătorii calificați, reducând timpul petrecut pe piață.
+              </p>
+            </div>
+
+            <div className="glass p-10 rounded-[2rem] border border-white/5 hover:border-purple-500/30 transition-colors group">
+              <Search className="w-12 h-12 text-purple-500 mb-6 group-hover:scale-110 transition-transform" />
+              <h3 className="text-2xl font-bold font-heading mb-4 text-white">Off-Market Properties</h3>
+              <p className="text-muted-foreground leading-relaxed">
+                Cele mai valoroase proprietăți nu ajung niciodată pe site-urile publice. Oferim acces confidențial la tranzacții off-market, dedicat investitorilor discreți și fondurilor private.
+              </p>
+            </div>
+
+            <div className="glass p-10 rounded-[2rem] border border-white/5 hover:border-amber-500/30 transition-colors group lg:col-span-1">
+              <Gem className="w-12 h-12 text-amber-500 mb-6 group-hover:scale-110 transition-transform" />
+              <h3 className="text-2xl font-bold font-heading mb-4 text-white">Luxury Real Estate</h3>
+              <p className="text-muted-foreground leading-relaxed">
+                De la penthouse-uri exclusiviste la vile istorice. Filtrăm portofoliul pentru a garanta calitatea absolută a asset-ului, verificând atât aspectele juridice cât și potențialul arhitectural.
+              </p>
+            </div>
+
+            <div className="glass p-10 rounded-[2rem] border border-white/5 hover:border-cyan-500/30 transition-colors group lg:col-span-2">
+              <ShieldCheck className="w-12 h-12 text-cyan-500 mb-6 group-hover:scale-110 transition-transform" />
+              <h3 className="text-2xl font-bold font-heading mb-4 text-white">Investment Advisory & Strategy</h3>
+              <p className="text-muted-foreground leading-relaxed mb-6">
+                Nu cumperi doar cărămizi, cumperi randament și siguranță. Oferim analiză detaliată ROI (Return on Investment), yield estimation și planificare de exit strategy. Ne asigurăm că orice achiziție își găsește locul perfect în ecosistemul tău financiar.
+              </p>
+              <Button variant="outline" className="rounded-full border-cyan-500/30 text-cyan-400 hover:bg-cyan-500/10" asChild>
+                <Link href="/contact?type=consultanta">Solicită un plan de investiții</Link>
+              </Button>
+            </div>
+          </div>
+        </div>
+
+        <ContactForm customTitle="Cauți o proprietate specifică?" />
       </main>
       
       <Footer />

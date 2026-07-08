@@ -1,7 +1,6 @@
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
-import { ContactForm } from "@/components/sections/contact-form";
-import { ShieldAlert, Target, ShieldCheck, TrendingUp, AlertTriangle } from "lucide-react";
+import { ShieldAlert, Target, ShieldCheck, AlertTriangle, Building, Briefcase, Heart, Flame } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { Metadata } from "next";
@@ -19,24 +18,27 @@ export default function WhyInsurancePage() {
       <main className="flex-1 pt-32 pb-16">
         <div className="container mx-auto px-4">
           
-          {/* Header Section */}
-          <div className="mb-24 text-center max-w-4xl mx-auto">
+          {/* Hero Section */}
+          <div className="mb-24 text-center max-w-5xl mx-auto">
+            <span className="inline-block px-4 py-2 rounded-full bg-red-500/10 text-red-400 font-heading text-sm font-bold tracking-widest uppercase mb-6 border border-red-500/20">
+              Risk Management
+            </span>
             <h1 className="text-5xl md:text-7xl font-heading font-bold mb-8 leading-tight tracking-tight">
-              Un singur eveniment poate șterge <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-orange-500">ani de muncă.</span>
+              Your assets deserve <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-orange-500">protection</span>, not assumptions.
             </h1>
             <p className="text-2xl font-light text-muted-foreground mb-10">
-              Protejează ceea ce ai construit.
+              Un singur eveniment neprevăzut poate șterge zeci de ani de muncă. Ce construiești astăzi, trebuie protejat mâine.
             </p>
           </div>
 
-          {/* Core Philosophy Section */}
+          {/* Marketing Philosophy: Fear, Ego, Utility */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto mb-32">
             <div className="glass p-10 rounded-[3rem] relative overflow-hidden group border border-red-500/10 hover:border-red-500/30 transition-colors">
               <div className="absolute top-0 right-0 w-32 h-32 bg-red-500/10 rounded-full blur-[50px] -z-10 group-hover:bg-red-500/20 transition-all" />
               <ShieldAlert className="w-12 h-12 text-red-500 mb-6" />
               <h3 className="text-2xl font-bold mb-4 font-heading">Frica Reală</h3>
               <p className="text-muted-foreground leading-relaxed">
-                Piața, economia și accidentele nu țin cont de efortul tău. O secundă de neatenție sau un factor extern pot distruge un business profitabil sau o casă de vis.
+                Piața, economia și accidentele nu țin cont de efortul tău. O secundă de neatenție sau un factor extern pot distruge un business profitabil sau o casă de vis. De ce oamenii pierd bani fără protecție? Pentru că se bazează pe noroc.
               </p>
             </div>
             
@@ -45,7 +47,7 @@ export default function WhyInsurancePage() {
               <Target className="w-12 h-12 text-blue-500 mb-6" />
               <h3 className="text-2xl font-bold mb-4 font-heading">Ego-ul Justificat</h3>
               <p className="text-muted-foreground leading-relaxed">
-                Ai muncit enorm pentru standardul tău de viață. Nu lăsa hazardul să dicteze dacă familia ta își va menține sau nu același nivel de confort financiar.
+                Ai muncit enorm pentru standardul tău de viață. Nu lăsa hazardul să dicteze dacă familia ta își va menține sau nu același nivel de confort financiar. Asigurarea validează statutul tău de om prevăzător.
               </p>
             </div>
             
@@ -54,36 +56,69 @@ export default function WhyInsurancePage() {
               <ShieldCheck className="w-12 h-12 text-emerald-500 mb-6" />
               <h3 className="text-2xl font-bold mb-4 font-heading">Utilitatea Supremă</h3>
               <p className="text-muted-foreground leading-relaxed">
-                Asigurarea potrivită nu este o cheltuială. Este un contract prin care transferi un risc financiar masiv către o corporație cu miliarde în spate, pentru o fracțiune din cost.
+                Asigurarea nu este o cheltuială, este strategie financiară. Este un contract prin care transferi un risc financiar masiv către o corporație cu miliarde în spate, pentru o fracțiune din cost. 
               </p>
             </div>
           </div>
 
-          {/* Education Section */}
-          <div className="max-w-4xl mx-auto mb-32">
-            <h2 className="text-4xl font-heading font-bold mb-12 text-center">De ce oamenii bogați folosesc asigurări?</h2>
+          {/* Deep Dive Sections */}
+          <div className="max-w-4xl mx-auto mb-32 space-y-24">
             
-            <div className="space-y-8">
-              <div className="flex gap-6 items-start">
-                <div className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center flex-shrink-0 border border-white/10">
-                  <TrendingUp className="w-6 h-6 text-blue-400" />
-                </div>
-                <div>
-                  <h4 className="text-xl font-bold mb-2">Eficiența Capitalului</h4>
-                  <p className="text-muted-foreground">În loc să blocheze sute de mii de euro într-un fond de urgență pentru un dezastru improbabil, ei folosesc asigurări de viață și proprietate. Astfel, își păstrează capitalul liber pentru a produce noi investiții cu ROI mare.</p>
+            {/* Section 1 */}
+            <section>
+              <h2 className="text-3xl font-heading font-bold mb-8 flex items-center gap-4">
+                <AlertTriangle className="text-amber-500 w-8 h-8" />
+                Diferența dintre o poliță ieftină și protecție reală
+              </h2>
+              <div className="glass p-8 rounded-3xl border border-white/5 space-y-6">
+                <p className="text-muted-foreground leading-relaxed">
+                  O greșeală frecventă este achiziția celei mai ieftine polițe (ex: PAD sau RCA simplu). Acestea bifează doar o obligație legală, dar te lasă descoperit în cazul unor daune majore.
+                </p>
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div className="bg-red-500/5 p-6 rounded-2xl border border-red-500/10">
+                    <h4 className="font-bold text-red-400 mb-2">Greșeli frecvente</h4>
+                    <ul className="space-y-2 text-sm text-muted-foreground">
+                      <li>• Subasigurarea (declararea unei valori mai mici a clădirii pentru o primă redusă).</li>
+                      <li>• Ignorarea excluderilor contractuale.</li>
+                      <li>• Neasigurarea răspunderii civile față de terți.</li>
+                    </ul>
+                  </div>
+                  <div className="bg-emerald-500/5 p-6 rounded-2xl border border-emerald-500/10">
+                    <h4 className="font-bold text-emerald-400 mb-2">Exemple Reale</h4>
+                    <ul className="space-y-2 text-sm text-muted-foreground">
+                      <li>• Un scurtcircuit distruge un depozit de 500.000€ (acoperit de polița business All-Risk).</li>
+                      <li>• O inundație de la etaj distruge un penthouse (acoperit de asigurarea facultativă de locuință + bunuri).</li>
+                    </ul>
+                  </div>
                 </div>
               </div>
+            </section>
 
-              <div className="flex gap-6 items-start">
-                <div className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center flex-shrink-0 border border-white/10">
-                  <AlertTriangle className="w-6 h-6 text-amber-400" />
+            {/* Section 2 */}
+            <section>
+              <h2 className="text-3xl font-heading font-bold mb-8 flex items-center gap-4">
+                <Building className="text-blue-500 w-8 h-8" />
+                Protecție pe toate planurile
+              </h2>
+              <div className="grid md:grid-cols-3 gap-6">
+                <div className="glass p-8 rounded-3xl border border-white/5">
+                  <Heart className="w-8 h-8 text-pink-500 mb-4" />
+                  <h4 className="font-bold text-lg mb-2 text-white">Familie</h4>
+                  <p className="text-sm text-muted-foreground">Asigurările de viață și sănătate garantează că, indiferent ce se întâmplă cu tine, familia ta nu își va pierde stilul de viață și nu va vinde active în pierdere pentru a plăti tratamente.</p>
                 </div>
-                <div>
-                  <h4 className="text-xl font-bold mb-2">Poliță Ieftină vs Protecție Reală</h4>
-                  <p className="text-muted-foreground">O greșeală frecventă este achiziția celei mai ieftine polițe (ex: PAD sau RCA simplu). Oamenii de succes cumpără <strong>Răspunderi Civile extinse</strong> și <strong>CASCO All-Risk</strong>, știind că diferența de câțiva euro salvează reputația și zeci de mii de euro la daună.</p>
+                <div className="glass p-8 rounded-3xl border border-white/5">
+                  <Briefcase className="w-8 h-8 text-purple-500 mb-4" />
+                  <h4 className="font-bold text-lg mb-2 text-white">Business</h4>
+                  <p className="text-sm text-muted-foreground">Asigurările IMM și Răspunderile Profesionale te protejează de procese, faliment sau întreruperea activității din cauze neprevăzute.</p>
+                </div>
+                <div className="glass p-8 rounded-3xl border border-white/5">
+                  <Flame className="w-8 h-8 text-orange-500 mb-4" />
+                  <h4 className="font-bold text-lg mb-2 text-white">Investiții</h4>
+                  <p className="text-sm text-muted-foreground">Eficiența capitalului: bogații nu țin sute de mii blocate ca &quot;fond de rezervă&quot;, ci plătesc o primă mică anuală pentru a asigura acele active, investind restul banilor.</p>
                 </div>
               </div>
-            </div>
+            </section>
+
           </div>
 
           {/* CTA Section */}
@@ -98,16 +133,14 @@ export default function WhyInsurancePage() {
                 <Button size="lg" className="h-14 px-8 text-lg rounded-full bg-blue-600 hover:bg-blue-700" asChild>
                   <Link href="/contact?type=consultanta">Cere o strategie personalizată</Link>
                 </Button>
-                <Button size="lg" variant="outline" className="h-14 px-8 text-lg rounded-full bg-white/5" asChild>
-                  <Link href="/calculatoare">Analizează riscurile tale</Link>
+                <Button size="lg" variant="outline" className="h-14 px-8 text-lg rounded-full bg-white/5 border-white/10" asChild>
+                  <Link href="/calculatoare">Simulează riscurile tale</Link>
                 </Button>
               </div>
             </div>
           </div>
 
         </div>
-        
-        <ContactForm customTitle="Vrei să discutăm direct?" />
       </main>
       
       <Footer />

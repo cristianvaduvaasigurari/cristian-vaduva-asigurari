@@ -16,21 +16,21 @@ const ecosystems = [
     icon: <Globe className="w-8 h-8" />,
     title: "AiXLuxury",
     description: "O selecție exclusivistă de proprietăți de lux și oportunități investiționale high-end.",
-    href: "/aix-luxury",
+    href: "https://aixluxury.com",
     gradient: "from-amber-500 to-orange-400"
   },
   {
     icon: <Smartphone className="w-8 h-8" />,
     title: "AiX OS",
     description: "Sistemul de operare al viitorului pentru management imobiliar și portofolii.",
-    href: "/aix-os",
+    href: "https://ai-x-os.vercel.app/",
     gradient: "from-purple-500 to-pink-500"
   },
   {
     icon: <Building className="w-8 h-8" />,
-    title: "Home Finder",
-    description: "Sistem inteligent pentru găsirea căminului ideal și oportunități off-market.",
-    href: "/home-finder",
+    title: "Home Find",
+    description: "Sistem inteligent pentru identificarea și achiziția de proprietăți off-market.",
+    href: "https://real-estate-platform-brown.vercel.app/",
     gradient: "from-emerald-400 to-emerald-600"
   }
 ];

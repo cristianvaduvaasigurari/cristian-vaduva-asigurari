@@ -12,7 +12,7 @@ const testimonials = [
   {
     name: "Maria Ionescu",
     role: "Investitor Imobiliar",
-    text: "Platforma Home Finder combinată cu Ecosistemul AiX mi-au transformat complet modul în care analizez și cumpăr proprietăți.",
+    text: "Platforma Home Find combinată cu Ecosistemul AiX mi-au transformat complet modul în care analizez și cumpăr proprietăți.",
   },
   {
     name: "Andrei Mureșan",
@@ -27,8 +27,8 @@ const faqs = [
     a: "Oferim o gamă completă: asigurări auto (RCA, CASCO), locuință, viață, sănătate, travel și asigurări complexe pentru IMM-uri și corporații."
   },
   {
-    q: "Cum funcționează ecosistemul AiX?",
-    a: "Este un ansamblu de platforme digitale interconectate (Home Finder, AiXLuxury) susținute de AiX OS, gândite să optimizeze investițiile imobiliare și procesele asociate."
+    q: "Ce înseamnă mai exact ecosistemul Cristian Văduva?",
+    a: "Este un ansamblu de platforme digitale interconectate (Home Find, AiXLuxury) susținute de AiX OS, gândite să optimizeze investițiile imobiliare și procesele asociate."
   },
   {
     q: "Cât durează procesul pentru obținerea unei oferte de asigurare?",

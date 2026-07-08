@@ -1,13 +1,13 @@
 import Link from "next/link";
-import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
+import { FaFacebook, FaInstagram, FaLinkedin, FaYoutube } from "react-icons/fa";
 
 const footerLinks = {
   ecosystem: [
     { name: "Generali România", href: "#servicii" },
-    { name: "Real Estate", href: "https://real-estate.cristianvaduva.com" },
+    { name: "Real Estate", href: "/real-estate" },
     { name: "AiXLuxury", href: "https://aixluxury.com" },
-    { name: "AiX OS", href: "https://aixos.com" },
-    { name: "Home Finder", href: "https://homefinder.com" },
+    { name: "AiX OS", href: "https://ai-x-os.vercel.app/" },
+    { name: "Home Find", href: "https://real-estate-platform-brown.vercel.app/" },
   ],
   services: [
     { name: "Asigurări IMM", href: "#servicii" },
@@ -44,17 +44,17 @@ export function Footer() {
               Platformă premium dedicată excelenței în asigurări, real estate și inovație tehnologică. Soluții personalizate pentru un viitor sigur și prosper.
             </p>
             <div className="flex items-center gap-4 text-muted-foreground">
-              <a href="#" className="hover:text-foreground transition-colors p-2 glass rounded-full">
+              <a href="https://www.linkedin.com/in/cristianvăduva" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors p-2 glass rounded-full">
                 <FaLinkedin size={20} />
               </a>
-              <a href="#" className="hover:text-foreground transition-colors p-2 glass rounded-full">
+              <a href="https://instagram.com/cristian_vaduva_cristianv" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors p-2 glass rounded-full">
                 <FaInstagram size={20} />
               </a>
-              <a href="#" className="hover:text-foreground transition-colors p-2 glass rounded-full">
+              <a href="https://www.facebook.com/CristianVaduvaCV" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors p-2 glass rounded-full">
                 <FaFacebook size={20} />
               </a>
-              <a href="#" className="hover:text-foreground transition-colors p-2 glass rounded-full">
-                <FaTwitter size={20} />
+              <a href="https://youtube.com/@CristianVaduvaCV" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors p-2 glass rounded-full">
+                <FaYoutube size={20} />
               </a>
             </div>
           </div>

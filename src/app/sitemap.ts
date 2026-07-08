@@ -9,11 +9,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/contact",
     "/calculatoare",
     "/de-ce-asigurari",
+    "/despre-mine",
+    "/termeni-si-conditii",
+    "/politica-de-confidentialitate",
+    "/politica-cookie",
     "/generali",
-    "/real-estate",
-    "/aix-luxury",
-    "/aix-os",
-    "/home-finder"
+    "/real-estate"
   ].map(route => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date(),

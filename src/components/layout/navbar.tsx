@@ -41,11 +41,11 @@ export function Navbar() {
               cristianvaduva.com
             </span>
             <div className="flex items-center gap-2 text-[10px] sm:text-xs text-muted-foreground uppercase tracking-widest font-medium mt-1">
-              <span className="hover:text-amber-500 transition-colors">AiXLuxury.com</span>
+              <a href="https://aixluxury.com" target="_blank" rel="noopener noreferrer" className="hover:text-amber-500 transition-colors">AiXLuxury.com</a>
               <span className="w-1 h-1 rounded-full bg-border" />
-              <span className="hover:text-purple-500 transition-colors">AiX OS</span>
+              <a href="https://ai-x-os.vercel.app/" target="_blank" rel="noopener noreferrer" className="hover:text-purple-500 transition-colors">AiX OS</a>
               <span className="w-1 h-1 rounded-full bg-border" />
-              <span className="hover:text-emerald-500 transition-colors">Home Finder</span>
+              <a href="https://real-estate-platform-brown.vercel.app/" target="_blank" rel="noopener noreferrer" className="hover:text-emerald-500 transition-colors">Home Find</a>
             </div>
           </Link>
 

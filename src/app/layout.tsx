@@ -2,6 +2,8 @@ import type { Metadata, Viewport } from "next";
 import { Inter, Outfit } from "next/font/google";
 import "./globals.css";
 import { SmartPopup } from "@/components/ui/smart-popup";
+import { CookieBanner } from "@/components/ui/cookie-banner";
+import { AiChatbot } from "@/components/ui/ai-chatbot";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -72,8 +74,10 @@ export default function RootLayout({
             })
           }}
         />
-        {children}
-        <SmartPopup />
+          {children}
+          <SmartPopup />
+          <AiChatbot />
+          <CookieBanner />
       </body>
     </html>
   );

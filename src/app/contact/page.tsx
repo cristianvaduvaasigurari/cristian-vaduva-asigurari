@@ -54,17 +54,17 @@ export default function ContactPage() {
             <div className="glass p-8 rounded-3xl flex flex-col items-center text-center">
               <Phone className="w-8 h-8 text-blue-500 mb-4" />
               <h3 className="font-bold mb-2">Telefon</h3>
-              <p className="text-muted-foreground mb-4">+40 (700) 000 000</p>
+              <p className="text-muted-foreground mb-4">+43 650 953 6345</p>
               <Button variant="outline" size="sm" className="rounded-full w-full" asChild>
-                <a href="tel:+40700000000">Sună acum</a>
+                <a href="tel:+436509536345">Sună acum</a>
               </Button>
             </div>
             <div className="glass p-8 rounded-3xl flex flex-col items-center text-center">
               <MessageCircle className="w-8 h-8 text-green-500 mb-4" />
               <h3 className="font-bold mb-2">WhatsApp</h3>
-              <p className="text-muted-foreground mb-4">Mesaj rapid</p>
+              <p className="text-muted-foreground mb-4">+40 767 110 439</p>
               <Button variant="outline" size="sm" className="rounded-full w-full border-green-500/50 hover:bg-green-500/10" asChild>
-                <a href="https://wa.me/40700000000" target="_blank" rel="noopener noreferrer">Trimite mesaj</a>
+                <a href="https://wa.me/40767110439" target="_blank" rel="noopener noreferrer">Trimite mesaj</a>
               </Button>
             </div>
             <div className="glass p-8 rounded-3xl flex flex-col items-center text-center">
@@ -87,19 +87,19 @@ export default function ContactPage() {
 
           {/* Social Media Links */}
           <div className="flex flex-wrap justify-center gap-4 mb-24">
-            <a href="#" className="flex items-center gap-2 px-6 py-3 rounded-full glass hover:bg-white/10 transition-colors">
+            <a href="https://www.linkedin.com/in/cristianvăduva" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-6 py-3 rounded-full glass hover:bg-white/10 transition-colors">
               <Briefcase className="w-5 h-5 text-blue-400" />
               <span className="font-medium text-sm">LinkedIn</span>
             </a>
-            <a href="#" className="flex items-center gap-2 px-6 py-3 rounded-full glass hover:bg-white/10 transition-colors">
+            <a href="https://instagram.com/cristian_vaduva_cristianv" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-6 py-3 rounded-full glass hover:bg-white/10 transition-colors">
               <Camera className="w-5 h-5 text-pink-500" />
               <span className="font-medium text-sm">Instagram</span>
             </a>
-            <a href="#" className="flex items-center gap-2 px-6 py-3 rounded-full glass hover:bg-white/10 transition-colors">
+            <a href="https://www.facebook.com/CristianVaduvaCV" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-6 py-3 rounded-full glass hover:bg-white/10 transition-colors">
               <Globe className="w-5 h-5 text-blue-600" />
               <span className="font-medium text-sm">Facebook</span>
             </a>
-            <a href="#" className="flex items-center gap-2 px-6 py-3 rounded-full glass hover:bg-white/10 transition-colors">
+            <a href="https://youtube.com/@CristianVaduvaCV" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-6 py-3 rounded-full glass hover:bg-white/10 transition-colors">
               <MonitorPlay className="w-5 h-5 text-red-500" />
               <span className="font-medium text-sm">YouTube</span>
             </a>
