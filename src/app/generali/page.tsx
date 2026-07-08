@@ -29,12 +29,12 @@ export default function GeneraliPage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-24 max-w-5xl mx-auto">
-            <div className="glass p-10 rounded-[3rem]">
+            <div className="glass premium-card p-10 rounded-[3rem]">
               <Shield className="w-12 h-12 text-red-500 mb-6" />
               <h3 className="text-2xl font-bold mb-4">Persoane Fizice</h3>
               <p className="text-muted-foreground mb-6">Protecție completă pentru viața ta, familia ta și bunurile de valoare. De la asigurări de viață și sănătate la locuințe de lux.</p>
             </div>
-            <div className="glass p-10 rounded-[3rem]">
+            <div className="glass premium-card p-10 rounded-[3rem]">
               <Building className="w-12 h-12 text-red-500 mb-6" />
               <h3 className="text-2xl font-bold mb-4">Soluții Corporate</h3>
               <p className="text-muted-foreground mb-6">Management avansat al riscului pentru companii. Răspunderi, flote auto, proprietăți comerciale și pachete de beneficii pentru angajați.</p>

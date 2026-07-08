@@ -61,7 +61,7 @@ export function TestimonialsFaq() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="glass p-8 rounded-3xl"
+                className="glass premium-card p-8 rounded-3xl"
               >
                 <div className="flex text-yellow-500 mb-6">
                   {[...Array(5)].map((_, j) => (

@@ -85,7 +85,7 @@ export default function AboutPage() {
                   color: "text-purple-400"
                 }
               ].map((item, i) => (
-                <div key={i} className="glass p-8 rounded-3xl border border-white/5 hover:border-white/10 transition-colors">
+                <div key={i} className="glass premium-card p-8 rounded-3xl border border-white/5">
                   <item.icon className={`w-10 h-10 mb-6 ${item.color}`} />
                   <h3 className="font-heading font-bold text-xl mb-3">{item.title}</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
@@ -120,6 +120,27 @@ export default function AboutPage() {
                   <li className="flex gap-3"><span className="text-emerald-500">◆</span> Investitori imobiliari.</li>
                   <li className="flex gap-3"><span className="text-emerald-500">◆</span> Familii care doresc securizarea patrimoniului.</li>
                 </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* CTA Section */}
+        <div className="container mx-auto px-4 max-w-4xl mb-24">
+          <div className="glass p-12 md:p-16 rounded-[3rem] border border-blue-500/20 text-center relative overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-to-br from-blue-600/10 to-purple-600/10" />
+            <div className="relative z-10">
+              <h2 className="text-3xl md:text-4xl font-heading font-bold mb-6">Hai să construim împreună</h2>
+              <p className="text-lg text-muted-foreground mb-8 max-w-xl mx-auto">
+                Fie că vrei să-ți protejezi patrimoniul, să investești în Real Estate sau să îți optimizezi portofoliul de asigurări — sunt aici să te ajut.
+              </p>
+              <div className="flex flex-col sm:flex-row justify-center gap-4">
+                <Button size="lg" className="rounded-full bg-white text-black hover:bg-white/90 px-8 font-semibold" asChild>
+                  <Link href="/contact">Programează o discuție</Link>
+                </Button>
+                <Button size="lg" variant="outline" className="rounded-full border-white/20 hover:bg-white/5 px-8" asChild>
+                  <Link href="https://wa.me/436509536345" target="_blank">WhatsApp</Link>
+                </Button>
               </div>
             </div>
           </div>

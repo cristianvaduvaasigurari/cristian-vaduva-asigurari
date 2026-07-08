@@ -15,8 +15,8 @@ const INITIAL_MESSAGES: Message[] = [
   {
     id: "1",
     type: "bot",
-    text: "Salut! Sunt asistentul virtual Cristian Văduva. Cum te pot ajuta astăzi?",
-    options: ["Asigurare Auto", "Asigurare Locuință", "Asigurare de Viață", "Consultanță Investiții"],
+    text: "Bună! Sunt asistentul virtual al platformei Cristian Văduva. Cu ce te pot ajuta?",
+    options: ["Asigurare Auto", "Asigurare Locuință", "Asigurare de Viață", "Asigurare Sănătate", "Real Estate", "Investiții"],
   },
 ];
 
@@ -44,17 +44,49 @@ export function AiChatbot() {
 
     // Simulate bot response
     setTimeout(() => {
+      const lowerText = text.toLowerCase();
       let botResponse = "Am înregistrat solicitarea ta. Te rugăm să ne lași un număr de telefon sau o adresă de email, iar un consultant premium te va contacta în cel mai scurt timp.";
-      
-      if (text.toLowerCase().includes("auto") || text.toLowerCase().includes("rca") || text.toLowerCase().includes("casco")) {
-        botResponse = "Pentru asigurări auto (RCA/CASCO), te rugăm să pregătești talonul mașinii. Te putem contacta pe WhatsApp pentru a-ți oferi cotațiile?";
-      } else if (text.toLowerCase().includes("locuin")) {
-        botResponse = "Asigurările de locuință (PAD + Facultativă) pot fi personalizate. Vom avea nevoie de adresa exactă și tipul imobilului. Cum dorești să fii contactat?";
+      let options: string[] | undefined;
+
+      if (lowerText.includes("auto") || lowerText.includes("rca") || lowerText.includes("casco")) {
+        botResponse = "Pentru asigurări auto (RCA/CASCO), te rugăm să pregătești talonul mașinii. Poți trimite o poză pe WhatsApp la +43 650 953 6345 pentru a primi o cotație rapidă.";
+        options = ["Vreau ofertă RCA", "Vreau ofertă CASCO", "Sună-mă"];
+      } else if (lowerText.includes("locuin") || lowerText.includes("casă") || lowerText.includes("apart")) {
+        botResponse = "Asigurările de locuință (PAD + Facultativă) pot fi personalizate. Avem nevoie de adresa exactă, tipul imobilului și suprafața utilă. Cum dorești să fii contactat?";
+        options = ["WhatsApp", "Telefonic", "Email"];
+      } else if (lowerText.includes("viaț") || lowerText.includes("viata")) {
+        botResponse = "Asigurarea de viață îți protejează familia financiar în cazul unui eveniment nefericit. Oferim polite flexibile prin Generali, cu posibilitate de capitalizare. Dorești o consultație?";
+        options = ["Da, vreau consultanță", "Cere ofertă"];
+      } else if (lowerText.includes("sănăt") || lowerText.includes("sanat") || lowerText.includes("health")) {
+        botResponse = "Asigurările private de sănătate oferă acces la clinici și spitale private de top, fără timpi de așteptare. Acoperim ambulatoriu, spitalizare și intervenții chirurgicale.";
+        options = ["Vreau ofertă", "Detalii acoperire"];
+      } else if (lowerText.includes("travel") || lowerText.includes("călători") || lowerText.includes("calator")) {
+        botResponse = "Asigurarea de călătorie acoperă cheltuieli medicale în străinătate, anularea zborurilor și pierderea bagajelor. Emitere instantă pe email!";
+        options = ["Emite poliță", "Detalii preț"];
+      } else if (lowerText.includes("real estate") || lowerText.includes("proprietat") || lowerText.includes("imobili")) {
+        botResponse = "Oferăm consultanță premium în Real Estate: Buyer Representation, proprietăți off-market și Investment Advisory prin AiXLuxury și Home Find. Cum te putem ajuta?";
+        options = ["Caut o proprietate", "Vreau să vând", "Consultanță investiții"];
+      } else if (lowerText.includes("investiți") || lowerText.includes("investit")) {
+        botResponse = "Strategii de investiții imobiliare cu analiză ROI, yield estimation și exit strategy. Programează o consultanță personalizată cu Cristian Văduva.";
+        options = ["Programează consultanță", "Detalii servicii"];
+      } else if (lowerText.includes("imm") || lowerText.includes("business") || lowerText.includes("firm")) {
+        botResponse = "Asigurările pentru IMM/Corporate acoperă patrimoniul firmei, stocuri, echipamente și pierderea de profit. Oferim și polițe D&O și Cyber Risk.";
+        options = ["Audit de risc", "Cere ofertă IMM"];
+      } else if (lowerText.includes("sună") || lowerText.includes("telefon") || lowerText.includes("apel")) {
+        botResponse = "Ne poți suna direct la +40 767 110 439 sau pe WhatsApp la +43 650 953 6345. Suntem disponibili luni-vineri, 9:00-18:00.";
+      } else if (lowerText.includes("ofert") || lowerText.includes("preț") || lowerText.includes("cost")) {
+        botResponse = "Pentru o ofertă personalizată, te rugăm să accesezi pagina de Contact sau să ne trimiți un mesaj pe WhatsApp cu detaliile. Răspundem în maxim 24h.";
+        options = ["Mergi la Contact", "WhatsApp"];
       }
 
-      const botMsg: Message = { id: String(messages.length + 2), type: "bot", text: botResponse };
+      const botMsg: Message = {
+        id: String(messages.length + 2),
+        type: "bot",
+        text: botResponse,
+        options,
+      };
       setMessages((prev) => [...prev, botMsg]);
-    }, 1000);
+    }, 800);
   };
 
   return (

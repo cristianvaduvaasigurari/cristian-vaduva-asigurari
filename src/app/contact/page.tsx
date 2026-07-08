@@ -51,7 +51,7 @@ export default function ContactPage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-24 max-w-6xl mx-auto">
-            <div className="glass p-8 rounded-3xl flex flex-col items-center text-center">
+            <div className="glass premium-card p-8 rounded-3xl flex flex-col items-center text-center">
               <Phone className="w-8 h-8 text-blue-500 mb-4" />
               <h3 className="font-bold mb-2">Telefon</h3>
               <p className="text-muted-foreground mb-4">+40 767 110 439</p>
@@ -59,7 +59,7 @@ export default function ContactPage() {
                 <a href="tel:+40767110439">Sună acum</a>
               </Button>
             </div>
-            <div className="glass p-8 rounded-3xl flex flex-col items-center text-center">
+            <div className="glass premium-card p-8 rounded-3xl flex flex-col items-center text-center">
               <MessageCircle className="w-8 h-8 text-green-500 mb-4" />
               <h3 className="font-bold mb-2">WhatsApp</h3>
               <p className="text-muted-foreground mb-4">+43 650 953 6345</p>
@@ -67,7 +67,7 @@ export default function ContactPage() {
                 <a href="https://wa.me/436509536345" target="_blank" rel="noopener noreferrer">Trimite mesaj</a>
               </Button>
             </div>
-            <div className="glass p-8 rounded-3xl flex flex-col items-center text-center">
+            <div className="glass premium-card p-8 rounded-3xl flex flex-col items-center text-center">
               <Mail className="w-8 h-8 text-blue-500 mb-4" />
               <h3 className="font-bold mb-2">Email</h3>
               <p className="text-muted-foreground mb-4 text-sm truncate w-full">contact@cristianvaduva.com</p>
@@ -75,7 +75,7 @@ export default function ContactPage() {
                 <a href="mailto:contact@cristianvaduva.com">Scrie-ne</a>
               </Button>
             </div>
-            <div className="glass p-8 rounded-3xl flex flex-col items-center text-center">
+            <div className="glass premium-card p-8 rounded-3xl flex flex-col items-center text-center">
               <MapPin className="w-8 h-8 text-blue-500 mb-4" />
               <h3 className="font-bold mb-2">Locație</h3>
               <p className="text-muted-foreground mb-4 text-sm">București, România</p>
@@ -123,13 +123,14 @@ export default function ContactPage() {
               )}
             </div>
             <div id="harta" className="glass rounded-[3rem] overflow-hidden min-h-[400px] relative border border-border">
-              <div className="absolute inset-0 bg-accent/50 flex flex-col items-center justify-center text-center p-8">
-                <MapPin className="w-12 h-12 text-muted-foreground mb-4 opacity-50" />
-                <h3 className="text-xl font-bold mb-2">Locație Premium</h3>
-                <p className="text-muted-foreground max-w-sm">
-                  Acesta este un placeholder pentru Google Maps iframe.
-                </p>
-              </div>
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d91158.11209923704!2d26.02696375!3d44.43266455!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40b1f93abf3cad4f%3A0xac0632e37c9ca628!2sBucharest%2C%20Romania!5e0!3m2!1sen!2s!4v1720000000000!5m2!1sen!2s"
+                className="absolute inset-0 w-full h-full border-0"
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Locație Cristian Văduva - București"
+              />
             </div>
           </div>
 

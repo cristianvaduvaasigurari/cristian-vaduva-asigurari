@@ -41,7 +41,7 @@ export default function RealEstatePage() {
         {/* Services Grid */}
         <div className="container mx-auto px-4 max-w-6xl mb-32">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="glass p-10 rounded-[2rem] border border-white/5 hover:border-emerald-500/30 transition-colors group">
+            <div className="glass premium-card p-10 rounded-[2rem] border border-white/5 group">
               <Key className="w-12 h-12 text-emerald-500 mb-6 group-hover:scale-110 transition-transform" />
               <h3 className="text-2xl font-bold font-heading mb-4 text-white">Buyer Representation</h3>
               <p className="text-muted-foreground leading-relaxed">
@@ -49,7 +49,7 @@ export default function RealEstatePage() {
               </p>
             </div>
 
-            <div className="glass p-10 rounded-[2rem] border border-white/5 hover:border-blue-500/30 transition-colors group">
+            <div className="glass premium-card p-10 rounded-[2rem] border border-white/5 group">
               <Building2 className="w-12 h-12 text-blue-500 mb-6 group-hover:scale-110 transition-transform" />
               <h3 className="text-2xl font-bold font-heading mb-4 text-white">Seller Representation</h3>
               <p className="text-muted-foreground leading-relaxed">
@@ -57,7 +57,7 @@ export default function RealEstatePage() {
               </p>
             </div>
 
-            <div className="glass p-10 rounded-[2rem] border border-white/5 hover:border-purple-500/30 transition-colors group">
+            <div className="glass premium-card p-10 rounded-[2rem] border border-white/5 group">
               <Search className="w-12 h-12 text-purple-500 mb-6 group-hover:scale-110 transition-transform" />
               <h3 className="text-2xl font-bold font-heading mb-4 text-white">Off-Market Properties</h3>
               <p className="text-muted-foreground leading-relaxed">
@@ -65,7 +65,7 @@ export default function RealEstatePage() {
               </p>
             </div>
 
-            <div className="glass p-10 rounded-[2rem] border border-white/5 hover:border-amber-500/30 transition-colors group lg:col-span-1">
+            <div className="glass premium-card p-10 rounded-[2rem] border border-white/5 group lg:col-span-1">
               <Gem className="w-12 h-12 text-amber-500 mb-6 group-hover:scale-110 transition-transform" />
               <h3 className="text-2xl font-bold font-heading mb-4 text-white">Luxury Real Estate</h3>
               <p className="text-muted-foreground leading-relaxed">
@@ -73,7 +73,7 @@ export default function RealEstatePage() {
               </p>
             </div>
 
-            <div className="glass p-10 rounded-[2rem] border border-white/5 hover:border-cyan-500/30 transition-colors group lg:col-span-2">
+            <div className="glass premium-card p-10 rounded-[2rem] border border-white/5 group lg:col-span-2">
               <ShieldCheck className="w-12 h-12 text-cyan-500 mb-6 group-hover:scale-110 transition-transform" />
               <h3 className="text-2xl font-bold font-heading mb-4 text-white">Investment Advisory & Strategy</h3>
               <p className="text-muted-foreground leading-relaxed mb-6">

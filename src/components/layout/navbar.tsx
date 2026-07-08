@@ -13,7 +13,6 @@ const navLinks = [
   { name: "Insurance", href: "/#servicii" },
   { name: "Why Insurance", href: "/de-ce-asigurari" },
   { name: "Real Estate", href: "/real-estate" },
-  { name: "Contact", href: "/contact" },
 ];
 
 export function Navbar() {
@@ -64,11 +63,11 @@ export function Navbar() {
           </nav>
 
           <div className="hidden md:flex items-center gap-4">
-            <Button variant="outline" className="rounded-full" asChild>
-              <Link href="/contact">Contact</Link>
+            <Button variant="outline" className="rounded-full border-white/20 hover:border-white/40" asChild>
+              <Link href="/calculatoare">Calculatoare</Link>
             </Button>
-            <Button className="rounded-full bg-foreground text-background hover:bg-foreground/90" asChild>
-              <Link href="/dashboard">Portal</Link>
+            <Button className="rounded-full bg-white text-black hover:bg-white/90 font-semibold" asChild>
+              <Link href="/contact">Contact</Link>
             </Button>
           </div>
 
@@ -103,10 +102,10 @@ export function Navbar() {
             ))}
             <div className="flex flex-col gap-2 mt-4 pt-4 border-t border-border">
               <Button variant="outline" className="w-full justify-center" asChild>
-                <Link href="/contact" onClick={() => setIsMobileMenuOpen(false)}>Contact</Link>
+                <Link href="/calculatoare" onClick={() => setIsMobileMenuOpen(false)}>Calculatoare</Link>
               </Button>
-              <Button className="w-full justify-center bg-foreground text-background" asChild>
-                <Link href="/dashboard" onClick={() => setIsMobileMenuOpen(false)}>Portal</Link>
+              <Button className="w-full justify-center bg-white text-black" asChild>
+                <Link href="/contact" onClick={() => setIsMobileMenuOpen(false)}>Contact</Link>
               </Button>
             </div>
           </motion.div>

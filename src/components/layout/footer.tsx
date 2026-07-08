@@ -42,7 +42,7 @@ export function Footer() {
             <p className="text-muted-foreground max-w-sm mb-6 leading-relaxed">
               Platformă premium dedicată excelenței în asigurări, real estate și inovație tehnologică. Soluții personalizate pentru un viitor sigur și prosper.
             </p>
-            <div className="flex items-center gap-4 text-muted-foreground">
+            <div className="flex items-center gap-4 text-muted-foreground mb-6">
               <a href="https://www.linkedin.com/in/cristianvăduva" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors p-2 glass rounded-full">
                 <FaLinkedin size={20} />
               </a>
@@ -55,6 +55,11 @@ export function Footer() {
               <a href="https://youtube.com/@CristianVaduvaCV" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors p-2 glass rounded-full">
                 <FaYoutube size={20} />
               </a>
+            </div>
+            <div className="space-y-2 text-sm text-muted-foreground">
+              <p><a href="tel:+40767110439" className="hover:text-foreground transition-colors">📞 +40 767 110 439</a></p>
+              <p><a href="https://wa.me/436509536345" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">💬 WhatsApp: +43 650 953 6345</a></p>
+              <p><a href="mailto:contact@cristianvaduva.com" className="hover:text-foreground transition-colors">✉️ contact@cristianvaduva.com</a></p>
             </div>
           </div>
 
