@@ -8,11 +8,12 @@ import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks = [
-  { name: "Acasă", href: "/" },
-  { name: "De ce asigurări?", href: "/de-ce-asigurari" },
-  { name: "Servicii", href: "/#servicii" },
-  { name: "Calculatoare", href: "/calculatoare" },
-  { name: "Ecosistem", href: "/#ecosistem" },
+  { name: "Home", href: "/" },
+  { name: "About", href: "/despre-mine" },
+  { name: "Insurance", href: "/#servicii" },
+  { name: "Why Insurance", href: "/de-ce-asigurari" },
+  { name: "Real Estate", href: "/real-estate" },
+  { name: "Contact", href: "/contact" },
 ];
 
 export function Navbar() {

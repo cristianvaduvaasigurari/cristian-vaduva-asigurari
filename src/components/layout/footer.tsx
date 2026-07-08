@@ -3,29 +3,28 @@ import { FaFacebook, FaInstagram, FaLinkedin, FaYoutube } from "react-icons/fa";
 
 const footerLinks = {
   ecosystem: [
-    { name: "Generali România", href: "#servicii" },
+    { name: "Generali România", href: "https://www.generali.ro" },
     { name: "Real Estate", href: "/real-estate" },
     { name: "AiXLuxury", href: "https://aixluxury.com" },
     { name: "AiX OS", href: "https://ai-x-os.vercel.app/" },
     { name: "Home Find", href: "https://real-estate-platform-brown.vercel.app/" },
   ],
   services: [
-    { name: "Asigurări IMM", href: "#servicii" },
-    { name: "Asigurări Travel", href: "#servicii" },
-    { name: "Asigurări Health", href: "#servicii" },
-    { name: "Asigurări Life", href: "#servicii" },
-    { name: "Asigurări Auto & Home", href: "#servicii" },
+    { name: "Asigurări IMM", href: "/servicii/imm-insurance" },
+    { name: "Asigurări Travel", href: "/servicii/travel-insurance" },
+    { name: "Asigurări Sănătate", href: "/servicii/health-insurance" },
+    { name: "Asigurări de Viață", href: "/servicii/life-insurance" },
+    { name: "Asigurări Auto", href: "/servicii/auto-insurance" },
   ],
   company: [
-    { name: "Despre Mine", href: "#despre" },
-    { name: "Testimoniale", href: "#testimoniale" },
-    { name: "FAQ", href: "#faq" },
+    { name: "Despre Mine", href: "/despre-mine" },
+    { name: "De Ce Asigurări?", href: "/de-ce-asigurari" },
     { name: "Contact", href: "/contact" },
   ],
   legal: [
-    { name: "Termeni și Condiții", href: "/termeni" },
-    { name: "Politică de Confidențialitate", href: "/confidentialitate" },
-    { name: "Cookie-uri", href: "/cookies" },
+    { name: "Termeni și Condiții", href: "/termeni-si-conditii" },
+    { name: "Politică de Confidențialitate", href: "/politica-de-confidentialitate" },
+    { name: "Politică Cookie", href: "/politica-cookie" },
   ],
 };
 

@@ -72,7 +72,7 @@ export default function ServicePage({ params }: { params: { slug: string } }) {
             <h2 className="text-3xl font-heading font-bold mb-10 text-center">Avantajele Protecției</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {service.benefits.map((benefit, i) => (
-                <div key={i} className="glass p-8 rounded-[2rem] hover:border-border transition-colors">
+                <div key={i} className="glass premium-card p-8 rounded-[2rem]">
                   <CheckCircle2 className="w-8 h-8 text-blue-500 mb-6" />
                   <h3 className="text-xl font-bold mb-3">{benefit.title}</h3>
                   <p className="text-muted-foreground leading-relaxed">{benefit.description}</p>
@@ -98,12 +98,37 @@ export default function ServicePage({ params }: { params: { slug: string } }) {
             </div>
           </div>
 
+          {/* Extra Details */}
+          <div className="mb-24">
+            <h2 className="text-3xl font-heading font-bold mb-10 text-center">Informații Cheie</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="glass premium-card p-8 rounded-[2rem] border-l-4 border-l-blue-500">
+                <h3 className="text-xl font-bold mb-4 flex items-center gap-2">
+                  <span className="w-8 h-8 rounded-full bg-blue-500/20 text-blue-500 flex items-center justify-center text-sm">✓</span>
+                  Pentru cine este?
+                </h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  Această asigurare este dedicată persoanelor și companiilor care înțeleg că protecția capitalului și a viitorului necesită planificare strategică. Ideală pentru cei care doresc liniște financiară, transferând riscurile majore către experți.
+                </p>
+              </div>
+              <div className="glass premium-card p-8 rounded-[2rem] border-l-4 border-l-emerald-500">
+                <h3 className="text-xl font-bold mb-4 flex items-center gap-2">
+                  <span className="w-8 h-8 rounded-full bg-emerald-500/20 text-emerald-500 flex items-center justify-center text-sm">!</span>
+                  Exemple practice
+                </h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  Gândește-te la o situație neprevăzută care îți poate afecta patrimoniul sau sănătatea. În loc să lichidezi active personale sau să folosești capital de rulaj, polița preia integral costurile, asigurând continuitatea standardului tău de viață.
+                </p>
+              </div>
+            </div>
+          </div>
+
           {/* FAQ Section */}
           <div className="max-w-3xl mx-auto mb-24">
             <h2 className="text-3xl font-heading font-bold mb-10 text-center">Întrebări Frecvente</h2>
             <div className="space-y-6">
               {service.faqs.map((faq, i) => (
-                <div key={i} className="glass p-6 md:p-8 rounded-2xl">
+                <div key={i} className="glass premium-card p-6 md:p-8 rounded-2xl">
                   <h3 className="text-xl font-bold mb-3">{faq.q}</h3>
                   <p className="text-muted-foreground">{faq.a}</p>
                 </div>

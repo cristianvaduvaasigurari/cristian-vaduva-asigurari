@@ -45,7 +45,7 @@ export function Services() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: (index % 6) * 0.1 }}
-                className="glass p-8 rounded-3xl hover:bg-white/5 transition-colors group cursor-pointer flex flex-col h-full"
+                className="glass premium-card p-8 rounded-3xl group cursor-pointer flex flex-col h-full"
               >
                 <div className="h-12 w-12 bg-red-500/10 text-red-500 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                   <Icon className="w-6 h-6" />

@@ -54,15 +54,15 @@ export function SmartPopup() {
                   </Link>
                 </Button>
                 <Button className="w-full justify-start gap-3 rounded-full h-12 bg-green-500/10 hover:bg-green-500/20 text-foreground border border-green-500/20" asChild>
-                  <Link href="https://wa.me/40767110439" target="_blank">
+                  <Link href="https://wa.me/436509536345" target="_blank">
                     <Phone className="w-4 h-4 text-green-500" />
-                    WhatsApp
+                    WhatsApp (+43 650 953 6345)
                   </Link>
                 </Button>
                 <Button className="w-full justify-start gap-3 rounded-full h-12 bg-blue-500/10 hover:bg-blue-500/20 text-foreground border border-blue-500/20" asChild>
-                  <a href="tel:+436509536345">
+                  <a href="tel:+40767110439">
                     <Phone className="w-4 h-4 text-blue-500" />
-                    Sună (+43 650 953 6345)
+                    Sună (+40 767 110 439)
                   </a>
                 </Button>
               </div>

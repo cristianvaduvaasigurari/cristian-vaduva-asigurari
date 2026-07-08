@@ -57,13 +57,24 @@ function HomeCalculator() {
   const [value, setValue] = useState("");
   const [area, setArea] = useState("");
   const [result, setResult] = useState<number | null>(null);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState("");
 
   const calculate = () => {
+    setError("");
     const val = parseFloat(value);
     const sq = parseFloat(area);
-    if (!val || !sq) return;
-    // O formulă estimativă: 0.1% din valoare + un factor fix
-    setResult(Math.round((val * 0.001) + (sq * 0.5)));
+    if (!val || !sq) {
+      setError("Te rugăm să completezi valoarea și suprafața.");
+      return;
+    }
+    
+    setIsLoading(true);
+    setResult(null);
+    setTimeout(() => {
+      setResult(Math.round((val * 0.001) + (sq * 0.5)));
+      setIsLoading(false);
+    }, 800);
   };
 
   return (
@@ -88,8 +99,9 @@ function HomeCalculator() {
           </select>
         </div>
       </div>
-      <Button className="w-full h-14 rounded-2xl text-lg bg-blue-600 hover:bg-blue-700" onClick={calculate}>
-        Calculează Estimarea
+      {error && <p className="text-red-400 text-sm mt-2 text-center">{error}</p>}
+      <Button className="w-full h-14 rounded-2xl text-lg bg-blue-600 hover:bg-blue-700 disabled:opacity-70" onClick={calculate} disabled={isLoading}>
+        {isLoading ? "Se calculează..." : "Calculează Estimarea"}
       </Button>
       {result !== null && <ResultCard value={result} title="Primă Anuală Estimată" />}
     </motion.div>
@@ -100,14 +112,25 @@ function LifeCalculator() {
   const [age, setAge] = useState("");
   const [capital, setCapital] = useState("");
   const [result, setResult] = useState<number | null>(null);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState("");
 
   const calculate = () => {
+    setError("");
     const a = parseInt(age);
     const c = parseInt(capital);
-    if (!a || !c) return;
-    // Estimare: factor vârstă * capital
-    const factor = a > 40 ? 0.003 : 0.0015;
-    setResult(Math.round(c * factor));
+    if (!a || !c) {
+      setError("Te rugăm să completezi vârsta și capitalul dorit.");
+      return;
+    }
+    
+    setIsLoading(true);
+    setResult(null);
+    setTimeout(() => {
+      const factor = a > 40 ? 0.003 : 0.0015;
+      setResult(Math.round(c * factor));
+      setIsLoading(false);
+    }, 800);
   };
 
   return (
@@ -133,8 +156,9 @@ function LifeCalculator() {
           </select>
         </div>
       </div>
-      <Button className="w-full h-14 rounded-2xl text-lg bg-red-600 hover:bg-red-700" onClick={calculate}>
-        Calculează Estimarea
+      {error && <p className="text-red-400 text-sm mt-2 text-center">{error}</p>}
+      <Button className="w-full h-14 rounded-2xl text-lg bg-red-600 hover:bg-red-700 disabled:opacity-70" onClick={calculate} disabled={isLoading}>
+        {isLoading ? "Se calculează..." : "Calculează Estimarea"}
       </Button>
       {result !== null && <ResultCard value={result} title="Cost Anual Estimat" />}
     </motion.div>
@@ -145,16 +169,27 @@ function CascoCalculator() {
   const [val, setVal] = useState("");
   const [year, setYear] = useState("");
   const [result, setResult] = useState<number | null>(null);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState("");
 
   const calculate = () => {
+    setError("");
     const v = parseInt(val);
     const y = parseInt(year);
-    if (!v || !y) return;
-    const currentYear = new Date().getFullYear();
-    const age = currentYear - y;
-    // Estimare: 4% pt mașini noi, crește ușor pt cele vechi
-    const factor = age > 3 ? 0.05 : 0.04;
-    setResult(Math.round(v * factor));
+    if (!v || !y) {
+      setError("Te rugăm să completezi valoarea și anul fabricației.");
+      return;
+    }
+    
+    setIsLoading(true);
+    setResult(null);
+    setTimeout(() => {
+      const currentYear = new Date().getFullYear();
+      const age = currentYear - y;
+      const factor = age > 3 ? 0.05 : 0.04;
+      setResult(Math.round(v * factor));
+      setIsLoading(false);
+    }, 800);
   };
 
   return (
@@ -176,8 +211,9 @@ function CascoCalculator() {
           <Input type="number" placeholder="ex: 2021" value={year} onChange={(e) => setYear(e.target.value)} className="h-14 rounded-2xl bg-white/5 border-white/10" />
         </div>
       </div>
-      <Button className="w-full h-14 rounded-2xl text-lg bg-amber-600 hover:bg-amber-700" onClick={calculate}>
-        Calculează Estimarea
+      {error && <p className="text-red-400 text-sm mt-2 text-center">{error}</p>}
+      <Button className="w-full h-14 rounded-2xl text-lg bg-amber-600 hover:bg-amber-700 disabled:opacity-70" onClick={calculate} disabled={isLoading}>
+        {isLoading ? "Se calculează..." : "Calculează Estimarea"}
       </Button>
       {result !== null && <ResultCard value={result} title="Primă CASCO Estimată" />}
     </motion.div>
@@ -188,12 +224,24 @@ function ImmCalculator() {
   const [ca, setCa] = useState("");
   const [emp, setEmp] = useState("");
   const [result, setResult] = useState<number | null>(null);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState("");
 
   const calculate = () => {
+    setError("");
     const c = parseInt(ca);
     const e = parseInt(emp);
-    if (!c || !e) return;
-    setResult(Math.round((c * 0.002) + (e * 20)));
+    if (!c || !e) {
+      setError("Te rugăm să completezi cifra de afaceri și numărul de angajați.");
+      return;
+    }
+    
+    setIsLoading(true);
+    setResult(null);
+    setTimeout(() => {
+      setResult(Math.round((c * 0.002) + (e * 20)));
+      setIsLoading(false);
+    }, 800);
   };
 
   return (
@@ -220,8 +268,9 @@ function ImmCalculator() {
           <Input type="number" placeholder="ex: 15" value={emp} onChange={(e) => setEmp(e.target.value)} className="h-14 rounded-2xl bg-white/5 border-white/10" />
         </div>
       </div>
-      <Button className="w-full h-14 rounded-2xl text-lg bg-purple-600 hover:bg-purple-700" onClick={calculate}>
-        Calculează Estimarea
+      {error && <p className="text-red-400 text-sm mt-2 text-center">{error}</p>}
+      <Button className="w-full h-14 rounded-2xl text-lg bg-purple-600 hover:bg-purple-700 disabled:opacity-70" onClick={calculate} disabled={isLoading}>
+        {isLoading ? "Se calculează..." : "Calculează Estimarea"}
       </Button>
       {result !== null && <ResultCard value={result} title="Pachet IMM Estimat (Anual)" />}
     </motion.div>

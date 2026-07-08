@@ -64,7 +64,7 @@ export default function RootLayout({
               "image": "https://cristianvaduva.com/logo.png",
               "@id": "https://cristianvaduva.com",
               "url": "https://cristianvaduva.com",
-              "telephone": "+40700000000",
+              "telephone": "+40767110439",
               "address": {
                 "@type": "PostalAddress",
                 "streetAddress": "Clădirea Globalworth, Et. 15",

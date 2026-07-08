@@ -33,7 +33,7 @@ export default function WhyInsurancePage() {
 
           {/* Marketing Philosophy: Fear, Ego, Utility */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto mb-32">
-            <div className="glass p-10 rounded-[3rem] relative overflow-hidden group border border-red-500/10 hover:border-red-500/30 transition-colors">
+            <div className="glass premium-card p-10 rounded-[3rem] relative overflow-hidden border border-red-500/10">
               <div className="absolute top-0 right-0 w-32 h-32 bg-red-500/10 rounded-full blur-[50px] -z-10 group-hover:bg-red-500/20 transition-all" />
               <ShieldAlert className="w-12 h-12 text-red-500 mb-6" />
               <h3 className="text-2xl font-bold mb-4 font-heading">Frica Reală</h3>
@@ -42,7 +42,7 @@ export default function WhyInsurancePage() {
               </p>
             </div>
             
-            <div className="glass p-10 rounded-[3rem] relative overflow-hidden group border border-blue-500/10 hover:border-blue-500/30 transition-colors md:-translate-y-8">
+            <div className="glass premium-card p-10 rounded-[3rem] relative overflow-hidden border border-purple-500/10 md:-translate-y-8">
               <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500/10 rounded-full blur-[50px] -z-10 group-hover:bg-blue-500/20 transition-all" />
               <Target className="w-12 h-12 text-blue-500 mb-6" />
               <h3 className="text-2xl font-bold mb-4 font-heading">Ego-ul Justificat</h3>
@@ -51,7 +51,7 @@ export default function WhyInsurancePage() {
               </p>
             </div>
             
-            <div className="glass p-10 rounded-[3rem] relative overflow-hidden group border border-emerald-500/10 hover:border-emerald-500/30 transition-colors">
+            <div className="glass premium-card p-10 rounded-[3rem] relative overflow-hidden border border-emerald-500/10">
               <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-500/10 rounded-full blur-[50px] -z-10 group-hover:bg-emerald-500/20 transition-all" />
               <ShieldCheck className="w-12 h-12 text-emerald-500 mb-6" />
               <h3 className="text-2xl font-bold mb-4 font-heading">Utilitatea Supremă</h3>

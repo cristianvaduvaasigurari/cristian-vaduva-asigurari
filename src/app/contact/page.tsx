@@ -54,17 +54,17 @@ export default function ContactPage() {
             <div className="glass p-8 rounded-3xl flex flex-col items-center text-center">
               <Phone className="w-8 h-8 text-blue-500 mb-4" />
               <h3 className="font-bold mb-2">Telefon</h3>
-              <p className="text-muted-foreground mb-4">+43 650 953 6345</p>
+              <p className="text-muted-foreground mb-4">+40 767 110 439</p>
               <Button variant="outline" size="sm" className="rounded-full w-full" asChild>
-                <a href="tel:+436509536345">Sună acum</a>
+                <a href="tel:+40767110439">Sună acum</a>
               </Button>
             </div>
             <div className="glass p-8 rounded-3xl flex flex-col items-center text-center">
               <MessageCircle className="w-8 h-8 text-green-500 mb-4" />
               <h3 className="font-bold mb-2">WhatsApp</h3>
-              <p className="text-muted-foreground mb-4">+40 767 110 439</p>
+              <p className="text-muted-foreground mb-4">+43 650 953 6345</p>
               <Button variant="outline" size="sm" className="rounded-full w-full border-green-500/50 hover:bg-green-500/10" asChild>
-                <a href="https://wa.me/40767110439" target="_blank" rel="noopener noreferrer">Trimite mesaj</a>
+                <a href="https://wa.me/436509536345" target="_blank" rel="noopener noreferrer">Trimite mesaj</a>
               </Button>
             </div>
             <div className="glass p-8 rounded-3xl flex flex-col items-center text-center">
