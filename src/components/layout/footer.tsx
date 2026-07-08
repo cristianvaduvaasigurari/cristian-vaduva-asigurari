@@ -10,12 +10,21 @@ const footerLinks = {
     { name: "AiX OS", href: "/aixos" },
     { name: "Home Find", href: "/home-find" },
   ],
-  services: [
+  servicesPersonal: [
+    { name: "Asigurare de Viață", href: "/servicii/life-insurance" },
+    { name: "Sănătate Individuală", href: "/servicii/health-insurance-individual" },
+    { name: "Asigurare Locuință", href: "/servicii/home-insurance" },
+    { name: "Travel Individual", href: "/servicii/travel-insurance-individual" },
+    { name: "Asigurare CASCO", href: "/servicii/casco-insurance" },
+    { name: "Asigurare RCA", href: "/servicii/rca-insurance" },
+  ],
+  servicesBusiness: [
     { name: "Asigurări IMM", href: "/servicii/imm-insurance" },
-    { name: "Asigurări Travel", href: "/servicii/travel-insurance" },
-    { name: "Asigurări Sănătate", href: "/servicii/health-insurance" },
-    { name: "Asigurări de Viață", href: "/servicii/life-insurance" },
-    { name: "Asigurări Auto", href: "/servicii/auto-insurance" },
+    { name: "Răspundere Generală", href: "/servicii/business-general-liability" },
+    { name: "Cyber Risk", href: "/servicii/business-cyber-insurance" },
+    { name: "D&O (Răsp. Manageri)", href: "/servicii/business-directors-liability" },
+    { name: "Cargo & Marfă", href: "/servicii/business-cargo-insurance" },
+    { name: "Asigurare Șantiere", href: "/servicii/business-construction-insurance" },
   ],
   company: [
     { name: "Despre Mine", href: "/despre-mine" },
@@ -31,45 +40,54 @@ const footerLinks = {
 
 export function Footer() {
   return (
-    <footer className="bg-muted text-foreground border-t border-border pt-16 pb-8">
+    <footer className="bg-[#0a0a0a] text-white border-t border-white/10 pt-20 pb-10">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-12 mb-16">
           <div className="lg:col-span-2">
             <Link href="/" className="inline-block mb-6">
-              <span className="font-heading font-bold text-2xl tracking-tight text-foreground">
-                Cristian Văduva<span className="text-blue-600">.</span>
+              <span className="font-heading font-bold text-2xl tracking-tight text-white">
+                Cristian Văduva<span className="text-blue-500">.</span>
               </span>
             </Link>
-            <p className="text-muted-foreground max-w-sm mb-6 leading-relaxed">
+            <p className="text-white/60 max-w-sm mb-8 leading-relaxed">
               Platformă premium dedicată excelenței în asigurări, real estate și inovație tehnologică. Soluții personalizate pentru un viitor sigur și prosper.
             </p>
-            <div className="flex items-center gap-4 text-muted-foreground mb-6">
-              <a href={CONTACT.social.linkedin} target="_blank" rel="noopener noreferrer" className="hover:text-foreground hover:bg-black/5 transition-colors p-2 rounded-full border border-border bg-white">
+            <div className="flex items-center gap-4 text-white/60 mb-8">
+              <a href={CONTACT.social.linkedin} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors p-3 rounded-full bg-white/5 border border-white/10 hover:bg-white/10">
                 <FaLinkedin size={20} />
               </a>
-              <a href={CONTACT.social.instagram} target="_blank" rel="noopener noreferrer" className="hover:text-foreground hover:bg-black/5 transition-colors p-2 rounded-full border border-border bg-white">
+              <a href={CONTACT.social.instagram} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors p-3 rounded-full bg-white/5 border border-white/10 hover:bg-white/10">
                 <FaInstagram size={20} />
               </a>
-              <a href={CONTACT.social.facebook} target="_blank" rel="noopener noreferrer" className="hover:text-foreground hover:bg-black/5 transition-colors p-2 rounded-full border border-border bg-white">
+              <a href={CONTACT.social.facebook} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors p-3 rounded-full bg-white/5 border border-white/10 hover:bg-white/10">
                 <FaFacebook size={20} />
               </a>
-              <a href={CONTACT.social.youtube} target="_blank" rel="noopener noreferrer" className="hover:text-foreground hover:bg-black/5 transition-colors p-2 rounded-full border border-border bg-white">
+              <a href={CONTACT.social.youtube} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors p-3 rounded-full bg-white/5 border border-white/10 hover:bg-white/10">
                 <FaYoutube size={20} />
               </a>
             </div>
-            <div className="space-y-2 text-sm text-muted-foreground font-medium">
-              <p><a href={CONTACT.phone.href} className="hover:text-foreground transition-colors">📞 {CONTACT.phone.display}</a></p>
-              <p><a href={CONTACT.whatsapp.href} target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">💬 {CONTACT.whatsapp.label}: {CONTACT.whatsapp.display}</a></p>
-              <p><a href={CONTACT.email.href} className="hover:text-foreground transition-colors">✉️ {CONTACT.email.display}</a></p>
+            <div className="space-y-3 text-sm text-white/80 font-medium bg-white/5 p-6 rounded-3xl border border-white/10">
+              <div className="flex items-center gap-3">
+                <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center">📞</div>
+                <a href={CONTACT.phone.href} className="hover:text-white transition-colors">{CONTACT.phone.display}</a>
+              </div>
+              <div className="flex items-center gap-3">
+                <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center">💬</div>
+                <a href={CONTACT.whatsapp.href} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">{CONTACT.whatsapp.display}</a>
+              </div>
+              <div className="flex items-center gap-3">
+                <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center">✉️</div>
+                <a href={CONTACT.email.href} className="hover:text-white transition-colors">{CONTACT.email.display}</a>
+              </div>
             </div>
           </div>
 
           <div>
-            <h3 className="font-semibold text-lg mb-6 text-foreground">Ecosistem</h3>
+            <h3 className="font-bold text-lg mb-6 text-white tracking-wide">Ecosistem</h3>
             <ul className="space-y-4">
               {footerLinks.ecosystem.map((link) => (
                 <li key={link.name}>
-                  <Link href={link.href} className="text-muted-foreground hover:text-foreground transition-colors text-sm font-medium">
+                  <Link href={link.href} className="text-white/50 hover:text-white transition-colors text-sm font-medium">
                     {link.name}
                   </Link>
                 </li>
@@ -78,11 +96,11 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="font-semibold text-lg mb-6 text-foreground">Servicii</h3>
+            <h3 className="font-bold text-lg mb-6 text-white tracking-wide">Persoane</h3>
             <ul className="space-y-4">
-              {footerLinks.services.map((link) => (
+              {footerLinks.servicesPersonal.map((link) => (
                 <li key={link.name}>
-                  <Link href={link.href} className="text-muted-foreground hover:text-foreground transition-colors text-sm font-medium">
+                  <Link href={link.href} className="text-white/50 hover:text-white transition-colors text-sm font-medium">
                     {link.name}
                   </Link>
                 </li>
@@ -91,11 +109,24 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="font-semibold text-lg mb-6 text-foreground">Companie</h3>
+            <h3 className="font-bold text-lg mb-6 text-white tracking-wide">Companii</h3>
+            <ul className="space-y-4">
+              {footerLinks.servicesBusiness.map((link) => (
+                <li key={link.name}>
+                  <Link href={link.href} className="text-white/50 hover:text-white transition-colors text-sm font-medium">
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="font-bold text-lg mb-6 text-white tracking-wide">Informații</h3>
             <ul className="space-y-4">
               {footerLinks.company.map((link) => (
                 <li key={link.name}>
-                  <Link href={link.href} className="text-muted-foreground hover:text-foreground transition-colors text-sm font-medium">
+                  <Link href={link.href} className="text-white/50 hover:text-white transition-colors text-sm font-medium">
                     {link.name}
                   </Link>
                 </li>
@@ -104,13 +135,13 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="pt-8 border-t border-border flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-muted-foreground text-sm text-center md:text-left font-medium">
-            &copy; {new Date().getFullYear()} Cristian Văduva. Toate drepturile rezervate.
+        <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-6">
+          <p className="text-white/40 text-sm text-center md:text-left font-medium">
+            &copy; {new Date().getFullYear()} Cristian Văduva. Toate drepturile rezervate. Produs Apple-Style.
           </p>
-          <div className="flex items-center gap-6 text-sm text-muted-foreground font-medium">
+          <div className="flex flex-wrap items-center justify-center gap-6 text-sm text-white/40 font-medium">
             {footerLinks.legal.map((link) => (
-              <Link key={link.name} href={link.href} className="hover:text-foreground transition-colors">
+              <Link key={link.name} href={link.href} className="hover:text-white transition-colors">
                 {link.name}
               </Link>
             ))}
