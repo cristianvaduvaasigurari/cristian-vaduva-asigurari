@@ -44,11 +44,11 @@ export function Navbar() {
               cristianvaduva.com
             </span>
             <div className="flex items-center gap-2 text-[10px] sm:text-xs text-muted-foreground uppercase tracking-widest font-medium mt-1">
-              <a href={CONTACT.ecosystem.aixluxury} target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">AiXLuxury.com</a>
+              <Link href="/aixluxury" className="hover:text-foreground transition-colors">AiXLuxury.com</Link>
               <span className="w-1 h-1 rounded-full bg-border" />
-              <a href={CONTACT.ecosystem.aixos} target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">AiX OS</a>
+              <Link href="/aixos" className="hover:text-foreground transition-colors">AiX OS</Link>
               <span className="w-1 h-1 rounded-full bg-border" />
-              <a href={CONTACT.ecosystem.homefind} target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">Home Find</a>
+              <Link href="/home-find" className="hover:text-foreground transition-colors">Home Find</Link>
             </div>
           </Link>
 

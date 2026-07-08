@@ -4,11 +4,11 @@ import { CONTACT } from "@/config/contact";
 
 const footerLinks = {
   ecosystem: [
-    { name: "Generali România", href: CONTACT.ecosystem.generali },
+    { name: "Generali România", href: "/generali" },
     { name: "Real Estate", href: "/real-estate" },
-    { name: "AiXLuxury", href: CONTACT.ecosystem.aixluxury },
-    { name: "AiX OS", href: CONTACT.ecosystem.aixos },
-    { name: "Home Find", href: CONTACT.ecosystem.homefind },
+    { name: "AiXLuxury", href: "/aixluxury" },
+    { name: "AiX OS", href: "/aixos" },
+    { name: "Home Find", href: "/home-find" },
   ],
   services: [
     { name: "Asigurări IMM", href: "/servicii/imm-insurance" },
