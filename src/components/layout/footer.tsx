@@ -137,7 +137,7 @@ export function Footer() {
 
         <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-6">
           <p className="text-white/40 text-sm text-center md:text-left font-medium">
-            &copy; {new Date().getFullYear()} Cristian Văduva. Toate drepturile rezervate. Produs Apple-Style.
+            &copy; {new Date().getFullYear()} Cristian Văduva. Toate drepturile rezervate. Powered by cristianvaduva.com
           </p>
           <div className="flex flex-wrap items-center justify-center gap-6 text-sm text-white/40 font-medium">
             {footerLinks.legal.map((link) => (
