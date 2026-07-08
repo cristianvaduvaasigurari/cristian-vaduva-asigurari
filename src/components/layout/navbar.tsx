@@ -9,10 +9,10 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks = [
   { name: "Acasă", href: "/" },
-  { name: "Servicii", href: "#servicii" },
-  { name: "Ecosistem", href: "#ecosistem" },
-  { name: "Testimoniale", href: "#testimoniale" },
-  { name: "FAQ", href: "#faq" },
+  { name: "De ce asigurări?", href: "/de-ce-asigurari" },
+  { name: "Servicii", href: "/#servicii" },
+  { name: "Calculatoare", href: "/calculatoare" },
+  { name: "Ecosistem", href: "/#ecosistem" },
 ];
 
 export function Navbar() {
@@ -36,10 +36,17 @@ export function Navbar() {
     >
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-2">
-            <span className="font-heading font-bold text-xl tracking-tight">
-              Cristian Văduva<span className="text-blue-500">.</span>
+          <Link href="/" className="flex flex-col items-start justify-center gap-0.5">
+            <span className="font-heading font-bold text-xl tracking-tight leading-none text-foreground">
+              cristianvaduva.com
             </span>
+            <div className="flex items-center gap-2 text-[10px] sm:text-xs text-muted-foreground uppercase tracking-widest font-medium mt-1">
+              <span className="hover:text-amber-500 transition-colors">AiXLuxury.com</span>
+              <span className="w-1 h-1 rounded-full bg-border" />
+              <span className="hover:text-purple-500 transition-colors">AiX OS</span>
+              <span className="w-1 h-1 rounded-full bg-border" />
+              <span className="hover:text-emerald-500 transition-colors">Home Finder</span>
+            </div>
           </Link>
 
           {/* Desktop Navigation */}

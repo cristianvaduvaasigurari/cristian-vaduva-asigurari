@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, Outfit } from "next/font/google";
 import "./globals.css";
+import { SmartPopup } from "@/components/ui/smart-popup";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -16,14 +17,14 @@ const outfit = Outfit({
 
 export const metadata: Metadata = {
   title: {
-    default: "Cristian Văduva | Ecosistem Premium",
+    default: "Cristian Văduva | Insurance, Real Estate & Investments",
     template: "%s | Cristian Văduva",
   },
-  description: "Platformă premium pentru servicii de Asigurări Generali, Real Estate, AiXLuxury și Ecosistemul AiX OS.",
+  description: "Platformă premium dedicată protecției financiare, investițiilor de lux și optimizării patrimoniului. Expertiză în asigurări, luxury real estate și AiX OS.",
   metadataBase: new URL("https://cristianvaduva.com"),
   openGraph: {
-    title: "Cristian Văduva | Ecosistem Premium",
-    description: "Platformă premium pentru servicii de Asigurări Generali, Real Estate, AiXLuxury și Ecosistemul AiX OS.",
+    title: "Cristian Văduva | Insurance, Real Estate & Investments",
+    description: "Platformă premium dedicată protecției financiare, investițiilor de lux și optimizării patrimoniului. Expertiză în asigurări, luxury real estate și AiX OS.",
     url: "https://cristianvaduva.com",
     siteName: "Cristian Văduva",
     locale: "ro_RO",
@@ -31,8 +32,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Cristian Văduva | Ecosistem Premium",
-    description: "Platformă premium pentru servicii de Asigurări Generali, Real Estate, AiXLuxury și Ecosistemul AiX OS.",
+    title: "Cristian Văduva | Insurance, Real Estate & Investments",
+    description: "Platformă premium dedicată protecției financiare, investițiilor de lux și optimizării patrimoniului.",
   },
 };
 
@@ -72,6 +73,7 @@ export default function RootLayout({
           }}
         />
         {children}
+        <SmartPopup />
       </body>
     </html>
   );

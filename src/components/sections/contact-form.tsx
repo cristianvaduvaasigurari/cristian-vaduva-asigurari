@@ -8,7 +8,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { createClient } from "@/lib/supabase/client";
 import { Loader2, CheckCircle2, AlertCircle } from "lucide-react";
 
-export function ContactForm() {
+export function ContactForm({ customTitle }: { customTitle?: string }) {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
   const supabase = createClient();
@@ -47,14 +47,16 @@ export function ContactForm() {
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-16">
-            <motion.h2 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-4xl font-heading font-bold mb-6"
-            >
-              Contactează-ne
-            </motion.h2>
+            {customTitle !== " " && (
+              <motion.h2 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="text-4xl font-heading font-bold mb-6"
+              >
+                {customTitle || "Contactează-ne"}
+              </motion.h2>
+            )}
             <p className="text-lg text-muted-foreground">
               Suntem aici pentru a te ajuta să găsești cea mai bună soluție pentru nevoile tale financiare, de asigurare sau imobiliare.
             </p>

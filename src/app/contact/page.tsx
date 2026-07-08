@@ -1,15 +1,16 @@
+"use client";
+
+import { useState } from "react";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { ContactForm } from "@/components/sections/contact-form";
-import { MapPin, Phone, Mail, Clock } from "lucide-react";
-import { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "Contact | Cristian Văduva",
-  description: "Contactează-ne pentru consultanță premium în asigurări, real estate și investiții.",
-};
+import { MapPin, Phone, Mail, MessageCircle, MonitorPlay, Briefcase, Globe, Camera } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
 export default function ContactPage() {
+  const [activeTab, setActiveTab] = useState<"general" | "oferta" | "consultanta">("general");
+
   return (
     <div className="min-h-screen bg-background flex flex-col">
       <Navbar />
@@ -17,49 +18,116 @@ export default function ContactPage() {
       <main className="flex-1 pt-32 pb-16">
         <div className="container mx-auto px-4">
           <div className="mb-16 text-center max-w-4xl mx-auto">
-            <h1 className="text-5xl md:text-6xl font-heading font-bold mb-6">
+            <h1 className="text-5xl md:text-6xl font-heading font-bold mb-6 tracking-tight">
               Suntem aici pentru tine
             </h1>
-            <p className="text-xl text-muted-foreground leading-relaxed">
-              Fie că ai nevoie de un audit de risc, consultanță imobiliară sau o strategie de investiții, te invităm să ne contactezi.
+            <p className="text-xl text-muted-foreground leading-relaxed max-w-2xl mx-auto">
+              Alege modul prin care dorești să colaborăm. Fie că e o simplă întrebare sau o strategie complexă, experții noștri îți stau la dispoziție.
             </p>
+          </div>
+
+          <div className="flex flex-wrap justify-center gap-4 mb-16">
+            <Button 
+              variant={activeTab === "general" ? "default" : "glass"} 
+              className={cn("rounded-full px-6", activeTab === "general" && "bg-white text-black hover:bg-white/90")}
+              onClick={() => setActiveTab("general")}
+            >
+              Contact General
+            </Button>
+            <Button 
+              variant={activeTab === "oferta" ? "default" : "glass"} 
+              className={cn("rounded-full px-6", activeTab === "oferta" && "bg-blue-600 text-white hover:bg-blue-700")}
+              onClick={() => setActiveTab("oferta")}
+            >
+              Cerere Ofertă
+            </Button>
+            <Button 
+              variant={activeTab === "consultanta" ? "default" : "glass"} 
+              className={cn("rounded-full px-6", activeTab === "consultanta" && "bg-purple-600 text-white hover:bg-purple-700")}
+              onClick={() => setActiveTab("consultanta")}
+            >
+              Programează Consultanță
+            </Button>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-24 max-w-6xl mx-auto">
             <div className="glass p-8 rounded-3xl flex flex-col items-center text-center">
               <Phone className="w-8 h-8 text-blue-500 mb-4" />
               <h3 className="font-bold mb-2">Telefon</h3>
-              <p className="text-muted-foreground">+40 (700) 000 000</p>
+              <p className="text-muted-foreground mb-4">+40 (700) 000 000</p>
+              <Button variant="outline" size="sm" className="rounded-full w-full" asChild>
+                <a href="tel:+40700000000">Sună acum</a>
+              </Button>
+            </div>
+            <div className="glass p-8 rounded-3xl flex flex-col items-center text-center">
+              <MessageCircle className="w-8 h-8 text-green-500 mb-4" />
+              <h3 className="font-bold mb-2">WhatsApp</h3>
+              <p className="text-muted-foreground mb-4">Mesaj rapid</p>
+              <Button variant="outline" size="sm" className="rounded-full w-full border-green-500/50 hover:bg-green-500/10" asChild>
+                <a href="https://wa.me/40700000000" target="_blank" rel="noopener noreferrer">Trimite mesaj</a>
+              </Button>
             </div>
             <div className="glass p-8 rounded-3xl flex flex-col items-center text-center">
               <Mail className="w-8 h-8 text-blue-500 mb-4" />
               <h3 className="font-bold mb-2">Email</h3>
-              <p className="text-muted-foreground">contact@cristianvaduva.com</p>
+              <p className="text-muted-foreground mb-4 text-sm truncate w-full">contact@cristianvaduva.com</p>
+              <Button variant="outline" size="sm" className="rounded-full w-full" asChild>
+                <a href="mailto:contact@cristianvaduva.com">Scrie-ne</a>
+              </Button>
             </div>
             <div className="glass p-8 rounded-3xl flex flex-col items-center text-center">
               <MapPin className="w-8 h-8 text-blue-500 mb-4" />
-              <h3 className="font-bold mb-2">Birou Central</h3>
-              <p className="text-muted-foreground">Clădirea Globalworth, Et. 15<br/>București, România</p>
+              <h3 className="font-bold mb-2">Locație</h3>
+              <p className="text-muted-foreground mb-4 text-sm">București, România</p>
+              <Button variant="outline" size="sm" className="rounded-full w-full" asChild>
+                <a href="#harta">Vezi pe hartă</a>
+              </Button>
             </div>
-            <div className="glass p-8 rounded-3xl flex flex-col items-center text-center">
-              <Clock className="w-8 h-8 text-blue-500 mb-4" />
-              <h3 className="font-bold mb-2">Program</h3>
-              <p className="text-muted-foreground">Luni - Vineri: 09:00 - 18:00<br/>Suport VIP: 24/7</p>
-            </div>
+          </div>
+
+          {/* Social Media Links */}
+          <div className="flex flex-wrap justify-center gap-4 mb-24">
+            <a href="#" className="flex items-center gap-2 px-6 py-3 rounded-full glass hover:bg-white/10 transition-colors">
+              <Briefcase className="w-5 h-5 text-blue-400" />
+              <span className="font-medium text-sm">LinkedIn</span>
+            </a>
+            <a href="#" className="flex items-center gap-2 px-6 py-3 rounded-full glass hover:bg-white/10 transition-colors">
+              <Camera className="w-5 h-5 text-pink-500" />
+              <span className="font-medium text-sm">Instagram</span>
+            </a>
+            <a href="#" className="flex items-center gap-2 px-6 py-3 rounded-full glass hover:bg-white/10 transition-colors">
+              <Globe className="w-5 h-5 text-blue-600" />
+              <span className="font-medium text-sm">Facebook</span>
+            </a>
+            <a href="#" className="flex items-center gap-2 px-6 py-3 rounded-full glass hover:bg-white/10 transition-colors">
+              <MonitorPlay className="w-5 h-5 text-red-500" />
+              <span className="font-medium text-sm">YouTube</span>
+            </a>
           </div>
 
           {/* Form & Map Section */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto mb-24">
             <div className="w-full">
-              <ContactForm />
+              {activeTab === "general" && <ContactForm />}
+              {activeTab === "oferta" && (
+                <div className="glass p-8 rounded-[3rem] border border-blue-500/20">
+                  <h3 className="text-2xl font-bold mb-6">Cerere Ofertă</h3>
+                  <ContactForm customTitle=" " />
+                </div>
+              )}
+              {activeTab === "consultanta" && (
+                <div className="glass p-8 rounded-[3rem] border border-purple-500/20">
+                  <h3 className="text-2xl font-bold mb-6">Programează Consultanță</h3>
+                  <ContactForm customTitle=" " />
+                </div>
+              )}
             </div>
-            <div className="glass rounded-[3rem] overflow-hidden min-h-[400px] relative border border-border">
-              {/* Placeholder pentru Google Maps */}
+            <div id="harta" className="glass rounded-[3rem] overflow-hidden min-h-[400px] relative border border-border">
               <div className="absolute inset-0 bg-accent/50 flex flex-col items-center justify-center text-center p-8">
                 <MapPin className="w-12 h-12 text-muted-foreground mb-4 opacity-50" />
                 <h3 className="text-xl font-bold mb-2">Locație Premium</h3>
                 <p className="text-muted-foreground max-w-sm">
-                  Acesta este un placeholder pentru Google Maps iframe. Va fi actualizat cu locația exactă a sediului.
+                  Acesta este un placeholder pentru Google Maps iframe.
                 </p>
               </div>
             </div>

@@ -23,7 +23,7 @@ export function Hero() {
         >
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass mb-8">
             <span className="flex h-2 w-2 rounded-full bg-blue-500 animate-pulse"></span>
-            <span className="text-sm font-medium">Ecosistem Premium Cristian Văduva</span>
+            <span className="text-sm font-medium tracking-wide uppercase">Cristian Văduva <span className="text-blue-500 mx-1">|</span> Real Estate <span className="text-blue-500 mx-1">|</span> Insurance <span className="text-blue-500 mx-1">|</span> Investments</span>
           </div>
 
           <h1 className="text-5xl md:text-7xl font-heading font-bold tracking-tight mb-8 leading-tight">
