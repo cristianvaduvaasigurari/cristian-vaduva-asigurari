@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Building, Smartphone, Globe } from "lucide-react";
 import Link from "next/link";
+import { CONTACT } from "@/config/contact";
 
 const ecosystems = [
   {
@@ -16,21 +17,21 @@ const ecosystems = [
     icon: <Globe className="w-8 h-8" />,
     title: "AiXLuxury",
     description: "O selecție exclusivistă de proprietăți de lux și oportunități investiționale high-end.",
-    href: "https://aixluxury.com",
+    href: CONTACT.ecosystem.aixluxury,
     gradient: "from-amber-500 to-orange-400"
   },
   {
     icon: <Smartphone className="w-8 h-8" />,
     title: "AiX OS",
     description: "Sistemul de operare al viitorului pentru management imobiliar și portofolii.",
-    href: "https://ai-x-os.vercel.app/",
+    href: CONTACT.ecosystem.aixos,
     gradient: "from-purple-500 to-pink-500"
   },
   {
     icon: <Building className="w-8 h-8" />,
     title: "Home Find",
     description: "Sistem inteligent pentru identificarea și achiziția de proprietăți off-market.",
-    href: "https://real-estate-platform-brown.vercel.app/",
+    href: CONTACT.ecosystem.homefind,
     gradient: "from-emerald-400 to-emerald-600"
   }
 ];

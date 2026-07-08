@@ -19,7 +19,7 @@ export default function PrivacyPolicyPage() {
 
           <div className="prose prose-invert max-w-none space-y-8">
             <section>
-              <h2 className="text-2xl font-bold font-heading text-white">1. Introducere</h2>
+              <h2 className="text-2xl font-bold font-heading text-foreground">1. Introducere</h2>
               <p className="text-muted-foreground leading-relaxed mt-4">
                 Conform cerințelor Regulamentului (UE) 2016/679 (GDPR), platforma noastră administrează în condiții de siguranță
                 și numai pentru scopurile specificate, datele personale pe care ni le furnizați despre dumneavoastră. Confidențialitatea datelor clienților noștri premium este prioritatea noastră absolută.
@@ -27,7 +27,7 @@ export default function PrivacyPolicyPage() {
             </section>
 
             <section>
-              <h2 className="text-2xl font-bold font-heading text-white">2. Ce date colectăm</h2>
+              <h2 className="text-2xl font-bold font-heading text-foreground">2. Ce date colectăm</h2>
               <p className="text-muted-foreground leading-relaxed mt-4">
                 În cadrul platformei, prin intermediul formularelor de contact, al cererilor de ofertă și al programatorului de consultanțe, putem colecta:
               </p>
@@ -42,7 +42,7 @@ export default function PrivacyPolicyPage() {
             </section>
 
             <section>
-              <h2 className="text-2xl font-bold font-heading text-white">3. Scopul Colectării</h2>
+              <h2 className="text-2xl font-bold font-heading text-foreground">3. Scopul Colectării</h2>
               <p className="text-muted-foreground leading-relaxed mt-4">
                 Datele sunt colectate exclusiv pentru:
               </p>
@@ -55,7 +55,7 @@ export default function PrivacyPolicyPage() {
             </section>
 
             <section>
-              <h2 className="text-2xl font-bold font-heading text-white">4. Stocarea Datelor (Integrare Supabase)</h2>
+              <h2 className="text-2xl font-bold font-heading text-foreground">4. Stocarea Datelor (Integrare Supabase)</h2>
               <p className="text-muted-foreground leading-relaxed mt-4">
                 Lead-urile și cererile completate prin website sunt transmise și stocate în mod securizat utilizând infrastructura 
                 Supabase, o platformă backend modernă care respectă standardele de securitate a datelor. Datele nu vor fi înstrăinate către terți 
@@ -65,7 +65,7 @@ export default function PrivacyPolicyPage() {
             </section>
 
             <section>
-              <h2 className="text-2xl font-bold font-heading text-white">5. Drepturile Dumneavoastră (GDPR)</h2>
+              <h2 className="text-2xl font-bold font-heading text-foreground">5. Drepturile Dumneavoastră (GDPR)</h2>
               <p className="text-muted-foreground leading-relaxed mt-4">
                 În conformitate cu GDPR, beneficiați de următoarele drepturi:
               </p>
@@ -79,7 +79,7 @@ export default function PrivacyPolicyPage() {
             </section>
 
             <section>
-              <h2 className="text-2xl font-bold font-heading text-white">6. Contact Responsabil GDPR</h2>
+              <h2 className="text-2xl font-bold font-heading text-foreground">6. Contact Responsabil GDPR</h2>
               <p className="text-muted-foreground leading-relaxed mt-4">
                 Pentru a vă exercita drepturile sau pentru întrebări legate de protecția datelor, ne puteți scrie oricând la:<br/>
                 <strong>Email:</strong> contact@cristianvaduva.com<br/>

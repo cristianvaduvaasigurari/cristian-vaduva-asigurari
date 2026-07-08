@@ -110,11 +110,11 @@ export function ContactForm({ customTitle }: { customTitle?: string }) {
                     required
                     className="flex h-12 w-full rounded-2xl border border-border bg-transparent px-4 py-2 text-sm shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-primary appearance-none"
                   >
-                    <option value="" disabled selected className="text-black">Alege un serviciu</option>
-                    <option value="Generali Asigurări" className="text-black">Asigurări (Generali)</option>
-                    <option value="Real Estate" className="text-black">Real Estate</option>
-                    <option value="AiX OS" className="text-black">Ecosistem AiX OS</option>
-                    <option value="Altele" className="text-black">Altele</option>
+                    <option value="" disabled selected className="text-foreground bg-background">Alege un serviciu</option>
+                    <option value="Generali Asigurări" className="text-foreground bg-background">Asigurări (Generali)</option>
+                    <option value="Real Estate" className="text-foreground bg-background">Real Estate</option>
+                    <option value="AiX OS" className="text-foreground bg-background">Ecosistem AiX OS</option>
+                    <option value="Altele" className="text-foreground bg-background">Altele</option>
                   </select>
                 </div>
               </div>

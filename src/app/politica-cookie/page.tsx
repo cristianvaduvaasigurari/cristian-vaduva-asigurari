@@ -19,7 +19,7 @@ export default function CookiePolicyPage() {
 
           <div className="prose prose-invert max-w-none space-y-8">
             <section>
-              <h2 className="text-2xl font-bold font-heading text-white">1. Ce sunt Cookie-urile?</h2>
+              <h2 className="text-2xl font-bold font-heading text-foreground">1. Ce sunt Cookie-urile?</h2>
               <p className="text-muted-foreground leading-relaxed mt-4">
                 Un cookie este un fișier text de mici dimensiuni pe care un site web îl salvează pe calculatorul 
                 sau dispozitivul dumneavoastră mobil atunci când îl vizitați. Datorită cookie-urilor, site-ul reține, 
@@ -29,7 +29,7 @@ export default function CookiePolicyPage() {
             </section>
 
             <section>
-              <h2 className="text-2xl font-bold font-heading text-white">2. Ce fel de Cookie-uri folosim?</h2>
+              <h2 className="text-2xl font-bold font-heading text-foreground">2. Ce fel de Cookie-uri folosim?</h2>
               <p className="text-muted-foreground leading-relaxed mt-4">
                 Pe platforma cristianvaduva.com utilizăm următoarele tipuri de cookie-uri:
               </p>
@@ -41,7 +41,7 @@ export default function CookiePolicyPage() {
             </section>
 
             <section>
-              <h2 className="text-2xl font-bold font-heading text-white">3. Cum puteți controla cookie-urile?</h2>
+              <h2 className="text-2xl font-bold font-heading text-foreground">3. Cum puteți controla cookie-urile?</h2>
               <p className="text-muted-foreground leading-relaxed mt-4">
                 Puteți controla și/sau șterge cookie-urile după cum doriți. Puteți șterge toate cookie-urile care 
                 sunt deja pe calculatorul dumneavoastră și puteți seta majoritatea browserelor să împiedice plasarea acestora. 
@@ -51,7 +51,7 @@ export default function CookiePolicyPage() {
             </section>
 
             <section>
-              <h2 className="text-2xl font-bold font-heading text-white">4. Actualizări</h2>
+              <h2 className="text-2xl font-bold font-heading text-foreground">4. Actualizări</h2>
               <p className="text-muted-foreground leading-relaxed mt-4">
                 Ne rezervăm dreptul de a face orice completări sau modificări la această politică. Vă rugăm să vizitați frecvent 
                 această pagină pentru a fi la curent cu setările cookie-urilor.

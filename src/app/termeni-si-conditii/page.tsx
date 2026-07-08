@@ -19,7 +19,7 @@ export default function TermsPage() {
 
           <div className="prose prose-invert max-w-none space-y-8">
             <section>
-              <h2 className="text-2xl font-bold font-heading text-white">1. Scopul Website-ului</h2>
+              <h2 className="text-2xl font-bold font-heading text-foreground">1. Scopul Website-ului</h2>
               <p className="text-muted-foreground leading-relaxed mt-4">
                 Platforma cristianvaduva.com reprezintă un portal premium de prezentare a serviciilor integrate de 
                 consultanță în domeniul asigurărilor (partener Generali România), investițiilor imobiliare (Real Estate) și al managementului 
@@ -28,7 +28,7 @@ export default function TermsPage() {
             </section>
 
             <section>
-              <h2 className="text-2xl font-bold font-heading text-white">2. Utilizarea Informațiilor</h2>
+              <h2 className="text-2xl font-bold font-heading text-foreground">2. Utilizarea Informațiilor</h2>
               <p className="text-muted-foreground leading-relaxed mt-4">
                 Utilizatorul este de acord să folosească platforma exclusiv în scopuri legale și într-un mod care nu încalcă drepturile, 
                 nu restricționează și nu împiedică utilizarea platformei de către alte persoane. Ne rezervăm dreptul de a modifica 
@@ -37,7 +37,7 @@ export default function TermsPage() {
             </section>
 
             <section>
-              <h2 className="text-2xl font-bold font-heading text-white">3. Responsabilități și Limitări</h2>
+              <h2 className="text-2xl font-bold font-heading text-foreground">3. Responsabilități și Limitări</h2>
               <p className="text-muted-foreground leading-relaxed mt-4">
                 Deși depunem toate eforturile pentru a asigura acuratețea simulărilor (inclusiv a celor din secțiunea Calculatoare), 
                 acestea sunt strict estimative. Calculul final al primei de asigurare sau al randamentului investițional va fi 
@@ -47,7 +47,7 @@ export default function TermsPage() {
             </section>
 
             <section>
-              <h2 className="text-2xl font-bold font-heading text-white">4. Proprietate Intelectuală</h2>
+              <h2 className="text-2xl font-bold font-heading text-foreground">4. Proprietate Intelectuală</h2>
               <p className="text-muted-foreground leading-relaxed mt-4">
                 Întregul conținut al site-ului (texte, imagini, logo-uri, concepte, design Apple-style, structura Ecosistemului AiX) 
                 este proprietatea exclusivă a Cristian Văduva / AiXLuxury. Reproducerea, distribuirea sau utilizarea neautorizată 
@@ -56,7 +56,7 @@ export default function TermsPage() {
             </section>
 
             <section>
-              <h2 className="text-2xl font-bold font-heading text-white">5. Servicii de Consultanță</h2>
+              <h2 className="text-2xl font-bold font-heading text-foreground">5. Servicii de Consultanță</h2>
               <p className="text-muted-foreground leading-relaxed mt-4">
                 Programarea unei consultanțe prin formularele noastre nu garantează acceptarea dumneavoastră în portofoliul nostru 
                 de clienți privați. Ne rezervăm dreptul de a selecta proiectele și clienții în funcție de compatibilitatea cu profilul nostru 
@@ -65,7 +65,7 @@ export default function TermsPage() {
             </section>
 
             <section>
-              <h2 className="text-2xl font-bold font-heading text-white">6. Contact</h2>
+              <h2 className="text-2xl font-bold font-heading text-foreground">6. Contact</h2>
               <p className="text-muted-foreground leading-relaxed mt-4">
                 Pentru orice clarificări privind acești termeni, ne puteți contacta la:<br/>
                 <strong>Email:</strong> contact@cristianvaduva.com<br/>

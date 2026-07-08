@@ -70,7 +70,7 @@ export default function WhyInsurancePage() {
                 <AlertTriangle className="text-amber-500 w-8 h-8" />
                 Diferența dintre o poliță ieftină și protecție reală
               </h2>
-              <div className="glass p-8 rounded-3xl border border-white/5 space-y-6">
+              <div className="glass p-8 rounded-3xl border border-border space-y-6">
                 <p className="text-muted-foreground leading-relaxed">
                   O greșeală frecventă este achiziția celei mai ieftine polițe (ex: PAD sau RCA simplu). Acestea bifează doar o obligație legală, dar te lasă descoperit în cazul unor daune majore.
                 </p>
@@ -101,19 +101,19 @@ export default function WhyInsurancePage() {
                 Protecție pe toate planurile
               </h2>
               <div className="grid md:grid-cols-3 gap-6">
-                <div className="glass p-8 rounded-3xl border border-white/5">
+                <div className="glass p-8 rounded-3xl border border-border">
                   <Heart className="w-8 h-8 text-pink-500 mb-4" />
-                  <h4 className="font-bold text-lg mb-2 text-white">Familie</h4>
+                  <h4 className="font-bold text-lg mb-2 text-foreground">Familie</h4>
                   <p className="text-sm text-muted-foreground">Asigurările de viață și sănătate garantează că, indiferent ce se întâmplă cu tine, familia ta nu își va pierde stilul de viață și nu va vinde active în pierdere pentru a plăti tratamente.</p>
                 </div>
-                <div className="glass p-8 rounded-3xl border border-white/5">
+                <div className="glass p-8 rounded-3xl border border-border">
                   <Briefcase className="w-8 h-8 text-purple-500 mb-4" />
-                  <h4 className="font-bold text-lg mb-2 text-white">Business</h4>
+                  <h4 className="font-bold text-lg mb-2 text-foreground">Business</h4>
                   <p className="text-sm text-muted-foreground">Asigurările IMM și Răspunderile Profesionale te protejează de procese, faliment sau întreruperea activității din cauze neprevăzute.</p>
                 </div>
-                <div className="glass p-8 rounded-3xl border border-white/5">
+                <div className="glass p-8 rounded-3xl border border-border">
                   <Flame className="w-8 h-8 text-orange-500 mb-4" />
-                  <h4 className="font-bold text-lg mb-2 text-white">Investiții</h4>
+                  <h4 className="font-bold text-lg mb-2 text-foreground">Investiții</h4>
                   <p className="text-sm text-muted-foreground">Eficiența capitalului: bogații nu țin sute de mii blocate ca &quot;fond de rezervă&quot;, ci plătesc o primă mică anuală pentru a asigura acele active, investind restul banilor.</p>
                 </div>
               </div>
@@ -130,10 +130,10 @@ export default function WhyInsurancePage() {
                 Nu lăsa siguranța afacerii și a familiei tale pe mâna norocului. Programează o discuție și hai să creăm o strategie de risk management de lux.
               </p>
               <div className="flex flex-col sm:flex-row justify-center gap-4">
-                <Button size="lg" className="h-14 px-8 text-lg rounded-full bg-blue-600 hover:bg-blue-700" asChild>
+                <Button size="lg" className="h-14 px-8 text-lg rounded-full bg-blue-600 hover:bg-blue-700 text-white" asChild>
                   <Link href="/contact?type=consultanta">Cere o strategie personalizată</Link>
                 </Button>
-                <Button size="lg" variant="outline" className="h-14 px-8 text-lg rounded-full bg-white/5 border-white/10" asChild>
+                <Button size="lg" variant="outline" className="h-14 px-8 text-lg rounded-full bg-background border-border hover:bg-muted text-foreground" asChild>
                   <Link href="/calculatoare">Simulează riscurile tale</Link>
                 </Button>
               </div>

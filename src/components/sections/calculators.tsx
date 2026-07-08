@@ -32,7 +32,7 @@ export function CalculatorsSection() {
           <Button
             key={tab.id}
             variant={activeTab === tab.id ? "default" : "glass"}
-            className={cn("rounded-full px-6 gap-2", activeTab === tab.id && "bg-white text-black hover:bg-white/90")}
+            className={cn("rounded-full px-6 gap-2", activeTab === tab.id && "bg-foreground text-background hover:bg-foreground/90")}
             onClick={() => setActiveTab(tab.id as "home" | "life" | "casco" | "imm")}
           >
             <tab.icon className="w-4 h-4" />
@@ -41,7 +41,7 @@ export function CalculatorsSection() {
         ))}
       </div>
 
-      <div className="max-w-xl mx-auto glass p-8 md:p-12 rounded-[3rem] border border-white/5 relative overflow-hidden">
+      <div className="max-w-xl mx-auto glass p-8 md:p-12 rounded-[3rem] border border-border relative overflow-hidden">
         <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/10 rounded-full blur-[100px] pointer-events-none" />
         
         {activeTab === "home" && <HomeCalculator />}
@@ -85,15 +85,15 @@ function HomeCalculator() {
       <div className="space-y-4">
         <div>
           <label className="text-sm text-muted-foreground mb-2 block">Valoare Proprietate (€)</label>
-          <Input type="number" placeholder="ex: 150000" value={value} onChange={(e) => setValue(e.target.value)} className="h-14 rounded-2xl bg-white/5 border-white/10" />
+          <Input type="number" placeholder="ex: 150000" value={value} onChange={(e) => setValue(e.target.value)} className="h-14 rounded-2xl bg-background border-border" />
         </div>
         <div>
           <label className="text-sm text-muted-foreground mb-2 block">Suprafață utilă (mp)</label>
-          <Input type="number" placeholder="ex: 85" value={area} onChange={(e) => setArea(e.target.value)} className="h-14 rounded-2xl bg-white/5 border-white/10" />
+          <Input type="number" placeholder="ex: 85" value={area} onChange={(e) => setArea(e.target.value)} className="h-14 rounded-2xl bg-background border-border" />
         </div>
         <div>
           <label className="text-sm text-muted-foreground mb-2 block">Tip proprietate</label>
-          <select className="w-full h-14 rounded-2xl bg-white/5 border border-white/10 px-4 text-foreground focus:outline-none focus:ring-1 focus:ring-primary appearance-none">
+          <select className="w-full h-14 rounded-2xl bg-background border border-border px-4 text-foreground focus:outline-none focus:ring-1 focus:ring-primary appearance-none">
             <option value="apartament">Apartament</option>
             <option value="casa">Casă / Vilă</option>
           </select>
@@ -141,15 +141,15 @@ function LifeCalculator() {
       <div className="space-y-4">
         <div>
           <label className="text-sm text-muted-foreground mb-2 block">Vârstă (ani)</label>
-          <Input type="number" placeholder="ex: 35" value={age} onChange={(e) => setAge(e.target.value)} className="h-14 rounded-2xl bg-white/5 border-white/10" />
+          <Input type="number" placeholder="ex: 35" value={age} onChange={(e) => setAge(e.target.value)} className="h-14 rounded-2xl bg-background border-border" />
         </div>
         <div>
           <label className="text-sm text-muted-foreground mb-2 block">Capital asigurat dorit (€)</label>
-          <Input type="number" placeholder="ex: 100000" value={capital} onChange={(e) => setCapital(e.target.value)} className="h-14 rounded-2xl bg-white/5 border-white/10" />
+          <Input type="number" placeholder="ex: 100000" value={capital} onChange={(e) => setCapital(e.target.value)} className="h-14 rounded-2xl bg-background border-border" />
         </div>
         <div>
           <label className="text-sm text-muted-foreground mb-2 block">Perioadă de acoperire</label>
-          <select className="w-full h-14 rounded-2xl bg-white/5 border border-white/10 px-4 text-foreground focus:outline-none focus:ring-1 focus:ring-primary appearance-none">
+          <select className="w-full h-14 rounded-2xl bg-background border border-border px-4 text-foreground focus:outline-none focus:ring-1 focus:ring-primary appearance-none">
             <option value="10">10 ani</option>
             <option value="20">20 ani</option>
             <option value="30">30 ani</option>
@@ -200,15 +200,15 @@ function CascoCalculator() {
       <div className="space-y-4">
         <div>
           <label className="text-sm text-muted-foreground mb-2 block">Marcă / Model</label>
-          <Input type="text" placeholder="ex: BMW X5" className="h-14 rounded-2xl bg-white/5 border-white/10" />
+          <Input type="text" placeholder="ex: BMW X5" className="h-14 rounded-2xl bg-background border-border" />
         </div>
         <div>
           <label className="text-sm text-muted-foreground mb-2 block">Valoare de piață (€)</label>
-          <Input type="number" placeholder="ex: 45000" value={val} onChange={(e) => setVal(e.target.value)} className="h-14 rounded-2xl bg-white/5 border-white/10" />
+          <Input type="number" placeholder="ex: 45000" value={val} onChange={(e) => setVal(e.target.value)} className="h-14 rounded-2xl bg-background border-border" />
         </div>
         <div>
           <label className="text-sm text-muted-foreground mb-2 block">An fabricație</label>
-          <Input type="number" placeholder="ex: 2021" value={year} onChange={(e) => setYear(e.target.value)} className="h-14 rounded-2xl bg-white/5 border-white/10" />
+          <Input type="number" placeholder="ex: 2021" value={year} onChange={(e) => setYear(e.target.value)} className="h-14 rounded-2xl bg-background border-border" />
         </div>
       </div>
       {error && <p className="text-red-400 text-sm mt-2 text-center">{error}</p>}
@@ -252,7 +252,7 @@ function ImmCalculator() {
       <div className="space-y-4">
         <div>
           <label className="text-sm text-muted-foreground mb-2 block">Domeniu de activitate</label>
-          <select className="w-full h-14 rounded-2xl bg-white/5 border border-white/10 px-4 text-foreground focus:outline-none focus:ring-1 focus:ring-primary appearance-none">
+          <select className="w-full h-14 rounded-2xl bg-background border border-border px-4 text-foreground focus:outline-none focus:ring-1 focus:ring-primary appearance-none">
             <option value="it">IT & Servicii</option>
             <option value="comert">Comerț / Retail</option>
             <option value="productie">Producție</option>
@@ -261,11 +261,11 @@ function ImmCalculator() {
         </div>
         <div>
           <label className="text-sm text-muted-foreground mb-2 block">Cifră de afaceri estimată (€)</label>
-          <Input type="number" placeholder="ex: 500000" value={ca} onChange={(e) => setCa(e.target.value)} className="h-14 rounded-2xl bg-white/5 border-white/10" />
+          <Input type="number" placeholder="ex: 500000" value={ca} onChange={(e) => setCa(e.target.value)} className="h-14 rounded-2xl bg-background border-border" />
         </div>
         <div>
           <label className="text-sm text-muted-foreground mb-2 block">Număr angajați</label>
-          <Input type="number" placeholder="ex: 15" value={emp} onChange={(e) => setEmp(e.target.value)} className="h-14 rounded-2xl bg-white/5 border-white/10" />
+          <Input type="number" placeholder="ex: 15" value={emp} onChange={(e) => setEmp(e.target.value)} className="h-14 rounded-2xl bg-background border-border" />
         </div>
       </div>
       {error && <p className="text-red-400 text-sm mt-2 text-center">{error}</p>}
@@ -279,15 +279,15 @@ function ImmCalculator() {
 
 function ResultCard({ value, title }: { value: number, title: string }) {
   return (
-    <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} className="mt-8 p-6 rounded-2xl bg-white/5 border border-white/10 text-center relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-t from-white/5 to-transparent pointer-events-none" />
+    <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} className="mt-8 p-6 rounded-2xl bg-muted/50 border border-border text-center relative overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-t from-white/50 to-transparent pointer-events-none" />
       <p className="text-sm text-muted-foreground mb-2">{title}</p>
       <div className="text-4xl font-heading font-bold mb-4 flex items-center justify-center gap-2">
         <Calculator className="w-6 h-6 text-muted-foreground" />
         {value} <span className="text-xl text-muted-foreground">€</span>
       </div>
       <p className="text-xs text-muted-foreground mb-6">Aceasta este doar o estimare. Analiza exactă necesită un audit de risc.</p>
-      <Button variant="outline" className="rounded-full w-full bg-white text-black hover:bg-white/90" asChild>
+      <Button variant="outline" className="rounded-full w-full bg-foreground text-background hover:bg-foreground/90" asChild>
         <Link href="/contact?type=oferta">Solicită Oferta Personalizată</Link>
       </Button>
     </motion.div>

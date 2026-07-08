@@ -35,13 +35,13 @@ export function Hero() {
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Button size="lg" className="w-full sm:w-auto text-lg px-8 group bg-white text-black hover:bg-white/90 font-semibold shadow-lg" asChild>
+            <Button size="lg" className="w-full sm:w-auto text-lg px-8 group bg-foreground text-background hover:bg-foreground/90 font-semibold shadow-lg" asChild>
               <Link href="/#servicii">
                 Descoperă Serviciile
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Link>
             </Button>
-            <Button size="lg" variant="glass" className="w-full sm:w-auto text-lg px-8 border-white/20" asChild>
+            <Button size="lg" variant="glass" className="w-full sm:w-auto text-lg px-8 border-border bg-white text-foreground hover:bg-muted" asChild>
               <Link href="/contact">Contactează-mă</Link>
             </Button>
           </div>

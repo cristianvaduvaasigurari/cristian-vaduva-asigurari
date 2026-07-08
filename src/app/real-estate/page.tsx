@@ -29,10 +29,10 @@ export default function RealEstatePage() {
             Acces exclusiv la proprietăți off-market, reprezentare la cele mai înalte standarde și strategii de achiziție bazate pe randament.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <Button size="lg" className="rounded-full bg-emerald-600 hover:bg-emerald-700 px-8" asChild>
+            <Button size="lg" className="rounded-full bg-emerald-600 hover:bg-emerald-700 text-white px-8" asChild>
               <Link href="https://aixluxury.com" target="_blank">Explorează AiXLuxury</Link>
             </Button>
-            <Button size="lg" variant="outline" className="rounded-full border-white/10 hover:bg-white/5 px-8" asChild>
+            <Button size="lg" variant="outline" className="rounded-full border-border bg-white hover:bg-muted text-foreground px-8" asChild>
               <Link href="https://real-estate-platform-brown.vercel.app/" target="_blank">Platforma Home Find</Link>
             </Button>
           </div>
@@ -41,41 +41,41 @@ export default function RealEstatePage() {
         {/* Services Grid */}
         <div className="container mx-auto px-4 max-w-6xl mb-32">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="glass premium-card p-10 rounded-[2rem] border border-white/5 group">
-              <Key className="w-12 h-12 text-emerald-500 mb-6 group-hover:scale-110 transition-transform" />
-              <h3 className="text-2xl font-bold font-heading mb-4 text-white">Buyer Representation</h3>
+            <div className="glass premium-card p-10 rounded-[2rem] border border-border group">
+              <Key className="w-12 h-12 text-emerald-600 mb-6 group-hover:scale-110 transition-transform" />
+              <h3 className="text-2xl font-bold font-heading mb-4 text-foreground">Buyer Representation</h3>
               <p className="text-muted-foreground leading-relaxed">
                 Reprezentăm exclusiv interesele cumpărătorului. Analizăm piața, filtrăm zgomotul și negociem agresiv pentru a securiza proprietatea ideală la cel mai corect preț. Fără conflicte de interese.
               </p>
             </div>
 
-            <div className="glass premium-card p-10 rounded-[2rem] border border-white/5 group">
-              <Building2 className="w-12 h-12 text-blue-500 mb-6 group-hover:scale-110 transition-transform" />
-              <h3 className="text-2xl font-bold font-heading mb-4 text-white">Seller Representation</h3>
+            <div className="glass premium-card p-10 rounded-[2rem] border border-border group">
+              <Building2 className="w-12 h-12 text-blue-600 mb-6 group-hover:scale-110 transition-transform" />
+              <h3 className="text-2xl font-bold font-heading mb-4 text-foreground">Seller Representation</h3>
               <p className="text-muted-foreground leading-relaxed">
                 Marketing premium pentru proprietăți de lux. Prin rețeaua noastră privată și platformele AiXLuxury / Home Find, targetăm direct cumpărătorii calificați, reducând timpul petrecut pe piață.
               </p>
             </div>
 
-            <div className="glass premium-card p-10 rounded-[2rem] border border-white/5 group">
-              <Search className="w-12 h-12 text-purple-500 mb-6 group-hover:scale-110 transition-transform" />
-              <h3 className="text-2xl font-bold font-heading mb-4 text-white">Off-Market Properties</h3>
+            <div className="glass premium-card p-10 rounded-[2rem] border border-border group">
+              <Search className="w-12 h-12 text-purple-600 mb-6 group-hover:scale-110 transition-transform" />
+              <h3 className="text-2xl font-bold font-heading mb-4 text-foreground">Off-Market Properties</h3>
               <p className="text-muted-foreground leading-relaxed">
                 Cele mai valoroase proprietăți nu ajung niciodată pe site-urile publice. Oferim acces confidențial la tranzacții off-market, dedicat investitorilor discreți și fondurilor private.
               </p>
             </div>
 
-            <div className="glass premium-card p-10 rounded-[2rem] border border-white/5 group lg:col-span-1">
-              <Gem className="w-12 h-12 text-amber-500 mb-6 group-hover:scale-110 transition-transform" />
-              <h3 className="text-2xl font-bold font-heading mb-4 text-white">Luxury Real Estate</h3>
+            <div className="glass premium-card p-10 rounded-[2rem] border border-border group lg:col-span-1">
+              <Gem className="w-12 h-12 text-amber-600 mb-6 group-hover:scale-110 transition-transform" />
+              <h3 className="text-2xl font-bold font-heading mb-4 text-foreground">Luxury Real Estate</h3>
               <p className="text-muted-foreground leading-relaxed">
                 De la penthouse-uri exclusiviste la vile istorice. Filtrăm portofoliul pentru a garanta calitatea absolută a asset-ului, verificând atât aspectele juridice cât și potențialul arhitectural.
               </p>
             </div>
 
-            <div className="glass premium-card p-10 rounded-[2rem] border border-white/5 group lg:col-span-2">
-              <ShieldCheck className="w-12 h-12 text-cyan-500 mb-6 group-hover:scale-110 transition-transform" />
-              <h3 className="text-2xl font-bold font-heading mb-4 text-white">Investment Advisory & Strategy</h3>
+            <div className="glass premium-card p-10 rounded-[2rem] border border-border group lg:col-span-2">
+              <ShieldCheck className="w-12 h-12 text-cyan-600 mb-6 group-hover:scale-110 transition-transform" />
+              <h3 className="text-2xl font-bold font-heading mb-4 text-foreground">Investment Advisory & Strategy</h3>
               <p className="text-muted-foreground leading-relaxed mb-6">
                 Nu cumperi doar cărămizi, cumperi randament și siguranță. Oferim analiză detaliată ROI (Return on Investment), yield estimation și planificare de exit strategy. Ne asigurăm că orice achiziție își găsește locul perfect în ecosistemul tău financiar.
               </p>

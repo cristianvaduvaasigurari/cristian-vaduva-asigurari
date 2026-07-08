@@ -7,6 +7,7 @@ import { ContactForm } from "@/components/sections/contact-form";
 import { MapPin, Phone, Mail, MessageCircle, MonitorPlay, Briefcase, Globe, Camera } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { CONTACT } from "@/config/contact";
 
 export default function ContactPage() {
   const [activeTab, setActiveTab] = useState<"general" | "oferta" | "consultanta">("general");
@@ -29,7 +30,7 @@ export default function ContactPage() {
           <div className="flex flex-wrap justify-center gap-4 mb-16">
             <Button 
               variant={activeTab === "general" ? "default" : "glass"} 
-              className={cn("rounded-full px-6", activeTab === "general" && "bg-white text-black hover:bg-white/90")}
+              className={cn("rounded-full px-6", activeTab === "general" && "bg-foreground text-background hover:bg-foreground/90")}
               onClick={() => setActiveTab("general")}
             >
               Contact General
@@ -52,34 +53,34 @@ export default function ContactPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-24 max-w-6xl mx-auto">
             <div className="glass premium-card p-8 rounded-3xl flex flex-col items-center text-center">
-              <Phone className="w-8 h-8 text-blue-500 mb-4" />
-              <h3 className="font-bold mb-2">Telefon</h3>
-              <p className="text-muted-foreground mb-4">+40 767 110 439</p>
-              <Button variant="outline" size="sm" className="rounded-full w-full" asChild>
-                <a href="tel:+40767110439">Sună acum</a>
+              <Phone className="w-8 h-8 text-blue-600 mb-4" />
+              <h3 className="font-bold mb-2 text-foreground">Telefon</h3>
+              <p className="text-muted-foreground mb-4">{CONTACT.phone.display}</p>
+              <Button variant="outline" size="sm" className="rounded-full w-full border-border hover:bg-muted" asChild>
+                <a href={CONTACT.phone.href}>Sună acum</a>
               </Button>
             </div>
             <div className="glass premium-card p-8 rounded-3xl flex flex-col items-center text-center">
-              <MessageCircle className="w-8 h-8 text-green-500 mb-4" />
-              <h3 className="font-bold mb-2">WhatsApp</h3>
-              <p className="text-muted-foreground mb-4">+43 650 953 6345</p>
-              <Button variant="outline" size="sm" className="rounded-full w-full border-green-500/50 hover:bg-green-500/10" asChild>
-                <a href="https://wa.me/436509536345" target="_blank" rel="noopener noreferrer">Trimite mesaj</a>
+              <MessageCircle className="w-8 h-8 text-green-600 mb-4" />
+              <h3 className="font-bold mb-2 text-foreground">WhatsApp</h3>
+              <p className="text-muted-foreground mb-4">{CONTACT.whatsapp.display}</p>
+              <Button variant="outline" size="sm" className="rounded-full w-full border-green-600/30 text-green-700 hover:bg-green-50" asChild>
+                <a href={CONTACT.whatsapp.href} target="_blank" rel="noopener noreferrer">Trimite mesaj</a>
               </Button>
             </div>
             <div className="glass premium-card p-8 rounded-3xl flex flex-col items-center text-center">
-              <Mail className="w-8 h-8 text-blue-500 mb-4" />
-              <h3 className="font-bold mb-2">Email</h3>
-              <p className="text-muted-foreground mb-4 text-sm truncate w-full">contact@cristianvaduva.com</p>
-              <Button variant="outline" size="sm" className="rounded-full w-full" asChild>
-                <a href="mailto:contact@cristianvaduva.com">Scrie-ne</a>
+              <Mail className="w-8 h-8 text-blue-600 mb-4" />
+              <h3 className="font-bold mb-2 text-foreground">Email</h3>
+              <p className="text-muted-foreground mb-4 text-sm truncate w-full">{CONTACT.email.display}</p>
+              <Button variant="outline" size="sm" className="rounded-full w-full border-border hover:bg-muted" asChild>
+                <a href={CONTACT.email.href}>Scrie-ne</a>
               </Button>
             </div>
             <div className="glass premium-card p-8 rounded-3xl flex flex-col items-center text-center">
-              <MapPin className="w-8 h-8 text-blue-500 mb-4" />
-              <h3 className="font-bold mb-2">Locație</h3>
+              <MapPin className="w-8 h-8 text-blue-600 mb-4" />
+              <h3 className="font-bold mb-2 text-foreground">Locație</h3>
               <p className="text-muted-foreground mb-4 text-sm">București, România</p>
-              <Button variant="outline" size="sm" className="rounded-full w-full" asChild>
+              <Button variant="outline" size="sm" className="rounded-full w-full border-border hover:bg-muted" asChild>
                 <a href="#harta">Vezi pe hartă</a>
               </Button>
             </div>
@@ -87,21 +88,21 @@ export default function ContactPage() {
 
           {/* Social Media Links */}
           <div className="flex flex-wrap justify-center gap-4 mb-24">
-            <a href="https://www.linkedin.com/in/cristianvăduva" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-6 py-3 rounded-full glass hover:bg-white/10 transition-colors">
-              <Briefcase className="w-5 h-5 text-blue-400" />
-              <span className="font-medium text-sm">LinkedIn</span>
+            <a href={CONTACT.social.linkedin} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-6 py-3 rounded-full glass hover:bg-black/5 transition-colors border border-border">
+              <Briefcase className="w-5 h-5 text-blue-600" />
+              <span className="font-medium text-sm text-foreground">LinkedIn</span>
             </a>
-            <a href="https://instagram.com/cristian_vaduva_cristianv" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-6 py-3 rounded-full glass hover:bg-white/10 transition-colors">
-              <Camera className="w-5 h-5 text-pink-500" />
-              <span className="font-medium text-sm">Instagram</span>
+            <a href={CONTACT.social.instagram} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-6 py-3 rounded-full glass hover:bg-black/5 transition-colors border border-border">
+              <Camera className="w-5 h-5 text-pink-600" />
+              <span className="font-medium text-sm text-foreground">Instagram</span>
             </a>
-            <a href="https://www.facebook.com/CristianVaduvaCV" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-6 py-3 rounded-full glass hover:bg-white/10 transition-colors">
-              <Globe className="w-5 h-5 text-blue-600" />
-              <span className="font-medium text-sm">Facebook</span>
+            <a href={CONTACT.social.facebook} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-6 py-3 rounded-full glass hover:bg-black/5 transition-colors border border-border">
+              <Globe className="w-5 h-5 text-blue-700" />
+              <span className="font-medium text-sm text-foreground">Facebook</span>
             </a>
-            <a href="https://youtube.com/@CristianVaduvaCV" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-6 py-3 rounded-full glass hover:bg-white/10 transition-colors">
-              <MonitorPlay className="w-5 h-5 text-red-500" />
-              <span className="font-medium text-sm">YouTube</span>
+            <a href={CONTACT.social.youtube} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-6 py-3 rounded-full glass hover:bg-black/5 transition-colors border border-border">
+              <MonitorPlay className="w-5 h-5 text-red-600" />
+              <span className="font-medium text-sm text-foreground">YouTube</span>
             </a>
           </div>
 

@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { X, MessageCircle, Calendar, Phone, Bot } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { CONTACT } from "@/config/contact";
 
 export function SmartPopup() {
   const [isOpen, setIsOpen] = useState(false);
@@ -41,28 +42,28 @@ export function SmartPopup() {
               </div>
 
               <div className="flex flex-col gap-3 relative z-10">
-                <Button className="w-full justify-start gap-3 rounded-full h-12 bg-white/10 hover:bg-white/20 text-foreground border border-white/5" asChild>
+                <Button className="w-full justify-start gap-3 rounded-full h-12 bg-black/5 hover:bg-black/10 text-foreground border border-black/10" asChild>
                   <Link href="/contact?type=oferta">
-                    <MessageCircle className="w-4 h-4 text-blue-400" />
+                    <MessageCircle className="w-4 h-4 text-blue-600" />
                     Cere ofertă
                   </Link>
                 </Button>
-                <Button className="w-full justify-start gap-3 rounded-full h-12 bg-white/10 hover:bg-white/20 text-foreground border border-white/5" asChild>
+                <Button className="w-full justify-start gap-3 rounded-full h-12 bg-black/5 hover:bg-black/10 text-foreground border border-black/10" asChild>
                   <Link href="/contact?type=consultanta">
-                    <Calendar className="w-4 h-4 text-purple-400" />
+                    <Calendar className="w-4 h-4 text-purple-600" />
                     Programează consultanță
                   </Link>
                 </Button>
                 <Button className="w-full justify-start gap-3 rounded-full h-12 bg-green-500/10 hover:bg-green-500/20 text-foreground border border-green-500/20" asChild>
-                  <Link href="https://wa.me/436509536345" target="_blank">
-                    <Phone className="w-4 h-4 text-green-500" />
-                    WhatsApp (+43 650 953 6345)
+                  <Link href={CONTACT.whatsapp.href} target="_blank">
+                    <Phone className="w-4 h-4 text-green-600" />
+                    {CONTACT.whatsapp.label} ({CONTACT.whatsapp.display})
                   </Link>
                 </Button>
                 <Button className="w-full justify-start gap-3 rounded-full h-12 bg-blue-500/10 hover:bg-blue-500/20 text-foreground border border-blue-500/20" asChild>
-                  <a href="tel:+40767110439">
-                    <Phone className="w-4 h-4 text-blue-500" />
-                    Sună (+40 767 110 439)
+                  <a href={CONTACT.phone.href}>
+                    <Phone className="w-4 h-4 text-blue-600" />
+                    Sună ({CONTACT.phone.display})
                   </a>
                 </Button>
               </div>

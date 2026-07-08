@@ -6,6 +6,7 @@ import { cn } from "@/lib/utils";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
+import { CONTACT } from "@/config/contact";
 
 const navLinks = [
   { name: "Home", href: "/" },
@@ -30,8 +31,10 @@ export function Navbar() {
   return (
     <header
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b border-transparent",
-        isScrolled ? "glass border-border/50 shadow-sm py-3" : "bg-transparent py-5"
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-500 border-b",
+        isScrolled
+          ? "bg-white/80 backdrop-blur-xl border-black/5 shadow-[0_1px_3px_rgba(0,0,0,0.05)] py-3"
+          : "bg-transparent border-transparent py-5"
       )}
     >
       <div className="container mx-auto px-4 md:px-6">
@@ -41,11 +44,11 @@ export function Navbar() {
               cristianvaduva.com
             </span>
             <div className="flex items-center gap-2 text-[10px] sm:text-xs text-muted-foreground uppercase tracking-widest font-medium mt-1">
-              <a href="https://aixluxury.com" target="_blank" rel="noopener noreferrer" className="hover:text-amber-500 transition-colors">AiXLuxury.com</a>
+              <a href={CONTACT.ecosystem.aixluxury} target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">AiXLuxury.com</a>
               <span className="w-1 h-1 rounded-full bg-border" />
-              <a href="https://ai-x-os.vercel.app/" target="_blank" rel="noopener noreferrer" className="hover:text-purple-500 transition-colors">AiX OS</a>
+              <a href={CONTACT.ecosystem.aixos} target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">AiX OS</a>
               <span className="w-1 h-1 rounded-full bg-border" />
-              <a href="https://real-estate-platform-brown.vercel.app/" target="_blank" rel="noopener noreferrer" className="hover:text-emerald-500 transition-colors">Home Find</a>
+              <a href={CONTACT.ecosystem.homefind} target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">Home Find</a>
             </div>
           </Link>
 
@@ -62,11 +65,11 @@ export function Navbar() {
             ))}
           </nav>
 
-          <div className="hidden md:flex items-center gap-4">
-            <Button variant="outline" className="rounded-full border-white/20 hover:border-white/40" asChild>
+          <div className="hidden md:flex items-center gap-3">
+            <Button variant="outline" className="rounded-full border-border hover:bg-muted" asChild>
               <Link href="/calculatoare">Calculatoare</Link>
             </Button>
-            <Button className="rounded-full bg-white text-black hover:bg-white/90 font-semibold" asChild>
+            <Button className="rounded-full bg-foreground text-background hover:bg-foreground/90 font-semibold" asChild>
               <Link href="/contact">Contact</Link>
             </Button>
           </div>
@@ -85,26 +88,26 @@ export function Navbar() {
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -20 }}
+            initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            className="absolute top-full left-0 right-0 glass border-b border-border p-4 md:hidden flex flex-col gap-4 shadow-xl"
+            exit={{ opacity: 0, y: -10 }}
+            className="absolute top-full left-0 right-0 bg-white border-b border-border p-4 md:hidden flex flex-col gap-2 shadow-lg"
           >
             {navLinks.map((link) => (
               <Link
                 key={link.name}
                 href={link.href}
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="text-base font-medium p-2 hover:bg-accent rounded-lg transition-colors"
+                className="text-base font-medium p-3 hover:bg-muted rounded-xl transition-colors"
               >
                 {link.name}
               </Link>
             ))}
             <div className="flex flex-col gap-2 mt-4 pt-4 border-t border-border">
-              <Button variant="outline" className="w-full justify-center" asChild>
+              <Button variant="outline" className="w-full justify-center rounded-full" asChild>
                 <Link href="/calculatoare" onClick={() => setIsMobileMenuOpen(false)}>Calculatoare</Link>
               </Button>
-              <Button className="w-full justify-center bg-white text-black" asChild>
+              <Button className="w-full justify-center rounded-full bg-foreground text-background" asChild>
                 <Link href="/contact" onClick={() => setIsMobileMenuOpen(false)}>Contact</Link>
               </Button>
             </div>
