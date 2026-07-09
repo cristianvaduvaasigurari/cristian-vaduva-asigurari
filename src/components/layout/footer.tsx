@@ -27,15 +27,23 @@ const footerLinks = {
     { name: "Cargo & Marfă", href: "/servicii/business-cargo-insurance" },
     { name: "Asigurare Șantiere", href: "/servicii/business-construction-insurance" },
   ],
+  tools: [
+    { name: "AiX Financial Twin", href: "/financial-twin" },
+    { name: "Family Planner", href: "/family-planner" },
+    { name: "RE Analyzer", href: "/investitii-imobiliare/analyzer" },
+    { name: "Luxury Assets", href: "/luxury-assets" },
+    { name: "Centru Urgențe", href: "/urgente" },
+    { name: "Claim Assistant", href: "/claim-assistant" },
+    { name: "Raport Strategic", href: "/raport-strategic" },
+  ],
   company: [
-    { name: "Despre Mine", href: "/despre-mine" },
-    { name: "De Ce Asigurări?", href: "/de-ce-asigurari" },
-    { name: "AiX Insights", href: "/insights" },
-    { name: "Resurse Premium", href: "/resurse" },
     { name: "AiX Advisor", href: "/advisor" },
     { name: "Coverage Gap", href: "/gap-analyzer" },
     { name: "Harta Protecției", href: "/harta-protectiei" },
     { name: "Ofertă Rapidă", href: "/oferta-rapida" },
+    { name: "AiX Insights", href: "/insights" },
+    { name: "Resurse Premium", href: "/resurse" },
+    { name: "Despre Mine", href: "/despre-mine" },
     { name: "Contact", href: "/contact" },
   ],
   legal: [
@@ -49,7 +57,7 @@ export function Footer() {
   return (
     <footer className="bg-[#0a0a0a] text-white border-t border-white/10 pt-20 pb-10">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-12 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-7 gap-8 mb-16">
           <div className="lg:col-span-2">
             <Link href="/" className="inline-block mb-6">
               <span className="font-heading font-bold text-2xl tracking-tight text-white">
@@ -119,6 +127,19 @@ export function Footer() {
             <h3 className="font-bold text-lg mb-6 text-white tracking-wide">Companii</h3>
             <ul className="space-y-4">
               {footerLinks.servicesBusiness.map((link) => (
+                <li key={link.name}>
+                  <Link href={link.href} className="text-white/50 hover:text-white transition-colors text-sm font-medium">
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="font-bold text-lg mb-6 text-white tracking-wide">Unelte Noi</h3>
+            <ul className="space-y-4">
+              {footerLinks.tools.map((link) => (
                 <li key={link.name}>
                   <Link href={link.href} className="text-white/50 hover:text-white transition-colors text-sm font-medium">
                     {link.name}

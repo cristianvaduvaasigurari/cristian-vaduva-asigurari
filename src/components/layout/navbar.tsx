@@ -143,9 +143,9 @@ export function Navbar() {
               </div>
             </div>
 
+            <Link href="/financial-twin" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">Financial Twin</Link>
             <Link href="/resurse" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">Resurse</Link>
-            <Link href="/insights" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">Insights</Link>
-            <Link href="/harta-protectiei" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">Harta Protecției</Link>
+            <Link href="/urgente" className="text-sm font-bold text-rose-600 hover:text-rose-700 transition-colors">Urgențe</Link>
           </nav>
 
           <div className="hidden md:flex items-center gap-3">
