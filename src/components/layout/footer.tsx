@@ -9,6 +9,7 @@ const footerLinks = {
     { name: "AiXLuxury", href: "/aixluxury" },
     { name: "AiX OS", href: "/aixos" },
     { name: "Home Find", href: "/home-find" },
+    { name: "Ecosistem AiX", href: "/ecosistem" },
   ],
   servicesPersonal: [
     { name: "Asigurare de Viață", href: "/servicii/life-insurance" },
@@ -29,6 +30,12 @@ const footerLinks = {
   company: [
     { name: "Despre Mine", href: "/despre-mine" },
     { name: "De Ce Asigurări?", href: "/de-ce-asigurari" },
+    { name: "AiX Insights", href: "/insights" },
+    { name: "Resurse Premium", href: "/resurse" },
+    { name: "AiX Advisor", href: "/advisor" },
+    { name: "Coverage Gap", href: "/gap-analyzer" },
+    { name: "Harta Protecției", href: "/harta-protectiei" },
+    { name: "Ofertă Rapidă", href: "/oferta-rapida" },
     { name: "Contact", href: "/contact" },
   ],
   legal: [

@@ -6,14 +6,6 @@ import { cn } from "@/lib/utils";
 import { Menu, X, ChevronDown, Shield, Car, Briefcase, Building2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
-import { CONTACT } from "@/config/contact";
-
-const navLinks = [
-  { name: "Home", href: "/" },
-  { name: "Despre Mine", href: "/despre-mine" },
-  { name: "De Ce Asigurări", href: "/de-ce-asigurari" },
-  { name: "Real Estate", href: "/real-estate" },
-];
 
 const megaMenuData = [
   {
@@ -111,7 +103,6 @@ export function Navbar() {
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-8">
             <Link href="/" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">Home</Link>
-            <Link href="/despre-mine" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">Despre Mine</Link>
             
             {/* Mega Menu Trigger */}
             <div className="group relative">
@@ -143,25 +134,29 @@ export function Navbar() {
                 </div>
                 <div className="mt-8 pt-6 border-t border-border/50 flex justify-between items-center bg-muted/30 -mx-8 -mb-8 p-6 rounded-b-3xl">
                   <div className="text-sm text-muted-foreground">
-                    <span className="font-bold text-foreground">Nu ești sigur ce să alegi?</span> Discută cu un consultant pentru o ofertă personalizată.
+                    <span className="font-bold text-foreground">Nu ești sigur ce să alegi?</span> Încearcă noul AiX Insurance Advisor.
                   </div>
                   <Button className="bg-blue-600 hover:bg-blue-700 rounded-full" asChild>
-                    <a href={CONTACT.whatsapp.href} target="_blank" rel="noopener noreferrer">Consultanță Rapidă</a>
+                    <Link href="/advisor">Deschide AiX Advisor</Link>
                   </Button>
                 </div>
               </div>
             </div>
 
-            <Link href="/de-ce-asigurari" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">De Ce Asigurări</Link>
-            <Link href="/real-estate" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">Real Estate</Link>
+            <Link href="/resurse" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">Resurse</Link>
+            <Link href="/insights" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">Insights</Link>
+            <Link href="/harta-protectiei" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">Harta Protecției</Link>
           </nav>
 
           <div className="hidden md:flex items-center gap-3">
             <Button variant="outline" className="rounded-full border-border hover:bg-muted" asChild>
+              <Link href="/gap-analyzer">Gap Analyzer</Link>
+            </Button>
+            <Button variant="outline" className="rounded-full border-border hover:bg-muted" asChild>
               <Link href="/calculatoare">Calculatoare</Link>
             </Button>
-            <Button className="rounded-full bg-foreground text-background hover:bg-foreground/90 font-semibold" asChild>
-              <Link href="/contact">Contact</Link>
+            <Button className="rounded-full bg-foreground text-background hover:bg-foreground/90 font-semibold shadow-xl" asChild>
+              <Link href="/oferta-rapida">Ofertă Rapidă</Link>
             </Button>
           </div>
 
