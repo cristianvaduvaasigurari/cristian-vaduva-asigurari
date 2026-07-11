@@ -143,7 +143,26 @@ export function Navbar() {
               </div>
             </div>
 
+            <div className="relative group">
+              <button className="text-sm font-bold text-slate-900 hover:text-blue-600 transition-colors flex items-center gap-1.5 py-2">
+                AiX Suite
+              </button>
+              <div className="absolute top-full left-0 z-50 mt-1 hidden group-hover:block w-56 rounded-2xl bg-white border border-border p-4 shadow-xl">
+                <div className="flex flex-col gap-2">
+                  <Link href="/mission-control" className="text-xs font-bold text-slate-800 hover:text-blue-600 p-2 rounded-lg hover:bg-slate-50 transition-all">AiX Mission Control</Link>
+                  <Link href="/risk-simulator" className="text-xs font-bold text-slate-800 hover:text-blue-600 p-2 rounded-lg hover:bg-slate-50 transition-all">Risk Simulator</Link>
+                  <Link href="/personal-dashboard" className="text-xs font-bold text-slate-800 hover:text-blue-600 p-2 rounded-lg hover:bg-slate-50 transition-all">Personal Dashboard</Link>
+                  <Link href="/second-opinion" className="text-xs font-bold text-slate-800 hover:text-blue-600 p-2 rounded-lg hover:bg-slate-50 transition-all">Second Opinion</Link>
+                  <Link href="/luxury-garage" className="text-xs font-bold text-slate-800 hover:text-blue-600 p-2 rounded-lg hover:bg-slate-50 transition-all">Luxury Garage</Link>
+                  <Link href="/client-journey" className="text-xs font-bold text-slate-800 hover:text-blue-600 p-2 rounded-lg hover:bg-slate-50 transition-all">Client Journey</Link>
+                  <Link href="/trust-center" className="text-xs font-bold text-slate-800 hover:text-blue-600 p-2 rounded-lg hover:bg-slate-50 transition-all">Trust Center</Link>
+                  <Link href="/smart-forms" className="text-xs font-bold text-slate-800 hover:text-blue-600 p-2 rounded-lg hover:bg-slate-50 transition-all">Smart Forms</Link>
+                </div>
+              </div>
+            </div>
+            <Link href="/simulator" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">Life Simulator</Link>
             <Link href="/financial-twin" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">Financial Twin</Link>
+            <Link href="/academy" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">Academy</Link>
             <Link href="/resurse" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">Resurse</Link>
             <Link href="/urgente" className="text-sm font-bold text-rose-600 hover:text-rose-700 transition-colors">Urgențe</Link>
           </nav>
