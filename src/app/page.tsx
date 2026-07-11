@@ -12,7 +12,7 @@ export default function Home() {
       <Navbar />
       <main className="flex-1">
         <Hero />
-        <Services />
+        <section id="servicii"><Services /></section>
         <Ecosystem />
         <TestimonialsFaq />
         <ContactForm />

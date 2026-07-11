@@ -32,7 +32,7 @@ export default function AboutPage() {
               </p>
               <div className="flex gap-4">
                 <Button size="lg" className="rounded-full bg-foreground text-background hover:bg-foreground/90" asChild>
-                  <Link href="/contact?type=consultanta">Programează o consultanță</Link>
+                  <Link href="/contact">Programează o consultanță</Link>
                 </Button>
               </div>
             </div>

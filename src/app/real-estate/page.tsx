@@ -80,7 +80,7 @@ export default function RealEstatePage() {
                 Nu cumperi doar cărămizi, cumperi randament și siguranță. Oferim analiză detaliată ROI (Return on Investment), yield estimation și planificare de exit strategy. Ne asigurăm că orice achiziție își găsește locul perfect în ecosistemul tău financiar.
               </p>
               <Button variant="outline" className="rounded-full border-cyan-500/30 text-cyan-400 hover:bg-cyan-500/10" asChild>
-                <Link href="/contact?type=consultanta">Solicită un plan de investiții</Link>
+                <Link href="/contact">Solicită un plan de investiții</Link>
               </Button>
             </div>
           </div>

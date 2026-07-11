@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import { Clock, Zap, ChevronLeft, Bookmark, Share2, ArrowRight, BookOpen } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
 import { Article } from "@/lib/academy-data";
 
 interface ArticleContentProps {
@@ -127,7 +128,7 @@ export function ArticleContent({ article, relatedArticles }: ArticleContentProps
           {/* Author Card */}
           <div className="glass p-8 rounded-[2.5rem] bg-white border border-slate-100 shadow-sm">
             <div className="w-20 h-20 rounded-full bg-slate-100 mb-6 overflow-hidden">
-              <img src="/cv-hero.png" alt="Cristian Văduva" className="w-full h-full object-cover" />
+              <Image src="/cv-hero.png" alt="Cristian Văduva" width={500} height={500} className="w-full h-full object-cover" />
             </div>
             <h3 className="font-bold font-heading text-xl text-slate-900 mb-1">Cristian Văduva</h3>
             <p className="text-sm text-blue-600 font-bold mb-4 uppercase tracking-wider">Expert Consultant</p>

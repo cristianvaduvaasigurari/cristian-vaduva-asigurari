@@ -131,7 +131,7 @@ export default function WhyInsurancePage() {
               </p>
               <div className="flex flex-col sm:flex-row justify-center gap-4">
                 <Button size="lg" className="h-14 px-8 text-lg rounded-full bg-blue-600 hover:bg-blue-700 text-white" asChild>
-                  <Link href="/contact?type=consultanta">Cere o strategie personalizată</Link>
+                  <Link href="/contact">Cere o strategie personalizată</Link>
                 </Button>
                 <Button size="lg" variant="outline" className="h-14 px-8 text-lg rounded-full bg-background border-border hover:bg-muted text-foreground" asChild>
                   <Link href="/calculatoare">Simulează riscurile tale</Link>

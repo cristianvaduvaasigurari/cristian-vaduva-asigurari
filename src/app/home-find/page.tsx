@@ -1,7 +1,7 @@
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { ContactForm } from "@/components/sections/contact-form";
-import { Home, Search, Target, ShieldCheck } from "lucide-react";
+import { Home, Search, ShieldCheck } from "lucide-react";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {

@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { Clock, ArrowUpRight, Rss } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
 
 // Structură abstractă pentru a acomoda viitoarele integrări (OpenAI, RSS, Supabase)
 export type Article = {
@@ -130,11 +131,7 @@ export function InsightsList() {
           >
             <div className="relative h-56 overflow-hidden">
               <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors z-10" />
-              <img 
-                src={article.imageUrl} 
-                alt={article.title} 
-                className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
-              />
+<Image src={article.imageUrl} alt={article.title} width={800} height={450} className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" />
               <div className="absolute top-6 left-6 z-20">
                 <span className="px-4 py-1.5 rounded-full bg-white/90 backdrop-blur-sm text-xs font-bold uppercase tracking-wider text-foreground">
                   {article.category}

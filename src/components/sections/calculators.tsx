@@ -288,7 +288,7 @@ function ResultCard({ value, title }: { value: number, title: string }) {
       </div>
       <p className="text-xs text-muted-foreground mb-6">Aceasta este doar o estimare. Analiza exactă necesită un audit de risc.</p>
       <Button variant="outline" className="rounded-full w-full bg-foreground text-background hover:bg-foreground/90" asChild>
-        <Link href="/contact?type=oferta">Solicită Oferta Personalizată</Link>
+        <Link href="/contact">Solicită Oferta Personalizată</Link>
       </Button>
     </motion.div>
   );

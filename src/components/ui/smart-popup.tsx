@@ -43,13 +43,13 @@ export function SmartPopup() {
 
               <div className="flex flex-col gap-3 relative z-10">
                 <Button className="w-full justify-start gap-3 rounded-full h-12 bg-black/5 hover:bg-black/10 text-foreground border border-black/10" asChild>
-                  <Link href="/contact?type=oferta">
+                  <Link href="/contact">
                     <MessageCircle className="w-4 h-4 text-blue-600" />
                     Cere ofertă
                   </Link>
                 </Button>
                 <Button className="w-full justify-start gap-3 rounded-full h-12 bg-black/5 hover:bg-black/10 text-foreground border border-black/10" asChild>
-                  <Link href="/contact?type=consultanta">
+                  <Link href="/contact">
                     <Calendar className="w-4 h-4 text-purple-600" />
                     Programează consultanță
                   </Link>
