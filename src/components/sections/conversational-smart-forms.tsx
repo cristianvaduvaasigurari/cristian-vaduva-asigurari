@@ -9,6 +9,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { saveAssessment } from "@/lib/actions";
+import Link from "next/link";
 
 const steps = [
   {
@@ -105,7 +106,31 @@ export function ConversationalSmartForms() {
   const currentStep = steps[currentStepIdx];
 
   return (
-    <div className="w-full max-w-3xl mx-auto min-h-[500px] flex flex-col justify-center">
+    <div className="w-full max-w-3xl mx-auto min-h-[500px] flex flex-col justify-center gap-4">
+      {/* Form Navigation Bar */}
+      <div className="flex gap-2 justify-start mb-2 px-2">
+        <Button type="button" variant="outline" size="sm" className="rounded-full gap-1 text-[11px] h-8" asChild>
+          <Link href="/"><Home className="w-3.5 h-3.5" /> Home</Link>
+        </Button>
+        <Button 
+          type="button" 
+          variant="outline" 
+          size="sm" 
+          className="rounded-full gap-1 text-[11px] h-8" 
+          onClick={() => {
+            if (currentStepIdx > 0) {
+              handleBack();
+            } else {
+              window.history.back();
+            }
+          }}
+        >
+          <ArrowLeft className="w-3.5 h-3.5" /> Înapoi
+        </Button>
+        <Button type="button" variant="ghost" size="sm" className="rounded-full text-muted-foreground text-[11px] h-8" onClick={() => window.location.href = '/'}>
+          Renunță
+        </Button>
+      </div>
       
       <AnimatePresence mode="wait">
         {submissionResult ? (

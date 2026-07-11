@@ -4,6 +4,7 @@ import "./globals.css";
 import { SmartPopup } from "@/components/ui/smart-popup";
 import { CookieBanner } from "@/components/ui/cookie-banner";
 import { AiChatbot } from "@/components/ui/ai-chatbot";
+import { GlobalHomeButton } from "@/components/ui/global-home-button";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -74,7 +75,8 @@ export default function RootLayout({
             })
           }}
         />
-          {children}
+           {children}
+          <GlobalHomeButton />
           <SmartPopup />
           <AiChatbot />
           <CookieBanner />

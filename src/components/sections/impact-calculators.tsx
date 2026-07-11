@@ -2,10 +2,11 @@
 
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Flame, Droplets, CarFront, Stethoscope, Factory, TrendingDown, ShieldCheck, ArrowRight } from "lucide-react";
+import { Flame, Droplets, CarFront, Stethoscope, Factory, TrendingDown, ShieldCheck, ArrowRight, Home, ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { submitLead } from "@/lib/actions";
+import Link from "next/link";
 
 type CalculatorType = "fire" | "water" | "car" | "medical" | "business";
 
@@ -96,7 +97,20 @@ export function ImpactCalculators() {
   };
 
   return (
-    <div className="w-full max-w-5xl mx-auto">
+    <div className="w-full max-w-5xl mx-auto flex flex-col gap-6">
+      {/* Form Navigation Bar */}
+      <div className="flex gap-2 justify-start px-2">
+        <Button type="button" variant="outline" size="sm" className="rounded-full gap-1 text-[11px] h-8" asChild>
+          <Link href="/"><Home className="w-3.5 h-3.5" /> Home</Link>
+        </Button>
+        <Button type="button" variant="outline" size="sm" className="rounded-full gap-1 text-[11px] h-8" onClick={() => window.history.back()}>
+          <ArrowLeft className="w-3.5 h-3.5" /> Înapoi
+        </Button>
+        <Button type="button" variant="ghost" size="sm" className="rounded-full text-muted-foreground text-[11px] h-8" onClick={() => window.location.href = '/'}>
+          Renunță
+        </Button>
+      </div>
+
       {/* Tabs */}
       <div className="flex flex-wrap items-center justify-center gap-2 md:gap-4 mb-12">
         {tabs.map((tab) => (

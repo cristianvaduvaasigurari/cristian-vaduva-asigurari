@@ -6,7 +6,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { createClient } from "@/lib/supabase/client";
-import { Loader2, CheckCircle2, AlertCircle } from "lucide-react";
+import { Loader2, CheckCircle2, AlertCircle, Home, ArrowLeft } from "lucide-react";
+import Link from "next/link";
 
 export function ContactForm({ customTitle }: { customTitle?: string }) {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -86,6 +87,18 @@ export function ContactForm({ customTitle }: { customTitle?: string }) {
             )}
 
             <form onSubmit={handleSubmit} className="space-y-6">
+              <div className="flex flex-wrap gap-2 pb-4 border-b border-slate-100">
+                <Button type="button" variant="outline" size="sm" className="rounded-full gap-1 text-[11px] h-8" asChild>
+                  <Link href="/"><Home className="w-3.5 h-3.5" /> Home</Link>
+                </Button>
+                <Button type="button" variant="outline" size="sm" className="rounded-full gap-1 text-[11px] h-8" onClick={() => window.history.back()}>
+                  <ArrowLeft className="w-3.5 h-3.5" /> Înapoi
+                </Button>
+                <Button type="button" variant="ghost" size="sm" className="rounded-full text-muted-foreground text-[11px] h-8" onClick={() => window.location.href = '/'}>
+                  Renunță
+                </Button>
+              </div>
+
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-2">
                   <label htmlFor="name" className="text-sm font-medium ml-1">Nume Complet *</label>

@@ -4,9 +4,10 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { 
   FileText, AlertCircle, HelpCircle, Info, 
-  ShieldAlert, ArrowRight 
+  ShieldAlert, ArrowRight, Home, ArrowLeft 
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 const categories = [
   { id: "insurance", label: "Ofertă Asigurare" },
@@ -65,7 +66,19 @@ export function SecondOpinionAnalyzer() {
       
       {/* Input Console */}
       <div className="glass p-8 rounded-[3rem] border border-border bg-white shadow-sm flex flex-col gap-6">
-        
+        {/* Form Navigation Bar */}
+        <div className="flex flex-wrap gap-2 pb-4 border-b border-slate-100">
+          <Button type="button" variant="outline" size="sm" className="rounded-full gap-1 text-[11px] h-8" asChild>
+            <Link href="/"><Home className="w-3.5 h-3.5" /> Home</Link>
+          </Button>
+          <Button type="button" variant="outline" size="sm" className="rounded-full gap-1 text-[11px] h-8" onClick={() => window.history.back()}>
+            <ArrowLeft className="w-3.5 h-3.5" /> Înapoi
+          </Button>
+          <Button type="button" variant="ghost" size="sm" className="rounded-full text-muted-foreground text-[11px] h-8" onClick={() => window.location.href = '/'}>
+            Renunță
+          </Button>
+        </div>
+
         {/* Category Selector */}
         <div>
           <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400 block mb-3">Categorie Document / Solicitare</span>

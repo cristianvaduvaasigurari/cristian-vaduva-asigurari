@@ -63,6 +63,52 @@ const megaMenuData = [
   }
 ];
 
+const ecosystemMenuData = [
+  {
+    title: "Platformă & Core",
+    items: [
+      { name: "AiX OS", href: "/aixos" },
+      { name: "Home Find", href: "/home-find" },
+      { name: "AiXLuxury", href: "/aixluxury" },
+      { name: "Centru Urgențe", href: "/urgente" },
+    ]
+  },
+  {
+    title: "AiX Intelligence",
+    items: [
+      { name: "Mission Control", href: "/mission-control" },
+      { name: "Wealth Galaxy", href: "/wealth-galaxy" },
+      { name: "Risk Simulator", href: "/risk-simulator" },
+      { name: "Life Simulator", href: "/simulator" },
+      { name: "Financial Twin", href: "/financial-twin" },
+      { name: "AI Video Concierge", href: "/avatar" },
+      { name: "Voice AI Assistant", href: "/voice-assistant" },
+    ]
+  },
+  {
+    title: "AiX Tools",
+    items: [
+      { name: "Second Opinion", href: "/second-opinion" },
+      { name: "Luxury Garage", href: "/luxury-garage" },
+      { name: "Client Journey", href: "/client-journey" },
+      { name: "Smart Forms", href: "/smart-forms" },
+      { name: "Wealth Passport", href: "/wealth-passport" },
+      { name: "RE Analyzer", href: "/investitii-imobiliare/analyzer" },
+    ]
+  },
+  {
+    title: "Resurse & Consultanță",
+    items: [
+      { name: "AiX Academy", href: "/academy" },
+      { name: "AiX Advisor", href: "/advisor" },
+      { name: "Coverage Gap", href: "/gap-analyzer" },
+      { name: "Digital Property City", href: "/property-city" },
+      { name: "Satellite View", href: "/satellite-view" },
+      { name: "Live Market Radar", href: "/market-radar" },
+    ]
+  }
+];
+
 export function Navbar() {
   const [isScrolled, setIsScrolled] = React.useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
@@ -143,28 +189,32 @@ export function Navbar() {
               </div>
             </div>
 
-            <div className="relative group">
-              <button className="text-sm font-bold text-slate-900 hover:text-blue-600 transition-colors flex items-center gap-1.5 py-2">
-                AiX Suite
+            <div className="group relative">
+              <button className="flex items-center gap-1 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors py-4">
+                Ecosistem AiX
+                <ChevronDown className="w-4 h-4 transition-transform group-hover:rotate-180" />
               </button>
-              <div className="absolute top-full left-0 z-50 mt-1 hidden group-hover:block w-56 rounded-2xl bg-white border border-border p-4 shadow-xl">
-                <div className="flex flex-col gap-2">
-                  <Link href="/mission-control" className="text-xs font-bold text-slate-800 hover:text-blue-600 p-2 rounded-lg hover:bg-slate-50 transition-all">AiX Mission Control</Link>
-                  <Link href="/risk-simulator" className="text-xs font-bold text-slate-800 hover:text-blue-600 p-2 rounded-lg hover:bg-slate-50 transition-all">Risk Simulator</Link>
-                  <Link href="/personal-dashboard" className="text-xs font-bold text-slate-800 hover:text-blue-600 p-2 rounded-lg hover:bg-slate-50 transition-all">Personal Dashboard</Link>
-                  <Link href="/second-opinion" className="text-xs font-bold text-slate-800 hover:text-blue-600 p-2 rounded-lg hover:bg-slate-50 transition-all">Second Opinion</Link>
-                  <Link href="/luxury-garage" className="text-xs font-bold text-slate-800 hover:text-blue-600 p-2 rounded-lg hover:bg-slate-50 transition-all">Luxury Garage</Link>
-                  <Link href="/client-journey" className="text-xs font-bold text-slate-800 hover:text-blue-600 p-2 rounded-lg hover:bg-slate-50 transition-all">Client Journey</Link>
-                  <Link href="/trust-center" className="text-xs font-bold text-slate-800 hover:text-blue-600 p-2 rounded-lg hover:bg-slate-50 transition-all">Trust Center</Link>
-                  <Link href="/smart-forms" className="text-xs font-bold text-slate-800 hover:text-blue-600 p-2 rounded-lg hover:bg-slate-50 transition-all">Smart Forms</Link>
+              <div className="absolute top-full left-1/2 -translate-x-1/2 w-[900px] bg-white border border-border/50 shadow-2xl rounded-3xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform origin-top translate-y-4 group-hover:translate-y-0 p-8 z-50">
+                <div className="grid grid-cols-4 gap-8">
+                  {ecosystemMenuData.map((col, i) => (
+                    <div key={i} className="flex flex-col">
+                      <div className="flex flex-col items-start mb-4 pb-4 border-b border-border/50">
+                        <h4 className="font-bold text-foreground text-sm tracking-tight">{col.title}</h4>
+                      </div>
+                      <ul className="space-y-3">
+                        {col.items.map((item, j) => (
+                          <li key={j}>
+                            <Link href={item.href} className="text-sm text-muted-foreground hover:text-blue-600 transition-colors block">
+                              {item.name}
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
-            <Link href="/simulator" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">Life Simulator</Link>
-            <Link href="/financial-twin" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">Financial Twin</Link>
-            <Link href="/academy" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">Academy</Link>
-            <Link href="/resurse" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">Resurse</Link>
-            <Link href="/urgente" className="text-sm font-bold text-rose-600 hover:text-rose-700 transition-colors">Urgențe</Link>
           </nav>
 
           <div className="hidden md:flex items-center gap-3">
@@ -203,21 +253,56 @@ export function Navbar() {
               <Link href="/despre-mine" onClick={() => setIsMobileMenuOpen(false)} className="text-2xl font-bold p-2 border-b border-border/50">Despre Mine</Link>
               
               <div className="flex flex-col border-b border-border/50">
-                <button className="text-2xl font-bold p-2 text-left" onClick={() => setActiveMobileMegaMenu(activeMobileMegaMenu !== null ? null : 1)}>
+                <button 
+                  className="text-2xl font-bold p-2 text-left flex justify-between items-center" 
+                  onClick={() => setActiveMobileMegaMenu(activeMobileMegaMenu === 1 ? null : 1)}
+                >
                   Asigurări
+                  <ChevronDown className={cn("w-6 h-6 transition-transform", activeMobileMegaMenu === 1 ? "rotate-180" : "")} />
                 </button>
-                <div className="pl-4 pb-4 flex flex-col gap-6">
-                  {megaMenuData.map((col, i) => (
-                    <div key={i} className="flex flex-col gap-2">
-                      <h4 className="font-bold text-blue-600 flex items-center gap-2 mt-2">{col.icon} {col.title}</h4>
-                      {col.items.map((item, j) => (
-                        <Link key={j} href={item.href} onClick={() => setIsMobileMenuOpen(false)} className="text-base text-muted-foreground py-1 pl-7">
-                          {item.name}
-                        </Link>
-                      ))}
-                    </div>
-                  ))}
-                </div>
+                {activeMobileMegaMenu === 1 && (
+                  <div className="pl-4 pb-4 flex flex-col gap-6">
+                    {megaMenuData.map((col, i) => (
+                      <div key={i} className="flex flex-col gap-2">
+                        <h4 className="font-bold text-blue-600 flex items-center gap-2 mt-2">{col.icon} {col.title}</h4>
+                        {col.items.map((item, j) => (
+                          <Link key={j} href={item.href} onClick={() => setIsMobileMenuOpen(false)} className="text-base text-muted-foreground py-1 pl-7">
+                            {item.name}
+                          </Link>
+                        ))}
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+
+              <div className="flex flex-col border-b border-border/50">
+                <button 
+                  className="text-2xl font-bold p-2 text-left flex justify-between items-center" 
+                  onClick={() => setActiveMobileMegaMenu(activeMobileMegaMenu === 2 ? null : 2)}
+                >
+                  Ecosistem AiX
+                  <ChevronDown className={cn("w-6 h-6 transition-transform", activeMobileMegaMenu === 2 ? "rotate-180" : "")} />
+                </button>
+                {activeMobileMegaMenu === 2 && (
+                  <div className="pl-4 pb-4 flex flex-col gap-6 bg-slate-50/50 p-4 rounded-2xl">
+                    {ecosystemMenuData.map((col, i) => (
+                      <div key={i} className="flex flex-col gap-2">
+                        <h4 className="font-bold text-xs text-slate-400 uppercase tracking-widest mt-2">{col.title}</h4>
+                        {col.items.map((item, j) => (
+                          <Link 
+                            key={j} 
+                            href={item.href} 
+                            onClick={() => setIsMobileMenuOpen(false)} 
+                            className="text-base text-slate-800 py-1 font-semibold"
+                          >
+                            {item.name}
+                          </Link>
+                        ))}
+                      </div>
+                    ))}
+                  </div>
+                )}
               </div>
 
               <Link href="/de-ce-asigurari" onClick={() => setIsMobileMenuOpen(false)} className="text-2xl font-bold p-2 border-b border-border/50">De Ce Asigurări</Link>
