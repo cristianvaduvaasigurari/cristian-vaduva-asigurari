@@ -1,20 +1,27 @@
 "use client";
 
-import React from "react";
+import React, { useRef, useState } from "react";
 import { CheckCircle2, AlertTriangle, TrendingUp, Shield, Activity, ArrowRight, Printer } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { generatePDFFromElement } from "@/lib/pdf-generator";
 
 export function StrategyReport() {
-  const handlePrint = () => {
-    window.print();
+  const documentRef = useRef<HTMLDivElement>(null);
+  const [isGenerating, setIsGenerating] = useState(false);
+
+  const handlePrint = async () => {
+    if (!documentRef.current) return;
+    setIsGenerating(true);
+    await generatePDFFromElement(documentRef.current, "Raport-Strategic-AiX");
+    setIsGenerating(false);
   };
 
   return (
     <div className="w-full max-w-[850px] mx-auto">
       {/* Utility Bar (Hidden on Print) */}
       <div className="flex justify-end gap-3 mb-6 print:hidden">
-        <Button variant="outline" className="rounded-full bg-white font-bold" onClick={handlePrint}>
-          <Printer className="w-4 h-4 mr-2" /> Printează / Salvează PDF
+        <Button variant="outline" className="rounded-full bg-white font-bold" onClick={handlePrint} disabled={isGenerating}>
+          <Printer className="w-4 h-4 mr-2" /> {isGenerating ? "Se generează..." : "Descarcă PDF"}
         </Button>
         <Button className="rounded-full bg-blue-600 hover:bg-blue-700 text-white font-bold" onClick={() => window.location.href='/contact'}>
           Programează Implementarea <ArrowRight className="w-4 h-4 ml-2" />
@@ -22,7 +29,7 @@ export function StrategyReport() {
       </div>
 
       {/* A4 Document Container */}
-      <div className="bg-white p-8 md:p-16 rounded-[2rem] shadow-2xl print:shadow-none print:p-0 print:rounded-none">
+      <div ref={documentRef} className="bg-white p-8 md:p-16 rounded-[2rem] shadow-2xl print:shadow-none print:p-0 print:rounded-none">
         
         {/* Header */}
         <div className="border-b-4 border-slate-900 pb-8 mb-10 flex justify-between items-end">

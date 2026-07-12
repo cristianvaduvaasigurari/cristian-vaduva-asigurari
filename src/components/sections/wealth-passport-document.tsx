@@ -1,14 +1,19 @@
 "use client";
 
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { Shield, Printer, User, AlertTriangle, Award } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { generatePDFFromElement } from "@/lib/pdf-generator";
 
 export function WealthPassportDocument() {
   const documentRef = useRef<HTMLDivElement>(null);
+  const [isGenerating, setIsGenerating] = useState(false);
 
-  const handlePrint = () => {
-    window.print();
+  const handlePrint = async () => {
+    if (!documentRef.current) return;
+    setIsGenerating(true);
+    await generatePDFFromElement(documentRef.current, "Wealth-Passport-AiX");
+    setIsGenerating(false);
   };
 
   return (
@@ -19,8 +24,8 @@ export function WealthPassportDocument() {
         <p className="text-xs text-muted-foreground font-medium">
           * Salvează sau printează acest pașaport digital pentru utilizare oficială.
         </p>
-        <Button onClick={handlePrint} className="h-11 rounded-full bg-slate-900 text-white font-bold text-xs hover:bg-slate-800 transition-colors flex items-center gap-2 shadow-sm">
-          <Printer className="w-4 h-4" /> Descarcă / Printează PDF
+        <Button onClick={handlePrint} disabled={isGenerating} className="h-11 rounded-full bg-slate-900 text-white font-bold text-xs hover:bg-slate-800 transition-colors flex items-center gap-2 shadow-sm">
+          <Printer className="w-4 h-4" /> {isGenerating ? "Se generează..." : "Descarcă / Printează PDF"}
         </Button>
       </div>
 

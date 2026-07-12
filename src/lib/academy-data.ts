@@ -21,6 +21,449 @@ export const categories = [
 ];
 
 // Content string builders for massive articles
+const generateHomeFindContent = () => `
+## Introducere: De ce sistemul clasic de achiziție este depășit?
+
+Achiziția unei proprietăți este, pentru majoritatea oamenilor, cea mai importantă decizie financiară din viață. Cu toate acestea, piața imobiliară tradițională este plină de asimetrii informaționale: agenții imobiliari reprezintă adesea vânzătorul, iar cumpărătorul navighează "în orb", bazându-se pe emoții, poze prelucrate și vizionări grăbite de 15 minute. 
+
+Ce este o proprietate? Un simplu acoperiș deasupra capului sau un activ financiar care trebuie să performeze? Home Find schimbă radical această paradigmă. Nu vindem case. Cumpărăm randamente, liniște și structuri sigure pentru clienții noștri.
+
+## Ce este Home Find?
+
+Home Find este o divizie de "Buyer Representation" (Reprezentarea Cumpărătorului) exclusivistă, integrată cu tehnologia Proptech. Spre deosebire de o agenție imobiliară clasică, noi nu listăm zeci de proprietăți în speranța că vom găsi un cumpărător. Noi lucrăm strict pentru tine, Cumpărătorul, și căutăm pe întreaga piață (inclusiv proprietăți "off-market") acel activ care corespunde 100% cu profilul tău de risc, bugetul și obiectivele pe termen lung.
+
+## De ce contează reprezentarea exclusivă?
+
+- **Conflictul de interese eliminat:** Agentul vânzătorului vrea prețul maxim. Noi vrem prețul corect, condiții contractuale sigure și zero vicii ascunse.
+- **Timp salvat:** Omiterea zecilor de vizionări inutile. Vizionăm noi 20 de proprietăți și îți prezentăm doar cele mai bune 3, printr-un raport de analiză tehnică și financiară.
+- **Acces la proprietăți "Off-Market":** Multe proprietăți premium, terenuri cu potențial sau oportunități de tip "distressed" (executări, vânzări urgente) nu ajung niciodată pe portalurile publice. Prin rețeaua noastră, ai acces prioritar.
+
+## Cum funcționează procesul Home Find?
+
+Procesul este strict structurat, ingineresc, pentru a elimina orice decizie bazată pe emoție pură.
+
+### 1. Sesiunea de Calibrare (Onboarding)
+Totul începe cu un interviu financiar detaliat. Nu te întrebăm doar "câte camere vrei?". Analizăm bugetul maxim de achiziție, structura de finanțare (cash vs. credit), randamentul dorit (dacă e investiție), orizontul de timp și preferințele de lifestyle.
+
+### 2. Maparea și Scanarea Pieței
+Algoritmii noștri și echipa de analiști scanează zilnic baze de date, licitații, contactează direct proprietari din zonele vizate și analizează istoricul de preț al zonei. Generăm o listă scurtă (Shortlist).
+
+### 3. Inspecția Tehnică și Juridică Preliminară
+Înainte de a te chema la vizionare, noi mergem pe teren. Verificăm viciile de structură vizibile, instalațiile, vecinătățile (proximitate față de surse de zgomot), și cerem actele de proprietate pentru o verificare juridică rapidă (sarcini, litigii, istoric).
+
+### 4. Raportul "AiX Property Assessment"
+Primești un raport detaliat pentru fiecare proprietate din "Shortlist". Raportul include calculul Randamentului Net (Net Yield), estimarea costurilor de renovare, analiza comparativă de piață (CMA) și riscurile asociate.
+
+### 5. Negocierea și Închiderea Tranzacției (The Closing)
+Aici intervine cu adevărat expertiza noastră. Negociem agresiv, dar argumentat. Structurăm antecontractul astfel încât avansul tău să fie 100% protejat. Colaborăm cu notari și avocați parteneri pentru a asigura un transfer de proprietate perfect curat.
+
+## Exemple Practice: Capcane Evitate
+
+- **Cazul "Apartamentului Proaspăt Renovat":** Un client a dorit un apartament superb la un preț atractiv. Inspecția noastră tehnică a dezvăluit că "renovarea" ascundea igrasie severă și infiltrații de la terasă (ultimul etaj). Am salvat clientul de o pagubă de mii de euro.
+- **Cazul "Randamentului Fals":** Un apartament vândut "la pachet cu chiriaș" promitea 7% randament. Analiza noastră a arătat că acel chiriaș plătea peste prețul pieței (probabil un aranjament pe termen scurt), iar cheltuielile de mentenanță erau uriașe. Randamentul real era de 3.5%.
+
+## Sfaturi pentru Cumpărători
+
+- Nu te lăsa presat de "oferte care expiră mâine". O proprietate bună se cumpără cu mintea, nu cu frica de a o pierde.
+- Cere întotdeauna certificatul energetic, extrasul de carte funciară la zi și istoricul plăților la întreținere.
+- Calculează costul "invizibil": naveta zilnică, taxele de parcare, renovările iminente.
+
+<div class="bg-blue-50 p-6 rounded-2xl border border-blue-100 my-8">
+  <h4 class="font-bold text-blue-800 mb-2 flex items-center gap-2">💡 Tip AiX</h4>
+  <p class="text-blue-700">Dacă ești investitor, nu cumpăra ceea ce îți place ție personal, cumpără ceea ce se cere pe piața de închirieri în acea zonă. Designul neutru, optimizarea spațiului și mentenanța ieftină sunt secretele randamentului.</p>
+</div>
+
+## Avertismente
+
+- Nu plăti niciodată un avans semnificativ fără o clauză de "Due Diligence" (perioadă de verificare).
+- Evită proprietățile aflate în litigiu, chiar dacă "sunt aproape rezolvate". Timpul tău și banii tăi nu trebuie blocați în procese.
+
+## Întrebări Frecvente (FAQ)
+
+**1. Cât costă serviciul Home Find?**
+Fiind un serviciu premium de reprezentare exclusivă, lucrăm pe bază de comision de succes (între 2% și 3% + TVA din prețul final), dar valoarea adusă prin negociere și riscuri evitate depășește adesea cu mult acest onorariu.
+
+**2. Găsiți și credite ipotecare?**
+Da. Interfațăm achiziția cu soluții de finanțare optime, analizând oferte de la toate băncile majore.
+
+**3. Cât durează procesul?**
+De la onboarding până la găsirea proprietății durează în medie 30-45 de zile, urmat de procesul juridic (aprox. 14-30 zile).
+
+## Sumar
+
+Home Find transformă cumpărarea unei case dintr-un proces stresant și plin de capcane, într-o achiziție sigură, matematic demonstrată, asistată de experți dedicați exclusiv interesului tău.
+
+## Call to Action
+
+Ești pregătit să cumperi inteligent? Programează o sesiune de strategie imobiliară și lasă echipa noastră să găsească activul perfect pentru tine.
+`;
+
+const generateAixOsContent = () => `
+## Introducere: De la Haos Financiar la Orchestare Perfectă
+
+Trăim într-o lume în care fiecare persoană are zeci de conturi bancare, polițe de asigurare răspândite la diferiți brokeri, proprietăți imobiliare și investiții pe diverse platforme. Rezultatul? Un haos financiar în care este imposibil să ai o imagine clară asupra patrimoniului tău, să identifici riscurile ascunse sau să știi exact cât valorezi net. AiX OS este soluția supremă la această problemă.
+
+## Ce este AiX OS?
+
+AiX OS este un Ecosistem Financiar Inteligent (Financial Operating System) care funcționează ca un "creier" central pentru toată viața ta financiară. Nu este doar o aplicație de bugetare, ci un sistem avansat care îți digitalizează, analizează și optimizează întregul patrimoniu. Folosind inteligența artificială, AiX OS creează un "Financial Twin" – o copie digitală a situației tale financiare curente.
+
+## De ce contează AiX OS?
+
+Cea mai mare greșeală a planificării financiare tradiționale este fragmentarea. Dacă îți iei o asigurare de viață, agentul nu știe ce credite ai. Dacă îți iei un credit, bancherul nu știe ce investiții ai. AiX OS sparge aceste silozuri. Oferă o vedere de ansamblu (360 de grade) care permite simularea unor scenarii complexe și identificarea vulnerabilităților înainte ca ele să devină crize.
+
+## Funcționalități Principale
+
+### 1. The Wealth Dashboard
+O singură pagină, un singur adevăr. Aici vezi "Net Worth-ul" tău (Averea Netă), actualizat în timp real. Sistemul integrează valoarea estimată a proprietăților tale, conturile bancare, portofoliul de investiții și scade automat pasivele (creditele ipotecare, leasing-urile).
+
+### 2. AiX Financial Twin
+Creezi o clonă digitală a profilului tău. Poți rula simulări: "Ce se întâmplă dacă dobânzile cresc cu 2%?", "Cum arată cash-flow-ul familiei dacă venitul meu dispare brusc timp de 6 luni?". Sistemul îți arată exact unde "sângerezi" financiar.
+
+### 3. Vault-ul Securizat (Document Management)
+Nu mai cauți polița RCA în torpedoul mașinii sau contractul casei prin dosare prăfuite. Toate documentele vitale sunt scanate, criptate și stocate în Vault-ul AiX OS. Sistemul citește datele de expirare și te notifică automat cu 30 de zile înainte.
+
+### 4. Arhitectura de Protecție (Protection Score)
+Algoritmul analizează ce polițe ai și le compară cu expunerea ta la risc. Dacă ai un credit de 100.000 EUR dar nu ai o asigurare de viață, Scor-ul tău de Protecție va scădea drastic, generând o alertă roșie ("Vulnerabilitate Critică").
+
+## Exemple Practice: Puterea AiX OS
+
+- **Identificarea "Găurilor Negre":** Un client credea că este foarte profitabil pentru că încasa chirii lunare consistente. Introducând datele în AiX OS, sistemul a calculat rata internă de rentabilitate (IRR) și a demonstrat că, ajustat la inflație și costurile de mentenanță ascunse, randamentul său real era negativ.
+- **Optimizarea Succesiunii:** Prin maparea clară a tuturor activelor în AiX OS, un client a putut genera instantaneu un "Wealth Passport", un document vital care i-a facilitat crearea unui plan succesoral clar cu avocatul său, economisind luni de investigații.
+
+## Sfaturi pentru Utilizatori
+
+- **Transparență Totală:** Sistemul funcționează optim doar dacă introduci date reale. Un "Financial Twin" bazat pe date parțiale va genera recomandări greșite.
+- **Actualizează Constant:** Dacă vinzi o mașină sau achiți anticipat un credit, actualizează starea în AiX OS pentru a menține scorul de risc precis.
+- **Folosește Simulatorul:** Înainte de a lua orice decizie financiară majoră (ex: cumpărarea unei noi case), rulează scenariul în AiX OS.
+
+<div class="bg-emerald-50 p-6 rounded-2xl border border-emerald-100 my-8">
+  <h4 class="font-bold text-emerald-800 mb-2 flex items-center gap-2">💡 Tip AiX</h4>
+  <p class="text-emerald-700">Sincronizează calendarele de reînnoire ale polițelor tale. AiX OS îți va permite să negociezi oferte mai bune de reînnoire, având timp suficient înainte de expirarea poliței curente.</p>
+</div>
+
+## Avertismente
+
+- **Securitatea Datelor:** Nu partaja niciodată datele de logare ale contului tău AiX OS. Deși sistemul folosește criptare bancară, securitatea parolei tale este esențială.
+- **Nu Înlocuiește Sfaturile Legale:** AiX OS îți dă matematica și direcția, dar execuția structurilor juridice complexe (trust-uri, fundații) trebuie făcută alături de experți legali.
+
+## Întrebări Frecvente (FAQ)
+
+**1. Cât de sigure sunt datele mele în AiX OS?**
+Folosim protocoale de securitate la standarde militare și criptare End-to-End. Datele tale financiare nu sunt vândute niciodată terților.
+
+**2. Pot folosi AiX OS dacă am venituri mici?**
+Da. Disciplina financiară începe de la primul salariu. Maparea datoriilor (credite de consum) și crearea unui fond de urgență sunt primii pași în ecosistem.
+
+**3. Cum se diferențiază de aplicațiile bancare obișnuite?**
+Aplicația băncii îți arată doar ce se întâmplă la acea bancă. AiX OS este "Agnostic" – consolidează informații de la toate instituțiile, asiguratorii și din piața imobiliară.
+
+## Sumar
+
+AiX OS este mai mult decât un soft; este un consultant financiar digital care lucrează 24/7. Te ajută să treci de la decizii financiare reactive, bazate pe stres, la o arhitectură financiară proactivă și invincibilă.
+
+## Call to Action
+
+Preia controlul asupra viitorului tău financiar. Creează-ți astăzi profilul AiX OS și descoperă care este Scor-ul tău de Protecție.
+`;
+
+const generateRcaContent = () => `
+## Introducere: De ce RCA-ul nu este doar "o taxă pe mașină"
+
+Asigurarea de Răspundere Civilă Auto (RCA) este obligatorie prin lege, ceea ce a creat, din păcate, o percepție greșită în rândul șoferilor: aceea că RCA-ul este o simplă "taxă" pe care trebuie să o plătești ca să nu primești amendă de la poliție. Această mentalitate duce la decizii financiare catastrofale, cum ar fi alegerea constantă a celui mai ieftin asigurator de pe piață, fără a înțelege riscurile.
+
+În realitate, RCA-ul este un scut financiar imens. El preia răspunderea ta legală pentru daunele (materiale sau vătămări corporale) pe care le provoci altora dintr-o greșeală în trafic.
+
+## Ce este RCA și cum funcționează?
+
+RCA-ul despăgubește terțul prejudiciat. Dacă tu lovești o mașină din spate, polița ta RCA va plăti reparația mașinii celuilalt șofer. Limitele de despăgubire sunt enorme, stabilite la nivel european: milioane de euro pentru vătămări corporale și peste un milion de euro pentru daune materiale.
+
+De ce contează la cine îți faci RCA dacă el plătește pe altul? Pentru că, în caz de accident grav, dacă asiguratorul tău este rău-platnic sau dă faliment, terțul prejudiciat (victima) te poate da în judecată direct pe TINE pentru recuperarea daunelor!
+
+## Decontarea Directă: Revoluția RCA-ului
+
+Cea mai importantă clauză pe care trebuie să o adaugi poliței tale RCA este "Decontarea Directă". 
+
+### Ce este Decontarea Directă?
+Fără ea, dacă cineva te lovește pe tine, trebuie să îți repari mașina pe polița LUI RCA (și să te rogi să aibă un asigurator bun). 
+CU Decontarea Directă, dacă ești lovit, mergi la PROPRIUL tău asigurator RCA, îi prezinți constatarea amiabilă, el îți repară mașina imediat, și apoi asiguratorul tău se va "lupta" cu asiguratorul vinovatului pentru a recupera banii.
+
+### De ce este vitală?
+Îți cumperi, practic, servicii de asistență și reparație de la asiguratorul tău, protejându-te de calitatea slabă a asigurării celui care te-a lovit. Costa infim (de obicei 100-200 RON pe an), dar îți salvează mii de euro și luni de stres.
+
+## Sistemul Bonus-Malus
+
+Acesta este sistemul prin care asiguratorii te recompensează sau te penalizează în funcție de comportamentul tău în trafic.
+
+- **Bonus (B0 la B8):** Dacă nu ai daune, în fiecare an urci o clasă de Bonus. Fiecare clasă reduce prețul poliței. Clasa maximă (B8) îți aduce o reducere de 50% din tariful de bază.
+- **Malus (M1 la M8):** Dacă provoci un accident, ești penalizat cu 2 clase (ex: din B4 cazi în B2). Dacă ai daune multiple, intri în clasele M, ceea ce înseamnă majorări uriașe ale prețului (până la +80%).
+
+## Exemple Practice: Greșeli Frecvente
+
+- **Cazul "Cel mai ieftin asigurator":** Un client a refuzat Decontarea Directă pentru a economisi 150 RON. A fost lovit de un șofer asigurat la o companie în dificultate financiară. Reparația de 4000 EUR a fost aprobată după 6 luni, timp în care mașina a stat în service. Dacă ar fi avut Decontarea Directă la un asigurator premium, mașina ar fi fost gata în 2 săptămâni.
+- **Cazul "Amiabila Completată Greșit":** După o tamponare, șoferii au completat amiabila fără a face schița clară a direcției de deplasare. Asiguratorul a dat "Culpă Comună" (50/50), ceea ce a însemnat că ambii și-au pierdut clasele de Bonus, iar despăgubirile au fost înjumătățite.
+
+## Sfaturi pentru RCA
+
+- **Alege Asiguratori de Top (Tier 1):** Mai ales dacă iei Decontarea Directă. Vrei să te repari pe polița ta RCA la fel de rapid ca pe CASCO.
+- **Fă poze la locul accidentului:** Înainte de a muta mașinile, fotografiază poziția lor, semnele de circulație din zonă și daunele vizibile.
+- **Completează Formularul Corect:** Asigură-te că ambele părți au semnat și că datele sunt lizibile.
+
+<div class="bg-blue-50 p-6 rounded-2xl border border-blue-100 my-8">
+  <h4 class="font-bold text-blue-800 mb-2 flex items-center gap-2">💡 Tip AiX</h4>
+  <p class="text-blue-700">Dacă vinzi mașina înainte de expirarea poliței RCA, poți cere returnarea primei (banilor) pentru lunile rămase, trimițând asiguratorului contractul de vânzare-cumpărare și radierea fiscală.</p>
+</div>
+
+## Avertismente
+
+- **Conducerea sub Influența Alcoolului:** Dacă provoci un accident beat sau fără permis, asiguratorul RCA va despăgubi victima, dar va veni cu "Acțiune în Regres" împotriva ta. Adică te va executa silit pentru a-și recupera absolut toți banii plătiți.
+- **Nesemnalizarea Daunei în 24h:** Legea impune anunțarea asiguratorului sau a Poliției în termen scurt. Întârzierile nejustificate pot duce la investigații antifraudă și refuzul plății.
+
+## Întrebări Frecvente (FAQ)
+
+**1. Trebuie să am RCA fizic (hârtie)?**
+Nu, este suficient să ai polița în format digital (PDF pe telefon) conform reglementărilor actuale din România.
+
+**2. RCA-ul acoperă furtul mașinii mele?**
+Sub nicio formă. RCA despăgubește doar daunele făcute altora. Pentru furt, fenomene naturale sau avarii proprii, ai nevoie de CASCO.
+
+**3. Ce se întâmplă dacă sunt lovit de un șofer fără RCA?**
+Vei fi despăgubit de BAAR (Biroul Asigurătorilor de Autovehicule din România) din Fondul de Protecție a Victimelor Străzii, dar procesul este greoi. Iarăși, dacă ai CASCO, scapi de acest stres.
+
+## Sumar
+
+RCA-ul nu trebuie privit ca o taxă, ci ca pe o responsabilitate socială și un scut de protecție împotriva ruinării financiare. Împreună cu Decontarea Directă, devine un instrument cu adevărat util pentru tine.
+
+## Call to Action
+
+Verifică clasa ta de Bonus-Malus și solicită o cotație RCA + Decontare Directă la asiguratorii premium recomandați de AiX OS.
+`;
+
+const generatePatrimoniuContent = () => `
+## Introducere: De la Câștig la Păstrare
+
+Construirea averii este doar jumătate din ecuație. A doua jumătate, mult mai complexă și adesea ignorată în România, este protejarea, conservarea și transferul acestei averi. "Asset Protection" (Protejarea Patrimoniului) nu este doar pentru miliardari; este esențială pentru orice antreprenor, profesionist (medic, arhitect) sau investitor care dorește să își asigure moștenirea financiară împotriva litigiilor, divorțurilor, falimentelor comerciale sau taxelor excesive.
+
+## Ce este Protejarea Patrimoniului?
+
+Protejarea patrimoniului reprezintă implementarea de strategii juridice și financiare preemptive (înainte de apariția unei probleme) pentru a separa activele personale de riscurile de business sau profesionale. Scopul nu este evaziunea fiscală sau ascunderea banilor de creditori legitimi (ceea ce constituie infracțiune), ci folosirea legii pentru a construi bariere ("firewalls") în jurul averii tale.
+
+## De ce contează în România?
+
+- **Răspunderea Administratorului:** Mulți antreprenori români cred că forma "S.R.L." (Societate cu Răspundere Limitată) le protejează casa și mașina personală în caz de faliment. Greșit! În caz de insolvență din culpă (ex: management defectuos, neplata taxelor la stat), ANAF-ul sau creditorii pot atrage răspunderea personală a administratorului, executându-i averea privată.
+- **Răspunderea Profesională (Malpraxis):** Un chirurg sau un inginer proiectant riscă procese civile de milioane de euro pentru o eroare umană. Dacă asigurarea de malpraxis nu acoperă întreaga sumă, activele lor personale sunt în pericol.
+- **Vulnerabilitatea Succesorală:** Fără o planificare corectă, decesul "capului familiei" poate lăsa conturile blocate, partenerii de afaceri preluând controlul companiei, și moștenitorii sfâșiindu-se în procese civile ani de zile.
+
+## Structuri de Bază în Asset Protection
+
+### 1. Separarea Entităților (The Corporate Firewall)
+Niciodată nu trebuie să deții activele valoroase (clădiri, echipamente, patente) pe aceeași companie care desfășoară activitatea operațională și care încheie contractele (cea expusă la litigii). Se folosește o structură "Holding - Operațional". Compania Operațională închiriază activele de la Compania Holding. Dacă Operaționalul dă faliment, creditorii nu pot atinge clădirile din Holding.
+
+### 2. Asigurările "Umbrelă" și D&O
+Asigurarea "Directors & Officers" (D&O) preia răspunderea civilă a administratorului. Asigurările profesionale de malpraxis și cele generale de răspundere (CGL) sunt prima linie de apărare. Nu poți proteja eficient activele fără a avea "scutul" asigurărilor activat.
+
+### 3. Divizarea Patrimonială Matrimonială
+În România, regimul implicit este "comunitatea legală de bunuri". Dacă unul dintre soți este antreprenor cu riscuri mari, contractul prenupțial sau convenția matrimonială de "separație de bunuri" este vitală pentru a proteja jumătatea de avere a soțului neimplicat în afaceri de creditorii firmei.
+
+### 4. Instrumente de Transfer Succesoral
+- **Asigurarea de viață de risc pur:** Asigură lichiditate imediată familiei, nefiind supusă masei succesorale (nu se împarte, merge direct la beneficiarul desemnat).
+- **Testamente și Planificări:** Folosirea mandatelor "post-mortem" sau a clauzelor specifice în statutele companiilor (clauze de preempțiune la decesul asociatului).
+
+## Exemple Practice: Cum se pierd averile
+
+- **Cazul "Garantării în Nume Personal":** Un antreprenor a luat un credit pe firmă, dar banca i-a cerut "bilet la ordin avalizat în nume personal". Când firma a intrat în insolvență din cauza pieței, banca l-a executat silit pe persoană fizică, luându-i casele de vacanță pe care le acumulase în 10 ani.
+- **Cazul "Moștenirii Blocate":** Un investitor cu conturi de brokeraj mari în străinătate a decedat fără testament. Familia a trebuit să angajeze avocați internaționali, plătind taxe succesorale externe uriașe, și a durat 3 ani până au avut acces la lichidități.
+
+## Sfaturi pentru Protejarea Patrimoniului
+
+- **Acționează devreme:** Strategiile de protecție trebuie create "pe timp de pace". Orice transfer de active făcut "pe timp de război" (după ce ai fost dat în judecată sau ai datorii la Fisc) va fi anulat în instanță ca fiind "acțiune pauliană" sau "fraudare a creditorilor".
+- **Diversificare jurisdicțională:** Nu ține toți banii într-o singură țară, într-o singură valută și la o singură bancă.
+- **Păstrează confidențialitatea:** Nu îți expune valoarea netă public. Discreția este prima formă de protecție.
+
+<div class="bg-rose-50 p-6 rounded-2xl border border-rose-100 my-8">
+  <h4 class="font-bold text-rose-800 mb-2 flex items-center gap-2">⚠️ Avertisment</h4>
+  <p class="text-rose-700">Evitați soluțiile miraculoase vândute pe internet de tip "Firme Offshore în Seychelles" fără o consultanță fiscală serioasă. Regulile anti-evaziune s-au înăsprit masiv (ex: CRS, FATCA), iar ascunderea activelor nedeclarate vă expune la dosare penale.</p>
+</div>
+
+## Întrebări Frecvente (FAQ)
+
+**1. Ce este un Trust? Se aplică în România?**
+România a implementat în Codul Civil instituția "Fiduciei" (echivalentul latin al Trust-ului anglo-saxon). Poți transfera activele tale către un Fiduciar, care le administrează în folosul unor beneficiari (ex: copiii tăi), izolându-le de riscurile tale personale.
+
+**2. Fundația Privată este o soluție bună?**
+Da, în anumite jurisdicții europene (Liechtenstein, Austria), fundațiile de familie sunt excelente pentru protecție inter-generațională, dar necesită un patrimoniu de minimum câteva milioane de euro pentru a justifica costurile de administrare.
+
+**3. Asigurările Unit-Linked protejează de executare silită?**
+Da. În legislația din România, polițele de asigurare de viață (inclusiv cele cu componentă investițională) nu pot fi urmărite silit (sechestrate) de creditori pe parcursul acumulării, oferind un grad ridicat de protecție a capitalului.
+
+## Sumar
+
+Protejarea patrimoniului este arta de a controla totul fără a deține, în mod direct și vulnerabil, nimic pe persoană fizică expusă. Soluțiile hibride (Holdinguri, Asigurări, Fiducie) creează un scut indestructibil în fața incertitudinii.
+
+## Call to Action
+
+Programează un "Audit de Vulnerabilitate Patrimonială" cu echipa AiX OS și protejează-ți munca de o viață înainte să fie prea târziu.
+`;
+
+const generateIndependentaContent = () => `
+## Introducere: Mitul Pensionării la 65 de Ani
+
+Societatea modernă ne învață un singur traseu: învață, muncește 40 de ani, economisește (dacă poți) și pensionează-te la 65 de ani cu o pensie de stat care abia acoperă medicamentele. Acest model este depășit matematic și demografic. Independența Financiară (Financial Independence / FIRE) nu înseamnă să devii miliardar, ci să ajungi în punctul în care venitul tău pasiv (generat de active) depășește cheltuielile tale de trai. Din acel moment, munca devine o opțiune, nu o obligație.
+
+## Ce este Independența Financiară?
+
+Independența financiară este starea în care capitalul tău lucrează pentru tine mai eficient decât lucrezi tu pentru capital. Este rezultatul a trei piloni fundamentali:
+1.  **Reducerea Ratei de Cheltuieli** (Traiul sub posibilități).
+2.  **Maximizarea Veniturilor** (Scalarea carierei sau business-ului).
+3.  **Investițiile Compuse** (Plasarea diferenței în active producătoare de valoare).
+
+## Regula de 4% (The 4% Rule)
+
+Câți bani îți trebuie pentru a fi liber financiar? Regula de 4% (cunoscută din Studiul Trinity) este busola. Această regulă spune că poți retrage, ajustat la inflație, 4% din portofoliul tău de investiții diversificat în fiecare an, fără a epuiza capitalul timp de cel puțin 30 de ani.
+
+**Calculul "Numărului Tău":**
+Cheltuielile tale anuale estimate × 25 = Suma de care ai nevoie.
+
+*Exemplu:* Dacă ai nevoie de 2000 EUR pe lună pentru a trăi bine (24.000 EUR/an), "Numărul Tău" pentru independență financiară este: 24.000 × 25 = **600.000 EUR**.
+Dacă ai 600.000 EUR investiți în indici bursieri și imobiliare, ei vor genera suficient (din dobânzi, dividende și apreciere) pentru a-ți susține stilul de viață la nesfârșit.
+
+## Etapele Construirii Averii
+
+### 1. Fondul de Siguranță (Urgență)
+Primul pas. Nu investești niciun leu până nu ai echivalentul a 3-6 luni de cheltuieli într-un depozit bancar lichid sau titluri de stat pe termen scurt. Acesta este scutul tău împotriva concedierilor, urgențelor medicale majore sau reparațiilor auto masive. Te previne din a vinde activele în pierdere când ai nevoie urgentă de cash.
+
+### 2. Eliminarea Datoriilor "Toxice"
+Creditele de consum (cu dobânzi de 10-15%) și cardurile de credit (dobânzi de >20%) sunt "hemoragii financiare". Nicio investiție sigură nu îți va aduce constant un randament mai mare decât dobânda pe care o plătești la cardul de credit. Achită-le folosind metoda "Avalanșei" (dobânda cea mai mare prima) sau "Bulgărelui de Zăpadă" (soldul cel mai mic primul).
+
+### 3. Magia Dobânzii Compuse (Albert Einstein: "A 8-a minune a lumii")
+Dacă investești 300 EUR pe lună, timp de 30 de ani, la un randament mediu istoric al pieței de 8% pe an:
+- Suma investită de tine: 108.000 EUR
+- Valoarea portofoliului la final: **447.000 EUR**
+Diferența de peste 330.000 EUR este dobânda compusă (câștigul generat de câștigurile anterioare). Secretul aici nu este suma, ci **Timpul**.
+
+### 4. Diversificarea (Asset Allocation)
+Nu pune toate ouăle în același coș:
+- **Bursa (Acțiuni/ETF-uri):** Oferă cel mai mare randament pe termen lung, dar cu volatilitate ridicată. Se recomandă ETF-uri globale (S&P 500, MSCI World).
+- **Imobiliare (Real Estate):** Oferă cash-flow constant și protecție anti-inflație.
+- **Titluri de Stat / Obligațiuni:** Oferă siguranță și volatilitate redusă.
+
+## Exemple Practice: Cum eșuează planurile
+
+- **Inflația Stilului de Viață (Lifestyle Creep):** Primești o mărire de salariu de 500 EUR, te muți la o casă mai mare (rată mai mare cu 300 EUR) și iei o mașină nouă (leasing de 200 EUR). Deși câștigi mai mult, economisești exact zero. Capacitatea ta de a ajunge independent financiar stagnează.
+- **Specula în loc de Investiție:** "Cumpăr crypto obscura X pentru că sigur crește 1000%". Aceasta este loterie, nu investiție. Banii destinați libertății financiare pe termen lung nu se joacă la cazino.
+
+## Sfaturi pentru Optimizare
+
+- **Plătește-te pe tine primul:** Automatizează economisirea. În ziua de salariu, 20% merg automat în contul de investiții. Trăiești cu restul. Dacă aștepți la finalul lunii să vezi ce "mai rămâne", nu va mai rămâne nimic.
+- **Folosește scuturile fiscale:** În România, pilonul 3 (pensia privată facultativă) este parțial deductibil, iar asigurările Unit-Linked cu componentă de viață au anumite scutiri de impozit la ieșire. Titlurile de stat sunt 100% neimpozabile.
+
+<div class="bg-blue-50 p-6 rounded-2xl border border-blue-100 my-8">
+  <h4 class="font-bold text-blue-800 mb-2 flex items-center gap-2">💡 Tip AiX</h4>
+  <p class="text-blue-700">Evită mentalitatea "Get Rich Quick". Focusul trebuie să fie pe "Get Rich For Sure". Consistența bate întotdeauna momentul intrării în piață (Time in the market beats timing the market).</p>
+</div>
+
+## Avertismente
+
+- **Frica de Volatilitate:** Piețele financiare se prăbușesc periodic (2000, 2008, 2020). Este un ciclu natural. Cei care vând în panică pierd. Cei care continuă să investească constant cumpără active "la reducere".
+- **Inflația este Inamicul Tăcut:** Dacă ții 100.000 EUR cash "la saltea" timp de 10 ani cu o inflație medie de 5%, puterea ta reală de cumpărare scade la 60.000 EUR. Siguranța absolută a cash-ului este, de fapt, pierdere garantată.
+
+## Întrebări Frecvente (FAQ)
+
+**1. Ce este un ETF?**
+Exchange Traded Fund. Un coș cu sute de acțiuni ale celor mai mari companii. Cumpărând o unitate de fond, investești instantaneu în toată economia globală sau americană, eliminând riscul ca o singură firmă să dea faliment.
+
+**2. Cât la sută din venit ar trebui să economisesc?**
+Minimum 15-20%. Dacă dorești să accelerezi spre FIRE (Financial Independence, Retire Early), procentul trebuie să depășească 30-40%.
+
+**3. Cum mă ajută polița de viață în acest plan?**
+Polița de viață îți protejează "Numărul Tău". Dacă ai acumulat 100.000 EUR dar mori mâine, ai ratat targetul de 600.000 EUR pentru familia ta. Polița de risc acoperă "gap-ul" de 500.000 EUR imediat.
+
+## Sumar
+
+Independența financiară este un maraton matematic, nu un sprint norocos. Cunoaște-ți cifrele, controlează-ți comportamentul consumist și folosește inteligent dobânda compusă.
+
+## Call to Action
+
+Calculează-ți "Numărul" folosind AiX Simulator și creează-ți azi arhitectura de investiții recurente prin platforma noastră.
+`;
+
+const generateAchizitieLocuintaContent = () => `
+## Introducere: Cea mai mare decizie financiară
+
+Cumpărarea unei locuințe este un proces emoțional, dar consecințele sunt pur financiare și te vor însoți timp de 20-30 de ani. Majoritatea oamenilor petrec mai mult timp analizând ce televizor să cumpere decât actele casei pentru care se îndatorează o viață. 
+
+Acest ghid detaliază pașii critici, capcanele juridice și calculele financiare pe care trebuie să le stăpânești ÎNAINTE de a semna la notar.
+
+## Etapa 1: Calibrarea Financiară (Bugetul Real)
+
+### Regula de Aur: Gradul de Îndatorare
+Băncile permit un grad maxim de îndatorare de 40% din veniturile nete lunare. Noi recomandăm ca rata să nu depășească **30%** (ideal 25%) din venitul cumulat al familiei. O dobândă variabilă poate crește (IRCC/ROBOR), transformând o rată suportabilă într-un coșmar financiar.
+
+### Costurile Ascunse ale Achiziției
+Avansul de 15% nu este singurul efort financiar. Trebuie să ai cash pentru:
+1.  **Taxe Notariale și Înscrierea la Cartea Funciară:** Aprox. 1.5% - 2% din valoarea proprietății.
+2.  **Taxe Bancare:** Evaluarea imobilului (100-200 EUR), analiza dosarului.
+3.  **Renovare și Mobilare:** Minim 10-15% din valoarea de achiziție, chiar și pentru finisaje "la cheie" (bucătării, electrocasnice).
+4.  **Fondul de Urgență al Proprietarului:** Trebuie să mai ai 3 rate salvate deoparte + bani de urgențe majore (centrală defectă).
+
+## Etapa 2: Căutarea și Analiza Zonei
+
+**"Location, Location, Location"**
+Poți schimba faianța, dar nu poți schimba vecinii sau distanța față de metrou.
+- **Verifică PUG/PUZ (Planurile de Urbanism):** Acel teren liber de lângă blocul tău de 4 etaje are aviz pentru un zgârie-nori care îți va bloca soarele? Du-te la Primărie și verifică.
+- **Infrastructura "la pas":** Nu crede agentul care spune "5 minute de metrou". Fă traseul la ora 8:00 dimineața pe jos. E noroi? E lipsă de trotuar?
+
+## Etapa 3: Inspecția Tehnică (Vicii Ascunse)
+
+Nu cumpăra pe baza zugrăvelii proaspete.
+1.  **Imobile Vechi (Înainte de 1990):** Atenție masivă la instalația electrică (fire de aluminiu care trebuie înlocuite obligatoriu) și la instalația sanitară. Verifică risc seismic (Bulina Roșie interzice creditarea bancară).
+2.  **Imobile Noi:** Verifică izolația fonică. Pune pe cineva să meargă în apartamentul de deasupra. Verifică presiunea apei la etajele superioare. Cere Cartea Tehnică a Construcției și verifică calitatea betonului (raport diriginte șantier).
+3.  **Ultimul etaj și parterul:** Verifică infiltrațiile pe tavan, respectiv umezeala și izolația slabă din subsol.
+
+## Etapa 4: Auditul Juridic (Actele Proprietății)
+
+Acesta este pasul unde notarii și băncile ajută, dar nu te protejează complet.
+
+- **Extrasul de Carte Funciară:** Trebuie să fie "Liber de Sarcini" (fără ipoteci, executări, litigii în instanță). Dacă există sarcini, ele trebuie radiate înaintea sau la momentul achiziției.
+- **Releveul (Schița):** Corespunde schița cu realitatea? Dacă proprietarul a dărâmat un perete "de rezistență" fără autorizație, banca NU va acorda creditul, iar tu preiei o ilegalitate.
+- **Istoricul Dobândirilor:** A fost cumpărat prin Legea 112 (case naționalizate)? Riscurile de revendicare de la foștii proprietari pot fi uriașe pe termen lung. Cere avizul unui avocat.
+
+## Etapa 5: Structura de Finanțare (Creditul)
+
+- **Avansul:** Cu cât avansul este mai mare, cu atât costul total al creditului scade exponențial.
+- **Dobândă Fixă vs. Variabilă:** Pe perioade de dobânzi mari în piață, o ofertă cu dobândă fixă pe primii 3-5 ani te protejează de șocuri. Refinanțarea este mereu o opțiune când piața se calmează.
+- **Asigurarea de Viață pentru Credit:** Banca te va obliga. Soluția inteligentă: Nu o face prin bancă! Polițele de bancă acoperă de obicei doar soldul creditului (scade an de an). Fa-ți o poliță externă, la valoarea inițială, cesionează partea băncii, iar restul merge la familia ta.
+
+<div class="bg-amber-50 p-6 rounded-2xl border border-amber-100 my-8">
+  <h4 class="font-bold text-amber-800 mb-2 flex items-center gap-2">⚠️ Avertisment: Antecontractul la Faza de Proiect</h4>
+  <p class="text-amber-700">Dacă cumperi într-un bloc "pe hârtie" (off-plan), NU DA AVANSURI MASIVE (ex: 50%-90%) pentru "un discount", decât dacă dezvoltatorul are un cont "Escrow". Dacă firma dezvoltatorului dă faliment, devii un simplu creditor chirografar și îți pierzi banii.</p>
+</div>
+
+## Etapa 6: Asigurarea Locuinței și PAD
+
+Imediat după semnarea Contractului de Vânzare-Cumpărare, devii proprietar. Ce faci dacă a doua zi, la mutare, spargi o țeavă și inunzi 4 etaje sub tine?
+1.  **PAD (Asigurarea Obligatorie):** Acoperă doar 20.000 EUR pentru Dezastre (Cutremur, Inundație naturală, Alunecare Teren). Atât.
+2.  **Polița Facultativă All-Risk:** Obligatorie! Acoperă incendiul, explozia (și din vecini), inundația de la conducte, furtul, și, cel mai important, Răspunderea Civilă față de Terți (dacă tu îți inunzi vecinul de jos, asiguratorul plătește renovarea lui).
+
+## Întrebări Frecvente (FAQ)
+
+**1. Să aștept să "scadă prețurile"?**
+Nimeni nu poate anticipa piața. Dacă ai nevoie de o casă pentru locuit pe termen lung (10+ ani) și rata îți permite să economisești în continuare, "timing-ul" contează mult mai puțin.
+
+**2. Ce este DAE?**
+Dobânda Anuală Efectivă. Este costul TOTAL al creditului, incluzând dobânda și toate comisioanele băncii. Compară ofertele băncilor exclusiv uitându-te la DAE, nu la dobânda nominală.
+
+**3. Am nevoie de agent imobiliar?**
+Nu obligatoriu, dar un agent de Reprezentare Exclusivă a Cumpărătorului (cum oferim prin serviciul Home Find) te scutește de negocieri proaste și capcane juridice, economisindu-ți mii de euro.
+
+## Sumar
+
+Achiziția imobiliară trebuie să fie 90% logică și matematică și doar 10% emoție. Verifică actele, calculează stresul bancar pe dobândă maximă și asigură imediat activul la valoarea reală.
+
+## Call to Action
+
+Înainte să dai un avans pentru o casă, descarcă "Checklist-ul de Inspecție Imobiliară AiX" din secțiunea Resurse sau programează o consultanță cu echipa Home Find.
+`;
+
 const generateLifeInsuranceContent = () => `
 ## Introducere: De ce nu poți ignora o asigurare de viață?
 
@@ -310,7 +753,7 @@ Contactează echipa noastră pentru un audit complet al riscurilor comerciale ș
     readTime: "5 min",
     difficulty: "Începător",
     excerpt: "Descoperă platforma viitorului pentru achiziții imobiliare. Cum te ajută algoritmii noștri să găsești proprietatea perfectă off-market.",
-    content: "Articol complet integrat în baza de date CMS AiX OS. Conținut premium în curs de încărcare..."
+    content: generateHomeFindContent()
   },
   {
     slug: "ce-este-aix-os",
@@ -319,7 +762,7 @@ Contactează echipa noastră pentru un audit complet al riscurilor comerciale ș
     readTime: "6 min",
     difficulty: "Începător",
     excerpt: "Află cum sistemul nostru de inteligență artificială interconectează activele tale, asigurările și planurile de viitor într-un singur loc.",
-    content: "Articol complet integrat în baza de date CMS AiX OS. Conținut premium în curs de încărcare..."
+    content: generateAixOsContent()
   },
   {
     slug: "ghid-rca-complet",
@@ -328,7 +771,7 @@ Contactează echipa noastră pentru un audit complet al riscurilor comerciale ș
     readTime: "7 min",
     difficulty: "Începător",
     excerpt: "Ghidul suprem al șoferului român. Ce înseamnă decontarea directă, clasa Bonus Malus și cum să procedezi în caz de daună.",
-    content: "Articol complet integrat în baza de date CMS AiX OS. Conținut premium în curs de încărcare..."
+    content: generateRcaContent()
   },
   {
     slug: "protejarea-patrimoniului-romania",
@@ -337,7 +780,7 @@ Contactează echipa noastră pentru un audit complet al riscurilor comerciale ș
     readTime: "14 min",
     difficulty: "Avansat",
     excerpt: "O analiză aprofundată a legislației, instrumentelor de protecție (trust-uri, fundații) și transferului averii inter-generațional.",
-    content: "Articol complet integrat în baza de date CMS AiX OS. Conținut premium în curs de încărcare..."
+    content: generatePatrimoniuContent()
   },
   {
     slug: "independenta-financiara",
@@ -346,7 +789,7 @@ Contactează echipa noastră pentru un audit complet al riscurilor comerciale ș
     readTime: "11 min",
     difficulty: "Intermediar",
     excerpt: "Regula de 4%, importanța fondului de urgență și puterea dobânzii compuse explicate pe înțelesul tuturor.",
-    content: "Articol complet integrat în baza de date CMS AiX OS. Conținut premium în curs de încărcare..."
+    content: generateIndependentaContent()
   },
   {
     slug: "ghid-cumparare-locuinta",
@@ -355,7 +798,7 @@ Contactează echipa noastră pentru un audit complet al riscurilor comerciale ș
     readTime: "15 min",
     difficulty: "Intermediar",
     excerpt: "De la vizionare până la actele notariale. Cum să verifici constructorul și ce trebuie să asiguri chiar din prima zi.",
-    content: "Articol complet integrat în baza de date CMS AiX OS. Conținut premium în curs de încărcare..."
+    content: generateAchizitieLocuintaContent()
   }
 ];
 

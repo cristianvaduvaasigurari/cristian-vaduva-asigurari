@@ -43,6 +43,12 @@ export function ResourcesList() {
     // Simulate generation / sending
     await new Promise(r => setTimeout(r, 1000));
     
+    if (res) {
+      // Lazy import to avoid SSR issues
+      const { generateGenericPDF } = await import('@/lib/pdf-generator');
+      generateGenericPDF(res.title, res.desc, res.id);
+    }
+    
     setDownloaded({ ...downloaded, [selectedResource]: true });
     setIsSubmitting(false);
     setTimeout(() => {
