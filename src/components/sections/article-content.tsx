@@ -64,6 +64,17 @@ export function ArticleContent({ article, relatedArticles }: ArticleContentProps
             <ChevronLeft className="w-4 h-4" /> Înapoi la Academie
           </Link>
           <div className="flex gap-2">
+            <button onClick={async () => {
+              const { generateGenericPDF } = await import('@/lib/pdf-generator');
+              generateGenericPDF(
+                article.title, 
+                article.excerpt, 
+                article.pdfSummary || "Sumar nespecificat.", 
+                `AiX-Academy-${article.slug}`
+              );
+            }} className="flex items-center gap-2 px-4 py-2 rounded-full bg-slate-900 text-white text-xs font-bold hover:bg-blue-600 transition-colors" title="Descarcă PDF">
+              Descarcă PDF
+            </button>
             <button onClick={handleShare} className="w-10 h-10 rounded-full bg-slate-50 flex items-center justify-center text-slate-600 hover:bg-slate-200 transition-colors" title="Share">
               <Share2 className="w-4 h-4" />
             </button>

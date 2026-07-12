@@ -46,7 +46,7 @@ export function ResourcesList() {
     if (res) {
       // Lazy import to avoid SSR issues
       const { generateGenericPDF } = await import('@/lib/pdf-generator');
-      generateGenericPDF(res.title, res.desc, res.id);
+      generateGenericPDF(res.title, res.desc, res.desc, res.id);
     }
     
     setDownloaded({ ...downloaded, [selectedResource]: true });
