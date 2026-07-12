@@ -123,21 +123,20 @@ export function generateGenericPDF(title: string, description: string, summary: 
   // CTA Section
   const ctaY = contentEnd + 20;
   doc.setFillColor(248, 250, 252); // slate-50
-  doc.rect(20, ctaY, pageWidth - 40, 40, "F");
+  doc.rect(20, ctaY, pageWidth - 40, 45, "F");
   doc.setDrawColor(226, 232, 240); // slate-200
-  doc.rect(20, ctaY, pageWidth - 40, 40, "S");
+  doc.rect(20, ctaY, pageWidth - 40, 45, "S");
 
   doc.setTextColor(15, 23, 42); // slate-900
   doc.setFontSize(12);
   doc.setFont("helvetica", "bold");
-  doc.text("Ai nevoie de o strategie personalizata?", 30, ctaY + 15);
+  doc.text("Pentru o consultanta personalizata contacteaza Cristian Vaduva.", 30, ctaY + 15);
 
   doc.setTextColor(71, 85, 105); // slate-600
   doc.setFontSize(10);
   doc.setFont("helvetica", "normal");
-  doc.text("Programeaza o discutie cu Cristian Vaduva pentru implementare.", 30, ctaY + 25);
-  doc.setTextColor(37, 99, 235); // blue-600
-  doc.text("Contact: www.cristianvaduva.com | +40 700 000 000", 30, ctaY + 33); // Placeholder phone if not imported
+  doc.text("Telefon: +40 767 110 439  |  WhatsApp: +43 650 953 6345", 30, ctaY + 25);
+  doc.text("Email: contact@cristianvaduva.com  |  Web: www.cristianvaduva.com", 30, ctaY + 33);
 
   // Footer Page 2
   doc.setDrawColor(226, 232, 240); // slate-200

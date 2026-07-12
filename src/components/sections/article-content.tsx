@@ -6,6 +6,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { Article } from "@/lib/academy-data";
+import ReactMarkdown from "react-markdown";
 
 interface ArticleContentProps {
   article: Article;
@@ -119,7 +120,7 @@ export function ArticleContent({ article, relatedArticles }: ArticleContentProps
 
           {/* HTML Rendered Content */}
           <div className="prose prose-lg md:prose-xl prose-slate max-w-none prose-headings:font-heading prose-headings:font-bold prose-headings:tracking-tight prose-a:text-blue-600 prose-a:no-underline hover:prose-a:underline prose-img:rounded-3xl prose-img:shadow-xl">
-            <div dangerouslySetInnerHTML={{ __html: article.content }} />
+            <ReactMarkdown>{article.content}</ReactMarkdown>
           </div>
 
           {/* Footer CTA */}
