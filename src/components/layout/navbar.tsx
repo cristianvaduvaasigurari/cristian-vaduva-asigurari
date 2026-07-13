@@ -189,6 +189,10 @@ export function Navbar() {
               </div>
             </div>
 
+            <Link href="/home-find" className="text-sm font-semibold text-amber-600 hover:text-amber-700 transition-colors flex items-center gap-1">
+              Home Find™
+            </Link>
+
             <div className="group relative">
               <button className="flex items-center gap-1 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors py-4">
                 Ecosistem AiX
@@ -275,6 +279,8 @@ export function Navbar() {
                   </div>
                 )}
               </div>
+
+              <Link href="/home-find" onClick={() => setIsMobileMenuOpen(false)} className="text-2xl font-bold p-2 border-b border-border/50 text-amber-600">Home Find™</Link>
 
               <div className="flex flex-col border-b border-border/50">
                 <button 
