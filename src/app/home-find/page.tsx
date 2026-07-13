@@ -1,6 +1,6 @@
 import * as React from "react";
 import Link from "next/link";
-import { ArrowRight, Shield, Home, Building2, Search, Activity, Lock } from "lucide-react";
+import { ArrowRight, Shield, Home, Search, Activity, Lock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export const metadata = {
@@ -101,65 +101,7 @@ export default function HomeFindPage() {
             </Button>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
-            {/* Property Card 1 */}
-            <div className="group rounded-3xl overflow-hidden border border-slate-100 bg-slate-50 transition-all hover:shadow-xl hover:-translate-y-1">
-              <div className="aspect-[16/9] bg-gradient-to-tr from-slate-200 to-slate-100 relative overflow-hidden">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <Building2 className="w-16 h-16 text-slate-300" />
-                </div>
-                <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold tracking-wider uppercase">
-                  Premium Villa
-                </div>
-              </div>
-              <div className="p-8">
-                <h3 className="text-2xl font-bold mb-2 text-slate-900">Villa Azure, Bucharest</h3>
-                <p className="text-slate-500 mb-6">4 Beds • 3 Baths • 350 sqm</p>
-                
-                <div className="pt-6 border-t border-slate-200 flex flex-col sm:flex-row gap-4">
-                  <Button asChild className="flex-1 rounded-full bg-slate-900 text-white hover:bg-slate-800">
-                    <a href="https://real-estate-platform-brown.vercel.app/" target="_blank" rel="noopener noreferrer">
-                      Explore Details
-                    </a>
-                  </Button>
-                  <Button asChild variant="outline" className="flex-1 rounded-full border-amber-200 bg-amber-50 text-amber-900 hover:bg-amber-100 hover:text-amber-950">
-                    <Link href="/servicii/home-insurance">
-                      <Shield className="w-4 h-4 mr-2" /> Protect this Property
-                    </Link>
-                  </Button>
-                </div>
-              </div>
-            </div>
 
-            {/* Property Card 2 */}
-            <div className="group rounded-3xl overflow-hidden border border-slate-100 bg-slate-50 transition-all hover:shadow-xl hover:-translate-y-1">
-              <div className="aspect-[16/9] bg-gradient-to-tr from-slate-200 to-slate-100 relative overflow-hidden">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <Building2 className="w-16 h-16 text-slate-300" />
-                </div>
-                <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold tracking-wider uppercase">
-                  Penthouse
-                </div>
-              </div>
-              <div className="p-8">
-                <h3 className="text-2xl font-bold mb-2 text-slate-900">Skyline Penthouse, Cluj</h3>
-                <p className="text-slate-500 mb-6">3 Beds • 2.5 Baths • 210 sqm</p>
-                
-                <div className="pt-6 border-t border-slate-200 flex flex-col sm:flex-row gap-4">
-                  <Button asChild className="flex-1 rounded-full bg-slate-900 text-white hover:bg-slate-800">
-                    <a href="https://real-estate-platform-brown.vercel.app/" target="_blank" rel="noopener noreferrer">
-                      Explore Details
-                    </a>
-                  </Button>
-                  <Button asChild variant="outline" className="flex-1 rounded-full border-amber-200 bg-amber-50 text-amber-900 hover:bg-amber-100 hover:text-amber-950">
-                    <Link href="/servicii/home-insurance">
-                      <Shield className="w-4 h-4 mr-2" /> Protect this Property
-                    </Link>
-                  </Button>
-                </div>
-              </div>
-            </div>
-          </div>
 
           <div className="mt-12 text-center max-w-2xl mx-auto p-6 bg-amber-50/50 border border-amber-100 rounded-3xl">
             <Shield className="w-8 h-8 text-amber-600 mx-auto mb-4" />
