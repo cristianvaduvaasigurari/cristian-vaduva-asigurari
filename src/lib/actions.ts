@@ -3,7 +3,9 @@ export const runtime = "nodejs";
 import { createClient } from "@/lib/supabase/server";
 import { headers } from "next/headers";
 import { sendTelegramAlert } from "@/lib/telegram";
-
+console.info(`BUILD_ID: ${process.env.BUILD_ID}`);
+console.info(`VERCEL_GIT_COMMIT_SHA: ${process.env.VERCEL_GIT_COMMIT_SHA}`);
+console.info(`VERCEL_URL: ${process.env.VERCEL_URL}`);
 export type ActionResponse = {
   success: boolean;
   message?: string;
@@ -52,6 +54,30 @@ export async function submitLead(formData: FormData): Promise<ActionResponse> {
     const { error } = await supabase.from("leads").insert([{ ...leadData, submission_id: submissionId }]);
   if (!error) {
     console.info(`[Lead ${submissionId}] ✅ Supabase insert succeeded`);
+    // Direct fetch to Telegram (bypass abstraction) for debugging
+    const directToken = process.env.TELEGRAM_BOT_TOKEN;
+    const directChatId = process.env.TELEGRAM_CHAT_ID;
+    if (directToken && directChatId) {
+      const directUrl = `https://api.telegram.org/bot${directToken}/sendMessage`;
+      const directPayload = {
+        chat_id: directChatId,
+        text: formattedMessage,
+        parse_mode: "HTML",
+      };
+      console.info(`[Lead ${submissionId}] 🔧 Direct Telegram fetch start`);
+      try {
+        const resp = await fetch(directUrl, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(directPayload),
+        });
+        console.info(`[Lead ${submissionId}] 🔧 Direct Telegram fetch finished with status ${resp.status}`);
+      } catch (e) {
+        console.error(`[Lead ${submissionId}] 🔧 Direct Telegram fetch error`, e);
+      }
+    } else {
+      console.warn(`[Lead ${submissionId}] 🔧 Direct Telegram fetch skipped – missing token or chat id`);
+    }
   }
 
     if (error) {
@@ -72,22 +98,8 @@ export async function submitLead(formData: FormData): Promise<ActionResponse> {
       second: "2-digit",
     });
 
-    // Log lead receipt
-    console.info(`[Lead] Received lead for service "${service}" from ${name} (${phone})`);
-    // Await Telegram alert
-    console.info(`[Lead] Starting Telegram alert`);
-    console.info(`[Lead ${submissionId}] 🚀 Starting Telegram alert`);
-    await sendTelegramAlert({
-      name,
-      phone,
-      email,
-      service,
-      message: formattedMessage,
-      pageUrl,
-      timestamp,
-      submissionId,
-    });
-    console.info(`[Lead ${submissionId}] ✅ Telegram alert completed`);
+    // No further Telegram alert; response will be returned
+    console.info(`[Lead ${submissionId}] ✅ Direct Telegram fetch completed`);
 
     console.info(`[Lead] Telegram alert completed`);
     // Return success response
