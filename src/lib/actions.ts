@@ -52,7 +52,7 @@ export async function submitLead(formData: FormData): Promise<ActionResponse> {
       return { success: false, error: "Eroare la salvarea datelor. Te rugăm să încerci din nou." };
     }
 
-    // Async Telegram notify (non-blocking)
+    // Extract request metadata
     const headersList = await headers();
     const pageUrl = headersList.get("referer") || "N/A";
     const timestamp = new Date().toLocaleString("ro-RO", {
@@ -65,7 +65,11 @@ export async function submitLead(formData: FormData): Promise<ActionResponse> {
       second: "2-digit",
     });
 
-    sendTelegramAlert({
+    // Log lead receipt
+    console.info(`[Lead] Received lead for service "${service}" from ${name} (${phone})`);
+    // Await Telegram alert
+    console.info(`[Lead] Starting Telegram alert`);
+    await sendTelegramAlert({
       name,
       phone,
       email,
@@ -73,8 +77,9 @@ export async function submitLead(formData: FormData): Promise<ActionResponse> {
       message: formattedMessage,
       pageUrl,
       timestamp,
-    }).catch((err) => console.error("Telegram notification error:", err));
-
+    });
+    console.info(`[Lead] Telegram alert completed`);
+    // Return success response
     return { success: true, message: "Cererea ta a fost trimisă cu succes!" };
   } catch (err) {
     console.error("Server Action Error:", err);
@@ -118,7 +123,7 @@ export async function saveAssessment(assessmentType: string, data: Record<string
       return { success: false, error: "Nu am putut salva evaluarea." };
     }
 
-    // Async Telegram notify (non-blocking)
+    // Extract request metadata for assessment
     const headersList = await headers();
     const pageUrl = headersList.get("referer") || "N/A";
     const timestamp = new Date().toLocaleString("ro-RO", {
@@ -131,7 +136,10 @@ export async function saveAssessment(assessmentType: string, data: Record<string
       second: "2-digit",
     });
 
-    sendTelegramAlert({
+    // Log assessment receipt
+    console.info(`[Assessment] Received ${assessmentType} for ${name} (${phone})`);
+    console.info(`[Assessment] Starting Telegram alert`);
+    await sendTelegramAlert({
       name,
       phone,
       email,
@@ -139,9 +147,11 @@ export async function saveAssessment(assessmentType: string, data: Record<string
       message: formattedMessage,
       pageUrl,
       timestamp,
-    }).catch((err) => console.error("Telegram notification error:", err));
-
+    });
+    console.info(`[Assessment] Telegram alert completed`);
+    // Return success response
     return { success: true, id: uniqueId };
+
   } catch (err) {
     console.error("Save assessment error:", err);
     return { success: false, error: "Eroare la procesarea evaluării." };
