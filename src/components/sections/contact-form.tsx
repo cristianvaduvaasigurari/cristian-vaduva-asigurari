@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { submitLead } from "@/lib/actions";
+
 import { Loader2, CheckCircle2, AlertCircle, Home, ArrowLeft } from "lucide-react";
 import Link from "next/link";
 
@@ -20,10 +20,13 @@ export function ContactForm({ customTitle }: { customTitle?: string }) {
 
     try {
       const formData = new FormData(e.currentTarget);
-      const res = await submitLead(formData);
-      
-      if (!res.success) {
-        throw new Error(res.error || "Eroare la salvare");
+      const response = await fetch('/api/lead', {
+        method: 'POST',
+        body: formData,
+      });
+      const data = await response.json();
+      if (!data.success) {
+        throw new Error(data.error || "Eroare la salvare");
       }
       
       setStatus("success");

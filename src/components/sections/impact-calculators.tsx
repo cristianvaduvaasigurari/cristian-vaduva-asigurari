@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Flame, Droplets, CarFront, Stethoscope, Factory, TrendingDown, ShieldCheck, ArrowRight, Home, ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { submitLead } from "@/lib/actions";
+
 import Link from "next/link";
 
 type CalculatorType = "fire" | "water" | "car" | "medical" | "business";
@@ -92,12 +92,16 @@ export function ImpactCalculators() {
     formData.append("metadata", JSON.stringify({ tab: activeTab, valueCalculated: value, estimatedPremium: metrics.premium }));
 
     try {
-      const res = await submitLead(formData);
+      const response = await fetch('/api/lead', {
+        method: 'POST',
+        body: formData,
+      });
+      const result = await response.json();
       setIsSubmitting(false);
-      if (res.success) {
+      if (result.success) {
         setIsSuccess(true);
       } else {
-        setError(res.error || "A apărut o eroare la salvare.");
+        setError(result.error || "A apărut o eroare la salvare.");
       }
     } catch {
       setIsSubmitting(false);

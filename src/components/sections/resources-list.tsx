@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { FileText, Download, CheckCircle2, Lock } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { submitLead } from "@/lib/actions";
+// import { submitLead } from "@/lib/actions"; // Removed in favor of fetch('/api/lead')
 
 const resources = [
   { id: "guide-home", title: "Ghid Complet: Asigurarea Locuinței", desc: "Află cum să nu fii păcălit de polițele băncilor și cum să acoperi valoarea reală de reconstrucție.", type: "PDF Guide", color: "bg-amber-50 text-amber-700" },
@@ -41,9 +41,13 @@ export function ResourcesList() {
     formData.append("source", "Premium Resources Page");
     
     try {
-      const response = await submitLead(formData);
-      if (!response.success) {
-        setError(response.error || "Eroare la salvarea solicitării.");
+      const response = await fetch('/api/lead', {
+        method: 'POST',
+        body: formData,
+      });
+      const result = await response.json();
+      if (!result.success) {
+        setError(result.error || "Eroare la salvarea solicitării.");
         setIsSubmitting(false);
         return;
       }

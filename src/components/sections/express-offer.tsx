@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, CheckCircle2, Building, User, Car, ShieldAlert } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { submitLead } from "@/lib/actions";
+
 
 const steps = [
   { id: "type", title: "Ce dorești să protejezi?" },
@@ -49,13 +49,17 @@ export function ExpressOffer() {
     data.append("message", "Lead rapid generat în 30s.");
     
     try {
-      const res = await submitLead(data);
+      const response = await fetch('/api/lead', {
+        method: 'POST',
+        body: data,
+      });
+      const result = await response.json();
       setIsSubmitting(false);
-      
-      if (res.success) {
+
+      if (result.success) {
         setIsSuccess(true);
       } else {
-        setError(res.error || "A apărut o eroare la salvare.");
+        setError(result.error || "A apărut o eroare la salvare.");
       }
     } catch {
       setIsSubmitting(false);

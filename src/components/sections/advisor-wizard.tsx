@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ChevronRight, ChevronLeft, ShieldCheck, User, Home, Car, Briefcase, Plane, HeartPulse, TrendingUp, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { submitLead } from "@/lib/actions";
+
 
 const questions = [
   {
@@ -204,9 +204,13 @@ export function AdvisorWizard() {
       formData.append("source", "AiX Advisor");
       formData.append("metadata", JSON.stringify(answers));
 
-      const res = await submitLead(formData);
-      if (!res.success) {
-        console.warn("Could not save lead:", res.error);
+      const response = await fetch('/api/lead', {
+        method: 'POST',
+        body: formData,
+      });
+      const result = await response.json();
+      if (!result.success) {
+        console.warn('Could not save lead:', result.error);
       }
     } catch (e) {
       console.error(e);
