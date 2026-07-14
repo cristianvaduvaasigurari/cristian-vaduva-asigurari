@@ -25,6 +25,9 @@ export const metadata: Metadata = {
   },
   description: "Platformă premium dedicată protecției financiare, investițiilor de lux și optimizării patrimoniului. Expertiză în asigurări, luxury real estate și AiX OS.",
   metadataBase: new URL("https://cristianvaduva.com"),
+  alternates: {
+    canonical: "./",
+  },
   openGraph: {
     title: "Cristian Văduva | Insurance, Real Estate & Investments",
     description: "Platformă premium dedicată protecției financiare, investițiilor de lux și optimizării patrimoniului. Expertiză în asigurări, luxury real estate și AiX OS.",

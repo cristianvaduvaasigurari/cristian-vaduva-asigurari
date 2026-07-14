@@ -37,7 +37,15 @@ export async function generatePDFFromElement(element: HTMLElement, filename: str
 // Utility to remove diacritics since jsPDF standard fonts don't support them well
 function removeDiacritics(str: string): string {
   if (!str) return "";
-  return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/ă/g, "a").replace(/Ă/g, "A").replace(/î/g, "i").replace(/Î/g, "I").replace(/â/g, "a").replace(/Â/g, "A").replace(/ș/g, "s").replace(/Ș/g, "S").replace(/ț/g, "t").replace(/Ț/g, "T");
+  return str.normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/ă/g, "a").replace(/Ă/g, "A")
+    .replace(/î/g, "i").replace(/Î/g, "I")
+    .replace(/â/g, "a").replace(/Â/g, "A")
+    .replace(/ș/g, "s").replace(/Ș/g, "S")
+    .replace(/ț/g, "t").replace(/Ț/g, "T")
+    .replace(/ş/g, "s").replace(/Ş/g, "S")
+    .replace(/ţ/g, "t").replace(/Ţ/g, "T");
 }
 
 export function generateGenericPDF(title: string, description: string, summary: string, filename: string) {

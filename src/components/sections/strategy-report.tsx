@@ -141,6 +141,21 @@ export function StrategyReport() {
           </div>
         </section>
 
+        {/* Contact Info & CTA Block (For PDF/Print) */}
+        <section className="mt-8 p-6 bg-slate-50 border border-slate-200 rounded-3xl text-slate-800">
+          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+            <div>
+              <h4 className="font-heading font-bold text-sm text-slate-950 mb-1">PROGRAMEAZĂ O CONSULTANȚĂ PRIVATĂ</h4>
+              <p className="text-xs text-slate-500 font-semibold uppercase">Consultant Premium: Cristian Văduva</p>
+            </div>
+            <div className="text-left sm:text-right text-xs space-y-1 font-mono font-bold text-slate-700">
+              <p>Telefon: +40 767 110 439</p>
+              <p>WhatsApp: +43 650 953 6345</p>
+              <p>Email: contact@cristianvaduva.com</p>
+              <p>Web: www.cristianvaduva.com</p>
+            </div>
+          </div>
+        </section>
       </div>
     </div>
   );

@@ -23,12 +23,14 @@ export function ResourcesList() {
   const [email, setEmail] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [downloaded, setDownloaded] = useState<Record<string, boolean>>({});
+  const [error, setError] = useState<string | null>(null);
 
   const handleDownloadRequest = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!email || !selectedResource) return;
 
     setIsSubmitting(true);
+    setError(null);
     const res = resources.find(r => r.id === selectedResource);
 
     // Save Lead to Supabase for the Lead Magnet
@@ -38,7 +40,18 @@ export function ResourcesList() {
     formData.append("service", `Descărcare: ${res?.title}`);
     formData.append("source", "Premium Resources Page");
     
-    await submitLead(formData);
+    try {
+      const response = await submitLead(formData);
+      if (!response.success) {
+        setError(response.error || "Eroare la salvarea solicitării.");
+        setIsSubmitting(false);
+        return;
+      }
+    } catch {
+      setError("A apărut o eroare de rețea. Te rugăm să încerci din nou.");
+      setIsSubmitting(false);
+      return;
+    }
     
     // Simulate generation / sending
     await new Promise(r => setTimeout(r, 1000));
@@ -136,6 +149,9 @@ export function ResourcesList() {
                 <Button type="submit" disabled={isSubmitting} className="h-14 rounded-full bg-blue-600 hover:bg-blue-700 text-white font-bold w-full">
                   {isSubmitting ? "Se generează PDF-ul..." : "Deblochează Resursa"} <Download className="w-4 h-4 ml-2" />
                 </Button>
+                {error && (
+                  <p className="text-sm font-bold text-red-500 mt-2">{error}</p>
+                )}
                 <p className="text-[10px] text-muted-foreground mt-2 uppercase tracking-widest">Conexiune securizată AiX</p>
               </form>
             </motion.div>

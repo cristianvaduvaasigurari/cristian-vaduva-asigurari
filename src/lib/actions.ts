@@ -1,6 +1,8 @@
 "use server";
 
 import { createClient } from "@/lib/supabase/server";
+import { headers } from "next/headers";
+import { sendTelegramAlert } from "@/lib/telegram";
 
 export type ActionResponse = {
   success: boolean;
@@ -10,32 +12,37 @@ export type ActionResponse = {
 
 /**
  * Saves a generic lead into the `leads` table in Supabase.
- * Ensure your `leads` table has columns:
- * name (text), email (text), phone (text), service (text), message (text), source (text)
+ * Maps service -> service_type for database compatibility.
+ * Safely defaults email/phone to prevent null constraint violations.
  */
 export async function submitLead(formData: FormData): Promise<ActionResponse> {
   try {
     const supabase = await createClient();
 
-    const name = formData.get("name") as string;
-    const email = formData.get("email") as string;
-    const phone = formData.get("phone") as string;
-    const service = formData.get("service") as string;
-    const message = formData.get("message") as string;
-    const source = formData.get("source") as string || "Website Lead";
+    const name = (formData.get("name") as string) || "Anonim";
+    const email = (formData.get("email") as string) || "";
+    const phone = (formData.get("phone") as string) || "";
+    const service = (formData.get("service") as string) || "Website Lead";
+    const message = (formData.get("message") as string) || "";
+    const source = (formData.get("source") as string) || "Website Lead";
     
-    // Extragem date suplimentare trimise sub formă de JSON
+    // Extract metadata if present
     const metadataStr = formData.get("metadata") as string;
     const metadata = metadataStr ? JSON.parse(metadataStr) : null;
+
+    // Combine source and metadata into the message field to preserve them in db
+    const formattedMessage = [
+      message,
+      source ? `Sursă: ${source}` : null,
+      metadata ? `Detalii: ${JSON.stringify(metadata, null, 2)}` : null
+    ].filter(Boolean).join("\n\n");
 
     const leadData = {
       name,
       email,
       phone,
-      service,
-      message,
-      source,
-      metadata
+      service_type: service, // Map service to service_type column
+      message: formattedMessage
     };
 
     const { error } = await supabase.from("leads").insert([leadData]);
@@ -44,6 +51,29 @@ export async function submitLead(formData: FormData): Promise<ActionResponse> {
       console.error("Supabase Error saving lead:", error);
       return { success: false, error: "Eroare la salvarea datelor. Te rugăm să încerci din nou." };
     }
+
+    // Async Telegram notify (non-blocking)
+    const headersList = await headers();
+    const pageUrl = headersList.get("referer") || "N/A";
+    const timestamp = new Date().toLocaleString("ro-RO", {
+      timeZone: "Europe/Bucharest",
+      day: "2-digit",
+      month: "2-digit",
+      year: "numeric",
+      hour: "2-digit",
+      minute: "2-digit",
+      second: "2-digit",
+    });
+
+    sendTelegramAlert({
+      name,
+      phone,
+      email,
+      service,
+      message: formattedMessage,
+      pageUrl,
+      timestamp,
+    }).catch((err) => console.error("Telegram notification error:", err));
 
     return { success: true, message: "Cererea ta a fost trimisă cu succes!" };
   } catch (err) {
@@ -54,21 +84,31 @@ export async function submitLead(formData: FormData): Promise<ActionResponse> {
 
 /**
  * Saves a complex assessment (e.g. Financial Twin, Gap Analysis) and generates a unique ID.
- * Falls back to `leads` table if a dedicated `assessments` table is not yet configured.
+ * Maps to database columns and triggers Telegram alerts.
  */
 export async function saveAssessment(assessmentType: string, data: Record<string, unknown>): Promise<{ success: boolean; id?: string; error?: string }> {
   try {
     const supabase = await createClient();
     const uniqueId = `aix_${assessmentType.toLowerCase().replace(/[^a-z0-9]/g, '')}_${Math.random().toString(36).substr(2, 9)}`;
 
+    const name = (data.name as string) || "Anonymous Assessment";
+    const email = (data.email as string) || "";
+    const phone = (data.phone as string) || "";
+    const service_type = `Assessment: ${assessmentType}`;
+
+    const formattedMessage = [
+      (data.message as string) || "",
+      `Assessment ID: ${uniqueId}`,
+      `Sursă: Platform Assessment`,
+      `Detalii: ${JSON.stringify(data, null, 2)}`
+    ].filter(Boolean).join("\n\n");
+
     const payload = {
-      name: data.name || "Anonymous Assessment",
-      email: data.email || "",
-      phone: data.phone || "",
-      service: `Assessment: ${assessmentType}`,
-      source: "Platform Assessment",
-      message: `Assessment ID: ${uniqueId}`,
-      metadata: { assessmentId: uniqueId, ...data }
+      name,
+      email,
+      phone,
+      service_type,
+      message: formattedMessage
     };
 
     const { error } = await supabase.from("leads").insert([payload]);
@@ -77,6 +117,29 @@ export async function saveAssessment(assessmentType: string, data: Record<string
       console.error("Error saving assessment:", error);
       return { success: false, error: "Nu am putut salva evaluarea." };
     }
+
+    // Async Telegram notify (non-blocking)
+    const headersList = await headers();
+    const pageUrl = headersList.get("referer") || "N/A";
+    const timestamp = new Date().toLocaleString("ro-RO", {
+      timeZone: "Europe/Bucharest",
+      day: "2-digit",
+      month: "2-digit",
+      year: "numeric",
+      hour: "2-digit",
+      minute: "2-digit",
+      second: "2-digit",
+    });
+
+    sendTelegramAlert({
+      name,
+      phone,
+      email,
+      service: service_type,
+      message: formattedMessage,
+      pageUrl,
+      timestamp,
+    }).catch((err) => console.error("Telegram notification error:", err));
 
     return { success: true, id: uniqueId };
   } catch (err) {

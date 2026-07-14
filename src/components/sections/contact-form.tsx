@@ -5,33 +5,26 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { createClient } from "@/lib/supabase/client";
+import { submitLead } from "@/lib/actions";
 import { Loader2, CheckCircle2, AlertCircle, Home, ArrowLeft } from "lucide-react";
 import Link from "next/link";
 
 export function ContactForm({ customTitle }: { customTitle?: string }) {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
-  const supabase = createClient();
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setIsSubmitting(true);
     setStatus("idle");
 
-    const formData = new FormData(e.currentTarget);
-    const data = {
-      name: formData.get("name") as string,
-      email: formData.get("email") as string,
-      phone: formData.get("phone") as string,
-      service_type: formData.get("service_type") as string,
-      message: formData.get("message") as string,
-    };
-
     try {
-      const { error } = await supabase.from("leads").insert([data]);
+      const formData = new FormData(e.currentTarget);
+      const res = await submitLead(formData);
       
-      if (error) throw error;
+      if (!res.success) {
+        throw new Error(res.error || "Eroare la salvare");
+      }
       
       setStatus("success");
       (e.target as HTMLFormElement).reset();
@@ -119,11 +112,12 @@ export function ContactForm({ customTitle }: { customTitle?: string }) {
                   <label htmlFor="service_type" className="text-sm font-medium ml-1">Interesat de *</label>
                   <select 
                     id="service_type" 
-                    name="service_type" 
+                    name="service" 
                     required
+                    defaultValue=""
                     className="flex h-12 w-full rounded-2xl border border-border bg-transparent px-4 py-2 text-sm shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-primary appearance-none"
                   >
-                    <option value="" disabled selected className="text-foreground bg-background">Alege un serviciu</option>
+                    <option value="" disabled className="text-foreground bg-background">Alege un serviciu</option>
                     <option value="Generali Asigurări" className="text-foreground bg-background">Asigurări (Generali)</option>
                     <option value="Real Estate" className="text-foreground bg-background">Real Estate</option>
                     <option value="AiX OS" className="text-foreground bg-background">Ecosistem AiX OS</option>

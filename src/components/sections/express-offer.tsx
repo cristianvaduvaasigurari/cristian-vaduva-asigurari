@@ -18,6 +18,7 @@ export function ExpressOffer() {
   const [formData, setFormData] = useState({ type: "", name: "", phone: "" });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
+  const [error, setError] = useState<string | null>(null);
   
   const inputRef = useRef<HTMLInputElement>(null);
 
@@ -38,6 +39,7 @@ export function ExpressOffer() {
 
   const handleSubmit = async () => {
     setIsSubmitting(true);
+    setError(null);
     
     const data = new FormData();
     data.append("name", formData.name);
@@ -46,11 +48,18 @@ export function ExpressOffer() {
     data.append("source", "Express Offer Form");
     data.append("message", "Lead rapid generat în 30s.");
     
-    const res = await submitLead(data);
-    setIsSubmitting(false);
-    
-    if (res.success) {
-      setIsSuccess(true);
+    try {
+      const res = await submitLead(data);
+      setIsSubmitting(false);
+      
+      if (res.success) {
+        setIsSuccess(true);
+      } else {
+        setError(res.error || "A apărut o eroare la salvare.");
+      }
+    } catch {
+      setIsSubmitting(false);
+      setError("A apărut o eroare de rețea. Te rugăm să încerci din nou.");
     }
   };
 
@@ -166,6 +175,9 @@ export function ExpressOffer() {
                 >
                   {isSubmitting ? "Trimitem..." : "Cere Oferta Acum"} <ArrowRight className="w-5 h-5 ml-2" />
                 </Button>
+                {error && (
+                  <p className="text-sm font-bold text-red-500 mt-4 text-center">{error}</p>
+                )}
                 <p className="text-xs text-muted-foreground text-center mt-4">Nu trimitem SPAM. Te vom suna doar pentru oferta cerută.</p>
               </div>
             )}

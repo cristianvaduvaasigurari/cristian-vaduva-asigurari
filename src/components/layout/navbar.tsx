@@ -133,10 +133,10 @@ export function Navbar() {
     >
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex items-center justify-between">
-          <Link href="/" className="flex flex-col items-start justify-center gap-0.5 relative z-50">
-            <span className="font-heading font-bold text-xl tracking-tight leading-none text-foreground">
+          <div className="flex flex-col items-start justify-center gap-0.5 relative z-50">
+            <Link href="/" className="font-heading font-bold text-xl tracking-tight leading-none text-foreground">
               cristianvaduva.com
-            </span>
+            </Link>
             <div className="flex items-center gap-2 text-[10px] sm:text-xs text-muted-foreground uppercase tracking-widest font-medium mt-1">
               <Link href="/aixluxury" className="hover:text-foreground transition-colors">AiXLuxury</Link>
               <span className="w-1 h-1 rounded-full bg-border" />
@@ -144,7 +144,7 @@ export function Navbar() {
               <span className="w-1 h-1 rounded-full bg-border" />
               <Link href="/home-find" className="hover:text-foreground transition-colors">Home Find</Link>
             </div>
-          </Link>
+          </div>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-8">

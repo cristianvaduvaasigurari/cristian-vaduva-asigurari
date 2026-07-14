@@ -18,6 +18,7 @@ export function ImpactCalculators() {
   const [phone, setPhone] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   const formatCurrency = (val: number) => {
     return new Intl.NumberFormat("ro-RO", { style: "currency", currency: "EUR", maximumFractionDigits: 0 }).format(val);
@@ -82,6 +83,7 @@ export function ImpactCalculators() {
     if (!phone) return;
     
     setIsSubmitting(true);
+    setError(null);
     const formData = new FormData();
     formData.append("name", "Lead Calculator");
     formData.append("phone", phone);
@@ -89,10 +91,17 @@ export function ImpactCalculators() {
     formData.append("source", "Financial Impact Calculator");
     formData.append("metadata", JSON.stringify({ tab: activeTab, valueCalculated: value, estimatedPremium: metrics.premium }));
 
-    const res = await submitLead(formData);
-    setIsSubmitting(false);
-    if (res.success) {
-      setIsSuccess(true);
+    try {
+      const res = await submitLead(formData);
+      setIsSubmitting(false);
+      if (res.success) {
+        setIsSuccess(true);
+      } else {
+        setError(res.error || "A apărut o eroare la salvare.");
+      }
+    } catch {
+      setIsSubmitting(false);
+      setError("A apărut o eroare de rețea. Te rugăm să încerci din nou.");
     }
   };
 
@@ -231,6 +240,9 @@ export function ImpactCalculators() {
               >
                 {isSubmitting ? "Se trimite..." : "Obține Ofertă Exactă"} <ArrowRight className="w-5 h-5 ml-2" />
               </Button>
+              {error && (
+                <p className="text-sm font-bold text-red-500 mt-2">{error}</p>
+              )}
               <p className="text-xs text-muted-foreground mt-2">Un consultant premium te va contacta rapid.</p>
             </form>
           ) : (
