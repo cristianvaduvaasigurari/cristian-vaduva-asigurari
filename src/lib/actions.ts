@@ -1,5 +1,5 @@
 "use server";
-
+export const runtime = "nodejs";
 import { createClient } from "@/lib/supabase/server";
 import { headers } from "next/headers";
 import { sendTelegramAlert } from "@/lib/telegram";
@@ -16,6 +16,10 @@ export type ActionResponse = {
  * Safely defaults email/phone to prevent null constraint violations.
  */
 export async function submitLead(formData: FormData): Promise<ActionResponse> {
+  // Generate a unique identifier for this submission to trace its lifecycle
+  const submissionId = crypto.randomUUID();
+  console.info(`[Lead ${submissionId}] 🎯 Received server action invocation`);
+
   try {
     const supabase = await createClient();
 
@@ -45,7 +49,10 @@ export async function submitLead(formData: FormData): Promise<ActionResponse> {
       message: formattedMessage
     };
 
-    const { error } = await supabase.from("leads").insert([leadData]);
+    const { error } = await supabase.from("leads").insert([{ ...leadData, submission_id: submissionId }]);
+  if (!error) {
+    console.info(`[Lead ${submissionId}] ✅ Supabase insert succeeded`);
+  }
 
     if (error) {
       console.error("Supabase Error saving lead:", error);
@@ -69,6 +76,7 @@ export async function submitLead(formData: FormData): Promise<ActionResponse> {
     console.info(`[Lead] Received lead for service "${service}" from ${name} (${phone})`);
     // Await Telegram alert
     console.info(`[Lead] Starting Telegram alert`);
+    console.info(`[Lead ${submissionId}] 🚀 Starting Telegram alert`);
     await sendTelegramAlert({
       name,
       phone,
@@ -77,7 +85,10 @@ export async function submitLead(formData: FormData): Promise<ActionResponse> {
       message: formattedMessage,
       pageUrl,
       timestamp,
+      submissionId,
     });
+    console.info(`[Lead ${submissionId}] ✅ Telegram alert completed`);
+
     console.info(`[Lead] Telegram alert completed`);
     // Return success response
     return { success: true, message: "Cererea ta a fost trimisă cu succes!" };
@@ -92,6 +103,10 @@ export async function submitLead(formData: FormData): Promise<ActionResponse> {
  * Maps to database columns and triggers Telegram alerts.
  */
 export async function saveAssessment(assessmentType: string, data: Record<string, unknown>): Promise<{ success: boolean; id?: string; error?: string }> {
+  // Generate a unique identifier for this assessment submission
+  const submissionId = crypto.randomUUID();
+  console.info(`[Assessment ${submissionId}] 🎯 Received server action invocation`);
+
   try {
     const supabase = await createClient();
     const uniqueId = `aix_${assessmentType.toLowerCase().replace(/[^a-z0-9]/g, '')}_${Math.random().toString(36).substr(2, 9)}`;
@@ -116,7 +131,10 @@ export async function saveAssessment(assessmentType: string, data: Record<string
       message: formattedMessage
     };
 
-    const { error } = await supabase.from("leads").insert([payload]);
+    const { error } = await supabase.from("leads").insert([{ ...payload, submission_id: submissionId }]);
+  if (!error) {
+    console.info(`[Assessment ${submissionId}] ✅ Supabase insert succeeded`);
+  }
 
     if (error) {
       console.error("Error saving assessment:", error);
@@ -139,6 +157,7 @@ export async function saveAssessment(assessmentType: string, data: Record<string
     // Log assessment receipt
     console.info(`[Assessment] Received ${assessmentType} for ${name} (${phone})`);
     console.info(`[Assessment] Starting Telegram alert`);
+    console.info(`[Assessment ${submissionId}] 🚀 Starting Telegram alert`);
     await sendTelegramAlert({
       name,
       phone,
@@ -147,7 +166,10 @@ export async function saveAssessment(assessmentType: string, data: Record<string
       message: formattedMessage,
       pageUrl,
       timestamp,
+      submissionId,
     });
+    console.info(`[Assessment ${submissionId}] ✅ Telegram alert completed`);
+
     console.info(`[Assessment] Telegram alert completed`);
     // Return success response
     return { success: true, id: uniqueId };

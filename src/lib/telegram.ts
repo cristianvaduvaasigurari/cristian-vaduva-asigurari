@@ -113,8 +113,6 @@ export async function sendTelegramAlert(lead: TelegramLeadData): Promise<boolean
       console.warn(`[Telegram Alert] Request completed in ${elapsed}ms – Status ${response.status}`);
       console.warn(`[Telegram Alert] HTTP ${response.status} on attempt ${attempt}: ${errBody}`);
 
-      const errBody = await response.text().catch(() => "(unreadable)");
-      console.warn(`[Telegram Alert] HTTP ${response.status} on attempt ${attempt}: ${errBody}`);
     } catch (err: unknown) {
       const errorMsg = err instanceof Error ? err.message : String(err);
       const isAbort = err instanceof Error && err.name === "AbortError";
