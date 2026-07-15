@@ -70,7 +70,7 @@ export default function BusinessMalpracticeInsurancePage() {
                 Acum 10 ani, un medic dădea 50 de lei pe an "doar ca să ia viza de la Colegiul Medicilor", având o limită de despăgubire infimă de 10.000 EUR. Astăzi, casele de avocatură specializate în vătămări corporale obțin în instanțele din România daune morale de 500.000 EUR - 1.000.000 EUR.
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                Dacă ești Chirurg sau Obstetrician, și deții doar polița minimă de 60.000 EUR (limita maximă standard cerută), diferența până la milionul de Euro cerut de judecător va fi luată prin executare silită pe casele și conturile tale personale. De aceea medicii de top cumpără "top pentru tine-Up-uri" (Extinderi Voluntare masive).
+                Dacă ești Chirurg sau Obstetrician, și deții doar polița minimă de 60.000 EUR (limita maximă standard cerută), diferența până la milionul de Euro cerut de judecător va fi luată prin executare silită pe casele și conturile tale personale. De aceea medicii de top cumpără "Suplimentări voluntare" (Extinderi Voluntare masive).
               </p>
             </div>
           </div>
@@ -184,7 +184,7 @@ export default function BusinessMalpracticeInsurancePage() {
                   O naștere se complică. Medicul obstetrician întârzie decizia de a intra pe cezariană de urgență. Copilul se naște cu hipoxie severă (lipsă de oxigen la creier) și rămâne cu paralizie cerebrală severă (handicap pe viață).
                 </p>
                 <div className="p-4 bg-amber-50/50 rounded-xl border border-amber-100">
-                  <span className="font-bold text-amber-700">Rezolvarea poliței:</span> Părinții au dat în judecată atât medicul cât și Spitalul Privat, obținând 500.000 EUR daune morale + plata îngrijirilor lunare vitagere (o pensie pe viață pentru copil). Medicul avea o poliță de doar 60.000 EUR. Restul imens de sumă a trebuit să fie suportat de Polița spitalului și, în final, din averea medicului, dovedind importanța critică a limitelor (top pentru tine-Up-urilor) extinse.
+                  <span className="font-bold text-amber-700">Rezolvarea poliței:</span> Părinții au dat în judecată atât medicul cât și Spitalul Privat, obținând 500.000 EUR daune morale + plata îngrijirilor lunare vitagere (o pensie pe viață pentru copil). Medicul avea o poliță de doar 60.000 EUR. Restul imens de sumă a trebuit să fie suportat de Polița spitalului și, în final, din averea medicului, dovedind importanța critică a limitelor (Suplimentări voluntarelor) extinse.
                 </div>
               </div>
               <div className="glass beneficiu-card p-8 rounded-[2rem] border-l-4 border-l-amber-500">
@@ -207,7 +207,7 @@ export default function BusinessMalpracticeInsurancePage() {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
               <div className="p-6 rounded-2xl bg-white border border-[#c8102e]/10 shadow-sm hover:shadow-md transition-shadow">
-                <h4 className="font-bold text-[#c8102e] mb-3 text-lg">Polița "top pentru tine-Up" (Suplimentară)</h4>
+                <h4 className="font-bold text-[#c8102e] mb-3 text-lg">Polița "Suplimentară" (Suplimentară)</h4>
                 <p className="text-muted-foreground leading-relaxed">Chiar dacă ai deja polița "de bază" cerută de Colegiu emisă la altcineva, la Generali putem veni cu o poliță "peste", un scut adițional care intră în vigoare doar dacă se termină fondurile de pe prima poliță (ex. o completare de 300k sau 500k Euro), oferindu-ți un somn liniștit.</p>
               </div>
               <div className="p-6 rounded-2xl bg-white border border-[#c8102e]/10 shadow-sm hover:shadow-md transition-shadow">
@@ -265,7 +265,7 @@ export default function BusinessMalpracticeInsurancePage() {
                     <MessageCircle className="w-6 h-6" />
                   </div>
                   <div>
-                    <div className="text-sm text-green-700 font-medium">Inițiază Oferta top pentru tine-Up pe WhatsApp</div>
+                    <div className="text-sm text-green-700 font-medium">Inițiază Oferta Suplimentară pe WhatsApp</div>
                     <div className="font-bold text-foreground">{CONTACT.whatsapp.display}</div>
                   </div>
                 </a>

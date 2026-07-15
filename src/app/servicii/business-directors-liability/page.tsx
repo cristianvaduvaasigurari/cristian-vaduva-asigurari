@@ -64,7 +64,7 @@ export default function BusinessDirectorsLiabilityPage() {
               <div className="absolute top-0 right-0 w-64 h-64 bg-amber-500/5 rounded-full blur-[80px] -z-10" />
               <h2 className="text-3xl font-heading font-bold mb-6 flex items-center gap-3">
                 <Star className="text-amber-500 w-8 h-8 fill-amber-500/20" />
-                Bază de Atracție pentru top pentru tine Management
+                Bază de Atracție pentru Management
               </h2>
               <p className="text-lg text-muted-foreground leading-relaxed mb-4">
                 Dacă vrei să aduci un CFO sau un CEO extrem de competent din piață, primul lucru pe care un profesionist de top îl va cere la angajare este: "Vreau Poliță D&O de minimum 1 milion de Euro".
@@ -175,7 +175,7 @@ export default function BusinessDirectorsLiabilityPage() {
           <div className="mb-24">
             <h2 className="text-3xl font-heading font-bold mb-10 text-center flex items-center justify-center gap-3">
               <Lightbulb className="text-amber-500 w-8 h-8" />
-              Linia Subțire între Eroare și Faliment pentru tine
+              Linia Subțire între Eroare și Faliment
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="glass beneficiu-card p-8 rounded-[2rem] border-l-4 border-l-amber-500">

@@ -175,7 +175,7 @@ export default function CascoInsurancePage() {
           <div className="mb-24">
             <h2 className="text-3xl font-heading font-bold mb-10 text-center flex items-center justify-center gap-3">
               <Lightbulb className="text-amber-500 w-8 h-8" />
-              Evitarea Falimentului pentru tine
+              Evitarea Falimentului
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="glass beneficiu-card p-8 rounded-[2rem] border-l-4 border-l-amber-500">

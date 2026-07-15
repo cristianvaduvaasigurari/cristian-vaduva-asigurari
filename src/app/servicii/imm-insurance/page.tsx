@@ -211,7 +211,7 @@ export default function IMMInsurancePage() {
                 <p className="text-muted-foreground leading-relaxed">Nu forțăm antreprenorii în șabloane generice. Polițele se taie la milimetru. De la acoperirea clădirilor de birouri (Owner’s Property) la protecția flotelor comerciale complexe.</p>
               </div>
               <div className="p-6 rounded-2xl bg-white border border-[#c8102e]/10 shadow-sm hover:shadow-md transition-shadow">
-                <h4 className="font-bold text-[#c8102e] mb-3 text-lg">Evaluatori Industriali top pentru tine Class</h4>
+                <h4 className="font-bold text-[#c8102e] mb-3 text-lg">Evaluatori Industriali de Top</h4>
                 <p className="text-muted-foreground leading-relaxed">Sistemele noastre de gestiune de criză direcționează inspectori industriali de daună în câteva ore de la un incident major pentru a stopa sângerarea companiei.</p>
               </div>
               <div className="p-6 rounded-2xl bg-white border border-[#c8102e]/10 shadow-sm hover:shadow-md transition-shadow">
@@ -231,7 +231,7 @@ export default function IMMInsurancePage() {
               </div>
               <div className="glass beneficiu-card p-6 md:p-8 rounded-2xl border border-border">
                 <h3 className="text-xl font-bold mb-3 text-foreground">Partenerii B2B îmi cer o poliță Răspundere Profesională ca să semnăm contractul. Generali poate emite așa ceva?</h3>
-                <p className="text-muted-foreground leading-relaxed">Da, suntem experți în serviciu practic pentru tine Indemnity (E&O). Fie că ești o agenție IT care lucrează pentru băncile elvețiene sau un arhitect cu contracte grele de construcții. Emitem polița cu limtele de milioane de EUR cerute de partenerii tăi pentru o fracțiune din acel cost.</p>
+                <p className="text-muted-foreground leading-relaxed">Da, suntem experți în Professional Indemnity (E&O). Fie că ești o agenție IT care lucrează pentru băncile elvețiene sau un arhitect cu contracte grele de construcții. Emitem polița cu limtele de milioane de EUR cerute de partenerii tăi pentru o fracțiune din acel cost.</p>
               </div>
               <div className="glass beneficiu-card p-6 md:p-8 rounded-2xl border border-border">
                 <h3 className="text-xl font-bold mb-3 text-foreground">Cât este prima anuală pentru un IMM de dimensiuni mici?</h3>

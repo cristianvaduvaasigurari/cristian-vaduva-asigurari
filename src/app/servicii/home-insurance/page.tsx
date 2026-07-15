@@ -70,7 +70,7 @@ export default function HomeInsurancePage() {
                 Astăzi, designul interior, instalațiile de climatizare, podelele din lemn masiv și tehnologiile smart integrate într-un apartament pot costa la fel de mult cât a costat structura betonului. Toate aceste amenajări costisitoare sunt invizibile pentru asigurarea de bază.
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                Fără o asigurare facultativă adaptată corect, în eventualitatea unui incendiu minor care distruge parchetul și bucătăria personalizată, va trebui să refaci întreaga investiție exclusiv din economiile personale.
+                Fără o asigurare facultativă adaptată corect, în eventualitatea unui incendiu minor care distruge parchetul și bucătăria personalizată, va trebui să refaci întreaga investiție doar din economiile personale.
               </p>
             </div>
           </div>
@@ -82,7 +82,7 @@ export default function HomeInsurancePage() {
               Cui îi este destinată?
             </h2>
             <div className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Această poliță nu este un lux, ci o responsabilitate a dreptului de proprietate, potrivindu-se oricui deține sau interacționează cu piața imobiliară:
+              Această poliță nu este o cheltuială inutilă, ci o responsabilitate a dreptului de proprietate, potrivindu-se oricui deține sau interacționează cu piața imobiliară:
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl mx-auto text-left">
               <div className="p-6 rounded-2xl bg-emerald-50/50 border border-emerald-100">

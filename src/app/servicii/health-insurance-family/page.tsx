@@ -181,7 +181,7 @@ export default function HealthFamilyInsurancePage() {
               <div className="glass beneficiu-card p-8 rounded-[2rem] border-l-4 border-l-amber-500">
                 <h3 className="text-xl font-bold mb-4 text-foreground">Scenariul 1: Enterocolita Virală</h3>
                 <p className="text-muted-foreground leading-relaxed mb-4">
-                  Alex, 4 ani, face viroză și se deshidratează periculos vineri seară. Părinții nu vor să meargă la stat. Îl duc la un spital privat exclusiv pentru copii. Cost: triaj 400 RON + perfuzii și internare 2 zile: 3.500 RON.
+                  Alex, 4 ani, face viroză și se deshidratează periculos vineri seară. Părinții nu vor să meargă la stat. Îl duc la un spital privat destinat doar copiilor. Cost: triaj 400 RON + perfuzii și internare 2 zile: 3.500 RON.
                 </p>
                 <div className="p-4 bg-amber-50/50 rounded-xl border border-amber-100">
                   <span className="font-bold text-amber-700">Rezolvarea poliței:</span> Având polița Generali cu decontare directă, tatăl predă doar buletinul la recepție. Generali plătește factura de 3.900 RON în timp ce părinții își țin băiețelul curat și stabilizat într-o rezervă superioară.
@@ -203,7 +203,7 @@ export default function HealthFamilyInsurancePage() {
           <div className="mb-24 glass rounded-[3rem] p-10 md:p-16 border border-border bg-[#c8102e]/5 text-center">
             <h2 className="text-3xl font-heading font-bold mb-10 text-[#c8102e]">Accesul direct către experții în Pediatrie</h2>
             <div className="text-lg text-muted-foreground mb-10 max-w-3xl mx-auto">
-              Sănătatea copiilor este delicată. Ai nevoie de acces în clicile private de elită din marile reședințe județene care atrag marii specialiști de profil din România.
+              Sănătatea copiilor este delicată. Ai nevoie de acces în clinicile private renumite din marile reședințe județene care atrag marii specialiști de profil din România.
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
               <div className="p-6 rounded-2xl bg-white border border-[#c8102e]/10 shadow-sm hover:shadow-md transition-shadow">

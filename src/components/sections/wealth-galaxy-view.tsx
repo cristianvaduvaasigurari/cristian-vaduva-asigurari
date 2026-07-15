@@ -25,8 +25,8 @@ const galaxyItems = [
     angle: 0
   },
   {
-    id: "serviciu avansat pentru tine",
-    name: "acces rapid pentru tine Assets",
+    id: "luxury-assets",
+    name: "Bunuri de Valoare",
     icon: <Sparkles className="w-6 h-6 text-amber-600" />,
     value: "€120,000",
     risk: "Scăzut (Garaj Securizat)",
@@ -36,7 +36,7 @@ const galaxyItems = [
       "Asigurare dedicată ceasuri de lux off-site."
     ],
     relatedServices: [
-      { name: "acces rapid pentru tine Assets Protection", link: "/serviciu avansat pentru tine-assets" },
+      { name: "Protecție Bunuri de Valoare", link: "/luxury-assets" },
       { name: "Asigurare CASCO", link: "/servicii/casco-insurance" }
     ],
     orbitRadius: 240,

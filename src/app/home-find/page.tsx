@@ -52,7 +52,7 @@ export default function HomeFindPage() {
               Redefining the Journey
             </h2>
             <p className="text-lg text-slate-600">
-              Home Find™ is not just a real estate platform. It is an end-to-end serviciu avansat pentru tine ecosystem managed by Cristian Văduva and Generali România.
+              Home Find™ is not just a real estate platform. It is an end-to-end luxury-assets ecosystem managed by Cristian Văduva and Generali România.
             </p>
           </div>
           
@@ -165,7 +165,7 @@ export default function HomeFindPage() {
                 </div>
                 <div className="flex-1 text-center md:text-left">
                   <h3 className="text-xl font-bold mb-1">Insurance Protection</h3>
-                  <p className="text-slate-400 text-sm">Immediate, personalizat pentru tine coverage through Generali România.</p>
+                  <p className="text-slate-400 text-sm">Immediate, custom coverage through Generali România.</p>
                 </div>
               </div>
 

@@ -58,7 +58,7 @@ export function generateGenericPDF(title: string, description: string, summary: 
   const cleanSummary = removeDiacritics(summary);
 
   // ==========================================
-  // PAGE 1: serviciu practic pentru tine COVER
+  // PAGE 1: Professional COVER
   // ==========================================
   
   // Cover Background
@@ -138,7 +138,7 @@ export function generateGenericPDF(title: string, description: string, summary: 
   doc.setTextColor(15, 23, 42); // slate-900
   doc.setFontSize(12);
   doc.setFont("helvetica", "bold");
-  doc.text("Pentru o consultanta personalizata contacteaza Cristian Vaduva.", 30, ctaY + 15);
+  doc.text("Pentru a stabili detaliile politei tale, contacteaza Cristian Vaduva.", 30, ctaY + 15);
 
   doc.setTextColor(71, 85, 105); // slate-600
   doc.setFontSize(10);

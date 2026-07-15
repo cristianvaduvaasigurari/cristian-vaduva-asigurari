@@ -137,7 +137,7 @@ export default function PADInsurancePage() {
             <div className="absolute top-0 right-0 w-64 h-64 bg-red-500/5 rounded-full blur-[80px] -z-10" />
             <h2 className="text-3xl font-heading font-bold mb-10 flex items-center justify-center gap-3">
               <AlertTriangle className="text-red-500 w-8 h-8" />
-              Cele 3 Riscuri acces exclusiv pentru tine din Lege
+              Cele 3 riscuri asigurate prin lege
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
               <div className="flex items-start gap-4 p-5 rounded-2xl bg-white/50 border border-red-100 shadow-sm">

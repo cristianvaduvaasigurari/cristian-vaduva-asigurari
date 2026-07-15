@@ -85,18 +85,6 @@ export async function submitLead(formData: FormData): Promise<ActionResponse> {
       return { success: false, error: "Eroare la salvarea datelor. Te rugăm să încerci din nou." };
     }
 
-    // Extract request metadata
-    const headersList = await headers();
-    const pageUrl = headersList.get("referer") || "N/A";
-    const timestamp = new Date().toLocaleString("ro-RO", {
-      timeZone: "Europe/Bucharest",
-      day: "2-digit",
-      month: "2-digit",
-      year: "numeric",
-      hour: "2-digit",
-      minute: "2-digit",
-      second: "2-digit",
-    });
 
     // No further Telegram alert; response will be returned
     console.info(`[Lead ${submissionId}] ✅ Direct Telegram fetch completed`);
@@ -190,4 +178,3 @@ export async function saveAssessment(
     return { success: false, error: "Eroare la procesarea evaluării." };
   }
 }
-export { submitLead, saveAssessment };

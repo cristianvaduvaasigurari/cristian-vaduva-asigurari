@@ -215,8 +215,8 @@ export default function RcaInsurancePage() {
                 <p className="text-muted-foreground leading-relaxed">Când îți repari mașina pe decontarea ta directă, vrei un service excepțional care acceptă decontarea rapidă pe baza reputației companiei care plătește dauna.</p>
               </div>
               <div className="p-6 rounded-2xl bg-white border border-[#c8102e]/10 shadow-sm hover:shadow-md transition-shadow">
-                <h4 className="font-bold text-[#c8102e] mb-3 text-lg">Call Center beneficiu</h4>
-                <p className="text-muted-foreground leading-relaxed">Accidentele generează panică. Să poți suna la orice oră din noapte și să îți răspundă un agent uman care îți explică cum să completezi amiabila e un serviciu de lux neprețuit.</p>
+                <h4 className="font-bold text-[#c8102e] mb-3 text-lg">Asistență Rapidă</h4>
+                <p className="text-muted-foreground leading-relaxed">Accidentele generează panică. Să poți suna la orice oră din noapte și să îți răspundă un agent uman care îți explică cum să completezi amiabila e un ajutor de neprețuit.</p>
               </div>
             </div>
           </div>

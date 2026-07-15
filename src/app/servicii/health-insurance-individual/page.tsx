@@ -82,16 +82,16 @@ export default function HealthIndividualInsurancePage() {
               Cui îi este destinată?
             </h2>
             <div className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Această poliță este soluția supremă pentru oricine prioritizează calitatea vieții și refuză să depindă exclusiv de spitalele de stat:
+              Această poliță este soluția potrivită pentru oricine prioritizează calitatea vieții și refuză să depindă doar de spitalele de stat:
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl mx-auto text-left">
               <div className="p-6 rounded-2xl bg-emerald-50/50 border border-emerald-100">
-                <h4 className="font-bold text-emerald-800 mb-2">Profesioniștilor Independenți (PFA, Freelanceri)</h4>
-                <p className="text-muted-foreground">Care își gestionează propriul buget medical și știu că o săptămână pierdută în cozi la policlinici înseamnă bani pierduți din propria afacere.</p>
+                <h4 className="font-bold text-emerald-800 mb-2">Freelancerilor și Antreprenorilor Independenți</h4>
+                <p className="text-muted-foreground">Care își gestionează propriul buget medical și știu că o săptămână pierdută în cozi la policlinici înseamnă venituri pierdute din propria activitate.</p>
               </div>
               <div className="p-6 rounded-2xl bg-emerald-50/50 border border-emerald-100">
                 <h4 className="font-bold text-emerald-800 mb-2">Adulților Proactivi (25-45 ani)</h4>
-                <p className="text-muted-foreground">Oameni care fac preventiv ecografii și analize anuale, prețuind luxul de a alege doctori cu renume din piața privată fără constrângeri de cost.</p>
+                <p className="text-muted-foreground">Oameni care fac preventiv ecografii și analize anuale, apreciind libertatea de a alege doctori cu renume din piața privată fără constrângeri de cost.</p>
               </div>
               <div className="p-6 rounded-2xl bg-emerald-50/50 border border-emerald-100">
                 <h4 className="font-bold text-emerald-800 mb-2">Persoanelor cu afecțiuni în stadii incipiente</h4>

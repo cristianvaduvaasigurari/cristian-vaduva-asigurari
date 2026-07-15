@@ -27,13 +27,13 @@ const assets = [
   {
     id: "jewelry",
     icon: <Diamond className="w-12 h-12 text-zinc-900" />,
-    title: "Jewelry & valoare mare pentru tine Watchmaking",
+    title: "Jewelry & Fine Watchmaking",
     desc: "Asigurări specializate de la sindicate Lloyd's pentru colecții de ceasuri rare și bijuterii, cu acoperire globală inclusiv la purtare."
   },
   {
     id: "estates",
     icon: <Building2 className="w-12 h-12 text-zinc-900" />,
-    title: "acces rapid pentru tine Estates",
+    title: "Assets Estates",
     desc: "Nu limităm despăgubirile la evaluarea standard. Construim o poliță pe Valoarea Reală de Reconstrucție cu arhitect și materiale beneficiu."
   }
 ];
@@ -99,7 +99,7 @@ export default function beneficiuAssetsPage() {
               Solicită un audit privat.
             </h2>
             <p className="text-xl text-zinc-400 mb-12 max-w-2xl mx-auto">
-              Suntem parteneri de încredere pentru clienții valoare mare pentru tine-Net-Worth. Discreția și execuția ireproșabilă sunt garantate.
+              Suntem parteneri de încredere pentru clienții Net-Worth. Discreția și execuția ireproșabilă sunt garantate.
             </p>
             <Button className="h-16 rounded-full bg-white text-zinc-900 hover:bg-zinc-200 text-lg font-bold px-10" asChild>
               <a href="/contact">Programează o întâlnire</a>

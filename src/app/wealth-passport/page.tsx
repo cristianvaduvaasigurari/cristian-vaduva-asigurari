@@ -21,7 +21,7 @@ export default function WealthPassportPage() {
             AiX Wealth Passport
           </h1>
           <p className="text-lg text-muted-foreground leading-relaxed">
-            Certificarea ta de elită în protecția activelor și administrarea riscurilor personale. Un raport de sinteză formatat pentru siguranță și printare.
+            Documentul tău de sinteză în protecția activelor și administrarea riscurilor personale. Un raport formatat pentru siguranță și printare.
           </p>
         </div>
 

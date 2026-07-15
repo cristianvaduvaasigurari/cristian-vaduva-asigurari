@@ -29,12 +29,12 @@ export function WealthPassportDocument() {
         </Button>
       </div>
 
-      {/* serviciu avansat pentru tine PASSPORT CONTAINER */}
+      {/* luxury-assets PASSPORT CONTAINER */}
       <div 
         ref={documentRef}
         className="bg-white border-8 border-double border-slate-900 rounded-[3rem] p-12 md:p-16 shadow-2xl relative overflow-hidden print:border-0 print:p-0 print:shadow-none"
       >
-        {/* Subtle acces rapid pentru tine Pattern Background Overlay */}
+        {/* Subtle Assets Pattern Background Overlay */}
         <div className="absolute inset-0 bg-grid-pattern opacity-5 pointer-events-none" />
 
         {/* Decorative Gold Seal / Compass Accent */}
@@ -55,7 +55,7 @@ export function WealthPassportDocument() {
           </div>
         </div>
 
-        {/* Holder pentru tine Section */}
+        {/* Holder Section */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-10 border-b border-slate-100 pb-10">
           <div className="flex gap-4 items-start col-span-2">
             <div className="w-20 h-24 bg-slate-100 border border-slate-200 rounded-xl flex items-center justify-center shrink-0 text-slate-400">
@@ -139,7 +139,7 @@ export function WealthPassportDocument() {
                 </span>
               </li>
               <li className="text-xs text-slate-600 flex justify-between items-center py-1.5 border-b border-slate-50">
-                <span>Vulnerabilitate Capital pentru tine</span>
+                <span>Vulnerabilitate Capital</span>
                 <span className="font-bold text-slate-900">Mediu (Levier Ipotecar)</span>
               </li>
             </ul>

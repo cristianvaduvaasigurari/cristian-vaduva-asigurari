@@ -207,7 +207,7 @@ export default function TravelFamilyInsurancePage() {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
               <div className="p-6 rounded-2xl bg-white border border-[#c8102e]/10 shadow-sm hover:shadow-md transition-shadow">
-                <h4 className="font-bold text-[#c8102e] mb-3 text-lg">Asistență Exclusivă în Română</h4>
+                <h4 className="font-bold text-[#c8102e] mb-3 text-lg">Asistență Dedicată în Limba Română</h4>
                 <p className="text-muted-foreground leading-relaxed">Nu ești obligat să explici simptomele copilului cuiva în engleză la 4 dimineața. Operatorul central de la asistență vorbește limba română și te îndrumă calm.</p>
               </div>
               <div className="p-6 rounded-2xl bg-white border border-[#c8102e]/10 shadow-sm hover:shadow-md transition-shadow">

@@ -44,7 +44,7 @@ const megaMenuData = [
       { name: "Clădiri Comerciale", href: "/servicii/business-building-insurance" },
       { name: "Bunuri Business", href: "/servicii/business-goods-insurance" },
       { name: "Răspundere Generală", href: "/servicii/business-general-liability" },
-      { name: "Răspundere Profesională", href: "/servicii/business-serviciu practic pentru tine-liability" },
+      { name: "Răspundere Profesională", href: "/servicii/business-professional-liability" },
       { name: "Răspunderea Managerilor (D&O)", href: "/servicii/business-directors-liability" },
       { name: "Malpraxis Medical", href: "/servicii/business-malpractice-insurance" },
     ]
@@ -89,7 +89,7 @@ const ecosystemMenuData = [
     title: "AiX Tools",
     items: [
       { name: "Second Opinion", href: "/second-opinion" },
-      { name: "acces rapid pentru tine Garage", href: "/serviciu avansat pentru tine-garage" },
+      { name: "Garaj Personal", href: "/luxury-garage" },
       { name: "Client Journey", href: "/client-journey" },
       { name: "Smart Forms", href: "/smart-forms" },
       { name: "Wealth Passport", href: "/wealth-passport" },

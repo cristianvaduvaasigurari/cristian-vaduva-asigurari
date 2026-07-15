@@ -201,7 +201,7 @@ export default function TravelAnnualInsurancePage() {
 
           {/* 8. De ce să alegi Generali România */}
           <div className="mb-24 glass rounded-[3rem] p-10 md:p-16 border border-border bg-[#c8102e]/5 text-center">
-            <h2 className="text-3xl font-heading font-bold mb-10 text-[#c8102e]">O Gestiune de Tip Flotă pentru tineă</h2>
+            <h2 className="text-3xl font-heading font-bold mb-10 text-[#c8102e]">O Gestiune de Tip Flotă Dedicată</h2>
             <div className="text-lg text-muted-foreground mb-10 max-w-3xl mx-auto">
               Tehnologia modernă de emitere a polițelor de tip abonament salvează stresul repetitiv de la ghișeu.
             </div>

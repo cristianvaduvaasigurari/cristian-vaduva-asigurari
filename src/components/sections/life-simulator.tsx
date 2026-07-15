@@ -35,7 +35,7 @@ export function LifeSimulator() {
   let baseScore = 40;
   if (savings > income * 6) baseScore += 20; // Emergency fund
   if (investments > 20000) baseScore += 10;
-  if (mortgage > propertyValue * 0.8) baseScore -= 15; // valoare mare pentru tine leverage
+  if (mortgage > propertyValue * 0.8) baseScore -= 15; // high leverage
   if (children > 0 && savings < 5000) baseScore -= 20;
 
   const currentRisk = (mortgage > 100000 && income < 4000) ? "Ridicat" : (mortgage > 0 || children > 0) ? "Mediu" : "Scăzut";

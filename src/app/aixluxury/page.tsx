@@ -6,7 +6,7 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "AiXbeneficiu | Cristian Văduva",
-  description: "Agenție imobiliară beneficiu și servicii concierge. Proprietăți exclusiviste off-market.",
+  description: "Portofoliu imobiliar select și servicii de consultanță imobiliară. Proprietăți deosebite off-market.",
 };
 
 export default function AiXbeneficiuPage() {
@@ -18,13 +18,13 @@ export default function AiXbeneficiuPage() {
         <div className="container mx-auto px-4">
           <div className="mb-24 text-center max-w-4xl mx-auto">
             <div className="inline-flex px-4 py-1.5 rounded-full glass text-amber-600 font-medium mb-8 uppercase tracking-widest text-sm border border-amber-500/20 bg-amber-500/10">
-              acces rapid pentru tine Real Estate
+              Real Estate
             </div>
             <h1 className="text-5xl md:text-7xl font-heading font-bold mb-8">
-              AiX<span className="text-amber-500">acces rapid pentru tine</span>
+              AiX<span className="text-amber-500">Assets</span>
             </h1>
             <p className="text-xl text-muted-foreground leading-relaxed">
-              O abordare ultra-beneficiu a pieței imobiliare internaționale și de lux. Oferim clienților discreți acces exclusiv la proprietăți off-market și oportunități de investiție unice.
+              O abordare axată pe calitatea superioară a proprietăților și a amplasamentelor. Oferim clienților discreți acces prioritar la proprietăți off-market și oportunități de investiție unice.
             </p>
           </div>
 
@@ -34,7 +34,7 @@ export default function AiXbeneficiuPage() {
                 <Building2 className="w-8 h-8 text-amber-600" />
               </div>
               <h3 className="text-2xl font-bold mb-4 font-heading text-foreground">Portofoliu beneficiu</h3>
-              <p className="text-muted-foreground">Vile pe malul lacului, penthouse-uri exclusiviste și clădiri istorice, atent selecționate.</p>
+              <p className="text-muted-foreground">Vile pe malul lacului, penthouse-uri spațioase și clădiri istorice, atent selecționate.</p>
             </div>
             <div className="glass beneficiu-card p-10 rounded-[3rem] border border-border text-center">
               <div className="mx-auto w-16 h-16 rounded-full bg-amber-100 flex items-center justify-center mb-6">
@@ -62,7 +62,7 @@ export default function AiXbeneficiuPage() {
             </p>
           </div>
         </div>
-        <ContactForm customTitle="Cauți o proprietate de lux?" />
+        <ContactForm customTitle="Dorești o analiză a opțiunilor imobiliare?" />
       </main>
       
       <Footer />

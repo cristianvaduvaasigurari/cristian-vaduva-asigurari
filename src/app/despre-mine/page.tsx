@@ -7,7 +7,7 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Despre Mine | Cristian Văduva",
-  description: "Senior Sales, valoare mare pentru tine-Ticket Closer, Real Estate & Investment Advisor. Protecția patrimoniului și strategii de creștere financiară.",
+  description: "Senior Sales, High-Ticket Closer, Real Estate & Investment Advisor. Protecția patrimoniului și strategii de creștere financiară.",
 };
 
 export default function AboutPage() {
@@ -21,7 +21,7 @@ export default function AboutPage() {
           <div className="flex flex-col md:flex-row items-center gap-16">
             <div className="flex-1">
               <span className="inline-block px-4 py-2 rounded-full bg-blue-500/10 text-blue-400 font-heading text-sm font-bold tracking-widest uppercase mb-6 border border-blue-500/20">
-                acces rapid pentru tine Advisor & valoare mare pentru tine-Ticket Closer
+                Sales Advisor & High-Ticket Closer
               </span>
               <h1 className="text-5xl md:text-7xl font-heading font-bold mb-6 leading-tight tracking-tight">
                 Cristian <br/><span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">Văduva.</span>
@@ -63,7 +63,7 @@ export default function AboutPage() {
                 {
                   icon: Gem,
                   title: "Real Estate",
-                  desc: "Reprezentare exclusivă pentru proprietăți beneficiu și off-market prin Home Find & AiXbeneficiu.",
+                  desc: "Reprezentare dedicată cumpărătorului pentru proprietăți selectate și off-market prin Home Find & AiXbeneficiu.",
                   color: "text-amber-400"
                 },
                 {
@@ -81,7 +81,7 @@ export default function AboutPage() {
                 {
                   icon: Target,
                   title: "Sales Strategy",
-                  desc: "valoare mare pentru tine-Ticket closing și consultanță pentru optimizarea conversiilor B2B.",
+                  desc: "High-Ticket closing și consultanță pentru optimizarea conversiilor B2B.",
                   color: "text-purple-400"
                 }
               ].map((item, i) => (

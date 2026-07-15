@@ -58,7 +58,7 @@ export function ArticleContent({ article, relatedArticles }: ArticleContentProps
 
   return (
     <main className="min-h-screen bg-white pt-24 pb-24 selection:bg-slate-900 selection:text-white">
-      {/* top pentru tine Navigation Bar */}
+      {/* top Navigation Bar */}
       <div className="sticky top-[72px] md:top-[85px] z-40 bg-white/90 backdrop-blur-xl border-b border-slate-100 py-4 mb-12">
         <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
           <Link href="/academy" className="text-sm font-bold text-slate-500 hover:text-slate-900 flex items-center gap-2 transition-colors">
@@ -143,7 +143,7 @@ export function ArticleContent({ article, relatedArticles }: ArticleContentProps
               <Image src="/cv-hero.png" alt="Cristian Văduva" width={500} height={500} className="w-full h-full object-cover" />
             </div>
             <h3 className="font-bold font-heading text-xl text-slate-900 mb-1">Cristian Văduva</h3>
-            <p className="text-sm text-blue-600 font-bold mb-4 uppercase tracking-wider">serviciu practic pentru tine Consultant</p>
+            <p className="text-sm text-blue-600 font-bold mb-4 uppercase tracking-wider">Consultant Specializat</p>
             <p className="text-slate-600 text-sm leading-relaxed mb-6">Autorul acestui ghid. Cu o experiență vastă în asset protection și real estate, Cristian traduce conceptele financiare complexe în strategii clare.</p>
             <Button variant="outline" className="w-full rounded-full border-slate-200" asChild>
               <a href="/contact">Programează o discuție</a>

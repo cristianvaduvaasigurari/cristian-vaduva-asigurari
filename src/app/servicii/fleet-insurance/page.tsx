@@ -82,7 +82,7 @@ export default function FleetInsurancePage() {
               Ce companii au nevoie de contract Fleet?
             </h2>
             <div className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Soluția este construită exclusiv pentru domeniul B2B (Business-to-Business) și cuprinde companii cu expunere rutieră extinsă:
+              Soluția este construită doar pentru domeniul B2B (Business-to-Business) și cuprinde companii cu expunere rutieră extinsă:
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl mx-auto text-left">
               <div className="p-6 rounded-2xl bg-emerald-50/50 border border-emerald-100">

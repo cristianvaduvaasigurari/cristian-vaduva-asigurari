@@ -8,7 +8,7 @@ import { ContactForm } from "@/components/sections/contact-form";
 
 export const metadata: Metadata = {
   title: "Real Estate | Cristian Văduva",
-  description: "acces rapid pentru tine Real Estate, Buyer & Seller Representation, Off-market properties și Investment Advisory.",
+  description: "Real Estate, Buyer & Seller Representation, Off-market properties și Investment Advisory.",
 };
 
 export default function RealEstatePage() {
@@ -23,10 +23,10 @@ export default function RealEstatePage() {
             Powered by AiXbeneficiu & Home Find
           </span>
           <h1 className="text-5xl md:text-7xl font-heading font-bold mb-8 leading-tight tracking-tight">
-            acces rapid pentru tine Real Estate & <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-500">Investment Advisory.</span>
+            Servicii Imobiliare & <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-500">Investment Advisory.</span>
           </h1>
           <p className="text-xl font-light text-muted-foreground mb-10">
-            Acces exclusiv la proprietăți off-market, reprezentare la cele mai înalte standarde și strategii de achiziție bazate pe randament.
+            Acces direct la proprietăți off-market, reprezentare la cele mai înalte standarde și strategii de achiziție bazate pe randament.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <Button size="lg" className="rounded-full bg-emerald-600 hover:bg-emerald-700 text-white px-8" asChild>
@@ -45,7 +45,7 @@ export default function RealEstatePage() {
               <Key className="w-12 h-12 text-emerald-600 mb-6 group-hover:scale-110 transition-transform" />
               <h3 className="text-2xl font-bold font-heading mb-4 text-foreground">Buyer Representation</h3>
               <p className="text-muted-foreground leading-relaxed">
-                Reprezentăm exclusiv interesele cumpărătorului. Analizăm piața, filtrăm zgomotul și negociem agresiv pentru a securiza proprietatea ideală la cel mai corect preț. Fără conflicte de interese.
+                Reprezentăm doar interesele cumpărătorului. Analizăm piața, filtrăm zgomotul și negociem agresiv pentru a securiza proprietatea ideală la cel mai corect preț. Fără conflicte de interese.
               </p>
             </div>
 
@@ -53,7 +53,7 @@ export default function RealEstatePage() {
               <Building2 className="w-12 h-12 text-blue-600 mb-6 group-hover:scale-110 transition-transform" />
               <h3 className="text-2xl font-bold font-heading mb-4 text-foreground">Seller Representation</h3>
               <p className="text-muted-foreground leading-relaxed">
-                Marketing beneficiu pentru proprietăți de lux. Prin rețeaua noastră privată și platformele AiXbeneficiu / Home Find, targetăm direct cumpărătorii calificați, reducând timpul petrecut pe piață.
+                Marketing modern pentru proprietăți cu valoare ridicată. Prin rețeaua noastră privată și platformele AiXbeneficiu / Home Find, targetăm direct cumpărătorii calificați, reducând timpul petrecut pe piață.
               </p>
             </div>
 
@@ -67,9 +67,9 @@ export default function RealEstatePage() {
 
             <div className="glass beneficiu-card p-10 rounded-[2rem] border border-border group lg:col-span-1">
               <Gem className="w-12 h-12 text-amber-600 mb-6 group-hover:scale-110 transition-transform" />
-              <h3 className="text-2xl font-bold font-heading mb-4 text-foreground">acces rapid pentru tine Real Estate</h3>
+              <h3 className="text-2xl font-bold font-heading mb-4 text-foreground">Portofoliu Select</h3>
               <p className="text-muted-foreground leading-relaxed">
-                De la penthouse-uri exclusiviste la vile istorice. Filtrăm portofoliul pentru a garanta calitatea absolută a asset-ului, verificând atât aspectele juridice cât și potențialul arhitectural.
+                De la penthouse-uri spațioase la vile istorice. Filtrăm portofoliul pentru a garanta calitatea absolută a asset-ului, verificând atât aspectele juridice cât și potențialul arhitectural.
               </p>
             </div>
 

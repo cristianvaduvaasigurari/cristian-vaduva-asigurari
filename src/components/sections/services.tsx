@@ -31,7 +31,7 @@ export function Services() {
             transition={{ delay: 0.1 }}
             className="text-lg text-muted-foreground max-w-2xl mx-auto"
           >
-            Soluții complete de asigurare pentru persoanele fizice și juridice, susținute de puterea și experiența unuia dintre cei mai mari asigurători din lume.
+            Pachete de asigurare adaptate nevoilor tale, pentru persoanele fizice și juridice, susținute de puterea și experiența unuia dintre cei mai mari asigurători din lume.
           </motion.p>
         </div>
 

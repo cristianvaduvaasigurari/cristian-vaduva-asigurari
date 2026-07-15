@@ -118,7 +118,7 @@ export function AiVideoAvatar() {
           </div>
         </div>
 
-        {/* AI Answer & personalizat pentru tine Query Input */}
+        {/* AI Answer & Custom Query Input */}
         <div className="glass p-8 rounded-[3rem] border border-border bg-white shadow-sm flex flex-col justify-between flex-grow">
           <div>
             <h4 className="font-bold text-slate-800 text-xs uppercase tracking-wider mb-4">Răspuns Concierge AI</h4>

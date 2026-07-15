@@ -212,7 +212,7 @@ export default function TravelInsurancePage() {
               </div>
               <div className="p-6 rounded-2xl bg-white border border-[#c8102e]/10 shadow-sm hover:shadow-md transition-shadow">
                 <h4 className="font-bold text-[#c8102e] mb-3 text-lg">Limitele Majore</h4>
-                <p className="text-muted-foreground leading-relaxed">Asigurările noastre permit configurarea unor limite formidabile de sute de mii de euro, fiind capabile să acopere intervenții neurochirurgicale de extremă necesitate în cele mai exclusiviste spitale străine.</p>
+                <p className="text-muted-foreground leading-relaxed">Asigurările noastre permit configurarea unor limite formidabile de sute de mii de euro, fiind capabile să acopere intervenții medicale de extremă necesitate în cele mai renumite spitale străine.</p>
               </div>
               <div className="p-6 rounded-2xl bg-white border border-[#c8102e]/10 shadow-sm hover:shadow-md transition-shadow">
                 <h4 className="font-bold text-[#c8102e] mb-3 text-lg">Fără Plăți din Buzunar</h4>

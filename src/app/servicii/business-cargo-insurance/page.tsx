@@ -90,7 +90,7 @@ export default function BusinessCargoInsurancePage() {
                 <p className="text-muted-foreground">Firme românești care importă containere de bunuri de larg consum din China, Turcia sau Europa de Vest, cu o frecvență ridicată a transbordărilor.</p>
               </div>
               <div className="p-6 rounded-2xl bg-emerald-50/50 border border-emerald-100">
-                <h4 className="font-bold text-emerald-800 mb-2">Comercianți de Electronice (valoare mare pentru tine-Value / Low Weight)</h4>
+                <h4 className="font-bold text-emerald-800 mb-2">Comercianți de Electronice (High-Value / Low Weight)</h4>
                 <p className="text-muted-foreground">Telefoane mobile, laptopuri, componente de IT. Deoarece ele au valoare uriașă în volum extrem de mic/ușor, polița CMR a transportatorului va fi efectiv inutilă la daună (se va plăti pe kg).</p>
               </div>
               <div className="p-6 rounded-2xl bg-emerald-50/50 border border-emerald-100">

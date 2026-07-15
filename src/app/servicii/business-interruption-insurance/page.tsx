@@ -82,7 +82,7 @@ export default function BusinessInterruptionInsurancePage() {
               Sectoare Dependente de Fluxul Continuu
             </h2>
             <div className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Este o poliță complexă, de elită, destinată sectoarelor unde timpul înseamnă literalmente bani:
+              Este o poliță complexă, de importanță majoră, destinată sectoarelor unde timpul înseamnă literalmente bani:
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl mx-auto text-left">
               <div className="p-6 rounded-2xl bg-emerald-50/50 border border-emerald-100">

@@ -37,12 +37,12 @@ const modules = [
     color: "bg-purple-50/50 border-purple-100"
   },
   {
-    id: "serviciu avansat pentru tine",
-    title: "acces rapid pentru tine Assets",
+    id: "luxury-assets",
+    title: "Bunuri de Valoare",
     metric: "3 Bunuri beneficiu",
-    desc: "Protecție exclusivistă pentru supercars, artă și yacht-uri.",
+    desc: "Protecție extinsă pentru supercars, artă și yacht-uri.",
     icon: <Sparkles className="w-6 h-6 text-amber-600" />,
-    link: "/serviciu avansat pentru tine-assets",
+    link: "/luxury-assets",
     color: "bg-amber-50/50 border-amber-100"
   },
   {
@@ -89,14 +89,14 @@ const mainTools = [
   { name: "Satellite Scan", icon: <MapPin className="w-5 h-5" />, href: "/satellite-view", desc: "Analiză proprietate prin satelit" },
   { name: "AI Avatar", icon: <Video className="w-5 h-5" />, href: "/avatar", desc: "Concierge inteligent video" },
   { name: "Market Radar", icon: <Rss className="w-5 h-5" />, href: "/market-radar", desc: "Dobânzi și analize live" },
-  { name: "Wealth Passport", icon: <FileText className="w-5 h-5" />, href: "/wealth-passport", desc: "Documentul tău de elită" }
+  { name: "Wealth Passport", icon: <FileText className="w-5 h-5" />, href: "/wealth-passport", desc: "Raportul tău complet" }
 ];
 
 export function MissionControlDashboard() {
   return (
     <div className="w-full flex flex-col gap-10">
       
-      {/* top pentru tine Banner with Quick Actions */}
+      {/* Main Banner with Quick Actions */}
       <div className="w-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
         {mainTools.map((tool, idx) => (
           <Link key={idx} href={tool.href} className="group p-5 rounded-[2rem] border border-border bg-white hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col items-start gap-4">
@@ -121,7 +121,7 @@ export function MissionControlDashboard() {
             transition={{ duration: 0.4, delay: idx * 0.05 }}
             className={`p-8 rounded-[2.5rem] border ${m.color} bg-white shadow-sm flex flex-col justify-between hover:shadow-xl transition-all duration-300 relative group overflow-hidden`}
           >
-            {/* top pentru tine Row */}
+            {/* Top Row */}
             <div className="flex justify-between items-start mb-6">
               <div className="p-3 rounded-full bg-white border border-border shadow-sm">
                 {m.icon}

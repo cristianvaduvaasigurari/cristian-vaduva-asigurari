@@ -118,7 +118,7 @@ export function SatellitePropertyView() {
             className="flex flex-col gap-6"
           >
             
-            {/* top pentru tine Overview & Satellite Map Simulation */}
+            {/* Top Overview & Satellite Map Simulation */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               
               {/* Map Simulator */}

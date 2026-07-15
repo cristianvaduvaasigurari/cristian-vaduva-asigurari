@@ -9,14 +9,14 @@ const ecosystems = [
   {
     icon: <Building className="w-8 h-8" />,
     title: "Real Estate",
-    description: "Consultanță de top pentru investiții, proprietăți de lux și optimizarea portofoliilor imobiliare.",
+    description: "Consultanță de top pentru investiții imobiliare, proprietăți de înaltă calitate și optimizarea portofoliilor.",
     href: "/real-estate",
     gradient: "from-blue-500 to-cyan-400"
   },
   {
     icon: <Globe className="w-8 h-8" />,
     title: "AiXbeneficiu",
-    description: "O selecție exclusivistă de proprietăți de lux și oportunități investiționale serviciu avansat pentru tine.",
+    description: "O selecție atent realizată de proprietăți imobiliare deosebite și oportunități investiționale.",
     href: CONTACT.ecosystem.aixbeneficiu,
     gradient: "from-amber-500 to-orange-400"
   },

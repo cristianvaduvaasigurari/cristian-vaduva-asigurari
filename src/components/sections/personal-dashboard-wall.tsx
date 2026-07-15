@@ -41,8 +41,8 @@ const wallSections = [
       ],
       recommendation: "Efectuarea unui nou raport de evaluare pentru colecția de artă."
     },
-    actionText: "Administrează acces rapid pentru tine Garage",
-    actionLink: "/serviciu avansat pentru tine-garage"
+    actionText: "Administrează Garaj Personal",
+    actionLink: "/luxury-garage"
   },
   {
     id: "realestate",

@@ -49,13 +49,13 @@ export default function BusinessProfessionalLiabilityPage() {
               <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/5 rounded-full blur-[80px] -z-10" />
               <h2 className="text-3xl font-heading font-bold mb-6 flex items-center gap-3">
                 <Info className="text-blue-500 w-8 h-8" />
-                "General Liability" vs "serviciu practic pentru tine Liability"
+                "General Liability" vs "Professional Liability"
               </h2>
               <p className="text-lg text-muted-foreground leading-relaxed mb-4">
                 Există o confuzie uriașă în piață. Dacă un client vine la tine în birou de contabilitate, alunecă pe parchet și își rupe mâna, te va da în judecată iar dauna va fi plătită de polița de "Răspundere GENERALĂ".
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                DAR... dacă nu alunecă pe parchet, dar tu introduci o cifră greșită în bilanțul lui și îi atragi o amendă fiscală uriașă de la ANAF? Acesta e prejudiciu strict prin <strong>greșeală intelectuală</strong> (eroare tehnică/omisivă de consultanță). Acest prejudiciu intelectual se acoperă DOAR de Răspunderea PROFESIONALĂ (cunoscută global ca PI - serviciu practic pentru tine Indemnity sau E&O - Errors and Omissions).
+                DAR... dacă nu alunecă pe parchet, dar tu introduci o cifră greșită în bilanțul lui și îi atragi o amendă fiscală uriașă de la ANAF? Acesta e prejudiciu strict prin <strong>greșeală intelectuală</strong> (eroare tehnică/omisivă de consultanță). Acest prejudiciu intelectual se acoperă DOAR de Răspunderea PROFESIONALĂ (cunoscută global ca PI - Professional Indemnity sau E&O - Errors and Omissions).
               </p>
             </div>
 
@@ -86,7 +86,7 @@ export default function BusinessProfessionalLiabilityPage() {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl mx-auto text-left">
               <div className="p-6 rounded-2xl bg-emerald-50/50 border border-emerald-100">
-                <h4 className="font-bold text-emerald-800 mb-2 flex items-center gap-2"><Stethoscope className="w-5 h-5"/> Medici și pentru tine Medical (Malpraxis)</h4>
+                <h4 className="font-bold text-emerald-800 mb-2 flex items-center gap-2"><Stethoscope className="w-5 h-5"/> Medici și Personal Medical (Malpraxis)</h4>
                 <p className="text-muted-foreground">Obligație de lege de bază pentru medici, farmaciști, asistenți (spitale, clinici sau cabinete de stomatologie private) pentru erori și erori letale în actul medical.</p>
               </div>
               <div className="p-6 rounded-2xl bg-emerald-50/50 border border-emerald-100">

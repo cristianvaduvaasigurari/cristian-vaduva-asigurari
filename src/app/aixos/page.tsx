@@ -24,7 +24,7 @@ export default function AiXOSPage() {
               AiX <span className="text-blue-600">OS</span>
             </h1>
             <p className="text-xl text-muted-foreground leading-relaxed">
-              Viitorul productivității și al asistenței digitale este aici. Un ecosistem inteligent care îți optimizează timpul, îți preia sarcinile repetitive și te conectează la servicii de elită, de la Real Estate la asigurări.
+              Viitorul productivității și al asistenței digitale este aici. Un ecosistem inteligent care îți optimizează timpul, îți preia sarcinile repetitive și te conectează la servicii avansate, de la Real Estate la asigurări.
             </p>
           </div>
 

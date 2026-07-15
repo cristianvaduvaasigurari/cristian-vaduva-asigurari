@@ -77,7 +77,7 @@ export function BeneficiuGarage() {
   return (
     <div className="w-full max-w-6xl mx-auto flex flex-col lg:flex-row gap-8 items-stretch">
       
-      {/* LEFT: Configurator Selector (acces rapid pentru tine watch style list) */}
+      {/* LEFT: Configurator Selector (Assets watch style list) */}
       <div className="w-full lg:w-4/12 flex flex-col gap-3">
         <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400 block mb-2 px-2">Garajul tău Digital</span>
         

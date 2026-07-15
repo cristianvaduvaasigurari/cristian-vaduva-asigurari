@@ -157,7 +157,7 @@ export default function AutoInsurancePage() {
               <div className="flex items-start gap-4 p-5 rounded-2xl bg-white/50 border border-red-100 shadow-sm">
                 <span className="w-8 h-8 rounded-full bg-red-500 text-white flex items-center justify-center flex-shrink-0 font-bold">✕</span>
                 <div>
-                  <div className="font-bold text-foreground mb-1">Fenomene Naturale complet pentru tine</div>
+                  <div className="font-bold text-foreground mb-1">Fenomene Naturale Complet Acoperite</div>
                   <div className="text-sm text-muted-foreground">Inundații, furtuni devastatoare care rup copaci, grindină care îți distruge plafonul mașinii - totul intră în aria de protecție standard a CASCO.</div>
                 </div>
               </div>
@@ -193,7 +193,7 @@ export default function AutoInsurancePage() {
                   O furtună puternică de vară trece pe deasupra orașului, iar grindina de mari dimensiuni distruge plafonul, capota și sparge luneta unei mașini parcate afară.
                 </p>
                 <div className="p-4 bg-amber-50/50 rounded-xl border border-amber-100">
-                  <span className="font-bold text-amber-700">Rezolvarea poliței:</span> Deoarece RCA-ul nu acoperă catastrofe naturale pe mașina proprie, intervine polița CASCO. Asigurătorul direcționează clientul către un atelier de elită specializat în "Paintless Dent Repair" (PDR), iar caroseria este adusă la perfecțiune tehnică pe cheltuiala companiei.
+                  <span className="font-bold text-amber-700">Rezolvarea poliței:</span> Deoarece RCA-ul nu acoperă catastrofe naturale pe mașina proprie, intervine polița CASCO. Asigurătorul direcționează clientul către un atelier specializat în "Paintless Dent Repair" (PDR), iar caroseria este adusă la perfecțiune tehnică pe cheltuiala companiei.
                 </div>
               </div>
             </div>

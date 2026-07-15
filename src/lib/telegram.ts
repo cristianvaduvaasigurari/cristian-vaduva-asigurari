@@ -6,6 +6,7 @@ export interface TelegramLeadData {
   message?: string;
   pageUrl?: string;
   timestamp?: string;
+  submissionId?: string;
 }
 
 const MAX_RETRIES = 2;

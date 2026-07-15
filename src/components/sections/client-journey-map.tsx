@@ -51,11 +51,11 @@ const stages = [
     desc: "Implementăm scutul de protecție. Transferăm riscurile evaluate către polițe de reasigurare beneficiu emise în parteneriat cu Generali România.",
     actions: [
       "Negocierea clauzelor All-Risk și a franșizelor optime.",
-      "Securizarea bunurilor din acces rapid pentru tine Garage și a răspunderii de business."
+      "Securizarea bunurilor din Garaj Personal și a răspunderii de business."
     ],
     recommendedServices: [
       { name: "Asigurare Viață", link: "/servicii/life-insurance" },
-      { name: "acces rapid pentru tine Assets", link: "/serviciu avansat pentru tine-assets" }
+      { name: "Bunuri de Valoare", link: "/luxury-assets" }
     ]
   },
   {

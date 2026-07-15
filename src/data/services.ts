@@ -61,7 +61,7 @@ export const servicesData: Record<string, ServiceContent> = {
     shortDescription: "Acces direct și rapid în clinicile și spitalele private, fără liste de așteptare.",
     longDescription: "Sănătatea nu este negociabilă. Pachetele noastre de asigurare de sănătate private decontează cheltuielile majore și minore, oferindu-ți acces instant la excelența medicală privată.",
     whatIsIt: "Un abonament la un sistem de sănătate cu acoperire completă, independent de sistemul public.",
-    whyIsItImportant: "Timpul înseamnă viață în caz de afecțiuni medicale. Asigurarea îți permite să ocolești listele lungi de așteptare din sistemul public și să primești expertiză de la medici de elită exact când ai nevoie.",
+    whyIsItImportant: "Timpul înseamnă viață în caz de afecțiuni medicale. Asigurarea îți permite să ocolești listele lungi de așteptare din sistemul public și să primești expertiză de la medici specialiști exact când ai nevoie.",
     targetAudience: [
       "Orice persoană care își permite și își dorește servicii medicale la standarde occidentale.",
       "Familii cu copii (pachetele familiale acoperă bolile copilăriei).",
@@ -69,7 +69,7 @@ export const servicesData: Record<string, ServiceContent> = {
     ],
     benefits: [
       { title: "Fără cozi", description: "Programare telefonică sau prin aplicație direct la specialist." },
-      { title: "Spitalizare de lux", description: "Acoperirea costurilor pentru intervenții complexe și condiții de internare beneficiu." },
+      { title: "Spitalizare cu confort sporit", description: "Acoperirea costurilor pentru intervenții complexe și condiții de internare beneficiu." },
       { title: "Acoperire internațională", description: "Opțional, tratamente efectuate la clinici renumite din străinătate." }
     ],
     risksCovered: [
@@ -97,7 +97,7 @@ export const servicesData: Record<string, ServiceContent> = {
     slug: "auto-insurance",
     title: "Asigurări Auto",
     shortDescription: "Garanția All-Risk pentru autoturismul tău beneficiu. Pachete complete RCA și CASCO.",
-    longDescription: "Un autoturism de lux necesită siguranță la nivel de reprezentanță. Fie că discutăm despre o banală zgârietură în parcare, sau de o daună majoră provocată unui terț, protecția auto este indispensabilă.",
+    longDescription: "Un autoturism modern sau valoros necesită siguranță la nivel de reprezentanță. Fie că discutăm despre o banală zgârietură în parcare, sau de o daună majoră provocată unui terț, protecția auto este indispensabilă.",
     whatIsIt: "O integrated solution (RCA obligatoriu + CASCO facultativ) care acoperă daunele mașinii TALE și daunele provocate terților, acoperind chiar și greșelile proprii, fenomenele naturale sau vandalismul.",
     whyIsItImportant: "RCA-ul te protejează legal, dar CASCO îți protejează investiția. Un autoturism modern are reparații extrem de scumpe (senzori radar, faruri LED de mii de euro). O daună minoră poate destabiliza bugetul dacă nu ai CASCO.",
     targetAudience: [
@@ -122,7 +122,7 @@ export const servicesData: Record<string, ServiceContent> = {
     ],
     whyGenerali: [
       "Evaluări foto de la distanță pentru despăgubiri rapide.",
-      "Reparații exclusiv în reprezentanțe autorizate, folosind doar piese originale.",
+      "Reparații doar în reprezentanțe autorizate, folosind doar piese originale.",
       "Generali este partenerul preferat al marilor branduri auto de prestigiu."
     ],
     faqs: [
@@ -197,7 +197,7 @@ export const servicesData: Record<string, ServiceContent> = {
       { title: "Accident în magazin", description: "Un client alunecă pe podeaua udă a cafenelei tale, suferă o fractură și te dă în judecată. Polița îți plătește avocații și daunele cerute de client." }
     ],
     whyGenerali: [
-      "Generali oferă servicii croite special pentru antreprenorii români.",
+      "Generali oferă servicii adaptate specific pentru antreprenorii români.",
       "Plata primei se poate face în rate flexibile pentru a nu bloca cash-flow-ul firmei.",
       "Asistență tehnică de specialitate și evaluatori industriali capabili să rezolve daune complexe rapid."
     ],
