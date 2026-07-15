@@ -7,9 +7,9 @@ import Link from "next/link";
 
 export function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20" aria-labelledby="hero-heading">
       {/* Background Gradients */}
-      <div className="absolute inset-0 z-0 bg-background">
+      <div className="absolute inset-0 z-0 bg-background" aria-hidden="true">
         <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-blue-500/20 rounded-full blur-[120px] mix-blend-screen" />
         <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-purple-500/20 rounded-full blur-[120px] mix-blend-screen" />
       </div>
@@ -21,12 +21,12 @@ export function Hero() {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="max-w-4xl mx-auto"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass mb-8">
-            <span className="flex h-2 w-2 rounded-full bg-blue-500 animate-pulse"></span>
-            <span className="text-sm font-medium tracking-wide uppercase">Cristian Văduva <span className="text-blue-500 mx-1">|</span> Real Estate <span className="text-blue-500 mx-1">|</span> Insurance <span className="text-blue-500 mx-1">|</span> Investments</span>
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass mb-8" role="status" aria-live="polite">
+            <span className="flex h-2 w-2 rounded-full bg-blue-500 animate-pulse" aria-hidden="true"></span>
+            <span className="text-sm font-medium tracking-wide uppercase">Cristian Văduva <span className="text-blue-500 mx-1" aria-hidden="true">|</span> Real Estate <span className="text-blue-500 mx-1" aria-hidden="true">|</span> Insurance <span className="text-blue-500 mx-1" aria-hidden="true">|</span> Investments</span>
           </div>
 
-          <h1 className="text-5xl md:text-7xl font-heading font-bold tracking-tight mb-8 leading-tight">
+          <h1 id="hero-heading" className="text-5xl md:text-7xl font-heading font-bold tracking-tight mb-8 leading-tight">
             Excelență în <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600">Asigurări</span> și <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">Real Estate</span>
           </h1>
           
@@ -38,7 +38,7 @@ export function Hero() {
             <Button size="lg" className="w-full sm:w-auto text-lg px-8 group bg-foreground text-background hover:bg-foreground/90 font-semibold shadow-lg" asChild>
               <Link href="/#servicii">
                 Descoperă Serviciile
-                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
               </Link>
             </Button>
             <Button size="lg" variant="glass" className="w-full sm:w-auto text-lg px-8 border-border bg-white text-foreground hover:bg-muted" asChild>

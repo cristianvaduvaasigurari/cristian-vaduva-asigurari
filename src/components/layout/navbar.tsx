@@ -81,8 +81,6 @@ const ecosystemMenuData = [
       { name: "Risk Simulator", href: "/risk-simulator" },
       { name: "Life Simulator", href: "/simulator" },
       { name: "Financial Twin", href: "/financial-twin" },
-      { name: "AI Video Concierge", href: "/avatar" },
-      { name: "Voice AI Assistant", href: "/voice-assistant" },
     ]
   },
   {
@@ -102,8 +100,6 @@ const ecosystemMenuData = [
       { name: "AiX Academy", href: "/academy" },
       { name: "AiX Advisor", href: "/advisor" },
       { name: "Coverage Gap", href: "/gap-analyzer" },
-      { name: "Digital Property City", href: "/property-city" },
-      { name: "Satellite View", href: "/satellite-view" },
       { name: "Live Market Radar", href: "/market-radar" },
     ]
   }

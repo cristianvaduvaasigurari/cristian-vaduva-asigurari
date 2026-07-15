@@ -2,6 +2,7 @@ import * as React from "react";
 import Link from "next/link";
 import { ArrowRight, Shield, Home, Search, Activity, Lock } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { HomeFindValuation } from "@/components/sections/home-find-valuation";
 
 export const metadata = {
   title: "Home Find™ | Cristian Văduva",
@@ -112,6 +113,8 @@ export default function HomeFindPage() {
           </div>
         </div>
       </section>
+
+      <HomeFindValuation />
 
       {/* Ecosystem Diagram Section */}
       <section className="py-24 bg-slate-900 text-white overflow-hidden relative">

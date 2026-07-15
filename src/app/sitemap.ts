@@ -5,28 +5,29 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://cristianvaduva.com";
   
   const staticRoutes = [
-    "",
-    "/contact",
-    "/calculatoare",
-    "/de-ce-asigurari",
-    "/despre-mine",
-    "/termeni-si-conditii",
-    "/politica-de-confidentialitate",
-    "/politica-cookie",
-    "/generali",
-    "/real-estate"
-  ].map(route => ({
+    { route: "", priority: 1.0, changeFrequency: "daily" as const },
+    { route: "/contact", priority: 0.8, changeFrequency: "monthly" as const },
+    { route: "/calculatoare", priority: 0.9, changeFrequency: "weekly" as const },
+    { route: "/de-ce-asigurari", priority: 0.7, changeFrequency: "monthly" as const },
+    { route: "/despre-mine", priority: 0.6, changeFrequency: "monthly" as const },
+    { route: "/termeni-si-conditii", priority: 0.3, changeFrequency: "yearly" as const },
+    { route: "/politica-de-confidentialitate", priority: 0.3, changeFrequency: "yearly" as const },
+    { route: "/politica-cookie", priority: 0.3, changeFrequency: "yearly" as const },
+    { route: "/generali", priority: 0.7, changeFrequency: "monthly" as const },
+    { route: "/real-estate", priority: 0.8, changeFrequency: "weekly" as const },
+    { route: "/servicii", priority: 0.9, changeFrequency: "weekly" as const },
+  ].map(({ route, priority, changeFrequency }) => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date(),
-    changeFrequency: "monthly" as const,
-    priority: route === "" ? 1 : 0.8,
+    changeFrequency,
+    priority,
   }));
 
   const dynamicRoutes = Object.keys(servicesData).map(slug => ({
     url: `${baseUrl}/servicii/${slug}`,
     lastModified: new Date(),
     changeFrequency: "monthly" as const,
-    priority: 0.6,
+    priority: 0.7,
   }));
 
   return [...staticRoutes, ...dynamicRoutes];

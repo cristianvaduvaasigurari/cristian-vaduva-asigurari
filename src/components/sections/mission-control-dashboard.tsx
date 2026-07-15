@@ -4,7 +4,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { 
   Shield, Home, TrendingUp, Sparkles, Users, Briefcase, Cpu, Search, 
-  Compass, Globe, MapPin, Video, Rss, Mic, FileText, ArrowUpRight 
+  Globe, Rss, FileText, ArrowUpRight 
 } from "lucide-react";
 import Link from "next/link";
 
@@ -85,9 +85,6 @@ const modules = [
 
 const mainTools = [
   { name: "Wealth Galaxy", icon: <Globe className="w-5 h-5" />, href: "/wealth-galaxy", desc: "Orbitează activele tale" },
-  { name: "Property City", icon: <Compass className="w-5 h-5" />, href: "/property-city", desc: "Harta vizuală imobiliară" },
-  { name: "Satellite Scan", icon: <MapPin className="w-5 h-5" />, href: "/satellite-view", desc: "Analiză proprietate prin satelit" },
-  { name: "AI Avatar", icon: <Video className="w-5 h-5" />, href: "/avatar", desc: "Concierge inteligent video" },
   { name: "Market Radar", icon: <Rss className="w-5 h-5" />, href: "/market-radar", desc: "Dobânzi și analize live" },
   { name: "Wealth Passport", icon: <FileText className="w-5 h-5" />, href: "/wealth-passport", desc: "Documentul tău de elită" }
 ];
@@ -144,23 +141,6 @@ export function MissionControlDashboard() {
             <div className="absolute inset-0 bg-grid-pattern opacity-0 group-hover:opacity-5 pointer-events-none transition-opacity duration-300" />
           </motion.div>
         ))}
-      </div>
-
-      {/* Embedded Quick Voice AI Bar */}
-      <div className="w-full glass p-8 rounded-[3rem] border border-slate-200 bg-white/70 flex flex-col md:flex-row items-center justify-between gap-6 shadow-sm">
-        <div className="flex items-center gap-4">
-          <div className="w-12 h-12 rounded-full bg-slate-900 flex items-center justify-center text-white relative shrink-0">
-            <Mic className="w-5 h-5 animate-pulse" />
-            <div className="absolute inset-0 rounded-full border-2 border-slate-900 animate-ping opacity-25" />
-          </div>
-          <div>
-            <h4 className="font-bold text-foreground">Asistent Vocal AiX</h4>
-            <p className="text-sm text-muted-foreground mt-0.5">Spune &quot;Vreau să protejez mașina&quot; sau &quot;Vreau o investiție imobiliară&quot; pentru asistență instantă.</p>
-          </div>
-        </div>
-        <Link href="/voice-assistant" className="h-12 px-6 rounded-full bg-slate-900 text-white font-bold text-sm flex items-center gap-2 hover:bg-slate-800 transition-colors">
-          Pornește Interacțiunea Vocală <Compass className="w-4 h-4" />
-        </Link>
       </div>
 
     </div>

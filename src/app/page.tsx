@@ -2,9 +2,30 @@ import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { Hero } from "@/components/sections/hero";
 import { Services } from "@/components/sections/services";
-import { Ecosystem } from "@/components/sections/ecosystem";
-import { TestimonialsFaq } from "@/components/sections/testimonials-faq";
-import { ContactForm } from "@/components/sections/contact-form";
+import dynamic from 'next/dynamic';
+import type { Metadata } from "next";
+
+// Lazy load heavy components for better performance
+const Ecosystem = dynamic(() => import('@/components/sections/ecosystem').then(mod => ({ default: mod.Ecosystem })), {
+  loading: () => <div className="h-96 animate-pulse bg-muted/20 rounded-3xl" />,
+  ssr: true
+});
+
+const ContactForm = dynamic(() => import('@/components/sections/contact-form').then(mod => ({ default: mod.ContactForm })), {
+  loading: () => <div className="h-96 animate-pulse bg-muted/20 rounded-3xl" />,
+  ssr: true
+});
+
+export const metadata: Metadata = {
+  title: "Cristian Văduva | Consultant Asigurări Premium & Real Estate de Lux",
+  description: "Expertiză premium în asigurări Generali, real estate de lux și optimizare patrimoniu. Consultant asigurări București cu focus pe protecție financiară și investiții inteligente.",
+  keywords: ["consultant asigurări București", "asigurări Generali", "real estate de lux", "investiții imobiliare", "protecție financiară", "AiX OS", "Home Find"],
+  openGraph: {
+    title: "Cristian Văduva | Consultant Asigurări Premium & Real Estate de Lux",
+    description: "Expertiză premium în asigurări Generali, real estate de lux și optimizare patrimoniu. Consultant asigurări București cu focus pe protecție financiară.",
+    url: "https://cristianvaduva.com",
+  },
+};
 
 export default function Home() {
   return (
@@ -14,7 +35,6 @@ export default function Home() {
         <Hero />
         <section id="servicii"><Services /></section>
         <Ecosystem />
-        <TestimonialsFaq />
         <ContactForm />
       </main>
       <Footer />

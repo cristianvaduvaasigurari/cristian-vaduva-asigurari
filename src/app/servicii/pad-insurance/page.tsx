@@ -1,5 +1,6 @@
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
+import { ServicePageIntro } from "@/components/sections/service-page-intro";
 import { ContactForm } from "@/components/sections/contact-form";
 import { ShieldAlert, Info, Star, Users2, CheckCircle2, AlertTriangle, Lightbulb, MessageCircle, PhoneCall } from "lucide-react";
 import Link from "next/link";
@@ -16,6 +17,7 @@ export default function PADInsurancePage() {
   return (
     <div className="min-h-screen bg-background flex flex-col">
       <Navbar />
+      <ServicePageIntro slug="pad-insurance" />
       
       <main className="flex-1 pt-32 pb-16">
         <div className="container mx-auto px-4 max-w-5xl">
