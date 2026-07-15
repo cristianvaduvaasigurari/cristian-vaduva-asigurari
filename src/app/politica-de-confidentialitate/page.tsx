@@ -22,7 +22,7 @@ export default function PrivacyPolicyPage() {
               <h2 className="text-2xl font-bold font-heading text-foreground">1. Introducere</h2>
               <p className="text-muted-foreground leading-relaxed mt-4">
                 Conform cerințelor Regulamentului (UE) 2016/679 (GDPR), platforma noastră administrează în condiții de siguranță
-                și numai pentru scopurile specificate, datele personale pe care ni le furnizați despre dumneavoastră. Confidențialitatea datelor clienților noștri premium este prioritatea noastră absolută.
+                și numai pentru scopurile specificate, datele personale pe care ni le furnizați despre dumneavoastră. Confidențialitatea datelor clienților noștri beneficiu este prioritatea noastră absolută.
               </p>
             </section>
 
@@ -49,7 +49,7 @@ export default function PrivacyPolicyPage() {
               <ul className="list-disc list-inside text-muted-foreground mt-2 space-y-2">
                 <li>A vă putea contacta în vederea stabilirii unei strategii sau consultanțe.</li>
                 <li>A elabora oferte personalizate de asigurare sau planuri de investiții imobiliare.</li>
-                <li>Trimiterea de notificări, noutăți sau oferte premium (doar cu acordul dumneavoastră explicit).</li>
+                <li>Trimiterea de notificări, noutăți sau oferte beneficiu (doar cu acordul dumneavoastră explicit).</li>
                 <li>Funcționarea optimă a platformei (Securitate și Analytics).</li>
               </ul>
             </section>

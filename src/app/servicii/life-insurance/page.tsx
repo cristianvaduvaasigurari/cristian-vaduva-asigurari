@@ -8,7 +8,7 @@ import { CONTACT } from "@/config/contact";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Asigurări de Viață Premium | Cristian Văduva",
+  title: "Asigurări de Viață beneficiu | Cristian Văduva",
   description: "Protecție financiară completă și soluții de capitalizare pentru un viitor sigur și predictibil, oriunde v-ați afla.",
 };
 
@@ -108,21 +108,21 @@ export default function LifeInsurancePage() {
           <div className="mb-24">
             <h2 className="text-3xl font-heading font-bold mb-10 text-center">Beneficiile Esențiale</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="glass premium-card p-8 rounded-[2rem] border border-border">
+              <div className="glass beneficiu-card p-8 rounded-[2rem] border border-border">
                 <CheckCircle2 className="w-8 h-8 text-blue-600 mb-6" />
                 <h3 className="text-xl font-bold mb-3 text-foreground">Capital Garantat Imediat</h3>
                 <p className="text-muted-foreground leading-relaxed">
                   Spre deosebire de un depozit bancar pe care trebuie să-l umpli lent în decenii, suma asigurată din poliță este disponibilă integral și garantat încă de la achitarea primei rate.
                 </p>
               </div>
-              <div className="glass premium-card p-8 rounded-[2rem] border border-border">
+              <div className="glass beneficiu-card p-8 rounded-[2rem] border border-border">
                 <CheckCircle2 className="w-8 h-8 text-blue-600 mb-6" />
                 <h3 className="text-xl font-bold mb-3 text-foreground">Scutire de Impozit</h3>
                 <p className="text-muted-foreground leading-relaxed">
                   Din punct de vedere legislativ, sumele plătite beneficiarilor în urma decesului sunt considerate indemnizații de asigurare și sunt absolut scutite de impozitul pe venit sau taxe succesorale.
                 </p>
               </div>
-              <div className="glass premium-card p-8 rounded-[2rem] border border-border">
+              <div className="glass beneficiu-card p-8 rounded-[2rem] border border-border">
                 <CheckCircle2 className="w-8 h-8 text-blue-600 mb-6" />
                 <h3 className="text-xl font-bold mb-3 text-foreground">Flexibilitate Totală</h3>
                 <p className="text-muted-foreground leading-relaxed">
@@ -181,7 +181,7 @@ export default function LifeInsurancePage() {
               Exemple Reale din Piață
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="glass premium-card p-8 rounded-[2rem] border-l-4 border-l-amber-500">
+              <div className="glass beneficiu-card p-8 rounded-[2rem] border-l-4 border-l-amber-500">
                 <h3 className="text-xl font-bold mb-4 text-foreground">Scenariul 1: Creditul Ipotecar și Familia</h3>
                 <p className="text-muted-foreground leading-relaxed mb-4">
                   Alexandru (35 ani) tocmai a contractat un credit ipotecar de 150.000 EUR pentru casa familiei sale. Din păcate, Alexandru suferă un accident rutier fatal în anul 3 de credit.
@@ -190,7 +190,7 @@ export default function LifeInsurancePage() {
                   <span className="font-bold text-amber-700">Rezolvarea poliței:</span> Compania de asigurări transferă imediat capitalul de 150.000 EUR soției. Aceasta achită integral creditul la bancă a doua zi, păstrând casa și stabilitatea pentru copii.
                 </div>
               </div>
-              <div className="glass premium-card p-8 rounded-[2rem] border-l-4 border-l-amber-500">
+              <div className="glass beneficiu-card p-8 rounded-[2rem] border-l-4 border-l-amber-500">
                 <h3 className="text-xl font-bold mb-4 text-foreground">Scenariul 2: Polița cu Capitalizare pentru Educație</h3>
                 <p className="text-muted-foreground leading-relaxed mb-4">
                   Maria încheie o poliță de viață cu economisire atunci când copilul ei împlinește 1 an, plătind o primă de 100 EUR lunar. Scopul: fondul de studenție.
@@ -228,15 +228,15 @@ export default function LifeInsurancePage() {
           <div className="mb-24">
             <h2 className="text-3xl font-heading font-bold mb-10 text-center">Întrebări Frecvente</h2>
             <div className="space-y-6 max-w-4xl mx-auto">
-              <div className="glass premium-card p-6 md:p-8 rounded-2xl border border-border">
+              <div className="glass beneficiu-card p-6 md:p-8 rounded-2xl border border-border">
                 <h3 className="text-xl font-bold mb-3 text-foreground">La ce vârstă este ideal să închei o poliță de viață?</h3>
                 <p className="text-muted-foreground leading-relaxed">Cât mai devreme. Pe măsură ce înaintezi în vârstă, riscurile medicale cresc, iar prima de asigurare va fi substanțial mai mare. O persoană sănătoasă de 25 de ani poate bloca o primă de plată extrem de mică pentru următoarele decenii.</p>
               </div>
-              <div className="glass premium-card p-6 md:p-8 rounded-2xl border border-border">
+              <div className="glass beneficiu-card p-6 md:p-8 rounded-2xl border border-border">
                 <h3 className="text-xl font-bold mb-3 text-foreground">Trebuie să fac controale medicale la intrare?</h3>
                 <p className="text-muted-foreground leading-relaxed">În majoritatea cazurilor pentru sume asigurate medii, un simplu chestionar medical onest este suficient. Pentru sume foarte mari de despăgubire, compania îți poate cere realizarea unui control medical gratuit și decontat integral de ei.</p>
               </div>
-              <div className="glass premium-card p-6 md:p-8 rounded-2xl border border-border">
+              <div className="glass beneficiu-card p-6 md:p-8 rounded-2xl border border-border">
                 <h3 className="text-xl font-bold mb-3 text-foreground">Îmi pot pierde banii dacă nu mai pot plăti polița o perioadă?</h3>
                 <p className="text-muted-foreground leading-relaxed">Nu imediat. Există o perioadă de grație, iar dacă alegi varianta cu componentă de economisire (capitalizare), polița poate funcționa automat consumând din fondul acumulat pentru a te menține protejat, fără să anuleze contractul imediat.</p>
               </div>

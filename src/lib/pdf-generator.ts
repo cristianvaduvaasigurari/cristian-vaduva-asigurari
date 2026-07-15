@@ -58,7 +58,7 @@ export function generateGenericPDF(title: string, description: string, summary: 
   const cleanSummary = removeDiacritics(summary);
 
   // ==========================================
-  // PAGE 1: PROFESSIONAL COVER
+  // PAGE 1: serviciu practic pentru tine COVER
   // ==========================================
   
   // Cover Background
@@ -78,7 +78,7 @@ export function generateGenericPDF(title: string, description: string, summary: 
   doc.setFontSize(12);
   doc.setFont("helvetica", "normal");
   doc.setTextColor(148, 163, 184); // slate-400
-  doc.text("Premium Knowledge Platform", pageWidth / 2, 90, { align: "center" });
+  doc.text("beneficiu Knowledge Platform", pageWidth / 2, 90, { align: "center" });
 
   doc.setDrawColor(51, 65, 85); // slate-700
   doc.line(pageWidth / 4, 110, (pageWidth / 4) * 3, 110);

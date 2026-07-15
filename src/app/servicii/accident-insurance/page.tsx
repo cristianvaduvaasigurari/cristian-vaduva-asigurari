@@ -70,7 +70,7 @@ export default function AccidentInsurancePage() {
                 Peste 70% din accidentele care duc la imobilizare temporară nu se întâmplă pe autostradă, ci în timpul activităților de weekend, pe pârtiile de schi, pe bicicletă, sau chiar prin alunecare în propria casă.
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                Recuperarea fizioterapeutică după o gleznă ruptă poate dura luni de zile, generând costuri suplimentare și un stres major dacă nu ai voie să calci. Polița de accidente îți cumpără liniștea de a-ți permite ghipsuri ușoare, orteze premium și transport specializat.
+                Recuperarea fizioterapeutică după o gleznă ruptă poate dura luni de zile, generând costuri suplimentare și un stres major dacă nu ai voie să calci. Polița de accidente îți cumpără liniștea de a-ți permite ghipsuri ușoare, orteze beneficiu și transport specializat.
               </p>
             </div>
           </div>
@@ -108,21 +108,21 @@ export default function AccidentInsurancePage() {
           <div className="mb-24">
             <h2 className="text-3xl font-heading font-bold mb-10 text-center">Avantajele Concrete</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="glass premium-card p-8 rounded-[2rem] border border-border">
+              <div className="glass beneficiu-card p-8 rounded-[2rem] border border-border">
                 <CheckCircle2 className="w-8 h-8 text-blue-600 mb-6" />
                 <h3 className="text-xl font-bold mb-3 text-foreground">Plata Nepondiționată</h3>
                 <p className="text-muted-foreground leading-relaxed">
                   Primești banii numerar în cont direct de la Generali pe baza unui simplu document medical radiologic, indiferent de faptul că la stat te-au tratat gratuit.
                 </p>
               </div>
-              <div className="glass premium-card p-8 rounded-[2rem] border border-border">
+              <div className="glass beneficiu-card p-8 rounded-[2rem] border border-border">
                 <CheckCircle2 className="w-8 h-8 text-blue-600 mb-6" />
                 <h3 className="text-xl font-bold mb-3 text-foreground">Accesibilitate Extremă</h3>
                 <p className="text-muted-foreground leading-relaxed">
                   Este una dintre cele mai ieftine asigurări de pe piață. Pentru un preț echivalent cu un abonament de streaming pe lună, ești asigurat pe tot anul la accidente majore.
                 </p>
               </div>
-              <div className="glass premium-card p-8 rounded-[2rem] border border-border">
+              <div className="glass beneficiu-card p-8 rounded-[2rem] border border-border">
                 <CheckCircle2 className="w-8 h-8 text-blue-600 mb-6" />
                 <h3 className="text-xl font-bold mb-3 text-foreground">Acoperire 24/7 Globală</h3>
                 <p className="text-muted-foreground leading-relaxed">
@@ -178,7 +178,7 @@ export default function AccidentInsurancePage() {
               Impactul în Viața Reală
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="glass premium-card p-8 rounded-[2rem] border-l-4 border-l-amber-500">
+              <div className="glass beneficiu-card p-8 rounded-[2rem] border-l-4 border-l-amber-500">
                 <h3 className="text-xl font-bold mb-4 text-foreground">Scenariul 1: Volei de Duminică</h3>
                 <p className="text-muted-foreground leading-relaxed mb-4">
                   Andrei joacă volei la bază sportivă. Sare greșit, aterizează pe gleznă și suferă o fractură de tibie. Se duce la Spitalul Județean unde îi pun piciorul în ghips gratuit.
@@ -187,7 +187,7 @@ export default function AccidentInsurancePage() {
                   <span className="font-bold text-amber-700">Rezolvarea poliței:</span> Andrei trimite la Generali radiografia sa și copia după biletul de ieșire. Chiar dacă la stat tratamentul a fost gratuit, polița lui avea protecție la fracturi. În câteva zile i se virează 4.000 de Lei, bani cu care Andrei își ia Uber zilnic spre munca de birou până se vindecă.
                 </div>
               </div>
-              <div className="glass premium-card p-8 rounded-[2rem] border-l-4 border-l-amber-500">
+              <div className="glass beneficiu-card p-8 rounded-[2rem] border-l-4 border-l-amber-500">
                 <h3 className="text-xl font-bold mb-4 text-foreground">Scenariul 2: Accidentul Casnic al Copilului</h3>
                 <p className="text-muted-foreground leading-relaxed mb-4">
                   Alex, 7 ani, cade de pe bicicletă în parcul de lângă casă și își fracturează un deget de la mână stângă.
@@ -225,15 +225,15 @@ export default function AccidentInsurancePage() {
           <div className="mb-24">
             <h2 className="text-3xl font-heading font-bold mb-10 text-center">Întrebări Frecvente</h2>
             <div className="space-y-6 max-w-4xl mx-auto">
-              <div className="glass premium-card p-6 md:p-8 rounded-2xl border border-border">
+              <div className="glass beneficiu-card p-6 md:p-8 rounded-2xl border border-border">
                 <h3 className="text-xl font-bold mb-3 text-foreground">Ce diferență există între asigurarea de sănătate și cea de accidente?</h3>
                 <p className="text-muted-foreground leading-relaxed">Asigurarea de Sănătate acoperă "boala" (ex. o viroză, analize uzuale de sânge, operație de apendicită). Asigurarea de Accidente acoperă STRICT "trauma externă" (te-a lovit mașina, ai căzut). Este excelent să le ai pe amândouă, iar cea de accidente costă semnificativ mai puțin tocmai pentru că elimină riscul bolilor.</p>
               </div>
-              <div className="glass premium-card p-6 md:p-8 rounded-2xl border border-border">
+              <div className="glass beneficiu-card p-6 md:p-8 rounded-2xl border border-border">
                 <h3 className="text-xl font-bold mb-3 text-foreground">Am deja asigurare la muncă. De ce îmi trebuie una privată?</h3>
                 <p className="text-muted-foreground leading-relaxed">Unele companii asigură angajații "la accidente de muncă", adică ești protejat pe șantier sau în birou (între orele 09:00 - 18:00). Dar ce faci dacă îți rupi piciorul sâmbăta la grătar? Polița individuală Generali este activă 24/7/365.</p>
               </div>
-              <div className="glass premium-card p-6 md:p-8 rounded-2xl border border-border">
+              <div className="glass beneficiu-card p-6 md:p-8 rounded-2xl border border-border">
                 <h3 className="text-xl font-bold mb-3 text-foreground">Sporturile extreme sunt acoperite?</h3>
                 <p className="text-muted-foreground leading-relaxed">Depinde de setarea inițială. Dacă participi la competiții oficiale (legitimat) sau practici sporturi periculoase extrem de riscante (alpinism utilitar, curse moto), trebuie adăugată o supra-taxă specifică la poliță pentru ca aceste activități extra să fie validate.</p>
               </div>

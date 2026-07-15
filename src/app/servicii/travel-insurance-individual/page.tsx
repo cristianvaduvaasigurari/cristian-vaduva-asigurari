@@ -9,7 +9,7 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Asigurare Travel Individuală | Cristian Văduva",
-  description: "Călătorește fără griji. Asigurarea medicală de călătorie premium te protejează împotriva costurilor medicale externe uriașe, anulării zborurilor și pierderii bagajelor.",
+  description: "Călătorește fără griji. Asigurarea medicală de călătorie beneficiu te protejează împotriva costurilor medicale externe uriașe, anulării zborurilor și pierderii bagajelor.",
 };
 
 export default function TravelIndividualInsurancePage() {
@@ -55,7 +55,7 @@ export default function TravelIndividualInsurancePage() {
                 Asigurarea de călătorie este o poliță pe termen scurt, a cărei valabilitate se suprapune exact pe zilele în care ești plecat din România (ex: 7 zile, 14 zile).
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                Ea reprezintă o garanție asumată de compania de asigurări că va suporta orice cost medical de urgență generat de un accident sau o boală bruscă (apendicită, toxiinfecție, entorsă) survenită pe teritoriul statului străin unde te afli. Mai mult, polițele premium au fost extinse să acopere și riscuri turistice non-medicale (întârzieri bagaje).
+                Ea reprezintă o garanție asumată de compania de asigurări că va suporta orice cost medical de urgență generat de un accident sau o boală bruscă (apendicită, toxiinfecție, entorsă) survenită pe teritoriul statului străin unde te afli. Mai mult, polițele beneficiu au fost extinse să acopere și riscuri turistice non-medicale (întârzieri bagaje).
               </p>
             </div>
 
@@ -108,21 +108,21 @@ export default function TravelIndividualInsurancePage() {
           <div className="mb-24">
             <h2 className="text-3xl font-heading font-bold mb-10 text-center">De ce este indispensabilă?</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="glass premium-card p-8 rounded-[2rem] border border-border">
+              <div className="glass beneficiu-card p-8 rounded-[2rem] border border-border">
                 <CheckCircle2 className="w-8 h-8 text-blue-600 mb-6" />
                 <h3 className="text-xl font-bold mb-3 text-foreground">Asistență Telefonică 24/7</h3>
                 <p className="text-muted-foreground leading-relaxed">
                   Când ai o criză medicală la ora 3 dimineața în Turcia, nu trebuie să cauți pe Google. Suni la numărul de pe poliță, un operator român preia cazul și îți trimite o ambulanță sau îți dă adresa celui mai bun spital privat partener.
                 </p>
               </div>
-              <div className="glass premium-card p-8 rounded-[2rem] border border-border">
+              <div className="glass beneficiu-card p-8 rounded-[2rem] border border-border">
                 <CheckCircle2 className="w-8 h-8 text-blue-600 mb-6" />
                 <h3 className="text-xl font-bold mb-3 text-foreground">Decontare Directă (Fără Cash)</h3>
                 <p className="text-muted-foreground leading-relaxed">
                   În majoritatea cazurilor grave cu spitalizare, costul nu va fi plătit de tine și decontat ulterior acasă. Compania de asigurări va oferi o "Garanție de Plată" spitalului străin, acoperind integral zecile de mii de euro.
                 </p>
               </div>
-              <div className="glass premium-card p-8 rounded-[2rem] border border-border">
+              <div className="glass beneficiu-card p-8 rounded-[2rem] border border-border">
                 <CheckCircle2 className="w-8 h-8 text-blue-600 mb-6" />
                 <h3 className="text-xl font-bold mb-3 text-foreground">Repatriere Medicală</h3>
                 <p className="text-muted-foreground leading-relaxed">
@@ -178,7 +178,7 @@ export default function TravelIndividualInsurancePage() {
               Valoarea Reală a Liniștii
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="glass premium-card p-8 rounded-[2rem] border-l-4 border-l-amber-500">
+              <div className="glass beneficiu-card p-8 rounded-[2rem] border-l-4 border-l-amber-500">
                 <h3 className="text-xl font-bold mb-4 text-foreground">Scenariul 1: Salvarea Aeriană de la Schi</h3>
                 <p className="text-muted-foreground leading-relaxed mb-4">
                   Alexandru (25 ani) schiază în Austria pe o pârtie neagră. Se dezechilibrează, suferă o fractură de tibie-peroneu și nu mai poate coborî. Salvamontul austriac intervine cu elicopterul. Îl duc la clinica privată din Innsbruck, fiind operat cu tije de titan.
@@ -187,7 +187,7 @@ export default function TravelIndividualInsurancePage() {
                   <span className="font-bold text-amber-700">Rezolvarea poliței:</span> Elicopterul (3.500 EUR), operația (12.000 EUR) și cazarea (2.000 EUR) i-ar fi distrus viața financiară. Datorită poliței care a costat 80 LEI (având bifată acoperirea pentru Sporturi de Iarnă), totul a fost decontat direct între asigurător și spital. Alexandru a revenit acasă doar cu ghips.
                 </div>
               </div>
-              <div className="glass premium-card p-8 rounded-[2rem] border-l-4 border-l-amber-500">
+              <div className="glass beneficiu-card p-8 rounded-[2rem] border-l-4 border-l-amber-500">
                 <h3 className="text-xl font-bold mb-4 text-foreground">Scenariul 2: Dinți Peste Ocean</h3>
                 <p className="text-muted-foreground leading-relaxed mb-4">
                   Ioana se află la New York într-o călătorie. O doare cumplit o măsea infectată, fiindu-i umflată jumătate de față. La cel mai ieftin dentist din Brooklyn costul de deschidere și tratare de urgență este de 900 USD.
@@ -212,7 +212,7 @@ export default function TravelIndividualInsurancePage() {
               </div>
               <div className="p-6 rounded-2xl bg-white border border-[#c8102e]/10 shadow-sm hover:shadow-md transition-shadow">
                 <h4 className="font-bold text-[#c8102e] mb-3 text-lg">Asigurare de Răspundere Civilă în Străinătate</h4>
-                <p className="text-muted-foreground leading-relaxed">Polițele premium Generali includ și răspunderea ta civilă. Dacă mergi pe trotinetă închiriată în Paris și lovești grav un pieton care te dă în judecată pentru sute de mii de euro, polița suportă despăgubirea.</p>
+                <p className="text-muted-foreground leading-relaxed">Polițele beneficiu Generali includ și răspunderea ta civilă. Dacă mergi pe trotinetă închiriată în Paris și lovești grav un pieton care te dă în judecată pentru sute de mii de euro, polița suportă despăgubirea.</p>
               </div>
               <div className="p-6 rounded-2xl bg-white border border-[#c8102e]/10 shadow-sm hover:shadow-md transition-shadow">
                 <h4 className="font-bold text-[#c8102e] mb-3 text-lg">Emitere Electronică Instantanee</h4>
@@ -225,15 +225,15 @@ export default function TravelIndividualInsurancePage() {
           <div className="mb-24">
             <h2 className="text-3xl font-heading font-bold mb-10 text-center">Întrebări Frecvente</h2>
             <div className="space-y-6 max-w-4xl mx-auto">
-              <div className="glass premium-card p-6 md:p-8 rounded-2xl border border-border">
+              <div className="glass beneficiu-card p-6 md:p-8 rounded-2xl border border-border">
                 <h3 className="text-xl font-bold mb-3 text-foreground">Sunt deja plecat în vacanță (mă aflu în Spania), pot să-mi fac acum asigurarea pe telefon?</h3>
                 <p className="text-muted-foreground leading-relaxed">Nu. Aproape toate companiile serioase interzic emiterea polițelor DACĂ ai părăsit deja teritoriul României, deoarece tentația fraudei este enormă (oamenii se rănesc grav fără asigurare, sună repede în țară, emit polița în 5 minute, și apoi merg la urgențe mințind că tocmai au căzut). Asigurarea trebuie încheiată cât timp tu încă ești geografic în România.</p>
               </div>
-              <div className="glass premium-card p-6 md:p-8 rounded-2xl border border-border">
+              <div className="glass beneficiu-card p-6 md:p-8 rounded-2xl border border-border">
                 <h3 className="text-xl font-bold mb-3 text-foreground">Polița îmi va acoperi tratamentul dacă îmi uit acasă pastilele pentru inimă?</h3>
                 <p className="text-muted-foreground leading-relaxed">Nu. Polițele de călătorie acoperă BOLI ACUTE NEAȘTEPTATE (infecții, entorse). Agravarea unei "boli cronice" știute de tine anterior plecării (ex. ai astm cronic sau hipertensiune și nu ți-ai luat medicația la timp) reprezintă adesea excludere. Există excepții dacă puseul cronic îți pune direct viața în pericol de moarte (resuscitare primară).</p>
               </div>
-              <div className="glass premium-card p-6 md:p-8 rounded-2xl border border-border">
+              <div className="glass beneficiu-card p-6 md:p-8 rounded-2xl border border-border">
                 <h3 className="text-xl font-bold mb-3 text-foreground">Cum funcționează clauza Storno la biletul de avion?</h3>
                 <p className="text-muted-foreground leading-relaxed">Atenție! Pentru a activa opțiunea "Storno" (recuperarea banilor pe vacanță dacă se întâmplă o tragedie medicală ÎNAINTE să pleci), legea cere ca polița de asigurare să fie cumpărată cu maxim 2-3 zile lucrătoare de la momentul în care ai achitat prima tranșă a pachetului turistic (sau zborului). Nu poți cumpăra zborul în ianuarie și să faci asigurarea Storno abia în august când te-ai îmbolnăvit, încercând să recuperezi banii. Trebuie emisă din timp!</p>
               </div>

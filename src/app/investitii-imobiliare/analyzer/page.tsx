@@ -19,7 +19,7 @@ export default function RealEstateAnalyzerPage() {
             Investment Analyzer
           </h1>
           <p className="text-xl text-muted-foreground leading-relaxed">
-            Un instrument premium pentru evaluarea investițiilor imobiliare. Calculează randamentul exact, expunerea de risc și timpul de recuperare al investiției înainte de a semna actele.
+            Un instrument beneficiu pentru evaluarea investițiilor imobiliare. Calculează randamentul exact, expunerea de risc și timpul de recuperare al investiției înainte de a semna actele.
           </p>
         </div>
 

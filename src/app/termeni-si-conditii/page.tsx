@@ -21,7 +21,7 @@ export default function TermsPage() {
             <section>
               <h2 className="text-2xl font-bold font-heading text-foreground">1. Scopul Website-ului</h2>
               <p className="text-muted-foreground leading-relaxed mt-4">
-                Platforma cristianvaduva.com reprezintă un portal premium de prezentare a serviciilor integrate de 
+                Platforma cristianvaduva.com reprezintă un portal beneficiu de prezentare a serviciilor integrate de 
                 consultanță în domeniul asigurărilor (partener Generali România), investițiilor imobiliare (Real Estate) și al managementului 
                 patrimonial. Informațiile prezentate au scop informativ și nu constituie o ofertă angajantă din punct de vedere juridic până la semnarea unui contract comercial sau a unei polițe.
               </p>
@@ -50,7 +50,7 @@ export default function TermsPage() {
               <h2 className="text-2xl font-bold font-heading text-foreground">4. Proprietate Intelectuală</h2>
               <p className="text-muted-foreground leading-relaxed mt-4">
                 Întregul conținut al site-ului (texte, imagini, logo-uri, concepte, design Apple-style, structura Ecosistemului AiX) 
-                este proprietatea exclusivă a Cristian Văduva / AiXLuxury. Reproducerea, distribuirea sau utilizarea neautorizată 
+                este proprietatea exclusivă a Cristian Văduva / AiXbeneficiu. Reproducerea, distribuirea sau utilizarea neautorizată 
                 a acestor materiale este strict interzisă și se pedepsește conform legilor în vigoare.
               </p>
             </section>

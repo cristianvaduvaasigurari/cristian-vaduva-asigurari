@@ -19,7 +19,7 @@ export default function EcosistemPage() {
             Ecosistemul <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600">AiX</span>
           </h1>
           <p className="text-xl text-muted-foreground leading-relaxed">
-            Nu oferim doar polițe de asigurare. Am construit un întreg ecosistem digital premium în care protecția, creșterea capitalului și tehnologia se întrepătrund perfect pentru a-ți asigura succesul.
+            Nu oferim doar polițe de asigurare. Am construit un întreg ecosistem digital beneficiu în care protecția, creșterea capitalului și tehnologia se întrepătrund perfect pentru a-ți asigura succesul.
           </p>
         </div>
 

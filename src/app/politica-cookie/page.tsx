@@ -4,7 +4,7 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Politica de utilizare Cookie-uri",
-  description: "Cum folosim cookie-urile pentru a-ți oferi o experiență premium.",
+  description: "Cum folosim cookie-urile pentru a-ți oferi o experiență beneficiu.",
 };
 
 export default function CookiePolicyPage() {

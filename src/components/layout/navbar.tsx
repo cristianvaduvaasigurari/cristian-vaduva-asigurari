@@ -44,7 +44,7 @@ const megaMenuData = [
       { name: "Clădiri Comerciale", href: "/servicii/business-building-insurance" },
       { name: "Bunuri Business", href: "/servicii/business-goods-insurance" },
       { name: "Răspundere Generală", href: "/servicii/business-general-liability" },
-      { name: "Răspundere Profesională", href: "/servicii/business-professional-liability" },
+      { name: "Răspundere Profesională", href: "/servicii/business-serviciu practic pentru tine-liability" },
       { name: "Răspunderea Managerilor (D&O)", href: "/servicii/business-directors-liability" },
       { name: "Malpraxis Medical", href: "/servicii/business-malpractice-insurance" },
     ]
@@ -69,7 +69,7 @@ const ecosystemMenuData = [
     items: [
       { name: "AiX OS", href: "/aixos" },
       { name: "Home Find", href: "/home-find" },
-      { name: "AiXLuxury", href: "/aixluxury" },
+      { name: "AiXbeneficiu", href: "/aixbeneficiu" },
       { name: "Centru Urgențe", href: "/urgente" },
     ]
   },
@@ -89,7 +89,7 @@ const ecosystemMenuData = [
     title: "AiX Tools",
     items: [
       { name: "Second Opinion", href: "/second-opinion" },
-      { name: "Luxury Garage", href: "/luxury-garage" },
+      { name: "acces rapid pentru tine Garage", href: "/serviciu avansat pentru tine-garage" },
       { name: "Client Journey", href: "/client-journey" },
       { name: "Smart Forms", href: "/smart-forms" },
       { name: "Wealth Passport", href: "/wealth-passport" },
@@ -138,7 +138,7 @@ export function Navbar() {
               cristianvaduva.com
             </Link>
             <div className="flex items-center gap-2 text-[10px] sm:text-xs text-muted-foreground uppercase tracking-widest font-medium mt-1">
-              <Link href="/aixluxury" className="hover:text-foreground transition-colors">AiXLuxury</Link>
+              <Link href="/aixbeneficiu" className="hover:text-foreground transition-colors">AiXbeneficiu</Link>
               <span className="w-1 h-1 rounded-full bg-border" />
               <Link href="/aixos" className="hover:text-foreground transition-colors">AiX OS</Link>
               <span className="w-1 h-1 rounded-full bg-border" />

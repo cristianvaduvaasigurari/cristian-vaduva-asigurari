@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { Calculator, TrendingUp, ArrowRight, ShieldAlert, Activity } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { saveAssessment } from "@/lib/actions";
+import { saveAssessment } from "@/lib/clientActions";
 
 export function RealEstateAnalyzer() {
   const [data, setData] = useState({

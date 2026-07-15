@@ -108,21 +108,21 @@ export default function BusinessCyberInsurancePage() {
           <div className="mb-24">
             <h2 className="text-3xl font-heading font-bold mb-10 text-center">Intervenția de Urgență (Response Team)</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="glass premium-card p-8 rounded-[2rem] border border-border">
+              <div className="glass beneficiu-card p-8 rounded-[2rem] border border-border">
                 <CheckCircle2 className="w-8 h-8 text-cyan-600 mb-6" />
                 <h3 className="text-xl font-bold mb-3 text-foreground">Forensic IT (Criminalistică)</h3>
                 <p className="text-muted-foreground leading-relaxed">
                   Când are loc atacul, nu mai știi ce să oprești din priză. Suni la Hotline-ul Generali, iar noi trimitem remot/fizic o companie de IT Forensics de top care va investiga pe ce port a intrat atacatorul, curățând rețeaua și izolând infecția. Pe banii Generali.
                 </p>
               </div>
-              <div className="glass premium-card p-8 rounded-[2rem] border border-border">
+              <div className="glass beneficiu-card p-8 rounded-[2rem] border border-border">
                 <CheckCircle2 className="w-8 h-8 text-cyan-600 mb-6" />
                 <h3 className="text-xl font-bold mb-3 text-foreground">Plata Extorcării (Ransomware)</h3>
                 <p className="text-muted-foreground leading-relaxed">
                   Sub rezerva legalității (dacă nu încalcă embargouri de stat/teroriste), și strict dacă experții de securitate decid că decriptarea e complet imposibilă tehnic altfel, polițele cyber de vârf POT acoperi plata propriu-zisă a șantajului (Bitcoinii) cerut pentru recăpătarea cheii bazei tale de date de clienți.
                 </p>
               </div>
-              <div className="glass premium-card p-8 rounded-[2rem] border border-border">
+              <div className="glass beneficiu-card p-8 rounded-[2rem] border border-border">
                 <CheckCircle2 className="w-8 h-8 text-cyan-600 mb-6" />
                 <h3 className="text-xl font-bold mb-3 text-foreground">Restaurarea Bazei de Date</h3>
                 <p className="text-muted-foreground leading-relaxed">
@@ -178,7 +178,7 @@ export default function BusinessCyberInsurancePage() {
               Un coșmar de un singur click
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="glass premium-card p-8 rounded-[2rem] border-l-4 border-l-amber-500">
+              <div className="glass beneficiu-card p-8 rounded-[2rem] border-l-4 border-l-amber-500">
                 <h3 className="text-xl font-bold mb-4 text-foreground">Scenariul 1: Phishing-ul de la Resurse Umane</h3>
                 <p className="text-muted-foreground leading-relaxed mb-4">
                   O angajată HR deschide dimineața un atașament numit "CV-Candidat-PDF.exe". Imediat, virusul de tip Cryptolocker se răspândește silențios pe toată rețeaua firmei de distribuție și pe serverul principal, criptând absolut toate PDF-urile de marfă și contracte.
@@ -187,10 +187,10 @@ export default function BusinessCyberInsurancePage() {
                   <span className="font-bold text-amber-700">Rezolvarea poliței:</span> Deoarece Backup-ul era pe un hard-disk legat în aceeași rețea și s-a criptat și el, s-a activat dosarul de daună Cyber. Asigurătorul a trimis echipa specială de decriptare din Israel (plătindu-le onorariul de 30.000 EUR) care au recuperat 90% din date forțând cheia matematică, plătind concomitent clientului român 40.000 EUR pentru "Oprirea Afacerii" pe durata celor 5 zile fără livrări.
                 </div>
               </div>
-              <div className="glass premium-card p-8 rounded-[2rem] border-l-4 border-l-amber-500">
+              <div className="glass beneficiu-card p-8 rounded-[2rem] border-l-4 border-l-amber-500">
                 <h3 className="text-xl font-bold mb-4 text-foreground">Scenariul 2: Breach-ul GDPR la Magazinul Online</h3>
                 <p className="text-muted-foreground leading-relaxed mb-4">
-                  Un magazin online ce vinde cosmetice premium are baza de date MySQL atacată (SQL Injection). Hackerii copiază baza cu nume, numere de telefon, email-uri și istoric de achiziții a 45.000 de femei din România, expunându-le public pe forumuri rusești.
+                  Un magazin online ce vinde cosmetice beneficiu are baza de date MySQL atacată (SQL Injection). Hackerii copiază baza cu nume, numere de telefon, email-uri și istoric de achiziții a 45.000 de femei din România, expunându-le public pe forumuri rusești.
                 </p>
                 <div className="p-4 bg-amber-50/50 rounded-xl border border-amber-100">
                   <span className="font-bold text-amber-700">Rezolvarea poliței:</span> Conform legii, firma trebuia să notifice toți cei 45.000 de clienți. Polița a suportat costul uriaș poștal / electronic al notificării mass-media cerut de lege, onorariul avocatului specializat în GDPR (pentru negocierea amenzii cu statul) și a acoperit primele de consultanță PR pentru salvarea reputației site-ului.
@@ -225,15 +225,15 @@ export default function BusinessCyberInsurancePage() {
           <div className="mb-24">
             <h2 className="text-3xl font-heading font-bold mb-10 text-center">Întrebări Frecvente (Cyber)</h2>
             <div className="space-y-6 max-w-4xl mx-auto">
-              <div className="glass premium-card p-6 md:p-8 rounded-2xl border border-border">
+              <div className="glass beneficiu-card p-6 md:p-8 rounded-2xl border border-border">
                 <h3 className="text-xl font-bold mb-3 text-foreground">Eu țin deja totul în "Cloud" la Microsoft, Azure sau AWS. Mai am nevoie de Cyber?</h3>
                 <p className="text-muted-foreground leading-relaxed">Categoric DA. Contractele Cloudurilor de top (Microsoft, Amazon) stipulează explicit limitarea masivă a răspunderii lor dacă securitatea ta este spartă "la capătul tău" (ex: un angajat pierde parola sau se infectează laptopul lui local de pe care accesează Cloudul). De asemenea, răspunderea față de Terți (GDPR) cade mereu tot în seama TA, nu a Microsoftului.</p>
               </div>
-              <div className="glass premium-card p-6 md:p-8 rounded-2xl border border-border">
+              <div className="glass beneficiu-card p-6 md:p-8 rounded-2xl border border-border">
                 <h3 className="text-xl font-bold mb-3 text-foreground">Plătiți voi amenzile GDPR de la Stat (ANSPDCP)?</h3>
                 <p className="text-muted-foreground leading-relaxed">Polița acoperă cheltuielile de apărare în fața autorității și eventualele despăgubiri cerute civil de cetățenii afectați. Însă, atenție: în foarte multe jurisdicții, plata AMENZILOR penale / contravenționale dictată direct de Stat ca "pedeapsă directă" este neasigurabilă din punct de vedere legal (amenda pedepsește autorul, ea nu poate fi "transferată" altuia moralmente). Analizăm fiecare speță cu echipa juridică.</p>
               </div>
-              <div className="glass premium-card p-6 md:p-8 rounded-2xl border border-border">
+              <div className="glass beneficiu-card p-6 md:p-8 rounded-2xl border border-border">
                 <h3 className="text-xl font-bold mb-3 text-foreground">Orice firmă e primită în asigurare?</h3>
                 <p className="text-muted-foreground leading-relaxed">NU. Chestionarul IT de risc este strict. Dacă nu aveți antivirus de bază cu licență, dacă nu folosiți firewall-uri, dacă parola de admin e "1234" și nu aveți absolut nicio politică de backup off-site, asigurătorul va refuza emiterea poliței, considerând expunerea dvs. sinucigașă și ne-asigurabilă. Minimul de igienă cibernetică este obligatoriu.</p>
               </div>

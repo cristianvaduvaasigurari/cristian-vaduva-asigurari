@@ -9,7 +9,7 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Asigurare Sănătate Corporate | Cristian Văduva",
-  description: "Transformă retenția angajaților tăi cu cel mai dorit beneficiu extra-salarial din România: polița privată de sănătate cu acoperire spitalicească premium.",
+  description: "Transformă retenția angajaților tăi cu cel mai dorit beneficiu extra-salarial din România: polița privată de sănătate cu acoperire spitalicească beneficiu.",
 };
 
 export default function HealthCorporateInsurancePage() {
@@ -108,21 +108,21 @@ export default function HealthCorporateInsurancePage() {
           <div className="mb-24">
             <h2 className="text-3xl font-heading font-bold mb-10 text-center">ROI-ul Angajatorului</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="glass premium-card p-8 rounded-[2rem] border border-border">
+              <div className="glass beneficiu-card p-8 rounded-[2rem] border border-border">
                 <CheckCircle2 className="w-8 h-8 text-blue-600 mb-6" />
                 <h3 className="text-xl font-bold mb-3 text-foreground">Retenție și Loializare HR</h3>
                 <p className="text-muted-foreground leading-relaxed">
                   Studiile eJobs confirmă anual: sănătatea privată este "must-have" în beneficiile cerute la interviuri. Dacă le oferi o poliță care le extinde acoperirea și soției/copilului angajatului (cu preluare de pe cardul de salariu la un preț B2B negociat), plecarea lui la competiție e foarte scumpă emoțional.
                 </p>
               </div>
-              <div className="glass premium-card p-8 rounded-[2rem] border border-border">
+              <div className="glass beneficiu-card p-8 rounded-[2rem] border border-border">
                 <CheckCircle2 className="w-8 h-8 text-blue-600 mb-6" />
                 <h3 className="text-xl font-bold mb-3 text-foreground">Scăderea absenteismului ("Zile Medicale")</h3>
                 <p className="text-muted-foreground leading-relaxed">
                   Când un angajat are o problemă, dacă stă după RMN-ul gratuit la stat va lipsi de la birou 3 luni (fizic și mental, fiind stresat). Prin asigurare, face RMN a doua zi, se tratează, și vine la birou relaxat, valid, restabilind rapid productivitatea.
                 </p>
               </div>
-              <div className="glass premium-card p-8 rounded-[2rem] border border-border">
+              <div className="glass beneficiu-card p-8 rounded-[2rem] border border-border">
                 <CheckCircle2 className="w-8 h-8 text-blue-600 mb-6" />
                 <h3 className="text-xl font-bold mb-3 text-foreground">Fără Chestionare Medicale Severe</h3>
                 <p className="text-muted-foreground leading-relaxed">
@@ -178,7 +178,7 @@ export default function HealthCorporateInsurancePage() {
               Cost versus Beneficiu Emoțional
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="glass premium-card p-8 rounded-[2rem] border-l-4 border-l-amber-500">
+              <div className="glass beneficiu-card p-8 rounded-[2rem] border-l-4 border-l-amber-500">
                 <h3 className="text-xl font-bold mb-4 text-foreground">Scenariul 1: Salvarea unui Key-Account Manager</h3>
                 <p className="text-muted-foreground leading-relaxed mb-4">
                   Cristian este cel mai bun om de vânzări IT din firma ta. La ecografia generală anuală gratuită de pe poliță, doctorii Generali depistează devreme un nodul oncologic perfect tratabil. 
@@ -187,7 +187,7 @@ export default function HealthCorporateInsurancePage() {
                   <span className="font-bold text-amber-700">Rezolvarea poliței:</span> Generali acoperă chirurgia imediat, chimioterapia în rețeaua Amethyst / MedLife. Cristian se recuperează rapid și supraviețuiește. Cristian va fi loial firmei tale care i-a oferit această asigurare probabil pentru toată viața sa activă. Nicio mărire de salariu nu cumpără această loialitate.
                 </div>
               </div>
-              <div className="glass premium-card p-8 rounded-[2rem] border-l-4 border-l-amber-500">
+              <div className="glass beneficiu-card p-8 rounded-[2rem] border-l-4 border-l-amber-500">
                 <h3 className="text-xl font-bold mb-4 text-foreground">Scenariul 2: Alternativa Măririi Salariale</h3>
                 <p className="text-muted-foreground leading-relaxed mb-4">
                   Decizi să îi mărești salariul unui angajat cu 250 RON Brut pe lună (îți costă firma vreo 255 Lei din fondul de salarii). Angajatul primește "în mână" vreo 130 de Lei (2 pizza). Când angajatul respectiv se va opera la Sanador, cei 130 de lei în plus lunar din ultimul an îl vor ajuta prea puțin la factura de 15.000 Lei.
@@ -215,7 +215,7 @@ export default function HealthCorporateInsurancePage() {
                 <p className="text-muted-foreground leading-relaxed">Nu ești captiv unei singure mari clini. Dacă angajații tăi din Cluj preferă rețeaua Regina Maria, iar cei din București vor MedLife, contractul Generali acomodează ambele preferințe, deoarece noi suntem "Asiguratorul Financiar", nu proprietarii clădirii.</p>
               </div>
               <div className="p-6 rounded-2xl bg-white border border-[#c8102e]/10 shadow-sm hover:shadow-md transition-shadow">
-                <h4 className="font-bold text-[#c8102e] mb-3 text-lg">Deductibilitate Fiscală Premium</h4>
+                <h4 className="font-bold text-[#c8102e] mb-3 text-lg">Deductibilitate Fiscală beneficiu</h4>
                 <p className="text-muted-foreground leading-relaxed">Încurajată fiscal. Toate facturile emise de Generali merg pe contul firmei. Profitul scade contabil, iar compania nu reține CAS/CASS/Impozit din ele, cât timp pachetul nu depășește limita anuală echivalentă a 400 EUR per cap.</p>
               </div>
             </div>
@@ -225,15 +225,15 @@ export default function HealthCorporateInsurancePage() {
           <div className="mb-24">
             <h2 className="text-3xl font-heading font-bold mb-10 text-center">Întrebări Frecvente de la CEO / HR</h2>
             <div className="space-y-6 max-w-4xl mx-auto">
-              <div className="glass premium-card p-6 md:p-8 rounded-2xl border border-border">
+              <div className="glass beneficiu-card p-6 md:p-8 rounded-2xl border border-border">
                 <h3 className="text-xl font-bold mb-3 text-foreground">Ce facem dacă un angajat își dă demisia? Pierd banii plătiți pe an?</h3>
                 <p className="text-muted-foreground leading-relaxed">Nicidecum. Flotele B2B funcționează exact ca leasing-ul. Ne trimiteți o simplă notificare în Excel, polița omului plecat se anihilează și se va refactura pe "storno" în următoarea lună (dacă s-a plătit în avans), iar contul lui este preluat instantaneu de noul tău angajat la semnarea actelor de muncă.</p>
               </div>
-              <div className="glass premium-card p-6 md:p-8 rounded-2xl border border-border">
+              <div className="glass beneficiu-card p-6 md:p-8 rounded-2xl border border-border">
                 <h3 className="text-xl font-bold mb-3 text-foreground">Angajații vor să își includă și soțiile/copiii în contractul VIP. Plătește firma?</h3>
                 <p className="text-muted-foreground leading-relaxed">Puteți decide politica. Dacă bugetul firmei nu acoperă rudele, sistemul permite o extindere extraordinară: Angajatul bifează includerea copilului în pachet, iar tariful este pur și simplu reținut lunar direct din statul lui de plată (payroll deduction) de către HR la prețuri uriaș de avantajoase datorită apartenenței la grupul de companie.</p>
               </div>
-              <div className="glass premium-card p-6 md:p-8 rounded-2xl border border-border">
+              <div className="glass beneficiu-card p-6 md:p-8 rounded-2xl border border-border">
                 <h3 className="text-xl font-bold mb-3 text-foreground">Eu ca patron (administrator) pot să îmi fac doar eu asigurare pe firmă?</h3>
                 <p className="text-muted-foreground leading-relaxed">Din punct de vedere legal, facilitățile fiscale pentru "asigurări voluntare" vizează protecția "angajaților". Însă, pentru pachete IMM dedicate asociaților (și minimului de angajați), vom construi structura potrivită contabilă. Da, te poți proteja la superlativ pe CUI-ul afacerii tale.</p>
               </div>

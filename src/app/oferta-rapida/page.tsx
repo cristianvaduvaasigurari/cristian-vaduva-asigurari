@@ -4,7 +4,7 @@ import { ExpressOffer } from "@/components/sections/express-offer";
 
 export const metadata: Metadata = {
   title: "Ofertă Rapidă în 30s | Cristian Văduva",
-  description: "Cere o ofertă premium de asigurare în mai puțin de 30 de secunde.",
+  description: "Cere o ofertă beneficiu de asigurare în mai puțin de 30 de secunde.",
 };
 
 export default function ExpressOfferPage() {

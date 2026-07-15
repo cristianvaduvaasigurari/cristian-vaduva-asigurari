@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 
 export const metadata = {
   title: "Home Find™ | Cristian Văduva",
-  description: "The premium ecosystem connecting property acquisition with intelligent insurance solutions."
+  description: "The beneficiu ecosystem connecting property acquisition with intelligent insurance solutions."
 };
 
 export default function HomeFindPage() {
@@ -18,14 +18,14 @@ export default function HomeFindPage() {
           <div className="max-w-4xl mx-auto text-center">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-100/50 text-amber-800 text-sm font-medium mb-8 border border-amber-200/50">
               <span className="w-2 h-2 rounded-full bg-amber-600 animate-pulse" />
-              Ecosistem Premium AiX
+              Ecosistem beneficiu AiX
             </div>
             <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-slate-900 mb-6 leading-tight">
               Home Find™ <br />
               <span className="text-slate-400">Find. Buy. Protect.</span>
             </h1>
             <p className="text-xl text-slate-600 mb-10 max-w-2xl mx-auto leading-relaxed">
-              The premium ecosystem connecting property acquisition with intelligent insurance solutions. 
+              The beneficiu ecosystem connecting property acquisition with intelligent insurance solutions. 
               Because buying a property and protecting it should be one continuous experience.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -52,7 +52,7 @@ export default function HomeFindPage() {
               Redefining the Journey
             </h2>
             <p className="text-lg text-slate-600">
-              Home Find™ is not just a real estate platform. It is an end-to-end luxury ecosystem managed by Cristian Văduva and Generali România.
+              Home Find™ is not just a real estate platform. It is an end-to-end serviciu avansat pentru tine ecosystem managed by Cristian Văduva and Generali România.
             </p>
           </div>
           
@@ -62,7 +62,7 @@ export default function HomeFindPage() {
                 <Search className="w-6 h-6" />
               </div>
               <h3 className="text-xl font-bold mb-3">Curated Selection</h3>
-              <p className="text-slate-600">Premium properties vetted for quality, location, and investment potential.</p>
+              <p className="text-slate-600">beneficiu properties vetted for quality, location, and investment potential.</p>
             </div>
             <div className="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 transition-all hover:shadow-md">
               <div className="w-12 h-12 bg-amber-50 rounded-2xl flex items-center justify-center mb-6 text-amber-600">
@@ -91,7 +91,7 @@ export default function HomeFindPage() {
                 Featured Properties
               </h2>
               <p className="text-lg text-slate-600">
-                Discover a selection of premium real estate, ready for immediate acquisition and comprehensive protection.
+                Discover a selection of beneficiu real estate, ready for immediate acquisition and comprehensive protection.
               </p>
             </div>
             <Button asChild variant="outline" className="rounded-full border-slate-200 group">
@@ -137,7 +137,7 @@ export default function HomeFindPage() {
                 </div>
                 <div className="flex-1 text-center md:text-left">
                   <h3 className="text-xl font-bold mb-1">Property Discovery</h3>
-                  <p className="text-slate-400 text-sm">Find your ideal premium asset through Home Find™.</p>
+                  <p className="text-slate-400 text-sm">Find your ideal beneficiu asset through Home Find™.</p>
                 </div>
               </div>
 
@@ -165,7 +165,7 @@ export default function HomeFindPage() {
                 </div>
                 <div className="flex-1 text-center md:text-left">
                   <h3 className="text-xl font-bold mb-1">Insurance Protection</h3>
-                  <p className="text-slate-400 text-sm">Immediate, tailored coverage through Generali România.</p>
+                  <p className="text-slate-400 text-sm">Immediate, personalizat pentru tine coverage through Generali România.</p>
                 </div>
               </div>
 

@@ -9,7 +9,7 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Asigurare Bunuri Personale | Cristian Văduva",
-  description: "Protecție completă pentru echipamentele IT, electrocasnicele premium și mobilierul de valoare din interiorul locuinței tale.",
+  description: "Protecție completă pentru echipamentele IT, electrocasnicele beneficiu și mobilierul de valoare din interiorul locuinței tale.",
 };
 
 export default function PersonalGoodsInsurancePage() {
@@ -108,21 +108,21 @@ export default function PersonalGoodsInsurancePage() {
           <div className="mb-24">
             <h2 className="text-3xl font-heading font-bold mb-10 text-center">Avantajele Protecției Digitale și Casnice</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="glass premium-card p-8 rounded-[2rem] border border-border">
+              <div className="glass beneficiu-card p-8 rounded-[2rem] border border-border">
                 <CheckCircle2 className="w-8 h-8 text-blue-600 mb-6" />
                 <h3 className="text-xl font-bold mb-3 text-foreground">Avarii accidentale Electrice</h3>
                 <p className="text-muted-foreground leading-relaxed">
                   Nu mai stai la mâna furnizorilor ineficienți de electricitate. Dacă se dă un șoc electric pe rețea și ți se arde combina frigorifică și televizorul, Generali le plătește imediat din poliță.
                 </p>
               </div>
-              <div className="glass premium-card p-8 rounded-[2rem] border border-border">
+              <div className="glass beneficiu-card p-8 rounded-[2rem] border border-border">
                 <CheckCircle2 className="w-8 h-8 text-blue-600 mb-6" />
                 <h3 className="text-xl font-bold mb-3 text-foreground">Extensie la Vandalism și Furt</h3>
                 <p className="text-muted-foreground leading-relaxed">
                   Spre deosebire de garanția clasică eMag care acoperă doar un defect de fabrică, polița de bunuri te despăgubește la valoarea reală dacă televizorul este furat de către spărgători sau dacă este inundat de un calorifer spart.
                 </p>
               </div>
-              <div className="glass premium-card p-8 rounded-[2rem] border border-border">
+              <div className="glass beneficiu-card p-8 rounded-[2rem] border border-border">
                 <CheckCircle2 className="w-8 h-8 text-blue-600 mb-6" />
                 <h3 className="text-xl font-bold mb-3 text-foreground">Cost Total Ieftin</h3>
                 <p className="text-muted-foreground leading-relaxed">
@@ -178,7 +178,7 @@ export default function PersonalGoodsInsurancePage() {
               Impactul în Viața Reală
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="glass premium-card p-8 rounded-[2rem] border-l-4 border-l-amber-500">
+              <div className="glass beneficiu-card p-8 rounded-[2rem] border-l-4 border-l-amber-500">
                 <h3 className="text-xl font-bold mb-4 text-foreground">Scenariul 1: Prădătorii de apartamente</h3>
                 <p className="text-muted-foreground leading-relaxed mb-4">
                   Bogdan s-a întors din vacanța sa la Roma de 7 zile, aflând că butucul ușii rezidențiale este forțat. Tot apartamentul e întors pe dos. Consola de gaming, laptopul Macbook de serviciu și camera DSLR personală lipsesc.
@@ -187,7 +187,7 @@ export default function PersonalGoodsInsurancePage() {
                   <span className="font-bold text-amber-700">Rezolvarea poliței:</span> După obținerea procesului-verbal întocmit de Poliție (dovada efracției), Generali analizează devizul bunurilor sustrase conform limitelor setate în poliță și virează 4.000 EUR lui Bogdan. El pleacă vineri la mall să își cumpere din nou electronicele vitale de muncă, chiar dacă poliția nu va prinde hoții niciodată.
                 </div>
               </div>
-              <div className="glass premium-card p-8 rounded-[2rem] border-l-4 border-l-amber-500">
+              <div className="glass beneficiu-card p-8 rounded-[2rem] border-l-4 border-l-amber-500">
                 <h3 className="text-xl font-bold mb-4 text-foreground">Scenariul 2: Scurtcircuitul neprevenit</h3>
                 <p className="text-muted-foreground leading-relaxed mb-4">
                   O zi normală în zona rurală metropolitană. Un transformator masiv de pe uliță cedează subțire emițând 380V. Toată aparatura în priză din casa Ninei explodează.
@@ -225,15 +225,15 @@ export default function PersonalGoodsInsurancePage() {
           <div className="mb-24">
             <h2 className="text-3xl font-heading font-bold mb-10 text-center">Întrebări Frecvente</h2>
             <div className="space-y-6 max-w-4xl mx-auto">
-              <div className="glass premium-card p-6 md:p-8 rounded-2xl border border-border">
+              <div className="glass beneficiu-card p-6 md:p-8 rounded-2xl border border-border">
                 <h3 className="text-xl font-bold mb-3 text-foreground">Dacă îmi scap eu telefonul din mână și se sparge, acoperă polița?</h3>
                 <p className="text-muted-foreground leading-relaxed">Nu. Polița de bunuri generale protejează împotriva riscurilor fixe din contract (incendiu, apă de la vecin, furt din efracție documentat, etc). Spargerea din neatenție a propriului telefon mobil intră la asigurări separate tip "Garanție extinsă / Casco Telefoane" de la operatorul telecom, nu la conținut locuință.</p>
               </div>
-              <div className="glass premium-card p-6 md:p-8 rounded-2xl border border-border">
+              <div className="glass beneficiu-card p-6 md:p-8 rounded-2xl border border-border">
                 <h3 className="text-xl font-bold mb-3 text-foreground">Ce fac dacă am uitat ușa deschisă la plecare și au furat tot?</h3>
                 <p className="text-muted-foreground leading-relaxed">Clauza se aplică la furtul PRIN EFRAȚIE. Asta înseamnă că hoții trebuie să fi distrus yala, să fi tăiat ușa sau geamul. Neglijența crasă proprie (uitarea ușii descuiate de tot) constituie o excludere din orice asigurare standard.</p>
               </div>
-              <div className="glass premium-card p-6 md:p-8 rounded-2xl border border-border">
+              <div className="glass beneficiu-card p-6 md:p-8 rounded-2xl border border-border">
                 <h3 className="text-xl font-bold mb-3 text-foreground">Trebuie să păstrez facturile la absolut toate hainele și electronicele?</h3>
                 <p className="text-muted-foreground leading-relaxed">Nu chiar, este nerealist. Însă pentru electronicele scumpe și bijuteriile menționate ca fiind deosebite (unde vorbim de piese de 5.000, 10.000 Lei bucata) trebuie să poți dovedi prezența lor (fie cu factură, fie fotografii de context clare pe care le ai prin telefon). În caz de efracție totală, poliția întocmește un raport riguros care devine document de bază.</p>
               </div>

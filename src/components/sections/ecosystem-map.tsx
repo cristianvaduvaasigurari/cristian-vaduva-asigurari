@@ -19,11 +19,11 @@ const nodes = [
     subtitle: "Pilon 1: Creșterea Patrimoniului",
     icon: <Building className="w-8 h-8 text-amber-600" />,
     color: "bg-amber-50 border-amber-200 text-amber-900",
-    desc: "Odată protejat, capitalul tău poate fi plasat în active tangibile sigure. Oferim consultanță premium pentru imobiliare de lux și cu randament ridicat."
+    desc: "Odată protejat, capitalul tău poate fi plasat în active tangibile sigure. Oferim consultanță beneficiu pentru imobiliare de lux și cu randament ridicat."
   },
   {
     id: "investments",
-    title: "AiXLuxury Investments",
+    title: "AiXbeneficiu Investments",
     subtitle: "Pilon 2: Multiplicarea",
     icon: <TrendingUp className="w-8 h-8 text-emerald-600" />,
     color: "bg-emerald-50 border-emerald-200 text-emerald-900",

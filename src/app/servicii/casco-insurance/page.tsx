@@ -8,7 +8,7 @@ import { CONTACT } from "@/config/contact";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Asigurare CASCO Premium | Cristian Văduva",
+  title: "Asigurare CASCO beneficiu | Cristian Văduva",
   description: "Scutul total pentru autoturismul tău. Protecție împotriva propriilor greșeli, furtului, vandalismului și fenomenelor meteo extreme.",
 };
 
@@ -26,7 +26,7 @@ export default function CascoInsurancePage() {
               <CarFront className="w-12 h-12" />
             </div>
             <h1 className="text-5xl md:text-6xl font-heading font-bold mb-6 leading-tight">
-              Asigurarea CASCO Premium
+              Asigurarea CASCO beneficiu
             </h1>
             <p className="text-xl text-muted-foreground leading-relaxed mb-10 max-w-3xl">
               În timp ce RCA te acoperă atunci când îi lovești pe alții, CASCO acoperă greșelile tale. Elimină emoțiile zgârieturilor din parcare, gheții cazute pe parbriz sau a accidentelor din culpa ta exclusivă prin reparații la reprezentanțe autorizate.
@@ -90,7 +90,7 @@ export default function CascoInsurancePage() {
                 <p className="text-muted-foreground">Firmele de leasing impun o poliță CASCO full pe toată durata contractului, pentru a-și proteja bunul până la ultima rată și trecerea în proprietatea ta.</p>
               </div>
               <div className="p-6 rounded-2xl bg-emerald-50/50 border border-emerald-100">
-                <h4 className="font-bold text-emerald-800 mb-2">Vehicule Noi și Premium</h4>
+                <h4 className="font-bold text-emerald-800 mb-2">Vehicule Noi și beneficiu</h4>
                 <p className="text-muted-foreground">Proprietarii de SUV-uri și limuzine la care înlocuirea unei bare frontale cu senzori depășește frecvent 3000 de Euro, sumă nejustificat de suportat din propriul buzunar.</p>
               </div>
               <div className="p-6 rounded-2xl bg-emerald-50/50 border border-emerald-100">
@@ -108,25 +108,25 @@ export default function CascoInsurancePage() {
           <div className="mb-24">
             <h2 className="text-3xl font-heading font-bold mb-10 text-center">Sistemul de Decontare și Reparație</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="glass premium-card p-8 rounded-[2rem] border border-border">
+              <div className="glass beneficiu-card p-8 rounded-[2rem] border border-border">
                 <CheckCircle2 className="w-8 h-8 text-blue-600 mb-6" />
                 <h3 className="text-xl font-bold mb-3 text-foreground">Aprobare Rapidă și Fără Boli de Cap</h3>
                 <p className="text-muted-foreground leading-relaxed">
                   Lăsarea mașinii direct în reprezentanța auto. Servicul încarcă pozele cu dauna în platforma asigurătorului, care aprobă devizul în 24-48h, după care se lansează piesele în comandă.
                 </p>
               </div>
-              <div className="glass premium-card p-8 rounded-[2rem] border border-border">
+              <div className="glass beneficiu-card p-8 rounded-[2rem] border border-border">
                 <CheckCircle2 className="w-8 h-8 text-blue-600 mb-6" />
                 <h3 className="text-xl font-bold mb-3 text-foreground">Regimul Franșizei</h3>
                 <p className="text-muted-foreground leading-relaxed">
                   Poți opta pentru o poliță mult mai ieftină adăugând o "franșiză" (ex: tu plătești primii 100 EUR din orice daună minoră, iar compania plătește restul de 4900 EUR pentru restul reparației majore).
                 </p>
               </div>
-              <div className="glass premium-card p-8 rounded-[2rem] border border-border">
+              <div className="glass beneficiu-card p-8 rounded-[2rem] border border-border">
                 <CheckCircle2 className="w-8 h-8 text-blue-600 mb-6" />
                 <h3 className="text-xl font-bold mb-3 text-foreground">Acoperire Extracarosanieră</h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  Nu include doar tabla. Polițele premium (cum e cea de la Generali) acoperă avarierea jantelor de aliaj în gropi (prin extinderi) și riscul scurtcircuitelor pe instalația electrică.
+                  Nu include doar tabla. Polițele beneficiu (cum e cea de la Generali) acoperă avarierea jantelor de aliaj în gropi (prin extinderi) și riscul scurtcircuitelor pe instalația electrică.
                 </p>
               </div>
             </div>
@@ -175,10 +175,10 @@ export default function CascoInsurancePage() {
           <div className="mb-24">
             <h2 className="text-3xl font-heading font-bold mb-10 text-center flex items-center justify-center gap-3">
               <Lightbulb className="text-amber-500 w-8 h-8" />
-              Evitarea Falimentului Personal
+              Evitarea Falimentului pentru tine
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="glass premium-card p-8 rounded-[2rem] border-l-4 border-l-amber-500">
+              <div className="glass beneficiu-card p-8 rounded-[2rem] border-l-4 border-l-amber-500">
                 <h3 className="text-xl font-bold mb-4 text-foreground">Scenariul 1: Impactul la viteză</h3>
                 <p className="text-muted-foreground leading-relaxed mb-4">
                   Cristian a pierdut controlul direcției pe ploaie și a intrat cu Audi-ul său (evaluat la 35.000 EUR) într-un parapet de pe autostradă, distrugând fața (radiatoare, radare, aripi, faruri). Deviz: 12.000 EUR.
@@ -187,7 +187,7 @@ export default function CascoInsurancePage() {
                   <span className="font-bold text-amber-700">Rezolvarea poliței:</span> Nefiind nicio altă mașină implicată, polița RCA este complet inutilă. Dacă nu ar fi avut CASCO, Cristian ar fi trebuit să scoată 12.000 EUR din buzunar sau să vândă mașina ca epavă. Cu polița CASCO Generali, el plătește doar franșiza setată de el (ex. 150 EUR), restul fiind suportat de Generali prin transfer direct către reprezentanța Audi.
                 </div>
               </div>
-              <div className="glass premium-card p-8 rounded-[2rem] border-l-4 border-l-amber-500">
+              <div className="glass beneficiu-card p-8 rounded-[2rem] border-l-4 border-l-amber-500">
                 <h3 className="text-xl font-bold mb-4 text-foreground">Scenariul 2: Piatra în parbriz cu încălzire</h3>
                 <p className="text-muted-foreground leading-relaxed mb-4">
                   O pietricică sare din roata unui TIR din față, provocând o stea enormă în câmpul vizual al șoferului pe un parbriz cu încălzire, head-up display și camere de detecție. Cost parbriz nou original: 2.200 EUR.
@@ -201,14 +201,14 @@ export default function CascoInsurancePage() {
 
           {/* 8. De ce să alegi Generali România */}
           <div className="mb-24 glass rounded-[3rem] p-10 md:p-16 border border-border bg-[#c8102e]/5 text-center">
-            <h2 className="text-3xl font-heading font-bold mb-10 text-[#c8102e]">O poliță CASCO premium, fără chichițe ascunse</h2>
+            <h2 className="text-3xl font-heading font-bold mb-10 text-[#c8102e]">O poliță CASCO beneficiu, fără chichițe ascunse</h2>
             <div className="text-lg text-muted-foreground mb-10 max-w-3xl mx-auto">
               Cel mai rău scenariu este să plătești mii de euro anual pe un Casco și asigurătorul să încerce să trimită mașina la "ateliere partenere de garaj" în loc de reprezentanță. Generali respectă standardul mașinii.
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
               <div className="p-6 rounded-2xl bg-white border border-[#c8102e]/10 shadow-sm hover:shadow-md transition-shadow">
                 <h4 className="font-bold text-[#c8102e] mb-3 text-lg">Piese 100% Originale</h4>
-                <p className="text-muted-foreground leading-relaxed">Polița premium Generali îți garantează că la mașinile cu o anumită vechime maximă înlocuirea se va face exclusiv cu piese noi cu sigla producătorului tău auto, păstrând garanția de fabrică.</p>
+                <p className="text-muted-foreground leading-relaxed">Polița beneficiu Generali îți garantează că la mașinile cu o anumită vechime maximă înlocuirea se va face exclusiv cu piese noi cu sigla producătorului tău auto, păstrând garanția de fabrică.</p>
               </div>
               <div className="p-6 rounded-2xl bg-white border border-[#c8102e]/10 shadow-sm hover:shadow-md transition-shadow">
                 <h4 className="font-bold text-[#c8102e] mb-3 text-lg">Reprezentanțe Autorizate</h4>
@@ -225,15 +225,15 @@ export default function CascoInsurancePage() {
           <div className="mb-24">
             <h2 className="text-3xl font-heading font-bold mb-10 text-center">Întrebări Frecvente</h2>
             <div className="space-y-6 max-w-4xl mx-auto">
-              <div className="glass premium-card p-6 md:p-8 rounded-2xl border border-border">
+              <div className="glass beneficiu-card p-6 md:p-8 rounded-2xl border border-border">
                 <h3 className="text-xl font-bold mb-3 text-foreground">Ce se întâmplă dacă mașina se strică (se rupe motorul din mers)? Despăgubește CASCO?</h3>
                 <p className="text-muted-foreground leading-relaxed">Nu. CASCO este strict o asigurare de "Avarii Accidentale" din cauze externe. Uzura internă a motorului, cedarea turbinei sau ruperea ambreiajului țin de "Garanția tehnică" a producătorului auto sau pur și simplu de bugetul propriu de întreținere. Exceptând situația în care motorul s-a distrus pentru că ai lovit frontal un copac (cauză externă violentă).</p>
               </div>
-              <div className="glass premium-card p-6 md:p-8 rounded-2xl border border-border">
+              <div className="glass beneficiu-card p-6 md:p-8 rounded-2xl border border-border">
                 <h3 className="text-xl font-bold mb-3 text-foreground">Pot să asigur CASCO o mașină veche de 15 ani?</h3>
                 <p className="text-muted-foreground leading-relaxed">Companiile de top precum Generali limitează de regulă emiterea polițelor Full Casco pentru mașini mai vechi de 10-12 ani, deoarece riscul de daună totală (deviz reparație mai mare decât valoarea mașinii pe piață) devine aproape garantat la orice lovitură minoră. Pentru cele vechi există opțiuni Casco Mini (strict furt/totală).</p>
               </div>
-              <div className="glass premium-card p-6 md:p-8 rounded-2xl border border-border">
+              <div className="glass beneficiu-card p-6 md:p-8 rounded-2xl border border-border">
                 <h3 className="text-xl font-bold mb-3 text-foreground">Dacă beau alcool, fac accident cu mașina mea. Casco mă despăgubește?</h3>
                 <p className="text-muted-foreground leading-relaxed">ABSOLUT NU. Conducerea sub influența alcoolului sau a stupefiantelor, conducerea fără permis valabil, folosirea mașinii la curse neautorizate, reprezintă excluderi generale drastice. Compania va refuza plata oricărei despăgubiri, contractul fiind anulat din vina ta exclusivă, penală.</p>
               </div>
@@ -254,7 +254,7 @@ export default function CascoInsurancePage() {
             </div>
             
             <div className="glass rounded-3xl p-8 border border-border h-fit sticky top-32 shadow-lg">
-              <h3 className="text-2xl font-bold font-heading mb-6">Pachetul de Protecție Premium</h3>
+              <h3 className="text-2xl font-bold font-heading mb-6">Pachetul de Protecție beneficiu</h3>
               <p className="text-muted-foreground mb-8">
                 Te vom contacta cu oferta de preț, nivelul tranșelor și valoarea exactă la care este evaluată mașina ta astăzi în cataloagele de specialitate (Schwacke / Eurotax).
               </p>

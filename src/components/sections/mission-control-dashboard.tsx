@@ -37,12 +37,12 @@ const modules = [
     color: "bg-purple-50/50 border-purple-100"
   },
   {
-    id: "luxury",
-    title: "Luxury Assets",
-    metric: "3 Bunuri Premium",
+    id: "serviciu avansat pentru tine",
+    title: "acces rapid pentru tine Assets",
+    metric: "3 Bunuri beneficiu",
     desc: "Protecție exclusivistă pentru supercars, artă și yacht-uri.",
     icon: <Sparkles className="w-6 h-6 text-amber-600" />,
-    link: "/luxury-assets",
+    link: "/serviciu avansat pentru tine-assets",
     color: "bg-amber-50/50 border-amber-100"
   },
   {
@@ -96,7 +96,7 @@ export function MissionControlDashboard() {
   return (
     <div className="w-full flex flex-col gap-10">
       
-      {/* Top Banner with Quick Actions */}
+      {/* top pentru tine Banner with Quick Actions */}
       <div className="w-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
         {mainTools.map((tool, idx) => (
           <Link key={idx} href={tool.href} className="group p-5 rounded-[2rem] border border-border bg-white hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col items-start gap-4">
@@ -121,7 +121,7 @@ export function MissionControlDashboard() {
             transition={{ duration: 0.4, delay: idx * 0.05 }}
             className={`p-8 rounded-[2.5rem] border ${m.color} bg-white shadow-sm flex flex-col justify-between hover:shadow-xl transition-all duration-300 relative group overflow-hidden`}
           >
-            {/* Top Row */}
+            {/* top pentru tine Row */}
             <div className="flex justify-between items-start mb-6">
               <div className="p-3 rounded-full bg-white border border-border shadow-sm">
                 {m.icon}

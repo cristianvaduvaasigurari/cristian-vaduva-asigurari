@@ -90,7 +90,7 @@ export default function AutoInsurancePage() {
                 <p className="text-muted-foreground">Pentru care legea impune existența permanentă a unei polițe CASCO validate, pentru protejarea bunului companiei finanțatoare.</p>
               </div>
               <div className="p-6 rounded-2xl bg-emerald-50/50 border border-emerald-100">
-                <h4 className="font-bold text-emerald-800 mb-2">Posesori de Vehicule Premium</h4>
+                <h4 className="font-bold text-emerald-800 mb-2">Posesori de Vehicule beneficiu</h4>
                 <p className="text-muted-foreground">Mercedes, BMW, Audi, Porsche. Orice mașină la care ora de manoperă în reprezentanță este costisitoare necesită un instrument capabil să preia costurile fără comentarii.</p>
               </div>
               <div className="p-6 rounded-2xl bg-emerald-50/50 border border-emerald-100">
@@ -108,21 +108,21 @@ export default function AutoInsurancePage() {
           <div className="mb-24">
             <h2 className="text-3xl font-heading font-bold mb-10 text-center">Avantajele Integrării</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="glass premium-card p-8 rounded-[2rem] border border-border">
+              <div className="glass beneficiu-card p-8 rounded-[2rem] border border-border">
                 <CheckCircle2 className="w-8 h-8 text-blue-600 mb-6" />
                 <h3 className="text-xl font-bold mb-3 text-foreground">Mașină la Schimb Permanentă</h3>
                 <p className="text-muted-foreground leading-relaxed">
                   Nu rămâi niciodată pieton. Opțiunile avansate de asigurare acoperă costurile închirierii unui autovehicul similar pe toată perioada în care mașina ta se află în reparații.
                 </p>
               </div>
-              <div className="glass premium-card p-8 rounded-[2rem] border border-border">
+              <div className="glass beneficiu-card p-8 rounded-[2rem] border border-border">
                 <CheckCircle2 className="w-8 h-8 text-blue-600 mb-6" />
                 <h3 className="text-xl font-bold mb-3 text-foreground">Decontare Directă (RCA VIP)</h3>
                 <p className="text-muted-foreground leading-relaxed">
                   Ai fost lovit? Nu mai trebuie să umbli pe la societatea șoferului vinovat. Generali îți plătește reparația rapid din propria ta poliță RCA, ocupându-se ulterior să recupereze banii în tribunal de la firma celuilalt.
                 </p>
               </div>
-              <div className="glass premium-card p-8 rounded-[2rem] border border-border">
+              <div className="glass beneficiu-card p-8 rounded-[2rem] border border-border">
                 <CheckCircle2 className="w-8 h-8 text-blue-600 mb-6" />
                 <h3 className="text-xl font-bold mb-3 text-foreground">Alerte VIP de Scadențe</h3>
                 <p className="text-muted-foreground leading-relaxed">
@@ -157,7 +157,7 @@ export default function AutoInsurancePage() {
               <div className="flex items-start gap-4 p-5 rounded-2xl bg-white/50 border border-red-100 shadow-sm">
                 <span className="w-8 h-8 rounded-full bg-red-500 text-white flex items-center justify-center flex-shrink-0 font-bold">✕</span>
                 <div>
-                  <div className="font-bold text-foreground mb-1">Fenomene Naturale Complete</div>
+                  <div className="font-bold text-foreground mb-1">Fenomene Naturale complet pentru tine</div>
                   <div className="text-sm text-muted-foreground">Inundații, furtuni devastatoare care rup copaci, grindină care îți distruge plafonul mașinii - totul intră în aria de protecție standard a CASCO.</div>
                 </div>
               </div>
@@ -178,7 +178,7 @@ export default function AutoInsurancePage() {
               De ce face diferența? Explicat.
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="glass premium-card p-8 rounded-[2rem] border-l-4 border-l-amber-500">
+              <div className="glass beneficiu-card p-8 rounded-[2rem] border-l-4 border-l-amber-500">
                 <h3 className="text-xl font-bold mb-4 text-foreground">Scenariul 1: Calvarul vinovatului falimentar</h3>
                 <p className="text-muted-foreground leading-relaxed mb-4">
                   Bogdan este lovit violent într-o intersecție de o dubiță de marfă asigurată RCA la o companie extrem de ieftină, aflată în dificultate financiară.
@@ -187,7 +187,7 @@ export default function AutoInsurancePage() {
                   <span className="font-bold text-amber-700">Rezolvarea poliței:</span> Având **Decontare Directă** achiziționată pe RCA-ul său Generali, Bogdan refuză să trateze cu asigurătorul slab. Generali preia devizul de 6.000 EUR al reprezentanței Audi a lui Bogdan, aprobă imediat reparația, iar Bogdan își ia mașina rezolvată în câteva zile. Generali se judecă intern cu firma cealaltă. Bogdan este neafectat.
                 </div>
               </div>
-              <div className="glass premium-card p-8 rounded-[2rem] border-l-4 border-l-amber-500">
+              <div className="glass beneficiu-card p-8 rounded-[2rem] border-l-4 border-l-amber-500">
                 <h3 className="text-xl font-bold mb-4 text-foreground">Scenariul 2: Furtuna de Grindină</h3>
                 <p className="text-muted-foreground leading-relaxed mb-4">
                   O furtună puternică de vară trece pe deasupra orașului, iar grindina de mari dimensiuni distruge plafonul, capota și sparge luneta unei mașini parcate afară.
@@ -208,7 +208,7 @@ export default function AutoInsurancePage() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
               <div className="p-6 rounded-2xl bg-white border border-[#c8102e]/10 shadow-sm hover:shadow-md transition-shadow">
                 <h4 className="font-bold text-[#c8102e] mb-3 text-lg">Doar Reprezentanțe Autorizate</h4>
-                <p className="text-muted-foreground leading-relaxed">Generali are protocoale extinse de decontare directă cu dealerii oficiali ai tuturor mărcilor premium din România (Țiriac Auto, Automobile Bavaria, Autoklass etc.).</p>
+                <p className="text-muted-foreground leading-relaxed">Generali are protocoale extinse de decontare directă cu dealerii oficiali ai tuturor mărcilor beneficiu din România (Țiriac Auto, Automobile Bavaria, Autoklass etc.).</p>
               </div>
               <div className="p-6 rounded-2xl bg-white border border-[#c8102e]/10 shadow-sm hover:shadow-md transition-shadow">
                 <h4 className="font-bold text-[#c8102e] mb-3 text-lg">Piese de Origine 100%</h4>
@@ -225,15 +225,15 @@ export default function AutoInsurancePage() {
           <div className="mb-24">
             <h2 className="text-3xl font-heading font-bold mb-10 text-center">Întrebări Frecvente</h2>
             <div className="space-y-6 max-w-4xl mx-auto">
-              <div className="glass premium-card p-6 md:p-8 rounded-2xl border border-border">
+              <div className="glass beneficiu-card p-6 md:p-8 rounded-2xl border border-border">
                 <h3 className="text-xl font-bold mb-3 text-foreground">Ce reprezintă Franșiza la o poliță CASCO?</h3>
                 <p className="text-muted-foreground leading-relaxed">Este acea sumă mică (ex: 100 Euro sau 1% din suma asigurată) pe care asiguratul acceptă să o suporte singur la FIECARE eveniment rutier de care este vinovat. Restul facturii, indiferent de cât de mare este (ex. 8000 Euro), este achitat de asigurător. Existența franșizei este un instrument prin care prețul poliței anuale scade extrem de mult, eliminând birocrația de a deschide dosare de daună pentru zgârieturi milimetrice pe care le poți polisha singur ieftin.</p>
               </div>
-              <div className="glass premium-card p-6 md:p-8 rounded-2xl border border-border">
+              <div className="glass beneficiu-card p-6 md:p-8 rounded-2xl border border-border">
                 <h3 className="text-xl font-bold mb-3 text-foreground">Se fac poze mașinii la emiterea asigurării CASCO?</h3>
                 <p className="text-muted-foreground leading-relaxed">Absolut da. Este obligatorie inspecția de risc prealabilă. Vestea bună este că aceasta este digitalizată: brokerul sau aplicația de mobil îți dă posibilitatea să realizezi fotografiile cu telefonul tău în 2 minute și ele sunt aprobate în timp real în sistemul Generali.</p>
               </div>
-              <div className="glass premium-card p-6 md:p-8 rounded-2xl border border-border">
+              <div className="glass beneficiu-card p-6 md:p-8 rounded-2xl border border-border">
                 <h3 className="text-xl font-bold mb-3 text-foreground">Acoperă polița asistența rutieră în afara țării?</h3>
                 <p className="text-muted-foreground leading-relaxed">Da, pachetele superioare de CASCO includ clauze complete de asistență rutieră europeană. Mașina îți este tractată de pe autostrada din Viena la fel de eficient cum ar fi tractată de la Brașov.</p>
               </div>

@@ -70,7 +70,7 @@ export default function BusinessMalpracticeInsurancePage() {
                 Acum 10 ani, un medic dădea 50 de lei pe an "doar ca să ia viza de la Colegiul Medicilor", având o limită de despăgubire infimă de 10.000 EUR. Astăzi, casele de avocatură specializate în vătămări corporale obțin în instanțele din România daune morale de 500.000 EUR - 1.000.000 EUR.
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                Dacă ești Chirurg sau Obstetrician, și deții doar polița minimă de 60.000 EUR (limita maximă standard cerută), diferența până la milionul de Euro cerut de judecător va fi luată prin executare silită pe casele și conturile tale personale. De aceea medicii de top cumpără "Top-Up-uri" (Extinderi Voluntare masive).
+                Dacă ești Chirurg sau Obstetrician, și deții doar polița minimă de 60.000 EUR (limita maximă standard cerută), diferența până la milionul de Euro cerut de judecător va fi luată prin executare silită pe casele și conturile tale personale. De aceea medicii de top cumpără "top pentru tine-Up-uri" (Extinderi Voluntare masive).
               </p>
             </div>
           </div>
@@ -106,23 +106,23 @@ export default function BusinessMalpracticeInsurancePage() {
 
           {/* 5. Beneficii */}
           <div className="mb-24">
-            <h2 className="text-3xl font-heading font-bold mb-10 text-center">Atuurile unei Polițe Premium Generali</h2>
+            <h2 className="text-3xl font-heading font-bold mb-10 text-center">Atuurile unei Polițe beneficiu Generali</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="glass premium-card p-8 rounded-[2rem] border border-border">
+              <div className="glass beneficiu-card p-8 rounded-[2rem] border border-border">
                 <CheckCircle2 className="w-8 h-8 text-emerald-600 mb-6" />
                 <h3 className="text-xl font-bold mb-3 text-foreground">Extensia "Daune Morale" Inclusă</h3>
                 <p className="text-muted-foreground leading-relaxed">
                   Tradițional, malpraxisul acoperea doar "Dauna Materială" (zilele de spitalizare și medicamentele pentru a repara greșeala). Astăzi, 90% din suma cerută în instanță reprezintă Dauna Morală (suferința psihică). Asigurările noastre de top pot INCLUDE această componentă esențială.
                 </p>
               </div>
-              <div className="glass premium-card p-8 rounded-[2rem] border border-border">
+              <div className="glass beneficiu-card p-8 rounded-[2rem] border border-border">
                 <CheckCircle2 className="w-8 h-8 text-emerald-600 mb-6" />
                 <h3 className="text-xl font-bold mb-3 text-foreground">Cheltuielile de Apărare Legală</h3>
                 <p className="text-muted-foreground leading-relaxed">
                   Când un pacient te reclamă la Colegiu sau la Parchet, tu trebuie să angajezi experți medico-legali care să contracareze expertiza lui, ceea ce costă foarte scump. Generali poate suporta aceste onorarii (Cheltuieli de Judecată), chiar și dacă te dovedești a fi nevinovat la final.
                 </p>
               </div>
-              <div className="glass premium-card p-8 rounded-[2rem] border border-border">
+              <div className="glass beneficiu-card p-8 rounded-[2rem] border border-border">
                 <CheckCircle2 className="w-8 h-8 text-emerald-600 mb-6" />
                 <h3 className="text-xl font-bold mb-3 text-foreground">Acoperire Retroactivă</h3>
                 <p className="text-muted-foreground leading-relaxed">
@@ -178,16 +178,16 @@ export default function BusinessMalpracticeInsurancePage() {
               Realitatea Instanțelor din România
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="glass premium-card p-8 rounded-[2rem] border-l-4 border-l-amber-500">
+              <div className="glass beneficiu-card p-8 rounded-[2rem] border-l-4 border-l-amber-500">
                 <h3 className="text-xl font-bold mb-4 text-foreground">Scenariul 1: Tragedia de la Obstetrică</h3>
                 <p className="text-muted-foreground leading-relaxed mb-4">
                   O naștere se complică. Medicul obstetrician întârzie decizia de a intra pe cezariană de urgență. Copilul se naște cu hipoxie severă (lipsă de oxigen la creier) și rămâne cu paralizie cerebrală severă (handicap pe viață).
                 </p>
                 <div className="p-4 bg-amber-50/50 rounded-xl border border-amber-100">
-                  <span className="font-bold text-amber-700">Rezolvarea poliței:</span> Părinții au dat în judecată atât medicul cât și Spitalul Privat, obținând 500.000 EUR daune morale + plata îngrijirilor lunare vitagere (o pensie pe viață pentru copil). Medicul avea o poliță de doar 60.000 EUR. Restul imens de sumă a trebuit să fie suportat de Polița spitalului și, în final, din averea medicului, dovedind importanța critică a limitelor (Top-Up-urilor) extinse.
+                  <span className="font-bold text-amber-700">Rezolvarea poliței:</span> Părinții au dat în judecată atât medicul cât și Spitalul Privat, obținând 500.000 EUR daune morale + plata îngrijirilor lunare vitagere (o pensie pe viață pentru copil). Medicul avea o poliță de doar 60.000 EUR. Restul imens de sumă a trebuit să fie suportat de Polița spitalului și, în final, din averea medicului, dovedind importanța critică a limitelor (top pentru tine-Up-urilor) extinse.
                 </div>
               </div>
-              <div className="glass premium-card p-8 rounded-[2rem] border-l-4 border-l-amber-500">
+              <div className="glass beneficiu-card p-8 rounded-[2rem] border-l-4 border-l-amber-500">
                 <h3 className="text-xl font-bold mb-4 text-foreground">Scenariul 2: Malpraxisul Stomatologic</h3>
                 <p className="text-muted-foreground leading-relaxed mb-4">
                   Un medic stomatolog efectuează un implant dentar, dar perforează canalul mandibular, afectând permanent nervul trigemen. Pacientul suferă de dureri cronice pe viață și pareză a buzei, renunțând la jobul său în televiziune.
@@ -207,7 +207,7 @@ export default function BusinessMalpracticeInsurancePage() {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
               <div className="p-6 rounded-2xl bg-white border border-[#c8102e]/10 shadow-sm hover:shadow-md transition-shadow">
-                <h4 className="font-bold text-[#c8102e] mb-3 text-lg">Polița "Top-Up" (Suplimentară)</h4>
+                <h4 className="font-bold text-[#c8102e] mb-3 text-lg">Polița "top pentru tine-Up" (Suplimentară)</h4>
                 <p className="text-muted-foreground leading-relaxed">Chiar dacă ai deja polița "de bază" cerută de Colegiu emisă la altcineva, la Generali putem veni cu o poliță "peste", un scut adițional care intră în vigoare doar dacă se termină fondurile de pe prima poliță (ex. o completare de 300k sau 500k Euro), oferindu-ți un somn liniștit.</p>
               </div>
               <div className="p-6 rounded-2xl bg-white border border-[#c8102e]/10 shadow-sm hover:shadow-md transition-shadow">
@@ -225,15 +225,15 @@ export default function BusinessMalpracticeInsurancePage() {
           <div className="mb-24">
             <h2 className="text-3xl font-heading font-bold mb-10 text-center">Întrebări Frecvente Juridico-Medicale</h2>
             <div className="space-y-6 max-w-4xl mx-auto">
-              <div className="glass premium-card p-6 md:p-8 rounded-2xl border border-border">
+              <div className="glass beneficiu-card p-6 md:p-8 rounded-2xl border border-border">
                 <h3 className="text-xl font-bold mb-3 text-foreground">Sunt medic chirurg la Spitalul de Stat. Trebuie să mă asigur la maxim, din moment ce răspunde Statul?</h3>
                 <p className="text-muted-foreground leading-relaxed">Acesta este un mit periculos! Deși spitalul de stat are teoretic o răspundere, atunci când fapta constituie o "neglijență profesională individuală a actului chirurgical", pacientul te va chema pe tine în solidar la plată. De nenumărate ori, spitalele de stat s-au întors împotriva propriilor medici (în Regres), cerându-le să plătească daunele achitate inițial de spital! O poliță personală cu limită MARE e vitală și la Stat.</p>
               </div>
-              <div className="glass premium-card p-6 md:p-8 rounded-2xl border border-border">
+              <div className="glass beneficiu-card p-6 md:p-8 rounded-2xl border border-border">
                 <h3 className="text-xl font-bold mb-3 text-foreground">Dacă operez beat sau drogat (eroare grosolană), mă mai apără polița?</h3>
                 <p className="text-muted-foreground leading-relaxed">NU. Ca orice poliță din lumea juridică, Răspunderea (Malpraxisul) acoperă NEGLIJENȚA. Faptele comise cu <strong>Intenție</strong>, cu Răutate, sau sub influența alcoolului / substanțelor interzise (încălcarea deliberată și penală a statutului) atrag excluderea absolută a contractului.</p>
               </div>
-              <div className="glass premium-card p-6 md:p-8 rounded-2xl border border-border">
+              <div className="glass beneficiu-card p-6 md:p-8 rounded-2xl border border-border">
                 <h3 className="text-xl font-bold mb-3 text-foreground">Clinica mea de chirurgie estetică face o promovare agresivă cu "Rezultate garantate 100%!". Clienta iese asimetrică și ne dă în judecată. Suntem acoperiți?</h3>
                 <p className="text-muted-foreground leading-relaxed">În zona "Esteticii cu plată" (operații pur de înfrumusețare, nu curative), polițele au clauze foarte restrictive. Ele exclud despăgubirile izvorâte din simpla "Nemulțumire estetică a pacientului față de un rezultat pe care i l-ai promis în reclamă". Polița acoperă eroarea medicală (ex: infecție, hematom grav din neglijență), nu garantarea frumuseții.</p>
               </div>
@@ -265,7 +265,7 @@ export default function BusinessMalpracticeInsurancePage() {
                     <MessageCircle className="w-6 h-6" />
                   </div>
                   <div>
-                    <div className="text-sm text-green-700 font-medium">Inițiază Oferta Top-Up pe WhatsApp</div>
+                    <div className="text-sm text-green-700 font-medium">Inițiază Oferta top pentru tine-Up pe WhatsApp</div>
                     <div className="font-bold text-foreground">{CONTACT.whatsapp.display}</div>
                   </div>
                 </a>

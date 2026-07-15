@@ -27,7 +27,9 @@ export function Hero() {
           </div>
 
           <h1 className="text-5xl md:text-7xl font-heading font-bold tracking-tight mb-8 leading-tight">
-            Excelență în <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600">Asigurări</span> și <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">Real Estate</span>
+            Obține protecție completă pentru casa și investițiile tale, fără birocrație și cu asistență rapidă.
+
+Platforma îți pune la dispoziție asigurări personalizate și acces la proprietăți verificate, pentru a-ți proteja bugetul și a-ți economisi timp.
           </h1>
           
           <p className="text-lg md:text-xl text-muted-foreground mb-12 max-w-2xl mx-auto font-light leading-relaxed">

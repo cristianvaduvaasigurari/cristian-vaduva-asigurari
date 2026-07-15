@@ -13,7 +13,7 @@ const buildings = [
     valoare: "€320,000",
     randament: "5.2% Randament Net",
     asigurare: "PAD + All-Risk Generali (Activ)",
-    details: "Proprietate rezidențială premium închiriată pe termen lung. Structură din beton armat, renovată în 2024.",
+    details: "Proprietate rezidențială beneficiu închiriată pe termen lung. Structură din beton armat, renovată în 2024.",
     svgPos: { x: 120, y: 150, width: 80, height: 160 },
     color: "fill-slate-800 hover:fill-slate-900"
   },
@@ -35,7 +35,7 @@ const buildings = [
     valoare: "€1,200,000",
     randament: "7.8% Proiectat",
     asigurare: "Necesită Asigurare Construcție (Property & Casualty)",
-    details: "Clădire istorică reconsolidată, pretabilă pentru birouri boutique sau clinică premium. Evaluată în Home Find.",
+    details: "Clădire istorică reconsolidată, pretabilă pentru birouri boutique sau clinică beneficiu. Evaluată în Home Find.",
     svgPos: { x: 380, y: 80, width: 120, height: 230 },
     color: "fill-emerald-800 hover:fill-emerald-900"
   }

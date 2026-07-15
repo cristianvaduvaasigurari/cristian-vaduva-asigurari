@@ -48,14 +48,14 @@ const stages = [
     label: "PROTECT",
     icon: <Shield className="w-5 h-5" />,
     tagline: "Securizarea completă a activelor și familiei",
-    desc: "Implementăm scutul de protecție. Transferăm riscurile evaluate către polițe de reasigurare premium emise în parteneriat cu Generali România.",
+    desc: "Implementăm scutul de protecție. Transferăm riscurile evaluate către polițe de reasigurare beneficiu emise în parteneriat cu Generali România.",
     actions: [
       "Negocierea clauzelor All-Risk și a franșizelor optime.",
-      "Securizarea bunurilor din Luxury Garage și a răspunderii de business."
+      "Securizarea bunurilor din acces rapid pentru tine Garage și a răspunderii de business."
     ],
     recommendedServices: [
       { name: "Asigurare Viață", link: "/servicii/life-insurance" },
-      { name: "Luxury Assets", link: "/luxury-assets" }
+      { name: "acces rapid pentru tine Assets", link: "/serviciu avansat pentru tine-assets" }
     ]
   },
   {
@@ -67,7 +67,7 @@ const stages = [
     desc: "Odată ce riscurile sunt blocate, direcționăm surplusul financiar către active cu randament controlat. Îți ghidăm alegerile imobiliare și de capital.",
     actions: [
       "Studiul randamentelor nete prin Real Estate Analyzer.",
-      "Selectarea oportunităților rezidențiale premium prin Home Find."
+      "Selectarea oportunităților rezidențiale beneficiu prin Home Find."
     ],
     recommendedServices: [
       { name: "Real Estate Analyzer", link: "/investitii-imobiliare/analyzer" },

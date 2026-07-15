@@ -3,8 +3,8 @@ import type { Metadata } from "next";
 import { PersonalDashboardWall } from "@/components/sections/personal-dashboard-wall";
 
 export const metadata: Metadata = {
-  title: "Personal Dashboard Wall | Cristian Văduva",
-  description: "Vizualizează centralizat activele, asigurările și planurile tale financiare într-un ecran premium.",
+  title: "pentru tine Dashboard Wall | Cristian Văduva",
+  description: "Vizualizează centralizat activele, asigurările și planurile tale financiare într-un ecran beneficiu.",
 };
 
 export default function PersonalDashboardPage() {
@@ -18,7 +18,7 @@ export default function PersonalDashboardPage() {
             Client Console
           </div>
           <h1 className="text-4xl md:text-5xl font-heading font-black mb-6 text-foreground tracking-tight">
-            AiX Personal Dashboard Wall
+            AiX pentru tine Dashboard Wall
           </h1>
           <p className="text-lg text-muted-foreground leading-relaxed">
             Un perete complet de control. Aici ai vizibilitate absolută asupra elementelor de portofoliu imobiliar, securitate familială și de business, ordonate logic.

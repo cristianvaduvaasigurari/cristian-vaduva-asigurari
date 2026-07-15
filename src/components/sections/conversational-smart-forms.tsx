@@ -8,7 +8,7 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { saveAssessment } from "@/lib/actions";
+import { saveAssessment } from "@/lib/clientActions";
 import Link from "next/link";
 
 const steps = [
@@ -37,7 +37,7 @@ const steps = [
     question: "Ce active deții sau intenționezi să achiziționezi în prezent?",
     options: [
       { id: "realestate", label: "Proprietăți imobiliare active", desc: "Apartamente pentru chirie sau locuințe" },
-      { id: "luxury", label: "Bunuri de lux / Colecții", desc: "Ceasuri, supercars, yachturi, artă" },
+      { id: "serviciu avansat pentru tine", label: "Bunuri de lux / Colecții", desc: "Ceasuri, supercars, yachturi, artă" },
       { id: "cash-stocks", label: "Economii sau portofoliu de acțiuni", desc: "Cash flow disponibil pentru optimizare" },
       { id: "none", label: "Fără active majore în prezent", desc: "Sunt la începutul acumulării" }
     ]

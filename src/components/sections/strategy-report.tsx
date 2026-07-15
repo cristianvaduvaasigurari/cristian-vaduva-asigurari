@@ -146,7 +146,7 @@ export function StrategyReport() {
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
             <div>
               <h4 className="font-heading font-bold text-sm text-slate-950 mb-1">PROGRAMEAZĂ O CONSULTANȚĂ PRIVATĂ</h4>
-              <p className="text-xs text-slate-500 font-semibold uppercase">Consultant Premium: Cristian Văduva</p>
+              <p className="text-xs text-slate-500 font-semibold uppercase">Consultant beneficiu: Cristian Văduva</p>
             </div>
             <div className="text-left sm:text-right text-xs space-y-1 font-mono font-bold text-slate-700">
               <p>Telefon: +40 767 110 439</p>

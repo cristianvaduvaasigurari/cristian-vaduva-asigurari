@@ -108,21 +108,21 @@ export default function TravelFamilyInsurancePage() {
           <div className="mb-24">
             <h2 className="text-3xl font-heading font-bold mb-10 text-center">Avantajele Protecției în Familie</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="glass premium-card p-8 rounded-[2rem] border border-border">
+              <div className="glass beneficiu-card p-8 rounded-[2rem] border border-border">
                 <CheckCircle2 className="w-8 h-8 text-blue-600 mb-6" />
                 <h3 className="text-xl font-bold mb-3 text-foreground">Medic la Hotel</h3>
                 <p className="text-muted-foreground leading-relaxed">
                   Când copilul vomită, nu te poți plimba cu el în taxi prin căldura din Antalya căutând spitale. Suni la Generali/Europ Assistance, iar aceștia trimit în scurt timp un medic rezident partener direct în camera ta de resort pentru evaluare și rețetă.
                 </p>
               </div>
-              <div className="glass premium-card p-8 rounded-[2rem] border border-border">
+              <div className="glass beneficiu-card p-8 rounded-[2rem] border border-border">
                 <CheckCircle2 className="w-8 h-8 text-blue-600 mb-6" />
                 <h3 className="text-xl font-bold mb-3 text-foreground">Extensie COVID/Boli Infecțioase</h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  Dacă destinația dictează auto-izolare, iar unul din membri familiei a contractat o boală infecțioasă, polițele premium pot suporta inclusiv prelungirea forțată a cazării la hotel și bilete de avion noi pentru reîntoarcere peste câteva zile.
+                  Dacă destinația dictează auto-izolare, iar unul din membri familiei a contractat o boală infecțioasă, polițele beneficiu pot suporta inclusiv prelungirea forțată a cazării la hotel și bilete de avion noi pentru reîntoarcere peste câteva zile.
                 </p>
               </div>
-              <div className="glass premium-card p-8 rounded-[2rem] border border-border">
+              <div className="glass beneficiu-card p-8 rounded-[2rem] border border-border">
                 <CheckCircle2 className="w-8 h-8 text-blue-600 mb-6" />
                 <h3 className="text-xl font-bold mb-3 text-foreground">Costul Medicamentelor</h3>
                 <p className="text-muted-foreground leading-relaxed">
@@ -178,7 +178,7 @@ export default function TravelFamilyInsurancePage() {
               Valoarea Reală a Liniștii
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="glass premium-card p-8 rounded-[2rem] border-l-4 border-l-amber-500">
+              <div className="glass beneficiu-card p-8 rounded-[2rem] border-l-4 border-l-amber-500">
                 <h3 className="text-xl font-bold mb-4 text-foreground">Scenariul 1: Enterocolita din Turcia</h3>
                 <p className="text-muted-foreground leading-relaxed mb-4">
                   Familia se bucură de regimul Ultra-All-Inclusive în Antalya. Fetița de 3 ani face enterocolită severă vineri noaptea. Cabinetul medicului din hotel (fără contracte) cere o sumă imensă doar pentru a o consulta superficial.
@@ -187,7 +187,7 @@ export default function TravelFamilyInsurancePage() {
                   <span className="font-bold text-amber-700">Rezolvarea poliței:</span> Tatăl sună la numărul internațional Generali. Aceștia trimit o ambulanță privată (inclusă în poliță) care o transferă pe fetiță și mamă la Spitalul Anadolu (unul din cele mai moderne din lume). Este ținută pe perfuzii 2 zile. Cost total spitalizare 2500 EUR, acoperit de Generali printr-o garanție de plată directă la externare. Copilul e stabilizat, vacanța e salvată de faliment.
                 </div>
               </div>
-              <div className="glass premium-card p-8 rounded-[2rem] border-l-4 border-l-amber-500">
+              <div className="glass beneficiu-card p-8 rounded-[2rem] border-l-4 border-l-amber-500">
                 <h3 className="text-xl font-bold mb-4 text-foreground">Scenariul 2: Vărsatul de Vânt Pre-Vacanță</h3>
                 <p className="text-muted-foreground leading-relaxed mb-4">
                   Mai sunt 4 zile până la zborul spre Spania care a costat familia 3000 EUR cumpărat încă din iarnă. Băiatul cel mare se umple de vărsat de vânt (varicelă), fiind foarte contagios. Doctorul interzice zborul. Pachetul devine nefolosibil.
@@ -225,15 +225,15 @@ export default function TravelFamilyInsurancePage() {
           <div className="mb-24">
             <h2 className="text-3xl font-heading font-bold mb-10 text-center">Întrebări Frecvente Părinți</h2>
             <div className="space-y-6 max-w-4xl mx-auto">
-              <div className="glass premium-card p-6 md:p-8 rounded-2xl border border-border">
+              <div className="glass beneficiu-card p-6 md:p-8 rounded-2xl border border-border">
                 <h3 className="text-xl font-bold mb-3 text-foreground">Asigurarea plătește consultația preventivă dacă cel mic tușește puțin, dar nu are febră?</h3>
                 <p className="text-muted-foreground leading-relaxed">Nu. Polița de călătorie este strict destinată "Urgențelor Medicale Severe și Imprevizibile" (ex. otite violente, vărsături, accidente). Ea nu este concepută pentru a substitui medicul de familie cu analize de rutină la banală tuse. Medicul străin care evaluează cazul declară dacă afecțiunea reprezenta o urgență ce necesita tratament imediat.</p>
               </div>
-              <div className="glass premium-card p-6 md:p-8 rounded-2xl border border-border">
+              <div className="glass beneficiu-card p-6 md:p-8 rounded-2xl border border-border">
                 <h3 className="text-xl font-bold mb-3 text-foreground">Ce se întâmplă dacă mergem pe cont propriu la cel mai apropiat spital (din grabă), fără să sunăm la asistență înainte?</h3>
                 <p className="text-muted-foreground leading-relaxed">Dacă viața e în pericol iminent (șoc, accident rutier sever) este normal să furați prima ambulanță, legea permite asta. Dar la spitalizarea simplă, dacă nu anunți compania ÎN TERMEN DE 24 DE ORE ca aceștia să preia comunicarea, ai putea plăti tu toată factura masivă din banii tăi, iar compania din România ar putea reduce considerabil sau refuza suma rambursată ulterior din cauza depășirii grilelor standard.</p>
               </div>
-              <div className="glass premium-card p-6 md:p-8 rounded-2xl border border-border">
+              <div className="glass beneficiu-card p-6 md:p-8 rounded-2xl border border-border">
                 <h3 className="text-xl font-bold mb-3 text-foreground">Pachetul acoperă sporturile acvatice (Banana boat, Scuba, Paragliding pe plajă)?</h3>
                 <p className="text-muted-foreground leading-relaxed">Polița standard de Travel acoperă relaxarea (înot în piscină sau în mare). Sporturile extreme practicate în vacanță necesită activarea explicită (prin bifare la cumpărare și plata unei suprataxe de risc) a opțiunii de "Sporturi Agrement". Altfel, un accident grav cu ski-jet-ul nu va fi despăgubit!</p>
               </div>

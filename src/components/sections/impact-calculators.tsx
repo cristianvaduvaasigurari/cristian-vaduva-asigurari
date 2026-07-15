@@ -39,40 +39,40 @@ export function ImpactCalculators() {
     setIsSuccess(false);
   };
 
-  // Logic to calculate estimated premium and loss
+  // Logic to calculate estimated beneficiu and loss
   const getMetrics = () => {
     const loss = value;
-    let premium = 0;
+    let acoperirePentruTine = 0;
     let label = "";
 
     switch (activeTab) {
       case "fire":
-        premium = value * 0.0015; // aprox 0.15% din valoare / an
+        acoperirePentruTine = value * 0.0015; // aprox 0.15% din valoare / an
         label = "Valoarea de reconstrucție a locuinței";
         break;
       case "water":
-        premium = value * 0.003; // aprox 0.3% pt daune apă/bunuri
+        acoperirePentruTine = value * 0.003; // aprox 0.3% pt daune apă/bunuri
         label = "Valoarea daunelor estimative la interior";
         break;
       case "car":
-        premium = value * 0.045; // aprox 4.5% din valoare pt CASCO
+        acoperirePentruTine = value * 0.045; // aprox 4.5% din valoare pt CASCO
         label = "Valoarea de piață a mașinii";
         break;
       case "medical":
-        premium = value > 100000 ? 1200 : 800; // cost fix anual aprox pt asigurare sănătate internațională
+        acoperirePentruTine = value > 100000 ? 1200 : 800; // cost fix anual aprox pt asigurare sănătate internațională
         label = "Costul estimat al tratamentului în străinătate";
         break;
       case "business":
-        premium = value * 0.005; // aprox 0.5% din profitul brut asigurat
+        acoperirePentruTine = value * 0.005; // aprox 0.5% din profitul brut asigurat
         label = "Pierdere Profit Brut / Costuri fixe pe perioada de pauză";
         break;
     }
 
     // Procente pt vizualizare în bar chart
     const lossPercentage = 100;
-    const premiumPercentage = Math.max((premium / loss) * 100, 2); // minim 2% pt a se vedea pe grafic
+    const beneficiuPercentage = Math.max((acoperirePentruTine / loss) * 100, 2); // minim 2% pt a se vedea pe grafic
 
-    return { loss, premium, label, lossPercentage, premiumPercentage };
+    return { loss, acoperirePentruTine, label, lossPercentage, beneficiuPercentage };
   };
 
   const metrics = getMetrics();
@@ -89,7 +89,7 @@ export function ImpactCalculators() {
     formData.append("phone", phone);
     formData.append("service", `Calculator ${activeTab}`);
     formData.append("source", "Financial Impact Calculator");
-    formData.append("metadata", JSON.stringify({ tab: activeTab, valueCalculated: value, estimatedPremium: metrics.premium }));
+    formData.append("metadata", JSON.stringify({ tab: activeTab, valueCalculated: value, estimatedbeneficiu: metrics.acoperirePentruTine }));
 
     try {
       const response = await fetch('/api/lead', {
@@ -151,7 +151,7 @@ export function ImpactCalculators() {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: 20 }}
             transition={{ duration: 0.3 }}
-            className="glass premium-card p-8 md:p-10 rounded-[2.5rem] border border-border flex flex-col justify-center"
+            className="glass coverage-card p-8 md:p-10 rounded-[2.5rem] border border-border flex flex-col justify-center"
           >
             <h3 className="text-2xl font-bold font-heading mb-6">{metrics.label}</h3>
             
@@ -194,17 +194,17 @@ export function ImpactCalculators() {
                   </div>
                 </div>
 
-                {/* Premium Bar */}
+                {/* beneficiu Bar */}
                 <div>
                   <div className="flex justify-between text-sm font-bold text-emerald-600 mb-2">
                     <span>Cost Asigurare (Pe An)</span>
-                    <span>~{formatCurrency(metrics.premium)}</span>
+                    <span>~{formatCurrency(metrics.acoperirePentruTine)}</span>
                   </div>
                   <div className="w-full h-4 bg-emerald-100 rounded-full overflow-hidden">
                     <motion.div 
                       className="h-full bg-emerald-500"
                       initial={{ width: 0 }}
-                      animate={{ width: `${metrics.premiumPercentage}%` }}
+                      animate={{ width: `${metrics.beneficiuPercentage}%` }}
                       transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
                     />
                   </div>
@@ -214,13 +214,13 @@ export function ImpactCalculators() {
 
             <p className="text-sm text-muted-foreground flex items-start gap-2 leading-relaxed">
               <TrendingDown className="w-5 h-5 text-blue-500 flex-shrink-0 mt-0.5" />
-              Transferi un risc de {formatCurrency(metrics.loss)} către o companie de asigurări plătind doar {formatCurrency(metrics.premium)} anual. Matematic, este singura decizie financiară corectă.
+              Transferi un risc de {formatCurrency(metrics.loss)} către o companie de asigurări plătind doar {formatCurrency(metrics.acoperirePentruTine)} anual. Matematic, este singura decizie financiară corectă.
             </p>
           </motion.div>
         </AnimatePresence>
 
         {/* Right Side: CTA / Lead Gen */}
-        <div className="glass premium-card p-8 md:p-10 rounded-[2.5rem] border border-blue-100 bg-gradient-to-br from-blue-50/50 to-white flex flex-col justify-center text-center">
+        <div className="glass coverage-card p-8 md:p-10 rounded-[2.5rem] border border-blue-100 bg-gradient-to-br from-blue-50/50 to-white flex flex-col justify-center text-center">
           <ShieldCheck className="w-16 h-16 text-blue-600 mx-auto mb-6" />
           <h3 className="text-3xl font-bold font-heading mb-4">Protejează-ți Viitorul Acum</h3>
           <p className="text-muted-foreground mb-8 text-lg">
@@ -247,7 +247,7 @@ export function ImpactCalculators() {
               {error && (
                 <p className="text-sm font-bold text-red-500 mt-2">{error}</p>
               )}
-              <p className="text-xs text-muted-foreground mt-2">Un consultant premium te va contacta rapid.</p>
+              <p className="text-xs text-muted-foreground mt-2">Un consultant beneficiu te va contacta rapid.</p>
             </form>
           ) : (
             <motion.div 

@@ -45,12 +45,12 @@ body {
   border: 1px solid rgba(0, 0, 0, 0.06);
 }
 
-/* ─── Premium Card Hover ─── */
-.premium-card {
+/* ─── Comprehensive Card Hover ─── */
+.Comprehensive-card {
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.premium-card:hover {
+.Comprehensive-card:hover {
   transform: translateY(-4px);
   box-shadow:
     0 4px 6px -1px rgba(0, 0, 0, 0.05),

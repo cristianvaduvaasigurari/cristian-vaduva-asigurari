@@ -8,7 +8,7 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-const luxuryAssets = [
+const beneficiuAssets = [
   {
     id: "supercars",
     name: "Porsche 911 GT3 RS",
@@ -36,7 +36,7 @@ const luxuryAssets = [
     specs: [
       { k: "Lungime", v: "14.6 m" },
       { k: "Locație Port", v: "Marina Limanu" },
-      { k: "Tip Poliță", v: "Yacht Comprehensive" }
+      { k: "Tip Poliță", v: "Yacht beneficiu" }
     ]
   },
   {
@@ -71,18 +71,18 @@ const luxuryAssets = [
   }
 ];
 
-export function LuxuryGarageConfigurator() {
-  const [selectedAsset, setSelectedAsset] = useState(luxuryAssets[0]);
+export function BeneficiuGarage() {
+  const [selectedAsset, setSelectedAsset] = useState(beneficiuAssets[0]);
 
   return (
     <div className="w-full max-w-6xl mx-auto flex flex-col lg:flex-row gap-8 items-stretch">
       
-      {/* LEFT: Configurator Selector (Luxury watch style list) */}
+      {/* LEFT: Configurator Selector (acces rapid pentru tine watch style list) */}
       <div className="w-full lg:w-4/12 flex flex-col gap-3">
         <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400 block mb-2 px-2">Garajul tău Digital</span>
         
         <div className="flex flex-col gap-2">
-          {luxuryAssets.map(asset => {
+          {beneficiuAssets.map(asset => {
             const isSelected = selectedAsset.id === asset.id;
             return (
               <button

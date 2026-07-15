@@ -49,13 +49,13 @@ export default function BusinessProfessionalLiabilityPage() {
               <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/5 rounded-full blur-[80px] -z-10" />
               <h2 className="text-3xl font-heading font-bold mb-6 flex items-center gap-3">
                 <Info className="text-blue-500 w-8 h-8" />
-                "General Liability" vs "Professional Liability"
+                "General Liability" vs "serviciu practic pentru tine Liability"
               </h2>
               <p className="text-lg text-muted-foreground leading-relaxed mb-4">
                 Există o confuzie uriașă în piață. Dacă un client vine la tine în birou de contabilitate, alunecă pe parchet și își rupe mâna, te va da în judecată iar dauna va fi plătită de polița de "Răspundere GENERALĂ".
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                DAR... dacă nu alunecă pe parchet, dar tu introduci o cifră greșită în bilanțul lui și îi atragi o amendă fiscală uriașă de la ANAF? Acesta e prejudiciu strict prin <strong>greșeală intelectuală</strong> (eroare tehnică/omisivă de consultanță). Acest prejudiciu intelectual se acoperă DOAR de Răspunderea PROFESIONALĂ (cunoscută global ca PI - Professional Indemnity sau E&O - Errors and Omissions).
+                DAR... dacă nu alunecă pe parchet, dar tu introduci o cifră greșită în bilanțul lui și îi atragi o amendă fiscală uriașă de la ANAF? Acesta e prejudiciu strict prin <strong>greșeală intelectuală</strong> (eroare tehnică/omisivă de consultanță). Acest prejudiciu intelectual se acoperă DOAR de Răspunderea PROFESIONALĂ (cunoscută global ca PI - serviciu practic pentru tine Indemnity sau E&O - Errors and Omissions).
               </p>
             </div>
 
@@ -86,7 +86,7 @@ export default function BusinessProfessionalLiabilityPage() {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl mx-auto text-left">
               <div className="p-6 rounded-2xl bg-emerald-50/50 border border-emerald-100">
-                <h4 className="font-bold text-emerald-800 mb-2 flex items-center gap-2"><Stethoscope className="w-5 h-5"/> Medici și Personal Medical (Malpraxis)</h4>
+                <h4 className="font-bold text-emerald-800 mb-2 flex items-center gap-2"><Stethoscope className="w-5 h-5"/> Medici și pentru tine Medical (Malpraxis)</h4>
                 <p className="text-muted-foreground">Obligație de lege de bază pentru medici, farmaciști, asistenți (spitale, clinici sau cabinete de stomatologie private) pentru erori și erori letale în actul medical.</p>
               </div>
               <div className="p-6 rounded-2xl bg-emerald-50/50 border border-emerald-100">
@@ -108,21 +108,21 @@ export default function BusinessProfessionalLiabilityPage() {
           <div className="mb-24">
             <h2 className="text-3xl font-heading font-bold mb-10 text-center">Protecția Reputației și a Bugetului</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="glass premium-card p-8 rounded-[2rem] border border-border">
+              <div className="glass beneficiu-card p-8 rounded-[2rem] border border-border">
                 <CheckCircle2 className="w-8 h-8 text-purple-600 mb-6" />
                 <h3 className="text-xl font-bold mb-3 text-foreground">Defensive Costs (Apărarea Legală)</h3>
                 <p className="text-muted-foreground leading-relaxed">
                   Când ești acuzat de Malpraxis, până să decizi dacă plătești dauna, trebuie să te aperi public în fața colegiului (și a televiziunilor). Polița avansată plătește ea experții independenți care depun contra-rapoarte în tribunal pentru a arăta că NU tu ai greșit tehnic.
                 </p>
               </div>
-              <div className="glass premium-card p-8 rounded-[2rem] border border-border">
+              <div className="glass beneficiu-card p-8 rounded-[2rem] border border-border">
                 <CheckCircle2 className="w-8 h-8 text-purple-600 mb-6" />
                 <h3 className="text-xl font-bold mb-3 text-foreground">Principiul "Claims Made"</h3>
                 <p className="text-muted-foreground leading-relaxed">
                   Polițele complexe PI se achită pe sistem modern. Nu contează când ai făcut greșeala contabilă (poate ai făcut-o acum 2 ani). Contează cine era asigurătorul tău în momentul în care s-a DESCOPERIT greșeala și clientul a depus cererea (Claim-ul).
                 </p>
               </div>
-              <div className="glass premium-card p-8 rounded-[2rem] border border-border">
+              <div className="glass beneficiu-card p-8 rounded-[2rem] border border-border">
                 <CheckCircle2 className="w-8 h-8 text-purple-600 mb-6" />
                 <h3 className="text-xl font-bold mb-3 text-foreground">Limită Extinsă Rezonabilă</h3>
                 <p className="text-muted-foreground leading-relaxed">
@@ -178,16 +178,16 @@ export default function BusinessProfessionalLiabilityPage() {
               Sustinerea Experților în Criză
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="glass premium-card p-8 rounded-[2rem] border-l-4 border-l-amber-500">
+              <div className="glass beneficiu-card p-8 rounded-[2rem] border-l-4 border-l-amber-500">
                 <h3 className="text-xl font-bold mb-4 text-foreground">Scenariul 1: Eroarea Arhitecturală</h3>
                 <p className="text-muted-foreground leading-relaxed mb-4">
-                  Un birou de arhitectură a proiectat planul unei clădiri de apartamente premium. Pe parcursul turnării, se descoperă că din cauza unei calcule de deviere de câțiva centimetri în proiect (eroare de soft nedetectată), conductele uriașe de aerisire nu încap în plafon, necesitând demolarea și turnarea altor niveluri.
+                  Un birou de arhitectură a proiectat planul unei clădiri de apartamente beneficiu. Pe parcursul turnării, se descoperă că din cauza unei calcule de deviere de câțiva centimetri în proiect (eroare de soft nedetectată), conductele uriașe de aerisire nu încap în plafon, necesitând demolarea și turnarea altor niveluri.
                 </p>
                 <div className="p-4 bg-amber-50/50 rounded-xl border border-amber-100">
                   <span className="font-bold text-amber-700">Rezolvarea poliței:</span> Dezvoltatorul somează biroul de arhitectură cu facturi de 150.000 EUR - contravaloarea demolării și re-turnării betonului cauzate de eroarea lor intelectuală. Polița Profesională PI a firmei de arhitectură a recunoscut și onorat suma de despăgubire direct din plafonul lor de acoperire.
                 </div>
               </div>
-              <div className="glass premium-card p-8 rounded-[2rem] border-l-4 border-l-amber-500">
+              <div className="glass beneficiu-card p-8 rounded-[2rem] border-l-4 border-l-amber-500">
                 <h3 className="text-xl font-bold mb-4 text-foreground">Scenariul 2: Malpraxisul Medical Asistentelor</h3>
                 <p className="text-muted-foreground leading-relaxed mb-4">
                   O clinică mică tratează un pacient. Asistenta amestecă din suprasolicitare medicația la perfuzia intravenoasă, pacientul având reacții alergice severe ce au provocat insuficiență respiratorie și deces la ATI.
@@ -225,15 +225,15 @@ export default function BusinessProfessionalLiabilityPage() {
           <div className="mb-24">
             <h2 className="text-3xl font-heading font-bold mb-10 text-center">Întrebări Frecvente Specifice PI</h2>
             <div className="space-y-6 max-w-4xl mx-auto">
-              <div className="glass premium-card p-6 md:p-8 rounded-2xl border border-border">
+              <div className="glass beneficiu-card p-6 md:p-8 rounded-2xl border border-border">
                 <h3 className="text-xl font-bold mb-3 text-foreground">M-am enervat pe clientul meu și, pentru că nu mi-a plătit factura, i-am șters baza de date intenționat. Polița acoperă pierderea lui?</h3>
                 <p className="text-muted-foreground leading-relaxed">Fără echivoc: NU! Asigurările funcționează doar pentru întâmplări ACCIDENTALE ("Erori și Omisiuni", Neglijență). Fapta făcută cu "Intenție Directă", Răutate (Malice) sau Frauda/Fals în acte dovedit penal anulează instant orice acoperire de răspundere, deoarece e infracțiune.</p>
               </div>
-              <div className="glass premium-card p-6 md:p-8 rounded-2xl border border-border">
+              <div className="glass beneficiu-card p-6 md:p-8 rounded-2xl border border-border">
                 <h3 className="text-xl font-bold mb-3 text-foreground">Cine face asigurarea de malpraxis: eu ca medic PFA sau Spitalul privat SRL unde lucrez?</h3>
                 <p className="text-muted-foreground leading-relaxed">Legea spune că AMBILOR. Tu trebuie să ai "Polița Medicului" strict personală care îți acoperă ție Colegiul Medicilor și erorile manuale. Pe de altă parte, Clinica Privat SRL (Unitatea Sanitară) trebuie să aibă O ALTĂ poliță separată, uriașă, care preia viciile de dotare spitalicească (ex. infecții nosocomiale în clădire sau aparatură stricată care a vătămat pacientul).</p>
               </div>
-              <div className="glass premium-card p-6 md:p-8 rounded-2xl border border-border">
+              <div className="glass beneficiu-card p-6 md:p-8 rounded-2xl border border-border">
                 <h3 className="text-xl font-bold mb-3 text-foreground">Eu doar dau consultanță verbală (Coaching/Management). Am nevoie de așa ceva?</h3>
                 <p className="text-muted-foreground leading-relaxed">Da. Dacă oferi consultanță pe "Management de criză", iar sfatul dat de tine a provocat concedierea greșită a 10 oameni și compania este dată în judecată, compania se va întoarce "în regres" împotriva ta, deoarece decizia lor dezastruoasă s-a bazat pe consultanța ta facturată profesional.</p>
               </div>

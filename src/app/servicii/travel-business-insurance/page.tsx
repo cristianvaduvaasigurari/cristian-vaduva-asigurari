@@ -108,21 +108,21 @@ export default function TravelBusinessInsurancePage() {
           <div className="mb-24">
             <h2 className="text-3xl font-heading font-bold mb-10 text-center">Garanțiile Nivelului Business</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="glass premium-card p-8 rounded-[2rem] border border-border">
+              <div className="glass beneficiu-card p-8 rounded-[2rem] border border-border">
                 <CheckCircle2 className="w-8 h-8 text-indigo-600 mb-6" />
                 <h3 className="text-xl font-bold mb-3 text-foreground">Acoperirea Suplinitorului</h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  Dacă delegatul a fost internat în spital de urgență la Munchen și prezența companiei la târg e vitală, polița premium acoperă biletul de avion de urgență (Business Class) pentru ca firma să trimită un alt angajat înlocuitor să țină prezentarea.
+                  Dacă delegatul a fost internat în spital de urgență la Munchen și prezența companiei la târg e vitală, polița beneficiu acoperă biletul de avion de urgență (Business Class) pentru ca firma să trimită un alt angajat înlocuitor să țină prezentarea.
                 </p>
               </div>
-              <div className="glass premium-card p-8 rounded-[2rem] border border-border">
+              <div className="glass beneficiu-card p-8 rounded-[2rem] border border-border">
                 <CheckCircle2 className="w-8 h-8 text-indigo-600 mb-6" />
                 <h3 className="text-xl font-bold mb-3 text-foreground">Repatriere Avansată</h3>
                 <p className="text-muted-foreground leading-relaxed">
                   Include nu doar salvarea aeriană standard pentru pacient, ci și costurile necesare returnării corpului neînsuflețit în caz de tragedie, salvând familia/firma de costuri birocratice inumane de 15-20 mii Euro.
                 </p>
               </div>
-              <div className="glass premium-card p-8 rounded-[2rem] border border-border">
+              <div className="glass beneficiu-card p-8 rounded-[2rem] border border-border">
                 <CheckCircle2 className="w-8 h-8 text-indigo-600 mb-6" />
                 <h3 className="text-xl font-bold mb-3 text-foreground">Extensie "Business Bag"</h3>
                 <p className="text-muted-foreground leading-relaxed">
@@ -178,7 +178,7 @@ export default function TravelBusinessInsurancePage() {
               Protejarea Profitului Angajatorului
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="glass premium-card p-8 rounded-[2rem] border-l-4 border-l-amber-500">
+              <div className="glass beneficiu-card p-8 rounded-[2rem] border-l-4 border-l-amber-500">
                 <h3 className="text-xl font-bold mb-4 text-foreground">Scenariul 1: Bagajul cu Mostre</h3>
                 <p className="text-muted-foreground leading-relaxed mb-4">
                   Directorul de vânzări ajunge la Las Vegas pentru conferința anuală. Compania aeriană îi rătăcește valiza mare în care se aflau toate costumele de business și eșantioanele pentru parteneri. Târgul începe a doua zi.
@@ -187,7 +187,7 @@ export default function TravelBusinessInsurancePage() {
                   <span className="font-bold text-amber-700">Rezolvarea poliței:</span> Clauza de întârziere (peste 12-24h) îi virează instant de urgență un fond de 500 EUR de pe polița Business. Delegatul se duce în seara respectivă să își cumpere cămăși, costum de înlocuire și materiale minime pentru a face o impresie impecabilă a doua zi.
                 </div>
               </div>
-              <div className="glass premium-card p-8 rounded-[2rem] border-l-4 border-l-amber-500">
+              <div className="glass beneficiu-card p-8 rounded-[2rem] border-l-4 border-l-amber-500">
                 <h3 className="text-xl font-bold mb-4 text-foreground">Scenariul 2: Accidentul Angajatului Detașat</h3>
                 <p className="text-muted-foreground leading-relaxed mb-4">
                   O companie trimite un inginer tehnic în Norvegia pentru 14 zile. Din cauza gheții, el alunecă pe stradă și își fracturează clavicula. Are nevoie de operație, spitalizare 5 zile, iar factura medicală a scandinavilor vine pe adresa SRL-ului românesc: 18.000 EUR.
@@ -225,15 +225,15 @@ export default function TravelBusinessInsurancePage() {
           <div className="mb-24">
             <h2 className="text-3xl font-heading font-bold mb-10 text-center">Întrebări Frecvente (B2B)</h2>
             <div className="space-y-6 max-w-4xl mx-auto">
-              <div className="glass premium-card p-6 md:p-8 rounded-2xl border border-border">
+              <div className="glass beneficiu-card p-6 md:p-8 rounded-2xl border border-border">
                 <h3 className="text-xl font-bold mb-3 text-foreground">Avem un contract de muncă temporar în Germania (muncă fizică / construcții). Se încadrează aici?</h3>
                 <p className="text-muted-foreground leading-relaxed">Asigurările "Travel" clasice și Business se referă, de obicei, la "muncă de birou, meetinguri, consultanță non-manuală". Pentru muncitorii detașați în construcții, agricultura, rafinării (sarcini fizice periculoase), este necesară emiterea unei polițe cu o suprataxă clară de risc tip "Muncă Manuală". Necomunicarea clară a profesiei anulează polița în caz de accident cu flex-ul/macaraua.</p>
               </div>
-              <div className="glass premium-card p-6 md:p-8 rounded-2xl border border-border">
+              <div className="glass beneficiu-card p-6 md:p-8 rounded-2xl border border-border">
                 <h3 className="text-xl font-bold mb-3 text-foreground">Suntem expuși la zone de război (Irak, Libia) ca și constructori? Avem acoperire?</h3>
                 <p className="text-muted-foreground leading-relaxed">În general, TOATE polițele globale exclud despăgubirile pentru "urgențe și traume rezultate dintr-un act direct de război declanșat sau terorism, revolte populare armate". Asistența medicală banală (apendicita) poate fi acoperită, dar rănile provocate de gloanțe/explozii tip război nu sunt decontate. Aceste zone impun soluții speciale extreme prin Lloyd's London.</p>
               </div>
-              <div className="glass premium-card p-6 md:p-8 rounded-2xl border border-border">
+              <div className="glass beneficiu-card p-6 md:p-8 rounded-2xl border border-border">
                 <h3 className="text-xl font-bold mb-3 text-foreground">Polița acoperă dacă angajatul e arestat în străinătate?</h3>
                 <p className="text-muted-foreground leading-relaxed">Polița poate deconta avansul cauțiunii, și poate trimite avocat sau translatori la audiere. Totuși, ea NU te acoperă și te lasă descoperit absolut total dacă fapta este săvârșită "cu intenție clară penală" (ex: contrabandă de droguri, furt din magazin intenționat). Te apără doar pentru răspunderi accidentale (ex: ai dărâmat raftul într-un magazin de bijuterii din greșeală cu rucsacul).</p>
               </div>

@@ -7,7 +7,7 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Despre Mine | Cristian Văduva",
-  description: "Senior Sales, High-Ticket Closer, Real Estate & Investment Advisor. Protecția patrimoniului și strategii de creștere financiară.",
+  description: "Senior Sales, valoare mare pentru tine-Ticket Closer, Real Estate & Investment Advisor. Protecția patrimoniului și strategii de creștere financiară.",
 };
 
 export default function AboutPage() {
@@ -21,13 +21,13 @@ export default function AboutPage() {
           <div className="flex flex-col md:flex-row items-center gap-16">
             <div className="flex-1">
               <span className="inline-block px-4 py-2 rounded-full bg-blue-500/10 text-blue-400 font-heading text-sm font-bold tracking-widest uppercase mb-6 border border-blue-500/20">
-                Luxury Advisor & High-Ticket Closer
+                acces rapid pentru tine Advisor & valoare mare pentru tine-Ticket Closer
               </span>
               <h1 className="text-5xl md:text-7xl font-heading font-bold mb-6 leading-tight tracking-tight">
                 Cristian <br/><span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">Văduva.</span>
               </h1>
               <p className="text-xl text-muted-foreground leading-relaxed mb-8">
-                Peste o decadă de experiență în securizarea și scalarea patrimoniului clienților premium. 
+                Peste o decadă de experiență în securizarea și scalarea patrimoniului clienților beneficiu. 
                 De la Real Estate de lux la planificare financiară și protecție prin instrumente de top (Generali).
               </p>
               <div className="flex gap-4">
@@ -63,7 +63,7 @@ export default function AboutPage() {
                 {
                   icon: Gem,
                   title: "Real Estate",
-                  desc: "Reprezentare exclusivă pentru proprietăți premium și off-market prin Home Find & AiXLuxury.",
+                  desc: "Reprezentare exclusivă pentru proprietăți beneficiu și off-market prin Home Find & AiXbeneficiu.",
                   color: "text-amber-400"
                 },
                 {
@@ -81,11 +81,11 @@ export default function AboutPage() {
                 {
                   icon: Target,
                   title: "Sales Strategy",
-                  desc: "High-Ticket closing și consultanță pentru optimizarea conversiilor B2B.",
+                  desc: "valoare mare pentru tine-Ticket closing și consultanță pentru optimizarea conversiilor B2B.",
                   color: "text-purple-400"
                 }
               ].map((item, i) => (
-                <div key={i} className="glass premium-card p-8 rounded-3xl border border-border">
+                <div key={i} className="glass beneficiu-card p-8 rounded-3xl border border-border">
                   <item.icon className={`w-10 h-10 mb-6 ${item.color}`} />
                   <h3 className="font-heading font-bold text-xl mb-3">{item.title}</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">{item.desc}</p>

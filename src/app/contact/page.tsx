@@ -52,7 +52,7 @@ export default function ContactPage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-24 max-w-6xl mx-auto">
-            <div className="glass premium-card p-8 rounded-3xl flex flex-col items-center text-center">
+            <div className="glass beneficiu-card p-8 rounded-3xl flex flex-col items-center text-center">
               <Phone className="w-8 h-8 text-blue-600 mb-4" />
               <h3 className="font-bold mb-2 text-foreground">Telefon</h3>
               <p className="text-muted-foreground mb-4">{CONTACT.phone.display}</p>
@@ -60,7 +60,7 @@ export default function ContactPage() {
                 <a href={CONTACT.phone.href}>Sună acum</a>
               </Button>
             </div>
-            <div className="glass premium-card p-8 rounded-3xl flex flex-col items-center text-center">
+            <div className="glass beneficiu-card p-8 rounded-3xl flex flex-col items-center text-center">
               <MessageCircle className="w-8 h-8 text-green-600 mb-4" />
               <h3 className="font-bold mb-2 text-foreground">WhatsApp</h3>
               <p className="text-muted-foreground mb-4">{CONTACT.whatsapp.display}</p>
@@ -68,7 +68,7 @@ export default function ContactPage() {
                 <a href={CONTACT.whatsapp.href} target="_blank" rel="noopener noreferrer">Trimite mesaj</a>
               </Button>
             </div>
-            <div className="glass premium-card p-8 rounded-3xl flex flex-col items-center text-center">
+            <div className="glass beneficiu-card p-8 rounded-3xl flex flex-col items-center text-center">
               <Mail className="w-8 h-8 text-blue-600 mb-4" />
               <h3 className="font-bold mb-2 text-foreground">Email</h3>
               <p className="text-muted-foreground mb-4 text-sm truncate w-full">{CONTACT.email.display}</p>
@@ -76,7 +76,7 @@ export default function ContactPage() {
                 <a href={CONTACT.email.href}>Scrie-ne</a>
               </Button>
             </div>
-            <div className="glass premium-card p-8 rounded-3xl flex flex-col items-center text-center">
+            <div className="glass beneficiu-card p-8 rounded-3xl flex flex-col items-center text-center">
               <MapPin className="w-8 h-8 text-blue-600 mb-4" />
               <h3 className="font-bold mb-2 text-foreground">Locație</h3>
               <p className="text-muted-foreground mb-4 text-sm">București, România</p>

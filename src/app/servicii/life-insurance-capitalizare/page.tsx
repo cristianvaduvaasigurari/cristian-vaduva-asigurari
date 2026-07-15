@@ -29,7 +29,7 @@ export default function LifeCapitalizarePage() {
               Asigurare de Viață cu Capitalizare
             </h1>
             <p className="text-xl text-muted-foreground leading-relaxed mb-10 max-w-3xl">
-              Protecție totală și acumulare de capital într-un singur instrument premium. Îți asiguri viața pentru liniștea familiei tale, dar în același timp economisești disciplinat pentru a-ți finanța propriile vise la maturitatea contractului.
+              Protecție totală și acumulare de capital într-un singur instrument beneficiu. Îți asiguri viața pentru liniștea familiei tale, dar în același timp economisești disciplinat pentru a-ți finanța propriile vise la maturitatea contractului.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Button size="lg" className="h-14 px-8 text-lg rounded-full bg-blue-600 hover:bg-blue-700 text-white shadow-xl" asChild>
@@ -108,21 +108,21 @@ export default function LifeCapitalizarePage() {
           <div className="mb-24">
             <h2 className="text-3xl font-heading font-bold mb-10 text-center">Beneficiile Acumulării</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="glass premium-card p-8 rounded-[2rem] border border-border">
+              <div className="glass beneficiu-card p-8 rounded-[2rem] border border-border">
                 <CheckCircle2 className="w-8 h-8 text-blue-600 mb-6" />
                 <h3 className="text-xl font-bold mb-3 text-foreground">Scutire de Impozit la Maturitate</h3>
                 <p className="text-muted-foreground leading-relaxed">
                   Conform legislației fiscale actuale, sumele plătite ca indemnizații din asigurările de viață (inclusiv capitalul acumulat) nu se impozitează, spre deosebire de dobânzile bancare sau câștigurile bursiere.
                 </p>
               </div>
-              <div className="glass premium-card p-8 rounded-[2rem] border border-border">
+              <div className="glass beneficiu-card p-8 rounded-[2rem] border border-border">
                 <CheckCircle2 className="w-8 h-8 text-blue-600 mb-6" />
                 <h3 className="text-xl font-bold mb-3 text-foreground">Suma Garantată</h3>
                 <p className="text-muted-foreground leading-relaxed">
                   Contractul specifică o sumă finală "garantată", care reprezintă certitudinea ta matematică. Peste aceasta se adaugă un bonus de performanță investițională generat de Generali de-a lungul anilor.
                 </p>
               </div>
-              <div className="glass premium-card p-8 rounded-[2rem] border border-border">
+              <div className="glass beneficiu-card p-8 rounded-[2rem] border border-border">
                 <CheckCircle2 className="w-8 h-8 text-blue-600 mb-6" />
                 <h3 className="text-xl font-bold mb-3 text-foreground">Protecție Imediată Totală</h3>
                 <p className="text-muted-foreground leading-relaxed">
@@ -178,7 +178,7 @@ export default function LifeCapitalizarePage() {
               Cifre și Scenarii
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="glass premium-card p-8 rounded-[2rem] border-l-4 border-l-amber-500">
+              <div className="glass beneficiu-card p-8 rounded-[2rem] border-l-4 border-l-amber-500">
                 <h3 className="text-xl font-bold mb-4 text-foreground">Cazul "Maturitate Fericită"</h3>
                 <p className="text-muted-foreground leading-relaxed mb-4">
                   Bogdan la 30 de ani începe să pună deoparte 150 EUR pe lună într-un program pe 25 de ani pentru a-și securiza pensionarea la 55 de ani.
@@ -187,7 +187,7 @@ export default function LifeCapitalizarePage() {
                   <span className="font-bold text-amber-700">Rezultat:</span> La 55 de ani, Bogdan ridică capitalul acumulat, plus randamentul din dividendele investiționale Generali. Tot acest capital este netaxabil și poate fi ridicat integral sau transformat într-o pensie lunară pe viață plătită de Generali.
                 </div>
               </div>
-              <div className="glass premium-card p-8 rounded-[2rem] border-l-4 border-l-amber-500">
+              <div className="glass beneficiu-card p-8 rounded-[2rem] border-l-4 border-l-amber-500">
                 <h3 className="text-xl font-bold mb-4 text-foreground">Cazul "Planul Educațional Interupt"</h3>
                 <p className="text-muted-foreground leading-relaxed mb-4">
                   Laura (32 ani) face o poliță cu capitalizare țintind 40.000 EUR pentru facultatea fetiței ei peste 18 ani. După 4 ani, Laura suferă un accident auto fatal. Ea apucase să plătească doar câțiva ani.
@@ -225,15 +225,15 @@ export default function LifeCapitalizarePage() {
           <div className="mb-24">
             <h2 className="text-3xl font-heading font-bold mb-10 text-center">Întrebări Frecvente</h2>
             <div className="space-y-6 max-w-4xl mx-auto">
-              <div className="glass premium-card p-6 md:p-8 rounded-2xl border border-border">
+              <div className="glass beneficiu-card p-6 md:p-8 rounded-2xl border border-border">
                 <h3 className="text-xl font-bold mb-3 text-foreground">Ce se întâmplă dacă vreau să mă retrag înainte de finalul contractului?</h3>
                 <p className="text-muted-foreground leading-relaxed">Polița poate fi reziliată anticipat (răscumpărare), însă vei primi "valoarea de răscumpărare" care, în primii ani ai contractului, este mai mică decât sumele plătite de tine. Asta deoarece în primii ani o parte din bani merg către costurile de preluare a riscului masiv de deces și a comisioanelor de setare a contului de investiții. Recomandăm acest produs doar pentru acumulare reală pe termen lung.</p>
               </div>
-              <div className="glass premium-card p-6 md:p-8 rounded-2xl border border-border">
+              <div className="glass beneficiu-card p-6 md:p-8 rounded-2xl border border-border">
                 <h3 className="text-xl font-bold mb-3 text-foreground">Pot să scot bani parțial dacă am o urgență?</h3>
                 <p className="text-muted-foreground leading-relaxed">Da. După o anumită perioadă inițială (de obicei primii 2-3 ani), polițele permit retrageri parțiale din fondul investit, menținând în continuare contractul și asigurarea activă, dar acest lucru va ajusta suma finală estimată.</p>
               </div>
-              <div className="glass premium-card p-6 md:p-8 rounded-2xl border border-border">
+              <div className="glass beneficiu-card p-6 md:p-8 rounded-2xl border border-border">
                 <h3 className="text-xl font-bold mb-3 text-foreground">Prima se ajustează la inflație?</h3>
                 <p className="text-muted-foreground leading-relaxed">Contractele prevăd de regulă "indexarea", un mecanism prin care suma plătită și capitalul garantat cresc anual cu un procent din inflație, pentru a te asigura că cei 50.000 EUR vor valora la fel de mult și peste 20 de ani.</p>
               </div>

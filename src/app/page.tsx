@@ -3,7 +3,7 @@ import { Footer } from "@/components/layout/footer";
 import { Hero } from "@/components/sections/hero";
 import { Services } from "@/components/sections/services";
 import { Ecosystem } from "@/components/sections/ecosystem";
-import { TestimonialsFaq } from "@/components/sections/testimonials-faq";
+
 import { ContactForm } from "@/components/sections/contact-form";
 
 export default function Home() {
@@ -14,7 +14,7 @@ export default function Home() {
         <Hero />
         <section id="servicii"><Services /></section>
         <Ecosystem />
-        <TestimonialsFaq />
+        
         <ContactForm />
       </main>
       <Footer />

@@ -1,4 +1,6 @@
+/* eslint-disable @typescript-eslint/no-require-imports */
 // scripts/form-verification.js
+const puppeteer = require('puppeteer-core');
 // Automated end‑to‑end verification of all ContactForm pages.
 // Runs against the local dev server (http://localhost:3000).
 // For each page it:
@@ -14,13 +16,13 @@ const puppeteer = require('puppeteer-core');
 // Pages that contain a ContactForm component.
 const pages = [
   '/',
-  '/aixluxury',
+  '/aixbeneficiu',
   '/servicii/health-insurance',
   '/servicii/health-insurance-individual',
   '/servicii/business-building-insurance',
   '/servicii/fleet-insurance',
   '/servicii/pad-insurance',
-  '/servicii/business-professional-liability',
+  '/servicii/business-Expert-liability',
   '/servicii/auto-insurance',
   '/servicii/business-directors-liability',
   '/servicii/life-insurance-capitalizare',

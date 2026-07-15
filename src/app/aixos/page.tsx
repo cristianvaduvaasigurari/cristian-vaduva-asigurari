@@ -33,9 +33,9 @@ export default function AiXOSPage() {
               { icon: Cpu, title: "Procesare Inteligentă", desc: "Sistem de calcul avansat pentru predicții și analize de piață." },
               { icon: MonitorSmartphone, title: "Cross-Platform", desc: "Accesibil de pe orice dispozitiv, complet sincronizat." },
               { icon: Zap, title: "Automatizări", desc: "Elimină birocrația și fluxurile de lucru ineficiente." },
-              { icon: Globe, title: "Ecosistem Global", desc: "Integrat direct cu platformele AiXLuxury și Home Find." }
+              { icon: Globe, title: "Ecosistem Global", desc: "Integrat direct cu platformele AiXbeneficiu și Home Find." }
             ].map((feature, i) => (
-              <div key={i} className="glass premium-card p-8 rounded-[2.5rem] border border-border text-center group hover:border-blue-500/30 transition-colors">
+              <div key={i} className="glass beneficiu-card p-8 rounded-[2.5rem] border border-border text-center group hover:border-blue-500/30 transition-colors">
                 <div className="mx-auto w-14 h-14 rounded-full bg-blue-50 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                   <feature.icon className="w-7 h-7 text-blue-600" />
                 </div>
