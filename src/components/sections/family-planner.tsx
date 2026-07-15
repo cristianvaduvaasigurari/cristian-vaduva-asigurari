@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Users, Plus, Trash2, ShieldAlert, HeartPulse, ShieldCheck, ArrowRight, Activity } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { saveAssessment } from "@/lib/clientActions";
+import { saveAssessment } from "@/lib/actions";
 
 type Member = {
   id: string;

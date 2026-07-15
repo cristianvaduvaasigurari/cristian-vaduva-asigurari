@@ -23,14 +23,14 @@ export const metadata: Metadata = {
     default: "Cristian Văduva | Insurance, Real Estate & Investments",
     template: "%s | Cristian Văduva",
   },
-  description: "Platformă care ajută clienții să economisească timp și să reducă riscurile financiare prin asigurări personalizate și acces la oportunități imobiliare verificate. Expertiză în asigurări și investiții imobiliare.",
+  description: "Platformă premium dedicată protecției financiare, investițiilor de lux și optimizării patrimoniului. Expertiză în asigurări, luxury real estate și AiX OS.",
   metadataBase: new URL("https://cristianvaduva.com"),
   alternates: {
     canonical: "./",
   },
   openGraph: {
     title: "Cristian Văduva | Insurance, Real Estate & Investments",
-    description: "Platformă care ajută clienții să economisească timp și să reducă riscurile financiare prin asigurări personalizate și acces la oportunități imobiliare verificate. Expertiză în asigurări și investiții imobiliare.",
+    description: "Platformă premium dedicată protecției financiare, investițiilor de lux și optimizării patrimoniului. Expertiză în asigurări, luxury real estate și AiX OS.",
     url: "https://cristianvaduva.com",
     siteName: "Cristian Văduva",
     locale: "ro_RO",
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Cristian Văduva | Insurance, Real Estate & Investments",
-    description: "Platformă beneficiu dedicată protecției financiare, investițiilor de lux și optimizării patrimoniului.",
+    description: "Platformă premium dedicată protecției financiare, investițiilor de lux și optimizării patrimoniului.",
   },
 };
 
@@ -64,7 +64,7 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "FinancialService",
-              "name": "Cristian Văduva – Portfolio de Asigurări și Investiții",
+              "name": "Cristian Văduva Premium Portfolio",
               "image": "https://cristianvaduva.com/logo.png",
               "@id": "https://cristianvaduva.com",
               "url": "https://cristianvaduva.com",

@@ -78,7 +78,7 @@ const questions = [
     title: "Care este principalul tău obiectiv financiar?",
     description: "Pentru planificarea viitorului tău.",
     type: "options",
-    options: ["Protecția veniturilor", "Economisire pentru copii", "Pensie privată", "Investiții beneficiu / Randament"],
+    options: ["Protecția veniturilor", "Economisire pentru copii", "Pensie privată", "Investiții premium / Randament"],
     icon: <TrendingUp className="w-8 h-8 text-green-600 mb-4" />
   },
   {
@@ -133,7 +133,7 @@ export function AdvisorWizard() {
     if (data.home && data.home.includes("Proprietar")) {
       recs.push({
         title: "Asigurare Completă Locuință",
-        desc: data.home.includes("credit") ? "Protecție obligatorie pentru credit + acoperire beneficiu pentru bunuri interioare." : "Protecție beneficiu pentru proprietate împotriva incendiilor și dezastrelor.",
+        desc: data.home.includes("credit") ? "Protecție obligatorie pentru credit + acoperire premium pentru bunuri interioare." : "Protecție premium pentru proprietate împotriva incendiilor și dezastrelor.",
         tag: "Patrimoniu"
       });
     }
@@ -154,7 +154,7 @@ export function AdvisorWizard() {
       });
     }
 
-    if (data.investment === "Pensie privată" || data.investment === "Investiții beneficiu / Randament") {
+    if (data.investment === "Pensie privată" || data.investment === "Investiții premium / Randament") {
       recs.push({
         title: "Asigurare de Viață cu Capitalizare (AiX Wealth)",
         desc: "Creștere de capital pe termen lung cu protecție inclusă, gestionat de experți.",
@@ -173,7 +173,7 @@ export function AdvisorWizard() {
     // Default catch-all
     if (recs.length === 0) {
       recs.push({
-        title: "Pachet Sănătate beneficiu",
+        title: "Pachet Sănătate Premium",
         desc: "Acces la cele mai bune clinici private din România și străinătate.",
         tag: "Sănătate"
       });
@@ -273,8 +273,8 @@ export function AdvisorWizard() {
           ))}
         </div>
 
-        <div className="glass beneficiu-card p-10 rounded-3xl border border-blue-100 bg-gradient-to-br from-blue-50/50 to-white text-center">
-          <h3 className="text-2xl font-bold mb-4 text-foreground">Un expert Cristian Văduva beneficiu a fost notificat.</h3>
+        <div className="glass premium-card p-10 rounded-3xl border border-blue-100 bg-gradient-to-br from-blue-50/50 to-white text-center">
+          <h3 className="text-2xl font-bold mb-4 text-foreground">Un expert Cristian Văduva Premium a fost notificat.</h3>
           <p className="text-muted-foreground max-w-2xl mx-auto mb-8">
             Analiza ta a fost trimisă în siguranță. Te vom contacta în scurt timp pe numărul <strong>{answers.phone}</strong> pentru a discuta detaliile ofertării și optimizării costurilor.
           </p>

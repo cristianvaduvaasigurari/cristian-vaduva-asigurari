@@ -126,7 +126,7 @@ export function GapAnalyzer() {
           })}
         </div>
 
-        <div className="mt-12 text-center p-8 glass beneficiu-card rounded-[2.5rem]">
+        <div className="mt-12 text-center p-8 glass premium-card rounded-[2.5rem]">
           <h3 className="text-2xl font-bold mb-4">Ai zone vulnerabile?</h3>
           <p className="text-muted-foreground mb-6">Programează o sesiune de audit cu Cristian Văduva pentru a elimina exact aceste goluri, fără a cumpăra asigurări inutile.</p>
           <Button size="lg" className="rounded-full bg-blue-600 hover:bg-blue-700 text-white" asChild>

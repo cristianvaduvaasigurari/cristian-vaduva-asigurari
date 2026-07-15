@@ -26,10 +26,10 @@ export default function BusinessBuildingInsurancePage() {
               <Building className="w-12 h-12" />
             </div>
             <h1 className="text-5xl md:text-6xl font-heading font-bold mb-6 leading-tight">
-              Protecție completă pentru clădirile tale de afaceri
+              Asigurarea Clădirilor Comerciale (B2B)
             </h1>
             <p className="text-xl text-muted-foreground leading-relaxed mb-10 max-w-3xl">
-              Fie că deții o hală de producție de 10.000 mp sau un spațiu de birouri beneficiu clasa A, clădirea în sine este probabil cel mai scump "asset" al companiei tale. Protejează structural zecile de milioane de euro investite împotriva incendiilor devastatoare sau cutremurelor.
+              Fie că deții o hală de producție de 10.000 mp sau un spațiu de birouri premium clasa A, clădirea în sine este probabil cel mai scump "asset" al companiei tale. Protejează structural zecile de milioane de euro investite împotriva incendiilor devastatoare sau cutremurelor.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Button size="lg" className="h-14 px-8 text-lg rounded-full bg-blue-600 hover:bg-blue-700 text-white shadow-xl" asChild>
@@ -108,21 +108,21 @@ export default function BusinessBuildingInsurancePage() {
           <div className="mb-24">
             <h2 className="text-3xl font-heading font-bold mb-10 text-center">Atuurile unei Polițe Customizate</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="glass beneficiu-card p-8 rounded-[2rem] border border-border">
+              <div className="glass premium-card p-8 rounded-[2rem] border border-border">
                 <CheckCircle2 className="w-8 h-8 text-blue-600 mb-6" />
                 <h3 className="text-xl font-bold mb-3 text-foreground">Evaluarea "La Valoarea de Înlocuire Nouă"</h3>
                 <p className="text-muted-foreground leading-relaxed">
                   Nu te interesează cât valora contabil hala ta construită acum 15 ani. Te interesează "cât ar costa astăzi fierul, cimentul și manopera să o reconstruiesc perfect dacă arde?". Generali oferă clauze de despăgubire ce permit reconstrucția fără a scădea drastic uzura materialelor vechi.
                 </p>
               </div>
-              <div className="glass beneficiu-card p-8 rounded-[2rem] border border-border">
+              <div className="glass premium-card p-8 rounded-[2rem] border border-border">
                 <CheckCircle2 className="w-8 h-8 text-blue-600 mb-6" />
                 <h3 className="text-xl font-bold mb-3 text-foreground">Acoperirea Costurilor de Demolare</h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  Când o fabrică arde complet, structurile metalice contorsionate care rămân în picioare sunt extrem de periculoase. Curățarea lor și transportul deșeurilor pot costa sute de mii de euro. Polița beneficiu preia explicit și aceste "costuri post-daună".
+                  Când o fabrică arde complet, structurile metalice contorsionate care rămân în picioare sunt extrem de periculoase. Curățarea lor și transportul deșeurilor pot costa sute de mii de euro. Polița premium preia explicit și aceste "costuri post-daună".
                 </p>
               </div>
-              <div className="glass beneficiu-card p-8 rounded-[2rem] border border-border">
+              <div className="glass premium-card p-8 rounded-[2rem] border border-border">
                 <CheckCircle2 className="w-8 h-8 text-blue-600 mb-6" />
                 <h3 className="text-xl font-bold mb-3 text-foreground">Asistența Inspectorilor de Risc</h3>
                 <p className="text-muted-foreground leading-relaxed">
@@ -178,7 +178,7 @@ export default function BusinessBuildingInsurancePage() {
               Reconstrucția după Dezastru
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="glass beneficiu-card p-8 rounded-[2rem] border-l-4 border-l-amber-500">
+              <div className="glass premium-card p-8 rounded-[2rem] border-l-4 border-l-amber-500">
                 <h3 className="text-xl font-bold mb-4 text-foreground">Scenariul 1: Hala transformată în scrum</h3>
                 <p className="text-muted-foreground leading-relaxed mb-4">
                   O fabrică de mase plastice estimată la 3.5 milioane de euro a luat foc din cauza unui aparat electric lăsat în priză peste noapte în birourile administrative. Focul a pătruns în hală. Timp de 8 ore, pompierii s-au luptat cu flăcările. Hala s-a topit complet.
@@ -187,7 +187,7 @@ export default function BusinessBuildingInsurancePage() {
                   <span className="font-bold text-amber-700">Rezolvarea poliței:</span> După ancheta IGSU (Pompieri), Generali a activat plata daunei totale. 3.5 milioane au fost virate eșalonat direct către constructorul autorizat ales de client pentru a turna o fundație nouă și a ridica o hală identică, reluând producția în mai puțin de 8 luni de la tragedie.
                 </div>
               </div>
-              <div className="glass beneficiu-card p-8 rounded-[2rem] border-l-4 border-l-amber-500">
+              <div className="glass premium-card p-8 rounded-[2rem] border-l-4 border-l-amber-500">
                 <h3 className="text-xl font-bold mb-4 text-foreground">Scenariul 2: Paguba "Minoră" Ascunsă</h3>
                 <p className="text-muted-foreground leading-relaxed mb-4">
                   Un hypermarket a suferit pagube de la o ninsoare masivă. Acoperișul plat tip terasă, nesusținând zăpada imensă din acel weekend, a cedat parțial, producând "o burtă" vizibilă a planșeului, fără să cadă cu totul.
@@ -225,15 +225,15 @@ export default function BusinessBuildingInsurancePage() {
           <div className="mb-24">
             <h2 className="text-3xl font-heading font-bold mb-10 text-center">Întrebări Frecvente (Imobiliare B2B)</h2>
             <div className="space-y-6 max-w-4xl mx-auto">
-              <div className="glass beneficiu-card p-6 md:p-8 rounded-2xl border border-border">
+              <div className="glass premium-card p-6 md:p-8 rounded-2xl border border-border">
                 <h3 className="text-xl font-bold mb-3 text-foreground">Sunt chiriaș în clădirea altcuiva. Trebuie să fac EU asigurarea clădirii?</h3>
                 <p className="text-muted-foreground leading-relaxed">În mod uzual, proprietarul clădirii (Landlord) își asigură pereții lui. TU (chiriașul) trebuie să asiguri DOAR bunurile tale aduse acolo (calculatoare, mărfuri) ȘI să cumperi o poliță de "Răspundere Civilă a Chiriașului față de Proprietar" - astfel încât dacă focul pornește de la laptopul tău lăsat în priză, asigurarea ta să îi repare pereții arși proprietarului, fără să fi dat în judecată de el.</p>
               </div>
-              <div className="glass beneficiu-card p-6 md:p-8 rounded-2xl border border-border">
+              <div className="glass premium-card p-6 md:p-8 rounded-2xl border border-border">
                 <h3 className="text-xl font-bold mb-3 text-foreground">Avem hala în construcție (șantier în lucru). Se poate asigura?</h3>
                 <p className="text-muted-foreground leading-relaxed">Da, dar nu prin acest produs standard. Va trebui să emitem o poliță dedicată "CAR/EAR" (Contractors All Risks), o poliță specializată de Montaj/Construcții, unde se asigură șantierul etapizat, pe măsură ce avansează valoarea, protejând căderile macaralelor sau furtul materialelor lăsate nesupravegheate noaptea.</p>
               </div>
-              <div className="glass beneficiu-card p-6 md:p-8 rounded-2xl border border-border">
+              <div className="glass premium-card p-6 md:p-8 rounded-2xl border border-border">
                 <h3 className="text-xl font-bold mb-3 text-foreground">Nu am autorizație ISU de Securitate la Incendiu încă. Mă acceptați?</h3>
                 <p className="text-muted-foreground leading-relaxed">Acesta este un subiect extrem de sensibil. Fără Autorizație / Aviz ISU sau fără a fi în curs serios de obținere, sau operând clădiri cu "interdicție formală de operare", majoritatea asigurătorilor vor refuza preluarea riscului, sau în cazul unui foc, vor invoca încălcarea legii statului, refuzând despăgubirea. Siguranța legală este baza oricărui contract solid de asigurare.</p>
               </div>

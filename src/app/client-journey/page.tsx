@@ -18,7 +18,7 @@ export default function ClientJourneyPage() {
             Advisory Process
           </div>
           <h1 className="text-4xl md:text-5xl font-heading font-black mb-6 text-foreground tracking-tight">
-            Călătoria Clientului beneficiu
+            Călătoria Clientului Premium
           </h1>
           <p className="text-lg text-muted-foreground leading-relaxed">
             Un parcurs structurat în 5 pași conceput pentru a asigura maparea riscurilor, eliminarea deficitului de capital, securizarea activelor și direcționarea eficientă a investițiilor.

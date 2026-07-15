@@ -9,7 +9,7 @@ import { Button } from "@/components/ui/button";
 const scenariosList = [
   { id: "income-loss", label: "Pierderea Venitului", baseCost: 45000, desc: "Incapacitate de muncă pe 12 luni sau concediere." },
   { id: "medical", label: "Urgență Medicală Majoră", baseCost: 25000, desc: "Tratament medical privat sau intervenție chirurgicală." },
-  { id: "accident", label: "Accident Auto", baseCost: 15000, desc: "Spitalizare lungă și avarierea totală a mașinii." },
+  { id: "accident", label: "Accident Auto / Personal", baseCost: 15000, desc: "Spitalizare lungă și avarierea totală a mașinii." },
   { id: "home-damage", label: "Incendiu / Inundație Casă", baseCost: 80000, desc: "Refacerea finisajelor și înlocuirea bunurilor arse." },
   { id: "disaster", label: "Cutremur major (Natural)", baseCost: 120000, desc: "Avarierea structurală gravă a clădirii rezidențiale." },
   { id: "biz-interruption", label: "Întrerupere Afacere", baseCost: 60000, desc: "Oprirea producției sau servicii nefuncționale pe 3 luni." },

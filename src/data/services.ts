@@ -58,10 +58,10 @@ export const servicesData: Record<string, ServiceContent> = {
     id: "health-insurance",
     slug: "health-insurance",
     title: "Asigurări de Sănătate",
-    shortDescription: "Acces direct și rapid în clinicile și spitalele private, fără liste de așteptare.",
+    shortDescription: "Acces direct și rapid în clinicile și spitalele private de top.",
     longDescription: "Sănătatea nu este negociabilă. Pachetele noastre de asigurare de sănătate private decontează cheltuielile majore și minore, oferindu-ți acces instant la excelența medicală privată.",
-    whatIsIt: "Un abonament la un sistem de sănătate cu acoperire completă, independent de sistemul public.",
-    whyIsItImportant: "Timpul înseamnă viață în caz de afecțiuni medicale. Asigurarea îți permite să ocolești listele lungi de așteptare din sistemul public și să primești expertiză de la medici specialiști exact când ai nevoie.",
+    whatIsIt: "Un abonament la un sistem premium de sănătate care funcționează independent de sistemul de stat. Asigurătorul plătește (decontează direct) contravaloarea serviciilor medicale prestate de clinicile și spitalele private partenere.",
+    whyIsItImportant: "Timpul înseamnă viață în caz de afecțiuni medicale. Asigurarea îți permite să ocolești listele lungi de așteptare din sistemul public și să primești expertiză de la medici de elită exact când ai nevoie.",
     targetAudience: [
       "Orice persoană care își permite și își dorește servicii medicale la standarde occidentale.",
       "Familii cu copii (pachetele familiale acoperă bolile copilăriei).",
@@ -69,7 +69,7 @@ export const servicesData: Record<string, ServiceContent> = {
     ],
     benefits: [
       { title: "Fără cozi", description: "Programare telefonică sau prin aplicație direct la specialist." },
-      { title: "Spitalizare cu confort sporit", description: "Acoperirea costurilor pentru intervenții complexe și condiții de internare beneficiu." },
+      { title: "Spitalizare de lux", description: "Acoperirea costurilor pentru intervenții complexe și condiții de internare premium." },
       { title: "Acoperire internațională", description: "Opțional, tratamente efectuate la clinici renumite din străinătate." }
     ],
     risksCovered: [
@@ -96,12 +96,12 @@ export const servicesData: Record<string, ServiceContent> = {
     id: "auto-insurance",
     slug: "auto-insurance",
     title: "Asigurări Auto",
-    shortDescription: "Garanția All-Risk pentru autoturismul tău beneficiu. Pachete complete RCA și CASCO.",
-    longDescription: "Un autoturism modern sau valoros necesită siguranță la nivel de reprezentanță. Fie că discutăm despre o banală zgârietură în parcare, sau de o daună majoră provocată unui terț, protecția auto este indispensabilă.",
-    whatIsIt: "O integrated solution (RCA obligatoriu + CASCO facultativ) care acoperă daunele mașinii TALE și daunele provocate terților, acoperind chiar și greșelile proprii, fenomenele naturale sau vandalismul.",
+    shortDescription: "Garanția All-Risk pentru autoturismul tău premium. Pachete complete RCA și CASCO.",
+    longDescription: "Un autoturism de lux necesită siguranță la nivel de reprezentanță. Fie că discutăm despre o banală zgârietură în parcare, sau de o daună majoră provocată unui terț, protecția auto este indispensabilă.",
+    whatIsIt: "O soluție integrată (RCA obligatoriu + CASCO facultativ) care acoperă daunele mașinii TALE și daunele provocate terților, acoperind chiar și greșelile proprii, fenomenele naturale sau vandalismul.",
     whyIsItImportant: "RCA-ul te protejează legal, dar CASCO îți protejează investiția. Un autoturism modern are reparații extrem de scumpe (senzori radar, faruri LED de mii de euro). O daună minoră poate destabiliza bugetul dacă nu ai CASCO.",
     targetAudience: [
-      "Posesori de vehicule beneficiu sau relativ noi (sub 10 ani vechime).",
+      "Posesori de vehicule premium sau relativ noi (sub 10 ani vechime).",
       "Persoane cu vehicule în regim de Leasing (unde CASCO este obligatoriu).",
       "Orice șofer care are nevoie de mobilitate continuă și Decontare Directă."
     ],
@@ -122,7 +122,7 @@ export const servicesData: Record<string, ServiceContent> = {
     ],
     whyGenerali: [
       "Evaluări foto de la distanță pentru despăgubiri rapide.",
-      "Reparații doar în reprezentanțe autorizate, folosind doar piese originale.",
+      "Reparații exclusiv în reprezentanțe autorizate, folosind doar piese originale.",
       "Generali este partenerul preferat al marilor branduri auto de prestigiu."
     ],
     faqs: [
@@ -135,7 +135,7 @@ export const servicesData: Record<string, ServiceContent> = {
     id: "travel-insurance",
     slug: "travel-insurance",
     title: "Asigurări Travel",
-    shortDescription: "Liniște deplină oriunde călătorești, cu protecție medicală și rambursare în caz de anulare.",
+    shortDescription: "Liniște deplină oriunde călătorești, cu protecție medicală și storno premium.",
     longDescription: "Călătoriile internaționale trebuie să fie despre experiențe. Elimină riscul falimentului personal din cauza unei spitalizări de urgență în străinătate (ex. SUA/Elveția) prin polițele noastre de travel.",
     whatIsIt: "O asigurare temporară sau anuală care decontează costurile actului medical din străinătate și compensează pierderile logistice (zbor anulat, bagaj pierdut).",
     whyIsItImportant: "Tratamentele medicale în afara României sunt exorbitante. O operație de urgență în SUA poate depăși 50.000 USD. Fără asigurare, pacienții suportă din bugetul propriu aceste facturi uriașe.",
@@ -197,7 +197,7 @@ export const servicesData: Record<string, ServiceContent> = {
       { title: "Accident în magazin", description: "Un client alunecă pe podeaua udă a cafenelei tale, suferă o fractură și te dă în judecată. Polița îți plătește avocații și daunele cerute de client." }
     ],
     whyGenerali: [
-      "Generali oferă servicii adaptate specific pentru antreprenorii români.",
+      "Generali oferă servicii croite special pentru antreprenorii români.",
       "Plata primei se poate face în rate flexibile pentru a nu bloca cash-flow-ul firmei.",
       "Asistență tehnică de specialitate și evaluatori industriali capabili să rezolve daune complexe rapid."
     ],

@@ -1,5 +1,4 @@
 "use server";
-export const runtime = "nodejs";
 import { createClient } from "@/lib/supabase/server";
 import { headers } from "next/headers";
 import { sendTelegramAlert } from "@/lib/telegram";
@@ -85,9 +84,21 @@ export async function submitLead(formData: FormData): Promise<ActionResponse> {
       return { success: false, error: "Eroare la salvarea datelor. Te rugăm să încerci din nou." };
     }
 
+    // Extract request metadata
+    const headersList = await headers();
+    const pageUrl = headersList.get("referer") || "N/A";
+    const timestamp = new Date().toLocaleString("ro-RO", {
+      timeZone: "Europe/Bucharest",
+      day: "2-digit",
+      month: "2-digit",
+      year: "numeric",
+      hour: "2-digit",
+      minute: "2-digit",
+      second: "2-digit",
+    });
 
     // No further Telegram alert; response will be returned
-    console.info(`[Lead ${submissionId}] ✅ Direct Telegram fetch completed`);
+    console.info(`[Lead ${submissionId}] ✅ Direct Telegram fetch completed (page: ${pageUrl}, time: ${timestamp})`);
 
     console.info(`[Lead] Telegram alert completed`);
     // Return success response
@@ -102,48 +113,46 @@ export async function submitLead(formData: FormData): Promise<ActionResponse> {
  * Saves a complex assessment (e.g. Financial Twin, Gap Analysis) and generates a unique ID.
  * Maps to database columns and triggers Telegram alerts.
  */
-export async function saveAssessment(
-  assessmentType: string,
-  data: Record<string, unknown>
-): Promise<{ success: boolean; id?: string; error?: string }> {
+export async function saveAssessment(assessmentType: string, data: Record<string, unknown>): Promise<{ success: boolean; id?: string; error?: string }> {
   // Generate a unique identifier for this assessment submission
   const submissionId = crypto.randomUUID();
   console.info(`[Assessment ${submissionId}] 🎯 Received server action invocation`);
 
   try {
     const supabase = await createClient();
-    const uniqueId = `aix_${assessmentType
-      .toLowerCase()
-      .replace(/[^a-z0-9]/g, "")}_${Math.random().toString(36).substr(2, 9)}`;
+    const uniqueId = `aix_${assessmentType.toLowerCase().replace(/[^a-z0-9]/g, '')}_${Math.random().toString(36).substr(2, 9)}`;
 
-    const name = typeof data === 'object' && data && 'name' in data && typeof (data as Record<string, unknown>)['name'] === 'string'
-      ? (data as Record<string, unknown>)['name'] as string
-      : 'Anonymous Assessment';
-    const email = typeof data === 'object' && data && 'email' in data && typeof (data as Record<string, unknown>)['email'] === 'string'
-      ? (data as Record<string, unknown>)['email'] as string
-      : '';
-    const phone = typeof data === 'object' && data && 'phone' in data && typeof (data as Record<string, unknown>)['phone'] === 'string'
-      ? (data as Record<string, unknown>)['phone'] as string
-      : '';
+    const name = (data.name as string) || "Anonymous Assessment";
+    const email = (data.email as string) || "";
+    const phone = (data.phone as string) || "";
     const service_type = `Assessment: ${assessmentType}`;
-    const messageText = typeof data === 'object' && data && 'message' in data && typeof (data as Record<string, unknown>)['message'] === 'string'
-      ? (data as Record<string, unknown>)['message'] as string
-      : '';
+
     const formattedMessage = [
-      messageText,
+      (data.message as string) || "",
       `Assessment ID: ${uniqueId}`,
       `Sursă: Platform Assessment`,
       `Detalii: ${JSON.stringify(data, null, 2)}`
     ].filter(Boolean).join("\n\n");
 
-    const payload = { name, email, phone, service_type, message: formattedMessage };
+    const payload = {
+      name,
+      email,
+      phone,
+      service_type,
+      message: formattedMessage
+    };
 
     const { error } = await supabase.from("leads").insert([{ ...payload, submission_id: submissionId }]);
+  if (!error) {
+    console.info(`[Assessment ${submissionId}] ✅ Supabase insert succeeded`);
+  }
+
     if (error) {
       console.error("Error saving assessment:", error);
       return { success: false, error: "Nu am putut salva evaluarea." };
     }
 
+    // Extract request metadata for assessment
     const headersList = await headers();
     const pageUrl = headersList.get("referer") || "N/A";
     const timestamp = new Date().toLocaleString("ro-RO", {
@@ -153,9 +162,10 @@ export async function saveAssessment(
       year: "numeric",
       hour: "2-digit",
       minute: "2-digit",
-      second: "2-digit"
+      second: "2-digit",
     });
 
+    // Log assessment receipt
     console.info(`[Assessment] Received ${assessmentType} for ${name} (${phone})`);
     console.info(`[Assessment] Starting Telegram alert`);
     console.info(`[Assessment ${submissionId}] 🚀 Starting Telegram alert`);
@@ -167,12 +177,14 @@ export async function saveAssessment(
       message: formattedMessage,
       pageUrl,
       timestamp,
-      submissionId
+      submissionId,
     });
     console.info(`[Assessment ${submissionId}] ✅ Telegram alert completed`);
-    console.info(`[Assessment] Telegram alert completed`);
 
+    console.info(`[Assessment] Telegram alert completed`);
+    // Return success response
     return { success: true, id: uniqueId };
+
   } catch (err) {
     console.error("Save assessment error:", err);
     return { success: false, error: "Eroare la procesarea evaluării." };

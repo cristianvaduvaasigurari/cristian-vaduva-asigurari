@@ -69,7 +69,7 @@ const ecosystemMenuData = [
     items: [
       { name: "AiX OS", href: "/aixos" },
       { name: "Home Find", href: "/home-find" },
-      { name: "AiXbeneficiu", href: "/aixbeneficiu" },
+      { name: "AiXLuxury", href: "/aixluxury" },
       { name: "Centru Urgențe", href: "/urgente" },
     ]
   },
@@ -89,7 +89,7 @@ const ecosystemMenuData = [
     title: "AiX Tools",
     items: [
       { name: "Second Opinion", href: "/second-opinion" },
-      { name: "Garaj Personal", href: "/luxury-garage" },
+      { name: "Luxury Garage", href: "/luxury-garage" },
       { name: "Client Journey", href: "/client-journey" },
       { name: "Smart Forms", href: "/smart-forms" },
       { name: "Wealth Passport", href: "/wealth-passport" },
@@ -138,7 +138,7 @@ export function Navbar() {
               cristianvaduva.com
             </Link>
             <div className="flex items-center gap-2 text-[10px] sm:text-xs text-muted-foreground uppercase tracking-widest font-medium mt-1">
-              <Link href="/aixbeneficiu" className="hover:text-foreground transition-colors">AiXbeneficiu</Link>
+              <Link href="/aixluxury" className="hover:text-foreground transition-colors">AiXLuxury</Link>
               <span className="w-1 h-1 rounded-full bg-border" />
               <Link href="/aixos" className="hover:text-foreground transition-colors">AiX OS</Link>
               <span className="w-1 h-1 rounded-full bg-border" />

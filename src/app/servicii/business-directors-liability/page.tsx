@@ -64,7 +64,7 @@ export default function BusinessDirectorsLiabilityPage() {
               <div className="absolute top-0 right-0 w-64 h-64 bg-amber-500/5 rounded-full blur-[80px] -z-10" />
               <h2 className="text-3xl font-heading font-bold mb-6 flex items-center gap-3">
                 <Star className="text-amber-500 w-8 h-8 fill-amber-500/20" />
-                Bază de Atracție pentru Management
+                Bază de Atracție pentru Top Management
               </h2>
               <p className="text-lg text-muted-foreground leading-relaxed mb-4">
                 Dacă vrei să aduci un CFO sau un CEO extrem de competent din piață, primul lucru pe care un profesionist de top îl va cere la angajare este: "Vreau Poliță D&O de minimum 1 milion de Euro".
@@ -108,25 +108,25 @@ export default function BusinessDirectorsLiabilityPage() {
           <div className="mb-24">
             <h2 className="text-3xl font-heading font-bold mb-10 text-center">De Ce Nu Poți Dormi Liniștit Fără D&O?</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="glass beneficiu-card p-8 rounded-[2rem] border border-border">
+              <div className="glass premium-card p-8 rounded-[2rem] border border-border">
                 <CheckCircle2 className="w-8 h-8 text-rose-600 mb-6" />
                 <h3 className="text-xl font-bold mb-3 text-foreground">Avansarea Costurilor de Apărare</h3>
                 <p className="text-muted-foreground leading-relaxed">
                   Când o corporație dă în judecată un fost director, îl va sufoca financiar. Avocații buni costă sute de euro pe oră. Polița D&O plătește ea "în avans" avocații tăi, ca să nu intri tu în faliment personal înainte să ajungi măcar să te aperi.
                 </p>
               </div>
-              <div className="glass beneficiu-card p-8 rounded-[2rem] border border-border">
+              <div className="glass premium-card p-8 rounded-[2rem] border border-border">
                 <CheckCircle2 className="w-8 h-8 text-rose-600 mb-6" />
                 <h3 className="text-xl font-bold mb-3 text-foreground">Atragerea Solidară a Statului (ANAF)</h3>
                 <p className="text-muted-foreground leading-relaxed">
                   Dacă firma intră în insolvență cu datorii la bugetul de stat, Fiscul este cel mai agresiv creditor, cerând judecătorului să spargă peretele SRL-ului pentru a confisca casele administratorului. Polița oferă fonduri de reprezentare direct împotriva organelor de control de stat.
                 </p>
               </div>
-              <div className="glass beneficiu-card p-8 rounded-[2rem] border border-border">
+              <div className="glass premium-card p-8 rounded-[2rem] border border-border">
                 <CheckCircle2 className="w-8 h-8 text-rose-600 mb-6" />
                 <h3 className="text-xl font-bold mb-3 text-foreground">Costurile de Reputație Externe</h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  Dacă apare o știre falsă că ai delapidat fonduri ca director, cariera ta viitoare e distrusă. Polițele D&O beneficiu acoperă costul unei firme de PR specializate (Public Relations Costs) pentru a restabili reputația executivului afectat de un proces mediatic.
+                  Dacă apare o știre falsă că ai delapidat fonduri ca director, cariera ta viitoare e distrusă. Polițele D&O premium acoperă costul unei firme de PR specializate (Public Relations Costs) pentru a restabili reputația executivului afectat de un proces mediatic.
                 </p>
               </div>
             </div>
@@ -175,19 +175,19 @@ export default function BusinessDirectorsLiabilityPage() {
           <div className="mb-24">
             <h2 className="text-3xl font-heading font-bold mb-10 text-center flex items-center justify-center gap-3">
               <Lightbulb className="text-amber-500 w-8 h-8" />
-              Linia Subțire între Eroare și Faliment
+              Linia Subțire între Eroare și Faliment Personal
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="glass beneficiu-card p-8 rounded-[2rem] border-l-4 border-l-amber-500">
+              <div className="glass premium-card p-8 rounded-[2rem] border-l-4 border-l-amber-500">
                 <h3 className="text-xl font-bold mb-4 text-foreground">Scenariul 1: Atacul Fostului Partener</h3>
                 <p className="text-muted-foreground leading-relaxed mb-4">
                   Doi parteneri se ceartă și unul iese din firmă. Ulterior, acesta îl dă în judecată pe administratorul rămas (Directorul General), acuzându-l că în ultimii 2 ani a luat "Decizii Manageriale Fără Fundament Comercial" vizând favorizarea altor furnizori, devalorizându-i lui acțiunile. Îi cere 300.000 EUR despăgubiri din averea personală.
                 </p>
                 <div className="p-4 bg-amber-50/50 rounded-xl border border-amber-100">
-                  <span className="font-bold text-amber-700">Rezolvarea poliței:</span> Directorul a depus cererea de Daună (Claim) către asigurător. Generali a angajat instant o casă de avocatură comercială beneficiu care a demonstrat că deciziile luate au fost în limitele legale ale "Business Judgment Rule". Polița D&O a plătit 45.000 EUR onorarii avocațiale masive, oprind pierderea casei directorului.
+                  <span className="font-bold text-amber-700">Rezolvarea poliței:</span> Directorul a depus cererea de Daună (Claim) către asigurător. Generali a angajat instant o casă de avocatură comercială premium care a demonstrat că deciziile luate au fost în limitele legale ale "Business Judgment Rule". Polița D&O a plătit 45.000 EUR onorarii avocațiale masive, oprind pierderea casei directorului.
                 </div>
               </div>
-              <div className="glass beneficiu-card p-8 rounded-[2rem] border-l-4 border-l-amber-500">
+              <div className="glass premium-card p-8 rounded-[2rem] border-l-4 border-l-amber-500">
                 <h3 className="text-xl font-bold mb-4 text-foreground">Scenariul 2: Concedierea Abuzivă</h3>
                 <p className="text-muted-foreground leading-relaxed mb-4">
                   Noul HR Manager concediază 10 oameni fără să respecte 100% pașii riguroși ai Codului Muncii. Cei 10 oameni se asociază și dau în judecată, în solidar, și Compania dar și pe HR Manager și Directorul General în persoană.
@@ -225,17 +225,17 @@ export default function BusinessDirectorsLiabilityPage() {
           <div className="mb-24">
             <h2 className="text-3xl font-heading font-bold mb-10 text-center">Întrebări Frecvente (D&O)</h2>
             <div className="space-y-6 max-w-4xl mx-auto">
-              <div className="glass beneficiu-card p-6 md:p-8 rounded-2xl border border-border">
+              <div className="glass premium-card p-6 md:p-8 rounded-2xl border border-border">
                 <h3 className="text-xl font-bold mb-3 text-foreground">Dacă delapidez un milion de euro intenționat din firmă și plec cu ei în Caraibe, mă apără polița?</h3>
                 <p className="text-muted-foreground leading-relaxed">Evident NU. Nicio asigurare din lume nu acoperă "Fapta Penală Săvârșită cu Intenție", Frauda dovedită de către un Tribunal și Obținerea necinstită de Avantaje Financiare. D&O apără "Erorile de Judecată Managerială" – adică prostia, naivitatea de business sau curajul investițional exagerat care s-a dovedit a fi un eșec (Neglijența).</p>
               </div>
-              <div className="glass beneficiu-card p-6 md:p-8 rounded-2xl border border-border">
+              <div className="glass premium-card p-6 md:p-8 rounded-2xl border border-border">
                 <h3 className="text-xl font-bold mb-3 text-foreground">Eu sunt fondatorul și dețin 100% din acțiuni, dar sunt și directorul general. Pot să mă dau singur în judecată ca să iau bani de la asigurare?</h3>
                 <p className="text-muted-foreground leading-relaxed">Polițele D&O au o clauză standard denumită "Insured vs Insured" (sau "Major Shareholder Exclusion"). Aceasta interzice despăgubirea dacă acționarii majoritari (tu) dau în judecată administratorul (tot tu). Polița servește pentru a te apăra de procesele inițiate de stat, de angajați, clienți, lichidatori judiciari sau acționari MINORITARI reali.</p>
               </div>
-              <div className="glass beneficiu-card p-6 md:p-8 rounded-2xl border border-border">
+              <div className="glass premium-card p-6 md:p-8 rounded-2xl border border-border">
                 <h3 className="text-xl font-bold mb-3 text-foreground">Eu plec din firmă anul acesta. Cine mă apără dacă un control ANAF vine peste 3 ani și găsește nereguli de pe vremea mandatului meu?</h3>
-                <p className="text-muted-foreground leading-relaxed">Polița D&O trebuie menținută activă de către companie. Dar chiar și dacă polița firmei s-a oprit, contractele beneficiu D&O au o clauză de "Run-Off" sau "Discovery Period" pentru directorii pensionați / demiși. Aceasta înseamnă că polița îți mai oferă un scut retroactiv pentru o perioadă de 3-6 ani ("termenul de prescripție") pentru greșelile făcute când erai activ.</p>
+                <p className="text-muted-foreground leading-relaxed">Polița D&O trebuie menținută activă de către companie. Dar chiar și dacă polița firmei s-a oprit, contractele premium D&O au o clauză de "Run-Off" sau "Discovery Period" pentru directorii pensionați / demiși. Aceasta înseamnă că polița îți mai oferă un scut retroactiv pentru o perioadă de 3-6 ani ("termenul de prescripție") pentru greșelile făcute când erai activ.</p>
               </div>
             </div>
           </div>

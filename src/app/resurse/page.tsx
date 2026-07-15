@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { ResourcesList } from "@/components/sections/resources-list";
 
 export const metadata: Metadata = {
-  title: "Resurse beneficiu | Ghiduri Financiare & Asigurări",
+  title: "Resurse Premium | Ghiduri Financiare & Asigurări",
   description: "Descarcă gratuit ghidurile și checklist-urile create de Cristian Văduva pentru optimizarea patrimoniului tău.",
 };
 
@@ -16,7 +16,7 @@ export default function ResursePage() {
             Librărie Digitală
           </div>
           <h1 className="text-4xl md:text-5xl font-heading font-bold mb-6 text-foreground tracking-tight">
-            Resurse beneficiu
+            Resurse Premium
           </h1>
           <p className="text-xl text-muted-foreground leading-relaxed">
             Educația financiară este prima formă de protecție. Am sintetizat decenii de experiență în ghiduri PDF clare, acționabile, pe care le poți descărca gratuit.

@@ -8,7 +8,7 @@ import { CONTACT } from "@/config/contact";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Asistență Rutieră beneficiu | Cristian Văduva",
+  title: "Asistență Rutieră Premium | Cristian Văduva",
   description: "Nu lăsa o defecțiune tehnică să îți strice călătoria. Tractare, depanare la fața locului și mașină de înlocuire 24/7 oriunde în Europa.",
 };
 
@@ -106,23 +106,23 @@ export default function RoadsideAssistancePage() {
 
           {/* 5. Beneficii */}
           <div className="mb-24">
-            <h2 className="text-3xl font-heading font-bold mb-10 text-center">Beneficiile unui produs beneficiu</h2>
+            <h2 className="text-3xl font-heading font-bold mb-10 text-center">Beneficiile unui produs Premium</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="glass beneficiu-card p-8 rounded-[2rem] border border-border">
+              <div className="glass premium-card p-8 rounded-[2rem] border border-border">
                 <CheckCircle2 className="w-8 h-8 text-blue-600 mb-6" />
                 <h3 className="text-xl font-bold mb-3 text-foreground">Depanare la Fața Locului</h3>
                 <p className="text-muted-foreground leading-relaxed">
                   Platforma care vine nu e doar un "cărăuș". De multe ori vine un tehnician cu tester și baterii robot. Dacă este vorba de o siguranță arsă sau o pană de baterie, mașina e pornită pe loc și îți continui drumul, fără să mai mergi la service.
                 </p>
               </div>
-              <div className="glass beneficiu-card p-8 rounded-[2rem] border border-border">
+              <div className="glass premium-card p-8 rounded-[2rem] border border-border">
                 <CheckCircle2 className="w-8 h-8 text-blue-600 mb-6" />
                 <h3 className="text-xl font-bold mb-3 text-foreground">Mașină la Schimb (Rent-a-car)</h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  Dacă mașina ta trebuie lăsată pe elevator la un service din Ungaria cu motorul dezasamblat 3 zile, polița beneficiu achită închirierea unui alt vehicul (de clasă similară) ca tu să îți poți duce copiii la destinația de vacanță propusă.
+                  Dacă mașina ta trebuie lăsată pe elevator la un service din Ungaria cu motorul dezasamblat 3 zile, polița premium achită închirierea unui alt vehicul (de clasă similară) ca tu să îți poți duce copiii la destinația de vacanță propusă.
                 </p>
               </div>
-              <div className="glass beneficiu-card p-8 rounded-[2rem] border border-border">
+              <div className="glass premium-card p-8 rounded-[2rem] border border-border">
                 <CheckCircle2 className="w-8 h-8 text-blue-600 mb-6" />
                 <h3 className="text-xl font-bold mb-3 text-foreground">Cazare la Hotel</h3>
                 <p className="text-muted-foreground leading-relaxed">
@@ -178,7 +178,7 @@ export default function RoadsideAssistancePage() {
               Liniștea Concediului Salvat
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="glass beneficiu-card p-8 rounded-[2rem] border-l-4 border-l-amber-500">
+              <div className="glass premium-card p-8 rounded-[2rem] border-l-4 border-l-amber-500">
                 <h3 className="text-xl font-bold mb-4 text-foreground">Scenariul 1: Eroarea de Combustibil</h3>
                 <p className="text-muted-foreground leading-relaxed mb-4">
                   Mirela oprește la benzinărie. Din grabă, pune 40 litri de benzină în motorizarea Diesel, se urcă și pornește motorul. Motorul face zgomote puternice și se oprește iremediabil la marginea stației.
@@ -187,7 +187,7 @@ export default function RoadsideAssistancePage() {
                   <span className="font-bold text-amber-700">Rezolvarea poliței:</span> Sună asistența. O platformă sosește în 40 de minute, ridică mașina și o duce la cel mai apropiat service de reprezentanță capabil să facă o curățare de rezervor și conducte. Dacă nu ar fi avut polița, ar fi chemat o firmă de pe internet la supra-preț.
                 </div>
               </div>
-              <div className="glass beneficiu-card p-8 rounded-[2rem] border-l-4 border-l-amber-500">
+              <div className="glass premium-card p-8 rounded-[2rem] border-l-4 border-l-amber-500">
                 <h3 className="text-xl font-bold mb-4 text-foreground">Scenariul 2: Coșmarul din Munții Pindului</h3>
                 <p className="text-muted-foreground leading-relaxed mb-4">
                   Familia Popescu traversează munții Greciei cu mașina burdușită de bagaje, la 40 de grade C. Turbina cedează, lăsând mașina fără putere.
@@ -225,15 +225,15 @@ export default function RoadsideAssistancePage() {
           <div className="mb-24">
             <h2 className="text-3xl font-heading font-bold mb-10 text-center">Întrebări Frecvente</h2>
             <div className="space-y-6 max-w-4xl mx-auto">
-              <div className="glass beneficiu-card p-6 md:p-8 rounded-2xl border border-border">
+              <div className="glass premium-card p-6 md:p-8 rounded-2xl border border-border">
                 <h3 className="text-xl font-bold mb-3 text-foreground">Plătește polița asistență rutieră piesa defectă de la motor?</h3>
                 <p className="text-muted-foreground leading-relaxed">Nu, rețineți diferența! Polița de asistență suportă LOGISTICA: venirea la fața locului, manopera de desfacere pe stradă (ex. te ajută să schimbi roata), tractarea către service, mașina la schimb, hotelul. Costul fizic al piesei (ex. cumperi o turbină nouă de 1500 EUR de la service) îl vei suporta tu (cu excepția în care ai și un Casco specializat care să le acopere).</p>
               </div>
-              <div className="glass beneficiu-card p-6 md:p-8 rounded-2xl border border-border">
+              <div className="glass premium-card p-6 md:p-8 rounded-2xl border border-border">
                 <h3 className="text-xl font-bold mb-3 text-foreground">Ce se întâmplă dacă am nevoie de platformă și chem eu o rudă sau pe cineva cu mașina?</h3>
                 <p className="text-muted-foreground leading-relaxed">Pentru a beneficia de costuri decontate, este OBLIGATORIU să suni în prealabil la numărul de pe polița Generali și ei să trimită firma parteneră. Dacă tu rezolvi tractarea "la negru" și aduci abia apoi factura la companie pentru rambursare, plata va fi de cele mai multe ori refuzată conform termenilor de asistență.</p>
               </div>
-              <div className="glass beneficiu-card p-6 md:p-8 rounded-2xl border border-border">
+              <div className="glass premium-card p-6 md:p-8 rounded-2xl border border-border">
                 <h3 className="text-xl font-bold mb-3 text-foreground">Este Asistența Rutieră valabilă pentru orice vechime de mașină?</h3>
                 <p className="text-muted-foreground leading-relaxed">Produsele individuale de tip "Asistență" impun adesea limitări de vârstă la emitere (de exemplu mașina nu trebuie să fie mai veche de 10 sau 12 ani pentru pachetele full Europa). Evaluăm vechimea mașinii tale și îți propunem pachetul în care te încadrezi (doar România, sau doar recuperare de bază).</p>
               </div>

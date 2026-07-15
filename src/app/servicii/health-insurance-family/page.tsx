@@ -9,7 +9,7 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Asigurare Sănătate Familie | Cristian Văduva",
-  description: "Tratamente fără compromisuri la privat pentru toată familia ta, de la pediatrie beneficiu pentru cei mici, la expertiză complexă pentru adulți.",
+  description: "Tratamente fără compromisuri la privat pentru toată familia ta, de la pediatrie premium pentru cei mici, la expertiză complexă pentru adulți.",
 };
 
 export default function HealthFamilyInsurancePage() {
@@ -29,7 +29,7 @@ export default function HealthFamilyInsurancePage() {
               Asigurare Medicală pentru Familie
             </h1>
             <p className="text-xl text-muted-foreground leading-relaxed mb-10 max-w-3xl">
-              Când copilul face febră mare în miez de noapte, vrei să ajungi direct la o clinică de pediatrie beneficiu, civilizată, curată și rapidă. Protecția de sănătate agregată "Family" îți garantează acces gratuit în elita clinicilor private pentru toți membrii gospodăriei sub același contract.
+              Când copilul face febră mare în miez de noapte, vrei să ajungi direct la o clinică de pediatrie premium, civilizată, curată și rapidă. Protecția de sănătate agregată "Family" îți garantează acces gratuit în elita clinicilor private pentru toți membrii gospodăriei sub același contract.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Button size="lg" className="h-14 px-8 text-lg rounded-full bg-blue-600 hover:bg-blue-700 text-white shadow-xl" asChild>
@@ -108,25 +108,25 @@ export default function HealthFamilyInsurancePage() {
           <div className="mb-24">
             <h2 className="text-3xl font-heading font-bold mb-10 text-center">Unificarea Standardului de Viață</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="glass beneficiu-card p-8 rounded-[2rem] border border-border">
+              <div className="glass premium-card p-8 rounded-[2rem] border border-border">
                 <CheckCircle2 className="w-8 h-8 text-rose-600 mb-6" />
                 <h3 className="text-xl font-bold mb-3 text-foreground">Discounturi Agregate</h3>
                 <p className="text-muted-foreground leading-relaxed">
                   Generali oferă de obicei un preț mult mai bun (reducere per capita) pentru includerea copiilor minori în contract față de situația în care fiecare adult ar cumpăra o poliță individuală complet separată.
                 </p>
               </div>
-              <div className="glass beneficiu-card p-8 rounded-[2rem] border border-border">
+              <div className="glass premium-card p-8 rounded-[2rem] border border-border">
                 <CheckCircle2 className="w-8 h-8 text-rose-600 mb-6" />
                 <h3 className="text-xl font-bold mb-3 text-foreground">Cazare pentru Însoțitor (Părinte)</h3>
                 <p className="text-muted-foreground leading-relaxed">
                   Când copilul trebuie să petreacă noaptea în spital la privat (ex. pentru o enterocolită gravă care necesită perfuzii), patul și mesele părintelui sunt decontate integral în aceeași rezervă.
                 </p>
               </div>
-              <div className="glass beneficiu-card p-8 rounded-[2rem] border border-border">
+              <div className="glass premium-card p-8 rounded-[2rem] border border-border">
                 <CheckCircle2 className="w-8 h-8 text-rose-600 mb-6" />
                 <h3 className="text-xl font-bold mb-3 text-foreground">Vaccinări Extinse</h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  Pachetele beneficiu de sănătate Generali acoperă vaccinurile opționale moderne, vitale (precum Rotavirus, Meningococ), care în mod normal la pediatru depășesc suta de euro pentru fiecare doză.
+                  Pachetele premium de sănătate Generali acoperă vaccinurile opționale moderne, vitale (precum Rotavirus, Meningococ), care în mod normal la pediatru depășesc suta de euro pentru fiecare doză.
                 </p>
               </div>
             </div>
@@ -143,7 +143,7 @@ export default function HealthFamilyInsurancePage() {
               <div className="flex items-start gap-4 p-5 rounded-2xl bg-white/50 border border-red-100 shadow-sm">
                 <span className="w-8 h-8 rounded-full bg-red-500 text-white flex items-center justify-center flex-shrink-0 font-bold">✕</span>
                 <div>
-                  <div className="font-bold text-foreground mb-1">Maternitate beneficiu (clauză opțională)</div>
+                  <div className="font-bold text-foreground mb-1">Maternitate Premium (clauză opțională)</div>
                   <div className="text-sm text-muted-foreground">Preluarea dosarului pre-natal masiv și achitarea integrală a pachetului de naștere (Cezariană/Naturală) de 15.000 LEI de la maternitățile de lux, condiționată strict de o perioadă de așteptare.</div>
                 </div>
               </div>
@@ -178,16 +178,16 @@ export default function HealthFamilyInsurancePage() {
               Economia Familiei, Protejată
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="glass beneficiu-card p-8 rounded-[2rem] border-l-4 border-l-amber-500">
+              <div className="glass premium-card p-8 rounded-[2rem] border-l-4 border-l-amber-500">
                 <h3 className="text-xl font-bold mb-4 text-foreground">Scenariul 1: Enterocolita Virală</h3>
                 <p className="text-muted-foreground leading-relaxed mb-4">
-                  Alex, 4 ani, face viroză și se deshidratează periculos vineri seară. Părinții nu vor să meargă la stat. Îl duc la un spital privat destinat doar copiilor. Cost: triaj 400 RON + perfuzii și internare 2 zile: 3.500 RON.
+                  Alex, 4 ani, face viroză și se deshidratează periculos vineri seară. Părinții nu vor să meargă la stat. Îl duc la un spital privat exclusiv pentru copii. Cost: triaj 400 RON + perfuzii și internare 2 zile: 3.500 RON.
                 </p>
                 <div className="p-4 bg-amber-50/50 rounded-xl border border-amber-100">
                   <span className="font-bold text-amber-700">Rezolvarea poliței:</span> Având polița Generali cu decontare directă, tatăl predă doar buletinul la recepție. Generali plătește factura de 3.900 RON în timp ce părinții își țin băiețelul curat și stabilizat într-o rezervă superioară.
                 </div>
               </div>
-              <div className="glass beneficiu-card p-8 rounded-[2rem] border-l-4 border-l-amber-500">
+              <div className="glass premium-card p-8 rounded-[2rem] border-l-4 border-l-amber-500">
                 <h3 className="text-xl font-bold mb-4 text-foreground">Scenariul 2: Pachetul Anual al Părinților</h3>
                 <p className="text-muted-foreground leading-relaxed mb-4">
                   A venit toamna și ambii soți, Radu (40 ani) și Diana (38 ani) decid să facă controlul tehnic anual al sănătății (Check-up). Teste Papanicolau, mamografii, teste efort EKG, analize de tiroidă și ecografie completă de abdomen. Preț cumulat la liber în privat: 3.200 LEI.
@@ -203,7 +203,7 @@ export default function HealthFamilyInsurancePage() {
           <div className="mb-24 glass rounded-[3rem] p-10 md:p-16 border border-border bg-[#c8102e]/5 text-center">
             <h2 className="text-3xl font-heading font-bold mb-10 text-[#c8102e]">Accesul direct către experții în Pediatrie</h2>
             <div className="text-lg text-muted-foreground mb-10 max-w-3xl mx-auto">
-              Sănătatea copiilor este delicată. Ai nevoie de acces în clinicile private renumite din marile reședințe județene care atrag marii specialiști de profil din România.
+              Sănătatea copiilor este delicată. Ai nevoie de acces în clicile private de elită din marile reședințe județene care atrag marii specialiști de profil din România.
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
               <div className="p-6 rounded-2xl bg-white border border-[#c8102e]/10 shadow-sm hover:shadow-md transition-shadow">
@@ -225,15 +225,15 @@ export default function HealthFamilyInsurancePage() {
           <div className="mb-24">
             <h2 className="text-3xl font-heading font-bold mb-10 text-center">Întrebări Frecvente (Părinți)</h2>
             <div className="space-y-6 max-w-4xl mx-auto">
-              <div className="glass beneficiu-card p-6 md:p-8 rounded-2xl border border-border">
+              <div className="glass premium-card p-6 md:p-8 rounded-2xl border border-border">
                 <h3 className="text-xl font-bold mb-3 text-foreground">Pot să fac asigurarea DOAR pentru copilul mic? Adulții sunt sănătoși.</h3>
                 <p className="text-muted-foreground leading-relaxed">Asigurătorii internaționali interzic sau descurajează acest procedeu de selecție strictă a riscului. Copiii pot fi asigurați cu ușurință pe o poliță doar împreună cu minim unul dintre părinți ca "asigurat principal". Scopul protecției este siguranța familială agregată.</p>
               </div>
-              <div className="glass beneficiu-card p-6 md:p-8 rounded-2xl border border-border">
+              <div className="glass premium-card p-6 md:p-8 rounded-2xl border border-border">
                 <h3 className="text-xl font-bold mb-3 text-foreground">Sunt însărcinată în 3 luni, aflu despre voi. Pot face asigurarea să îmi plătească nașterea?</h3>
                 <p className="text-muted-foreground leading-relaxed">Din păcate, NU. Riscul maternității prezintă o excludere dură de "Perioadă de Așteptare" (waiting period) de regulă de minim 9-10 luni de la emiterea poliței, tocmai pentru a evita achiziționarea produsului strict de către persoanele deja gestante care "cumpara" un profit instantaneu. Polița se contractează PREVENTIV.</p>
               </div>
-              <div className="glass beneficiu-card p-6 md:p-8 rounded-2xl border border-border">
+              <div className="glass premium-card p-6 md:p-8 rounded-2xl border border-border">
                 <h3 className="text-xl font-bold mb-3 text-foreground">Băiețelul meu poartă ochelari, reînnoirea lentilelor e acoperită?</h3>
                 <p className="text-muted-foreground leading-relaxed">Consultul oftalmologic pentru diagnostic (dioptrie etc.) este integral decontat la privat. Achiziția materială (ramele, sticla propriu-zisă) nu sunt plătite de niciun pachet medical majoritar, ținând de comercial, similar achiziției de medicamente prescrise care se face din bani personali la farmacie.</p>
               </div>

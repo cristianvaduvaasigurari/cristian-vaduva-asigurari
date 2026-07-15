@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { AcademyHub } from "@/components/sections/academy-hub";
 
 export const metadata: Metadata = {
-  title: "AiX Academy | Hub Educațional beneficiu",
+  title: "AiX Academy | Hub Educațional Premium",
   description: "Cea mai avansată resursă educațională din România despre Asigurări, Real Estate și Planificare Financiară.",
 };
 

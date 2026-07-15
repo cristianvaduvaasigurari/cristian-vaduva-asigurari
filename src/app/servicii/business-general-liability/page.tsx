@@ -99,30 +99,30 @@ export default function BusinessGeneralLiabilityPage() {
               </div>
               <div className="p-6 rounded-2xl bg-emerald-50/50 border border-emerald-100">
                 <h4 className="font-bold text-emerald-800 mb-2">Firme de Mentenanță, Instalații, Paznici</h4>
-                <p className="text-muted-foreground">Cei care lucrează "pe locațiile clienților". (Ex: Firma ta de pază lasă un obiect nesupravegheat și are loc un jaf masiv, sau instalatorul tău inundă clădirea beneficiu de sub el).</p>
+                <p className="text-muted-foreground">Cei care lucrează "pe locațiile clienților". (Ex: Firma ta de pază lasă un obiect nesupravegheat și are loc un jaf masiv, sau instalatorul tău inundă clădirea premium de sub el).</p>
               </div>
             </div>
           </div>
 
           {/* 5. Beneficii */}
           <div className="mb-24">
-            <h2 className="text-3xl font-heading font-bold mb-10 text-center">Avantajele Structurii beneficiu Generali</h2>
+            <h2 className="text-3xl font-heading font-bold mb-10 text-center">Avantajele Structurii Premium Generali</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="glass beneficiu-card p-8 rounded-[2rem] border border-border">
+              <div className="glass premium-card p-8 rounded-[2rem] border border-border">
                 <CheckCircle2 className="w-8 h-8 text-slate-600 mb-6" />
                 <h3 className="text-xl font-bold mb-3 text-foreground">Acoperirea Cheltuielilor de Judecată</h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  Când victima dă firma în judecată pe civil, simpla angajare a unei case de avocatură bune să apere compania te va costa o avere chiar și dacă vei câștiga procesul. Polița beneficiu suportă taxele de timbru și onorariile de apărare în instanță aprobate.
+                  Când victima dă firma în judecată pe civil, simpla angajare a unei case de avocatură bune să apere compania te va costa o avere chiar și dacă vei câștiga procesul. Polița premium suportă taxele de timbru și onorariile de apărare în instanță aprobate.
                 </p>
               </div>
-              <div className="glass beneficiu-card p-8 rounded-[2rem] border border-border">
+              <div className="glass premium-card p-8 rounded-[2rem] border border-border">
                 <CheckCircle2 className="w-8 h-8 text-slate-600 mb-6" />
                 <h3 className="text-xl font-bold mb-3 text-foreground">Extensia "Fapta Prepușilor"</h3>
                 <p className="text-muted-foreground leading-relaxed">
                   Patronul este responsabil legal pentru incompetența angajaților (prepușilor) săi. Polița Generali protejează firma-mamă tocmai împotriva erorilor fatale făcute de orice angajat în timpul orelor de program la sediu.
                 </p>
               </div>
-              <div className="glass beneficiu-card p-8 rounded-[2rem] border border-border">
+              <div className="glass premium-card p-8 rounded-[2rem] border border-border">
                 <CheckCircle2 className="w-8 h-8 text-slate-600 mb-6" />
                 <h3 className="text-xl font-bold mb-3 text-foreground">Soluționare fără Tribunal (Amiabilă)</h3>
                 <p className="text-muted-foreground leading-relaxed">
@@ -178,7 +178,7 @@ export default function BusinessGeneralLiabilityPage() {
               Scutul la un pas de Catastrofă
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="glass beneficiu-card p-8 rounded-[2rem] border-l-4 border-l-amber-500">
+              <div className="glass premium-card p-8 rounded-[2rem] border-l-4 border-l-amber-500">
                 <h3 className="text-xl font-bold mb-4 text-foreground">Scenariul 1: Iarna pe trotuar</h3>
                 <p className="text-muted-foreground leading-relaxed mb-4">
                   O companie care deține o clădire istorică pe bulevard nu dezapezește țurțurii de la streașină. Un țurțure uriaș cade pe capul unui medic pieton, rănindu-l grav la nivel cervical, oprindu-l din a mai profesa medicina chirurgicală 6 luni.
@@ -187,7 +187,7 @@ export default function BusinessGeneralLiabilityPage() {
                   <span className="font-bold text-amber-700">Rezolvarea poliței:</span> Avocații victimei cer instanței 200.000 EUR "pierderi de venit și spitalizare" de la firma proprietară a clădirii. Având Răspundere Civilă Față de Terți (ca proprietar), juriștii firmei au trimis direct notificarea din Tribunal către compania de asigurări care a asumat plata negocierilor gigantice, patronul nedând niciun ban.
                 </div>
               </div>
-              <div className="glass beneficiu-card p-8 rounded-[2rem] border-l-4 border-l-amber-500">
+              <div className="glass premium-card p-8 rounded-[2rem] border-l-4 border-l-amber-500">
                 <h3 className="text-xl font-bold mb-4 text-foreground">Scenariul 2: Scara Muncitorilor</h3>
                 <p className="text-muted-foreground leading-relaxed mb-4">
                   Firma ta de instalatori montează reclame luminoase într-un mall. O scară metalică nu e asigurată bine și cade peste o zonă expozițională a altui magazin, distrugând aparatură electronică de display expusă la raft (TV-uri 8K).
@@ -225,15 +225,15 @@ export default function BusinessGeneralLiabilityPage() {
           <div className="mb-24">
             <h2 className="text-3xl font-heading font-bold mb-10 text-center">Întrebări Frecvente Juridice</h2>
             <div className="space-y-6 max-w-4xl mx-auto">
-              <div className="glass beneficiu-card p-6 md:p-8 rounded-2xl border border-border">
+              <div className="glass premium-card p-6 md:p-8 rounded-2xl border border-border">
                 <h3 className="text-xl font-bold mb-3 text-foreground">Sunt protejat dacă "fur" clienții altei firme și mă dă în judecată pentru daune materiale?</h3>
                 <p className="text-muted-foreground leading-relaxed">NU! Răspunderea civilă GENERALĂ (General Liability) acoperă exclusiv daune fizice (Bodily Injury) sau pagube materiale pure distruse fizic (Property Damage) și daunele financiare *consecutive* acestora. Nu acoperă litigiile comerciale pure, furtul de proprietate intelectuală, neplata ratelor sau nerespectarea termenelor contractuale de predare a proiectului. Acolo te supui penalităților de contract comercial.</p>
               </div>
-              <div className="glass beneficiu-card p-6 md:p-8 rounded-2xl border border-border">
+              <div className="glass premium-card p-6 md:p-8 rounded-2xl border border-border">
                 <h3 className="text-xl font-bold mb-3 text-foreground">Angajatul meu de la producție își taie o mână la aparat. Polița R.C. despăgubește acest "terț"?</h3>
                 <p className="text-muted-foreground leading-relaxed">Angajații proprii, aflați cu tine în contract de muncă, NU sunt "Terți" (adică străini). Ei fac parte din sfera de control a firmei tale (Răspundere a Angajatorului față de Angajat - Employers Liability) care necesită o Extensie specială sau un produs complet diferit denumit "Asigurare de Accidente a Angajaților / Răspunderea Angajatorului".</p>
               </div>
-              <div className="glass beneficiu-card p-6 md:p-8 rounded-2xl border border-border">
+              <div className="glass premium-card p-6 md:p-8 rounded-2xl border border-border">
                 <h3 className="text-xl font-bold mb-3 text-foreground">Cât costă să îmi fac o limită uriașă de 500.000 EUR (căci așa cere Mall-ul)?</h3>
                 <p className="text-muted-foreground leading-relaxed">Este contra-intuitiv, dar Răspunderea Civilă este adesea foarte ieftină. Nu trebuie să ai banii "în cont". O poliță de 500.000 EUR pentru o firmă de consultanță IT unde riscul să lovească pe cineva fizic e minim, poate costa doar 150-200 EUR PE AN. Costul crește exponențial abia atunci când ești o firmă de macarele, unde riscul de tragedie este enorm.</p>
               </div>

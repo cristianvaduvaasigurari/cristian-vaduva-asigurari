@@ -37,10 +37,10 @@ const modules = [
     color: "bg-purple-50/50 border-purple-100"
   },
   {
-    id: "luxury-assets",
-    title: "Bunuri de Valoare",
-    metric: "3 Bunuri beneficiu",
-    desc: "Protecție extinsă pentru supercars, artă și yacht-uri.",
+    id: "luxury",
+    title: "Luxury Assets",
+    metric: "3 Bunuri Premium",
+    desc: "Protecție exclusivistă pentru supercars, artă și yacht-uri.",
     icon: <Sparkles className="w-6 h-6 text-amber-600" />,
     link: "/luxury-assets",
     color: "bg-amber-50/50 border-amber-100"
@@ -89,14 +89,14 @@ const mainTools = [
   { name: "Satellite Scan", icon: <MapPin className="w-5 h-5" />, href: "/satellite-view", desc: "Analiză proprietate prin satelit" },
   { name: "AI Avatar", icon: <Video className="w-5 h-5" />, href: "/avatar", desc: "Concierge inteligent video" },
   { name: "Market Radar", icon: <Rss className="w-5 h-5" />, href: "/market-radar", desc: "Dobânzi și analize live" },
-  { name: "Wealth Passport", icon: <FileText className="w-5 h-5" />, href: "/wealth-passport", desc: "Raportul tău complet" }
+  { name: "Wealth Passport", icon: <FileText className="w-5 h-5" />, href: "/wealth-passport", desc: "Documentul tău de elită" }
 ];
 
 export function MissionControlDashboard() {
   return (
     <div className="w-full flex flex-col gap-10">
       
-      {/* Main Banner with Quick Actions */}
+      {/* Top Banner with Quick Actions */}
       <div className="w-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
         {mainTools.map((tool, idx) => (
           <Link key={idx} href={tool.href} className="group p-5 rounded-[2rem] border border-border bg-white hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col items-start gap-4">

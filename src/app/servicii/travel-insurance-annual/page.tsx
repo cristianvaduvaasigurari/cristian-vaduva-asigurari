@@ -108,21 +108,21 @@ export default function TravelAnnualInsurancePage() {
           <div className="mb-24">
             <h2 className="text-3xl font-heading font-bold mb-10 text-center">Avantajele Protecției Automate</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="glass beneficiu-card p-8 rounded-[2rem] border border-border">
+              <div className="glass premium-card p-8 rounded-[2rem] border border-border">
                 <CheckCircle2 className="w-8 h-8 text-cyan-600 mb-6" />
                 <h3 className="text-xl font-bold mb-3 text-foreground">Activare Tăcută (Automată)</h3>
                 <p className="text-muted-foreground leading-relaxed">
                   Nu mai trebuie să anunți asigurătorul prin email când zbori și unde. Dacă te hotărăști azi să pleci cu mașina până în Sofia (Bulgaria), pur și simplu pleci. Ești asigurat din momentul în care ai trecut granița la vamă.
                 </p>
               </div>
-              <div className="glass beneficiu-card p-8 rounded-[2rem] border border-border">
+              <div className="glass premium-card p-8 rounded-[2rem] border border-border">
                 <CheckCircle2 className="w-8 h-8 text-cyan-600 mb-6" />
                 <h3 className="text-xl font-bold mb-3 text-foreground">Preț Imbatabil la Frecvență Mare</h3>
                 <p className="text-muted-foreground leading-relaxed">
                   Spre deosebire de o poliță cumpărată zilnic cu 5-10 Lei/zi, abonamentul anual Multi-Trip te poate costa 300-400 Lei o singură dată. Dacă faci adunat 40 de zile pe drumuri într-un an, costul per zi este infim.
                 </p>
               </div>
-              <div className="glass beneficiu-card p-8 rounded-[2rem] border border-border">
+              <div className="glass premium-card p-8 rounded-[2rem] border border-border">
                 <CheckCircle2 className="w-8 h-8 text-cyan-600 mb-6" />
                 <h3 className="text-xl font-bold mb-3 text-foreground">Acoperiri VIP Incluse</h3>
                 <p className="text-muted-foreground leading-relaxed">
@@ -178,7 +178,7 @@ export default function TravelAnnualInsurancePage() {
               Liniștea celui care zboară des
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="glass beneficiu-card p-8 rounded-[2rem] border-l-4 border-l-amber-500">
+              <div className="glass premium-card p-8 rounded-[2rem] border-l-4 border-l-amber-500">
                 <h3 className="text-xl font-bold mb-4 text-foreground">Scenariul 1: Plecarea Neprevăzută</h3>
                 <p className="text-muted-foreground leading-relaxed mb-4">
                   Alex s-a hotărât miercuri seara că vineri dimineață merge cu niște prieteni pe motocicleta până la Varna, în Bulgaria. Sâmbătă cade ușor pe asfalt și își fracturează clavicula.
@@ -187,7 +187,7 @@ export default function TravelAnnualInsurancePage() {
                   <span className="font-bold text-amber-700">Rezolvarea poliței:</span> Nefiind asigurat individual, Alex ar fi plătit mii de euro. Din fericire, își cumpărase în ianuarie "Anuala Multi-Trip". Ea stătea tăcută în sertar. Odată ajuns la spitalul din Varna cu targa, dă polița din email-ul vechi, iar aceasta preia instant cazul 100%, pentru că el trecuse granița României.
                 </div>
               </div>
-              <div className="glass beneficiu-card p-8 rounded-[2rem] border-l-4 border-l-amber-500">
+              <div className="glass premium-card p-8 rounded-[2rem] border-l-4 border-l-amber-500">
                 <h3 className="text-xl font-bold mb-4 text-foreground">Scenariul 2: Furtul bagajului vital</h3>
                 <p className="text-muted-foreground leading-relaxed mb-4">
                   Polița e valabilă și pentru mici ciupeli turistice. Pe o plajă din Barcelona, Dianei i se fură poșeta cu ochelarii de soare Gucci și ceva cash (raportează la poliție).
@@ -201,7 +201,7 @@ export default function TravelAnnualInsurancePage() {
 
           {/* 8. De ce să alegi Generali România */}
           <div className="mb-24 glass rounded-[3rem] p-10 md:p-16 border border-border bg-[#c8102e]/5 text-center">
-            <h2 className="text-3xl font-heading font-bold mb-10 text-[#c8102e]">O Gestiune de Tip Flotă Dedicată</h2>
+            <h2 className="text-3xl font-heading font-bold mb-10 text-[#c8102e]">O Gestiune de Tip Flotă Personală</h2>
             <div className="text-lg text-muted-foreground mb-10 max-w-3xl mx-auto">
               Tehnologia modernă de emitere a polițelor de tip abonament salvează stresul repetitiv de la ghișeu.
             </div>
@@ -225,15 +225,15 @@ export default function TravelAnnualInsurancePage() {
           <div className="mb-24">
             <h2 className="text-3xl font-heading font-bold mb-10 text-center">Întrebări Frecvente</h2>
             <div className="space-y-6 max-w-4xl mx-auto">
-              <div className="glass beneficiu-card p-6 md:p-8 rounded-2xl border border-border">
+              <div className="glass premium-card p-6 md:p-8 rounded-2xl border border-border">
                 <h3 className="text-xl font-bold mb-3 text-foreground">Ce înseamnă exact acea "limită de X zile per călătorie"?</h3>
                 <p className="text-muted-foreground leading-relaxed">Polița este valabilă UN AN calendaristic, dar fiecare "ieșire din țară și stat continuu afară" nu trebuie să depășească de regulă 30, 45 sau uneori 60 de zile. De ce? Dacă stai 9 luni neîntrerupt în Germania, înseamnă că trăiești practic acolo și trebuie să-ți faci asigurare statală la AOK germană, nu să fraudezi sistemul românesc low-cost turistic.</p>
               </div>
-              <div className="glass beneficiu-card p-6 md:p-8 rounded-2xl border border-border">
+              <div className="glass premium-card p-6 md:p-8 rounded-2xl border border-border">
                 <h3 className="text-xl font-bold mb-3 text-foreground">Pot să fac doar pentru anumite continente (Europa)?</h3>
                 <p className="text-muted-foreground leading-relaxed">Da! Când cumperi polița Anuală, bifezi aria teritorială. Dacă bifezi "Europa", polița va costa mult mai puțin și te va acoperi automat la toate zborurile din spațiul European. Dacă vrei SUA și Japonia, prețul crește semnificativ, adăugând acoperirea "Mondial" la baza anuală.</p>
               </div>
-              <div className="glass beneficiu-card p-6 md:p-8 rounded-2xl border border-border">
+              <div className="glass premium-card p-6 md:p-8 rounded-2xl border border-border">
                 <h3 className="text-xl font-bold mb-3 text-foreground">Am poliță anuală. Acoperă și vacanțele mele la schi din Austria?</h3>
                 <p className="text-muted-foreground leading-relaxed">Depinde cum o configurezi! Polița "standard" acoperă strict relaxarea, plimbarea și vara. Dacă dorești să o folosești PENTRU TOT ANUL inclusiv la schi, trebuie să cumperi suplimentul (rider-ul) de "Sporturi de Iarnă" odată cu ea, ridicându-i puțin prețul, dar securizându-te definitiv.</p>
               </div>

@@ -11,7 +11,7 @@ const scenarios = [
   { id: "married", icon: <CheckCircle2 className="w-5 h-5" />, label: "Mă căsătoresc" },
   { id: "child", icon: <Baby className="w-5 h-5" />, label: "Apar copii" },
   { id: "business", icon: <Activity className="w-5 h-5" />, label: "Deschid o afacere" },
-  { id: "beneficiu_car", icon: <Car className="w-5 h-5" />, label: "Mașină beneficiu" },
+  { id: "luxury_car", icon: <Car className="w-5 h-5" />, label: "Mașină premium" },
   { id: "abroad", icon: <Plane className="w-5 h-5" />, label: "Mă mut în străinătate" },
   { id: "retire", icon: <TrendingUp className="w-5 h-5" />, label: "Mă pensionez anticipat" }
 ];
@@ -35,7 +35,7 @@ export function LifeSimulator() {
   let baseScore = 40;
   if (savings > income * 6) baseScore += 20; // Emergency fund
   if (investments > 20000) baseScore += 10;
-  if (mortgage > propertyValue * 0.8) baseScore -= 15; // high leverage
+  if (mortgage > propertyValue * 0.8) baseScore -= 15; // High leverage
   if (children > 0 && savings < 5000) baseScore -= 20;
 
   const currentRisk = (mortgage > 100000 && income < 4000) ? "Ridicat" : (mortgage > 0 || children > 0) ? "Mediu" : "Scăzut";

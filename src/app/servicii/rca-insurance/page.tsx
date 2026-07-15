@@ -108,21 +108,21 @@ export default function RcaInsurancePage() {
           <div className="mb-24">
             <h2 className="text-3xl font-heading font-bold mb-10 text-center">Avantajele Sistemului Modern RCA</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="glass beneficiu-card p-8 rounded-[2rem] border border-border">
+              <div className="glass premium-card p-8 rounded-[2rem] border border-border">
                 <CheckCircle2 className="w-8 h-8 text-blue-600 mb-6" />
                 <h3 className="text-xl font-bold mb-3 text-foreground">Sistemul Bonus-Malus</h3>
                 <p className="text-muted-foreground leading-relaxed">
                   Conducerea prudentă te răsplătește. Șoferii fără accidente pe parcursul anilor (clasa B8) beneficiază de o reducere de până la 50% din tariful standard de bază.
                 </p>
               </div>
-              <div className="glass beneficiu-card p-8 rounded-[2rem] border border-border">
+              <div className="glass premium-card p-8 rounded-[2rem] border border-border">
                 <CheckCircle2 className="w-8 h-8 text-blue-600 mb-6" />
                 <h3 className="text-xl font-bold mb-3 text-foreground">Cartea Verde Inclusă</h3>
                 <p className="text-muted-foreground leading-relaxed">
                   Polița RCA românească vine din oficiu cu protecție valabilă în toate statele din Spațiul Economic European. Ești asigurat automat dacă lovești un vehicul în Austria.
                 </p>
               </div>
-              <div className="glass beneficiu-card p-8 rounded-[2rem] border border-border">
+              <div className="glass premium-card p-8 rounded-[2rem] border border-border">
                 <CheckCircle2 className="w-8 h-8 text-blue-600 mb-6" />
                 <h3 className="text-xl font-bold mb-3 text-foreground">Format 100% Digital</h3>
                 <p className="text-muted-foreground leading-relaxed">
@@ -178,7 +178,7 @@ export default function RcaInsurancePage() {
               Impactul în Viața Reală
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="glass beneficiu-card p-8 rounded-[2rem] border-l-4 border-l-amber-500">
+              <div className="glass premium-card p-8 rounded-[2rem] border-l-4 border-l-amber-500">
                 <h3 className="text-xl font-bold mb-4 text-foreground">Scenariul 1: Tamponarea Ușoară și Decontarea Directă</h3>
                 <p className="text-muted-foreground leading-relaxed mb-4">
                   Ești oprit la semafor. Cineva nu frânează la timp și te lovește ușor din spate, stricând bara. Faceți constatare amiabilă. Cel vinovat are o poliță la un asigurător recunoscut pentru întârzieri de plată și refuzuri la service.
@@ -187,7 +187,7 @@ export default function RcaInsurancePage() {
                   <span className="font-bold text-amber-700">Rezolvarea poliței:</span> Deoarece tu ți-ai cumpărat propriul RCA la Generali cu clauza de "Decontare Directă", deschizi dosarul direct la Generali (firma ta excelentă). Generali îți repară mașina fără stres la o reprezentanță de top, urmând ca ei să își recupereze banii mai târziu de la firma vinovatului. Ești ferit total de coșmar.
                 </div>
               </div>
-              <div className="glass beneficiu-card p-8 rounded-[2rem] border-l-4 border-l-amber-500">
+              <div className="glass premium-card p-8 rounded-[2rem] border-l-4 border-l-amber-500">
                 <h3 className="text-xl font-bold mb-4 text-foreground">Scenariul 2: Paguba de proporții</h3>
                 <p className="text-muted-foreground leading-relaxed mb-4">
                   Neacordare de prioritate la viraj. Lovești un Mercedes Maybach nou, dauna fiind de peste 40.000 EUR la componente.
@@ -208,15 +208,15 @@ export default function RcaInsurancePage() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
               <div className="p-6 rounded-2xl bg-white border border-[#c8102e]/10 shadow-sm hover:shadow-md transition-shadow">
                 <h4 className="font-bold text-[#c8102e] mb-3 text-lg">Respect în Piață</h4>
-                <p className="text-muted-foreground leading-relaxed">Polițele emise de companii solide tip Generali sunt acceptate la plată imediată de orice reprezentanță auto beneficiu (BMW, Mercedes) din România, fără cereri de plată suplimentară din partea victimei.</p>
+                <p className="text-muted-foreground leading-relaxed">Polițele emise de companii solide tip Generali sunt acceptate la plată imediată de orice reprezentanță auto premium (BMW, Mercedes) din România, fără cereri de plată suplimentară din partea victimei.</p>
               </div>
               <div className="p-6 rounded-2xl bg-white border border-[#c8102e]/10 shadow-sm hover:shadow-md transition-shadow">
                 <h4 className="font-bold text-[#c8102e] mb-3 text-lg">Decontare Directă Reală</h4>
                 <p className="text-muted-foreground leading-relaxed">Când îți repari mașina pe decontarea ta directă, vrei un service excepțional care acceptă decontarea rapidă pe baza reputației companiei care plătește dauna.</p>
               </div>
               <div className="p-6 rounded-2xl bg-white border border-[#c8102e]/10 shadow-sm hover:shadow-md transition-shadow">
-                <h4 className="font-bold text-[#c8102e] mb-3 text-lg">Asistență Rapidă</h4>
-                <p className="text-muted-foreground leading-relaxed">Accidentele generează panică. Să poți suna la orice oră din noapte și să îți răspundă un agent uman care îți explică cum să completezi amiabila e un ajutor de neprețuit.</p>
+                <h4 className="font-bold text-[#c8102e] mb-3 text-lg">Call Center Premium</h4>
+                <p className="text-muted-foreground leading-relaxed">Accidentele generează panică. Să poți suna la orice oră din noapte și să îți răspundă un agent uman care îți explică cum să completezi amiabila e un serviciu de lux neprețuit.</p>
               </div>
             </div>
           </div>
@@ -225,15 +225,15 @@ export default function RcaInsurancePage() {
           <div className="mb-24">
             <h2 className="text-3xl font-heading font-bold mb-10 text-center">Întrebări Frecvente</h2>
             <div className="space-y-6 max-w-4xl mx-auto">
-              <div className="glass beneficiu-card p-6 md:p-8 rounded-2xl border border-border">
+              <div className="glass premium-card p-6 md:p-8 rounded-2xl border border-border">
                 <h3 className="text-xl font-bold mb-3 text-foreground">Ce se întâmplă dacă fac accident și am RCA pe 1 lună care a expirat de 2 zile?</h3>
                 <p className="text-muted-foreground leading-relaxed">Consecințele sunt dezastruoase. Poliția îți reține certificatul, plătești o amendă uriașă, iar reparația mașinii celuilalt va trebui achitată integral, numerar, de către tine. Nu există nicio zi de grație la RCA.</p>
               </div>
-              <div className="glass beneficiu-card p-6 md:p-8 rounded-2xl border border-border">
+              <div className="glass premium-card p-6 md:p-8 rounded-2xl border border-border">
                 <h3 className="text-xl font-bold mb-3 text-foreground">De ce este polița mea mai scumpă decât a prietenului meu pentru aceeași mașină?</h3>
                 <p className="text-muted-foreground leading-relaxed">RCA-ul ia în calcul vârsta proprietarului (șoferii sub 30 de ani au tarife semnificativ mai mari din cauza statisticii incidentelor), localitatea în care este înregistrată mașina (orașele mari au risc major) și mai ales istoricul de daune (Bonus-Malus).</p>
               </div>
-              <div className="glass beneficiu-card p-6 md:p-8 rounded-2xl border border-border">
+              <div className="glass premium-card p-6 md:p-8 rounded-2xl border border-border">
                 <h3 className="text-xl font-bold mb-3 text-foreground">Cine completează Amiabila? O pot face pe telefon?</h3>
                 <p className="text-muted-foreground leading-relaxed">Da! Acum se folosește intens aplicația "Amiabila" aprobată oficial, cu care ambii șoferi (dacă sunt de acord asupra vinovăției și sunt doar 2 mașini implicate) completează digital totul pe un singur ecran, inclusiv schema desenată. Aplicația trimite direct dosarul către asigurători.</p>
               </div>

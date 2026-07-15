@@ -4,7 +4,7 @@ import { AiVideoAvatar } from "@/components/sections/ai-video-avatar";
 
 export const metadata: Metadata = {
   title: "AI Video Concierge | Cristian Văduva",
-  description: "Asistentul tău video digital pentru ghidare financiară beneficiu și asistență rapidă.",
+  description: "Asistentul tău video digital pentru ghidare financiară premium și asistență rapidă.",
 };
 
 export default function AvatarPage() {

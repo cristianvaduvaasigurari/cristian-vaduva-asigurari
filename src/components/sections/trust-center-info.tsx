@@ -7,8 +7,8 @@ import Link from "next/link";
 
 const pillars = [
   {
-    title: "Abordarea Noastră Riguroasă",
-    desc: "Nu vindem polițe, ci structurăm siguranță. Analizăm fiecare expunere patrimonială la virgulă, folosind indicatori matematici preciși și parteneriate de reasigurare de top.",
+    title: "Abordarea Profesională",
+    desc: "Nu vindem polițe, ci structurăm siguranță. Analizăm fiecare expunere patrimonială la virgulă, folosind indicatori matematici preciși și parteneriate de reasigurare exclusive.",
     icon: <Award className="w-5 h-5 text-blue-600" />
   },
   {
@@ -24,8 +24,8 @@ const pillars = [
 ];
 
 const ecosystemItems = [
-  { name: "Colaborare Generali România", desc: "Polițe beneficiu negociate direct cu departamentul de underwriting specializat al Generali pentru clienți Net-Worth." },
-  { name: "Ecosistemul Real Estate", desc: "Integrare nativă cu brokeri imobiliari parteneri și acces la oportunități rezidențiale beneficiu." },
+  { name: "Colaborare Generali România", desc: "Polițe premium negociate direct cu departamentul de underwriting specializat al Generali pentru clienți High-Net-Worth." },
+  { name: "Ecosistemul Real Estate", desc: "Integrare nativă cu brokeri imobiliari parteneri și acces la oportunități rezidențiale premium." },
   { name: "AiX OS & Home Find", desc: "Tehnologie proprietară de analiză off-market și management digital al întregului portofoliu de protecție." }
 ];
 

@@ -82,16 +82,16 @@ export default function HealthIndividualInsurancePage() {
               Cui îi este destinată?
             </h2>
             <div className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Această poliță este soluția potrivită pentru oricine prioritizează calitatea vieții și refuză să depindă doar de spitalele de stat:
+              Această poliță este soluția supremă pentru oricine prioritizează calitatea vieții și refuză să depindă exclusiv de spitalele de stat:
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl mx-auto text-left">
               <div className="p-6 rounded-2xl bg-emerald-50/50 border border-emerald-100">
-                <h4 className="font-bold text-emerald-800 mb-2">Freelancerilor și Antreprenorilor Independenți</h4>
-                <p className="text-muted-foreground">Care își gestionează propriul buget medical și știu că o săptămână pierdută în cozi la policlinici înseamnă venituri pierdute din propria activitate.</p>
+                <h4 className="font-bold text-emerald-800 mb-2">Profesioniștilor Independenți (PFA, Freelanceri)</h4>
+                <p className="text-muted-foreground">Care își gestionează propriul buget medical și știu că o săptămână pierdută în cozi la policlinici înseamnă bani pierduți din propria afacere.</p>
               </div>
               <div className="p-6 rounded-2xl bg-emerald-50/50 border border-emerald-100">
                 <h4 className="font-bold text-emerald-800 mb-2">Adulților Proactivi (25-45 ani)</h4>
-                <p className="text-muted-foreground">Oameni care fac preventiv ecografii și analize anuale, apreciind libertatea de a alege doctori cu renume din piața privată fără constrângeri de cost.</p>
+                <p className="text-muted-foreground">Oameni care fac preventiv ecografii și analize anuale, prețuind luxul de a alege doctori cu renume din piața privată fără constrângeri de cost.</p>
               </div>
               <div className="p-6 rounded-2xl bg-emerald-50/50 border border-emerald-100">
                 <h4 className="font-bold text-emerald-800 mb-2">Persoanelor cu afecțiuni în stadii incipiente</h4>
@@ -108,25 +108,25 @@ export default function HealthIndividualInsurancePage() {
           <div className="mb-24">
             <h2 className="text-3xl font-heading font-bold mb-10 text-center">Standarde de Excelență Medicală</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="glass beneficiu-card p-8 rounded-[2rem] border border-border">
+              <div className="glass premium-card p-8 rounded-[2rem] border border-border">
                 <CheckCircle2 className="w-8 h-8 text-emerald-600 mb-6" />
                 <h3 className="text-xl font-bold mb-3 text-foreground">Decontare Directă Fără Banii Tăi</h3>
                 <p className="text-muted-foreground leading-relaxed">
                   În marea majoritate a rețelelor uriașe partenere, mergi, faci analizele și pleci acasă. Nu trebuie să plătești tu și să ceri apoi banii companiei. Generali decontează automat factura direct cu spitalul privat.
                 </p>
               </div>
-              <div className="glass beneficiu-card p-8 rounded-[2rem] border border-border">
+              <div className="glass premium-card p-8 rounded-[2rem] border border-border">
                 <CheckCircle2 className="w-8 h-8 text-emerald-600 mb-6" />
                 <h3 className="text-xl font-bold mb-3 text-foreground">Libertatea Alegerii Clinicii</h3>
                 <p className="text-muted-foreground leading-relaxed">
                   Dacă ești asigurat Generali, luni poți face consultația la o clinică MedLife din nordul capitalei, iar marți poți merge la o ecografie în rețeaua Regina Maria. Polița este universală în sistemul privat.
                 </p>
               </div>
-              <div className="glass beneficiu-card p-8 rounded-[2rem] border border-border">
+              <div className="glass premium-card p-8 rounded-[2rem] border border-border">
                 <CheckCircle2 className="w-8 h-8 text-emerald-600 mb-6" />
                 <h3 className="text-xl font-bold mb-3 text-foreground">A Doua Opinie Medicală</h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  Pachetele beneficiu asigură trimiterea dosarului tău medical complex către experți internaționali (ex: Viena, Germania) pentru a confirma corectitudinea diagnosticului dat în România, oferindu-ți certitudine absolută.
+                  Pachetele premium asigură trimiterea dosarului tău medical complex către experți internaționali (ex: Viena, Germania) pentru a confirma corectitudinea diagnosticului dat în România, oferindu-ți certitudine absolută.
                 </p>
               </div>
             </div>
@@ -178,7 +178,7 @@ export default function HealthIndividualInsurancePage() {
               Soluții Salvatoare
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="glass beneficiu-card p-8 rounded-[2rem] border-l-4 border-l-amber-500">
+              <div className="glass premium-card p-8 rounded-[2rem] border-l-4 border-l-amber-500">
                 <h3 className="text-xl font-bold mb-4 text-foreground">Cazul 1: Hernia de Disc Dureros</h3>
                 <p className="text-muted-foreground leading-relaxed mb-4">
                   Marian resimte dureri lombare violente și îi amorțește piciorul. Medicul de familie îi dă trimitere la RMN, dar la stat nu există fonduri până în septembrie. Marian are dureri azi.
@@ -187,7 +187,7 @@ export default function HealthIndividualInsurancePage() {
                   <span className="font-bold text-amber-700">Rezolvarea poliței:</span> Având polița Generali activă, Marian sună la un spital privat și se programează la RMN-ul care confirmă hernia a doua zi. Neurologul privat recomandă operație cu laser minim invaziv. Intervenția costă 12.000 LEI. Generali decontează integral 100% spitalizarea și operația, Marian ieșind sănătos din spital vineri.
                 </div>
               </div>
-              <div className="glass beneficiu-card p-8 rounded-[2rem] border-l-4 border-l-amber-500">
+              <div className="glass premium-card p-8 rounded-[2rem] border-l-4 border-l-amber-500">
                 <h3 className="text-xl font-bold mb-4 text-foreground">Cazul 2: Ipohondrul Prudent</h3>
                 <p className="text-muted-foreground leading-relaxed mb-4">
                   Elena e stresată mereu de sănătatea ei. Prin abonamentul corporate avea doar 3 consultații incluse. Plătind separat un set complet de analize la privat a costat-o 800 de lei.
@@ -225,17 +225,17 @@ export default function HealthIndividualInsurancePage() {
           <div className="mb-24">
             <h2 className="text-3xl font-heading font-bold mb-10 text-center">Întrebări Frecvente</h2>
             <div className="space-y-6 max-w-4xl mx-auto">
-              <div className="glass beneficiu-card p-6 md:p-8 rounded-2xl border border-border">
+              <div className="glass premium-card p-6 md:p-8 rounded-2xl border border-border">
                 <h3 className="text-xl font-bold mb-3 text-foreground">Sunt bolnav de diabet de 5 ani. Mă primește asigurarea?</h3>
                 <p className="text-muted-foreground leading-relaxed">Înainte de semnarea contractului vei completa un "Chestionar Medical". De regulă, asigurătorul te acceptă, însă bolile preexistente cronice severe pot atrage fie o "suprataxă" (primă mărită), fie o perioadă de așteptare de un an, fie excluderea strictă a bolii respective (vei fi asigurat pentru restul bolilor din lume, mai puțin pentru tratamentele diabetului vechi).</p>
               </div>
-              <div className="glass beneficiu-card p-6 md:p-8 rounded-2xl border border-border">
+              <div className="glass premium-card p-6 md:p-8 rounded-2xl border border-border">
                 <h3 className="text-xl font-bold mb-3 text-foreground">Dacă renunț peste un an la asigurare, primesc bani înapoi?</h3>
                 <p className="text-muted-foreground leading-relaxed">Nu. Asigurarea de Sănătate privată funcționează ca CASCO la mașină. Cumperi "protecție" pe durata acelui an. Dacă nu ai folosit-o deloc, te bucuri că ai fost perfect sănătos! Banii au fost folosiți de companie pentru a susține riscul comun al asiguraților bolnavi din acel an.</p>
               </div>
-              <div className="glass beneficiu-card p-6 md:p-8 rounded-2xl border border-border">
+              <div className="glass premium-card p-6 md:p-8 rounded-2xl border border-border">
                 <h3 className="text-xl font-bold mb-3 text-foreground">Trebuie să renunț la plata CNAS la stat dacă îmi iau poliță privată?</h3>
-                <p className="text-muted-foreground leading-relaxed">Plata contribuției la sănătate la stat (CASS din salariu) rămâne o obligație fiscală absolută în România, nu poți alege să nu o plătești. Asigurarea Generali este un scut "Facultativ Suplimentar", o plasă de siguranță beneficiu care se suprapune sistemului obosit de stat.</p>
+                <p className="text-muted-foreground leading-relaxed">Plata contribuției la sănătate la stat (CASS din salariu) rămâne o obligație fiscală absolută în România, nu poți alege să nu o plătești. Asigurarea Generali este un scut "Facultativ Suplimentar", o plasă de siguranță premium care se suprapune sistemului obosit de stat.</p>
               </div>
             </div>
           </div>

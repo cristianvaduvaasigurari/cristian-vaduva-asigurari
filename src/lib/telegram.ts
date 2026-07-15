@@ -49,7 +49,7 @@ function buildTelegramMessage(lead: TelegramLeadData): string {
   });
 
   return [
-    `🧠 Cristian Văduva - oferte de protecție adaptate nevoilor tale`,
+    `🧠 Cristian Văduva Premium Lead`,
     `─────────────────────`,
     `👤 Nume: ${name}`,
     `📞 Telefon: ${phone}`,

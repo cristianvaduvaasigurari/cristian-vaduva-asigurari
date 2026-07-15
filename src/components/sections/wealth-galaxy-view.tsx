@@ -25,18 +25,18 @@ const galaxyItems = [
     angle: 0
   },
   {
-    id: "luxury-assets",
-    name: "Bunuri de Valoare",
+    id: "luxury",
+    name: "Luxury Assets",
     icon: <Sparkles className="w-6 h-6 text-amber-600" />,
     value: "€120,000",
     risk: "Scăzut (Garaj Securizat)",
-    protection: "100% (CASCO beneficiu)",
+    protection: "100% (CASCO Premium)",
     recommendations: [
       "Actualizare evaluare obiecte de artă din colecție.",
       "Asigurare dedicată ceasuri de lux off-site."
     ],
     relatedServices: [
-      { name: "Protecție Bunuri de Valoare", link: "/luxury-assets" },
+      { name: "Luxury Assets Protection", link: "/luxury-assets" },
       { name: "Asigurare CASCO", link: "/servicii/casco-insurance" }
     ],
     orbitRadius: 240,

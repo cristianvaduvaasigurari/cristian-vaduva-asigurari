@@ -51,7 +51,7 @@ export function CookieBanner() {
               <div className="flex-1">
                 <h3 className="font-heading font-bold text-lg mb-2">Respectăm confidențialitatea ta</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  Folosim cookie-uri pentru a-ți asigura o experiență beneficiu pe platformă, pentru analiza traficului și personalizarea conținutului. 
+                  Folosim cookie-uri pentru a-ți asigura o experiență premium pe platformă, pentru analiza traficului și personalizarea conținutului. 
                   Prin apăsarea butonului &quot;Accept&quot;, ești de acord cu utilizarea acestora conform <Link href="/politica-cookie" className="text-white underline decoration-white/30 hover:decoration-white transition-all">Politicii noastre de Cookie-uri</Link>.
                 </p>
               </div>

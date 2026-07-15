@@ -108,21 +108,21 @@ export default function IMMInsurancePage() {
           <div className="mb-24">
             <h2 className="text-3xl font-heading font-bold mb-10 text-center">Beneficiile Pentru Manageri și Acționari</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="glass beneficiu-card p-8 rounded-[2rem] border border-border">
+              <div className="glass premium-card p-8 rounded-[2rem] border border-border">
                 <CheckCircle2 className="w-8 h-8 text-blue-600 mb-6" />
                 <h3 className="text-xl font-bold mb-3 text-foreground">Optimizare Fiscală</h3>
                 <p className="text-muted-foreground leading-relaxed">
                   Primele plătite pentru polițele de asigurare ale societății (fie că e pentru sediu, angajați sau utilaje) sunt recunoscute ca și cheltuieli 100% deductibile, diminuând impozitul anual.
                 </p>
               </div>
-              <div className="glass beneficiu-card p-8 rounded-[2rem] border border-border">
+              <div className="glass premium-card p-8 rounded-[2rem] border border-border">
                 <CheckCircle2 className="w-8 h-8 text-blue-600 mb-6" />
                 <h3 className="text-xl font-bold mb-3 text-foreground">Scutul Executivului (D&O)</h3>
                 <p className="text-muted-foreground leading-relaxed">
                   Deciziile managerilor executivi pot fi atacate de acționari sau de stat. Acoperirile avansate pot proteja averea personală a administratorilor de procese de management, despăgubind apărarea acestora.
                 </p>
               </div>
-              <div className="glass beneficiu-card p-8 rounded-[2rem] border border-border">
+              <div className="glass premium-card p-8 rounded-[2rem] border border-border">
                 <CheckCircle2 className="w-8 h-8 text-blue-600 mb-6" />
                 <h3 className="text-xl font-bold mb-3 text-foreground">Stabilitatea Cash-flow-ului</h3>
                 <p className="text-muted-foreground leading-relaxed">
@@ -178,7 +178,7 @@ export default function IMMInsurancePage() {
               Scurte Studii de Caz B2B
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="glass beneficiu-card p-8 rounded-[2rem] border-l-4 border-l-amber-500">
+              <div className="glass premium-card p-8 rounded-[2rem] border-l-4 border-l-amber-500">
                 <h3 className="text-xl font-bold mb-4 text-foreground">Scenariul 1: Litigiul și Răspunderea Produsului</h3>
                 <p className="text-muted-foreground leading-relaxed mb-4">
                   O companie care livrează catering pentru birouri a livrat întâmplător materie primă compromisă, trimițând la spital peste 20 de angajați ai unei corporații partenere. Corporația s-a întors imediat în instanță cerând daune masive firmei de catering.
@@ -187,7 +187,7 @@ export default function IMMInsurancePage() {
                   <span className="font-bold text-amber-700">Rezolvarea poliței:</span> Modulul de "Răspunderea Produsului" a despăgubit cererile de daune ale spitalului și costul cu avocații reprezentând IMM-ul de catering, preîntâmpinând închiderea completă a afacerii de catering pentru datoriile imputate.
                 </div>
               </div>
-              <div className="glass beneficiu-card p-8 rounded-[2rem] border-l-4 border-l-amber-500">
+              <div className="glass premium-card p-8 rounded-[2rem] border-l-4 border-l-amber-500">
                 <h3 className="text-xl font-bold mb-4 text-foreground">Scenariul 2: Avaria Tehnologică la Centrul Medical</h3>
                 <p className="text-muted-foreground leading-relaxed mb-4">
                   O cădere majoră de tensiune de la distribuitor a prajit componentele critice ale unui echipament RMN (valoare 500.000 Euro) dintr-un centru imagistic independent privat.
@@ -211,7 +211,7 @@ export default function IMMInsurancePage() {
                 <p className="text-muted-foreground leading-relaxed">Nu forțăm antreprenorii în șabloane generice. Polițele se taie la milimetru. De la acoperirea clădirilor de birouri (Owner’s Property) la protecția flotelor comerciale complexe.</p>
               </div>
               <div className="p-6 rounded-2xl bg-white border border-[#c8102e]/10 shadow-sm hover:shadow-md transition-shadow">
-                <h4 className="font-bold text-[#c8102e] mb-3 text-lg">Evaluatori Industriali de Top</h4>
+                <h4 className="font-bold text-[#c8102e] mb-3 text-lg">Evaluatori Industriali Top Class</h4>
                 <p className="text-muted-foreground leading-relaxed">Sistemele noastre de gestiune de criză direcționează inspectori industriali de daună în câteva ore de la un incident major pentru a stopa sângerarea companiei.</p>
               </div>
               <div className="p-6 rounded-2xl bg-white border border-[#c8102e]/10 shadow-sm hover:shadow-md transition-shadow">
@@ -225,15 +225,15 @@ export default function IMMInsurancePage() {
           <div className="mb-24">
             <h2 className="text-3xl font-heading font-bold mb-10 text-center">Întrebări Frecvente Despre Planurile IMM</h2>
             <div className="space-y-6 max-w-4xl mx-auto">
-              <div className="glass beneficiu-card p-6 md:p-8 rounded-2xl border border-border">
+              <div className="glass premium-card p-6 md:p-8 rounded-2xl border border-border">
                 <h3 className="text-xl font-bold mb-3 text-foreground">Compania mea închiriază birourile, nu sunt proprietar. Pot încheia eu polița?</h3>
                 <p className="text-muted-foreground leading-relaxed">Bineînțeles. Chiriașii se bucură de un avantaj masiv: ei își asigură propriile bunuri de amenajare (mobilier, IT, stocuri) și simultan semnează "Răspunderea Chiriașului". Astfel, dacă ei dau foc din greșeală întregului turn de birouri, Generali preia pagubele impuse de proprietarul turnului, protejând chiriașul.</p>
               </div>
-              <div className="glass beneficiu-card p-6 md:p-8 rounded-2xl border border-border">
+              <div className="glass premium-card p-6 md:p-8 rounded-2xl border border-border">
                 <h3 className="text-xl font-bold mb-3 text-foreground">Partenerii B2B îmi cer o poliță Răspundere Profesională ca să semnăm contractul. Generali poate emite așa ceva?</h3>
                 <p className="text-muted-foreground leading-relaxed">Da, suntem experți în Professional Indemnity (E&O). Fie că ești o agenție IT care lucrează pentru băncile elvețiene sau un arhitect cu contracte grele de construcții. Emitem polița cu limtele de milioane de EUR cerute de partenerii tăi pentru o fracțiune din acel cost.</p>
               </div>
-              <div className="glass beneficiu-card p-6 md:p-8 rounded-2xl border border-border">
+              <div className="glass premium-card p-6 md:p-8 rounded-2xl border border-border">
                 <h3 className="text-xl font-bold mb-3 text-foreground">Cât este prima anuală pentru un IMM de dimensiuni mici?</h3>
                 <p className="text-muted-foreground leading-relaxed">Prețurile sunt absolut modice. Protecția completă pentru un spațiu comercial standard cu stocuri medii și limite rezonabile se încadrează frecvent între 200 și 400 EUR per AN. Este pur și simplu un cost decizional de bază ignorat deseori din lipsa informației.</p>
               </div>

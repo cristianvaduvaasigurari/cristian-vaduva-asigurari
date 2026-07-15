@@ -28,7 +28,7 @@ interface SatelliteData {
   };
   insurance: {
     recommended: string;
-    estimatedCoverage: string;
+    estPremium: string;
     deductible: string;
   };
 }
@@ -67,8 +67,8 @@ export function SatellitePropertyView() {
           theft: "Risc Redus (Cartier rezidențial păzit)"
         },
         insurance: {
-          recommended: "Poliță Facultativă beneficiu + Clauză Răspundere Civică Chiriași",
-          estimatedCoverage: "€150 - €220 / an",
+          recommended: "Poliță Facultativă Premium + Clauză Răspundere Civică Chiriași",
+          estPremium: "€150 - €220 / an",
           deductible: "€100 standard per eveniment"
         }
       });
@@ -225,7 +225,7 @@ export function SatellitePropertyView() {
                   <div className="space-y-4">
                     <div className="flex justify-between items-center py-2 border-b border-slate-50">
                       <span className="text-xs text-slate-500">Primă Estimată</span>
-                      <span className="font-bold text-sm text-slate-800">{results.insurance.estimatedCoverage}</span>
+                      <span className="font-bold text-sm text-slate-800">{results.insurance.estPremium}</span>
                     </div>
                     <div className="flex justify-between items-center py-2 border-b border-slate-50">
                       <span className="text-xs text-slate-500">Franșiză standard</span>

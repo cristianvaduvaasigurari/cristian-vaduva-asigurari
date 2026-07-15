@@ -72,7 +72,7 @@ export function AiVideoAvatar() {
           </div>
 
           <p className="text-xs text-muted-foreground mt-6 uppercase tracking-wider text-center max-w-xs font-bold">
-            Interfață video beneficiu gata pentru integrare HeyGen / D-ID
+            Interfață video premium gata pentru integrare HeyGen / D-ID
           </p>
         </div>
 

@@ -82,7 +82,7 @@ export default function BusinessInterruptionInsurancePage() {
               Sectoare Dependente de Fluxul Continuu
             </h2>
             <div className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Este o poliță complexă, de importanță majoră, destinată sectoarelor unde timpul înseamnă literalmente bani:
+              Este o poliță complexă, de elită, destinată sectoarelor unde timpul înseamnă literalmente bani:
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl mx-auto text-left">
               <div className="p-6 rounded-2xl bg-emerald-50/50 border border-emerald-100">
@@ -108,21 +108,21 @@ export default function BusinessInterruptionInsurancePage() {
           <div className="mb-24">
             <h2 className="text-3xl font-heading font-bold mb-10 text-center">Structura Matematică a Despăgubirii</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="glass beneficiu-card p-8 rounded-[2rem] border border-border">
+              <div className="glass premium-card p-8 rounded-[2rem] border border-border">
                 <CheckCircle2 className="w-8 h-8 text-indigo-600 mb-6" />
                 <h3 className="text-xl font-bold mb-3 text-foreground">Plata Profitului Net Previzionat</h3>
                 <p className="text-muted-foreground leading-relaxed">
                   Contabilii calculează cât ai făcut "anul trecut în luna August". Se consideră că dacă nu era focul, ai fi făcut MĂCAR aceeași sumă Netă și în augustul acesta. Această "Cifră Purtătoare" îți va fi virată ție în cont.
                 </p>
               </div>
-              <div className="glass beneficiu-card p-8 rounded-[2rem] border border-border">
+              <div className="glass premium-card p-8 rounded-[2rem] border border-border">
                 <CheckCircle2 className="w-8 h-8 text-indigo-600 mb-6" />
                 <h3 className="text-xl font-bold mb-3 text-foreground">Salariile "Angajaților Cheie"</h3>
                 <p className="text-muted-foreground leading-relaxed">
                   Dacă fabrica e închisă 1 an, muncitorii tăi experți (ex: sudori specializați) vor pleca în Germania. Prin B.I. tu îți permiți să le plătești salarii ÎNTREGI timp de 12 luni stând acasă, doar ca ei să fie acolo când deschizi porțile halei noi reconstruite!
                 </p>
               </div>
-              <div className="glass beneficiu-card p-8 rounded-[2rem] border border-border">
+              <div className="glass premium-card p-8 rounded-[2rem] border border-border">
                 <CheckCircle2 className="w-8 h-8 text-indigo-600 mb-6" />
                 <h3 className="text-xl font-bold mb-3 text-foreground">Costurile de Creștere (Increased Costs of Working)</h3>
                 <p className="text-muted-foreground leading-relaxed">
@@ -178,7 +178,7 @@ export default function BusinessInterruptionInsurancePage() {
               Ingineria Finaciară Post-Daună
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="glass beneficiu-card p-8 rounded-[2rem] border-l-4 border-l-amber-500">
+              <div className="glass premium-card p-8 rounded-[2rem] border-l-4 border-l-amber-500">
                 <h3 className="text-xl font-bold mb-4 text-foreground">Scenariul 1: Hotelul "Paralizat" în Sezon</h3>
                 <p className="text-muted-foreground leading-relaxed mb-4">
                   Un Resort la Marea Neagră suferă un incendiu mediu pe 20 Mai. A ars doar recepția și sala de mese (300k EUR pagubă), nu camerele. DAR fără recepție și restaurant avizate ISU, niciun turist nu poate fi primit toată vara.
@@ -187,7 +187,7 @@ export default function BusinessInterruptionInsurancePage() {
                   <span className="font-bold text-amber-700">Rezolvarea poliței:</span> Deși dauna fizică a fost de "doar" 300.000 EUR (plătită de polița de clădire), hotelierul ar fi pierdut cele 2 milioane de euro generate în cele 3 luni de vară. Polița "Business Interruption" a analizat situația rezervărilor istorice din verile trecute și a virat hotelului cele 2 milioane de EUR profit nerealizat direct în bancă, permițând hotelului să rămână viabil financiar.
                 </div>
               </div>
-              <div className="glass beneficiu-card p-8 rounded-[2rem] border-l-4 border-l-amber-500">
+              <div className="glass premium-card p-8 rounded-[2rem] border-l-4 border-l-amber-500">
                 <h3 className="text-xl font-bold mb-4 text-foreground">Scenariul 2: Fabrica de Piese Auto și Lanțul de Supply</h3>
                 <p className="text-muted-foreground leading-relaxed mb-4">
                   Firma ta face o piesă metalică pentru mașinile Volkswagen din Germania. Fabrica voastră arde. Dacă tu nu livrezi piesa în 4 zile în Germania, linia Volkswagen se oprește. Te vor da în judecată și vei pierde contractul vieții.
@@ -225,15 +225,15 @@ export default function BusinessInterruptionInsurancePage() {
           <div className="mb-24">
             <h2 className="text-3xl font-heading font-bold mb-10 text-center">Întrebări Frecvente (B.I.)</h2>
             <div className="space-y-6 max-w-4xl mx-auto">
-              <div className="glass beneficiu-card p-6 md:p-8 rounded-2xl border border-border">
+              <div className="glass premium-card p-6 md:p-8 rounded-2xl border border-border">
                 <h3 className="text-xl font-bold mb-3 text-foreground">A apărut o nouă criză ca "Pandemia", m-a închis statul forțat (carantină), dar clădirea mea este intactă. Mă despăgubește Business Interruption?</h3>
                 <p className="text-muted-foreground leading-relaxed">NU. Acesta este mitul și litigiul anului 2020 global. Polițele B.I. standard cer, fundamental, existența unei "Daune Materiale Directe Fizice" (ex: Focul). Virusul COVID și ordinele guvernamentale de a închide restaurantul au reprezentat un eveniment pur legislativ / biologic FĂRĂ nicio zgârietură fizică pe peretele restaurantului, deci polița B.I. materială nu a fost declanșată și s-au creat mari dezbateri (doar extensiile foarte rare de Boli Infecțioase ar funcționa limitat aici).</p>
               </div>
-              <div className="glass beneficiu-card p-6 md:p-8 rounded-2xl border border-border">
+              <div className="glass premium-card p-6 md:p-8 rounded-2xl border border-border">
                 <h3 className="text-xl font-bold mb-3 text-foreground">Cum dovedesc câți bani aș fi făcut, dacă tocmai afacerea e închisă de 3 luni și nu se vede viitorul?</h3>
                 <p className="text-muted-foreground leading-relaxed">Matematica de Daună este reglementată. Se ia indicatorul "Standard Turnover" (Cifra de afaceri fix din aceeași perioadă a anului trecut). Se aplică trendurile (poate anul acesta veneai cu un plus de 10% creștere constantă dovedită în primele luni). Formula extrage apoi materialele variabile nefolosite (ex: că nu ai mai consumat făină sau benzină stând pe bară) și îți achită net restul sumei.</p>
               </div>
-              <div className="glass beneficiu-card p-6 md:p-8 rounded-2xl border border-border">
+              <div className="glass premium-card p-6 md:p-8 rounded-2xl border border-border">
                 <h3 className="text-xl font-bold mb-3 text-foreground">Eu raportez contabil Profitul la 0 ca să nu dau Impozit statului. Cum mă asigurați?</h3>
                 <p className="text-muted-foreground leading-relaxed">Asigurarea acționează DOAR pe cifrele oficiale. Dacă ai declarat la stat (FISC) 0 profit net în bilanțuri mulți ani, asigurătorul consideră și el că tu ai Pierdut 0 Net. Așadar, îți vom despăgubi strict Costurile Fixe Continui asigurate (Chirie/Salarii dovedite legal/Leasing), dar la capitolul "Profit", nu putem subvenționa ceea ce nu declari fiscal.</p>
               </div>

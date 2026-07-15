@@ -29,7 +29,7 @@ export default function HomeInsurancePage() {
               Asigurarea Facultativă a Locuinței
             </h1>
             <p className="text-xl text-muted-foreground leading-relaxed mb-10 max-w-3xl">
-              Cea mai scumpă investiție a familiei tale nu ar trebui să fie vulnerabilă în fața hazardului. Protejează valoarea imobilului, amenajările de lux, sistemele smart home și răspunderea ta față de vecini, cu pachetul facultativ beneficiu All-Risk.
+              Cea mai scumpă investiție a familiei tale nu ar trebui să fie vulnerabilă în fața hazardului. Protejează valoarea imobilului, amenajările de lux, sistemele smart home și răspunderea ta față de vecini, cu pachetul facultativ premium All-Risk.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Button size="lg" className="h-14 px-8 text-lg rounded-full bg-blue-600 hover:bg-blue-700 text-white shadow-xl" asChild>
@@ -70,7 +70,7 @@ export default function HomeInsurancePage() {
                 Astăzi, designul interior, instalațiile de climatizare, podelele din lemn masiv și tehnologiile smart integrate într-un apartament pot costa la fel de mult cât a costat structura betonului. Toate aceste amenajări costisitoare sunt invizibile pentru asigurarea de bază.
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                Fără o asigurare facultativă adaptată corect, în eventualitatea unui incendiu minor care distruge parchetul și bucătăria personalizată, va trebui să refaci întreaga investiție doar din economiile personale.
+                Fără o asigurare facultativă adaptată corect, în eventualitatea unui incendiu minor care distruge parchetul și bucătăria personalizată, va trebui să refaci întreaga investiție exclusiv din economiile personale.
               </p>
             </div>
           </div>
@@ -82,7 +82,7 @@ export default function HomeInsurancePage() {
               Cui îi este destinată?
             </h2>
             <div className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Această poliță nu este o cheltuială inutilă, ci o responsabilitate a dreptului de proprietate, potrivindu-se oricui deține sau interacționează cu piața imobiliară:
+              Această poliță nu este un lux, ci o responsabilitate a dreptului de proprietate, potrivindu-se oricui deține sau interacționează cu piața imobiliară:
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl mx-auto text-left">
               <div className="p-6 rounded-2xl bg-emerald-50/50 border border-emerald-100">
@@ -108,21 +108,21 @@ export default function HomeInsurancePage() {
           <div className="mb-24">
             <h2 className="text-3xl font-heading font-bold mb-10 text-center">Trei Extensii Valoroase</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="glass beneficiu-card p-8 rounded-[2rem] border border-border">
+              <div className="glass premium-card p-8 rounded-[2rem] border border-border">
                 <CheckCircle2 className="w-8 h-8 text-blue-600 mb-6" />
                 <h3 className="text-xl font-bold mb-3 text-foreground">Răspundere Civilă Față de Vecini</h3>
                 <p className="text-muted-foreground leading-relaxed">
                   Dacă se sparge mașina de spălat noaptea și inunzi două etaje inferioare ale blocului, Asigurătorul preia și despăgubește reparațiile în apartamentele vecinilor tăi, salvându-te de zeci de mii de lei.
                 </p>
               </div>
-              <div className="glass beneficiu-card p-8 rounded-[2rem] border border-border">
+              <div className="glass premium-card p-8 rounded-[2rem] border border-border">
                 <CheckCircle2 className="w-8 h-8 text-blue-600 mb-6" />
                 <h3 className="text-xl font-bold mb-3 text-foreground">Asistență Tehnică la Domiciliu</h3>
                 <p className="text-muted-foreground leading-relaxed">
                   Ai pierdut cheile sau ți s-a defectat centrala termică în toiul iernii? Prin clauza de asistență Generali trimite un lăcătuș sau instalator autorizat pentru a remedia de urgență situația.
                 </p>
               </div>
-              <div className="glass beneficiu-card p-8 rounded-[2rem] border border-border">
+              <div className="glass premium-card p-8 rounded-[2rem] border border-border">
                 <CheckCircle2 className="w-8 h-8 text-blue-600 mb-6" />
                 <h3 className="text-xl font-bold mb-3 text-foreground">Bunuri Generale din Casă</h3>
                 <p className="text-muted-foreground leading-relaxed">
@@ -178,7 +178,7 @@ export default function HomeInsurancePage() {
               Scenarii Reale Evitate
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="glass beneficiu-card p-8 rounded-[2rem] border-l-4 border-l-amber-500">
+              <div className="glass premium-card p-8 rounded-[2rem] border-l-4 border-l-amber-500">
                 <h3 className="text-xl font-bold mb-4 text-foreground">Scenariul 1: Coșmarul la Bloc</h3>
                 <p className="text-muted-foreground leading-relaxed mb-4">
                   Dan este plecat în vacanță. Acasă, furtunul de presiune de la vasul de toaletă cedează noaptea. Apa inundă puternic apartamentul lui, dar se infiltrează și distruge parchetul complet la vecinul de dedesubt.
@@ -187,7 +187,7 @@ export default function HomeInsurancePage() {
                   <span className="font-bold text-amber-700">Rezolvarea poliței:</span> Generali trimite inspectorul care evaluează dauna. Modulul de "Apă de Conductă" plătește pentru refacerea podelelor și usșilor la Dan (2.000 EUR), iar modulul de "Răspundere Civilă Față de Terți" virează bani direct vecinului (1.500 EUR) pentru ca acesta să-și schimbe parchetul. Dan a fost ferit de proces.
                 </div>
               </div>
-              <div className="glass beneficiu-card p-8 rounded-[2rem] border-l-4 border-l-amber-500">
+              <div className="glass premium-card p-8 rounded-[2rem] border-l-4 border-l-amber-500">
                 <h3 className="text-xl font-bold mb-4 text-foreground">Scenariul 2: Creșterea Tensiunii</h3>
                 <p className="text-muted-foreground leading-relaxed mb-4">
                   O fluctuatie uriașă de energie electrică a rețelei pe strada în care locuiește Elena "prăjește" panoul electric al casei, televizorul QLED nou cumpărat și centrala termică abia pusă în funcțiune.
@@ -225,15 +225,15 @@ export default function HomeInsurancePage() {
           <div className="mb-24">
             <h2 className="text-3xl font-heading font-bold mb-10 text-center">Întrebări Frecvente (FAQ)</h2>
             <div className="space-y-6 max-w-4xl mx-auto">
-              <div className="glass beneficiu-card p-6 md:p-8 rounded-2xl border border-border">
+              <div className="glass premium-card p-6 md:p-8 rounded-2xl border border-border">
                 <h3 className="text-xl font-bold mb-3 text-foreground">Pot să fac doar Asigurarea Facultativă fără PAD (Asigurarea Obligatorie)?</h3>
                 <p className="text-muted-foreground leading-relaxed">Din punct de vedere legal în România, pentru a încheia o asigurare facultativă completă, ești obligat să prezinți o poliță de stat PAD valabilă. Dacă nu o ai, noi vom emite simultan și polița PAD alături de cea Generali, unificându-le convenabil sub un singur dosar.</p>
               </div>
-              <div className="glass beneficiu-card p-6 md:p-8 rounded-2xl border border-border">
+              <div className="glass premium-card p-6 md:p-8 rounded-2xl border border-border">
                 <h3 className="text-xl font-bold mb-3 text-foreground">Cum se stabilește suma pentru care îmi asigur apartamentul?</h3>
                 <p className="text-muted-foreground leading-relaxed">Suma de protecție trebuie să reflecte "Valoarea de reconstrucție de nou" și nu prețul zonei imobiliare. Vom stabili acest buget împreună pe baza grilelor oficiale raportate la suprafața utilă, materialele de finisaj (standard, superior, de lux) și anul de construcție al blocului/vilei.</p>
               </div>
-              <div className="glass beneficiu-card p-6 md:p-8 rounded-2xl border border-border">
+              <div className="glass premium-card p-6 md:p-8 rounded-2xl border border-border">
                 <h3 className="text-xl font-bold mb-3 text-foreground">Dacă chiriașul dă foc la apartament din greșeală, sunt acoperit?</h3>
                 <p className="text-muted-foreground leading-relaxed">Da, asigurarea funcționează perfect dacă a fost declarată clauza de "spațiu închiriat" la emiterea ofertei. Generali va despăgubi proprietarul pentru distrugerile imobiliare produse, asigurând stabilitatea investiției.</p>
               </div>

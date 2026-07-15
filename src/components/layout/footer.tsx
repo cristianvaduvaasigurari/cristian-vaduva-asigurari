@@ -6,7 +6,7 @@ const footerLinks = {
   ecosystem: [
     { name: "Generali România", href: "/generali" },
     { name: "Real Estate", href: "/real-estate" },
-    { name: "AiX", href: "/aixbeneficiu" },
+    { name: "AiXLuxury", href: "/aixluxury" },
     { name: "AiX OS", href: "/aixos" },
     { name: "Home Find", href: "/home-find" },
     { name: "Ecosistem AiX", href: "/ecosistem" },
@@ -31,7 +31,7 @@ const footerLinks = {
     { name: "Risk Simulator", href: "/risk-simulator" },
     { name: "Command Wall", href: "/personal-dashboard" },
     { name: "Second Opinion", href: "/second-opinion" },
-    { name: "Garaj virtual pentru vehicule", href: "/luxury-garage" },
+    { name: "Luxury Garage", href: "/luxury-garage" },
     { name: "Client Journey", href: "/client-journey" },
     { name: "Trust Center", href: "/trust-center" },
     { name: "Smart Forms", href: "/smart-forms" },
@@ -47,7 +47,7 @@ const footerLinks = {
     { name: "AiX Financial Twin", href: "/financial-twin" },
     { name: "Family Planner", href: "/family-planner" },
     { name: "RE Analyzer", href: "/investitii-imobiliare/analyzer" },
-    { name: "Bunuri de Valoare", href: "/luxury-assets" },
+    { name: "Luxury Assets", href: "/luxury-assets" },
     { name: "Centru Urgențe", href: "/urgente" },
     { name: "Claim Assistant", href: "/claim-assistant" },
     { name: "Raport Strategic", href: "/raport-strategic" },
@@ -59,7 +59,7 @@ const footerLinks = {
     { name: "Harta Protecției", href: "/harta-protectiei" },
     { name: "Ofertă Rapidă", href: "/oferta-rapida" },
     { name: "AiX Insights", href: "/insights" },
-    { name: "Resurse beneficiu", href: "/resurse" },
+    { name: "Resurse Premium", href: "/resurse" },
     { name: "Despre Mine", href: "/despre-mine" },
     { name: "Contact", href: "/contact" },
   ],
@@ -82,7 +82,7 @@ export function Footer() {
               </span>
             </Link>
             <p className="text-white/60 max-w-sm mb-8 leading-relaxed">
-              Ajutăm clienții să economisească timp și să evite riscuri financiare prin asigurări adaptate nevoilor și acces la proprietăți verificate, pentru un viitor sigur și prosper.
+              Platformă premium dedicată excelenței în asigurări, real estate și inovație tehnologică. Soluții personalizate pentru un viitor sigur și prosper.
             </p>
             <div className="flex items-center gap-4 text-white/60 mb-8">
               <a href={CONTACT.social.linkedin} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors p-3 rounded-full bg-white/5 border border-white/10 hover:bg-white/10">

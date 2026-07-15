@@ -99,30 +99,30 @@ export default function BusinessGoodsInsurancePage() {
               </div>
               <div className="p-6 rounded-2xl bg-emerald-50/50 border border-emerald-100">
                 <h4 className="font-bold text-emerald-800 mb-2">Mobilier B2B / Amenajări (Fit-out)</h4>
-                <p className="text-muted-foreground">Ai închiriat o clădire de birouri goală (shell) și ai investit 200k EUR în partiții de sticlă, tavan fals și mobilier beneficiu Herman Miller. Acestea se asigură ca "bunurile tale ca și chiriaș".</p>
+                <p className="text-muted-foreground">Ai închiriat o clădire de birouri goală (shell) și ai investit 200k EUR în partiții de sticlă, tavan fals și mobilier premium Herman Miller. Acestea se asigură ca "bunurile tale ca și chiriaș".</p>
               </div>
             </div>
           </div>
 
           {/* 5. Beneficii */}
           <div className="mb-24">
-            <h2 className="text-3xl font-heading font-bold mb-10 text-center">Modularitatea Acoperirilor beneficiu</h2>
+            <h2 className="text-3xl font-heading font-bold mb-10 text-center">Modularitatea Acoperirilor Premium</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="glass beneficiu-card p-8 rounded-[2rem] border border-border">
+              <div className="glass premium-card p-8 rounded-[2rem] border border-border">
                 <CheckCircle2 className="w-8 h-8 text-violet-600 mb-6" />
                 <h3 className="text-xl font-bold mb-3 text-foreground">Clauza de Fluctuație a Stocurilor</h3>
                 <p className="text-muted-foreground leading-relaxed">
                   Depozitul tău azi are marfă de 1 mil. EUR, dar de Black Friday ai marfă de 2 mil. EUR. Pentru a nu lăsa descoperit vârful, polița poate include un mecanism de raportare lunară a valorii mărfii, adaptând plata daunei automat la încărcătura maximă raportată.
                 </p>
               </div>
-              <div className="glass beneficiu-card p-8 rounded-[2rem] border border-border">
+              <div className="glass premium-card p-8 rounded-[2rem] border border-border">
                 <CheckCircle2 className="w-8 h-8 text-violet-600 mb-6" />
                 <h3 className="text-xl font-bold mb-3 text-foreground">Asigurarea Electronisticii Avansate (EEI)</h3>
                 <p className="text-muted-foreground leading-relaxed">
                   Nu este o simplă poliță de incendiu. Echipamentele IT se asigură separat (Electronic Equipment Insurance), ele având riscuri interne speciale: supratensiuni, erori de operare de către utilizator, sau stricăciuni din neglijență.
                 </p>
               </div>
-              <div className="glass beneficiu-card p-8 rounded-[2rem] border border-border">
+              <div className="glass premium-card p-8 rounded-[2rem] border border-border">
                 <CheckCircle2 className="w-8 h-8 text-violet-600 mb-6" />
                 <h3 className="text-xl font-bold mb-3 text-foreground">Acoperirea Marfurilor în Frigidere (Deteriorare)</h3>
                 <p className="text-muted-foreground leading-relaxed">
@@ -178,7 +178,7 @@ export default function BusinessGoodsInsurancePage() {
               Salvarea din Faliment Comercial
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="glass beneficiu-card p-8 rounded-[2rem] border-l-4 border-l-amber-500">
+              <div className="glass premium-card p-8 rounded-[2rem] border-l-4 border-l-amber-500">
                 <h3 className="text-xl font-bold mb-4 text-foreground">Scenariul 1: Furtuna de Vară care a ruinat marfa</h3>
                 <p className="text-muted-foreground leading-relaxed mb-4">
                   O companie de echipamente electrice își depozitase invertoarele solare și cablurile de 300.000 EUR într-o hală modernă. O vijelie masivă a smuls un luminator (geam) din tavan, iar ploaia torențială a inundat exact paleții cu electronice scumpe, deteriorându-le complet cutiile și circuitele interne.
@@ -187,7 +187,7 @@ export default function BusinessGoodsInsurancePage() {
                   <span className="font-bold text-amber-700">Rezolvarea poliței:</span> Produsul de Asigurare a Conținutului a clasat evenimentul ca daună prin risc de "Furtună/Ploaie pătrunsă prin acoperiș avariat", achitând companiei prețul ei de achiziție al invertoarelor distruse (doar pe baza facturilor contabile doveditoare), permițând refacerea stocului în 2 luni fără a băga firma în incapacitate de plată către stat.
                 </div>
               </div>
-              <div className="glass beneficiu-card p-8 rounded-[2rem] border-l-4 border-l-amber-500">
+              <div className="glass premium-card p-8 rounded-[2rem] border-l-4 border-l-amber-500">
                 <h3 className="text-xl font-bold mb-4 text-foreground">Scenariul 2: Avaria pe CNC</h3>
                 <p className="text-muted-foreground leading-relaxed mb-4">
                   Într-o fabrică de piese auto, un frezor CNC de 1.2 mil. EUR tocmai a ieșit din Garanția tehnică de la producătorul german. Muncitorul român introduce greșit coordonatele în program. Axul mașinii lovește în plin la viteză enormă menghina de fier, distrugând tot brațul cinematic intern.
@@ -212,7 +212,7 @@ export default function BusinessGoodsInsurancePage() {
               </div>
               <div className="p-6 rounded-2xl bg-white border border-[#c8102e]/10 shadow-sm hover:shadow-md transition-shadow">
                 <h4 className="font-bold text-[#c8102e] mb-3 text-lg">Asigurare tip "All Risks" (Conținut)</h4>
-                <p className="text-muted-foreground leading-relaxed">Formatul beneficiu european prin care tot ce este mobil și are o valoare contabilă în firmă este protejat împotriva oricărui risc extern accidental violent, permițându-vă vouă ca proprietari să nu alergați după clauze absconse.</p>
+                <p className="text-muted-foreground leading-relaxed">Formatul premium european prin care tot ce este mobil și are o valoare contabilă în firmă este protejat împotriva oricărui risc extern accidental violent, permițându-vă vouă ca proprietari să nu alergați după clauze absconse.</p>
               </div>
               <div className="p-6 rounded-2xl bg-white border border-[#c8102e]/10 shadow-sm hover:shadow-md transition-shadow">
                 <h4 className="font-bold text-[#c8102e] mb-3 text-lg">Celeritate în Evaluarea Daunelor</h4>
@@ -225,15 +225,15 @@ export default function BusinessGoodsInsurancePage() {
           <div className="mb-24">
             <h2 className="text-3xl font-heading font-bold mb-10 text-center">Întrebări Frecvente</h2>
             <div className="space-y-6 max-w-4xl mx-auto">
-              <div className="glass beneficiu-card p-6 md:p-8 rounded-2xl border border-border">
+              <div className="glass premium-card p-6 md:p-8 rounded-2xl border border-border">
                 <h3 className="text-xl font-bold mb-3 text-foreground">Îmi dispar periodic mici cutii cu marfă din gestiune (probabil furate de unii angajați depozitari). Mă despăgubește polița?</h3>
                 <p className="text-muted-foreground leading-relaxed">Ferm NU. Lipsurile din inventar misterioase, disparițiile inexplicabile sau frauda generată direct și demonstrat de către proprii TĂI angajați care te fură din interior, reprezintă excluderi absolute la categoria "Furt" clasic. Polița despăgubește tâlhăria sau "Efracția" (spargerea perimetrului lăsând urme de violență asupra încuietorilor) de către terți externi.</p>
               </div>
-              <div className="glass beneficiu-card p-6 md:p-8 rounded-2xl border border-border">
+              <div className="glass premium-card p-6 md:p-8 rounded-2xl border border-border">
                 <h3 className="text-xl font-bold mb-3 text-foreground">Cum dovedesc exact ce aveam în hală când a ars tot?</h3>
                 <p className="text-muted-foreground leading-relaxed">Plata la business se face pe acte, nu pe "povești". Ca antreprenor, asumi să ai Balanța Contabilă la zi (Mijloace Fixe, Cont 213, Stocuri Marfă 371). Ideal, back-up-urile informatice ale facturilor trebuie ținute în cloud / la contabil pe alt server. Dacă hala arde, vei prezenta registrul de inventar asumat la Fisc în luna anterioară pentru a debloca plățile milioanelor de lei.</p>
               </div>
-              <div className="glass beneficiu-card p-6 md:p-8 rounded-2xl border border-border">
+              <div className="glass premium-card p-6 md:p-8 rounded-2xl border border-border">
                 <h3 className="text-xl font-bold mb-3 text-foreground">Am marfă pe perioada transportului (în camion). Polița asta o acoperă acolo?</h3>
                 <p className="text-muted-foreground leading-relaxed">În mod standard NU. Asigurarea de Conținut și Stocuri este "Location Based" (legată de adresa fizică de pe poliță, fixată în hală). În momentul în care marfa ta părăsește poarta cu TIR-ul, intră în protecția altui produs complet diferit (Asigurarea Cargo Marfă în Tranzit), pe care de asemenea vi-l putem oferta.</p>
               </div>

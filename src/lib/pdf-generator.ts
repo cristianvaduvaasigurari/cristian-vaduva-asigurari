@@ -58,7 +58,7 @@ export function generateGenericPDF(title: string, description: string, summary: 
   const cleanSummary = removeDiacritics(summary);
 
   // ==========================================
-  // PAGE 1: Professional COVER
+  // PAGE 1: PROFESSIONAL COVER
   // ==========================================
   
   // Cover Background
@@ -78,7 +78,7 @@ export function generateGenericPDF(title: string, description: string, summary: 
   doc.setFontSize(12);
   doc.setFont("helvetica", "normal");
   doc.setTextColor(148, 163, 184); // slate-400
-  doc.text("beneficiu Knowledge Platform", pageWidth / 2, 90, { align: "center" });
+  doc.text("Premium Knowledge Platform", pageWidth / 2, 90, { align: "center" });
 
   doc.setDrawColor(51, 65, 85); // slate-700
   doc.line(pageWidth / 4, 110, (pageWidth / 4) * 3, 110);
@@ -138,7 +138,7 @@ export function generateGenericPDF(title: string, description: string, summary: 
   doc.setTextColor(15, 23, 42); // slate-900
   doc.setFontSize(12);
   doc.setFont("helvetica", "bold");
-  doc.text("Pentru a stabili detaliile politei tale, contacteaza Cristian Vaduva.", 30, ctaY + 15);
+  doc.text("Pentru o consultanta personalizata contacteaza Cristian Vaduva.", 30, ctaY + 15);
 
   doc.setTextColor(71, 85, 105); // slate-600
   doc.setFontSize(10);

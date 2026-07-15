@@ -8,8 +8,8 @@ import { CONTACT } from "@/config/contact";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Asigurări Travel beneficiu | Cristian Văduva",
-  description: "Liniște deplină oriunde călătorești, cu protecție medicală la nivel internațional și clauză storno beneficiu.",
+  title: "Asigurări Travel Premium | Cristian Văduva",
+  description: "Liniște deplină oriunde călătorești, cu protecție medicală la nivel internațional și clauză storno premium.",
 };
 
 export default function TravelInsurancePage() {
@@ -29,7 +29,7 @@ export default function TravelInsurancePage() {
               Asigurări Travel Internaționale
             </h1>
             <p className="text-xl text-muted-foreground leading-relaxed mb-10 max-w-3xl">
-              Călătoriile tale de afaceri sau vacanțele de lux trebuie să fie strict despre relaxare și experiențe. Elimină complet riscul unui faliment personal generat de o spitalizare de urgență în străinătate sau de un zbor intercontinental anulat. O asigurare travel beneficiu îți decontează absolut orice grijă financiară în altă țară.
+              Călătoriile tale de afaceri sau vacanțele de lux trebuie să fie strict despre relaxare și experiențe. Elimină complet riscul unui faliment personal generat de o spitalizare de urgență în străinătate sau de un zbor intercontinental anulat. O asigurare travel premium îți decontează absolut orice grijă financiară în altă țară.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Button size="lg" className="h-14 px-8 text-lg rounded-full bg-blue-600 hover:bg-blue-700 text-white shadow-xl" asChild>
@@ -108,21 +108,21 @@ export default function TravelInsurancePage() {
           <div className="mb-24">
             <h2 className="text-3xl font-heading font-bold mb-10 text-center">De Ce Oferim Confort Suprem</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="glass beneficiu-card p-8 rounded-[2rem] border border-border">
+              <div className="glass premium-card p-8 rounded-[2rem] border border-border">
                 <CheckCircle2 className="w-8 h-8 text-blue-600 mb-6" />
                 <h3 className="text-xl font-bold mb-3 text-foreground">Asistență Permanentă 24/7</h3>
                 <p className="text-muted-foreground leading-relaxed">
                   Nu ești lăsat de izbeliște. Suni la centrala telefonică din România și operatorul tău va lua direct legătura cu spitalul din destinația ta, traducând și garantând plata.
                 </p>
               </div>
-              <div className="glass beneficiu-card p-8 rounded-[2rem] border border-border">
+              <div className="glass premium-card p-8 rounded-[2rem] border border-border">
                 <CheckCircle2 className="w-8 h-8 text-blue-600 mb-6" />
                 <h3 className="text-xl font-bold mb-3 text-foreground">Anulare Storno Simplă</h3>
                 <p className="text-muted-foreground leading-relaxed">
                   Dacă ai plătit 4.000 Euro pe o vacanță în Maldive și faci o toxiinfecție alimentară cu 2 zile înainte de zbor, nu pierzi banii. Asigurătorul îți rambursează costurile.
                 </p>
               </div>
-              <div className="glass beneficiu-card p-8 rounded-[2rem] border border-border">
+              <div className="glass premium-card p-8 rounded-[2rem] border border-border">
                 <CheckCircle2 className="w-8 h-8 text-blue-600 mb-6" />
                 <h3 className="text-xl font-bold mb-3 text-foreground">Decontare Directă vs Rambursare</h3>
                 <p className="text-muted-foreground leading-relaxed">
@@ -178,7 +178,7 @@ export default function TravelInsurancePage() {
               Impactul în Viața Reală
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="glass beneficiu-card p-8 rounded-[2rem] border-l-4 border-l-amber-500">
+              <div className="glass premium-card p-8 rounded-[2rem] border-l-4 border-l-amber-500">
                 <h3 className="text-xl font-bold mb-4 text-foreground">Scenariul 1: Accidentul pe Pârtia din Austria</h3>
                 <p className="text-muted-foreground leading-relaxed mb-4">
                   Dan are un accident sever pe pârtia din Ischgl și își fracturează grav femurul. Patrula montană îl preia cu snowmobilul, iar spitalul local impune o intervenție chirurgicală care costă 12.000 EUR plus costurile de recuperare.
@@ -187,7 +187,7 @@ export default function TravelInsurancePage() {
                   <span className="font-bold text-amber-700">Rezolvarea poliței:</span> Având sporturile de iarnă bifate pe poliță, familia sună la numărul de pe contract. Generali trimite "scrisoarea de garanție de plată" către spitalul austriac. Dan este operat excelent iar 12.000 EUR sunt transferați curat din Italia către Austria. Costul poliței lui Dan fusese sub 30 Euro.
                 </div>
               </div>
-              <div className="glass beneficiu-card p-8 rounded-[2rem] border-l-4 border-l-amber-500">
+              <div className="glass premium-card p-8 rounded-[2rem] border-l-4 border-l-amber-500">
                 <h3 className="text-xl font-bold mb-4 text-foreground">Scenariul 2: Vărsatul de Vânt strică Caraibele</h3>
                 <p className="text-muted-foreground leading-relaxed mb-4">
                   Soții Enache plătesc 6.000 EUR pentru o destinație de lux în Republica Dominicană alături de copilul lor de 5 ani. Cu 3 zile înainte de zbor, copilul face febră mare fiind diagnosticat cu o boală infecțioasă contagioasă (varicelă). Ei nu pot urca în avion sub nicio formă.
@@ -212,7 +212,7 @@ export default function TravelInsurancePage() {
               </div>
               <div className="p-6 rounded-2xl bg-white border border-[#c8102e]/10 shadow-sm hover:shadow-md transition-shadow">
                 <h4 className="font-bold text-[#c8102e] mb-3 text-lg">Limitele Majore</h4>
-                <p className="text-muted-foreground leading-relaxed">Asigurările noastre permit configurarea unor limite formidabile de sute de mii de euro, fiind capabile să acopere intervenții medicale de extremă necesitate în cele mai renumite spitale străine.</p>
+                <p className="text-muted-foreground leading-relaxed">Asigurările noastre permit configurarea unor limite formidabile de sute de mii de euro, fiind capabile să acopere intervenții neurochirurgicale de extremă necesitate în cele mai exclusiviste spitale străine.</p>
               </div>
               <div className="p-6 rounded-2xl bg-white border border-[#c8102e]/10 shadow-sm hover:shadow-md transition-shadow">
                 <h4 className="font-bold text-[#c8102e] mb-3 text-lg">Fără Plăți din Buzunar</h4>
@@ -225,15 +225,15 @@ export default function TravelInsurancePage() {
           <div className="mb-24">
             <h2 className="text-3xl font-heading font-bold mb-10 text-center">Întrebări Frecvente (FAQ)</h2>
             <div className="space-y-6 max-w-4xl mx-auto">
-              <div className="glass beneficiu-card p-6 md:p-8 rounded-2xl border border-border">
+              <div className="glass premium-card p-6 md:p-8 rounded-2xl border border-border">
                 <h3 className="text-xl font-bold mb-3 text-foreground">Dacă am un card bancar Gold cu Travel inclus, de ce să mai iau asigurare?</h3>
-                <p className="text-muted-foreground leading-relaxed">Cardurile beneficiu bancare au limite foarte stricte și predefinite de despăgubire (uneori doar de 15.000 EUR sau 30.000 EUR) pe care foarte puțini citesc să le înțeleagă. Dacă spitalizarea în Dubai te va costa 50.000 EUR, banca plătește 30K iar tu diferența. O poliță de travel dedicată Generali se poate face cu limite de la 50.000 la sute de mii de euro, și include extra beneficii Storno.</p>
+                <p className="text-muted-foreground leading-relaxed">Cardurile premium bancare au limite foarte stricte și predefinite de despăgubire (uneori doar de 15.000 EUR sau 30.000 EUR) pe care foarte puțini citesc să le înțeleagă. Dacă spitalizarea în Dubai te va costa 50.000 EUR, banca plătește 30K iar tu diferența. O poliță de travel dedicată Generali se poate face cu limite de la 50.000 la sute de mii de euro, și include extra beneficii Storno.</p>
               </div>
-              <div className="glass beneficiu-card p-6 md:p-8 rounded-2xl border border-border">
+              <div className="glass premium-card p-6 md:p-8 rounded-2xl border border-border">
                 <h3 className="text-xl font-bold mb-3 text-foreground">Ce trebuie să fac imediat cum mă îmbolnăvesc în vacanță?</h3>
                 <p className="text-muted-foreground leading-relaxed">Trebuie să suni OBLIGATORIU la numărul de urgență (Call Center Europ Assistance) scris mare pe polița pe care ai primit-o pe email. Ei îți vor crea dosarul de daună pe loc, te vor îndruma spre cel mai apropiat spital din contractele lor și vor da semnalul de acceptare la plată direct la casieria lor.</p>
               </div>
-              <div className="glass beneficiu-card p-6 md:p-8 rounded-2xl border border-border">
+              <div className="glass premium-card p-6 md:p-8 rounded-2xl border border-border">
                 <h3 className="text-xl font-bold mb-3 text-foreground">Când se poate cumpăra clauza de anulare (Storno)?</h3>
                 <p className="text-muted-foreground leading-relaxed">Clauza Storno funcționează doar dacă ai cumpărat polița Generali fie ODATĂ cu cumpărarea primei fracții din pachetul turistic (biletul de avion sau avansul la cazare), fie cu maxim 3 zile distanță de la achiziția pachetului, conform limitelor contractuale.</p>
               </div>
@@ -246,7 +246,7 @@ export default function TravelInsurancePage() {
         <div id="oferta" className="container mx-auto px-4 max-w-6xl">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-heading font-bold mb-4">Pregătit Pentru Zbor?</h2>
-            <p className="text-xl text-muted-foreground">O poliță beneficiu emisă electronic direct pe telefonul tău în câteva minute.</p>
+            <p className="text-xl text-muted-foreground">O poliță premium emisă electronic direct pe telefonul tău în câteva minute.</p>
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             <div className="lg:col-span-2">

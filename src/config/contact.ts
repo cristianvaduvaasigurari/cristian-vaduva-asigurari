@@ -24,7 +24,7 @@ export const CONTACT = {
     youtube: "https://youtube.com/@CristianVaduvaCV",
   },
   ecosystem: {
-    aixbeneficiu: "https://aixbeneficiu.com",
+    aixluxury: "https://aixluxury.com",
     aixos: "https://ai-x-os.vercel.app/",
     homefind: "https://real-estate-platform-brown.vercel.app/",
     generali: "https://www.generali.ro",

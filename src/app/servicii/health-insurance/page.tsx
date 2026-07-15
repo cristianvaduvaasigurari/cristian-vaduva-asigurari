@@ -26,7 +26,7 @@ export default function HealthInsurancePage() {
               <Activity className="w-12 h-12" />
             </div>
             <h1 className="text-5xl md:text-6xl font-heading font-bold mb-6 leading-tight">
-              Asigurări Private de Sănătate beneficiu
+              Asigurări Private de Sănătate Premium
             </h1>
             <p className="text-xl text-muted-foreground leading-relaxed mb-10 max-w-3xl">
               Timpul înseamnă viață, iar sănătatea ta nu suportă liste de așteptare. Acces direct și nelimitat la excelența medicală din spitalele și clinicile private de top din România și Europa. Pentru că deciziile medicale vitale nu trebuie să depindă de bugetul tău de moment.
@@ -108,21 +108,21 @@ export default function HealthInsurancePage() {
           <div className="mb-24">
             <h2 className="text-3xl font-heading font-bold mb-10 text-center">Avantajele Protecției Private</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="glass beneficiu-card p-8 rounded-[2rem] border border-border">
+              <div className="glass premium-card p-8 rounded-[2rem] border border-border">
                 <CheckCircle2 className="w-8 h-8 text-blue-600 mb-6" />
                 <h3 className="text-xl font-bold mb-3 text-foreground">Fără Cozi și Stres</h3>
                 <p className="text-muted-foreground leading-relaxed">
                   Programările se realizează fie telefonic prin linia dedicată de asistență Generali, fie direct în aplicația rețelei medicale, cu acces extrem de rapid la specialiști excelenți.
                 </p>
               </div>
-              <div className="glass beneficiu-card p-8 rounded-[2rem] border border-border">
+              <div className="glass premium-card p-8 rounded-[2rem] border border-border">
                 <CheckCircle2 className="w-8 h-8 text-blue-600 mb-6" />
                 <h3 className="text-xl font-bold mb-3 text-foreground">Condiții de Lux</h3>
                 <p className="text-muted-foreground leading-relaxed">
                   Spitalizarea se face în rezerve single cu confort hotelier, adesea alături de un aparținător (în cazul copiilor), unde igiena și standardul serviciilor sunt desăvârșite.
                 </p>
               </div>
-              <div className="glass beneficiu-card p-8 rounded-[2rem] border border-border">
+              <div className="glass premium-card p-8 rounded-[2rem] border border-border">
                 <CheckCircle2 className="w-8 h-8 text-blue-600 mb-6" />
                 <h3 className="text-xl font-bold mb-3 text-foreground">A doua opinie medicală</h3>
                 <p className="text-muted-foreground leading-relaxed">
@@ -178,7 +178,7 @@ export default function HealthInsurancePage() {
               Asigurarea în Viața Reală
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="glass beneficiu-card p-8 rounded-[2rem] border-l-4 border-l-amber-500">
+              <div className="glass premium-card p-8 rounded-[2rem] border-l-4 border-l-amber-500">
                 <h3 className="text-xl font-bold mb-4 text-foreground">Scenariul 1: Trauma Sportivă</h3>
                 <p className="text-muted-foreground leading-relaxed mb-4">
                   Andrei joacă fotbal duminica cu prietenii și suferă o ruptură de ligamente încrucișate (LIA). La stat, operația ar fi fost programată peste câteva luni. În schimb, el merge a doua zi la o clinică privată renumită.
@@ -187,7 +187,7 @@ export default function HealthInsurancePage() {
                   <span className="font-bold text-amber-700">Rezolvarea poliței:</span> Intervenția complexă artroscopică de 4.500 EUR este aprobată de compania de asigurări instant. Andrei se operează miercuri și nu plătește absolut nimic din buzunar la recepția spitalului.
                 </div>
               </div>
-              <div className="glass beneficiu-card p-8 rounded-[2rem] border-l-4 border-l-amber-500">
+              <div className="glass premium-card p-8 rounded-[2rem] border-l-4 border-l-amber-500">
                 <h3 className="text-xl font-bold mb-4 text-foreground">Scenariul 2: Pachetul Family și Copiii</h3>
                 <p className="text-muted-foreground leading-relaxed mb-4">
                   Fiica de 4 ani a Elenei face brusc febră 40 grade în timpul nopții. Elena apelează linia de urgență a rețelei private partenere Generali, în loc să riște contactul cu zeci de alte viroze la stat.
@@ -225,15 +225,15 @@ export default function HealthInsurancePage() {
           <div className="mb-24">
             <h2 className="text-3xl font-heading font-bold mb-10 text-center">Întrebări Frecvente (FAQ)</h2>
             <div className="space-y-6 max-w-4xl mx-auto">
-              <div className="glass beneficiu-card p-6 md:p-8 rounded-2xl border border-border">
+              <div className="glass premium-card p-6 md:p-8 rounded-2xl border border-border">
                 <h3 className="text-xl font-bold mb-3 text-foreground">Sunt acoperite bolile pe care le am deja? (Afecțiuni preexistente)</h3>
                 <p className="text-muted-foreground leading-relaxed">Aici intervine diferența de la caz la caz. Compania de asigurări preia "riscuri", nu certitudini. Daca suferi deja de o hernie de disc înainte de semnarea poliței, asigurătorul nu va plăti imediat operația acesteia (excludere sau perioadă lungă de așteptare). Totuși, bolile care apar nou după ce polița este în vigoare, sunt acoperite 100% conform pachetului.</p>
               </div>
-              <div className="glass beneficiu-card p-6 md:p-8 rounded-2xl border border-border">
+              <div className="glass premium-card p-6 md:p-8 rounded-2xl border border-border">
                 <h3 className="text-xl font-bold mb-3 text-foreground">Ce se întâmplă dacă merg la o clinică care nu lucrează direct cu Generali?</h3>
                 <p className="text-muted-foreground leading-relaxed">Polița este flexibilă! Te poți trata la orice clinică dorești (inclusiv una non-parteneră). Va trebui doar să plătești tu factura pe loc cu cardul, și apoi să ne trimiți dovada plății și raportul medical pentru a-ți vira banii înapoi pe card în sistem de rambursare.</p>
               </div>
-              <div className="glass beneficiu-card p-6 md:p-8 rounded-2xl border border-border">
+              <div className="glass premium-card p-6 md:p-8 rounded-2xl border border-border">
                 <h3 className="text-xl font-bold mb-3 text-foreground">Este posibil să asigurați persoane trecute de 65 de ani?</h3>
                 <p className="text-muted-foreground leading-relaxed">Există pachete special adaptate seniorilor, însă ele sunt supuse unor limitări și grile de subscriere mai riguroase din pricina riscurilor medicale ridicate. Solicită o ofertă pentru a evalua eligibilitatea exactă.</p>
               </div>
@@ -250,7 +250,7 @@ export default function HealthInsurancePage() {
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             <div className="lg:col-span-2">
-              <ContactForm customTitle="Obține Oferta beneficiu pentru Sănătate" />
+              <ContactForm customTitle="Obține Oferta Premium pentru Sănătate" />
             </div>
             
             <div className="glass rounded-3xl p-8 border border-border h-fit sticky top-32 shadow-lg">

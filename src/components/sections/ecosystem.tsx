@@ -9,15 +9,15 @@ const ecosystems = [
   {
     icon: <Building className="w-8 h-8" />,
     title: "Real Estate",
-    description: "Consultanță de top pentru investiții imobiliare, proprietăți de înaltă calitate și optimizarea portofoliilor.",
+    description: "Consultanță de top pentru investiții, proprietăți de lux și optimizarea portofoliilor imobiliare.",
     href: "/real-estate",
     gradient: "from-blue-500 to-cyan-400"
   },
   {
     icon: <Globe className="w-8 h-8" />,
-    title: "AiXbeneficiu",
-    description: "O selecție atent realizată de proprietăți imobiliare deosebite și oportunități investiționale.",
-    href: CONTACT.ecosystem.aixbeneficiu,
+    title: "AiXLuxury",
+    description: "O selecție exclusivistă de proprietăți de lux și oportunități investiționale high-end.",
+    href: CONTACT.ecosystem.aixluxury,
     gradient: "from-amber-500 to-orange-400"
   },
   {
@@ -68,7 +68,7 @@ export function Ecosystem() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.15 }}
-              className="relative group rounded-[2.5rem] p-8 glass beneficiu-card overflow-hidden border border-border/50 h-full flex flex-col"
+              className="relative group rounded-[2.5rem] p-8 glass premium-card overflow-hidden border border-border/50 h-full flex flex-col"
             >
               <div className={`absolute inset-0 bg-gradient-to-br ${eco.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-500`} />
               

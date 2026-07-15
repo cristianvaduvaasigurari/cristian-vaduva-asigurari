@@ -9,7 +9,7 @@ const radarSignals = [
   {
     id: "re-1",
     category: "Real Estate Market",
-    title: "Creșterea chiriilor beneficiu în Pipera & Floreasca",
+    title: "Creșterea chiriilor premium în Pipera & Floreasca",
     trend: "+8.4% anual",
     status: "bullish",
     summary: "Cererea crescută de la expați și angajații multinaționalelor menține presiunea pe prețurile chiriilor pentru apartamentele cu 3-4 camere.",
@@ -44,12 +44,12 @@ const radarSignals = [
   },
   {
     id: "lux-1",
-    category: "Piața Imobiliară",
+    category: "Luxury Market",
     title: "Creșterea taxelor de import pentru supercars electrice",
     trend: "+10% Taxare",
     status: "bearish",
     summary: "Modificările fiscale la nivel european afectează cotațiile mașinilor sport importate din afara Uniunii.",
-    aiSummary: "Valoarea reziduală a modelelor termice de înaltă performanță (V8/V12) este în creștere pe piața secundară."
+    aiSummary: "Valoarea reziduală a modelelor termice exclusiviste (V8/V12) este în creștere pe piața secundară."
   }
 ];
 
@@ -79,7 +79,7 @@ export function MarketRadarFeed() {
         
         {/* Category Filters */}
         <div className="flex gap-2 overflow-x-auto no-scrollbar w-full md:w-auto">
-          {["Toate", "Real Estate Market", "Insurance News", "Economic News", "Investment Trends", "Piața Imobiliară"].map((cat) => (
+          {["Toate", "Real Estate Market", "Insurance News", "Economic News", "Investment Trends", "Luxury Market"].map((cat) => (
             <button
               key={cat}
               onClick={() => setFilter(cat)}

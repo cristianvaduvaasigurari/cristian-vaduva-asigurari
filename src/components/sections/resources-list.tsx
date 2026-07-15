@@ -11,7 +11,7 @@ const resources = [
   { id: "guide-home", title: "Ghid Complet: Asigurarea Locuinței", desc: "Află cum să nu fii păcălit de polițele băncilor și cum să acoperi valoarea reală de reconstrucție.", type: "PDF Guide", color: "bg-amber-50 text-amber-700" },
   { id: "guide-life", title: "Ghid Complet: Asigurarea de Viață", desc: "Cum să calculezi suma corectă pentru a-ți asigura familia în caz de tragedie, pas cu pas.", type: "PDF Guide", color: "bg-blue-50 text-blue-700" },
   { id: "guide-health", title: "Ghid Complet: Sănătate Privată", desc: "Diferența dintre abonament medical și asigurare de sănătate cu acoperire pentru boli grave.", type: "PDF Guide", color: "bg-rose-50 text-rose-700" },
-  { id: "guide-business", title: "Ghid Complet: Asigurări Business", desc: "top 5 riscuri pe care IMM-urile românești le ignoră și cum să le transferi inteligent.", type: "PDF Guide", color: "bg-indigo-50 text-indigo-700" },
+  { id: "guide-business", title: "Ghid Complet: Asigurări Business", desc: "Top 5 riscuri pe care IMM-urile românești le ignoră și cum să le transferi inteligent.", type: "PDF Guide", color: "bg-indigo-50 text-indigo-700" },
   { id: "guide-investments", title: "Investiții Inteligente & AiX OS", desc: "Cum funcționează unit-linked și de ce capitalizarea pe termen lung bate inflația garantat.", type: "PDF Guide", color: "bg-emerald-50 text-emerald-700" },
   { id: "check-property", title: "Checklist: Cumpărarea unei Proprietăți", desc: "30 de aspecte ascunse (juridice, tehnice, financiare) pe care trebuie să le verifici înainte de a da avansul.", type: "Checklist", color: "bg-slate-100 text-slate-700" },
   { id: "check-insurance", title: "Checklist: Revizuirea Polițelor", desc: "Formular de auto-audit. Verifică în 5 minute dacă polițele pe care le ai deja își mai fac treaba.", type: "Checklist", color: "bg-slate-100 text-slate-700" },
@@ -38,7 +38,7 @@ export function ResourcesList() {
     formData.append("name", "Descărcare Resursă");
     formData.append("email", email);
     formData.append("service", `Descărcare: ${res?.title}`);
-    formData.append("source", "beneficiu Resources Page");
+    formData.append("source", "Premium Resources Page");
     
     try {
       const response = await fetch('/api/lead', {
@@ -136,7 +136,7 @@ export function ResourcesList() {
                 <Lock className="w-8 h-8" />
               </div>
               
-              <h3 className="text-2xl font-bold font-heading mb-2">Acces Material beneficiu</h3>
+              <h3 className="text-2xl font-bold font-heading mb-2">Acces Material Premium</h3>
               <p className="text-sm text-muted-foreground mb-8">
                 Introdu adresa de email pentru a primi instant <strong>{resources.find(r => r.id === selectedResource)?.title}</strong> în format PDF.
               </p>

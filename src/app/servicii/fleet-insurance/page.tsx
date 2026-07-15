@@ -29,7 +29,7 @@ export default function FleetInsurancePage() {
               Asigurarea Flotelor Auto
             </h1>
             <p className="text-xl text-muted-foreground leading-relaxed mb-10 max-w-3xl">
-              Când afacerea ta depinde de mașini, imobilizarea lor înseamnă bani pierduți. Centralizează absolut toate vehiculele (turisme, utilitare, camioane) sub un singur contract tip "Flotă", obținând discounturi volumetrice masive, un singur scadențar și un management beneficiu al daunelor.
+              Când afacerea ta depinde de mașini, imobilizarea lor înseamnă bani pierduți. Centralizează absolut toate vehiculele (turisme, utilitare, camioane) sub un singur contract tip "Flotă", obținând discounturi volumetrice masive, un singur scadențar și un management premium al daunelor.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Button size="lg" className="h-14 px-8 text-lg rounded-full bg-blue-600 hover:bg-blue-700 text-white shadow-xl" asChild>
@@ -82,7 +82,7 @@ export default function FleetInsurancePage() {
               Ce companii au nevoie de contract Fleet?
             </h2>
             <div className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Soluția este construită doar pentru domeniul B2B (Business-to-Business) și cuprinde companii cu expunere rutieră extinsă:
+              Soluția este construită exclusiv pentru domeniul B2B (Business-to-Business) și cuprinde companii cu expunere rutieră extinsă:
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl mx-auto text-left">
               <div className="p-6 rounded-2xl bg-emerald-50/50 border border-emerald-100">
@@ -108,21 +108,21 @@ export default function FleetInsurancePage() {
           <div className="mb-24">
             <h2 className="text-3xl font-heading font-bold mb-10 text-center">Avantajele B2B Unice Ale Flotei</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="glass beneficiu-card p-8 rounded-[2rem] border border-border">
+              <div className="glass premium-card p-8 rounded-[2rem] border border-border">
                 <CheckCircle2 className="w-8 h-8 text-blue-600 mb-6" />
                 <h3 className="text-xl font-bold mb-3 text-foreground">Discount de Volum Pre-setat</h3>
                 <p className="text-muted-foreground leading-relaxed">
                   Cumperi a 12-a mașină a firmei în decembrie. Nu negociezi din nou cu noi de la zero prețul de asigurare la ea. Îi va fi aplicat din prima secundă tariful redus stabilit pentru toată clasa respectivă de vehicule (ex. "Skoda Octavia Vânzări").
                 </p>
               </div>
-              <div className="glass beneficiu-card p-8 rounded-[2rem] border border-border">
+              <div className="glass premium-card p-8 rounded-[2rem] border border-border">
                 <CheckCircle2 className="w-8 h-8 text-blue-600 mb-6" />
                 <h3 className="text-xl font-bold mb-3 text-foreground">Franșize Flexibile Agregate</h3>
                 <p className="text-muted-foreground leading-relaxed">
                   Polițele de flotă Casco permit ajustări specifice. Firma poate prelua reparația zgârieturilor minore pe cost intern (franșiză), activând Casco doar pentru avarii majore de mii de euro, scăzând puternic prima anuală per mașină.
                 </p>
               </div>
-              <div className="glass beneficiu-card p-8 rounded-[2rem] border border-border">
+              <div className="glass premium-card p-8 rounded-[2rem] border border-border">
                 <CheckCircle2 className="w-8 h-8 text-blue-600 mb-6" />
                 <h3 className="text-xl font-bold mb-3 text-foreground">Asistență Rutieră Master</h3>
                 <p className="text-muted-foreground leading-relaxed">
@@ -178,7 +178,7 @@ export default function FleetInsurancePage() {
               Scenarii și Salvarea Afacerilor
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="glass beneficiu-card p-8 rounded-[2rem] border-l-4 border-l-amber-500">
+              <div className="glass premium-card p-8 rounded-[2rem] border-l-4 border-l-amber-500">
                 <h3 className="text-xl font-bold mb-4 text-foreground">Scenariul 1: Grindina de Weekend</h3>
                 <p className="text-muted-foreground leading-relaxed mb-4">
                   O companie de distribuție își parchează toate cele 25 de dube în curte vineri seara. O furtună localizată masivă de grindină distruge sâmbătă parbrizele și caroseriile a 20 de mașini. Pagubă estimată: 40.000 EUR reparații.
@@ -187,7 +187,7 @@ export default function FleetInsurancePage() {
                   <span className="font-bold text-amber-700">Rezolvarea poliței:</span> Având contract de flotă Casco, brokerul contactează asigurătorul care trimite un inspector în curtea firmei. Întregul lot este acceptat spre reparație fără dezbateri pe rând pentru fiecare mașină individual, iar activitatea firmei se poate relua rapid cu geamuri noi montate rapid în serie.
                 </div>
               </div>
-              <div className="glass beneficiu-card p-8 rounded-[2rem] border-l-4 border-l-amber-500">
+              <div className="glass premium-card p-8 rounded-[2rem] border-l-4 border-l-amber-500">
                 <h3 className="text-xl font-bold mb-4 text-foreground">Scenariul 2: Adăugarea rapidă a noilor mașini</h3>
                 <p className="text-muted-foreground leading-relaxed mb-4">
                   Directorul achiziționează 5 mașini noi pentru divizia de vânzări de pe o zi pe alta.
@@ -225,15 +225,15 @@ export default function FleetInsurancePage() {
           <div className="mb-24">
             <h2 className="text-3xl font-heading font-bold mb-10 text-center">Întrebări Frecvente</h2>
             <div className="space-y-6 max-w-4xl mx-auto">
-              <div className="glass beneficiu-card p-6 md:p-8 rounded-2xl border border-border">
+              <div className="glass premium-card p-6 md:p-8 rounded-2xl border border-border">
                 <h3 className="text-xl font-bold mb-3 text-foreground">De la câte autovehicule se consideră "Flotă"?</h3>
                 <p className="text-muted-foreground leading-relaxed">La Generali și majoritatea marilor jucători de top, analiza dosarului ca "Flotă" distinctă (cu discounturi negociate manual, nu pe algoritm) începe de obicei de la minim 5 - 10 vehicule motorizate aflate în proprietatea aceluiași CUI, însă optimizările majore apar la peste 20-30 de vehicule.</p>
               </div>
-              <div className="glass beneficiu-card p-6 md:p-8 rounded-2xl border border-border">
+              <div className="glass premium-card p-6 md:p-8 rounded-2xl border border-border">
                 <h3 className="text-xl font-bold mb-3 text-foreground">Ce se întâmplă dacă vând o mașină din Flotă la jumătatea anului?</h3>
                 <p className="text-muted-foreground leading-relaxed">Se trimite contractul de vânzare-cumpărare. Mașina este scoasă de pe polița Master în ziua respectivă, iar primele neconsumate (pe restul de luni rămase) sunt fie returnate în contul companiei, fie sunt folosite ca avans (credit) pentru adăugarea viitoarelor mașini pe poliță.</p>
               </div>
-              <div className="glass beneficiu-card p-6 md:p-8 rounded-2xl border border-border">
+              <div className="glass premium-card p-6 md:p-8 rounded-2xl border border-border">
                 <h3 className="text-xl font-bold mb-3 text-foreground">Un șofer pe mașina firmei face accident cu alcoolemie. Ce se întâmplă?</h3>
                 <p className="text-muted-foreground leading-relaxed">Regulile de bază rămân inflexibile chiar și la Flotă. Generali (pe RCA) va despăgubi victima terță lovită pentru a nu o lăsa pe drumuri, însă va face "Regres" - adică firma de asigurări va da în judecată direct ȘOFERUL angajat al firmei tale vinovat de consum de alcool, recuperând banii de la el.</p>
               </div>

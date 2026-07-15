@@ -19,7 +19,7 @@ const wallSections = [
     details: {
       activePolicies: [
         { name: "Asigurare Viață Termen", provider: "Generali", limit: "€250,000" },
-        { name: "Poliță CASCO beneficiu", provider: "Generali", limit: "€45,000" },
+        { name: "Poliță CASCO Premium", provider: "Generali", limit: "€45,000" },
         { name: "Locuință All-Risk", provider: "Generali", limit: "€120,000" }
       ],
       recommendation: "Încheierea unei polițe complementare de răspundere civilă legală."
@@ -41,7 +41,7 @@ const wallSections = [
       ],
       recommendation: "Efectuarea unui nou raport de evaluare pentru colecția de artă."
     },
-    actionText: "Administrează Garaj Personal",
+    actionText: "Administrează Luxury Garage",
     actionLink: "/luxury-garage"
   },
   {

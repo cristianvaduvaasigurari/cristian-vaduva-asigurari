@@ -8,7 +8,7 @@ import { ContactForm } from "@/components/sections/contact-form";
 
 export const metadata: Metadata = {
   title: "Real Estate | Cristian Văduva",
-  description: "Real Estate, Buyer & Seller Representation, Off-market properties și Investment Advisory.",
+  description: "Luxury Real Estate, Buyer & Seller Representation, Off-market properties și Investment Advisory.",
 };
 
 export default function RealEstatePage() {
@@ -20,17 +20,17 @@ export default function RealEstatePage() {
         {/* Hero Section */}
         <div className="container mx-auto px-4 text-center max-w-4xl mb-24">
           <span className="inline-block px-4 py-2 rounded-full bg-emerald-500/10 text-emerald-400 font-heading text-sm font-bold tracking-widest uppercase mb-6 border border-emerald-500/20">
-            Powered by AiXbeneficiu & Home Find
+            Powered by AiXLuxury & Home Find
           </span>
           <h1 className="text-5xl md:text-7xl font-heading font-bold mb-8 leading-tight tracking-tight">
-            Servicii Imobiliare & <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-500">Investment Advisory.</span>
+            Luxury Real Estate & <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-500">Investment Advisory.</span>
           </h1>
           <p className="text-xl font-light text-muted-foreground mb-10">
-            Acces direct la proprietăți off-market, reprezentare la cele mai înalte standarde și strategii de achiziție bazate pe randament.
+            Acces exclusiv la proprietăți off-market, reprezentare la cele mai înalte standarde și strategii de achiziție bazate pe randament.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <Button size="lg" className="rounded-full bg-emerald-600 hover:bg-emerald-700 text-white px-8" asChild>
-              <Link href="https://aixbeneficiu.com" target="_blank">Explorează AiXbeneficiu</Link>
+              <Link href="https://aixluxury.com" target="_blank">Explorează AiXLuxury</Link>
             </Button>
             <Button size="lg" variant="outline" className="rounded-full border-border bg-white hover:bg-muted text-foreground px-8" asChild>
               <Link href="https://real-estate-platform-brown.vercel.app/" target="_blank">Platforma Home Find</Link>
@@ -41,23 +41,23 @@ export default function RealEstatePage() {
         {/* Services Grid */}
         <div className="container mx-auto px-4 max-w-6xl mb-32">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="glass beneficiu-card p-10 rounded-[2rem] border border-border group">
+            <div className="glass premium-card p-10 rounded-[2rem] border border-border group">
               <Key className="w-12 h-12 text-emerald-600 mb-6 group-hover:scale-110 transition-transform" />
               <h3 className="text-2xl font-bold font-heading mb-4 text-foreground">Buyer Representation</h3>
               <p className="text-muted-foreground leading-relaxed">
-                Reprezentăm doar interesele cumpărătorului. Analizăm piața, filtrăm zgomotul și negociem agresiv pentru a securiza proprietatea ideală la cel mai corect preț. Fără conflicte de interese.
+                Reprezentăm exclusiv interesele cumpărătorului. Analizăm piața, filtrăm zgomotul și negociem agresiv pentru a securiza proprietatea ideală la cel mai corect preț. Fără conflicte de interese.
               </p>
             </div>
 
-            <div className="glass beneficiu-card p-10 rounded-[2rem] border border-border group">
+            <div className="glass premium-card p-10 rounded-[2rem] border border-border group">
               <Building2 className="w-12 h-12 text-blue-600 mb-6 group-hover:scale-110 transition-transform" />
               <h3 className="text-2xl font-bold font-heading mb-4 text-foreground">Seller Representation</h3>
               <p className="text-muted-foreground leading-relaxed">
-                Marketing modern pentru proprietăți cu valoare ridicată. Prin rețeaua noastră privată și platformele AiXbeneficiu / Home Find, targetăm direct cumpărătorii calificați, reducând timpul petrecut pe piață.
+                Marketing premium pentru proprietăți de lux. Prin rețeaua noastră privată și platformele AiXLuxury / Home Find, targetăm direct cumpărătorii calificați, reducând timpul petrecut pe piață.
               </p>
             </div>
 
-            <div className="glass beneficiu-card p-10 rounded-[2rem] border border-border group">
+            <div className="glass premium-card p-10 rounded-[2rem] border border-border group">
               <Search className="w-12 h-12 text-purple-600 mb-6 group-hover:scale-110 transition-transform" />
               <h3 className="text-2xl font-bold font-heading mb-4 text-foreground">Off-Market Properties</h3>
               <p className="text-muted-foreground leading-relaxed">
@@ -65,15 +65,15 @@ export default function RealEstatePage() {
               </p>
             </div>
 
-            <div className="glass beneficiu-card p-10 rounded-[2rem] border border-border group lg:col-span-1">
+            <div className="glass premium-card p-10 rounded-[2rem] border border-border group lg:col-span-1">
               <Gem className="w-12 h-12 text-amber-600 mb-6 group-hover:scale-110 transition-transform" />
-              <h3 className="text-2xl font-bold font-heading mb-4 text-foreground">Portofoliu Select</h3>
+              <h3 className="text-2xl font-bold font-heading mb-4 text-foreground">Luxury Real Estate</h3>
               <p className="text-muted-foreground leading-relaxed">
-                De la penthouse-uri spațioase la vile istorice. Filtrăm portofoliul pentru a garanta calitatea absolută a asset-ului, verificând atât aspectele juridice cât și potențialul arhitectural.
+                De la penthouse-uri exclusiviste la vile istorice. Filtrăm portofoliul pentru a garanta calitatea absolută a asset-ului, verificând atât aspectele juridice cât și potențialul arhitectural.
               </p>
             </div>
 
-            <div className="glass beneficiu-card p-10 rounded-[2rem] border border-border group lg:col-span-2">
+            <div className="glass premium-card p-10 rounded-[2rem] border border-border group lg:col-span-2">
               <ShieldCheck className="w-12 h-12 text-cyan-600 mb-6 group-hover:scale-110 transition-transform" />
               <h3 className="text-2xl font-bold font-heading mb-4 text-foreground">Investment Advisory & Strategy</h3>
               <p className="text-muted-foreground leading-relaxed mb-6">

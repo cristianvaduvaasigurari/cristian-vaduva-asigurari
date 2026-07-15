@@ -31,7 +31,7 @@ export function Services() {
             transition={{ delay: 0.1 }}
             className="text-lg text-muted-foreground max-w-2xl mx-auto"
           >
-            Pachete de asigurare adaptate nevoilor tale, pentru persoanele fizice și juridice, susținute de puterea și experiența unuia dintre cei mai mari asigurători din lume.
+            Soluții complete de asigurare pentru persoanele fizice și juridice, susținute de puterea și experiența unuia dintre cei mai mari asigurători din lume.
           </motion.p>
         </div>
 
@@ -45,7 +45,7 @@ export function Services() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: (index % 6) * 0.1 }}
-                className="glass beneficiu-card p-8 rounded-3xl group cursor-pointer flex flex-col h-full"
+                className="glass premium-card p-8 rounded-3xl group cursor-pointer flex flex-col h-full"
               >
                 <div className="h-12 w-12 bg-red-500/10 text-red-500 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                   <Icon className="w-6 h-6" />

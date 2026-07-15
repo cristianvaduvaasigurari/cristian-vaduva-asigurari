@@ -98,7 +98,7 @@ export default function BusinessCargoInsurancePage() {
                 <p className="text-muted-foreground">Carne, pește congelat, fructe, vaccinuri medicale. Dacă agregatul frigorific al TIR-ului cedează, marfa se strică. Asigurarea specifică e salvatoare.</p>
               </div>
               <div className="p-6 rounded-2xl bg-emerald-50/50 border border-emerald-100">
-                <h4 className="font-bold text-emerald-800 mb-2">Producători Industriali și Utilaje beneficiu</h4>
+                <h4 className="font-bold text-emerald-800 mb-2">Producători Industriali și Utilaje Premium</h4>
                 <p className="text-muted-foreground">Transportul unei turbine gigantice sau unui CNC scump de 2 milioane de euro din Germania către fabrica din România, pe o platformă agabaritică deschisă ("Project Cargo").</p>
               </div>
             </div>
@@ -108,21 +108,21 @@ export default function BusinessCargoInsurancePage() {
           <div className="mb-24">
             <h2 className="text-3xl font-heading font-bold mb-10 text-center">Garanțiile Nivelului Comercial "Institute Cargo Clauses"</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="glass beneficiu-card p-8 rounded-[2rem] border border-border">
+              <div className="glass premium-card p-8 rounded-[2rem] border border-border">
                 <CheckCircle2 className="w-8 h-8 text-emerald-600 mb-6" />
                 <h3 className="text-xl font-bold mb-3 text-foreground">Formula "Condiția A" (All Risks)</h3>
                 <p className="text-muted-foreground leading-relaxed">
                   Cele mai complexe acoperiri globale (Institute Cargo Clauses "A") acoperă marfa "Toate Riscurile", de la orice cauză fizică externă (lovire, răsturnare, furt, udare), având doar câteva excluderi punctuale (război, întârziere pur comercială, viciu ascuns al mărfii).
                 </p>
               </div>
-              <div className="glass beneficiu-card p-8 rounded-[2rem] border border-border">
+              <div className="glass premium-card p-8 rounded-[2rem] border border-border">
                 <CheckCircle2 className="w-8 h-8 text-emerald-600 mb-6" />
                 <h3 className="text-xl font-bold mb-3 text-foreground">Arie de Acoperire Multi-Modală</h3>
                 <p className="text-muted-foreground leading-relaxed">
                   Dacă marfa ta pleacă de la fabrica din Shanghai pe camion, urcă pe un Vapor Cargo până în Constanța, și apoi se transferă pe tren până în București, polița CARGO te acoperă de tipul "Door-to-Door", continuu, pe toate cele 3 moduri de transport (maritim + rutier + feroviar).
                 </p>
               </div>
-              <div className="glass beneficiu-card p-8 rounded-[2rem] border border-border">
+              <div className="glass premium-card p-8 rounded-[2rem] border border-border">
                 <CheckCircle2 className="w-8 h-8 text-emerald-600 mb-6" />
                 <h3 className="text-xl font-bold mb-3 text-foreground">Protecția Profitului Imaginar (Imaginat)</h3>
                 <p className="text-muted-foreground leading-relaxed">
@@ -178,7 +178,7 @@ export default function BusinessCargoInsurancePage() {
               Impactul poliței proprii
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="glass beneficiu-card p-8 rounded-[2rem] border-l-4 border-l-amber-500">
+              <div className="glass premium-card p-8 rounded-[2rem] border-l-4 border-l-amber-500">
                 <h3 className="text-xl font-bold mb-4 text-foreground">Scenariul 1: Eroarea Poliței CMR</h3>
                 <p className="text-muted-foreground leading-relaxed mb-4">
                   Trimiți din București un utilaj laser de precizie în Spania de 300.000 EUR. Cântărește 500 Kg. Camionul polonez care îl transportă se răstoarnă în Alpii Austriei. Daună totală la laser.
@@ -187,7 +187,7 @@ export default function BusinessCargoInsurancePage() {
                   <span className="font-bold text-amber-700">Rezolvarea poliței:</span> Sperând la polița șoferului (CMR), ai avea o imensă surpriză: el îți va plăti legal ~10 EUR per kilogram! Adică 500 Kg * 10 EUR = 5.000 EUR! Vei avea o pagubă neacoperită de 295.000 EUR. Dacă aveai Polița CARGO, noi îți viram direct valoarea de factură asumată de 300.000 EUR și închideam speța elegant, ferindu-te de faliment!
                 </div>
               </div>
-              <div className="glass beneficiu-card p-8 rounded-[2rem] border-l-4 border-l-amber-500">
+              <div className="glass premium-card p-8 rounded-[2rem] border-l-4 border-l-amber-500">
                 <h3 className="text-xl font-bold mb-4 text-foreground">Scenariul 2: Avaria Frigorifică</h3>
                 <p className="text-muted-foreground leading-relaxed mb-4">
                   Importi un transport de pește somon proaspăt din Norvegia. Sistemul frigorific (Thermoking-ul) al camionului se defectează subit timp de 8 ore, temperatura scade, marfa este respinsă la controlul vamal și declarată alterată 100%. Valoare factură 40.000 EUR.
@@ -225,15 +225,15 @@ export default function BusinessCargoInsurancePage() {
           <div className="mb-24">
             <h2 className="text-3xl font-heading font-bold mb-10 text-center">Întrebări Frecvente (Cargo)</h2>
             <div className="space-y-6 max-w-4xl mx-auto">
-              <div className="glass beneficiu-card p-6 md:p-8 rounded-2xl border border-border">
+              <div className="glass premium-card p-6 md:p-8 rounded-2xl border border-border">
                 <h3 className="text-xl font-bold mb-3 text-foreground">Eu vând EXW (Ex-Works). Marfa mea pleacă de la poarta fabricii pe riscul clientului meu (cumpărătorului străin). Mai am nevoie de Cargo?</h3>
                 <p className="text-muted-foreground leading-relaxed">Tehnic și teoretic, pe Inconterms (EXW, FCA, FOB), răspunderea pierderii pică instant pe cumpărătorul străin după ce a ridicat-o de la poarta ta. ÎN PRACTICĂ, dacă marfa lui arde pe drum, mulți clienți străini blochează abuziv plata facturii tale (refuză să îți dea banii). Ca producător, recomandăm "Seller's Interest Insurance" – o clauză de protecție ca să nu rămâi cu banii neîncasați la un capriciu.</p>
               </div>
-              <div className="glass beneficiu-card p-6 md:p-8 rounded-2xl border border-border">
+              <div className="glass premium-card p-6 md:p-8 rounded-2xl border border-border">
                 <h3 className="text-xl font-bold mb-3 text-foreground">Ce facem dacă doar s-a întârziat marfa, dar ea a ajuns intactă? Plătiți penalitățile mele comerciale?</h3>
                 <p className="text-muted-foreground leading-relaxed">NU. Ca regulă generală în toate "Institute Cargo Clauses", pagubele de "Întârziere comercială în livrare" și implicit pierderile de contract / penalitățile / pierderea de profit din cauza sosirii cu 5 zile mai târziu a transportului SUNT EXCLUSE complet. Polița asigură exclusiv "deteriorarea sau distrugerea FIZICĂ" a bunurilor.</p>
               </div>
-              <div className="glass beneficiu-card p-6 md:p-8 rounded-2xl border border-border">
+              <div className="glass premium-card p-6 md:p-8 rounded-2xl border border-border">
                 <h3 className="text-xl font-bold mb-3 text-foreground">Cine este vinovat dacă marfa a fost împachetată prost de oamenii mei și ajunge spartă de la denivelările asfaltului?</h3>
                 <p className="text-muted-foreground leading-relaxed">Aceasta este principala cauză de refuz a daunelor! "Inadecvarea ambalajului". Dacă la destinație se constată de către comisarii de avarie independenți că produsele din ceramică au fost puse în TIR fără folie cu bule, doar cu hârtie și ne-ancorate de paleți, cauza nu e "Accident", ci ambalarea neglijentă, deci asigurarea nu plătește absolut nimic.</p>
               </div>

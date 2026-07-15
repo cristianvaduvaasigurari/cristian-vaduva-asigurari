@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { ProtectionMap } from "@/components/sections/protection-map";
 
 export const metadata: Metadata = {
-  title: "Harta Protecției | Cristian Văduva beneficiu",
+  title: "Harta Protecției | Cristian Văduva Premium",
   description: "Explorează interactiv zonele de vulnerabilitate financiară din viața ta și descoperă soluțiile de protecție.",
 };
 

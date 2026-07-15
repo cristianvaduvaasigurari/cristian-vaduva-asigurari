@@ -108,21 +108,21 @@ export default function BusinessConstructionInsurancePage() {
           <div className="mb-24">
             <h2 className="text-3xl font-heading font-bold mb-10 text-center">Protecție Tehnică la 360 de Grade</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="glass beneficiu-card p-8 rounded-[2rem] border border-border">
+              <div className="glass premium-card p-8 rounded-[2rem] border border-border">
                 <CheckCircle2 className="w-8 h-8 text-orange-600 mb-6" />
                 <h3 className="text-xl font-bold mb-3 text-foreground">Extensia "Daune la Echipamente și Utilaje" (C.P.M.)</h3>
                 <p className="text-muted-foreground leading-relaxed">
                   Excavatoarele, buldozerele, și turnurile macaralelor se pot prăbuși în gropi (șanțuri), dând peste cap șenilele. Asigurarea Constructorului preia ca secțiune opțională și avariile catastrofice ale utilajelor de șantier care lucrează greu pe teren instabil.
                 </p>
               </div>
-              <div className="glass beneficiu-card p-8 rounded-[2rem] border border-border">
+              <div className="glass premium-card p-8 rounded-[2rem] border border-border">
                 <CheckCircle2 className="w-8 h-8 text-orange-600 mb-6" />
                 <h3 className="text-xl font-bold mb-3 text-foreground">Materialele Aflate în Depozitare pe Șantier</h3>
                 <p className="text-muted-foreground leading-relaxed">
                   Mii de plăci rigips, cărămizi, armături și kilometri de cabluri electrice sunt lăsate pe teren în perimetru înainte să fie montate în ziduri. Furtul acestora noaptea, chiar de sub paza BGS-ului din perimetru, sau alterarea lor de o ploaie surpriză este acoperită.
                 </p>
               </div>
-              <div className="glass beneficiu-card p-8 rounded-[2rem] border border-border">
+              <div className="glass premium-card p-8 rounded-[2rem] border border-border">
                 <CheckCircle2 className="w-8 h-8 text-orange-600 mb-6" />
                 <h3 className="text-xl font-bold mb-3 text-foreground">Perioada de Garanție (Mentenanță)</h3>
                 <p className="text-muted-foreground leading-relaxed">
@@ -178,7 +178,7 @@ export default function BusinessConstructionInsurancePage() {
               Ingineria Daunelor de pe Șantier
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="glass beneficiu-card p-8 rounded-[2rem] border-l-4 border-l-amber-500">
+              <div className="glass premium-card p-8 rounded-[2rem] border-l-4 border-l-amber-500">
                 <h3 className="text-xl font-bold mb-4 text-foreground">Scenariul 1: Vibrațiile care fisurează vecinii</h3>
                 <p className="text-muted-foreground leading-relaxed mb-4">
                   Construiești un ansamblu modern de apartamente cu fundație adâncă cu parcare -2 etaje la subsol. Introducerea pilonilor prin metoda "vibroînfigere" trepidează pământul. Clădirile foarte vechi de pe perimetru acuză crăpături groase în ziduri provocate de șantierul tău.
@@ -187,7 +187,7 @@ export default function BusinessConstructionInsurancePage() {
                   <span className="font-bold text-amber-700">Rezolvarea poliței:</span> Ești dat în judecată masiv de vecinii organizați pentru sute de mii de euro daune materiale de "sub-zidire și consolidare". Cu extensia corectă pe poliță (Clauza de Vibrații și Îndepărtare a Suportului, clauza 120 / 119), Generali preia procesele cu toți asociații și plătește consolidarea vecinilor, salvând dezvoltatorul din instanță.
                 </div>
               </div>
-              <div className="glass beneficiu-card p-8 rounded-[2rem] border-l-4 border-l-amber-500">
+              <div className="glass premium-card p-8 rounded-[2rem] border-l-4 border-l-amber-500">
                 <h3 className="text-xl font-bold mb-4 text-foreground">Scenariul 2: Ploaia Neașteptată de pe Acoperiș</h3>
                 <p className="text-muted-foreground leading-relaxed mb-4">
                   Muncitorii aplică ultimul strat de hidroizolație la o hală logistică. Vinerea după amiază este prea târziu, se opresc la jumătate lăsând hala neizolată sus (fără acoperiș complet), învelind superficial cu celofan. Duminică, vine o furtună și o rupere de nori. Hala devine un bazin cu apă care inundă toate podelele tehnologice deja montate jos.
@@ -225,15 +225,15 @@ export default function BusinessConstructionInsurancePage() {
           <div className="mb-24">
             <h2 className="text-3xl font-heading font-bold mb-10 text-center">Întrebări Frecvente Constructor</h2>
             <div className="space-y-6 max-w-4xl mx-auto">
-              <div className="glass beneficiu-card p-6 md:p-8 rounded-2xl border border-border">
+              <div className="glass premium-card p-6 md:p-8 rounded-2xl border border-border">
                 <h3 className="text-xl font-bold mb-3 text-foreground">Sunt arhitect. Dacă proiectez greșit structura și blocul cade la roșu, mă apără polița de Șantier (C.A.R)?</h3>
                 <p className="text-muted-foreground leading-relaxed">NU! Aici intervine diferența masivă de legislație. Asigurarea C.A.R. apără Constructorul (cine leagă fierul fizic), pe un accident (eroare umană de organizare/turnare). Dar exclude "Erorile de Proiectare Ale Arhitectului (Design Error)". Arhitectul trebuie dat în judecată pe propria sa poliță separată de Malpraxis (PI - Răspundere Profesională), dacă el este vinovat tehnic de unghiurile proaste din desene.</p>
               </div>
-              <div className="glass beneficiu-card p-6 md:p-8 rounded-2xl border border-border">
+              <div className="glass premium-card p-6 md:p-8 rounded-2xl border border-border">
                 <h3 className="text-xl font-bold mb-3 text-foreground">Ce facem dacă proiectul, estimat pentru a dura 12 luni, durează 18 luni? Acoperirea expiră la 12 luni și rămânem neasigurați?</h3>
                 <p className="text-muted-foreground leading-relaxed">Procedura este simplă: Polița C.A.R. este flexibilă și bazată pe Valoarea Totală a Lucrării conform Deviz. Dacă termenul se întârzie (frecvent în imobiliare), Brokerul înaintează, înainte cu 2-3 săptămâni de expirare, un "Act Adițional de Prelungire a Termenului de Execuție", pentru care se va mai achita o mică primă de risc suplimentară, acoperirea fiind continuă.</p>
               </div>
-              <div className="glass beneficiu-card p-6 md:p-8 rounded-2xl border border-border">
+              <div className="glass premium-card p-6 md:p-8 rounded-2xl border border-border">
                 <h3 className="text-xl font-bold mb-3 text-foreground">Muncitorul nostru necalificat cade de pe schelă și paralizează. Primește despăgubiri colosale din Secțiunea 2 (Răspundere Terți) a poliței de șantier?</h3>
                 <p className="text-muted-foreground leading-relaxed">Atenție! Muncitorii tăi (proprii) de pe schelă NU SUNT "Terți" din punct de vedere legal pe Șantier. Răspunderea față de proprii angajați se exculde în mod standard în Răspunderea Secțiunii II CAR. Pentru ca firma constructoare să fie protejată de cererile de despăgubire ale familiilor muncitorilor proprii, trebuie activată Extensia specifică de "Răspundere a Angajatorului față de Angajați" (Employers Liability / Worker's Comp).</p>
               </div>

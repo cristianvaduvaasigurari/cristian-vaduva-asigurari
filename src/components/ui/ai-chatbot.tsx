@@ -46,7 +46,7 @@ export function AiChatbot() {
     // Simulate bot response
     setTimeout(() => {
       const lowerText = text.toLowerCase();
-      let botResponse = "Am înregistrat solicitarea ta. Te rugăm să ne lași un număr de telefon sau o adresă de email, iar un consultant beneficiu te va contacta în cel mai scurt timp.";
+      let botResponse = "Am înregistrat solicitarea ta. Te rugăm să ne lași un număr de telefon sau o adresă de email, iar un consultant premium te va contacta în cel mai scurt timp.";
       let options: string[] | undefined;
 
       if (lowerText.includes("auto") || lowerText.includes("rca") || lowerText.includes("casco")) {
@@ -65,7 +65,7 @@ export function AiChatbot() {
         botResponse = "Asigurarea de călătorie acoperă cheltuieli medicale în străinătate, anularea zborurilor și pierderea bagajelor. Emitere instantă pe email!";
         options = ["Emite poliță", "Detalii preț"];
       } else if (lowerText.includes("real estate") || lowerText.includes("proprietat") || lowerText.includes("imobili")) {
-        botResponse = "Oferăm consultanță beneficiu în Real Estate: Buyer Representation, proprietăți off-market și Investment Advisory prin AiXbeneficiu și Home Find. Cum te putem ajuta?";
+        botResponse = "Oferăm consultanță premium în Real Estate: Buyer Representation, proprietăți off-market și Investment Advisory prin AiXLuxury și Home Find. Cum te putem ajuta?";
         options = ["Caut o proprietate", "Vreau să vând", "Consultanță investiții"];
       } else if (lowerText.includes("investiți") || lowerText.includes("investit")) {
         botResponse = "Strategii de investiții imobiliare cu analiză ROI, yield estimation și exit strategy. Programează o consultanță personalizată cu Cristian Văduva.";

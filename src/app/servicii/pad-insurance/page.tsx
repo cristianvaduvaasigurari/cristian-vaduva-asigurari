@@ -108,21 +108,21 @@ export default function PADInsurancePage() {
           <div className="mb-24">
             <h2 className="text-3xl font-heading font-bold mb-10 text-center">Caracteristicile Standardizate ale Poliței</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="glass beneficiu-card p-8 rounded-[2rem] border border-border">
+              <div className="glass premium-card p-8 rounded-[2rem] border border-border">
                 <CheckCircle2 className="w-8 h-8 text-blue-600 mb-6" />
                 <h3 className="text-xl font-bold mb-3 text-foreground">Preț Fix Național</h3>
                 <p className="text-muted-foreground leading-relaxed">
                   Polița pentru casele din cărămidă, beton și structuri dure moderne costă exact 130 LEI pe an. Indiferent prin ce agenție de asigurări alegi să o emiți.
                 </p>
               </div>
-              <div className="glass beneficiu-card p-8 rounded-[2rem] border border-border">
+              <div className="glass premium-card p-8 rounded-[2rem] border border-border">
                 <CheckCircle2 className="w-8 h-8 text-blue-600 mb-6" />
                 <h3 className="text-xl font-bold mb-3 text-foreground">Suma Maximă Garantată</h3>
                 <p className="text-muted-foreground leading-relaxed">
                   În caz de daună totală a casei din pricina cutremurului, PAD-ul îți va livra contravaloarea a maxim 20.000 de Euro (pentru locuințele de tip A), sau 10.000 Euro (Tip B - chirpici).
                 </p>
               </div>
-              <div className="glass beneficiu-card p-8 rounded-[2rem] border border-border">
+              <div className="glass premium-card p-8 rounded-[2rem] border border-border">
                 <CheckCircle2 className="w-8 h-8 text-blue-600 mb-6" />
                 <h3 className="text-xl font-bold mb-3 text-foreground">Simplu și Rapid</h3>
                 <p className="text-muted-foreground leading-relaxed">
@@ -137,7 +137,7 @@ export default function PADInsurancePage() {
             <div className="absolute top-0 right-0 w-64 h-64 bg-red-500/5 rounded-full blur-[80px] -z-10" />
             <h2 className="text-3xl font-heading font-bold mb-10 flex items-center justify-center gap-3">
               <AlertTriangle className="text-red-500 w-8 h-8" />
-              Cele 3 riscuri asigurate prin lege
+              Cele 3 Riscuri Exclusive din Lege
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
               <div className="flex items-start gap-4 p-5 rounded-2xl bg-white/50 border border-red-100 shadow-sm">
@@ -178,7 +178,7 @@ export default function PADInsurancePage() {
               Diferența critică de protecție
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="glass beneficiu-card p-8 rounded-[2rem] border-l-4 border-l-amber-500">
+              <div className="glass premium-card p-8 rounded-[2rem] border-l-4 border-l-amber-500">
                 <h3 className="text-xl font-bold mb-4 text-foreground">Scenariul 1: Seism cu distrugeri de fațadă</h3>
                 <p className="text-muted-foreground leading-relaxed mb-4">
                   Un seism mediu de 6 pe Richter fisurează balcoanele și dărâmă tencuiala masivă de pe o casă construită conform normelor din beton armat. Cost evaluat reparații: 3.500 EUR.
@@ -187,7 +187,7 @@ export default function PADInsurancePage() {
                   <span className="font-bold text-amber-700">Rezolvarea poliței:</span> Întrucât dauna a fost exclusiv un rezultat seismic natural, iar valoarea este inferioară pragului maxim de 20.000 EUR prevăzut de stat, PAD-ul va acoperi reparațiile acestor ziduri integral.
                 </div>
               </div>
-              <div className="glass beneficiu-card p-8 rounded-[2rem] border-l-4 border-l-amber-500">
+              <div className="glass premium-card p-8 rounded-[2rem] border-l-4 border-l-amber-500">
                 <h3 className="text-xl font-bold mb-4 text-foreground">Scenariul 2: Dauna Totală - Cutremur Major</h3>
                 <p className="text-muted-foreground leading-relaxed mb-4">
                   Un apartament nou dintr-o rezidență, achiziționat cu 150.000 EUR, este prăbușit integral în cazul unui cutremur catastrofic tip '77.
@@ -225,15 +225,15 @@ export default function PADInsurancePage() {
           <div className="mb-24">
             <h2 className="text-3xl font-heading font-bold mb-10 text-center">Întrebări Frecvente</h2>
             <div className="space-y-6 max-w-4xl mx-auto">
-              <div className="glass beneficiu-card p-6 md:p-8 rounded-2xl border border-border">
+              <div className="glass premium-card p-6 md:p-8 rounded-2xl border border-border">
                 <h3 className="text-xl font-bold mb-3 text-foreground">Ce înseamnă clădire de Tip A și Tip B?</h3>
                 <p className="text-muted-foreground leading-relaxed">Locuința de **Tip A** este construită cu o structură de rezistență solidă, cum ar fi beton armat, oțel, zidărie de cărămidă tratată termic, și atrage prețul de 130 Lei (pentru garantarea a 100.000 RON). Locuința de **Tip B** are structură de rezistență inferioară (ex: chirpici sau pământ nears) și atrage prețul de 50 Lei (pentru garantarea a doar 50.000 RON).</p>
               </div>
-              <div className="glass beneficiu-card p-6 md:p-8 rounded-2xl border border-border">
+              <div className="glass premium-card p-6 md:p-8 rounded-2xl border border-border">
                 <h3 className="text-xl font-bold mb-3 text-foreground">Banca mea îmi reînnoiește automat PAD-ul oprit din cont, este ok?</h3>
                 <p className="text-muted-foreground leading-relaxed">Da, este legal, dar este dezavantajos administrativ. Când ai PAD-ul tăiat separat de bancă și Facultativa la un broker sau alt asigurător, vei avea de adunat de două ori hârțogărie de la sedii diferite la crearea unui dosar. Ideal este portarea PAD-ului din bancă sub umbrela generală a asigurătorului tău de facultativă.</p>
               </div>
-              <div className="glass beneficiu-card p-6 md:p-8 rounded-2xl border border-border">
+              <div className="glass premium-card p-6 md:p-8 rounded-2xl border border-border">
                 <h3 className="text-xl font-bold mb-3 text-foreground">Acoperă PAD bunurile interioare, frigiderul sau laptopul dacă le lovește cutremurul?</h3>
                 <p className="text-muted-foreground leading-relaxed">Nu, în mod categoric! Legea definește clar că se decontează DOAR "structura fizică constructivă" a casei tale, nu mobilierul, electronicele sau bunurile personale aflate înăuntru. Pentru acelea, se cumpără separat clauza "Bunuri" pe polița Facultativă All-Risk.</p>
               </div>

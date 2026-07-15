@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { User, Home, Briefcase, PiggyBank, ArrowRight, ShieldCheck, ChevronRight, CheckCircle2, ChevronLeft } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { saveAssessment } from "@/lib/clientActions";
+import { saveAssessment } from "@/lib/actions";
 
 const steps = [
   { id: "intro", title: "Profil de Bază", icon: <User className="w-6 h-6" /> },

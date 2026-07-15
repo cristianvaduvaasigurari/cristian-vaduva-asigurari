@@ -2,9 +2,9 @@ import { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "Cristian Văduva - beneficiu Portfolio",
+    name: "Cristian Văduva - Premium Portfolio",
     short_name: "Cristian Văduva",
-    description: "Platformă beneficiu pentru servicii de Asigurări Generali, Real Estate, AiXbeneficiu și Ecosistemul AiX OS.",
+    description: "Platformă premium pentru servicii de Asigurări Generali, Real Estate, AiXLuxury și Ecosistemul AiX OS.",
     start_url: "/",
     display: "standalone",
     background_color: "#000000",

@@ -108,21 +108,21 @@ export default function BusinessEquipmentInsurancePage() {
           <div className="mb-24">
             <h2 className="text-3xl font-heading font-bold mb-10 text-center">Avantajele Protecției Tehnologice</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="glass beneficiu-card p-8 rounded-[2rem] border border-border">
+              <div className="glass premium-card p-8 rounded-[2rem] border border-border">
                 <CheckCircle2 className="w-8 h-8 text-blue-600 mb-6" />
                 <h3 className="text-xl font-bold mb-3 text-foreground">Plata Manoperei și Experților Străini</h3>
                 <p className="text-muted-foreground leading-relaxed">
                   Când un CNC complex se blochează, piesa în sine poate costa 10.000 EUR, dar zborul de urgență al expertului producător din Germania și manopera lui la fața locului te mai costă 8.000 EUR. Polița M.B. va deconta TOATĂ factura de reparație, inclusiv manopera și demontarea utilajului.
                 </p>
               </div>
-              <div className="glass beneficiu-card p-8 rounded-[2rem] border border-border">
+              <div className="glass premium-card p-8 rounded-[2rem] border border-border">
                 <CheckCircle2 className="w-8 h-8 text-blue-600 mb-6" />
                 <h3 className="text-xl font-bold mb-3 text-foreground">Preluarea "Erorii Umane"</h3>
                 <p className="text-muted-foreground leading-relaxed">
                   Cea mai cruntă cauză în România. Un angajat necalificat pune mâna pe bordul electronic, trage o manetă greșită în contratimp și dă peste cap toată cinematica utilajului. "Nesemânarea (clumsiness), lipsa de experiență, eroarea de operare" sunt acoperite explicit în poliță.
                 </p>
               </div>
-              <div className="glass beneficiu-card p-8 rounded-[2rem] border border-border">
+              <div className="glass premium-card p-8 rounded-[2rem] border border-border">
                 <CheckCircle2 className="w-8 h-8 text-blue-600 mb-6" />
                 <h3 className="text-xl font-bold mb-3 text-foreground">Avaria Extinsă: Supratensiunea</h3>
                 <p className="text-muted-foreground leading-relaxed">
@@ -178,7 +178,7 @@ export default function BusinessEquipmentInsurancePage() {
               Sustinerea Fluxului de Producție
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="glass beneficiu-card p-8 rounded-[2rem] border-l-4 border-l-amber-500">
+              <div className="glass premium-card p-8 rounded-[2rem] border-l-4 border-l-amber-500">
                 <h3 className="text-xl font-bold mb-4 text-foreground">Scenariul 1: Linia de Îmbuteliere</h3>
                 <p className="text-muted-foreground leading-relaxed mb-4">
                   Într-o fabrică de bere modernă, operatorul noii linii de îmbuteliere germane (cost 4 milioane EUR) adorme parțial noaptea și nu oprește banda de oprire de urgență când vede sticle sparte cum se acumulează într-un senzor. Cioburile blochează complet banda transportoare principală provocând arderea a 4 motoare hidraulice în cascadă.
@@ -187,7 +187,7 @@ export default function BusinessEquipmentInsurancePage() {
                   <span className="font-bold text-amber-700">Rezolvarea poliței:</span> Producătorul utilajului a refuzat garanția, dovedind "vinovăția operatorului". Fabrica a deschis dosarul pe polița de Machinery Breakdown de la Generali. S-au decontat rapid 45.000 EUR pentru motoare noi venite din Germania, deducându-se doar o mică franșiză din contract (ex: 1500 EUR), păstrând firma pe linia de plutire.
                 </div>
               </div>
-              <div className="glass beneficiu-card p-8 rounded-[2rem] border-l-4 border-l-amber-500">
+              <div className="glass premium-card p-8 rounded-[2rem] border-l-4 border-l-amber-500">
                 <h3 className="text-xl font-bold mb-4 text-foreground">Scenariul 2: Prăbușirea macaralei turn</h3>
                 <p className="text-muted-foreground leading-relaxed mb-4">
                   O macara turn fixată greșit de un subcontractor pe un șantier cedează la un vânt puternic (sau o sarcină ridicată peste limita computerului din cauză că a fost anulată siguranța intenționat de un muncitor grăbit). Brațul principal de oțel se rupe, strivind corpul macaralei. Valoare 400.000 EUR.
@@ -225,15 +225,15 @@ export default function BusinessEquipmentInsurancePage() {
           <div className="mb-24">
             <h2 className="text-3xl font-heading font-bold mb-10 text-center">Întrebări Frecvente Tehnice</h2>
             <div className="space-y-6 max-w-4xl mx-auto">
-              <div className="glass beneficiu-card p-6 md:p-8 rounded-2xl border border-border">
+              <div className="glass premium-card p-6 md:p-8 rounded-2xl border border-border">
                 <h3 className="text-xl font-bold mb-3 text-foreground">Aparatul meu stătea, nu l-a atins nimeni, a murit pur și simplu de bătrânețe (S-a terminat resursa de viață a pompei). Plătiți?</h3>
                 <p className="text-muted-foreground leading-relaxed">Categoric NU. Asigurarea despăgubește "Evenimente Imprevizibile Accidentale". Nu despăgubește UZURA NORMALĂ (Wear & Tear), ruginirea treptată, sau piese consumabile gen burghie de freză, uleiuri, curele de transmisie care TREBUIAU oricum schimbate de tine la o anumită revizie conform Cărții Tehnice. Defecțiunea trebuie să fie O SURPRIZĂ, nu o certitudine matematică a uzurii.</p>
               </div>
-              <div className="glass beneficiu-card p-6 md:p-8 rounded-2xl border border-border">
+              <div className="glass premium-card p-6 md:p-8 rounded-2xl border border-border">
                 <h3 className="text-xl font-bold mb-3 text-foreground">Utilajul meu CNC are 25 de ani și l-am luat second-hand, abia mai merge. Îl asigurați ca și cum ar fi nou?</h3>
                 <p className="text-muted-foreground leading-relaxed">Pentru ca polița M.B. să funcționeze pe principiul pieselor noi, noi impunem adesea limite de vârstă (ex: utilajele să nu depășească 10-15 ani vechime). Pentru relicve industriale anii '80, unde nici nu se mai fabrică piese de schimb, asigurătorul nu își va mai asuma riscul, sau dacă va accepta, va deduce o uzură uriașă la o eventuală daună parțială, produsul devenind oarecum inutil economic.</p>
               </div>
-              <div className="glass beneficiu-card p-6 md:p-8 rounded-2xl border border-border">
+              <div className="glass premium-card p-6 md:p-8 rounded-2xl border border-border">
                 <h3 className="text-xl font-bold mb-3 text-foreground">Dacă eu aduc piesa pe firmă, pot s-o repar cu mecanicii mei din curte ca să fiu mai ieftin, și să îmi dați banii mei?</h3>
                 <p className="text-muted-foreground leading-relaxed">Reparațiile asigurate (în deosebi la mașinării de sute de mii de euro) TREBUIE făcute obligatoriu doar cu "vendor-ul / producătorul agreat oficial" pe baza facturilor de service autorizat, altfel garanția lucrării e nulă și asigurarea va refuza să deconteze o reparație necalificată făcută "pe genunchi" care ar putea provoca o a doua daună și mai mare a doua zi.</p>
               </div>
