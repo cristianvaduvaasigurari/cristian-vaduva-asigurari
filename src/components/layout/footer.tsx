@@ -63,7 +63,7 @@ const footerLinks = {
 };
 
 export function Footer() {
-  const t = useTranslations("Footer");
+  const t = useTranslations();
   return (
     <footer className="bg-[#0a0a0a] text-white border-t border-white/10 pt-20 pb-10">
       <div className="container mx-auto px-4 md:px-6">
