@@ -70,7 +70,7 @@ export function EcosystemMap() {
               className={`relative z-10 w-full max-w-xs cursor-pointer group transition-all duration-300 ${activeNode === node.id ? "scale-105" : "scale-100 hover:scale-[1.02] opacity-70 hover:opacity-100"}`}
             >
               {/* Connector line for alternating sides if we wanted to offset them, but keeping them centered is cleaner */}
-              <div className={`p-6 rounded-3xl border-2 flex items-center gap-4 bg-white/90 backdrop-blur shadow-sm ${activeNode === node.id ? 'border-foreground shadow-xl' : 'border-border'}`}>
+              <div className={`p-6 rounded-lg border-2 flex items-center gap-4 bg-white/90 backdrop-blur shadow-sm ${activeNode === node.id ? 'border-foreground shadow-xl' : 'border-border'}`}>
                 <div className={`p-3 rounded-2xl ${node.color} shrink-0`}>
                   {node.icon}
                 </div>
@@ -109,7 +109,7 @@ export function EcosystemMap() {
                       {node.icon}
                     </div>
 
-                    <div className={`p-4 rounded-3xl inline-flex mb-8 ${node.color} bg-white`}>
+                    <div className={`p-4 rounded-lg inline-flex mb-8 ${node.color} bg-white`}>
                       {node.icon}
                     </div>
                     

@@ -20,9 +20,14 @@ export default function CreditAchizitiiComercialePage() {
       <p className="mb-4 text-lg text-muted-foreground"><strong>În cât timp primești răspuns?</strong> 7‑12 zile lucrătoare, în funcție de complexitatea dosarului și de tipul imobilului.</p>
       <p className="mb-4 text-lg text-muted-foreground"><strong>Cum te ajut personal?</strong> Ofer sprijin complet pe parcursul procesului, de la depunerea dosarului până la semnarea contractului și următoarea gestionare a creditului.</p>
       <p className="mb-4 text-lg text-muted-foreground"><strong>De ce este mai bine?</strong> Colaborăm cu bănci specializate în finanțarea imobilelor comerciale, garantând condiții avantajoase și flexibilitate în structura creditului.</p>
-      <Link href="/credite" className="mt-6 inline-block">
-        <Button variant="ghost">Înapoi la lista credite</Button>
-      </Link>
+      <div className="mt-8 flex flex-wrap gap-4">
+        <Button className="bg-blue-600 hover:bg-blue-700 text-white rounded-xl shadow-md px-6 h-11" asChild>
+          <Link href="/credite/contact-broker-credite">Solicită Consultanță Gratuită</Link>
+        </Button>
+        <Link href="/credite">
+          <Button variant="ghost">Înapoi la lista credite</Button>
+        </Link>
+      </div>
     </section>
   );
 }

@@ -1,8 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+import { CTAButton } from "@/components/ui/cta-button";
+import { ArrowRight, ShieldCheck, Award, Building } from "lucide-react";
 import Link from "next/link";
 
 export function Hero() {
@@ -31,19 +31,44 @@ export function Hero() {
           </h1>
           
           <p className="text-lg md:text-xl text-muted-foreground mb-12 max-w-2xl mx-auto font-light leading-relaxed">
-            O platformă completă dedicată viitorului tău financiar. De la protecția afacerii tale (Generali), până la oportunități unice de investiții imobiliare prin AiX OS.
+            Protejează-ți patrimoniul, optimizează-ți riscurile financiare și accesează investiții imobiliare de lux. Soluții personalizate și parteneriate de încredere prin Generali și ecosistemul premium AiX.
           </p>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Button size="lg" className="w-full sm:w-auto text-lg px-8 group bg-foreground text-background hover:bg-foreground/90 font-semibold shadow-lg" asChild>
-              <Link href="/#servicii">
-                Descoperă Serviciile
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
+            <CTAButton size="lg" conversionEvent="hero_primary_consultation" className="w-full sm:w-auto text-lg px-8 group bg-foreground text-background hover:bg-foreground/90 font-semibold shadow-lg" asChild>
+              <Link href="/contact">
+                Solicită Consultanță Gratuită
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
               </Link>
-            </Button>
-            <Button size="lg" variant="glass" className="w-full sm:w-auto text-lg px-8 border-border bg-white text-foreground hover:bg-muted" asChild>
-              <Link href="/contact">Contactează-mă</Link>
-            </Button>
+            </CTAButton>
+            <CTAButton size="lg" variant="glass" conversionEvent="hero_secondary_services" className="w-full sm:w-auto text-lg px-8 border-border bg-white text-foreground hover:bg-muted font-medium" asChild>
+              <Link href="/#servicii">Descoperă Serviciile</Link>
+            </CTAButton>
+          </div>
+
+          {/* Trust Badges */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-8 border-t border-border/40 max-w-3xl mx-auto text-left">
+            <div className="flex items-start gap-3">
+              <ShieldCheck className="w-6 h-6 text-blue-500 shrink-0 mt-0.5" />
+              <div>
+                <h4 className="font-semibold text-sm text-foreground">Partener Generali</h4>
+                <p className="text-xs text-muted-foreground">Polițe de asigurare de top emise direct și securizat.</p>
+              </div>
+            </div>
+            <div className="flex items-start gap-3">
+              <Award className="w-6 h-6 text-purple-500 shrink-0 mt-0.5" />
+              <div>
+                <h4 className="font-semibold text-sm text-foreground">10+ Ani Experiență</h4>
+                <p className="text-xs text-muted-foreground">Consultanță financiară premium bazată pe rezultate dovedite.</p>
+              </div>
+            </div>
+            <div className="flex items-start gap-3">
+              <Building className="w-6 h-6 text-pink-500 shrink-0 mt-0.5" />
+              <div>
+                <h4 className="font-semibold text-sm text-foreground">Real Estate Premium</h4>
+                <p className="text-xs text-muted-foreground">Acces exclusiv la portofolii off-market prin AiX OS.</p>
+              </div>
+            </div>
           </div>
         </motion.div>
       </div>

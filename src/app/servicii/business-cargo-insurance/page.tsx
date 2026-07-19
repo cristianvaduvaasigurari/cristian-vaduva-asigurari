@@ -24,7 +24,7 @@ export default function BusinessCargoInsurancePage() {
           
           {/* 1. Hero Section */}
           <div className="mb-24 flex flex-col items-center text-center mx-auto">
-            <div className="inline-flex p-5 rounded-3xl glass text-emerald-600 mb-8 border border-border bg-emerald-50">
+            <div className="inline-flex p-5 rounded-lg glass text-emerald-600 mb-8 border border-border bg-emerald-50">
               <Truck className="w-12 h-12" />
             </div>
             <h1 className="text-5xl md:text-6xl font-heading font-bold mb-6 leading-tight">
@@ -255,7 +255,7 @@ export default function BusinessCargoInsurancePage() {
               <ContactForm customTitle="Cere Profil de Cost Poliță CARGO" />
             </div>
             
-            <div className="glass rounded-3xl p-8 border border-border h-fit sticky top-32 shadow-lg">
+            <div className="glass rounded-lg p-8 border border-border h-fit sticky top-32 shadow-lg">
               <h3 className="text-2xl font-bold font-heading mb-6">Parametrii Ofertării</h3>
               <p className="text-muted-foreground mb-8">
                 Pentru un cost fix/cursă sau poliță deschisă anuală, avem nevoie să știm tipul de marfă (ex. oțel, fructe, microcipuri), traseele cel mai des utilizate (ex. Turcia - RO) și limitele maxime dorite per mijloc de transport (ex. max 200.000 EUR pe un TIR).

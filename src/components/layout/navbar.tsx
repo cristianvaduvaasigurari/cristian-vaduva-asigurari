@@ -7,20 +7,18 @@ import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { Menu, X, ChevronDown, Shield, Car, Briefcase, Building2, Home } from "lucide-react";
 import { Button } from "@/components/ui/button";
+
+
 import { motion, AnimatePresence } from "framer-motion";
 
 const megaMenuData = [
   {
-    title: "Persoane & Locuințe",
+    title: "Asigurări Personale",
     icon: <Shield className="w-5 h-5 mb-2 text-blue-600" />,
     items: [
-      { name: "Asigurare de Viață", href: "/servicii/life-insurance" },
-      { name: "Asigurare de Viață (Capitalizare)", href: "/servicii/life-insurance-capitalizare" },
-      { name: "Sănătate Individuală", href: "/servicii/health-insurance-individual" },
-      { name: "Sănătate Familie", href: "/servicii/health-insurance-family" },
       { name: "Asigurare Locuință", href: "/servicii/home-insurance" },
-      { name: "PAD (Obligatorie)", href: "/servicii/pad-insurance" },
-      { name: "Bunuri Personale", href: "/servicii/personal-goods-insurance" },
+      { name: "Asigurare Viață", href: "/servicii/life-insurance" },
+      { name: "Asigurare Sănătate", href: "/servicii/health-insurance" },
       { name: "Asigurare Accidente", href: "/servicii/accident-insurance" },
     ]
   },
@@ -185,7 +183,7 @@ export function Navbar() {
                 Credite
                 <ChevronDown className="w-4 h-4 transition-transform group-hover:rotate-180" />
               </button>
-              <div className="absolute top-full left-1/2 -translate-x-1/2 w-[600px] bg-white border border-border/50 shadow-2xl rounded-3xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform origin-top translate-y-4 group-hover:translate-y-0 p-6">
+              <div className="absolute top-full left-1/2 -translate-x-1/2 w-[600px] bg-white border border-border/50 shadow-2xl rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform origin-top translate-y-4 group-hover:translate-y-0 p-6">
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                   {/* 🏠 Locuință */}
                   <div>
@@ -265,7 +263,7 @@ export function Navbar() {
                 <ChevronDown className="w-4 h-4 transition-transform group-hover:rotate-180" />
               </button>
               {/* Mega Menu Dropdown */}
-              <div className="absolute top-full left-1/2 -translate-x-1/2 w-[900px] bg-white border border-border/50 shadow-2xl rounded-3xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform origin-top translate-y-4 group-hover:translate-y-0 p-8">
+              <div className="absolute top-full left-1/2 -translate-x-1/2 w-[900px] bg-white border border-border/50 shadow-2xl rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform origin-top translate-y-4 group-hover:translate-y-0 p-8">
                 <div className="grid grid-cols-4 gap-8">
                   {megaMenuData.map((col, i) => (
                     <div key={i} className="flex flex-col">
@@ -305,7 +303,7 @@ export function Navbar() {
                 Ecosistem AiX
                 <ChevronDown className="w-4 h-4 transition-transform group-hover:rotate-180" />
               </button>
-              <div className="absolute top-full left-1/2 -translate-x-1/2 w-[900px] bg-white border border-border/50 shadow-2xl rounded-3xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform origin-top translate-y-4 group-hover:translate-y-0 p-8 z-50">
+              <div className="absolute top-full left-1/2 -translate-x-1/2 w-[900px] bg-white border border-border/50 shadow-2xl rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform origin-top translate-y-4 group-hover:translate-y-0 p-8 z-50">
                 <div className="grid grid-cols-4 gap-8">
                   {ecosystemMenuData.map((col, i) => (
                     <div key={i} className="flex flex-col">
@@ -454,11 +452,11 @@ export function Navbar() {
 
               {/* Action Buttons */}
               <div className="flex flex-col gap-3 mt-8">
-                <Button variant="outline" className="w-full h-14 text-lg justify-center rounded-full" asChild>
-                  <Link href="/calculatoare" onClick={() => setIsMobileMenuOpen(false)}>Calculatoare</Link>
+                <Button variant="outline" className="w-full h-14 text-lg justify-center rounded-full border-blue-500 text-blue-600 font-medium" asChild>
+                  <Link href="/oferta-rapida" onClick={() => setIsMobileMenuOpen(false)}>Ofertă Rapidă</Link>
                 </Button>
-                <Button className="w-full h-14 text-lg justify-center rounded-full bg-foreground text-background" asChild>
-                  <Link href="/contact" onClick={() => setIsMobileMenuOpen(false)}>Contact</Link>
+                <Button className="w-full h-14 text-lg justify-center rounded-full bg-blue-600 hover:bg-blue-700 text-white font-semibold shadow-lg" asChild>
+                  <Link href="/contact" onClick={() => setIsMobileMenuOpen(false)}>Solicită Consultanță</Link>
                 </Button>
               </div>
             </div>

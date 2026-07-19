@@ -113,19 +113,19 @@ export function RealEstateAnalyzer() {
       {/* Outputs */}
       <div className="w-full lg:w-7/12 flex flex-col gap-6">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          <div className="glass p-6 rounded-3xl border border-emerald-100 bg-emerald-50/50 flex flex-col justify-center">
+          <div className="glass p-6 rounded-lg border border-emerald-100 bg-emerald-50/50 flex flex-col justify-center">
             <span className="text-xs font-bold uppercase tracking-wider text-emerald-800 mb-1">Cash on Cash</span>
             <span className="text-3xl font-heading font-bold text-emerald-600">{metrics.cashOnCashROI.toFixed(1)}%</span>
           </div>
-          <div className="glass p-6 rounded-3xl border border-blue-100 bg-blue-50/50 flex flex-col justify-center">
+          <div className="glass p-6 rounded-lg border border-blue-100 bg-blue-50/50 flex flex-col justify-center">
             <span className="text-xs font-bold uppercase tracking-wider text-blue-800 mb-1">Gross Yield</span>
             <span className="text-3xl font-heading font-bold text-blue-600">{metrics.grossYield.toFixed(1)}%</span>
           </div>
-          <div className="glass p-6 rounded-3xl border border-amber-100 bg-amber-50/50 flex flex-col justify-center">
+          <div className="glass p-6 rounded-lg border border-amber-100 bg-amber-50/50 flex flex-col justify-center">
             <span className="text-xs font-bold uppercase tracking-wider text-amber-800 mb-1">Recuperare</span>
             <span className="text-3xl font-heading font-bold text-amber-600">{metrics.paybackYears > 0 ? metrics.paybackYears.toFixed(1) + " Ani" : "∞"}</span>
           </div>
-          <div className="glass p-6 rounded-3xl border border-purple-100 bg-purple-50/50 flex flex-col justify-center">
+          <div className="glass p-6 rounded-lg border border-purple-100 bg-purple-50/50 flex flex-col justify-center">
             <span className="text-xs font-bold uppercase tracking-wider text-purple-800 mb-1">Risc Estimativ</span>
             <span className="text-2xl font-heading font-bold text-purple-600">{metrics.riskLevel}</span>
           </div>

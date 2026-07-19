@@ -83,7 +83,7 @@ export function ResourcesList() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: idx * 0.1 }}
-            className="glass rounded-3xl p-8 border border-border flex flex-col justify-between h-[320px] group hover:border-foreground/20 hover:shadow-xl transition-all"
+            className="glass rounded-lg p-8 border border-border flex flex-col justify-between h-[320px] group hover:border-foreground/20 hover:shadow-xl transition-all"
           >
             <div>
               <div className={`inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider mb-6 ${res.color}`}>

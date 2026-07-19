@@ -73,15 +73,15 @@ export function FinancialTwin() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-          <div className="glass p-8 rounded-3xl border border-emerald-100 bg-emerald-50/30">
+          <div className="glass p-8 rounded-lg border border-emerald-100 bg-emerald-50/30">
             <p className="text-sm font-bold text-emerald-600 uppercase tracking-wider mb-2">Total Active</p>
             <p className="text-3xl font-heading font-bold text-foreground">€{metrics.assets.toLocaleString()}</p>
           </div>
-          <div className="glass p-8 rounded-3xl border border-rose-100 bg-rose-50/30">
+          <div className="glass p-8 rounded-lg border border-rose-100 bg-rose-50/30">
             <p className="text-sm font-bold text-rose-600 uppercase tracking-wider mb-2">Total Pasive</p>
             <p className="text-3xl font-heading font-bold text-foreground">€{metrics.liabilities.toLocaleString()}</p>
           </div>
-          <div className="glass p-8 rounded-3xl border border-blue-100 bg-blue-50/30">
+          <div className="glass p-8 rounded-lg border border-blue-100 bg-blue-50/30">
             <p className="text-sm font-bold text-blue-600 uppercase tracking-wider mb-2">Avere Netă</p>
             <p className="text-3xl font-heading font-bold text-foreground">€{metrics.netWorth.toLocaleString()}</p>
           </div>

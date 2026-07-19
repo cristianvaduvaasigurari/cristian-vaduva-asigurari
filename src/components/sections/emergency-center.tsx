@@ -137,7 +137,7 @@ export function EmergencyCenter() {
           </button>
 
           <div className="flex flex-col md:flex-row gap-8 items-start mb-12">
-            <div className={`w-24 h-24 rounded-3xl flex items-center justify-center shrink-0 ${selectedScenario.color}`}>
+            <div className={`w-24 h-24 rounded-lg flex items-center justify-center shrink-0 ${selectedScenario.color}`}>
               {selectedScenario.icon}
             </div>
             <div>
@@ -167,7 +167,7 @@ export function EmergencyCenter() {
             </div>
 
             <div className="space-y-6">
-              <div className="p-6 rounded-3xl bg-slate-50 border border-slate-100">
+              <div className="p-6 rounded-lg bg-slate-50 border border-slate-100">
                 <h4 className="font-bold font-heading mb-4 flex items-center gap-2">
                   <FileText className="w-5 h-5 text-blue-600" /> Documente Necesare
                 </h4>
@@ -181,7 +181,7 @@ export function EmergencyCenter() {
                 </ul>
               </div>
 
-              <div className="p-6 rounded-3xl bg-slate-50 border border-slate-100">
+              <div className="p-6 rounded-lg bg-slate-50 border border-slate-100">
                 <h4 className="font-bold font-heading mb-4 flex items-center gap-2">
                   <Camera className="w-5 h-5 text-emerald-600" /> Atenție
                 </h4>

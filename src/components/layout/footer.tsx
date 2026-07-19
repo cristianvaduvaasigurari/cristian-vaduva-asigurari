@@ -1,67 +1,69 @@
+import { useTranslations } from "next-intl";
 import Link from "next/link";
 import { FaFacebook, FaInstagram, FaLinkedin, FaYoutube } from "react-icons/fa";
 import { CONTACT } from "@/config/contact";
 
 const footerLinks = {
   ecosystem: [
-    { name: "Generali România", href: "/generali" },
-    { name: "Real Estate", href: "/real-estate" },
-    { name: "AiXLuxury", href: "/aixluxury" },
-    { name: "AiX OS", href: "/aixos" },
-    { name: "Home Find", href: "/home-find" },
-    { name: "Ecosistem AiX", href: "/ecosistem" },
+    { key: "generali", href: "/generali" },
+    { key: "realEstate", href: "/real-estate" },
+    { key: "aixLuxury", href: "/aixluxury" },
+    { key: "aixOs", href: "/aixos" },
+    { key: "homeFind", href: "/home-find" },
+    { key: "ecosystemAix", href: "/ecosistem" },
   ],
   servicesPersonal: [
-    { name: "Asigurare de Viață", href: "/servicii/life-insurance" },
-    { name: "Sănătate Individuală", href: "/servicii/health-insurance-individual" },
-    { name: "Asigurare Locuință", href: "/servicii/home-insurance" },
-    { name: "Travel Individual", href: "/servicii/travel-insurance-individual" },
-    { name: "Asigurare CASCO", href: "/servicii/casco-insurance" },
-    { name: "Asigurare RCA", href: "/servicii/rca-insurance" },
+    { key: "lifeInsurance", href: "/servicii/life-insurance" },
+    { key: "individualHealth", href: "/servicii/health-insurance-individual" },
+    { key: "homeInsurance", href: "/servicii/home-insurance" },
+    { key: "travelIndividual", href: "/servicii/travel-insurance-individual" },
+    { key: "casco", href: "/servicii/casco-insurance" },
+    { key: "rca", href: "/servicii/rca-insurance" },
   ],
   servicesBusiness: [
-    { name: "Asigurări IMM", href: "/servicii/imm-insurance" },
-    { name: "Răspundere Generală", href: "/servicii/business-general-liability" },
-    { name: "Cyber Risk", href: "/servicii/business-cyber-insurance" },
-    { name: "D&O (Răsp. Manageri)", href: "/servicii/business-directors-liability" },
-    { name: "Cargo & Marfă", href: "/servicii/business-cargo-insurance" },
-    { name: "Asigurare Șantiere", href: "/servicii/business-construction-insurance" },
+    { key: "sme", href: "/servicii/imm-insurance" },
+    { key: "generalLiability", href: "/servicii/business-general-liability" },
+    { key: "cyberRisk", href: "/servicii/business-cyber-insurance" },
+    { key: "dol", href: "/servicii/business-directors-liability" },
+    { key: "cargo", href: "/servicii/business-cargo-insurance" },
+    { key: "construction", href: "/servicii/business-construction-insurance" },
   ],
   tools: [
-    { name: "Risk Simulator", href: "/risk-simulator" },
-    { name: "Command Wall", href: "/personal-dashboard" },
-    { name: "Luxury Garage", href: "/luxury-garage" },
-    { name: "Client Journey", href: "/client-journey" },
-    { name: "Trust Center", href: "/trust-center" },
-    { name: "Smart Forms", href: "/smart-forms" },
-    { name: "AiX Mission Control", href: "/mission-control" },
-    { name: "Wealth Passport", href: "/wealth-passport" },
-    { name: "AiX Life Simulator", href: "/simulator" },
-    { name: "AiX Financial Twin", href: "/financial-twin" },
-    { name: "Family Planner", href: "/family-planner" },
-    { name: "RE Analyzer", href: "/investitii-imobiliare/analyzer" },
-    { name: "Luxury Assets", href: "/luxury-assets" },
-    { name: "Centru Urgențe", href: "/urgente" },
+    { key: "riskSimulator", href: "/risk-simulator" },
+    { key: "commandWall", href: "/personal-dashboard" },
+    { key: "luxuryGarage", href: "/luxury-garage" },
+    { key: "clientJourney", href: "/client-journey" },
+    { key: "trustCenter", href: "/trust-center" },
+    { key: "smartForms", href: "/smart-forms" },
+    { key: "missionControl", href: "/mission-control" },
+    { key: "wealthPassport", href: "/wealth-passport" },
+    { key: "lifeSimulator", href: "/simulator" },
+    { key: "financialTwin", href: "/financial-twin" },
+    { key: "familyPlanner", href: "/family-planner" },
+    { key: "reAnalyzer", href: "/investitii-imobiliare/analyzer" },
+    { key: "luxuryAssets", href: "/luxury-assets" },
+    { key: "emergencyCenter", href: "/urgente" },
   ],
   company: [
-    { name: "AiX Academy", href: "/academy" },
-    { name: "Recomandă-mi Asigurarea Potrivită", href: "/advisor" },
-    { name: "Coverage Gap", href: "/gap-analyzer" },
-    { name: "Harta Protecției", href: "/harta-protectiei" },
-    { name: "Ofertă Rapidă", href: "/oferta-rapida" },
-    { name: "AiX Insights", href: "/insights" },
-    { name: "Resurse Premium", href: "/resurse" },
-    { name: "Despre Mine", href: "/despre-mine" },
-    { name: "Contact", href: "/contact" },
+    { key: "aixAcademy", href: "/academy" },
+    { key: "advisor", href: "/advisor" },
+    { key: "coverageGap", href: "/gap-analyzer" },
+    { key: "protectionMap", href: "/harta-protectiei" },
+    { key: "quickOffer", href: "/oferta-rapida" },
+    { key: "aixInsights", href: "/insights" },
+    { key: "premiumResources", href: "/resurse" },
+    { key: "aboutMe", href: "/despre-mine" },
+    { key: "contact", href: "/contact" },
   ],
   legal: [
-    { name: "Termeni și Condiții", href: "/termeni-si-conditii" },
-    { name: "Politică de Confidențialitate", href: "/politica-de-confidentialitate" },
-    { name: "Politică Cookie", href: "/politica-cookie" },
+    { key: "terms", href: "/termeni-si-conditii" },
+    { key: "privacy", href: "/politica-de-confidentialitate" },
+    { key: "cookies", href: "/politica-cookie" },
   ],
 };
 
 export function Footer() {
+  const t = useTranslations("Footer");
   return (
     <footer className="bg-[#0a0a0a] text-white border-t border-white/10 pt-20 pb-10">
       <div className="container mx-auto px-4 md:px-6">
@@ -72,9 +74,7 @@ export function Footer() {
                 Cristian Văduva<span className="text-blue-500">.</span>
               </span>
             </Link>
-            <p className="text-white/60 max-w-sm mb-8 leading-relaxed">
-              Platformă premium dedicată excelenței în asigurări, real estate și inovație tehnologică. Soluții personalizate pentru un viitor sigur și prosper.
-            </p>
+            <p className="text-white/60 max-w-sm mb-8 leading-relaxed">{t('footer.description')}</p>
             <div className="flex items-center gap-4 text-white/60 mb-8">
               <a href={CONTACT.social.linkedin} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors p-3 rounded-full bg-white/5 border border-white/10 hover:bg-white/10">
                 <FaLinkedin size={20} />
@@ -89,7 +89,7 @@ export function Footer() {
                 <FaYoutube size={20} />
               </a>
             </div>
-            <div className="space-y-3 text-sm text-white/80 font-medium bg-white/5 p-6 rounded-3xl border border-white/10">
+            <div className="space-y-3 text-sm text-white/80 font-medium bg-white/5 p-6 rounded-lg border border-white/10">
               <div className="flex items-center gap-3">
                 <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center">📞</div>
                 <a href={CONTACT.phone.href} className="hover:text-white transition-colors">{CONTACT.phone.display}</a>
@@ -109,9 +109,9 @@ export function Footer() {
             <h3 className="font-bold text-lg mb-6 text-white tracking-wide">Ecosistem</h3>
             <ul className="space-y-4">
               {footerLinks.ecosystem.map((link) => (
-                <li key={link.name}>
+                <li key={link.key}>
                   <Link href={link.href} className="text-white/50 hover:text-white transition-colors text-sm font-medium">
-                    {link.name}
+                    {t(`footer.links.${link.key}`)}
                   </Link>
                 </li>
               ))}
@@ -122,9 +122,9 @@ export function Footer() {
             <h3 className="font-bold text-lg mb-6 text-white tracking-wide">Asigurări pentru Persoane Fizice</h3>
             <ul className="space-y-4">
               {footerLinks.servicesPersonal.map((link) => (
-                <li key={link.name}>
+                <li key={link.key}>
                   <Link href={link.href} className="text-white/50 hover:text-white transition-colors text-sm font-medium">
-                    {link.name}
+                    {t(`footer.links.${link.key}`)}
                   </Link>
                 </li>
               ))}
@@ -135,9 +135,9 @@ export function Footer() {
             <h3 className="font-bold text-lg mb-6 text-white tracking-wide">Asigurări pentru Companii</h3>
             <ul className="space-y-4">
               {footerLinks.servicesBusiness.map((link) => (
-                <li key={link.name}>
+                <li key={link.key}>
                   <Link href={link.href} className="text-white/50 hover:text-white transition-colors text-sm font-medium">
-                    {link.name}
+                    {t(`footer.links.${link.key}`)}
                   </Link>
                 </li>
               ))}
@@ -148,9 +148,9 @@ export function Footer() {
             <h3 className="font-bold text-lg mb-6 text-white tracking-wide">Unelte Noi</h3>
             <ul className="space-y-4">
               {footerLinks.tools.map((link) => (
-                <li key={link.name}>
+                <li key={link.key}>
                   <Link href={link.href} className="text-white/50 hover:text-white transition-colors text-sm font-medium">
-                    {link.name}
+                    {t(`footer.links.${link.key}`)}
                   </Link>
                 </li>
               ))}
@@ -161,9 +161,9 @@ export function Footer() {
             <h3 className="font-bold text-lg mb-6 text-white tracking-wide">Informații</h3>
             <ul className="space-y-4">
               {footerLinks.company.map((link) => (
-                <li key={link.name}>
+                <li key={link.key}>
                   <Link href={link.href} className="text-white/50 hover:text-white transition-colors text-sm font-medium">
-                    {link.name}
+                    {t(`footer.links.${link.key}`)}
                   </Link>
                 </li>
               ))}
@@ -177,8 +177,8 @@ export function Footer() {
           </p>
           <div className="flex flex-wrap items-center justify-center gap-6 text-sm text-white/40 font-medium">
             {footerLinks.legal.map((link) => (
-              <Link key={link.name} href={link.href} className="hover:text-white transition-colors">
-                {link.name}
+              <Link key={link.key} href={link.href} className="hover:text-white transition-colors">
+                {t(`footer.links.${link.key}`)}
               </Link>
             ))}
           </div>

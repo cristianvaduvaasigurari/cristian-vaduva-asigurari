@@ -159,7 +159,7 @@ export function WealthPassportDocument() {
         </div>
 
         {/* Contact Info & CTA Block (For PDF/Print) */}
-        <section className="mb-10 p-6 bg-slate-50 border border-slate-200 rounded-3xl text-slate-800">
+        <section className="mb-10 p-6 bg-slate-50 border border-slate-200 rounded-lg text-slate-800">
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
             <div>
               <h4 className="font-heading font-bold text-sm text-slate-950 mb-1">PROGRAMEAZĂ O CONSULTANȚĂ PRIVATĂ</h4>

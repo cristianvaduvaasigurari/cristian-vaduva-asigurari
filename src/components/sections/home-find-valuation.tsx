@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Calculator, ShieldCheck, Landmark, Building } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { trackConversion } from "@/lib/analytics";
 
 // District pricing metrics for Romania
 const LOCATION_BASE_PRICES: Record<string, { base: number; neighborhoods: Record<string, number> }> = {
@@ -887,7 +888,7 @@ export function HomeFindValuation() {
                   </div>
 
                   <div className="space-y-3">
-                    <Button variant="outline" className="w-full h-12 rounded-xl bg-transparent border-white/20 hover:bg-white/5 text-white" asChild>
+                    <Button variant="outline" className="w-full h-12 rounded-xl bg-transparent border-white/20 hover:bg-white/5 text-white" onClick={() => trackConversion('home_find_pdf_report_requested')} asChild>
                       <a href="/contact">Solicită Raport PDF Premium</a>
                     </Button>
                     <p className="text-[10px] text-center text-slate-500 leading-relaxed">

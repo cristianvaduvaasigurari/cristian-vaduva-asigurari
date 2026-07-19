@@ -24,7 +24,7 @@ export default function BusinessConstructionInsurancePage() {
           
           {/* 1. Hero Section */}
           <div className="mb-24 flex flex-col items-center text-center mx-auto">
-            <div className="inline-flex p-5 rounded-3xl glass text-orange-600 mb-8 border border-border bg-orange-50">
+            <div className="inline-flex p-5 rounded-lg glass text-orange-600 mb-8 border border-border bg-orange-50">
               <HardHat className="w-12 h-12" />
             </div>
             <h1 className="text-5xl md:text-6xl font-heading font-bold mb-6 leading-tight">
@@ -255,7 +255,7 @@ export default function BusinessConstructionInsurancePage() {
               <ContactForm customTitle="Cere Ofertă Șantier C.A.R." />
             </div>
             
-            <div className="glass rounded-3xl p-8 border border-border h-fit sticky top-32 shadow-lg">
+            <div className="glass rounded-lg p-8 border border-border h-fit sticky top-32 shadow-lg">
               <h3 className="text-2xl font-bold font-heading mb-6">Cerintele Minime</h3>
               <p className="text-muted-foreground mb-8">
                 Pentru emiterea ofertei ferme vom solicita: Contractul de Antrepriză asumat, Devizul (Valoarea Contabilă Totală a Investiției), Perioada Exprimată în Luni, un Memoriu Tehnic (Studiul Geotehnic din arhitectură) și CUI-ul Dezvoltatorului/Antreprenorului.

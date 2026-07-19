@@ -24,7 +24,7 @@ export default function PersonalGoodsInsurancePage() {
           
           {/* 1. Hero Section */}
           <div className="mb-24 flex flex-col items-center text-center mx-auto">
-            <div className="inline-flex p-5 rounded-3xl glass text-blue-600 mb-8 border border-border bg-blue-50">
+            <div className="inline-flex p-5 rounded-lg glass text-blue-600 mb-8 border border-border bg-blue-50">
               <MonitorSmartphone className="w-12 h-12" />
             </div>
             <h1 className="text-5xl md:text-6xl font-heading font-bold mb-6 leading-tight">
@@ -255,7 +255,7 @@ export default function PersonalGoodsInsurancePage() {
               <ContactForm customTitle="Obține Ofertă Poliță Extinsă" />
             </div>
             
-            <div className="glass rounded-3xl p-8 border border-border h-fit sticky top-32 shadow-lg">
+            <div className="glass rounded-lg p-8 border border-border h-fit sticky top-32 shadow-lg">
               <h3 className="text-2xl font-bold font-heading mb-6">Securizează Simplu</h3>
               <p className="text-muted-foreground mb-8">
                 Este de ajuns să menționezi dorința protejării electronice pe WhatsApp, iar noi o includem automat în pachetul locuinței tale.

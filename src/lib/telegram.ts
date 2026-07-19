@@ -71,9 +71,9 @@ export async function sendTelegramAlert(lead: TelegramLeadData): Promise<boolean
   }
 
   // Mask token for logs (show only first 4 characters)
-  const maskedToken = token.replace(/^(.{4}).+/, "$1******");
+  // const maskedToken = token.replace(/^(.{4}).+/, "$1******");
   const url = `https://api.telegram.org/bot${token}/sendMessage`;
-  console.log(`[Telegram Alert] URL: https://api.telegram.org/bot${maskedToken}/sendMessage`);
+
 
   const payload = {
     chat_id: chatId,
@@ -81,7 +81,7 @@ export async function sendTelegramAlert(lead: TelegramLeadData): Promise<boolean
     parse_mode: "HTML",
   };
   const body = JSON.stringify(payload);
-  console.log(`[Telegram Alert] Payload: chat_id=${chatId}, textLength=${payload.text.length}, parse_mode=${payload.parse_mode}`);
+
 
   let attempt = 0;
   let backoff = INITIAL_BACKOFF_MS;
@@ -89,7 +89,7 @@ export async function sendTelegramAlert(lead: TelegramLeadData): Promise<boolean
   while (attempt < MAX_RETRIES) {
     attempt++;
     try {
-      console.log(`[Telegram Alert] Attempt ${attempt}/${MAX_RETRIES} – Sending request to ${url}`);
+
       const startTime = Date.now();
       const response = await fetchWithTimeout(
         url,
@@ -103,10 +103,10 @@ export async function sendTelegramAlert(lead: TelegramLeadData): Promise<boolean
       const elapsed = Date.now() - startTime;
 
       if (response.ok) {
-        const respBody = await response.text().catch(() => "(unreadable)");
-        console.log(`[Telegram Alert] Request completed in ${elapsed}ms – Status ${response.status}`);
-        console.log(`[Telegram Alert] Response ${response.status}: ${respBody}`);
-        console.log(`[Telegram Alert] ✓ Delivered on attempt ${attempt}.`);
+        // const respBody = await response.text().catch(() => "(unreadable)");
+
+
+
         return true;
       }
 
@@ -125,7 +125,7 @@ export async function sendTelegramAlert(lead: TelegramLeadData): Promise<boolean
     }
 
     if (attempt < MAX_RETRIES) {
-      console.log(`[Telegram Alert] Retrying in ${backoff}ms…`);
+
       await sleep(backoff);
       backoff *= 2;
     }

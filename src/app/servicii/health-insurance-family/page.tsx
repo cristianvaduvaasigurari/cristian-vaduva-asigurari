@@ -24,7 +24,7 @@ export default function HealthFamilyInsurancePage() {
           
           {/* 1. Hero Section */}
           <div className="mb-24 flex flex-col items-center text-center mx-auto">
-            <div className="inline-flex p-5 rounded-3xl glass text-rose-600 mb-8 border border-border bg-rose-50">
+            <div className="inline-flex p-5 rounded-lg glass text-rose-600 mb-8 border border-border bg-rose-50">
               <Baby className="w-12 h-12" />
             </div>
             <h1 className="text-5xl md:text-6xl font-heading font-bold mb-6 leading-tight">
@@ -255,7 +255,7 @@ export default function HealthFamilyInsurancePage() {
               <ContactForm customTitle="Cere Profil Familial de Preț" />
             </div>
             
-            <div className="glass rounded-3xl p-8 border border-border h-fit sticky top-32 shadow-lg">
+            <div className="glass rounded-lg p-8 border border-border h-fit sticky top-32 shadow-lg">
               <h3 className="text-2xl font-bold font-heading mb-6">Simplu de Introdus</h3>
               <p className="text-muted-foreground mb-8">
                 Ne trimiți numărul de membri (vârstele adulților și copiilor) și vom veni cu variantele constructive de limită și acoperire, de la Basic la VIP International.

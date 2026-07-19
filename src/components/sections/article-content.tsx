@@ -109,7 +109,7 @@ export function ArticleContent({ article, relatedArticles }: ArticleContentProps
           </header>
 
           {/* Table of Contents */}
-          <div className="p-6 md:p-8 bg-slate-50 rounded-3xl border border-slate-100 mb-12">
+          <div className="p-6 md:p-8 bg-slate-50 rounded-lg border border-slate-100 mb-12">
             <h3 className="font-bold text-slate-900 mb-4 uppercase tracking-wider text-sm flex items-center gap-2">
               <BookOpen className="w-4 h-4 text-slate-400" /> Cuprinsul Articolului
             </h3>
@@ -119,7 +119,7 @@ export function ArticleContent({ article, relatedArticles }: ArticleContentProps
           </div>
 
           {/* HTML Rendered Content */}
-          <div className="prose prose-lg md:prose-xl prose-slate max-w-none prose-headings:font-heading prose-headings:font-bold prose-headings:tracking-tight prose-a:text-blue-600 prose-a:no-underline hover:prose-a:underline prose-img:rounded-3xl prose-img:shadow-xl">
+          <div className="prose prose-lg md:prose-xl prose-slate max-w-none prose-headings:font-heading prose-headings:font-bold prose-headings:tracking-tight prose-a:text-blue-600 prose-a:no-underline hover:prose-a:underline prose-img:rounded-lg prose-img:shadow-xl">
             <ReactMarkdown>{article.content}</ReactMarkdown>
           </div>
 

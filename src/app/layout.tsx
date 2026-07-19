@@ -1,7 +1,12 @@
 import type { Metadata, Viewport } from "next";
+import { StructuredData, organizationSchema, localBusinessSchema } from "@/lib/structuredData";
 import { Inter, Outfit } from "next/font/google";
 import "./globals.css";
 import { SmartPopup } from "@/components/ui/smart-popup";
+import { NextIntlClientProvider } from "next-intl";
+import LanguageSwitcher from "@/components/layout/LanguageSwitcher";
+import { getLocale } from "@/lib/locale";
+import { getMessages } from "next-intl/server";
 import { CookieBanner } from "@/components/ui/cookie-banner";
 import { AiChatbot } from "@/components/ui/ai-chatbot";
 import { GlobalHomeButton } from "@/components/ui/global-home-button";
@@ -75,121 +80,45 @@ export const viewport: Viewport = {
   themeColor: "#ffffff",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const locale = await getLocale();
+  const messages = await getMessages({ locale });
   return (
-    <html
-      lang="ro"
-      className={`${inter.variable} ${outfit.variable} h-full antialiased`}
-    >
-      <body className="min-h-full flex flex-col bg-background text-foreground font-sans">
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "FinancialService",
-              "name": "Cristian Văduva Premium Portfolio",
-              "image": "https://cristianvaduva.com/logo.png",
-              "@id": "https://cristianvaduva.com",
-              "url": "https://cristianvaduva.com",
-              "telephone": "+40767110439",
-              "email": "contact@cristianvaduva.com",
-              "address": {
-                "@type": "PostalAddress",
-                "streetAddress": "Clădirea Globalworth, Et. 15",
-                "addressLocality": "București",
-                "addressRegion": "București",
-                "postalCode": "020337",
-                "addressCountry": "RO"
-              },
-              "geo": {
-                "@type": "GeoCoordinates",
-                "latitude": "44.4268",
-                "longitude": "26.1025"
-              },
-              "areaServed": [
-                {
-                  "@type": "City",
-                  "name": "București"
-                },
-                {
-                  "@type": "Country",
-                  "name": "România"
-                }
-              ],
-              "openingHoursSpecification": [
-                {
-                  "@type": "OpeningHoursSpecification",
-                  "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-                  "opens": "09:00",
-                  "closes": "18:00"
-                }
-              ],
-              "priceRange": "$$$"
-            })
-          }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "LocalBusiness",
-              "name": "Cristian Văduva - Consultant Asigurări București",
-              "image": "https://cristianvaduva.com/logo.png",
-              "@id": "https://cristianvaduva.com",
-              "url": "https://cristianvaduva.com",
-              "telephone": "+40767110439",
-              "email": "contact@cristianvaduva.com",
-              "address": {
-                "@type": "PostalAddress",
-                "streetAddress": "Clădirea Globalworth, Et. 15",
-                "addressLocality": "București",
-                "addressRegion": "București",
-                "postalCode": "020337",
-                "addressCountry": "RO"
-              },
-              "geo": {
-                "@type": "GeoCoordinates",
-                "latitude": "44.4268",
-                "longitude": "26.1025"
-              },
-              "openingHours": "Mo-Fr 09:00-18:00",
-              "priceRange": "$$$",
-              "currenciesAccepted": "EUR",
-              "paymentAccepted": ["Cash", "Credit Card", "Bank Transfer"]
-            })
-          }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Organization",
-              "name": "Cristian Văduva Premium Portfolio",
-              "url": "https://cristianvaduva.com",
-              "logo": "https://cristianvaduva.com/logo.png",
-              "sameAs": [
-                "https://www.facebook.com/cristianvaduva",
-                "https://www.linkedin.com/in/cristianvaduva",
-                "https://www.instagram.com/cristianvaduva"
-              ],
-              "contactPoint": {
-                "@type": "ContactPoint",
-                "telephone": "+40767110439",
-                "contactType": "customer service",
-                "areaServed": "RO",
-                "availableLanguage": ["Romanian", "English"]
-              }
-            })
-          }}
-        />
-           {children}
+    <html lang={locale}>
+      <body className={`${inter.variable} ${outfit.variable} font-sans`}>
+    <NextIntlClientProvider locale={locale} messages={messages}>
+      <LanguageSwitcher />
+      {children}
+    </NextIntlClientProvider>
+          <StructuredData data={organizationSchema({
+            name: "Cristian Văduva Premium Portfolio",
+            url: "https://cristianvaduva.com",
+            logo: "https://cristianvaduva.com/logo.png",
+            sameAs: [
+              "https://www.facebook.com/cristianvaduva",
+              "https://www.linkedin.com/in/cristianvaduva",
+              "https://www.instagram.com/cristianvaduva",
+            ],
+          })} />
+          <StructuredData data={localBusinessSchema({
+            name: "Cristian Văduva - Consultant Asigurări București",
+            url: "https://cristianvaduva.com",
+            telephone: "+40767110439",
+            email: "contact@cristianvaduva.com",
+            address: {
+              streetAddress: "Clădirea Globalworth, Et. 15",
+              addressLocality: "București",
+              addressRegion: "București",
+              postalCode: "020337",
+              addressCountry: "RO",
+            },
+            geo: { latitude: "44.4268", longitude: "26.1025" },
+            openingHours: "Mo-Fr 09:00-18:00",
+          })} />
           <GlobalHomeButton />
           <SmartPopup />
           <AiChatbot />

@@ -56,7 +56,7 @@ export function CreditLanding({
 
       {/* Contact Form */}
       <div className="max-w-3xl mx-auto mb-12">
-        <ContactForm customTitle="Solicită o consultanță gratuită" />
+        <ContactForm customTitle="Solicită o consultanță gratuită" target="Credite" />
       </div>
 
       {/* FAQ Preview */}

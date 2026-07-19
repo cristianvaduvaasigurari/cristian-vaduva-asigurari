@@ -102,7 +102,7 @@ export function GapAnalyzer() {
             if (!details) return null;
 
             return (
-              <div key={key} className={`p-6 rounded-3xl border border-border flex flex-col md:flex-row gap-6 items-start ${details.bg}`}>
+              <div key={key} className={`p-6 rounded-lg border border-border flex flex-col md:flex-row gap-6 items-start ${details.bg}`}>
                 <div className="flex-shrink-0 mt-1">{details.icon}</div>
                 <div className="flex-grow">
                   <h3 className={`font-bold text-lg mb-2 ${details.color}`}>{details.status}</h3>

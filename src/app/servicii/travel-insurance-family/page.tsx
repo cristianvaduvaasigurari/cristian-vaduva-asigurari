@@ -24,7 +24,7 @@ export default function TravelFamilyInsurancePage() {
           
           {/* 1. Hero Section */}
           <div className="mb-24 flex flex-col items-center text-center mx-auto">
-            <div className="inline-flex p-5 rounded-3xl glass text-orange-600 mb-8 border border-border bg-orange-50">
+            <div className="inline-flex p-5 rounded-lg glass text-orange-600 mb-8 border border-border bg-orange-50">
               <Palmtree className="w-12 h-12" />
             </div>
             <h1 className="text-5xl md:text-6xl font-heading font-bold mb-6 leading-tight">
@@ -255,7 +255,7 @@ export default function TravelFamilyInsurancePage() {
               <ContactForm customTitle="Cere Tarif Travel Familial" />
             </div>
             
-            <div className="glass rounded-3xl p-8 border border-border h-fit sticky top-32 shadow-lg">
+            <div className="glass rounded-lg p-8 border border-border h-fit sticky top-32 shadow-lg">
               <h3 className="text-2xl font-bold font-heading mb-6">Emite înainte cu cel puțin o zi</h3>
               <p className="text-muted-foreground mb-8">
                 Cea mai sigură procedură (mai ales pentru varianta cu Storno) este emiterea imediat după plata primului avans la Agenția de Turism. Trimite pozele cu buletinele / certificatele de naștere direct pe WhatsApp.

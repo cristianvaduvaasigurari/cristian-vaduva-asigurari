@@ -20,9 +20,14 @@ export default function CreditVerdePage() {
       <p className="mb-4 text-lg text-muted-foreground">
         <strong>Cum aplici?</strong> Contactează brokerul, furnizează documentația proiectului și a planului de sustenabilitate, iar noi negociem cu partenerii bancari pentru cea mai bună ofertă.
       </p>
-      <Link href="/credite" className="mt-6 inline-block">
-        <Button variant="ghost">Înapoi la lista credite</Button>
-      </Link>
+      <div className="mt-8 flex flex-wrap gap-4">
+        <Button className="bg-blue-600 hover:bg-blue-700 text-white rounded-xl shadow-md px-6 h-11" asChild>
+          <Link href="/credite/contact-broker-credite">Solicită Consultanță Gratuită</Link>
+        </Button>
+        <Link href="/credite">
+          <Button variant="ghost">Înapoi la lista credite</Button>
+        </Link>
+      </div>
     </section>
   );
 }

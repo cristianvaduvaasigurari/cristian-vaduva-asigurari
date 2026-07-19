@@ -1,10 +1,10 @@
 "use server";
 import { createClient } from "@/lib/supabase/server";
-import { headers } from "next/headers";
+
 import { sendTelegramAlert } from "@/lib/telegram";
-console.log(`BUILD_ID: ${process.env.BUILD_ID}`);
-console.log(`VERCEL_GIT_COMMIT_SHA: ${process.env.VERCEL_GIT_COMMIT_SHA}`);
-console.log(`VERCEL_URL: ${process.env.VERCEL_URL}`);
+
+
+
 export type ActionResponse = {
   success: boolean;
   message?: string;
@@ -19,7 +19,7 @@ export type ActionResponse = {
 export async function submitLead(formData: FormData): Promise<ActionResponse> {
   // Generate a unique identifier for this submission to trace its lifecycle
   const submissionId = crypto.randomUUID();
-  console.log(`[Lead ${submissionId}] 🎯 Received server action invocation`);
+  
 
   try {
     const supabase = await createClient();
@@ -52,7 +52,7 @@ export async function submitLead(formData: FormData): Promise<ActionResponse> {
 
     const { error } = await supabase.from("leads").insert([{ ...leadData, submission_id: submissionId }]);
   if (!error) {
-    console.log(`[Lead ${submissionId}] ✅ our platform insert succeeded`);
+    
     // Direct fetch to Telegram (bypass abstraction) for debugging
     const directToken = process.env.TELEGRAM_BOT_TOKEN;
     const directChatId = process.env.TELEGRAM_CHAT_ID;
@@ -63,19 +63,19 @@ export async function submitLead(formData: FormData): Promise<ActionResponse> {
         text: formattedMessage,
         parse_mode: "HTML",
       };
-      console.log(`[Lead ${submissionId}] 🔧 Direct Telegram fetch start`);
+      
       try {
-        const resp = await fetch(directUrl, {
+        await fetch(directUrl, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(directPayload),
         });
-        console.log(`[Lead ${submissionId}] 🔧 Direct Telegram fetch finished with status ${resp.status}`);
-      } catch (e) {
-        console.error(`[Lead ${submissionId}] 🔧 Direct Telegram fetch error`, e);
+        
+      } catch {
+        // console.error(`[Lead ${submissionId}] 🔧 Direct Telegram fetch error`, e);
       }
     } else {
-      console.warn(`[Lead ${submissionId}] 🔧 Direct Telegram fetch skipped – missing token or chat id`);
+      // console.warn(`[Lead ${submissionId}] 🔧 Direct Telegram fetch skipped – missing token or chat id`);
     }
   }
 
@@ -84,23 +84,10 @@ export async function submitLead(formData: FormData): Promise<ActionResponse> {
       return { success: false, error: "Eroare la salvarea datelor. Te rugăm să încerci din nou." };
     }
 
-    // Extract request metadata
-    const headersList = await headers();
-    const pageUrl = headersList.get("referer") || "N/A";
-    const timestamp = new Date().toLocaleString("ro-RO", {
-      timeZone: "Europe/Bucharest",
-      day: "2-digit",
-      month: "2-digit",
-      year: "numeric",
-      hour: "2-digit",
-      minute: "2-digit",
-      second: "2-digit",
-    });
 
-    // No further Telegram alert; response will be returned
-    console.log(`[Lead ${submissionId}] ✅ Direct Telegram fetch completed (page: ${pageUrl}, time: ${timestamp})`);
+    
 
-    console.log(`[Lead] Telegram alert completed`);
+    
     // Return success response
     return { success: true, message: "Cererea ta a fost trimisă cu succes!" };
   } catch (err) {
@@ -116,7 +103,7 @@ export async function submitLead(formData: FormData): Promise<ActionResponse> {
 export async function saveAssessment(assessmentType: string, data: Record<string, unknown>): Promise<{ success: boolean; id?: string; error?: string }> {
   // Generate a unique identifier for this assessment submission
   const submissionId = crypto.randomUUID();
-  console.log(`[Assessment ${submissionId}] 🎯 Received server action invocation`);
+  
 
   try {
     const supabase = await createClient();
@@ -144,7 +131,7 @@ export async function saveAssessment(assessmentType: string, data: Record<string
 
     const { error } = await supabase.from("leads").insert([{ ...payload, submission_id: submissionId }]);
   if (!error) {
-    console.log(`[Assessment ${submissionId}] ✅ our platform insert succeeded`);
+    
   }
 
     if (error) {
@@ -152,36 +139,22 @@ export async function saveAssessment(assessmentType: string, data: Record<string
       return { success: false, error: "Nu am putut salva evaluarea." };
     }
 
-    // Extract request metadata for assessment
-    const headersList = await headers();
-    const pageUrl = headersList.get("referer") || "N/A";
-    const timestamp = new Date().toLocaleString("ro-RO", {
-      timeZone: "Europe/Bucharest",
-      day: "2-digit",
-      month: "2-digit",
-      year: "numeric",
-      hour: "2-digit",
-      minute: "2-digit",
-      second: "2-digit",
-    });
+
 
     // Log assessment receipt
-    console.log(`[Assessment] Received ${assessmentType} for ${name} (${phone})`);
-    console.log(`[Assessment] Starting Telegram alert`);
-    console.log(`[Assessment ${submissionId}] 🚀 Starting Telegram alert`);
-    await sendTelegramAlert({
-      name,
-      phone,
-      email,
-      service: service_type,
-      message: formattedMessage,
-      pageUrl,
-      timestamp,
-      submissionId,
-    });
-    console.log(`[Assessment ${submissionId}] ✅ Telegram alert completed`);
+    
+    
+        await sendTelegramAlert({
+        name,
+        phone,
+        email,
+        service: service_type,
+        message: formattedMessage,
+        submissionId,
+      });
+    
 
-    console.log(`[Assessment] Telegram alert completed`);
+    
     // Return success response
     return { success: true, id: uniqueId };
 

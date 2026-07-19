@@ -62,7 +62,7 @@ export default function AiXLuxuryPage() {
             </p>
           </div>
         </div>
-        <ContactForm customTitle="Cauți o proprietate de lux?" />
+        <ContactForm customTitle="Cauți o proprietate de lux?" target="Real Estate" />
       </main>
       
       <Footer />

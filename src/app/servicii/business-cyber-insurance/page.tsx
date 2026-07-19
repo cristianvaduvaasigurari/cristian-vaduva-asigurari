@@ -24,7 +24,7 @@ export default function BusinessCyberInsurancePage() {
           
           {/* 1. Hero Section */}
           <div className="mb-24 flex flex-col items-center text-center mx-auto">
-            <div className="inline-flex p-5 rounded-3xl glass text-cyan-600 mb-8 border border-border bg-cyan-50">
+            <div className="inline-flex p-5 rounded-lg glass text-cyan-600 mb-8 border border-border bg-cyan-50">
               <Shield className="w-12 h-12" />
             </div>
             <h1 className="text-5xl md:text-6xl font-heading font-bold mb-6 leading-tight">
@@ -255,7 +255,7 @@ export default function BusinessCyberInsurancePage() {
               <ContactForm customTitle="Cere Evaluare Risc Cibernetic" />
             </div>
             
-            <div className="glass rounded-3xl p-8 border border-border h-fit sticky top-32 shadow-lg">
+            <div className="glass rounded-lg p-8 border border-border h-fit sticky top-32 shadow-lg">
               <h3 className="text-2xl font-bold font-heading mb-6">Aprobarea IT-ului</h3>
               <p className="text-muted-foreground mb-8">
                 Cotația pe riscurile Cyber necesită implicarea departamentului tău IT (sau a firmei externalizate de suport), deoarece ei trebuie să certifice arhitectura de securitate curentă (Firewall / Backup Frequency) pe Chestionar.

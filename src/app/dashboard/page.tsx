@@ -34,7 +34,7 @@ export default async function DashboardPage() {
 
       <div className="grid gap-6">
         {!leads || leads.length === 0 ? (
-          <div className="text-center py-20 glass rounded-3xl border border-dashed border-border">
+          <div className="text-center py-20 glass rounded-lg border border-dashed border-border">
             <h3 className="text-xl font-bold mb-2">Nu există lead-uri</h3>
             <p className="text-muted-foreground">Mesajele noi vor apărea aici.</p>
           </div>

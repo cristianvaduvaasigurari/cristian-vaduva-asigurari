@@ -53,7 +53,7 @@ export default function AiXOSPage() {
             </p>
           </div>
         </div>
-        <ContactForm customTitle="Vrei să afli mai multe despre AiX OS?" />
+        <ContactForm customTitle="Vrei să afli mai multe despre AiX OS?" target="AiX OS" />
       </main>
       
       <Footer />

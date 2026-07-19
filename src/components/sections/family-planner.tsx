@@ -66,15 +66,15 @@ export function FamilyPlanner() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="p-8 rounded-3xl glass border border-rose-100 bg-rose-50/50">
+          <div className="p-8 rounded-lg glass border border-rose-100 bg-rose-50/50">
             <h3 className="font-bold text-rose-800 uppercase tracking-wider text-sm mb-2">Cost Lunar Curent</h3>
             <p className="text-4xl font-bold font-heading text-rose-600">€{totalMonthly}</p>
           </div>
-          <div className="p-8 rounded-3xl glass border border-amber-100 bg-amber-50/50">
+          <div className="p-8 rounded-lg glass border border-amber-100 bg-amber-50/50">
             <h3 className="font-bold text-amber-800 uppercase tracking-wider text-sm mb-2">Perioadă Maximă Risc</h3>
             <p className="text-4xl font-bold font-heading text-amber-600">{maxYears} Ani</p>
           </div>
-          <div className="p-8 rounded-3xl glass border border-blue-100 bg-blue-50/50">
+          <div className="p-8 rounded-lg glass border border-blue-100 bg-blue-50/50">
             <h3 className="font-bold text-blue-800 uppercase tracking-wider text-sm mb-2">Capital Necesar Total</h3>
             <p className="text-4xl font-bold font-heading text-blue-600">€{totalExposure.toLocaleString()}</p>
           </div>

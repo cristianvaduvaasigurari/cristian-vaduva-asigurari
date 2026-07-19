@@ -24,7 +24,7 @@ export default function LifeInsurancePage() {
           
           {/* 1. Hero Section */}
           <div className="mb-24 flex flex-col items-center text-center mx-auto">
-            <div className="inline-flex p-5 rounded-3xl glass text-blue-600 mb-8 border border-border bg-blue-50">
+            <div className="inline-flex p-5 rounded-lg glass text-blue-600 mb-8 border border-border bg-blue-50">
               <Heart className="w-12 h-12" />
             </div>
             <h1 className="text-5xl md:text-6xl font-heading font-bold mb-6 leading-tight">
@@ -258,7 +258,7 @@ export default function LifeInsurancePage() {
               <ContactForm customTitle="Solicită o ofertă gratuită și confidențială" />
             </div>
             
-            <div className="glass rounded-3xl p-8 border border-border h-fit sticky top-32 shadow-lg">
+            <div className="glass rounded-lg p-8 border border-border h-fit sticky top-32 shadow-lg">
               <h3 className="text-2xl font-bold font-heading mb-6">Suntem Aici Să Te Ajutăm</h3>
               <p className="text-muted-foreground mb-8">
                 Discuțiile despre asigurările de viață sunt complexe și foarte personale. Suntem la un telefon distanță pentru a-ți clarifica orice aspect.

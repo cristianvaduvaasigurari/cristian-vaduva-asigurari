@@ -29,9 +29,14 @@ export default function CreditInvestitiiImobiliarePage() {
       </p>
       <p className="mb-4 text-lg text-muted-foreground"><strong>De ce este mai bine?</strong> Colaborăm cu instituții financiare specializate în sectorul imobiliar pentru oferte avantajoase și adaptate.
       </p>
-      <Link href="/credite" className="mt-6 inline-block">
-        <Button variant="ghost">Înapoi la lista credite</Button>
-      </Link>
+      <div className="mt-8 flex flex-wrap gap-4">
+        <Button className="bg-blue-600 hover:bg-blue-700 text-white rounded-xl shadow-md px-6 h-11" asChild>
+          <Link href="/credite/contact-broker-credite">Solicită Consultanță Gratuită</Link>
+        </Button>
+        <Link href="/credite">
+          <Button variant="ghost">Înapoi la lista credite</Button>
+        </Link>
+      </div>
     </section>
   );
 }

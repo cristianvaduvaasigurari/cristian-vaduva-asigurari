@@ -7,12 +7,12 @@ import type { Metadata } from "next";
 
 // Lazy load heavy components for better performance
 const Ecosystem = dynamic(() => import('@/components/sections/ecosystem').then(mod => ({ default: mod.Ecosystem })), {
-  loading: () => <div className="h-96 animate-pulse bg-muted/20 rounded-3xl" />,
+  loading: () => <div className="h-96 animate-pulse bg-muted/20 rounded-lg" />,
   ssr: true
 });
 
 const ContactForm = dynamic(() => import('@/components/sections/contact-form').then(mod => ({ default: mod.ContactForm })), {
-  loading: () => <div className="h-96 animate-pulse bg-muted/20 rounded-3xl" />,
+  loading: () => <div className="h-96 animate-pulse bg-muted/20 rounded-lg" />,
   ssr: true
 });
 

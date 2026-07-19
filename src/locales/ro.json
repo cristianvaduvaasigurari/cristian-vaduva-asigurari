@@ -1,0 +1,123 @@
+{
+  "layout": {
+    "title": "Cristian Văduva | Asigurări, Imobiliare & Investiții",
+    "description": "Platformă premium dedicată protecției financiare, investițiilor de lux și optimizării patrimoniului. Expertiză în asigurări Generali, imobiliare de lux și AiX OS. Consultant asigurări București.",
+    "keywords": ["asigurări","asigurări Generali","asigurare de viață","asigurare de sănătate","RCA","CASCO","imobiliare","investiții","Cristian Văduva","consultant asigurări București","AiX OS","Home Find"]
+  },
+  "footer": {
+    "description": "Platformă premium dedicată excelenței în asigurări, imobiliare și inovație tehnologică. Soluții personalizate pentru un viitor sigur și prosper.",
+    "personalInsurance": "Asigurări pentru Persoane Fizice",
+    "companyInsurance": "Asigurări pentru Companii"
+  },
+  "navbar": {
+    "brand": "Insurance",
+    "credits": "Credite",
+    "services": "Asigurări",
+    "ecosystem": "Ecosistem AiX",
+    "creditsSections": {
+      "housing": "🏠 Locuință",
+      "business": "💼 Investiții & Business",
+      "info": "📊 Informații utile",
+      "support": "❓ Suport"
+    },
+    "creditsLinks": {
+      "creditInvestment": "Credit pentru Investiții Imobiliare",
+      "creditCompanies": "Credit pentru Companii",
+      "creditConstruction": "Credit pentru Construcții",
+      "creditMortgage": "Credit Ipotecar",
+      "newHouse": "Nouă Casă",
+      "refinancing": "Refinanțare",
+      "personalLoan": "Credit de Nevoi Personale",
+      "investmentRealEstate": "Credit pentru Investiții Imobiliare",
+      "companyLoan": "Credit pentru Companii",
+      "consolidate": "Consolidare Credite",
+      "compareBanks": "Compară Bănci",
+      "brokerInfo": "De ce să lucrezi cu un Broker de Credite",
+      "approvalProcess": "Procesul de Aprobare",
+      "requiredDocs": "Documente Necesare",
+      "faq": "Întrebări Frecvente",
+      "contactBroker": "Contact Broker Credite"
+    },
+    "megaMenu": {
+      "columns": [
+        {
+          "title": "Locuință",
+          "items": {
+            "accidentInsurance": "Asigurare Accidente",
+            "lifeInsurance": "Asigurare Viață",
+            "healthInsurance": "Asigurare Sănătate",
+            "pensionInsurance": "Asigurare Pensii",
+            "homeInsurance": "Asigurare Locuință",
+            "mortgageInsurance": "Asigurare Credite Ipotecare"
+          }
+        },
+        {
+          "title": "Auto & Călătorii",
+          "items": {
+            "rca": "Asigurare RCA",
+            "casco": "Asigurare CASCO",
+            "fleet": "Asigurare Flote Auto",
+            "roadside": "Asistență Rutieră",
+            "travelIndividual": "Travel Individual",
+            "travelFamily": "Travel Familie",
+            "travelBusiness": "Travel Business",
+            "travelMulti": "Travel Multi-Trip"
+          }
+        },
+        {
+          "title": "Business & Răspunderi",
+          "items": {
+            "sme": "Asigurări IMM",
+            "commercialBuildings": "Clădiri Comerciale",
+            "businessGoods": "Bunuri Business",
+            "generalLiability": "Răspundere Generală",
+            "professionalLiability": "Răspundere Profesională",
+            "dolLiability": "Răspunderea Managerilor (D&O)",
+            "malpractice": "Malpraxis Medical"
+          }
+        },
+        {
+          "title": "Corporate & Speciale",
+          "items": {
+            "cyberRisk": "Asigurare Cyber Risk",
+            "cargo": "Asigurare Cargo (Marfă)",
+            "construction": "Asigurare Șantier (CAR)",
+            "equipment": "Asigurare Echipamente",
+            "businessInterruption": "Business Interruption",
+            "corporateHealth": "Sănătate Corporate"
+          }
+        }
+      ]
+    },
+    "ecosystemMenu": {
+      "sections": {
+        "platformCore": "Platformă & Core",
+        "aixIntelligence": "AiX Intelligence",
+        "aixTools": "AiX Tools",
+        "resourcesConsultancy": "Resurse & Consultanță"
+      },
+      "items": {
+        "emergencyCenter": "Centru Urgențe",
+        "missionControl": "Mission Control",
+        "riskSimulator": "Risk Simulator",
+        "lifeSimulator": "Life Simulator",
+        "financialTwin": "Financial Twin",
+        "luxuryGarage": "Luxury Garage",
+        "clientJourney": "Client Journey",
+        "smartForms": "Smart Forms",
+        "wealthPassport": "Wealth Passport",
+        "reAnalyzer": "RE Analyzer",
+        "aixAcademy": "AiX Academy",
+        "advisor": "Recomandă-mi Asigurarea Potrivită",
+        "coverageGap": "Coverage Gap"
+      }
+    },
+    "buttons": {
+      "gapAnalyzer": "Gap Analyzer",
+      "calculators": "Calculatoare",
+      "quickOffer": "Ofertă Rapidă",
+      "openAdvisor": "Deschide Recomandă-mi Asigurarea Potrivită",
+      "unsureText": "Nu ești sigur ce să alegi? Încearcă noul Recomandă-mi Asigurarea Potrivită."
+    }
+  }
+}

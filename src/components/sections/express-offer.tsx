@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, CheckCircle2, Building, User, Car, ShieldAlert } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-
+import { trackConversion } from "@/lib/analytics";
 
 const steps = [
   { id: "type", title: "Ce dorești să protejezi?" },
@@ -58,6 +58,7 @@ export function ExpressOffer() {
 
       if (result.success) {
         setIsSuccess(true);
+        trackConversion(`express_offer_submit_${formData.type.replace(/\s+/g, '_').toLowerCase()}`);
       } else {
         setError(result.error || "A apărut o eroare la salvare.");
       }
@@ -121,19 +122,19 @@ export function ExpressOffer() {
 
             {step === 0 && (
               <div className="grid grid-cols-2 gap-4">
-                <button onClick={() => { setFormData({ ...formData, type: "Asigurare Auto / Flote" }); handleNext(); }} className="flex flex-col items-center justify-center p-6 rounded-3xl border-2 border-border hover:border-blue-600 hover:bg-blue-50 transition-all gap-4 group">
+                <button onClick={() => { setFormData({ ...formData, type: "Asigurare Auto / Flote" }); handleNext(); }} className="flex flex-col items-center justify-center p-6 rounded-lg border-2 border-border hover:border-blue-600 hover:bg-blue-50 transition-all gap-4 group">
                   <Car className="w-8 h-8 text-muted-foreground group-hover:text-blue-600" />
                   <span className="font-bold text-sm">Auto & Flote</span>
                 </button>
-                <button onClick={() => { setFormData({ ...formData, type: "Asigurare Casă / Patrimoniu" }); handleNext(); }} className="flex flex-col items-center justify-center p-6 rounded-3xl border-2 border-border hover:border-amber-500 hover:bg-amber-50 transition-all gap-4 group">
+                <button onClick={() => { setFormData({ ...formData, type: "Asigurare Casă / Patrimoniu" }); handleNext(); }} className="flex flex-col items-center justify-center p-6 rounded-lg border-2 border-border hover:border-amber-500 hover:bg-amber-50 transition-all gap-4 group">
                   <Building className="w-8 h-8 text-muted-foreground group-hover:text-amber-500" />
                   <span className="font-bold text-sm">Patrimoniu Imobiliar</span>
                 </button>
-                <button onClick={() => { setFormData({ ...formData, type: "Viață & Sănătate" }); handleNext(); }} className="flex flex-col items-center justify-center p-6 rounded-3xl border-2 border-border hover:border-rose-500 hover:bg-rose-50 transition-all gap-4 group">
+                <button onClick={() => { setFormData({ ...formData, type: "Viață & Sănătate" }); handleNext(); }} className="flex flex-col items-center justify-center p-6 rounded-lg border-2 border-border hover:border-rose-500 hover:bg-rose-50 transition-all gap-4 group">
                   <User className="w-8 h-8 text-muted-foreground group-hover:text-rose-500" />
                   <span className="font-bold text-sm">Viață & Sănătate</span>
                 </button>
-                <button onClick={() => { setFormData({ ...formData, type: "Business / IMM" }); handleNext(); }} className="flex flex-col items-center justify-center p-6 rounded-3xl border-2 border-border hover:border-indigo-600 hover:bg-indigo-50 transition-all gap-4 group">
+                <button onClick={() => { setFormData({ ...formData, type: "Business / IMM" }); handleNext(); }} className="flex flex-col items-center justify-center p-6 rounded-lg border-2 border-border hover:border-indigo-600 hover:bg-indigo-50 transition-all gap-4 group">
                   <ShieldAlert className="w-8 h-8 text-muted-foreground group-hover:text-indigo-600" />
                   <span className="font-bold text-sm">Business / IMM</span>
                 </button>

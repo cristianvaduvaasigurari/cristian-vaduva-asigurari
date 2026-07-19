@@ -85,7 +85,7 @@ export default function AboutPage() {
                   color: "text-purple-400"
                 }
               ].map((item, i) => (
-                <div key={i} className="glass premium-card p-8 rounded-3xl border border-border">
+                <div key={i} className="glass premium-card p-8 rounded-lg border border-border">
                   <item.icon className={`w-10 h-10 mb-6 ${item.color}`} />
                   <h3 className="font-heading font-bold text-xl mb-3">{item.title}</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">{item.desc}</p>

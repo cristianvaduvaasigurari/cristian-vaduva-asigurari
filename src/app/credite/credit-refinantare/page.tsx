@@ -20,9 +20,14 @@ export default function CreditRefinantarePage() {
       <p className="mb-4 text-lg text-muted-foreground"><strong>În cât timp primești răspuns?</strong> În 5‑7 zile lucrătoare, în funcție de complexitatea dosarului.</p>
       <p className="mb-4 text-lg text-muted-foreground"><strong>Cum te ajut personal?</strong> Ofer consultanță pas cu pas, gestionăm toată documentația și comunicăm cu banca pentru tine.</p>
       <p className="mb-4 text-lg text-muted-foreground"><strong>De ce este mai bine?</strong> Avem acces la oferte exclusive și reușim să obținem condiții mult mai bune decât o căutare independentă.</p>
-      <Link href="/credite" className="mt-6 inline-block">
-        <Button variant="ghost">Înapoi la lista credite</Button>
-      </Link>
+      <div className="mt-8 flex flex-wrap gap-4">
+        <Button className="bg-blue-600 hover:bg-blue-700 text-white rounded-xl shadow-md px-6 h-11" asChild>
+          <Link href="/credite/contact-broker-credite">Solicită Consultanță Gratuită</Link>
+        </Button>
+        <Link href="/credite">
+          <Button variant="ghost">Înapoi la lista credite</Button>
+        </Link>
+      </div>
     </section>
   );
 }

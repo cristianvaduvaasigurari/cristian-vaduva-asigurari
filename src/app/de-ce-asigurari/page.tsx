@@ -70,7 +70,7 @@ export default function WhyInsurancePage() {
                 <AlertTriangle className="text-amber-500 w-8 h-8" />
                 Diferența dintre o poliță ieftină și protecție reală
               </h2>
-              <div className="glass p-8 rounded-3xl border border-border space-y-6">
+              <div className="glass p-8 rounded-lg border border-border space-y-6">
                 <p className="text-muted-foreground leading-relaxed">
                   O greșeală frecventă este achiziția celei mai ieftine polițe (ex: PAD sau RCA simplu). Acestea bifează doar o obligație legală, dar te lasă descoperit în cazul unor daune majore.
                 </p>
@@ -101,17 +101,17 @@ export default function WhyInsurancePage() {
                 Protecție pe toate planurile
               </h2>
               <div className="grid md:grid-cols-3 gap-6">
-                <div className="glass p-8 rounded-3xl border border-border">
+                <div className="glass p-8 rounded-lg border border-border">
                   <Heart className="w-8 h-8 text-pink-500 mb-4" />
                   <h4 className="font-bold text-lg mb-2 text-foreground">Familie</h4>
                   <p className="text-sm text-muted-foreground">Asigurările de viață și sănătate garantează că, indiferent ce se întâmplă cu tine, familia ta nu își va pierde stilul de viață și nu va vinde active în pierdere pentru a plăti tratamente.</p>
                 </div>
-                <div className="glass p-8 rounded-3xl border border-border">
+                <div className="glass p-8 rounded-lg border border-border">
                   <Briefcase className="w-8 h-8 text-purple-500 mb-4" />
                   <h4 className="font-bold text-lg mb-2 text-foreground">Business</h4>
                   <p className="text-sm text-muted-foreground">Asigurările IMM și Răspunderile Profesionale te protejează de procese, faliment sau întreruperea activității din cauze neprevăzute.</p>
                 </div>
-                <div className="glass p-8 rounded-3xl border border-border">
+                <div className="glass p-8 rounded-lg border border-border">
                   <Flame className="w-8 h-8 text-orange-500 mb-4" />
                   <h4 className="font-bold text-lg mb-2 text-foreground">Investiții</h4>
                   <p className="text-sm text-muted-foreground">Eficiența capitalului: bogații nu țin sute de mii blocate ca &quot;fond de rezervă&quot;, ci plătesc o primă mică anuală pentru a asigura acele active, investind restul banilor.</p>

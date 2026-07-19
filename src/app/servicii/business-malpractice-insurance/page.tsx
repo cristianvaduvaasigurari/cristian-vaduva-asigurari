@@ -24,7 +24,7 @@ export default function BusinessMalpracticeInsurancePage() {
           
           {/* 1. Hero Section */}
           <div className="mb-24 flex flex-col items-center text-center mx-auto">
-            <div className="inline-flex p-5 rounded-3xl glass text-emerald-600 mb-8 border border-border bg-emerald-50">
+            <div className="inline-flex p-5 rounded-lg glass text-emerald-600 mb-8 border border-border bg-emerald-50">
               <Stethoscope className="w-12 h-12" />
             </div>
             <h1 className="text-5xl md:text-6xl font-heading font-bold mb-6 leading-tight">
@@ -255,7 +255,7 @@ export default function BusinessMalpracticeInsurancePage() {
               <ContactForm customTitle="Cere Profil de Asigurare Malpraxis (Individual / Clinică)" />
             </div>
             
-            <div className="glass rounded-3xl p-8 border border-border h-fit sticky top-32 shadow-lg">
+            <div className="glass rounded-lg p-8 border border-border h-fit sticky top-32 shadow-lg">
               <h3 className="text-2xl font-bold font-heading mb-6">Auditul Medical</h3>
               <p className="text-muted-foreground mb-8">
                 Pentru medici avem nevoie doar de specialitatea practicată. Pentru Spitale / Clinici (Unități Sanitare), vom trimite un chestionar complex (Cifra de Afaceri, nr. de medici, specialitățile de risc practicate, istoric de daune).

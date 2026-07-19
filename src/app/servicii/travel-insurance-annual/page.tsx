@@ -24,7 +24,7 @@ export default function TravelAnnualInsurancePage() {
           
           {/* 1. Hero Section */}
           <div className="mb-24 flex flex-col items-center text-center mx-auto">
-            <div className="inline-flex p-5 rounded-3xl glass text-cyan-600 mb-8 border border-border bg-cyan-50">
+            <div className="inline-flex p-5 rounded-lg glass text-cyan-600 mb-8 border border-border bg-cyan-50">
               <CalendarDays className="w-12 h-12" />
             </div>
             <h1 className="text-5xl md:text-6xl font-heading font-bold mb-6 leading-tight">
@@ -255,7 +255,7 @@ export default function TravelAnnualInsurancePage() {
               <ContactForm customTitle="Cere Ofertă Abonament Multi-Trip" />
             </div>
             
-            <div className="glass rounded-3xl p-8 border border-border h-fit sticky top-32 shadow-lg">
+            <div className="glass rounded-lg p-8 border border-border h-fit sticky top-32 shadow-lg">
               <h3 className="text-2xl font-bold font-heading mb-6">Emite o dată, zbori oricând</h3>
               <p className="text-muted-foreground mb-8">
                 Ne trimiți poza de buletin, stabilim dacă ai nevoie de zona Europa sau Mondială și nivelul sumei asigurate. Primești instant un PDF cu polița activă 365 de zile.

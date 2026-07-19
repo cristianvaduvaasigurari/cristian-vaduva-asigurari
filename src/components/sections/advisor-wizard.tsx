@@ -579,7 +579,7 @@ export function AdvisorWizard() {
               <button
                 key={idx}
                 onClick={() => setSelectedSolution(idx)}
-                className={`w-full p-6 text-left rounded-3xl border transition-all duration-300 flex flex-col ${
+                className={`w-full p-6 text-left rounded-lg border transition-all duration-300 flex flex-col ${
                   selectedSolution === idx || (selectedSolution === null && idx === 0)
                     ? "bg-slate-900 border-slate-900 text-white shadow-xl scale-[1.02]"
                     : "bg-white border-slate-200/60 hover:bg-slate-50 text-slate-800 hover:border-slate-300"

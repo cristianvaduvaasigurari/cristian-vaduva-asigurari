@@ -24,7 +24,7 @@ export default function FleetInsurancePage() {
           
           {/* 1. Hero Section */}
           <div className="mb-24 flex flex-col items-center text-center mx-auto">
-            <div className="inline-flex p-5 rounded-3xl glass text-blue-600 mb-8 border border-border bg-blue-50">
+            <div className="inline-flex p-5 rounded-lg glass text-blue-600 mb-8 border border-border bg-blue-50">
               <Truck className="w-12 h-12" />
             </div>
             <h1 className="text-5xl md:text-6xl font-heading font-bold mb-6 leading-tight">
@@ -255,7 +255,7 @@ export default function FleetInsurancePage() {
               <ContactForm customTitle="Solicită Ofertă Pentru Parc Auto" />
             </div>
             
-            <div className="glass rounded-3xl p-8 border border-border h-fit sticky top-32 shadow-lg">
+            <div className="glass rounded-lg p-8 border border-border h-fit sticky top-32 shadow-lg">
               <h3 className="text-2xl font-bold font-heading mb-6">Analiză B2B Gratuită</h3>
               <p className="text-muted-foreground mb-8">
                 Trimite-ne centralizatorul actual al vehiculelor în Excel pe WhatsApp. Vom face o paralelă directă de cost și beneficii între ce plătești acum vs. noul sistem Flotă propus de noi.

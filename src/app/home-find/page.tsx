@@ -58,21 +58,21 @@ export default function HomeFindPage() {
           </div>
           
           <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            <div className="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 transition-all hover:shadow-md">
+            <div className="bg-white p-8 rounded-lg shadow-sm border border-slate-100 transition-all hover:shadow-md">
               <div className="w-12 h-12 bg-blue-50 rounded-2xl flex items-center justify-center mb-6 text-blue-600">
                 <Search className="w-6 h-6" />
               </div>
               <h3 className="text-xl font-bold mb-3">Curated Selection</h3>
               <p className="text-slate-600">Premium properties vetted for quality, location, and investment potential.</p>
             </div>
-            <div className="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 transition-all hover:shadow-md">
+            <div className="bg-white p-8 rounded-lg shadow-sm border border-slate-100 transition-all hover:shadow-md">
               <div className="w-12 h-12 bg-amber-50 rounded-2xl flex items-center justify-center mb-6 text-amber-600">
                 <Shield className="w-6 h-6" />
               </div>
               <h3 className="text-xl font-bold mb-3">Immediate Protection</h3>
               <p className="text-slate-600">Seamlessly integrate Generali insurance solutions the moment you acquire your asset.</p>
             </div>
-            <div className="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 transition-all hover:shadow-md">
+            <div className="bg-white p-8 rounded-lg shadow-sm border border-slate-100 transition-all hover:shadow-md">
               <div className="w-12 h-12 bg-emerald-50 rounded-2xl flex items-center justify-center mb-6 text-emerald-600">
                 <Activity className="w-6 h-6" />
               </div>
@@ -104,7 +104,7 @@ export default function HomeFindPage() {
 
 
 
-          <div className="mt-12 text-center max-w-2xl mx-auto p-6 bg-amber-50/50 border border-amber-100 rounded-3xl">
+          <div className="mt-12 text-center max-w-2xl mx-auto p-6 bg-amber-50/50 border border-amber-100 rounded-lg">
             <Shield className="w-8 h-8 text-amber-600 mx-auto mb-4" />
             <h4 className="font-bold text-lg mb-2">Why Protect Immediately?</h4>
             <p className="text-slate-600 text-sm">
@@ -134,7 +134,7 @@ export default function HomeFindPage() {
           <div className="max-w-4xl mx-auto">
             <div className="flex flex-col gap-4">
               
-              <div className="flex flex-col md:flex-row items-center gap-6 p-6 rounded-3xl bg-white/5 border border-white/10 backdrop-blur-sm relative">
+              <div className="flex flex-col md:flex-row items-center gap-6 p-6 rounded-lg bg-white/5 border border-white/10 backdrop-blur-sm relative">
                 <div className="w-16 h-16 rounded-2xl bg-amber-500/20 text-amber-400 flex items-center justify-center shrink-0">
                   <Search className="w-8 h-8" />
                 </div>
@@ -148,7 +148,7 @@ export default function HomeFindPage() {
                 <ArrowRight className="w-6 h-6 rotate-90 md:rotate-0" />
               </div>
 
-              <div className="flex flex-col md:flex-row items-center gap-6 p-6 rounded-3xl bg-white/5 border border-white/10 backdrop-blur-sm relative">
+              <div className="flex flex-col md:flex-row items-center gap-6 p-6 rounded-lg bg-white/5 border border-white/10 backdrop-blur-sm relative">
                 <div className="w-16 h-16 rounded-2xl bg-blue-500/20 text-blue-400 flex items-center justify-center shrink-0">
                   <Home className="w-8 h-8" />
                 </div>
@@ -162,7 +162,7 @@ export default function HomeFindPage() {
                 <ArrowRight className="w-6 h-6 rotate-90 md:rotate-0" />
               </div>
 
-              <div className="flex flex-col md:flex-row items-center gap-6 p-6 rounded-3xl bg-white/5 border border-white/10 backdrop-blur-sm relative">
+              <div className="flex flex-col md:flex-row items-center gap-6 p-6 rounded-lg bg-white/5 border border-white/10 backdrop-blur-sm relative">
                 <div className="w-16 h-16 rounded-2xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0">
                   <Shield className="w-8 h-8" />
                 </div>
@@ -176,7 +176,7 @@ export default function HomeFindPage() {
                 <ArrowRight className="w-6 h-6 rotate-90 md:rotate-0" />
               </div>
 
-              <div className="flex flex-col md:flex-row items-center gap-6 p-6 rounded-3xl bg-white/5 border border-white/10 backdrop-blur-sm relative">
+              <div className="flex flex-col md:flex-row items-center gap-6 p-6 rounded-lg bg-white/5 border border-white/10 backdrop-blur-sm relative">
                 <div className="w-16 h-16 rounded-2xl bg-purple-500/20 text-purple-400 flex items-center justify-center shrink-0">
                   <Activity className="w-8 h-8" />
                 </div>
@@ -190,7 +190,7 @@ export default function HomeFindPage() {
                 <ArrowRight className="w-6 h-6 rotate-90 md:rotate-0" />
               </div>
 
-              <div className="flex flex-col md:flex-row items-center gap-6 p-6 rounded-3xl bg-white/5 border border-white/10 backdrop-blur-sm relative">
+              <div className="flex flex-col md:flex-row items-center gap-6 p-6 rounded-lg bg-white/5 border border-white/10 backdrop-blur-sm relative">
                 <div className="w-16 h-16 rounded-2xl bg-slate-700 text-white flex items-center justify-center shrink-0">
                   <Lock className="w-8 h-8" />
                 </div>
