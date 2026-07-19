@@ -337,6 +337,26 @@ export function Navbar() {
             className="fixed top-0 left-0 right-0 bottom-0 bg-white z-40 overflow-y-auto pt-24 pb-24 px-4"
           >
             <div className="flex flex-col gap-4">
+              {/* Credits Mobile Accordion */}
+              <div className="flex flex-col border-b border-border/50">
+                <button
+                  className="text-2xl font-bold p-2 text-left flex justify-between items-center"
+                  onClick={() => setActiveMobileMegaMenu(activeMobileMegaMenu === 3 ? null : 3)}
+                >
+                  Credite
+                  <ChevronDown className={cn("w-6 h-6 transition-transform", activeMobileMegaMenu === 3 ? "rotate-180" : "")} />
+                </button>
+                {activeMobileMegaMenu === 3 && (
+                  <div className="pl-4 pb-4 flex flex-col gap-3">
+                    {creditsMenuLinks.map((item, i) => (
+                      <Link key={i} href={item.href} onClick={() => setIsMobileMenuOpen(false)} className="text-base text-muted-foreground py-1 pl-7">
+                        {item.name}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
+
               {/* Asigurări Mobile Accordion */}
               <div className="flex flex-col border-b border-border/50">
                 <button
@@ -357,26 +377,6 @@ export function Navbar() {
                           </Link>
                         ))}
                       </div>
-                    ))}
-                  </div>
-                )}
-              </div>
-
-              {/* Credits Mobile Accordion */}
-              <div className="flex flex-col border-b border-border/50">
-                <button
-                  className="text-2xl font-bold p-2 text-left flex justify-between items-center"
-                  onClick={() => setActiveMobileMegaMenu(activeMobileMegaMenu === 3 ? null : 3)}
-                >
-                  Credite
-                  <ChevronDown className={cn("w-6 h-6 transition-transform", activeMobileMegaMenu === 3 ? "rotate-180" : "")} />
-                </button>
-                {activeMobileMegaMenu === 3 && (
-                  <div className="pl-4 pb-4 flex flex-col gap-3">
-                    {creditsMenuLinks.map((item, i) => (
-                      <Link key={i} href={item.href} onClick={() => setIsMobileMenuOpen(false)} className="text-base text-muted-foreground py-1 pl-7">
-                        {item.name}
-                      </Link>
                     ))}
                   </div>
                 )}

@@ -125,11 +125,9 @@ const testData = {
 
   await browser.close();
 
-  ('\n--- Verification Report ---');
-  ('| Page | HTTP 200 | Success Overlay |');
-  ('|------|----------|----------------|');
-  for (const r of results) {
-    (`| ${r.page} | ${r.httpOk ? '✅' : '❌'} | ${r.successOverlay ? '✅' : '❌'} |`);
-  }
-  ('--- End of Report ---');
+    console.log('\n--- Verification Report ---');
+    console.log('| Page | HTTP 200 | Success Overlay |');
+    console.log('|------|----------|----------------|');
+  for (const r of results)      console.log(`| ${r.page} | ${r.httpOk ? '✅' : '❌'} | ${r.successOverlay ? '✅' : '❌'} |`);
+    console.log('--- End of Report ---');
 })();

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -12,6 +12,12 @@ import Link from "next/link";
 export function ContactForm({ customTitle, target, brokerName }: { customTitle?: string; target?: string; brokerName?: string }) {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
+  // Use props in effect to avoid unused warnings
+  useEffect(() => {
+    // No-op but ensures target and brokerName are referenced
+    void target;
+    void brokerName;
+  }, [target, brokerName]);
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();

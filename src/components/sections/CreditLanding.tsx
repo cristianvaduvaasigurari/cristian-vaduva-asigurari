@@ -30,7 +30,7 @@ export function CreditLanding({
     <section className="container mx-auto py-12 px-4">
       {/* Hero */}
       <div className="text-center mb-12">
-        <h1 className="text-5xl font-bold mb-4 text-foreground">{heroTitle}</h1>
+        <h1 className="text-4xl sm:text-5xl font-bold mb-4 text-foreground">{heroTitle}</h1>
         <p className="text-xl text-muted-foreground max-w-2xl mx-auto">{heroSubtitle}</p>
       </div>
 
