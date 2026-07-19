@@ -30,14 +30,11 @@ const footerLinks = {
   tools: [
     { name: "Risk Simulator", href: "/risk-simulator" },
     { name: "Command Wall", href: "/personal-dashboard" },
-    { name: "Second Opinion", href: "/second-opinion" },
     { name: "Luxury Garage", href: "/luxury-garage" },
     { name: "Client Journey", href: "/client-journey" },
     { name: "Trust Center", href: "/trust-center" },
     { name: "Smart Forms", href: "/smart-forms" },
     { name: "AiX Mission Control", href: "/mission-control" },
-    { name: "Wealth Galaxy", href: "/wealth-galaxy" },
-    { name: "Live Market Radar", href: "/market-radar" },
     { name: "Wealth Passport", href: "/wealth-passport" },
     { name: "AiX Life Simulator", href: "/simulator" },
     { name: "AiX Financial Twin", href: "/financial-twin" },
@@ -45,8 +42,6 @@ const footerLinks = {
     { name: "RE Analyzer", href: "/investitii-imobiliare/analyzer" },
     { name: "Luxury Assets", href: "/luxury-assets" },
     { name: "Centru Urgențe", href: "/urgente" },
-    { name: "Claim Assistant", href: "/claim-assistant" },
-    { name: "Raport Strategic", href: "/raport-strategic" },
   ],
   company: [
     { name: "AiX Academy", href: "/academy" },

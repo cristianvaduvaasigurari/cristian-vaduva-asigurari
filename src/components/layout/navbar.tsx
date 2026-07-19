@@ -1,9 +1,11 @@
 "use client";
 
+
+
 import * as React from "react";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
-import { Menu, X, ChevronDown, Shield, Car, Briefcase, Building2 } from "lucide-react";
+import { Menu, X, ChevronDown, Shield, Car, Briefcase, Building2, Home } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -67,32 +69,27 @@ const ecosystemMenuData = [
   {
     title: "Platformă & Core",
     items: [
-      { name: "AiX OS", href: "/aixos" },
-      { name: "Home Find", href: "/home-find" },
-      { name: "AiXLuxury", href: "/aixluxury" },
       { name: "Centru Urgențe", href: "/urgente" },
-    ]
+    ],
   },
   {
     title: "AiX Intelligence",
     items: [
       { name: "Mission Control", href: "/mission-control" },
-      { name: "Wealth Galaxy", href: "/wealth-galaxy" },
       { name: "Risk Simulator", href: "/risk-simulator" },
       { name: "Life Simulator", href: "/simulator" },
       { name: "Financial Twin", href: "/financial-twin" },
-    ]
+    ],
   },
   {
     title: "AiX Tools",
     items: [
-      { name: "Second Opinion", href: "/second-opinion" },
       { name: "Luxury Garage", href: "/luxury-garage" },
       { name: "Client Journey", href: "/client-journey" },
       { name: "Smart Forms", href: "/smart-forms" },
       { name: "Wealth Passport", href: "/wealth-passport" },
       { name: "RE Analyzer", href: "/investitii-imobiliare/analyzer" },
-    ]
+    ],
   },
   {
     title: "Resurse & Consultanță",
@@ -100,9 +97,27 @@ const ecosystemMenuData = [
       { name: "AiX Academy", href: "/academy" },
       { name: "AiX Advisor", href: "/advisor" },
       { name: "Coverage Gap", href: "/gap-analyzer" },
-      { name: "Live Market Radar", href: "/market-radar" },
-    ]
-  }
+    ],
+  },
+];
+
+// Credits menu links (dropdown similar to mega menu but single column)
+const creditsMenuLinks = [
+  { name: "Credit Ipotecar", href: "/credite/credit-ipotecar" },
+  { name: "Noua Casă", href: "/credite/credit-noua-casa" },
+  { name: "Refinanțare", href: "/credite/credit-refinantare" },
+  { name: "Credit de Nevoi Personale", href: "/credite/credit-nevoi-personale" },
+  { name: "Credit pentru Investiții Imobiliare", href: "/credite/credit-investitii-imobiliare" },
+  { name: "Credit pentru Firme", href: "/credite/credit-persoane-juridice" },
+  { name: "Consolidare Credite", href: "/credite/consolidare-credite" },
+  { name: "Compară Bănci", href: "/credite/compara-banci" },
+  { name: "De ce să lucrezi cu un Broker de Credite", href: "/credite/de-ce-broker" },
+  { name: "Procesul de Aprobare", href: "/credite/proces-aprobare" },
+  { name: "Documente Necesare", href: "/credite/documente-necesare" },
+  { name: "Întrebări Frecvente", href: "/credite/faq" },
+  { name: "Contact Broker Credite", href: "/credite/contact" },
+  { name: "Credit pentru Construcții", href: "/credite/credit-constructii" },
+  { name: "Credit Verde", href: "/credite/credit-verde" },
 ];
 
 export function Navbar() {
@@ -130,30 +145,99 @@ export function Navbar() {
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex items-center justify-between">
           <div className="flex flex-col items-start justify-center gap-0.5 relative z-50">
-            <Link href="/" className="font-heading font-bold text-xl tracking-tight leading-none text-foreground">
-              cristianvaduva.com
+            <Link href="/" className="font-heading font-bold text-xl tracking-tight leading-none text-foreground flex items-center hover:text-foreground transition-colors">
+              <Home className="w-5 h-5 mr-1" />
+              Insurance
             </Link>
-            <div className="flex items-center gap-2 text-[10px] sm:text-xs text-muted-foreground uppercase tracking-widest font-medium mt-1">
-              <Link href="/aixluxury" className="hover:text-foreground transition-colors">AiXLuxury</Link>
-              <span className="w-1 h-1 rounded-full bg-border" />
-              <Link href="/aixos" className="hover:text-foreground transition-colors">AiX OS</Link>
-              <span className="w-1 h-1 rounded-full bg-border" />
-              <Link href="/home-find" className="hover:text-foreground transition-colors">Home Find</Link>
-            </div>
           </div>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-8">
-            <Link href="/" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">Home</Link>
-              <Link href="/credite" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">Credite</Link>
-            
+            {/* Credits Dropdown */}
+            <div className="group relative">
+              <button className="flex items-center gap-1 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors py-4">
+                Credite
+                <ChevronDown className="w-4 h-4 transition-transform group-hover:rotate-180" />
+              </button>
+              <div className="absolute top-full left-1/2 -translate-x-1/2 w-[600px] bg-white border border-border/50 shadow-2xl rounded-3xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform origin-top translate-y-4 group-hover:translate-y-0 p-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                  {/* 🏠 Locuință */}
+                  <div>
+                    <h4 className="font-semibold text-foreground mb-2">🏠 Locuință</h4>
+                    <ul className="space-y-1">
+                      {creditsMenuLinks.filter(i => [
+                        "Credit Ipotecar",
+                        "Noua Casă",
+                        "Refinanțare",
+                        "Credit pentru Construcții",
+                        "Credit Verde"
+                      ].includes(i.name)).map((item, i) => (
+                        <li key={i}>
+                          <Link href={item.href} className="block text-sm text-muted-foreground hover:text-foreground transition-colors">
+                            {item.name}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  {/* 💼 Investiții & Business */}
+                  <div>
+                    <h4 className="font-semibold text-foreground mb-2">💼 Investiții & Business</h4>
+                    <ul className="space-y-1">
+                      {creditsMenuLinks.filter(i => [
+                        "Credit pentru Investiții Imobiliare",
+                        "Credit pentru Firme",
+                        "Consolidare Credite"
+                      ].includes(i.name)).map((item, i) => (
+                        <li key={i}>
+                          <Link href={item.href} className="block text-sm text-muted-foreground hover:text-foreground transition-colors">
+                            {item.name}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  {/* 📊 Informații utile */}
+                  <div>
+                    <h4 className="font-semibold text-foreground mb-2">📊 Informații utile</h4>
+                    <ul className="space-y-1">
+                      {creditsMenuLinks.filter(i => [
+                        "Compară Bănci",
+                        "De ce să lucrezi cu un Broker de Credite"
+                      ].includes(i.name)).map((item, i) => (
+                        <li key={i}>
+                          <Link href={item.href} className="block text-sm text-muted-foreground hover:text-foreground transition-colors">
+                            {item.name}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  {/* ❓ Suport */}
+                  <div>
+                    <h4 className="font-semibold text-foreground mb-2">❓ Suport</h4>
+                    <ul className="space-y-1">
+                      {creditsMenuLinks.filter(i => [
+                        "Întrebări Frecvente",
+                        "Contact Broker Credite"
+                      ].includes(i.name)).map((item, i) => (
+                        <li key={i}>
+                          <Link href={item.href} className="block text-sm text-muted-foreground hover:text-foreground transition-colors">
+                            {item.name}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
             {/* Mega Menu Trigger */}
             <div className="group relative">
               <button className="flex items-center gap-1 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors py-4">
                 Asigurări
                 <ChevronDown className="w-4 h-4 transition-transform group-hover:rotate-180" />
               </button>
-              
               {/* Mega Menu Dropdown */}
               <div className="absolute top-full left-1/2 -translate-x-1/2 w-[900px] bg-white border border-border/50 shadow-2xl rounded-3xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform origin-top translate-y-4 group-hover:translate-y-0 p-8">
                 <div className="grid grid-cols-4 gap-8">
@@ -186,9 +270,7 @@ export function Navbar() {
               </div>
             </div>
 
-            <Link href="/home-find" className="text-sm font-semibold text-amber-600 hover:text-amber-700 transition-colors flex items-center gap-1">
-              Home Find™
-            </Link>
+            
 
             <div className="group relative">
               <button className="flex items-center gap-1 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors py-4">
@@ -250,13 +332,12 @@ export function Navbar() {
             className="fixed top-0 left-0 right-0 bottom-0 bg-white z-40 overflow-y-auto pt-24 pb-24 px-4"
           >
             <div className="flex flex-col gap-4">
-              <Link href="/" onClick={() => setIsMobileMenuOpen(false)} className="text-2xl font-bold p-2 border-b border-border/50">Home</Link>
-                <Link href="/credite" onClick={() => setIsMobileMenuOpen(false)} className="text-2xl font-bold p-2 border-b border-border/50">Credite</Link>
+              <Link href="/credite" onClick={() => setIsMobileMenuOpen(false)} className="text-2xl font-bold p-2 border-b border-border/50">Credite</Link>
               <Link href="/despre-mine" onClick={() => setIsMobileMenuOpen(false)} className="text-2xl font-bold p-2 border-b border-border/50">Despre Mine</Link>
-              
+
               <div className="flex flex-col border-b border-border/50">
-                <button 
-                  className="text-2xl font-bold p-2 text-left flex justify-between items-center" 
+                <button
+                  className="text-2xl font-bold p-2 text-left flex justify-between items-center"
                   onClick={() => setActiveMobileMegaMenu(activeMobileMegaMenu === 1 ? null : 1)}
                 >
                   Asigurări
@@ -278,11 +359,31 @@ export function Navbar() {
                 )}
               </div>
 
-              <Link href="/home-find" onClick={() => setIsMobileMenuOpen(false)} className="text-2xl font-bold p-2 border-b border-border/50 text-amber-600">Home Find™</Link>
+              {/* Credits Mobile Accordion */}
+              <div className="flex flex-col border-b border-border/50">
+                <button
+                  className="text-2xl font-bold p-2 text-left flex justify-between items-center"
+                  onClick={() => setActiveMobileMegaMenu(activeMobileMegaMenu === 3 ? null : 3)}
+                >
+                  Credite
+                  <ChevronDown className={cn("w-6 h-6 transition-transform", activeMobileMegaMenu === 3 ? "rotate-180" : "")} />
+                </button>
+                {activeMobileMegaMenu === 3 && (
+                  <div className="pl-4 pb-4 flex flex-col gap-3">
+                    {creditsMenuLinks.map((item, i) => (
+                      <Link key={i} href={item.href} onClick={() => setIsMobileMenuOpen(false)} className="text-base text-muted-foreground py-1 pl-7">
+                        {item.name}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
+
+              
 
               <div className="flex flex-col border-b border-border/50">
-                <button 
-                  className="text-2xl font-bold p-2 text-left flex justify-between items-center" 
+                <button
+                  className="text-2xl font-bold p-2 text-left flex justify-between items-center"
                   onClick={() => setActiveMobileMegaMenu(activeMobileMegaMenu === 2 ? null : 2)}
                 >
                   Ecosistem AiX
@@ -294,12 +395,7 @@ export function Navbar() {
                       <div key={i} className="flex flex-col gap-2">
                         <h4 className="font-bold text-xs text-slate-400 uppercase tracking-widest mt-2">{col.title}</h4>
                         {col.items.map((item, j) => (
-                          <Link 
-                            key={j} 
-                            href={item.href} 
-                            onClick={() => setIsMobileMenuOpen(false)} 
-                            className="text-base text-slate-800 py-1 font-semibold"
-                          >
+                          <Link key={j} href={item.href} onClick={() => setIsMobileMenuOpen(false)} className="text-base text-slate-800 py-1 font-semibold">
                             {item.name}
                           </Link>
                         ))}
