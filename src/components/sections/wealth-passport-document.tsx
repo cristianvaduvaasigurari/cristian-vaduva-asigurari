@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef, useState } from "react";
+import * as React from "react"; import { useRef, useState } from "react";
 import { Shield, Printer, User, AlertTriangle, Award } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { generatePDFFromElement } from "@/lib/pdf-generator";

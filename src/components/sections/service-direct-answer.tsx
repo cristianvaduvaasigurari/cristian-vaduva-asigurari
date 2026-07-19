@@ -1,4 +1,4 @@
-import React from "react";
+import * as React from "react";
 import { HelpCircle, User, ShieldAlert, Award, Clock, DollarSign, ShieldCheck, Zap } from "lucide-react";
 
 interface DirectAnswerProps {

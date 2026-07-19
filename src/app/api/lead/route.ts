@@ -29,7 +29,7 @@ export const POST = async (request: Request) => {
       { name, email, phone, service_type: service, message: formattedMessage }
     ]);
     if (error) {
-      console.error("Supabase insert error:", error);
+      console.error("our platform insert error:", error);
       return NextResponse.json({ success: false, error: "Eroare la salvarea datelor." }, { status: 500 });
     }
     // Await Telegram notification (synchronous)

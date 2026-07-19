@@ -11,7 +11,7 @@ export interface TelegramLeadData {
 
 const MAX_RETRIES = 2;
 const INITIAL_BACKOFF_MS = 800;
-const TIMEOUT_MS = 15000; // increased timeout for Vercel latency
+const TIMEOUT_MS = 15000; // increased timeout for our hosting latency
 
 function sleep(ms: number): Promise<void> {
   return new Promise((resolve) => setTimeout(resolve, ms));
@@ -73,7 +73,7 @@ export async function sendTelegramAlert(lead: TelegramLeadData): Promise<boolean
   // Mask token for logs (show only first 4 characters)
   const maskedToken = token.replace(/^(.{4}).+/, "$1******");
   const url = `https://api.telegram.org/bot${token}/sendMessage`;
-  console.info(`[Telegram Alert] URL: https://api.telegram.org/bot${maskedToken}/sendMessage`);
+  (`[Telegram Alert] URL: https://api.telegram.org/bot${maskedToken}/sendMessage`);
 
   const payload = {
     chat_id: chatId,
@@ -81,7 +81,7 @@ export async function sendTelegramAlert(lead: TelegramLeadData): Promise<boolean
     parse_mode: "HTML",
   };
   const body = JSON.stringify(payload);
-  console.info(`[Telegram Alert] Payload: chat_id=${chatId}, textLength=${payload.text.length}, parse_mode=${payload.parse_mode}`);
+  (`[Telegram Alert] Payload: chat_id=${chatId}, textLength=${payload.text.length}, parse_mode=${payload.parse_mode}`);
 
   let attempt = 0;
   let backoff = INITIAL_BACKOFF_MS;
@@ -89,7 +89,7 @@ export async function sendTelegramAlert(lead: TelegramLeadData): Promise<boolean
   while (attempt < MAX_RETRIES) {
     attempt++;
     try {
-      console.info(`[Telegram Alert] Attempt ${attempt}/${MAX_RETRIES} – Sending request to ${url}`);
+      (`[Telegram Alert] Attempt ${attempt}/${MAX_RETRIES} – Sending request to ${url}`);
       const startTime = Date.now();
       const response = await fetchWithTimeout(
         url,
@@ -104,9 +104,9 @@ export async function sendTelegramAlert(lead: TelegramLeadData): Promise<boolean
 
       if (response.ok) {
         const respBody = await response.text().catch(() => "(unreadable)");
-        console.info(`[Telegram Alert] Request completed in ${elapsed}ms – Status ${response.status}`);
-        console.info(`[Telegram Alert] Response ${response.status}: ${respBody}`);
-        console.info(`[Telegram Alert] ✓ Delivered on attempt ${attempt}.`);
+        (`[Telegram Alert] Request completed in ${elapsed}ms – Status ${response.status}`);
+        (`[Telegram Alert] Response ${response.status}: ${respBody}`);
+        (`[Telegram Alert] ✓ Delivered on attempt ${attempt}.`);
         return true;
       }
 
@@ -125,7 +125,7 @@ export async function sendTelegramAlert(lead: TelegramLeadData): Promise<boolean
     }
 
     if (attempt < MAX_RETRIES) {
-      console.info(`[Telegram Alert] Retrying in ${backoff}ms…`);
+      (`[Telegram Alert] Retrying in ${backoff}ms…`);
       await sleep(backoff);
       backoff *= 2;
     }

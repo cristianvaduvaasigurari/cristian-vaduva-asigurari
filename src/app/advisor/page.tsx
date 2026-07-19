@@ -1,9 +1,9 @@
-import React from "react";
+import * as React from "react";
 import type { Metadata } from "next";
 import { AdvisorWizard } from "@/components/sections/advisor-wizard";
 
 export const metadata: Metadata = {
-  title: "AiX Insurance Advisor | Consultanță Asigurări AI",
+  title: "Recomandă-mi Asigurarea Potrivită | Consultanță Asigurări AI",
   description: "Află în 2 minute de ce tip de protecție ai nevoie prin asistentul nostru virtual AiX.",
 };
 
@@ -20,7 +20,7 @@ export default function AdvisorPage() {
             Inteligență Artificială
           </div>
           <h1 className="text-4xl md:text-5xl font-heading font-bold mb-6 text-foreground tracking-tight">
-            AiX Insurance Advisor
+            Asistent pentru Alegerea Asigurării
           </h1>
           <p className="text-xl text-muted-foreground leading-relaxed">
             Un instrument inteligent, rapid și anonim pentru a descoperi cu exactitate care sunt verigile lipsă din protecția familiei și afacerii tale. Durează mai puțin de 2 minute.

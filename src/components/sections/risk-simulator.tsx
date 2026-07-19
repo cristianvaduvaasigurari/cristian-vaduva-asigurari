@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import * as React from "react"; import { useState } from "react";
 import { 
   AlertTriangle, Shield, Coins, AlertCircle 
 } from "lucide-react";

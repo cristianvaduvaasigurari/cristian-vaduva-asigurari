@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import * as React from "react"; import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Search, Bookmark, ChevronRight, Filter, BookOpen, Clock, Zap } from "lucide-react";
 import { Input } from "@/components/ui/input";

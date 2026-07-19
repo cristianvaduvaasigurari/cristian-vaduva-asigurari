@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import * as React from "react"; import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { 
   Eye, Compass, Shield, Coins, TrendingUp, 
@@ -18,11 +18,11 @@ const stages = [
     tagline: "Explorarea vulnerabilităților și înțelegerea expunerii",
     desc: "Primul pas în parteneriatul nostru este maparea completă a riscurilor personale. Analizăm activele curente și identificăm punctele vulnerabile care îți pot destabiliza planurile.",
     actions: [
-      "Completarea auditului de bază prin AiX Advisor.",
+      "Completarea auditului de bază prin Recomandă-mi Asigurarea Potrivită.",
       "Identificarea datoriilor active și a ratelor de dependență familială."
     ],
     recommendedServices: [
-      { name: "AiX Advisor", link: "/advisor" },
+      { name: "Recomandă-mi Asigurarea Potrivită", link: "/advisor" },
       { name: "Risk Simulator", link: "/risk-simulator" }
     ]
   },

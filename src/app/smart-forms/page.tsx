@@ -1,4 +1,4 @@
-import React from "react";
+import * as React from "react";
 import type { Metadata } from "next";
 import { ConversationalSmartForms } from "@/components/sections/conversational-smart-forms";
 

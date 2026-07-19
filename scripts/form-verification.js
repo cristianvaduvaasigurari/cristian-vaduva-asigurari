@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-require-imports, @typescript-eslint/no-unused-vars */
 // scripts/form-verification.js
 // Automated end‑to‑end verification of all ContactForm pages.
-// Runs against the local dev server (http://localhost:3000).
+// Runs against the local dev server (http://local environment:3000).
 // For each page it:
 //   1. Loads the page.
 //   2. Fills the ContactForm with test data.
@@ -62,7 +62,7 @@ const testData = {
 
   for (const path of pages) {
     const page = await browser.newPage();
-    const url = `http://localhost:3000${path}`;
+    const url = `http://local environment:3000${path}`;
     try {
       await page.goto(url, { waitUntil: 'networkidle2', timeout: 30000 });
     } catch (e) {
@@ -125,11 +125,11 @@ const testData = {
 
   await browser.close();
 
-  console.log('\n--- Verification Report ---');
-  console.log('| Page | HTTP 200 | Success Overlay |');
-  console.log('|------|----------|----------------|');
+  ('\n--- Verification Report ---');
+  ('| Page | HTTP 200 | Success Overlay |');
+  ('|------|----------|----------------|');
   for (const r of results) {
-    console.log(`| ${r.page} | ${r.httpOk ? '✅' : '❌'} | ${r.successOverlay ? '✅' : '❌'} |`);
+    (`| ${r.page} | ${r.httpOk ? '✅' : '❌'} | ${r.successOverlay ? '✅' : '❌'} |`);
   }
-  console.log('--- End of Report ---');
+  ('--- End of Report ---');
 })();

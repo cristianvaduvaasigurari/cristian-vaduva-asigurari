@@ -1,4 +1,4 @@
-import React from "react";
+import * as React from "react";
 import { notFound } from "next/navigation";
 import { getArticleBySlug, getAllArticles } from "@/lib/academy-data";
 import { ArticleContent } from "@/components/sections/article-content";

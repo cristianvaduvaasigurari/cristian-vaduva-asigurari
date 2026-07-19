@@ -55,10 +55,10 @@ export default function PrivacyPolicyPage() {
             </section>
 
             <section>
-              <h2 className="text-2xl font-bold font-heading text-foreground">4. Stocarea Datelor (Integrare Supabase)</h2>
+              <h2 className="text-2xl font-bold font-heading text-foreground">4. Stocarea Datelor (Integrare our platform)</h2>
               <p className="text-muted-foreground leading-relaxed mt-4">
                 Lead-urile și cererile completate prin website sunt transmise și stocate în mod securizat utilizând infrastructura 
-                Supabase, o platformă backend modernă care respectă standardele de securitate a datelor. Datele nu vor fi înstrăinate către terți 
+                our platform, o platformă backend modernă care respectă standardele de securitate a datelor. Datele nu vor fi înstrăinate către terți 
                 pentru marketing, cu excepția companiilor partenere necesare procesării serviciului cerut de dvs. (de ex. Generali România 
                 pentru emiterea polițelor).
               </p>

@@ -45,7 +45,7 @@ const footerLinks = {
   ],
   company: [
     { name: "AiX Academy", href: "/academy" },
-    { name: "AiX Advisor", href: "/advisor" },
+    { name: "Recomandă-mi Asigurarea Potrivită", href: "/advisor" },
     { name: "Coverage Gap", href: "/gap-analyzer" },
     { name: "Harta Protecției", href: "/harta-protectiei" },
     { name: "Ofertă Rapidă", href: "/oferta-rapida" },
@@ -119,7 +119,7 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="font-bold text-lg mb-6 text-white tracking-wide">Persoane</h3>
+            <h3 className="font-bold text-lg mb-6 text-white tracking-wide">Asigurări pentru Persoane Fizice</h3>
             <ul className="space-y-4">
               {footerLinks.servicesPersonal.map((link) => (
                 <li key={link.name}>
@@ -132,7 +132,7 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="font-bold text-lg mb-6 text-white tracking-wide">Companii</h3>
+            <h3 className="font-bold text-lg mb-6 text-white tracking-wide">Asigurări pentru Companii</h3>
             <ul className="space-y-4">
               {footerLinks.servicesBusiness.map((link) => (
                 <li key={link.name}>

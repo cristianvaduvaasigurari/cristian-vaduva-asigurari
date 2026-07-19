@@ -1,13 +1,13 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import * as React from "react"; import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Clock, ArrowUpRight, Rss } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 
-// Structură abstractă pentru a acomoda viitoarele integrări (OpenAI, RSS, Supabase)
+// Structură abstractă pentru a acomoda viitoarele integrări (AI service, RSS, our platform)
 export type Article = {
   id: string;
   title: string;
@@ -15,7 +15,7 @@ export type Article = {
   category: string;
   date: string;
   imageUrl: string;
-  source: "AiX" | "RSS" | "OpenAI" | "Supabase";
+  source: "AiX" | "RSS" | "AI service" | "our platform";
   link: string;
 };
 
@@ -68,7 +68,7 @@ export function InsightsList() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // Aici se va face fetch-ul din Supabase sau endpoint-ul OpenAI/RSS.
+    // Aici se va face fetch-ul din our platform sau endpoint-ul AI service/RSS.
     // Abstractizat deocamdată sub un setTimeout pentru a simula delay-ul de rețea.
     const fetchArticles = async () => {
       setIsLoading(true);

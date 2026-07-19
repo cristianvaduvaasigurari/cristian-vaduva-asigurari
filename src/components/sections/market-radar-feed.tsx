@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import * as React from "react"; import { useState } from "react";
 import { motion } from "framer-motion";
 import { RefreshCw, TrendingUp, TrendingDown, Cpu, Sparkles, Filter } from "lucide-react";
 import { Button } from "@/components/ui/button";

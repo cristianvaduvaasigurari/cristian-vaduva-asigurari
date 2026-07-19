@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import * as React from "react"; import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FileText, Download, CheckCircle2, Lock } from "lucide-react";
 import { Input } from "@/components/ui/input";
@@ -33,7 +33,7 @@ export function ResourcesList() {
     setError(null);
     const res = resources.find(r => r.id === selectedResource);
 
-    // Save Lead to Supabase for the Lead Magnet
+    // Save Lead to our platform for the Lead Magnet
     const formData = new FormData();
     formData.append("name", "Descărcare Resursă");
     formData.append("email", email);

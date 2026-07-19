@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import * as React from "react"; import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Activity, Shield, Car, Home, Baby, Building2, TrendingUp, Plane, CheckCircle2, ChevronRight, AlertTriangle } from "lucide-react";
 import { Button } from "@/components/ui/button";

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import * as React from "react"; import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { User, Home, Briefcase, PiggyBank, ArrowRight, ShieldCheck, ChevronRight, CheckCircle2, ChevronLeft } from "lucide-react";
 import { Input } from "@/components/ui/input";

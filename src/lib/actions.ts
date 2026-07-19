@@ -2,9 +2,9 @@
 import { createClient } from "@/lib/supabase/server";
 import { headers } from "next/headers";
 import { sendTelegramAlert } from "@/lib/telegram";
-console.info(`BUILD_ID: ${process.env.BUILD_ID}`);
-console.info(`VERCEL_GIT_COMMIT_SHA: ${process.env.VERCEL_GIT_COMMIT_SHA}`);
-console.info(`VERCEL_URL: ${process.env.VERCEL_URL}`);
+(`BUILD_ID: ${process.env.BUILD_ID}`);
+(`VERCEL_GIT_COMMIT_SHA: ${process.env.VERCEL_GIT_COMMIT_SHA}`);
+(`VERCEL_URL: ${process.env.VERCEL_URL}`);
 export type ActionResponse = {
   success: boolean;
   message?: string;
@@ -12,14 +12,14 @@ export type ActionResponse = {
 };
 
 /**
- * Saves a generic lead into the `leads` table in Supabase.
+ * Saves a generic lead into the `leads` table in our platform.
  * Maps service -> service_type for database compatibility.
  * Safely defaults email/phone to prevent null constraint violations.
  */
 export async function submitLead(formData: FormData): Promise<ActionResponse> {
   // Generate a unique identifier for this submission to trace its lifecycle
   const submissionId = crypto.randomUUID();
-  console.info(`[Lead ${submissionId}] 🎯 Received server action invocation`);
+  (`[Lead ${submissionId}] 🎯 Received server action invocation`);
 
   try {
     const supabase = await createClient();
@@ -52,7 +52,7 @@ export async function submitLead(formData: FormData): Promise<ActionResponse> {
 
     const { error } = await supabase.from("leads").insert([{ ...leadData, submission_id: submissionId }]);
   if (!error) {
-    console.info(`[Lead ${submissionId}] ✅ Supabase insert succeeded`);
+    (`[Lead ${submissionId}] ✅ our platform insert succeeded`);
     // Direct fetch to Telegram (bypass abstraction) for debugging
     const directToken = process.env.TELEGRAM_BOT_TOKEN;
     const directChatId = process.env.TELEGRAM_CHAT_ID;
@@ -63,14 +63,14 @@ export async function submitLead(formData: FormData): Promise<ActionResponse> {
         text: formattedMessage,
         parse_mode: "HTML",
       };
-      console.info(`[Lead ${submissionId}] 🔧 Direct Telegram fetch start`);
+      (`[Lead ${submissionId}] 🔧 Direct Telegram fetch start`);
       try {
         const resp = await fetch(directUrl, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(directPayload),
         });
-        console.info(`[Lead ${submissionId}] 🔧 Direct Telegram fetch finished with status ${resp.status}`);
+        (`[Lead ${submissionId}] 🔧 Direct Telegram fetch finished with status ${resp.status}`);
       } catch (e) {
         console.error(`[Lead ${submissionId}] 🔧 Direct Telegram fetch error`, e);
       }
@@ -80,7 +80,7 @@ export async function submitLead(formData: FormData): Promise<ActionResponse> {
   }
 
     if (error) {
-      console.error("Supabase Error saving lead:", error);
+      console.error("our platform Error saving lead:", error);
       return { success: false, error: "Eroare la salvarea datelor. Te rugăm să încerci din nou." };
     }
 
@@ -98,9 +98,9 @@ export async function submitLead(formData: FormData): Promise<ActionResponse> {
     });
 
     // No further Telegram alert; response will be returned
-    console.info(`[Lead ${submissionId}] ✅ Direct Telegram fetch completed (page: ${pageUrl}, time: ${timestamp})`);
+    (`[Lead ${submissionId}] ✅ Direct Telegram fetch completed (page: ${pageUrl}, time: ${timestamp})`);
 
-    console.info(`[Lead] Telegram alert completed`);
+    (`[Lead] Telegram alert completed`);
     // Return success response
     return { success: true, message: "Cererea ta a fost trimisă cu succes!" };
   } catch (err) {
@@ -116,7 +116,7 @@ export async function submitLead(formData: FormData): Promise<ActionResponse> {
 export async function saveAssessment(assessmentType: string, data: Record<string, unknown>): Promise<{ success: boolean; id?: string; error?: string }> {
   // Generate a unique identifier for this assessment submission
   const submissionId = crypto.randomUUID();
-  console.info(`[Assessment ${submissionId}] 🎯 Received server action invocation`);
+  (`[Assessment ${submissionId}] 🎯 Received server action invocation`);
 
   try {
     const supabase = await createClient();
@@ -144,7 +144,7 @@ export async function saveAssessment(assessmentType: string, data: Record<string
 
     const { error } = await supabase.from("leads").insert([{ ...payload, submission_id: submissionId }]);
   if (!error) {
-    console.info(`[Assessment ${submissionId}] ✅ Supabase insert succeeded`);
+    (`[Assessment ${submissionId}] ✅ our platform insert succeeded`);
   }
 
     if (error) {
@@ -166,9 +166,9 @@ export async function saveAssessment(assessmentType: string, data: Record<string
     });
 
     // Log assessment receipt
-    console.info(`[Assessment] Received ${assessmentType} for ${name} (${phone})`);
-    console.info(`[Assessment] Starting Telegram alert`);
-    console.info(`[Assessment ${submissionId}] 🚀 Starting Telegram alert`);
+    (`[Assessment] Received ${assessmentType} for ${name} (${phone})`);
+    (`[Assessment] Starting Telegram alert`);
+    (`[Assessment ${submissionId}] 🚀 Starting Telegram alert`);
     await sendTelegramAlert({
       name,
       phone,
@@ -179,9 +179,9 @@ export async function saveAssessment(assessmentType: string, data: Record<string
       timestamp,
       submissionId,
     });
-    console.info(`[Assessment ${submissionId}] ✅ Telegram alert completed`);
+    (`[Assessment ${submissionId}] ✅ Telegram alert completed`);
 
-    console.info(`[Assessment] Telegram alert completed`);
+    (`[Assessment] Telegram alert completed`);
     // Return success response
     return { success: true, id: uniqueId };
 

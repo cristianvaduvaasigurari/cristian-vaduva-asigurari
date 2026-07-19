@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useRef, useEffect } from "react";
+import * as React from "react"; import { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Send, Paperclip, ShieldAlert, Bot, Camera } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -51,7 +51,7 @@ export function ClaimAssistant() {
         aiResponse = "Mulțumesc. Generez rezumatul daunei și îl transmit către echipa umană pentru verificare...";
         setMessages(prev => [...prev, { id: Date.now().toString(), sender: "ai", text: aiResponse }]);
         
-        // Save to Supabase
+        // Save to our platform
         const res = await saveAssessment("Claim_Report", { history: [...messages, userMsg] });
         setIsTyping(false);
         

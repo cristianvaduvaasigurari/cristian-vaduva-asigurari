@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import * as React from "react"; import { useState } from "react";
 import { Calculator, TrendingUp, ArrowRight, ShieldAlert, Activity } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
@@ -169,7 +169,7 @@ export function RealEstateAnalyzer() {
 
           <div className="flex items-center gap-4 relative z-10">
             <Button onClick={handleSave} disabled={isProcessing || !!reportId} className="h-14 rounded-full bg-foreground text-background font-bold px-8 flex-grow">
-              {isProcessing ? "Se salvează..." : reportId ? `Raport Salvat: ${reportId}` : "Salvează Evaluarea în Supabase"}
+              {isProcessing ? "Se salvează..." : reportId ? `Raport Salvat: ${reportId}` : "Salvează Evaluarea în our platform"}
             </Button>
             <Button variant="outline" className="h-14 w-14 rounded-full border-border p-0 flex items-center justify-center shrink-0" asChild>
               <a href="/contact"><ArrowRight className="w-5 h-5" /></a>

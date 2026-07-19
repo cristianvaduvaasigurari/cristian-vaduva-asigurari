@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import * as React from "react"; import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Shield, Home, Sparkles, TrendingUp, Users, Briefcase, X, ArrowRight, AlertCircle } from "lucide-react";
 import Link from "next/link";
@@ -73,7 +73,7 @@ const galaxyItems = [
     ],
     relatedServices: [
       { name: "Financial Twin", link: "/financial-twin" },
-      { name: "AiX Advisor", link: "/advisor" }
+      { name: "Recomandă-mi Asigurarea Potrivită", link: "/advisor" }
     ],
     orbitRadius: 300,
     angle: 180

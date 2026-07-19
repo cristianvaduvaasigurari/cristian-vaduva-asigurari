@@ -9,7 +9,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Loader2, CheckCircle2, AlertCircle, Home, ArrowLeft } from "lucide-react";
 import Link from "next/link";
 
-export function ContactForm({ customTitle }: { customTitle?: string }) {
+export function ContactForm({ customTitle, target, brokerName }: { customTitle?: string; target?: string; brokerName?: string }) {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
 
@@ -121,10 +121,11 @@ export function ContactForm({ customTitle }: { customTitle?: string }) {
                     className="flex h-12 w-full rounded-2xl border border-border bg-transparent px-4 py-2 text-sm shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-primary appearance-none"
                   >
                     <option value="" disabled className="text-foreground bg-background">Alege un serviciu</option>
+                    <option value="Credite" className="text-foreground bg-background">Credite</option>
                     <option value="Generali Asigurări" className="text-foreground bg-background">Asigurări (Generali)</option>
                     <option value="Real Estate" className="text-foreground bg-background">Real Estate</option>
                     <option value="AiX OS" className="text-foreground bg-background">Ecosistem AiX OS</option>
-                    <option value="Altele" className="text-foreground bg-background">Altele</option>
+                    <option value="Altele" className="text-foreground bg-background">Altere</option>
                   </select>
                 </div>
               </div>

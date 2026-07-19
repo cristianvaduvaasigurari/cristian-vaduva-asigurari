@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import * as React from "react"; import { useState } from "react";
 import { motion } from "framer-motion";
 import { AlertCircle, Car, Flame, HeartPulse, Waves, Plane, Building2, PhoneCall, ChevronRight, X, FileText, Camera } from "lucide-react";
 import { Button } from "@/components/ui/button";

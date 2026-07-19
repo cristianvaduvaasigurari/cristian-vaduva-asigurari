@@ -15,7 +15,7 @@ export default async function DashboardPage() {
       <div className="p-8">
         <h1 className="text-3xl font-bold mb-4 text-red-500">Eroare la încărcarea datelor</h1>
         <p className="text-muted-foreground">{error.message}</p>
-        <p className="text-sm mt-4">Note: Asigură-te că ai rulat schema.sql și ai configurat politicile RLS în Supabase.</p>
+        <p className="text-sm mt-4">Note: Asigură-te că ai rulat schema.sql și ai configurat politicile RLS în our platform.</p>
       </div>
     );
   }

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import * as React from "react"; import { useEffect, useState } from "react";
 import { Clock, Zap, ChevronLeft, Bookmark, Share2, ArrowRight, BookOpen } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
@@ -130,7 +130,7 @@ export function ArticleContent({ article, relatedArticles }: ArticleContentProps
               <h4 className="text-2xl font-bold text-slate-900">Aplică teoria în practică</h4>
             </div>
             <Button className="h-14 rounded-full bg-slate-900 text-white font-bold px-8 text-lg w-full md:w-auto hover:bg-blue-600 transition-all duration-300" asChild>
-              <a href="/advisor">Deschide AiX Advisor</a>
+              <a href="/advisor">Deschide Recomandă-mi Asigurarea Potrivită</a>
             </Button>
           </div>
         </article>

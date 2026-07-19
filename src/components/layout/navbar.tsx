@@ -95,7 +95,7 @@ const ecosystemMenuData = [
     title: "Resurse & Consultanță",
     items: [
       { name: "AiX Academy", href: "/academy" },
-      { name: "AiX Advisor", href: "/advisor" },
+      { name: "Recomandă-mi Asigurarea Potrivită", href: "/advisor" },
       { name: "Coverage Gap", href: "/gap-analyzer" },
     ],
   },
@@ -115,7 +115,7 @@ const creditsMenuLinks = [
   { name: "Procesul de Aprobare", href: "/credite/proces-aprobare" },
   { name: "Documente Necesare", href: "/credite/documente-necesare" },
   { name: "Întrebări Frecvente", href: "/credite/faq" },
-  { name: "Contact Broker Credite", href: "/credite/contact" },
+  { name: "Contact Broker Credite", href: "/credite/contact-broker-credite" },
   { name: "Credit pentru Construcții", href: "/credite/credit-constructii" },
   { name: "Credit Verde", href: "/credite/credit-verde" },
 ];
@@ -125,6 +125,7 @@ export function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
   const [activeMobileMegaMenu, setActiveMobileMegaMenu] = React.useState<number | null>(null);
 
+
   React.useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
@@ -132,6 +133,8 @@ export function Navbar() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+
 
   return (
     <header
@@ -259,14 +262,16 @@ export function Navbar() {
                     </div>
                   ))}
                 </div>
+                {typeof window !== 'undefined' && (
                 <div className="mt-8 pt-6 border-t border-border/50 flex justify-between items-center bg-muted/30 -mx-8 -mb-8 p-6 rounded-b-3xl">
                   <div className="text-sm text-muted-foreground">
-                    <span className="font-bold text-foreground">Nu ești sigur ce să alegi?</span> Încearcă noul AiX Insurance Advisor.
+                    <span className="font-bold text-foreground">Nu ești sigur ce să alegi?</span> Încearcă noul Recomandă-mi Asigurarea Potrivită.
                   </div>
                   <Button className="bg-blue-600 hover:bg-blue-700 rounded-full" asChild>
-                    <Link href="/advisor">Deschide AiX Advisor</Link>
+                    <Link href="/advisor">Deschide Recomandă-mi Asigurarea Potrivită</Link>
                   </Button>
                 </div>
+              )}
               </div>
             </div>
 
@@ -332,9 +337,7 @@ export function Navbar() {
             className="fixed top-0 left-0 right-0 bottom-0 bg-white z-40 overflow-y-auto pt-24 pb-24 px-4"
           >
             <div className="flex flex-col gap-4">
-              <Link href="/credite" onClick={() => setIsMobileMenuOpen(false)} className="text-2xl font-bold p-2 border-b border-border/50">Credite</Link>
-              <Link href="/despre-mine" onClick={() => setIsMobileMenuOpen(false)} className="text-2xl font-bold p-2 border-b border-border/50">Despre Mine</Link>
-
+              {/* Asigurări Mobile Accordion */}
               <div className="flex flex-col border-b border-border/50">
                 <button
                   className="text-2xl font-bold p-2 text-left flex justify-between items-center"
@@ -379,8 +382,7 @@ export function Navbar() {
                 )}
               </div>
 
-              
-
+              {/* Ecosistem AiX Mobile Accordion */}
               <div className="flex flex-col border-b border-border/50">
                 <button
                   className="text-2xl font-bold p-2 text-left flex justify-between items-center"
@@ -405,9 +407,22 @@ export function Navbar() {
                 )}
               </div>
 
-              <Link href="/de-ce-asigurari" onClick={() => setIsMobileMenuOpen(false)} className="text-2xl font-bold p-2 border-b border-border/50">De Ce Asigurări</Link>
-              <Link href="/real-estate" onClick={() => setIsMobileMenuOpen(false)} className="text-2xl font-bold p-2 border-b border-border/50">Real Estate</Link>
+              {/* De Ce Asigurări Link */}
+              <Link href="/de-ce-asigurari" onClick={() => setIsMobileMenuOpen(false)} className="text-2xl font-bold p-2 border-b border-border/50">
+                De Ce Asigurări
+              </Link>
 
+              {/* Real Estate Link */}
+              <Link href="/real-estate" onClick={() => setIsMobileMenuOpen(false)} className="text-2xl font-bold p-2 border-b border-border/50">
+                Real Estate
+              </Link>
+
+              {/* Despre Mine Link */}
+              <Link href="/despre-mine" onClick={() => setIsMobileMenuOpen(false)} className="text-2xl font-bold p-2 border-b border-border/50">
+                Despre Mine
+              </Link>
+
+              {/* Action Buttons */}
               <div className="flex flex-col gap-3 mt-8">
                 <Button variant="outline" className="w-full h-14 text-lg justify-center rounded-full" asChild>
                   <Link href="/calculatoare" onClick={() => setIsMobileMenuOpen(false)}>Calculatoare</Link>

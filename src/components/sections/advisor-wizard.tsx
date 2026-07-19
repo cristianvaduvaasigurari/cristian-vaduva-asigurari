@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import * as React from "react"; import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronRight, ChevronLeft, ShieldCheck, User, Home, Car, Briefcase, Plane, HeartPulse, TrendingUp, CheckCircle2, Award, Compass, EyeOff, AlertTriangle } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -517,9 +517,8 @@ export function AdvisorWizard() {
       formData.append("name", currentAnswers.name || "Anonim");
       formData.append("email", currentAnswers.email || "");
       formData.append("phone", currentAnswers.phone || "");
-      formData.append("service", "AiX Advisor Assessment");
-      formData.append("message", "Generated via AI Advisor Wizard (Consultant Redesign)");
-      formData.append("source", "AiX Advisor");
+      formData.append("service", "Recomandă-mi Asigurarea Potrivită Assessment");
+      formData.append("source", "Recomandă-mi Asigurarea Potrivită");
       formData.append("metadata", JSON.stringify(currentAnswers));
 
       await fetch("/api/lead", {

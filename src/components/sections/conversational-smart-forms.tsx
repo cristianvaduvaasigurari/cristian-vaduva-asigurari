@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import * as React from "react"; import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { 
   Shield, Home, TrendingUp, Sparkles, 
@@ -149,7 +149,7 @@ export function ConversationalSmartForms() {
               Solicitare Înregistrată
             </h3>
             <p className="text-sm text-slate-600 leading-relaxed max-w-md mx-auto mb-8">
-              Datele tale au fost transmise securizat în baza de date Supabase a consultantului Cristian Văduva. Te vom contacta în cel mai scurt timp pentru planificarea auditului privat.
+              Datele tale au fost transmise securizat în baza de date our platform a consultantului Cristian Văduva. Te vom contacta în cel mai scurt timp pentru planificarea auditului privat.
             </p>
             <div className="p-4 rounded-xl bg-slate-50 border border-slate-100 font-mono text-xs font-bold text-slate-700">
               Assessment ID: {submissionResult.id || "N/A"}

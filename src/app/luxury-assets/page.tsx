@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import * as React from "react";
 import { motion } from "framer-motion";
 import { Car, Diamond, ShieldCheck, Ship, Camera, Building2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
