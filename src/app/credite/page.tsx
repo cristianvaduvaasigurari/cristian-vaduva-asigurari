@@ -30,7 +30,7 @@ export default function CreditePage() {
         {creditProducts.map((c) => (
           <Link key={c.href} href={c.href} className="block rounded-xl border border-border/30 hover:border-primary transition-shadow shadow-sm hover:shadow-lg p-6 bg-background">
             <h2 className="text-2xl font-semibold mb-2 text-foreground">{c.name}</h2>
-            <Button variant="link" className="mt-2">Vezi detalii</Button>
+            <Button variant="ghost" className="mt-2">Vezi detalii</Button>
           </Link>
         ))}
       </div>

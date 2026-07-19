@@ -1,0 +1,25 @@
+
+> cristian-vaduva-premium@0.1.0 build
+> next build
+
+▲ Next.js 16.2.10 (Turbopack)
+- Environments: .env.local
+- Experiments (use with caution):
+  · optimizePackageImports
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 4.3s
+  Running TypeScript ...
+Failed to type check.
+
+./src/app/credite/page.tsx:33:21
+Type error: Type '"link"' is not assignable to type '"default" | "outline" | "ghost" | "glass" | undefined'.
+
+  [90m31 |[0m           <[33mLink[0m key={c.href} href={c.href} className=[32m"block rounded-xl border border-borde...[0m
+  [90m32 |[0m             <h2 className=[32m"text-2xl font-semibold mb-2 text-foreground"[0m>{c.name}</h2>
+[31m[1m>[0m [90m33 |[0m             <[33mButton[0m variant=[32m"link"[0m className=[32m"mt-2"[0m>[33mVezi[0m detalii</[33mButton[0m>
+  [90m   |[0m                     [31m[1m^[0m
+  [90m34 |[0m           </[33mLink[0m>
+  [90m35 |[0m         ))}
+  [90m36 |[0m       </div>
+Next.js build worker exited with code: 1 and signal: null

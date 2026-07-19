@@ -145,6 +145,7 @@ export function Navbar() {
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-8">
             <Link href="/" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">Home</Link>
+              <Link href="/credite" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">Credite</Link>
             
             {/* Mega Menu Trigger */}
             <div className="group relative">
@@ -250,6 +251,7 @@ export function Navbar() {
           >
             <div className="flex flex-col gap-4">
               <Link href="/" onClick={() => setIsMobileMenuOpen(false)} className="text-2xl font-bold p-2 border-b border-border/50">Home</Link>
+                <Link href="/credite" onClick={() => setIsMobileMenuOpen(false)} className="text-2xl font-bold p-2 border-b border-border/50">Credite</Link>
               <Link href="/despre-mine" onClick={() => setIsMobileMenuOpen(false)} className="text-2xl font-bold p-2 border-b border-border/50">Despre Mine</Link>
               
               <div className="flex flex-col border-b border-border/50">
