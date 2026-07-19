@@ -321,8 +321,9 @@ export function Navbar() {
           <button
             type="button"
             aria-label="Toggle mobile navigation menu"
-            className="md:hidden flex items-center justify-center w-12 h-12 p-2 text-foreground bg-transparent relative z-60"
-            onClick={() => setIsMobileMenuOpen(prev => !prev)}
+            className="md:hidden flex items-center justify-center w-12 h-12 p-2 text-foreground bg-transparent relative z-60 cursor-pointer"
+            onClick={(e) => { e.stopPropagation(); setIsMobileMenuOpen(prev => !prev); }}
+            onTouchStart={(e) => { e.stopPropagation(); setIsMobileMenuOpen(prev => !prev); }}
           >
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
