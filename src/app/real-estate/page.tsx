@@ -33,7 +33,7 @@ export default function RealEstatePage() {
               <Link href="https://aixluxury.com" target="_blank">Explorează AiXLuxury</Link>
             </Button>
             <Button size="lg" variant="outline" className="rounded-full border-border bg-white hover:bg-muted text-foreground px-8" asChild>
-              <Link href="https://real-estate-platform-brown.vercel.app/" target="_blank">Platforma Home Find</Link>
+              <Link href="https://homefind.cristianvaduva.com" target="_blank">Platforma Home Find</Link>
             </Button>
           </div>
         </div>

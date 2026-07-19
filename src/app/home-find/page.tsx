@@ -31,7 +31,7 @@ export default function HomeFindPage() {
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Button asChild size="lg" className="rounded-full bg-slate-900 text-white hover:bg-slate-800 h-14 px-8 text-base shadow-xl">
-                <a href="https://real-estate-platform-brown.vercel.app/" target="_blank" rel="noopener noreferrer">
+                <a href="https://homefind.cristianvaduva.com" target="_blank" rel="noopener noreferrer">
                   Explore Home Find™ <ArrowRight className="ml-2 w-5 h-5" />
                 </a>
               </Button>
@@ -96,7 +96,7 @@ export default function HomeFindPage() {
               </p>
             </div>
             <Button asChild variant="outline" className="rounded-full border-slate-200 group">
-              <a href="https://real-estate-platform-brown.vercel.app/" target="_blank" rel="noopener noreferrer">
+              <a href="https://homefind.cristianvaduva.com" target="_blank" rel="noopener noreferrer">
                 View All on Home Find™ <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
               </a>
             </Button>
@@ -216,7 +216,7 @@ export default function HomeFindPage() {
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button asChild size="lg" className="rounded-full bg-slate-900 text-white hover:bg-slate-800 h-14 px-8 text-base shadow-xl">
-              <a href="https://real-estate-platform-brown.vercel.app/" target="_blank" rel="noopener noreferrer">
+              <a href="https://homefind.cristianvaduva.com" target="_blank" rel="noopener noreferrer">
                 Explore Home Find™
               </a>
             </Button>

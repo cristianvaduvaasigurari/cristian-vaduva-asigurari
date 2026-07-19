@@ -25,8 +25,8 @@ export const CONTACT = {
   },
   ecosystem: {
     aixluxury: "https://aixluxury.com",
-    aixos: "https://ai-x-os.vercel.app/",
-    homefind: "https://real-estate-platform-brown.vercel.app/",
+    aixos: "https://os.aixluxury.com",
+    homefind: "https://homefind.cristianvaduva.com",
     generali: "https://www.generali.ro",
     website: "https://cristianvaduva.com",
   },
