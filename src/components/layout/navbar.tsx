@@ -124,6 +124,8 @@ export function Navbar() {
   const [isScrolled, setIsScrolled] = React.useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
   const [activeMobileMegaMenu, setActiveMobileMegaMenu] = React.useState<number | null>(null);
+  const menuRef = React.useRef<HTMLDivElement>(null);
+  const buttonRef = React.useRef<HTMLButtonElement>(null);
 
 
   React.useEffect(() => {
@@ -134,6 +136,27 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Handle clicks outside the mobile menu and Escape key to close menu
+  React.useEffect(() => {
+    const handleOutsideClick = (e: MouseEvent) => {
+      if (!isMobileMenuOpen) return;
+      const target = e.target as Node;
+      if (buttonRef.current && buttonRef.current.contains(target)) return;
+      if (menuRef.current && menuRef.current.contains(target)) return;
+      setIsMobileMenuOpen(false);
+    };
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === "Escape" && isMobileMenuOpen) {
+        setIsMobileMenuOpen(false);
+      }
+    };
+    document.addEventListener("click", handleOutsideClick);
+    document.addEventListener("keydown", handleEscape);
+    return () => {
+      document.removeEventListener("click", handleOutsideClick);
+      document.removeEventListener("keydown", handleEscape);
+    };
+  }, [isMobileMenuOpen]);
 
 
   return (
@@ -322,11 +345,13 @@ export function Navbar() {
             type="button"
             aria-label="Toggle mobile navigation menu"
             className="md:hidden flex items-center justify-center w-12 h-12 p-2 text-foreground bg-transparent relative z-60 cursor-pointer"
+            ref={buttonRef}
             onClick={(e) => { e.stopPropagation(); setIsMobileMenuOpen(prev => !prev); }}
-            onTouchStart={(e) => { e.stopPropagation(); setIsMobileMenuOpen(prev => !prev); }}
           >
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
+          {/* Outside click and Escape handling */}
+          
         </div>
       </div>
 
@@ -334,10 +359,12 @@ export function Navbar() {
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
+            ref={menuRef}
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "100vh" }}
             exit={{ opacity: 0, height: 0 }}
             className="fixed top-0 left-0 right-0 bottom-0 bg-white z-40 overflow-y-auto pt-24 pb-24 px-4"
+            onClick={(e) => e.stopPropagation()}
           >
             <div className="flex flex-col gap-4">
               {/* Credits Mobile Accordion */}
