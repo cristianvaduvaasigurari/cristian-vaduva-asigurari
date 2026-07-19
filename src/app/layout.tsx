@@ -4,7 +4,7 @@ import { Inter, Outfit } from "next/font/google";
 import "./globals.css";
 import { SmartPopup } from "@/components/ui/smart-popup";
 import { NextIntlClientProvider } from "next-intl";
-import LanguageSwitcher from "@/components/layout/LanguageSwitcher";
+import LocaleInitializer from "@/components/layout/LocaleInitializer";
 import { getLocale } from "@/lib/locale";
 import { getMessages } from "next-intl/server";
 import { CookieBanner } from "@/components/ui/cookie-banner";
@@ -88,12 +88,15 @@ export default async function RootLayout({
   const locale = await getLocale();
   const messages = await getMessages({ locale });
   return (
-    <html lang={locale}>
-      <body className={`${inter.variable} ${outfit.variable} font-sans`}>
-    <NextIntlClientProvider locale={locale} messages={messages}>
-      <LanguageSwitcher />
-      {children}
-    </NextIntlClientProvider>
+    <html
+      lang={locale}
+      className={`${inter.variable} ${outfit.variable} h-full antialiased`}
+    >
+      <body className="min-h-full flex flex-col bg-background text-foreground font-sans">
+        <NextIntlClientProvider locale={locale} messages={messages}>
+          <LocaleInitializer />
+          {children}
+        </NextIntlClientProvider>
           <StructuredData data={organizationSchema({
             name: "Cristian Văduva Premium Portfolio",
             url: "https://cristianvaduva.com",

@@ -107,11 +107,8 @@ const creditsMenuLinks = [
   { name: "Credit de Nevoi Personale", href: "/credite/credit-nevoi-personale" },
   { name: "Credit pentru Investiții Imobiliare", href: "/credite/credit-investitii-imobiliare" },
   { name: "Credit pentru Firme", href: "/credite/credit-persoane-juridice" },
-  { name: "Consolidare Credite", href: "/credite/consolidare-credite" },
   { name: "Compară Bănci", href: "/credite/compara-banci" },
   { name: "De ce să lucrezi cu un Broker de Credite", href: "/credite/de-ce-broker" },
-  { name: "Procesul de Aprobare", href: "/credite/proces-aprobare" },
-  { name: "Documente Necesare", href: "/credite/documente-necesare" },
   { name: "Întrebări Frecvente", href: "/credite/faq" },
   { name: "Contact Broker Credite", href: "/credite/contact-broker-credite" },
   { name: "Credit pentru Construcții", href: "/credite/credit-constructii" },
@@ -361,6 +358,7 @@ export function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "100vh" }}
             exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0 }}
             className="fixed top-0 left-0 right-0 bottom-0 bg-white z-40 overflow-y-auto pt-24 pb-24 px-4"
             onClick={(e) => e.stopPropagation()}
           >

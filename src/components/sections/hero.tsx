@@ -72,17 +72,6 @@ export function Hero() {
           </div>
         </motion.div>
       </div>
-
-      {/* Animated scroll indicator */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1, duration: 1 }}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
-      >
-        <span className="text-xs uppercase tracking-widest text-muted-foreground">Scroll</span>
-        <div className="w-px h-16 bg-gradient-to-b from-muted-foreground/50 to-transparent" />
-      </motion.div>
     </section>
   );
 }

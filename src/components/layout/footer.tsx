@@ -48,7 +48,6 @@ const footerLinks = {
     { key: "aixAcademy", href: "/academy" },
     { key: "advisor", href: "/advisor" },
     { key: "coverageGap", href: "/gap-analyzer" },
-    { key: "protectionMap", href: "/harta-protectiei" },
     { key: "quickOffer", href: "/oferta-rapida" },
     { key: "aixInsights", href: "/insights" },
     { key: "premiumResources", href: "/resurse" },
