@@ -50,9 +50,20 @@
       "premiumResources": "Premium Resources",
       "aboutMe": "About Me",
       "contact": "Contact",
-      "terms": "Terms & Conditions",
-      "privacy": "Privacy Policy",
-      "cookies": "Cookie Policy"
+      "legalCenter": "Legal Center",
+      "privacy": "Privacy Policy & GDPR Notice",
+      "terms": "Terms of Use",
+      "cookies": "Cookie Policy",
+      "gdprRequests": "GDPR Requests",
+      "aiDisclaimer": "AI Disclaimer",
+      "insuranceDisclaimer": "Insurance Disclaimer",
+      "realEstateDisclaimer": "Real Estate Disclaimer",
+      "mortgageDisclaimer": "Mortgage Disclaimer",
+      "investmentDisclaimer": "Investment Disclaimer",
+      "accessibility": "Accessibility",
+      "security": "Security",
+      "copyright": "Copyright",
+      "legalContact": "Legal Contact"
     }
   },
   "navbar": {

@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { FileText, Download, CheckCircle2, Lock } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 // import { submitLead } from "@/lib/actions"; // Removed in favor of fetch('/api/lead')
 
 const resources = [
@@ -153,6 +154,15 @@ export function ResourcesList() {
                 <Button type="submit" disabled={isSubmitting} className="h-14 rounded-full bg-blue-600 hover:bg-blue-700 text-white font-bold w-full">
                   {isSubmitting ? "Se generează PDF-ul..." : "Deblochează Resursa"} <Download className="w-4 h-4 ml-2" />
                 </Button>
+                
+                <p className="text-[10px] text-muted-foreground leading-relaxed mt-1 text-left">
+                  Prin descărcarea acestui material, confirmi că ai citit și ești de acord cu{" "}
+                  <Link href="/legal/privacy-policy" className="text-blue-500 hover:underline">
+                    Politica de Confidențialitate & Notă GDPR
+                  </Link>{" "}
+                  și ești de acord să fii contactat pentru detalii privind serviciile selectate.
+                </p>
+
                 {error && (
                   <p className="text-sm font-bold text-red-500 mt-2">{error}</p>
                 )}

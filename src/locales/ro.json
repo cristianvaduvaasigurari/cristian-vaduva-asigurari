@@ -50,9 +50,20 @@
       "premiumResources": "Resurse Premium",
       "aboutMe": "Despre Mine",
       "contact": "Contact",
-      "terms": "Termeni și Condiții",
-      "privacy": "Politică de Confidențialitate",
-      "cookies": "Politică Cookie"
+      "legalCenter": "Centru Legal",
+      "privacy": "Politică de Confidențialitate & Notă GDPR",
+      "terms": "Termeni de Utilizare",
+      "cookies": "Politică Cookie-uri",
+      "gdprRequests": "Solicitări GDPR",
+      "aiDisclaimer": "Limitare Răspundere AI",
+      "insuranceDisclaimer": "Limitare Răspundere Asigurări",
+      "realEstateDisclaimer": "Limitare Răspundere Imobiliare",
+      "mortgageDisclaimer": "Limitare Răspundere Credite",
+      "investmentDisclaimer": "Limitare Răspundere Investiții",
+      "accessibility": "Accesibilitate",
+      "security": "Securitate Platformă",
+      "copyright": "Drepturi de Autor",
+      "legalContact": "Contact Legal"
     }
   },
   "navbar": {

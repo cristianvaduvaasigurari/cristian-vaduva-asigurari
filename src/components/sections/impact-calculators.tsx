@@ -237,6 +237,14 @@ export function ImpactCalculators() {
                 className="h-14 text-lg text-center rounded-full border-blue-200 focus:border-blue-600 bg-white"
                 required
               />
+              <p className="text-[10px] text-muted-foreground leading-relaxed text-left mb-2">
+                 Prin trimiterea numărului de telefon, confirmi că ai citit și ești de acord cu{" "}
+                 <Link href="/legal/privacy-policy" className="text-blue-500 hover:underline">
+                   Politica de Confidențialitate & Notă GDPR
+                 </Link>{" "}
+                 și îți exprimi consimțământul pentru a fi contactat telefonic cu privire la ofertă.
+               </p>
+
               <Button 
                 type="submit" 
                 disabled={isSubmitting || !phone}

@@ -111,17 +111,26 @@ export function SecondOpinionAnalyzer() {
             />
           </div>
 
-          <div className="flex justify-between items-center flex-wrap gap-4 pt-4 border-t border-slate-50">
-            <span className="text-[10px] text-muted-foreground font-semibold flex items-center gap-1.5">
-              <Info className="w-4 h-4" /> Integrarea cu LLM și OCR-ul de documente va fi disponibilă în faza următoare.
-            </span>
-            <Button 
-              type="submit" 
-              disabled={isAnalyzing || !textInput}
-              className="h-12 px-8 rounded-full bg-slate-900 text-white font-bold text-xs hover:bg-slate-800 transition-colors"
-            >
-              {isAnalyzing ? "Se analizează..." : "Rulează Analiză Educativă"}
-            </Button>
+          <div className="flex flex-col gap-4 pt-4 border-t border-slate-50">
+            <p className="text-xs text-muted-foreground leading-relaxed">
+              Prin trimiterea textului pentru analiză, confirmi că ai citit și ești de acord cu{" "}
+              <Link href="/legal/privacy-policy" className="text-blue-500 hover:underline">
+                Politica de Confidențialitate & Notă GDPR
+              </Link>{" "}
+              și consimți ca datele introduse să fie procesate în scopul obținerii analizei educaționale.
+            </p>
+            <div className="flex justify-between items-center flex-wrap gap-4">
+              <span className="text-[10px] text-muted-foreground font-semibold flex items-center gap-1.5">
+                <Info className="w-4 h-4" /> Integrarea cu LLM și OCR-ul de documente va fi disponibilă în faza următoare.
+              </span>
+              <Button 
+                type="submit" 
+                disabled={isAnalyzing || !textInput}
+                className="h-12 px-8 rounded-full bg-slate-900 text-white font-bold text-xs hover:bg-slate-800 transition-colors"
+              >
+                {isAnalyzing ? "Se analizează..." : "Rulează Analiză Educativă"}
+              </Button>
+            </div>
           </div>
         </form>
 

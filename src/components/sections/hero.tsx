@@ -21,9 +21,68 @@ export function Hero() {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="max-w-4xl mx-auto"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass mb-8" role="status" aria-live="polite">
-            <span className="flex h-2 w-2 rounded-full bg-blue-500 animate-pulse" aria-hidden="true"></span>
-            <span className="text-sm font-medium tracking-wide uppercase">Cristian Văduva <span className="text-blue-500 mx-1" aria-hidden="true">|</span> Real Estate <span className="text-blue-500 mx-1" aria-hidden="true">|</span> Insurance <span className="text-blue-500 mx-1" aria-hidden="true">|</span> Investments</span>
+          <div className="flex justify-center mb-8 max-w-full">
+            <div 
+              className="flex items-center gap-2 overflow-x-auto scroll-smooth max-w-full px-3 py-2 rounded-full glass no-scrollbar shadow-sm"
+              style={{
+                scrollbarWidth: 'none',
+                msOverflowStyle: 'none',
+              }}
+            >
+              <style dangerouslySetInnerHTML={{__html: `
+                .no-scrollbar::-webkit-scrollbar {
+                  display: none;
+                }
+              `}} />
+              <a
+                href="https://cristianvaduva.com"
+                aria-label="Vizitează site-ul oficial Cristian Văduva"
+                title="Cristian Văduva"
+                className="px-4 py-1.5 rounded-full text-sm font-medium tracking-wide text-muted-foreground bg-white/40 hover:bg-white/80 hover:text-foreground border border-border/40 hover:border-border/80 hover:-translate-y-0.5 transition-all duration-300 whitespace-nowrap cursor-pointer"
+              >
+                Cristian Văduva
+              </a>
+              <a
+                href="https://homefind.cristianvaduva.com"
+                aria-label="Accesează platforma Home Find imobiliară"
+                title="Home Find"
+                className="px-4 py-1.5 rounded-full text-sm font-medium tracking-wide text-muted-foreground bg-white/40 hover:bg-white/80 hover:text-foreground border border-border/40 hover:border-border/80 hover:-translate-y-0.5 transition-all duration-300 whitespace-nowrap cursor-pointer"
+              >
+                Home Find
+              </a>
+              <a
+                href="https://insurance.cristianvaduva.com"
+                aria-label="Accesează secțiunea de asigurări premium"
+                title="Insurance"
+                className="px-4 py-1.5 rounded-full text-sm font-medium tracking-wide text-muted-foreground bg-white/40 hover:bg-white/80 hover:text-foreground border border-border/40 hover:border-border/80 hover:-translate-y-0.5 transition-all duration-300 whitespace-nowrap cursor-pointer"
+              >
+                Insurance
+              </a>
+              <a
+                href="https://os.cristianvaduva.com"
+                aria-label="Deschide sistemul de operare AiX OS"
+                title="AiX OS"
+                className="px-4 py-1.5 rounded-full text-sm font-medium tracking-wide text-muted-foreground bg-white/40 hover:bg-white/80 hover:text-foreground border border-border/40 hover:border-border/80 hover:-translate-y-0.5 transition-all duration-300 whitespace-nowrap cursor-pointer"
+              >
+                AiX OS
+              </a>
+              <a
+                href="https://aixluxury.com"
+                aria-label="Vizitează AiXLuxury - imobiliare și bunuri de lux"
+                title="AiXLuxury"
+                className="px-4 py-1.5 rounded-full text-sm font-medium tracking-wide text-muted-foreground bg-white/40 hover:bg-white/80 hover:text-foreground border border-border/40 hover:border-border/80 hover:-translate-y-0.5 transition-all duration-300 whitespace-nowrap cursor-pointer"
+              >
+                AiXLuxury
+              </a>
+              <a
+                href="https://cristianvaduva.com/market-pulse"
+                aria-label="Vezi analizele financiare Market Pulse"
+                title="Market Pulse"
+                className="px-4 py-1.5 rounded-full text-sm font-medium tracking-wide text-muted-foreground bg-white/40 hover:bg-white/80 hover:text-foreground border border-border/40 hover:border-border/80 hover:-translate-y-0.5 transition-all duration-300 whitespace-nowrap cursor-pointer"
+              >
+                Market Pulse
+              </a>
+            </div>
           </div>
 
           <h1 id="hero-heading" className="text-5xl md:text-7xl font-heading font-bold tracking-tight mb-8 leading-tight">

@@ -55,9 +55,20 @@ const footerLinks = {
     { key: "contact", href: "/contact" },
   ],
   legal: [
-    { key: "terms", href: "/termeni-si-conditii" },
-    { key: "privacy", href: "/politica-de-confidentialitate" },
-    { key: "cookies", href: "/politica-cookie" },
+    { key: "legalCenter", href: "/legal" },
+    { key: "privacy", href: "/legal/privacy-policy" },
+    { key: "terms", href: "/legal/terms-of-use" },
+    { key: "cookies", href: "/legal/cookie-policy" },
+    { key: "gdprRequests", href: "/legal/data-subject-request" },
+    { key: "aiDisclaimer", href: "/legal/ai-disclaimer" },
+    { key: "insuranceDisclaimer", href: "/legal/insurance-disclaimer" },
+    { key: "realEstateDisclaimer", href: "/legal/real-estate-disclaimer" },
+    { key: "mortgageDisclaimer", href: "/legal/mortgage-disclaimer" },
+    { key: "investmentDisclaimer", href: "/legal/investment-disclaimer" },
+    { key: "accessibility", href: "/legal/accessibility" },
+    { key: "security", href: "/legal/security" },
+    { key: "copyright", href: "/legal/copyright" },
+    { key: "legalContact", href: "/legal/contact" },
   ],
 };
 

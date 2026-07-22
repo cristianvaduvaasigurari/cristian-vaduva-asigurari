@@ -179,6 +179,14 @@ export function ContactForm({ customTitle, target, brokerName }: { customTitle?:
                 </div>
               )}
 
+              <p className="text-xs text-muted-foreground leading-relaxed mt-4">
+                Prin trimiterea acestui formular, confirmi că ai citit și ești de acord cu{" "}
+                <Link href="/legal/privacy-policy" className="text-blue-500 hover:underline">
+                  Politica de Confidențialitate & Notă GDPR
+                </Link>{" "}
+                și îți exprimi consimțământul pentru a fi contactat în legătură cu solicitarea ta și serviciile dorite.
+              </p>
+
               <Button type="submit" size="lg" className="w-full text-lg h-14 bg-blue-600 hover:bg-blue-700 text-white rounded-xl shadow-lg transition-transform hover:-translate-y-0.5" disabled={isSubmitting}>
                 {isSubmitting ? (
                   <>

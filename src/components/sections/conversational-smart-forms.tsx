@@ -206,6 +206,14 @@ export function ConversationalSmartForms() {
                 />
               </div>
 
+              <p className="text-[11px] text-muted-foreground leading-relaxed mt-4">
+                 Prin trimiterea acestui formular, confirmi că ai citit și ești de acord cu{" "}
+                 <Link href="/legal/privacy-policy" className="text-blue-500 hover:underline">
+                   Politica de Confidențialitate & Notă GDPR
+                 </Link>{" "}
+                 și îți exprimi consimțământul de a fi contactat pentru finalizarea auditului solicitat.
+               </p>
+
               <Button 
                 type="submit" 
                 disabled={isSubmitting || !name || !email || !phone}
