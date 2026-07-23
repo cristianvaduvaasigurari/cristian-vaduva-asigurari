@@ -33,7 +33,7 @@ export const POST = async (request: Request) => {
       return NextResponse.json({ success: false, error: "Eroare la salvarea datelor." }, { status: 500 });
     }
     // Await Telegram notification (synchronous)
-    await sendTelegramAlert({
+    const telegramSuccess = await sendTelegramAlert({
       name,
       phone,
       email,
@@ -42,6 +42,12 @@ export const POST = async (request: Request) => {
       pageUrl: "N/A",
       timestamp: new Date().toISOString()
     });
+
+    if (!telegramSuccess) {
+      console.error("API /api/lead error: Telegram notification failed.");
+      return NextResponse.json({ success: false, error: "Nu am putut trimite notificarea Telegram." }, { status: 500 });
+    }
+
     return NextResponse.json({ success: true, message: "Lead saved and notification sent." }, { status: 200 });
   } catch (err) {
     console.error("API /api/lead error", err);

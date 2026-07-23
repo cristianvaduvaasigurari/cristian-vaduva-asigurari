@@ -71,28 +71,43 @@ export function AiChatbot() {
   };
 
   const submitLead = async (formData: Record<string, string>) => {
-    // Structure prepared for CRM Integration
-    const leadData = {
-      ...formData,
-      collectedData: chatState.data,
-      insuranceCategory: chatState.flow,
-      source: "AiX Assistant",
-      timestamp: new Date().toISOString()
-    };
-    console.log("Lead submitted to CRM:", leadData);
-    
-    // Simulate API delay
-    await new Promise(resolve => setTimeout(resolve, 800));
+    try {
+      const fd = new FormData();
+      fd.append("name", formData.name);
+      fd.append("phone", formData.phone);
+      fd.append("email", formData.email);
+      fd.append("service", formData.insuranceType || chatState.flow);
+      fd.append("message", formData.message || "Solicitare consultant prin AiX Assistant");
+      fd.append("source", "AiX Assistant");
+      fd.append("metadata", JSON.stringify(chatState.data));
 
-    setChatState(prev => ({ ...prev, flow: "SUCCESS", step: 0 }));
-    setMessages(prev => [
-      ...prev,
-      { 
-        id: String(Date.now()), 
-        type: "system", 
-        text: "Solicitarea ta a fost înregistrată cu succes. Cristian Văduva te va contacta în cel mai scurt timp." 
+      const res = await fetch("/api/lead", { method: "POST", body: fd });
+      const json = await res.json();
+      
+      if (!res.ok || !json.success) {
+        throw new Error(json.error || "Eroare la înregistrarea solicitării.");
       }
-    ]);
+
+      setChatState(prev => ({ ...prev, flow: "SUCCESS", step: 0 }));
+      setMessages(prev => [
+        ...prev,
+        { 
+          id: String(Date.now()), 
+          type: "system", 
+          text: "Solicitarea ta a fost înregistrată cu succes. Cristian Văduva te va contacta în cel mai scurt timp." 
+        }
+      ]);
+    } catch (err) {
+      console.error("Eroare la trimiterea formularului:", err);
+      setMessages(prev => [
+        ...prev,
+        { 
+          id: String(Date.now()), 
+          type: "bot", 
+          text: "Din păcate, a apărut o eroare tehnică și nu am putut trimite datele. Te rugăm să încerci din nou sau să ne contactezi direct telefonic." 
+        }
+      ]);
+    }
   };
 
   const advanceFlow = (userSelection: string) => {
