@@ -1,6 +1,6 @@
 import { useTranslations } from "next-intl";
 import Link from "next/link";
-import { FaFacebook, FaInstagram, FaLinkedin, FaYoutube } from "react-icons/fa";
+import { FaFacebook, FaInstagram, FaLinkedin, FaYoutube, FaTelegram } from "react-icons/fa";
 import { CONTACT } from "@/config/contact";
 
 const footerLinks = {
@@ -98,6 +98,9 @@ export function Footer() {
               <a href={CONTACT.social.youtube} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors p-3 rounded-full bg-white/5 border border-white/10 hover:bg-white/10">
                 <FaYoutube size={20} />
               </a>
+              <a href={CONTACT.social.telegram} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors p-3 rounded-full bg-white/5 border border-white/10 hover:bg-white/10">
+                <FaTelegram size={20} />
+              </a>
             </div>
             <div className="space-y-3 text-sm text-white/80 font-medium bg-white/5 p-6 rounded-lg border border-white/10">
               <div className="flex items-center gap-3">
@@ -107,6 +110,10 @@ export function Footer() {
               <div className="flex items-center gap-3">
                 <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center">💬</div>
                 <a href={CONTACT.whatsapp.href} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">{CONTACT.whatsapp.display}</a>
+              </div>
+              <div className="flex items-center gap-3">
+                <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center">📲</div>
+                <a href={CONTACT.telegram.href} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">{CONTACT.telegram.display}</a>
               </div>
               <div className="flex items-center gap-3">
                 <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center">✉️</div>

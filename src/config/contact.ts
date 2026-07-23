@@ -13,6 +13,11 @@ export const CONTACT = {
     href: "https://wa.me/436509536345",
     label: "WhatsApp",
   },
+  telegram: {
+    display: "@capitalinvestcristianvaduva",
+    href: "https://t.me/capitalinvestcristianvaduva",
+    label: "Telegram",
+  },
   email: {
     display: "contact@cristianvaduva.com",
     href: "mailto:contact@cristianvaduva.com",
@@ -22,6 +27,7 @@ export const CONTACT = {
     instagram: "https://instagram.com/cristian_vaduva_cristianv",
     facebook: "https://www.facebook.com/CristianVaduvaCV",
     youtube: "https://youtube.com/@CristianVaduvaCV",
+    telegram: "https://t.me/capitalinvestcristianvaduva",
   },
   ecosystem: {
     aixluxury: "https://aixluxury.com",

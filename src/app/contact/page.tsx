@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { ContactForm } from "@/components/sections/contact-form";
-import { MapPin, Phone, Mail, MessageCircle, MonitorPlay, Briefcase, Globe, Camera } from "lucide-react";
+import { MapPin, Phone, Mail, MessageCircle, MonitorPlay, Briefcase, Globe, Camera, Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { CONTACT } from "@/config/contact";
@@ -51,7 +51,7 @@ export default function ContactPage() {
             </Button>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-24 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 mb-24 max-w-7xl mx-auto">
             <div className="glass premium-card p-8 rounded-lg flex flex-col items-center text-center">
               <Phone className="w-8 h-8 text-blue-600 mb-4" />
               <h3 className="font-bold mb-2 text-foreground">Telefon</h3>
@@ -66,6 +66,14 @@ export default function ContactPage() {
               <p className="text-muted-foreground mb-4">{CONTACT.whatsapp.display}</p>
               <Button variant="outline" size="sm" className="rounded-full w-full border-green-600/30 text-green-700 hover:bg-green-50" asChild>
                 <a href={CONTACT.whatsapp.href} target="_blank" rel="noopener noreferrer">Trimite mesaj</a>
+              </Button>
+            </div>
+            <div className="glass premium-card p-8 rounded-lg flex flex-col items-center text-center">
+              <Send className="w-8 h-8 text-blue-500 mb-4" />
+              <h3 className="font-bold mb-2 text-foreground">Telegram</h3>
+              <p className="text-muted-foreground mb-4 text-sm truncate w-full">{CONTACT.telegram.display}</p>
+              <Button variant="outline" size="sm" className="rounded-full w-full border-blue-500/30 text-blue-600 hover:bg-blue-50" asChild>
+                <a href={CONTACT.telegram.href} target="_blank" rel="noopener noreferrer">Abonează-te</a>
               </Button>
             </div>
             <div className="glass premium-card p-8 rounded-lg flex flex-col items-center text-center">
