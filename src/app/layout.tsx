@@ -8,6 +8,7 @@ import LocaleInitializer from "@/components/layout/LocaleInitializer";
 import { getLocale } from "@/lib/locale";
 import { getMessages } from "next-intl/server";
 import { CookieBanner } from "@/components/ui/cookie-banner";
+import Telemetry from "@/components/providers/Telemetry";
 import { AiChatbot } from "@/components/ui/ai-chatbot";
 import { GlobalHomeButton } from "@/components/ui/global-home-button";
 
@@ -78,6 +79,7 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = {
   themeColor: "#ffffff",
+  colorScheme: "light",
 };
 
 export default async function RootLayout({
@@ -94,9 +96,9 @@ export default async function RootLayout({
     >
       <body className="min-h-full flex flex-col bg-background text-foreground font-sans">
         <NextIntlClientProvider locale={locale} messages={messages}>
+          <Telemetry />
           <LocaleInitializer />
           {children}
-        </NextIntlClientProvider>
           <StructuredData data={organizationSchema({
             name: "Cristian Văduva Premium Portfolio",
             url: "https://cristianvaduva.com",
@@ -126,6 +128,7 @@ export default async function RootLayout({
           <SmartPopup />
           <AiChatbot />
           <CookieBanner />
+        </NextIntlClientProvider>
       </body>
     </html>
   );

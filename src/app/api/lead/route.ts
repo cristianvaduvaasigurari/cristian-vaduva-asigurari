@@ -32,23 +32,24 @@ export const POST = async (request: Request) => {
       console.error("our platform insert error:", error);
       return NextResponse.json({ success: false, error: "Eroare la salvarea datelor." }, { status: 500 });
     }
-    // Await Telegram notification (synchronous)
-    const telegramSuccess = await sendTelegramAlert({
+    // Fire-and-forget Telegram notification (non-blocking)
+    void sendTelegramAlert({
       name,
       phone,
       email,
       service,
       message: formattedMessage,
       pageUrl: "N/A",
-      timestamp: new Date().toISOString()
+      timestamp: new Date().toISOString(),
+    }).catch((err) => {
+      console.error("[Telegram Alert] Failed to send notification:", err);
     });
 
-    if (!telegramSuccess) {
-      console.error("API /api/lead error: Telegram notification failed.");
-      return NextResponse.json({ success: false, error: "Nu am putut trimite notificarea Telegram." }, { status: 500 });
-    }
-
-    return NextResponse.json({ success: true, message: "Lead saved and notification sent." }, { status: 200 });
+    // Return success response (Telegram errors are logged only)
+    return NextResponse.json(
+      { success: true, message: "Lead saved. Notification queued." },
+      { status: 200 }
+    );
   } catch (err) {
     console.error("API /api/lead error", err);
     return NextResponse.json({ success: false, error: "Unexpected server error." }, { status: 500 });

@@ -3,8 +3,25 @@ import { Slot } from "@radix-ui/react-slot"
 import { cn } from "@/lib/utils"
 
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: 'default' | 'outline' | 'ghost' | 'glass';
+  /**
+   * Visual style of the button.
+   * Added variants to match project usage.
+   */
+  variant?:
+    | 'default'
+    | 'outline'
+    | 'secondary'
+    | 'ghost'
+    | 'destructive'
+    | 'link'
+    | 'glass';
+  /**
+   * Size of the button.
+   */
   size?: 'default' | 'sm' | 'lg' | 'icon';
+  /**
+   * When true, the component renders its children via Radix `Slot`.
+   */
   asChild?: boolean;
 }
 
