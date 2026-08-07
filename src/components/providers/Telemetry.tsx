@@ -9,6 +9,7 @@ export default function Telemetry() {
   const searchParams = useSearchParams();
 
   useEffect(() => {
+    console.log('[Telemetry] firing visitor tracker');
     trackPageView();
   }, [pathname, searchParams]);
 

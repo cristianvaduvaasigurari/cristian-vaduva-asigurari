@@ -83,54 +83,22 @@ export async function sendTelegramAlert(lead: TelegramLeadData): Promise<boolean
   const body = JSON.stringify(payload);
 
 
-  let attempt = 0;
-  let backoff = INITIAL_BACKOFF_MS;
-
-  while (attempt < MAX_RETRIES) {
-    attempt++;
-    try {
-
-      const startTime = Date.now();
-      const response = await fetchWithTimeout(
-        url,
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body,
-        },
-        TIMEOUT_MS
-      );
-      const elapsed = Date.now() - startTime;
-
-      if (response.ok) {
-        // const respBody = await response.text().catch(() => "(unreadable)");
-
-
-
-        return true;
-      }
-
+  try {
+    const response = await fetch(url, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body,
+    });
+    if (response.ok) {
+      return true;
+    } else {
       const errBody = await response.text().catch(() => "(unreadable)");
-      console.warn(`[Telegram Alert] Request completed in ${elapsed}ms – Status ${response.status}`);
-      console.warn(`[Telegram Alert] HTTP ${response.status} on attempt ${attempt}: ${errBody}`);
-
-    } catch (err: unknown) {
-      const errorMsg = err instanceof Error ? err.message : String(err);
-      const isAbort = err instanceof Error && err.name === "AbortError";
-      if (isAbort) {
-        console.error(`[Telegram Alert] Timed out on attempt ${attempt} (>${TIMEOUT_MS}ms).`);
-      } else {
-        console.error(`[Telegram Alert] Network error on attempt ${attempt}:`, errorMsg);
-      }
+      console.warn(`[Telegram Alert] HTTP ${response.status} error: ${errBody}`);
+      return false;
     }
-
-    if (attempt < MAX_RETRIES) {
-
-      await sleep(backoff);
-      backoff *= 2;
-    }
+  } catch (err: unknown) {
+    const errorMsg = err instanceof Error ? err.message : String(err);
+    console.error(`[Telegram Alert] Network error:`, errorMsg);
+    return false;
   }
-
-  console.error(`[Telegram Alert] ✗ Failed after ${MAX_RETRIES} attempt(s).`);
-  return false;
 }

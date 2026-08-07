@@ -10,9 +10,16 @@ import type { TelegramLeadData } from '@/lib/telegram';
 export async function POST(request: Request) {
   try {
     const data: TelegramLeadData = await request.json();
-    // Fire‑and‑forget Telegram notification
-    void sendTelegramAlert(data).catch((e) => console.error('[Telegram Alert] Visitor notification failed', e));
-    return NextResponse.json({ success: true }, { status: 200 });
+      console.log('[Visitor API] received visitor event', data);
+      if (!process.env.TELEGRAM_BOT_TOKEN || !process.env.TELEGRAM_CHAT_ID) {
+        console.warn('[Visitor API] Missing TELEGRAM_BOT_TOKEN or TELEGRAM_CHAT_ID');
+      }
+      console.log('[Telegram] sending visitor notification');
+      sendTelegramAlert(data)
+        .then((sent) => console.log('[Telegram] alert sent status:', sent))
+        .catch((e) => console.error('[Telegram Alert] Visitor notification failed', e));
+      return NextResponse.json({ success: true }, { status: 200 });
+
   } catch (err) {
     console.error('[Visitor API] Error processing request', err);
     return NextResponse.json({ success: false, error: 'Invalid payload' }, { status: 400 });
