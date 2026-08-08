@@ -21,6 +21,20 @@ const ecosystems = [
     gradient: "from-amber-500 to-orange-400"
   },
   {
+    icon: <Globe className="w-8 h-8" />,
+    title: "Generali",
+    description: "Partenerul principal pentru asigurări de viață și bunuri.",
+    href: CONTACT.ecosystem.generali,
+    gradient: "from-green-500 to-teal-400"
+  },
+  {
+    icon: <Globe className="w-8 h-8" />,
+    title: "Site Personal",
+    description: "Portofoliul complet de servicii și informații.",
+    href: CONTACT.ecosystem.website,
+    gradient: "from-purple-500 to-pink-600"
+  },
+  {
     icon: <Smartphone className="w-8 h-8" />,
     title: "AiX OS",
     description: "Sistemul de operare al viitorului pentru management imobiliar și portofolii.",
@@ -33,6 +47,42 @@ const ecosystems = [
     description: "Sistem inteligent pentru identificarea și achiziția de proprietăți off-market.",
     href: CONTACT.ecosystem.homefind,
     gradient: "from-emerald-400 to-emerald-600"
+  }
+  ,
+  {
+    icon: <Globe className="w-8 h-8" />,
+    title: "Health",
+    description: "Sănătate și asigurări medicale premium.",
+    href: CONTACT.ecosystem.health,
+    gradient: "from-red-500 to-pink-400"
+  },
+  {
+    icon: <Globe className="w-8 h-8" />,
+    title: "Subvenții",
+    description: "Finanțare și granturi pentru proiecte.",
+    href: CONTACT.ecosystem.subventii,
+    gradient: "from-emerald-500 to-teal-400"
+  },
+  {
+    icon: <Globe className="w-8 h-8" />,
+    title: "Credite",
+    description: "Credite și soluții financiare pentru afaceri.",
+    href: CONTACT.ecosystem.credite,
+    gradient: "from-yellow-500 to-amber-400"
+  },
+  {
+    icon: <Globe className="w-8 h-8" />,
+    title: "OS",
+    description: "Platforma operațională AI pentru gestionarea activelor.",
+    href: CONTACT.ecosystem.os,
+    gradient: "from-indigo-500 to-purple-400"
+  },
+  {
+    icon: <Globe className="w-8 h-8" />,
+    title: "Market Pulse",
+    description: "Insight-uri de piață și analize financiare.",
+    href: CONTACT.ecosystem.marketPulse,
+    gradient: "from-gray-500 to-slate-400"
   }
 ];
 

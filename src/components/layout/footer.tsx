@@ -5,12 +5,12 @@ import { CONTACT } from "@/config/contact";
 
 const footerLinks = {
   ecosystem: [
-    { key: "generali", href: "/generali" },
-    { key: "realEstate", href: "/real-estate" },
-    { key: "aixLuxury", href: "/aixluxury" },
-    { key: "aixOs", href: "/aixos" },
-    { key: "homeFind", href: "/home-find" },
-    { key: "ecosystemAix", href: "/ecosistem" },
+    { key: "generali", href: CONTACT.ecosystem.generali },
+    { key: "realEstate", href: CONTACT.ecosystem.website },
+    { key: "aixLuxury", href: CONTACT.ecosystem.aixluxury },
+    { key: "aixOs", href: CONTACT.ecosystem.aixos },
+    { key: "homeFind", href: CONTACT.ecosystem.homefind },
+    { key: "ecosystemAix", href: CONTACT.ecosystem.website },
   ],
   servicesPersonal: [
     { key: "lifeInsurance", href: "/servicii/life-insurance" },

@@ -19,8 +19,8 @@ export const CONTACT = {
     label: "Telegram",
   },
   email: {
-    display: "contact@cristianvaduva.com",
-    href: "mailto:contact@cristianvaduva.com",
+    display: "cristianvaduva@duck.com",
+    href: "mailto:cristianvaduva@duck.com",
   },
   social: {
     linkedin: "https://www.linkedin.com/in/cristianv%C4%83duva",
@@ -35,5 +35,10 @@ export const CONTACT = {
     homefind: "https://homefind.cristianvaduva.com",
     generali: "https://www.generali.ro",
     website: "https://cristianvaduva.com",
+    health: "https://health.cristianvaduva.com",
+    subventii: "https://subventii.cristianvaduva.com",
+    credite: "https://credite.cristianvaduva.com",
+    os: "https://os.cristianvaduva.com",
+    marketPulse: "https://cristianvaduva.com/market-pulse",
   },
 } as const;

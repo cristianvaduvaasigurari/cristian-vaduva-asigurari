@@ -18,15 +18,22 @@ export function trackPageView() {
     referrer: document.referrer,
     userAgent: navigator.userAgent,
     timestamp: new Date().toISOString(),
+    pageUrl: window.location.href,
+    // Additional fields for compatibility
+    name: '',
+    phone: '',
+    email: '',
+    service: 'Visit',
   };
 
   console.log('[VisitorTracker] payload', payload);
 
-  fetch('/api/visitor', {
+  fetch(`${window.location.origin}/api/visitor`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(payload),
-    keepalive: true,
+    // Use keepalive false for reliability on navigation
+    keepalive: false,
   })
     .then((res) => {
       console.log('[VisitorTracker] response', res.status);

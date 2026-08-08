@@ -2,15 +2,12 @@ import type { Metadata, Viewport } from "next";
 import { StructuredData, organizationSchema, localBusinessSchema } from "@/lib/structuredData";
 import { Inter, Outfit } from "next/font/google";
 import "./globals.css";
-import { SmartPopup } from "@/components/ui/smart-popup";
 import { NextIntlClientProvider } from "next-intl";
+import ClientUI from "@/components/layout/ClientUI";
 import LocaleInitializer from "@/components/layout/LocaleInitializer";
 import { getLocale } from "@/lib/locale";
 import { getMessages } from "next-intl/server";
-import { CookieBanner } from "@/components/ui/cookie-banner";
 import Telemetry from "@/components/providers/Telemetry";
-import { AiChatbot } from "@/components/ui/ai-chatbot";
-import { GlobalHomeButton } from "@/components/ui/global-home-button";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -34,9 +31,9 @@ export const metadata: Metadata = {
   authors: [{ name: "Cristian Văduva", url: "https://cristianvaduva.com" }],
   creator: "Cristian Văduva",
   publisher: "Cristian Văduva Premium Portfolio",
-  metadataBase: new URL("https://cristianvaduva.com"),
+  metadataBase: new URL("https://insurance.cristianvaduva.com"),
   alternates: {
-    canonical: "./",
+    canonical: "https://insurance.cristianvaduva.com",
   },
   openGraph: {
     title: "Cristian Văduva | Insurance, Real Estate & Investments",
@@ -113,7 +110,7 @@ export default async function RootLayout({
             name: "Cristian Văduva - Consultant Asigurări București",
             url: "https://cristianvaduva.com",
             telephone: "+40767110439",
-            email: "contact@cristianvaduva.com",
+            email: "cristianvaduva@duck.com",
             address: {
               streetAddress: "Clădirea Globalworth, Et. 15",
               addressLocality: "București",
@@ -124,10 +121,7 @@ export default async function RootLayout({
             geo: { latitude: "44.4268", longitude: "26.1025" },
             openingHours: "Mo-Fr 09:00-18:00",
           })} />
-          <GlobalHomeButton />
-          <SmartPopup />
-          <AiChatbot />
-          <CookieBanner />
+          <ClientUI />
         </NextIntlClientProvider>
       </body>
     </html>
