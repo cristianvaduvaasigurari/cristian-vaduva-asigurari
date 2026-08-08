@@ -50,7 +50,7 @@ export async function submitLead(formData: FormData): Promise<ActionResponse> {
       message: formattedMessage
     };
 
-    const { error } = await supabase.from("leads").insert([{ ...leadData, submission_id: submissionId }]);
+    const { error } = await supabase.from("leads").insert([leadData]);
   if (!error) {
     
     // Direct fetch to Telegram (bypass abstraction) for debugging
@@ -129,7 +129,7 @@ export async function saveAssessment(assessmentType: string, data: Record<string
       message: formattedMessage
     };
 
-    const { error } = await supabase.from("leads").insert([{ ...payload, submission_id: submissionId }]);
+    const { error } = await supabase.from("leads").insert([payload]);
   if (!error) {
     
   }

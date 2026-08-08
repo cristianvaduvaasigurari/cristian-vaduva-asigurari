@@ -98,10 +98,10 @@ export function ImpactCalculators() {
       });
       const result = await response.json();
       setIsSubmitting(false);
-      if (result.success) {
+      if (response.ok && (result.success || result.ok)) {
         setIsSuccess(true);
       } else {
-        setError(result.error || "A apărut o eroare la salvare.");
+        setError(result.error || "Eroare la salvarea datelor.");
       }
     } catch {
       setIsSubmitting(false);
