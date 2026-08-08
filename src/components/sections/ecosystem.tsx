@@ -145,7 +145,7 @@ export function Ecosystem() {
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center w-full py-4 rounded-full bg-background border border-border group-hover:bg-foreground group-hover:text-background transition-all duration-300 font-medium"
                 >
-                  Explorează platforma
+                  Accesează platforma
                   <ArrowRight className="ml-2 w-4 h-4" />
                 </Link>
               </div>
