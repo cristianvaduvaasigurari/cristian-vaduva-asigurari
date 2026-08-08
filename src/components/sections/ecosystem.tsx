@@ -10,7 +10,7 @@ const ecosystems = [
     icon: <Building className="w-8 h-8" />,
     title: "Real Estate",
     description: "Consultanță de top pentru investiții, proprietăți de lux și optimizarea portofoliilor imobiliare.",
-    href: "/real-estate",
+    href: CONTACT.ecosystem.website,
     gradient: "from-blue-500 to-cyan-400"
   },
   {
@@ -42,13 +42,19 @@ const ecosystems = [
     gradient: "from-purple-500 to-pink-500"
   },
   {
-    icon: <Building className="w-8 h-8" />,
+    icon: <Globe className="w-8 h-8" />,
     title: "Home Find",
     description: "Sistem inteligent pentru identificarea și achiziția de proprietăți off-market.",
     href: CONTACT.ecosystem.homefind,
     gradient: "from-emerald-400 to-emerald-600"
-  }
-  ,
+  },
+  {
+    icon: <Globe className="w-8 h-8" />,
+    title: "AiX Media",
+    description: "Platforma media pentru conținut de calitate și comunicare digitală.",
+    href: CONTACT.ecosystem.aixmedia,
+    gradient: "from-indigo-500 to-blue-400"
+  },
   {
     icon: <Globe className="w-8 h-8" />,
     title: "Health",

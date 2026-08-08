@@ -30,6 +30,7 @@ export const CONTACT = {
     telegram: "https://t.me/capitalinvestcristianvaduva",
   },
   ecosystem: {
+    aixmedia: "https://aixmedia.cristianvaduva.com",
     aixluxury: "https://aixluxury.com",
     aixos: "https://os.aixluxury.com",
     homefind: "https://homefind.cristianvaduva.com",

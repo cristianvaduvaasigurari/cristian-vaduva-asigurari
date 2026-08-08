@@ -10,6 +10,12 @@ const footerLinks = {
     { key: "aixLuxury", href: CONTACT.ecosystem.aixluxury },
     { key: "aixOs", href: CONTACT.ecosystem.aixos },
     { key: "homeFind", href: CONTACT.ecosystem.homefind },
+    { key: "health", href: CONTACT.ecosystem.health },
+    { key: "subventii", href: CONTACT.ecosystem.subventii },
+    { key: "credite", href: CONTACT.ecosystem.credite },
+    { key: "os", href: CONTACT.ecosystem.os },
+    { key: "marketPulse", href: CONTACT.ecosystem.marketPulse },
+    { key: "aixmedia", href: CONTACT.ecosystem.aixmedia },
     { key: "ecosystemAix", href: CONTACT.ecosystem.website },
   ],
   servicesPersonal: [
