@@ -126,7 +126,7 @@ export function Ecosystem() {
               transition={{ delay: index * 0.15 }}
               className="relative group rounded-[2.5rem] p-8 glass premium-card overflow-hidden border border-border/50 h-full flex flex-col"
             >
-              <div className={`absolute inset-0 bg-gradient-to-br ${eco.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-500`} />
+              <div className={`absolute inset-0 bg-gradient-to-br ${eco.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-500 pointer-events-none`} />
               
               <div className="mb-8">
                 <div className={`inline-flex p-4 rounded-2xl bg-gradient-to-br ${eco.gradient} text-white mb-6 shadow-lg`}>
