@@ -1,5 +1,6 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import dynamic from "next/dynamic";
 
 const GlobalHomeButton = dynamic(
@@ -23,6 +24,20 @@ const CookieBanner = dynamic(
 );
 
 export default function ClientUI() {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      if ("requestIdleCallback" in window) {
+        window.requestIdleCallback(() => setMounted(true));
+      } else {
+        setTimeout(() => setMounted(true), 200);
+      }
+    }
+  }, []);
+
+  if (!mounted) return null;
+
   return (
     <>
       <GlobalHomeButton />
