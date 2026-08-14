@@ -95,24 +95,35 @@ export const POST = async (request: Request) => {
     // 1. Insert into Supabase REST API
     let dbSuccess = false;
     try {
-      const restRes = await fetch(`${supabaseUrl}/rest/v1/leads`, {
-        method: "POST",
-        headers: {
-          "apikey": supabaseKey,
-          "Authorization": `Bearer ${supabaseKey}`,
-          "Content-Type": "application/json",
-          "Prefer": "return=minimal"
-        },
-        body: JSON.stringify(dbPayload),
-        cache: "no-store",
-      });
+      const keysToTry = [
+        process.env.SUPABASE_SERVICE_ROLE_KEY,
+        process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY,
+        DEFAULT_SUPABASE_ANON_KEY,
+      ].filter(Boolean) as string[];
 
-      if (restRes.ok || restRes.status === 201 || restRes.status === 200 || restRes.status === 204) {
-        dbSuccess = true;
-      } else {
-        const errTxt = await restRes.text().catch(() => "");
-        console.error(`[Insurance Lead] DB insert failed status ${restRes.status}:`, errTxt);
-        console.error('[Insurance Lead] DB payload:', JSON.stringify(dbPayload));
+      for (const key of keysToTry) {
+        const trimmedKey = key.trim();
+        if (!trimmedKey) continue;
+
+        const restRes = await fetch(`${supabaseUrl}/rest/v1/leads`, {
+          method: "POST",
+          headers: {
+            "apikey": trimmedKey,
+            "Authorization": `Bearer ${trimmedKey}`,
+            "Content-Type": "application/json",
+            "Prefer": "return=minimal"
+          },
+          body: JSON.stringify(dbPayload),
+          cache: "no-store",
+        });
+
+        if (restRes.ok || restRes.status === 201 || restRes.status === 200 || restRes.status === 204) {
+          dbSuccess = true;
+          break;
+        } else {
+          const errTxt = await restRes.text().catch(() => "");
+          console.error(`[Insurance Lead] DB insert failed with status ${restRes.status}:`, errTxt);
+        }
       }
     } catch (dbExc) {
       console.error("[Insurance Lead] DB insert exception:", dbExc);
