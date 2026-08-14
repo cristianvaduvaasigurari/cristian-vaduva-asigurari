@@ -5,8 +5,6 @@ export const dynamic = "force-dynamic";
 export const runtime = "nodejs";
 
 const DEFAULT_SUPABASE_URL = "https://fcpsafjgjnecdlyqfcid.supabase.co";
-const DEFAULT_SUPABASE_ANON_KEY =
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZjcHNhZmpnam5lY2RseXFmY2lkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODI3MzAyMTksImV4cCI6MjA5ODMwNjIxOX0.n-Obp-2j284umEvkKHBiTmmTfYARKvGrx3dUDhvcGPY";
 const DEFAULT_TELEGRAM_BOT_TOKEN = "8879456913:AAEQtberMOikmLjLkq7Okrjw47znlBzhokM";
 const DEFAULT_TELEGRAM_CHAT_ID = "-1003998698561";
 
@@ -82,48 +80,39 @@ export const POST = async (request: Request) => {
       DEFAULT_SUPABASE_URL
     ).trim();
 
-    // Use only the service role key for write access; abort if missing
-    const supabaseKey = (process.env.SUPABASE_SERVICE_ROLE_KEY || DEFAULT_SUPABASE_ANON_KEY).trim();
-    if (!supabaseKey) {
-      console.error('[Insurance Lead] Supabase service role key missing');
+    const supabaseServiceKey = (
+      process.env.SUPABASE_SERVICE_ROLE_KEY ||
+      process.env.SUPABASE_KEY
+    )?.trim();
+
+    if (!supabaseServiceKey) {
+      console.error("[Insurance Lead] Server configuration error: SUPABASE_SERVICE_ROLE_KEY environment variable is missing.");
       return NextResponse.json(
-        { success: false, error: 'Eroare la salvarea datelor.' },
-        { status: 500 }
+        { ok: false, success: false, error: "Eroare la salvarea datelor." },
+        { status: 200 }
       );
     }
 
-    // 1. Insert into Supabase REST API
+    // 1. Insert into Supabase REST API using SUPABASE_SERVICE_ROLE_KEY exclusively
     let dbSuccess = false;
     try {
-      const keysToTry = [
-        process.env.SUPABASE_SERVICE_ROLE_KEY,
-        process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY,
-        DEFAULT_SUPABASE_ANON_KEY,
-      ].filter(Boolean) as string[];
+      const restRes = await fetch(`${supabaseUrl}/rest/v1/leads`, {
+        method: "POST",
+        headers: {
+          "apikey": supabaseServiceKey,
+          "Authorization": `Bearer ${supabaseServiceKey}`,
+          "Content-Type": "application/json",
+          "Prefer": "return=minimal"
+        },
+        body: JSON.stringify(dbPayload),
+        cache: "no-store",
+      });
 
-      for (const key of keysToTry) {
-        const trimmedKey = key.trim();
-        if (!trimmedKey) continue;
-
-        const restRes = await fetch(`${supabaseUrl}/rest/v1/leads`, {
-          method: "POST",
-          headers: {
-            "apikey": trimmedKey,
-            "Authorization": `Bearer ${trimmedKey}`,
-            "Content-Type": "application/json",
-            "Prefer": "return=minimal"
-          },
-          body: JSON.stringify(dbPayload),
-          cache: "no-store",
-        });
-
-        if (restRes.ok || restRes.status === 201 || restRes.status === 200 || restRes.status === 204) {
-          dbSuccess = true;
-          break;
-        } else {
-          const errTxt = await restRes.text().catch(() => "");
-          console.error(`[Insurance Lead] DB insert failed with status ${restRes.status}:`, errTxt);
-        }
+      if (restRes.ok || restRes.status === 201 || restRes.status === 200 || restRes.status === 204) {
+        dbSuccess = true;
+      } else {
+        const errTxt = await restRes.text().catch(() => "");
+        console.error(`[Insurance Lead] DB insert failed status ${restRes.status}:`, errTxt);
       }
     } catch (dbExc) {
       console.error("[Insurance Lead] DB insert exception:", dbExc);
