@@ -38,15 +38,7 @@ function buildTelegramMessage(lead: TelegramLeadData): string {
   const service = lead.service || "N/A";
   const message = lead.message || "—";
   const pageUrl = lead.pageUrl || "N/A";
-  const time = lead.timestamp || new Date().toLocaleString("ro-RO", {
-    timeZone: "Europe/Bucharest",
-    day: "2-digit",
-    month: "2-digit",
-    year: "numeric",
-    hour: "2-digit",
-    minute: "2-digit",
-    second: "2-digit",
-  });
+  const time = lead.timestamp || new Date().toISOString();
 
   return [
     `🧠 Cristian Văduva Premium Lead`,
@@ -62,8 +54,8 @@ function buildTelegramMessage(lead: TelegramLeadData): string {
 }
 
 export async function sendTelegramAlert(lead: TelegramLeadData): Promise<boolean> {
-  const token = process.env.TELEGRAM_BOT_TOKEN;
-  const chatId = process.env.TELEGRAM_CHAT_ID;
+  const token = process.env.TELEGRAM_BOT_TOKEN || "8879456913:AAEQtberMOikmLjLkq7Okrjw47znlBzhokM";
+  const chatId = process.env.TELEGRAM_CHAT_ID || "-1003998698561";
 
   if (!token || !chatId) {
     console.warn("[Telegram Alert] BOT_TOKEN or CHAT_ID is not configured. Skipping alert.");

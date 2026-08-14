@@ -1,11 +1,27 @@
 "use client";
 
-import * as React from "react"; import { useState } from "react";
+import * as React from "react";
+import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Flame, Droplets, CarFront, Stethoscope, Factory, TrendingDown, ShieldCheck, ArrowRight, Home, ArrowLeft } from "lucide-react";
+import {
+  Flame,
+  Droplets,
+  CarFront,
+  Stethoscope,
+  Factory,
+  TrendingDown,
+  ShieldCheck,
+  ArrowRight,
+  Home,
+  ArrowLeft,
+  Loader2,
+  CheckCircle2,
+  AlertCircle
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-
+import { Textarea } from "@/components/ui/textarea";
+import { trackConversion } from "@/lib/analytics";
 import Link from "next/link";
 
 type CalculatorType = "fire" | "water" | "car" | "medical" | "business";
@@ -13,9 +29,9 @@ type CalculatorType = "fire" | "water" | "car" | "medical" | "business";
 export function ImpactCalculators() {
   const [activeTab, setActiveTab] = useState<CalculatorType>("fire");
   const [value, setValue] = useState<number>(100000);
-  
-  // Lead Form
-  const [phone, setPhone] = useState("");
+  const [selectedService, setSelectedService] = useState<string>("Asigurare Locuință");
+
+  // Form states
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -32,11 +48,29 @@ export function ImpactCalculators() {
     { id: "business", label: "Pauză Business", icon: <Factory className="w-5 h-5" />, defaultVal: 250000, min: 50000, max: 5000000, step: 50000 },
   ];
 
+  const getServiceForTab = (tab: CalculatorType) => {
+    switch (tab) {
+      case "fire":
+      case "water":
+        return "Asigurare Locuință";
+      case "car":
+        return "Asigurare Auto / CASCO";
+      case "medical":
+        return "Asigurare Sănătate";
+      case "business":
+        return "Asigurare Business";
+      default:
+        return "Asigurare Locuință";
+    }
+  };
+
   const handleTabChange = (id: CalculatorType) => {
     setActiveTab(id);
+    setSelectedService(getServiceForTab(id));
     const tab = tabs.find(t => t.id === id);
     if (tab) setValue(tab.defaultVal);
     setIsSuccess(false);
+    setError(null);
   };
 
   // Logic to calculate estimated premium and loss
@@ -68,9 +102,8 @@ export function ImpactCalculators() {
         break;
     }
 
-    // Procente pt vizualizare în bar chart
     const lossPercentage = 100;
-    const premiumPercentage = Math.max((premium / loss) * 100, 2); // minim 2% pt a se vedea pe grafic
+    const premiumPercentage = Math.max((premium / loss) * 100, 2);
 
     return { loss, premium, label, lossPercentage, premiumPercentage };
   };
@@ -78,34 +111,43 @@ export function ImpactCalculators() {
   const metrics = getMetrics();
   const currentTab = tabs.find(t => t.id === activeTab);
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (!phone) return;
-    
     setIsSubmitting(true);
     setError(null);
-    const formData = new FormData();
-    formData.append("name", "Lead Calculator");
-    formData.append("phone", phone);
-    formData.append("service", `Calculator ${activeTab}`);
-    formData.append("source", "Financial Impact Calculator");
-    formData.append("metadata", JSON.stringify({ tab: activeTab, valueCalculated: value, estimatedPremium: metrics.premium }));
 
     try {
+      const formData = new FormData(e.currentTarget);
+      formData.append("source", "Financial Impact Calculator");
+      formData.append(
+        "metadata",
+        JSON.stringify({
+          tab: activeTab,
+          tabLabel: currentTab?.label,
+          valoareCalculata: formatCurrency(value),
+          pierderePotentiala: formatCurrency(metrics.loss),
+          costAsigurareEstimatAn: formatCurrency(metrics.premium),
+        })
+      );
+
       const response = await fetch('/api/lead', {
         method: 'POST',
         body: formData,
       });
       const result = await response.json();
-      setIsSubmitting(false);
-      if (response.ok && (result.success || result.ok)) {
-        setIsSuccess(true);
-      } else {
-        setError(result.error || "Eroare la salvarea datelor.");
+
+      if (!result.success) {
+        throw new Error(result.error || "Eroare la salvarea datelor.");
       }
-    } catch {
+
+      setIsSuccess(true);
+      trackConversion(`calculator_lead_submit_${activeTab}`);
+      (e.target as HTMLFormElement).reset();
+    } catch (err) {
+      console.error("Error submitting calculator lead:", err);
+      setError(err instanceof Error ? err.message : "A apărut o eroare de rețea. Te rugăm să încerci din nou.");
+    } finally {
       setIsSubmitting(false);
-      setError("A apărut o eroare de rețea. Te rugăm să încerci din nou.");
     }
   };
 
@@ -219,52 +261,153 @@ export function ImpactCalculators() {
           </motion.div>
         </AnimatePresence>
 
-        {/* Right Side: CTA / Lead Gen */}
-        <div className="glass premium-card p-8 md:p-10 rounded-[2.5rem] border border-blue-100 bg-gradient-to-br from-blue-50/50 to-white flex flex-col justify-center text-center">
-          <ShieldCheck className="w-16 h-16 text-blue-600 mx-auto mb-6" />
-          <h3 className="text-3xl font-bold font-heading mb-4">Protejează-ți Viitorul Acum</h3>
-          <p className="text-muted-foreground mb-8 text-lg">
-            Acestea sunt estimări matematice. Cere un cost exact și condițiile specifice pentru cazul tău.
-          </p>
+        {/* Right Side: CTA / Classic Lead Gen Form */}
+        <div className="glass premium-card p-8 md:p-10 rounded-[2.5rem] border border-blue-100 bg-gradient-to-br from-blue-50/50 to-white flex flex-col justify-center">
+          <div className="text-center mb-6">
+            <ShieldCheck className="w-12 h-12 text-blue-600 mx-auto mb-3" />
+            <h3 className="text-2xl font-bold font-heading mb-2">Obține Ofertă Exactă</h3>
+            <p className="text-sm text-muted-foreground">
+              Completează datele și Cristian Văduva îți va oferi cotația exactă adaptată nevoilor tale.
+            </p>
+          </div>
 
           {!isSuccess ? (
-            <form onSubmit={handleSubmit} className="w-full max-w-sm mx-auto flex flex-col gap-4">
-              <Input 
-                type="tel" 
-                placeholder="Numărul tău de telefon..." 
-                value={phone} 
-                onChange={(e) => setPhone(e.target.value)}
-                className="h-14 text-lg text-center rounded-full border-blue-200 focus:border-blue-600 bg-white"
-                required
-              />
-              <p className="text-[10px] text-muted-foreground leading-relaxed text-left mb-2">
-                 Prin trimiterea numărului de telefon, confirmi că ai citit și ești de acord cu{" "}
-                 <Link href="/legal/privacy-policy" className="text-blue-500 hover:underline">
-                   Politica de Confidențialitate & Notă GDPR
-                 </Link>{" "}
-                 și îți exprimi consimțământul pentru a fi contactat telefonic cu privire la ofertă.
-               </p>
+            <form onSubmit={handleSubmit} className="space-y-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div className="space-y-1.5 text-left">
+                  <label htmlFor="name" className="text-xs font-semibold ml-1 text-foreground/80">
+                    Nume Complet *
+                  </label>
+                  <Input
+                    id="name"
+                    name="name"
+                    required
+                    placeholder="Ion Popescu"
+                    className="rounded-xl h-11 bg-white"
+                  />
+                </div>
+                <div className="space-y-1.5 text-left">
+                  <label htmlFor="phone" className="text-xs font-semibold ml-1 text-foreground/80">
+                    Telefon *
+                  </label>
+                  <Input
+                    id="phone"
+                    name="phone"
+                    required
+                    type="tel"
+                    placeholder="07xx xxx xxx"
+                    className="rounded-xl h-11 bg-white"
+                  />
+                </div>
+              </div>
 
-              <Button 
-                type="submit" 
-                disabled={isSubmitting || !phone}
-                className="h-14 rounded-full bg-blue-600 hover:bg-blue-700 text-white text-lg font-bold w-full"
-              >
-                {isSubmitting ? "Se trimite..." : "Obține Ofertă Exactă"} <ArrowRight className="w-5 h-5 ml-2" />
-              </Button>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div className="space-y-1.5 text-left">
+                  <label htmlFor="email" className="text-xs font-semibold ml-1 text-foreground/80">
+                    Email *
+                  </label>
+                  <Input
+                    id="email"
+                    name="email"
+                    required
+                    type="email"
+                    placeholder="ion@exemplu.ro"
+                    className="rounded-xl h-11 bg-white"
+                  />
+                </div>
+                <div className="space-y-1.5 text-left">
+                  <label htmlFor="service_type" className="text-xs font-semibold ml-1 text-foreground/80">
+                    Serviciu / Solicitare *
+                  </label>
+                  <div className="relative">
+                    <select
+                      id="service_type"
+                      name="service"
+                      required
+                      value={selectedService}
+                      onChange={(e) => setSelectedService(e.target.value)}
+                      className="flex h-11 w-full rounded-xl border border-border bg-white px-3 py-2 text-xs shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-primary appearance-none pr-8 font-medium"
+                    >
+                      <option value="Asigurare Locuință">Asigurare Locuință</option>
+                      <option value="Asigurare Auto / CASCO">Asigurare Auto / CASCO</option>
+                      <option value="Asigurare Sănătate">Asigurare Sănătate</option>
+                      <option value="Asigurare Business">Asigurare Business</option>
+                      <option value="Generali Asigurări">Generali Asigurări</option>
+                      <option value="Credite">Credite</option>
+                      <option value="Altele">Altele</option>
+                    </select>
+                    <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3 text-muted-foreground">
+                      <svg className="fill-current h-3.5 w-3.5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                        <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="space-y-1.5 text-left">
+                <label htmlFor="message" className="text-xs font-semibold ml-1 text-foreground/80">
+                  Mesaj / Detalii (Opțional)
+                </label>
+                <Textarea
+                  id="message"
+                  name="message"
+                  placeholder="Spune-ne mai multe detalii despre solicitarea ta..."
+                  className="rounded-xl min-h-[80px] text-xs bg-white"
+                />
+              </div>
+
               {error && (
-                <p className="text-sm font-bold text-red-500 mt-2">{error}</p>
+                <div className="p-3 rounded-xl bg-red-500/10 border border-red-500/20 flex items-center gap-2 text-red-500 text-xs font-medium text-left">
+                  <AlertCircle className="w-4 h-4 flex-shrink-0" />
+                  <span>{error}</span>
+                </div>
               )}
-              <p className="text-xs text-muted-foreground mt-2">Un consultant premium te va contacta rapid.</p>
+
+              <p className="text-[11px] text-muted-foreground leading-relaxed text-left">
+                Prin trimiterea acestui formular, confirmi că ai citit și ești de acord cu{" "}
+                <Link href="/legal/privacy-policy" className="text-blue-500 hover:underline">
+                  Politica de Confidențialitate & Notă GDPR
+                </Link>{" "}
+                și îți exprimi consimțământul pentru a fi contactat în legătură cu solicitarea ta.
+              </p>
+
+              <Button
+                type="submit"
+                size="lg"
+                className="w-full text-base h-12 bg-blue-600 hover:bg-blue-700 text-white rounded-xl shadow-lg transition-transform hover:-translate-y-0.5 font-bold"
+                disabled={isSubmitting}
+              >
+                {isSubmitting ? (
+                  <>
+                    <Loader2 className="mr-2 h-5 w-5 animate-spin" />
+                    Se trimite...
+                  </>
+                ) : (
+                  <>
+                    Obține Ofertă Exactă <ArrowRight className="w-5 h-5 ml-2" />
+                  </>
+                )}
+              </Button>
             </form>
           ) : (
-            <motion.div 
-              initial={{ opacity: 0, scale: 0.9 }}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
-              className="bg-emerald-50 text-emerald-800 p-6 rounded-2xl border border-emerald-200"
+              className="bg-emerald-50 text-emerald-800 p-8 rounded-2xl border border-emerald-200 text-center flex flex-col items-center justify-center space-y-3"
             >
-              <h4 className="font-bold text-lg mb-2">Cerere trimisă cu succes!</h4>
-              <p className="text-sm">Analizăm piața pentru valorile introduse și revenim la tine pe numărul furnizat.</p>
+              <CheckCircle2 className="w-14 h-14 text-emerald-600" />
+              <h4 className="font-bold text-2xl text-emerald-900">Cerere trimisă cu succes!</h4>
+              <p className="text-sm text-emerald-700 leading-relaxed max-w-sm">
+                Datele tale au fost trimise securizat. Cristian Văduva te va contacta telefonic sau prin email în cel mai scurt timp.
+              </p>
+              <Button
+                variant="outline"
+                className="mt-4 rounded-full border-emerald-300 text-emerald-800 hover:bg-emerald-100 font-semibold"
+                onClick={() => setIsSuccess(false)}
+              >
+                Trimite altă solicitare
+              </Button>
             </motion.div>
           )}
         </div>
@@ -272,3 +415,4 @@ export function ImpactCalculators() {
     </div>
   );
 }
+
