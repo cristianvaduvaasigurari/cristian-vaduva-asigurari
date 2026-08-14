@@ -32,8 +32,8 @@ export function trackPageView() {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(payload),
-    // Use keepalive false for reliability on navigation
-    keepalive: false,
+    // Use keepalive: true so browser background fetch handles tracking non-blockingly
+    keepalive: true,
   })
     .then((res) => {
       console.log('[VisitorTracker] response', res.status);

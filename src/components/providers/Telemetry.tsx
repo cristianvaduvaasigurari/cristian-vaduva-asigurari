@@ -9,8 +9,13 @@ export default function Telemetry() {
   const searchParams = useSearchParams();
 
   useEffect(() => {
-    console.log('[Telemetry] firing visitor tracker');
-    trackPageView();
+    if (typeof window !== "undefined") {
+      if ("requestIdleCallback" in window) {
+        window.requestIdleCallback(() => trackPageView());
+      } else {
+        setTimeout(() => trackPageView(), 100);
+      }
+    }
   }, [pathname, searchParams]);
 
   return null;

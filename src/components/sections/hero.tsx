@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { CTAButton } from "@/components/ui/cta-button";
 import { ArrowRight, ShieldCheck, Award, Building } from "lucide-react";
 import Link from "next/link";
@@ -15,12 +14,7 @@ export function Hero() {
       </div>
 
       <div className="container mx-auto px-4 relative z-10 text-center">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          className="max-w-4xl mx-auto"
-        >
+        <div className="max-w-4xl mx-auto">
           <div className="flex justify-center mb-8 max-w-full">
             <div 
               className="flex items-center gap-2 overflow-x-auto scroll-smooth max-w-full px-3 py-2 rounded-full glass no-scrollbar shadow-sm"
@@ -129,7 +123,7 @@ export function Hero() {
               </div>
             </div>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );
