@@ -38,16 +38,6 @@ const nextConfig: NextConfig = {
         ],
       },
       {
-        source: '/:all*(js|css)',
-        locale: false,
-        headers: [
-          {
-            key: 'Cache-Control',
-            value: 'public, max-age=31536000, immutable',
-          },
-        ],
-      },
-      {
         source: '/:path*',
         headers: [
           {

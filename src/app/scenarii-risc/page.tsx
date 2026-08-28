@@ -27,12 +27,12 @@ export const metadata: Metadata = {
 
 export default function RiskScenariosPage() {
   return (
-    <>
+    <div className="bg-[#07090E] text-white min-h-screen flex flex-col">
       <Navbar />
-      <main className="flex-1 pt-16">
+      <main className="flex-1 pt-16 bg-[#07090E]">
         <RealWorldRiskScenarios />
       </main>
       <Footer />
-    </>
+    </div>
   );
 }
