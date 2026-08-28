@@ -39,10 +39,7 @@ import {
   Compass,
   ArrowRight,
   X,
-  Sparkles,
-  Calculator,
-  ChevronRight,
-  Filter
+  ChevronRight
 } from "lucide-react";
 import {
   riskScenarios,
@@ -150,7 +147,7 @@ export function RealWorldRiskScenarios({ isHomePagePreview = false }: RealWorldR
     return list;
   }, [selectedCategory, selectedPersona, isHomePagePreview]);
 
-  // Exposure calculation estimations (Educational model)
+  // Exposure calculation estimations (Educational Bloomberg Private Wealth model)
   const exposureDetails = useMemo(() => {
     switch (exposureAssetType) {
       case "auto":
@@ -211,59 +208,60 @@ export function RealWorldRiskScenarios({ isHomePagePreview = false }: RealWorldR
   return (
     <section
       id="scenarii-risc"
-      className="py-20 md:py-28 relative overflow-hidden bg-[#07090e] text-white font-sans border-t border-white/10"
+      className="py-24 md:py-36 relative overflow-hidden bg-[#07090e] text-white font-sans border-t border-white/10"
       aria-label="Scenarii Reale de Risc"
     >
-      {/* Editorial Luxury Ambient Background Glows */}
+      {/* Editorial Luxury Lighting & Ambiance */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden" aria-hidden="true">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-blue-600/5 blur-[160px] rounded-full" />
-        <div className="absolute top-1/3 right-[-10%] w-[500px] h-[500px] bg-amber-500/[0.03] blur-[180px] rounded-full" />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[500px] bg-gradient-to-b from-blue-600/5 via-indigo-600/5 to-transparent blur-[160px] rounded-full" />
+        <div className="absolute top-1/2 right-[-5%] w-[450px] h-[450px] bg-amber-500/[0.025] blur-[180px] rounded-full" />
       </div>
 
-      <div className="container mx-auto px-4 md:px-6 relative z-10">
-        {/* Section Header */}
-        <div className="max-w-4xl mx-auto text-center mb-14 md:mb-20">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/5 border border-white/10 text-slate-300 font-medium text-xs mb-6 uppercase tracking-widest backdrop-blur-md">
-            <Sparkles className="w-3.5 h-3.5 text-amber-400" aria-hidden="true" />
-            Ce Se Întâmplă Când... • Scenarii Ilustrative
+      <div className="container mx-auto px-4 md:px-8 relative z-10 max-w-7xl">
+        {/* Editorial Hero Header */}
+        <div className="max-w-4xl mx-auto text-center mb-20 md:mb-28 space-y-6">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/[0.03] border border-white/10 text-slate-300 font-mono text-xs uppercase tracking-[0.2em]">
+            <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse" aria-hidden="true" />
+            Scenarii Reale de Risc • Evaluare Ilustrativă
           </div>
-          <h2 className="text-3xl md:text-5xl lg:text-6xl font-heading font-bold mb-6 tracking-tight leading-tight text-white">
-            Scenarii Reale de Risc — <br className="hidden sm:inline" />
-            <span className="text-slate-300">
-              Când Neprevăzutul Devine Costisitor
-            </span>
+
+          <h2 className="text-4xl md:text-6xl lg:text-7xl font-heading font-bold tracking-tight text-white leading-[1.08]">
+            Când neprevăzutul <br className="hidden sm:inline" />
+            <span className="text-slate-400 font-light">devine costisitor.</span>
           </h2>
-          <p className="text-base md:text-lg text-slate-300 max-w-2xl mx-auto font-light leading-relaxed">
-            Asigurarea nu înseamnă că te aștepți la ce este mai rău. Înseamnă că ai decis deja{" "}
-            <strong className="text-white font-semibold">cine plătește când se întâmplă</strong>.
+
+          <p className="text-base md:text-xl text-slate-300 max-w-2xl mx-auto font-light leading-relaxed pt-2">
+            Asigurarea nu este o cheltuială. Este decizia din timp privind{" "}
+            <strong className="text-white font-normal underline underline-offset-4 decoration-amber-400/40">
+              cine preia impactul financiar
+            </strong>.
           </p>
         </div>
 
         {/* Interactive Persona Selector ("Ce Vrei Să Protejezi?") */}
-        <div className="mb-12 md:mb-16 bg-slate-900/60 border border-white/10 p-6 md:p-8 rounded-3xl backdrop-blur-xl">
-          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-6">
+        <div className="mb-16 md:mb-20 bg-slate-900/60 border border-white/10 p-6 md:p-10 rounded-2xl backdrop-blur-xl">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-8">
             <div>
-              <h3 className="text-base md:text-lg font-bold font-heading text-white flex items-center gap-2">
-                <Filter className="w-4 h-4 text-amber-400" aria-hidden="true" />
-                Ce Vrei Să Protejezi Astăzi?
+              <span className="text-xs uppercase tracking-widest text-slate-400 font-mono block mb-1">
+                Personalizare Scenarii
+              </span>
+              <h3 className="text-xl md:text-2xl font-bold font-heading text-white flex items-center gap-2.5">
+                Ce vrei să protejezi astăzi?
               </h3>
-              <p className="text-xs text-slate-400 mt-1">
-                Selectează domeniul de interes pentru a prioritiza scenariile relevante patrimoniului sau afacerii tale.
-              </p>
             </div>
             {selectedPersona !== "all" && (
               <Button
                 variant="ghost"
                 size="sm"
                 onClick={() => setSelectedPersona("all")}
-                className="text-xs text-slate-300 hover:text-white hover:bg-white/10 rounded-full h-8"
+                className="text-xs text-slate-300 hover:text-white hover:bg-white/10 rounded-lg h-8"
               >
                 Resetează filtrul
               </Button>
             )}
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-2.5">
+          <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-3">
             {ASSET_PERSONAS.map((persona) => {
               const isActive = selectedPersona === persona.id;
               return (
@@ -271,49 +269,52 @@ export function RealWorldRiskScenarios({ isHomePagePreview = false }: RealWorldR
                   key={persona.id}
                   type="button"
                   onClick={() => setSelectedPersona(isActive ? "all" : persona.id)}
-                  className={`flex flex-col items-center justify-center p-3.5 rounded-2xl border text-xs font-medium transition-all duration-200 cursor-pointer ${
+                  className={`relative flex flex-col items-center justify-center p-4 rounded-xl border text-xs font-medium transition-all duration-200 cursor-pointer ${
                     isActive
-                      ? "bg-white text-slate-950 border-white font-semibold shadow-lg scale-[1.02]"
-                      : "bg-white/5 border-white/10 text-slate-300 hover:bg-white/10 hover:border-white/20 hover:text-white"
+                      ? "bg-[#161f33] border-amber-400/60 text-white shadow-xl scale-[1.02]"
+                      : "bg-white/[0.03] border-white/10 text-slate-300 hover:bg-white/[0.07] hover:border-white/20 hover:text-white"
                   }`}
                 >
-                  <span className={`mb-2 ${isActive ? "text-slate-950" : "text-slate-400"}`}>
-                    {persona.id === "car" && <Car className="w-4 h-4" aria-hidden="true" />}
-                    {persona.id === "home" && <Home className="w-4 h-4" aria-hidden="true" />}
-                    {persona.id === "family" && <Users className="w-4 h-4" aria-hidden="true" />}
-                    {persona.id === "health" && <Activity className="w-4 h-4" aria-hidden="true" />}
-                    {persona.id === "travel" && <Plane className="w-4 h-4" aria-hidden="true" />}
-                    {persona.id === "business" && <Briefcase className="w-4 h-4" aria-hidden="true" />}
-                    {persona.id === "employees" && <UserCheck className="w-4 h-4" aria-hidden="true" />}
-                    {persona.id === "projects" && <Building className="w-4 h-4" aria-hidden="true" />}
+                  {isActive && (
+                    <span className="absolute top-2 right-2 w-1.5 h-1.5 rounded-full bg-amber-400" aria-hidden="true" />
+                  )}
+                  <span className={`mb-2.5 ${isActive ? "text-amber-400" : "text-slate-400"}`}>
+                    {persona.id === "car" && <Car className="w-5 h-5" aria-hidden="true" />}
+                    {persona.id === "home" && <Home className="w-5 h-5" aria-hidden="true" />}
+                    {persona.id === "family" && <Users className="w-5 h-5" aria-hidden="true" />}
+                    {persona.id === "health" && <Activity className="w-5 h-5" aria-hidden="true" />}
+                    {persona.id === "travel" && <Plane className="w-5 h-5" aria-hidden="true" />}
+                    {persona.id === "business" && <Briefcase className="w-5 h-5" aria-hidden="true" />}
+                    {persona.id === "employees" && <UserCheck className="w-5 h-5" aria-hidden="true" />}
+                    {persona.id === "projects" && <Building className="w-5 h-5" aria-hidden="true" />}
                   </span>
-                  <span className="text-center line-clamp-1">{persona.label}</span>
+                  <span className="text-center line-clamp-1 font-heading">{persona.label}</span>
                 </button>
               );
             })}
           </div>
         </div>
 
-        {/* Interactive Exposure Calculator Widget */}
-        <div className="mb-14 md:mb-20 p-6 md:p-10 rounded-3xl bg-slate-900/80 border border-white/10 shadow-2xl relative overflow-hidden">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-            {/* Left Inputs */}
-            <div className="lg:col-span-7 space-y-5 md:space-y-6">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-slate-300 text-xs font-medium uppercase tracking-wider">
-                <Calculator className="w-3.5 h-3.5 text-amber-400" aria-hidden="true" />
-                Model Educațional de Vizualizare a Expunerii
+        {/* Private Wealth Financial Exposure Calculator */}
+        <div className="mb-20 md:mb-28 p-8 md:p-12 rounded-3xl bg-gradient-to-br from-slate-900/90 via-[#0b0f19] to-slate-950 border border-white/10 shadow-2xl relative overflow-hidden">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+            {/* Left Control Panel */}
+            <div className="lg:col-span-7 space-y-6">
+              <div>
+                <span className="text-xs uppercase tracking-widest text-slate-400 font-mono block mb-1">
+                  Instrument Financiar de Calcul
+                </span>
+                <h3 className="text-2xl md:text-4xl font-bold font-heading text-white">
+                  Calculează Expunerea Financiară
+                </h3>
               </div>
-              
-              <h3 className="text-xl md:text-3xl font-bold font-heading text-white">
-                Calculează Valoarea Expusă la Risc
-              </h3>
-              
+
               <p className="text-xs md:text-sm text-slate-300 leading-relaxed font-light">
-                Selectează categoria de activ și simulează valoarea protejată. Vizualizează scara potențială a expunerii într-un singur incident.
+                Selectează categoria de patrimoniu și simulează nivelul de active protejate. Evaluează scara unei pierderi neprevăzute într-un singur incident.
               </p>
 
-              {/* Selector Asset Type */}
-              <div className="flex flex-wrap gap-2 pt-1">
+              {/* Asset Class Selector */}
+              <div className="flex flex-wrap gap-2 pt-2">
                 {[
                   { id: "auto", label: "Vehicul Auto" },
                   { id: "home", label: "Locuință & Bunuri" },
@@ -333,10 +334,10 @@ export function RealWorldRiskScenarios({ isHomePagePreview = false }: RealWorldR
                       if (type === "business") setAssetValueEUR(450000);
                       if (type === "project") setAssetValueEUR(750000);
                     }}
-                    className={`px-3 py-1.5 rounded-xl text-xs font-medium transition-all cursor-pointer ${
+                    className={`px-3.5 py-1.5 rounded-lg text-xs font-semibold transition-all cursor-pointer ${
                       exposureAssetType === item.id
-                        ? "bg-white text-slate-950 font-bold shadow-md"
-                        : "bg-white/5 text-slate-400 hover:bg-white/10 hover:text-white border border-white/5"
+                        ? "bg-slate-800 text-white border border-white/20 shadow-md"
+                        : "bg-white/[0.03] text-slate-400 hover:bg-white/[0.08] hover:text-white border border-white/5"
                     }`}
                   >
                     {item.label}
@@ -344,13 +345,13 @@ export function RealWorldRiskScenarios({ isHomePagePreview = false }: RealWorldR
                 ))}
               </div>
 
-              {/* Slider Input */}
-              <div className="space-y-3 pt-2">
-                <div className="flex justify-between items-center text-xs md:text-sm font-medium">
-                  <span className="text-slate-300">{exposureDetails.label}</span>
-                  <span className="text-xl md:text-2xl font-bold text-white font-heading">
+              {/* Asset Value Slider */}
+              <div className="space-y-4 pt-3">
+                <div className="flex justify-between items-end">
+                  <span className="text-xs text-slate-400 font-medium">{exposureDetails.label}</span>
+                  <div className="text-2xl md:text-4xl font-bold font-mono text-white tracking-tight">
                     {formatCurrency(assetValueEUR)}
-                  </span>
+                  </div>
                 </div>
 
                 <input
@@ -371,44 +372,44 @@ export function RealWorldRiskScenarios({ isHomePagePreview = false }: RealWorldR
               </div>
             </div>
 
-            {/* Right Output Visualizer */}
-            <div className="lg:col-span-5 bg-slate-950/80 border border-white/10 p-6 md:p-8 rounded-2xl flex flex-col justify-between space-y-5">
+            {/* Right Financial Display */}
+            <div className="lg:col-span-5 bg-black/40 border border-white/10 p-6 md:p-8 rounded-2xl flex flex-col justify-between space-y-6">
               <div>
-                <span className="text-[11px] uppercase tracking-wider text-slate-400 font-medium block">
-                  Expunere Financiară Ilustrativă (Incident Singur)
+                <span className="text-[11px] uppercase tracking-widest text-slate-400 font-mono block">
+                  Expunere Financiară Estimată (1 Incident)
                 </span>
-                <div className="text-3xl md:text-4xl font-bold text-rose-400 font-heading mt-2">
+                <div className="text-3xl md:text-5xl font-bold text-rose-400 font-mono tracking-tight mt-3">
                   ~{formatCurrency(estimatedLossAmount)}
                 </div>
-                <p className="text-xs text-slate-300 mt-1.5 font-light">
+                <p className="text-xs text-slate-300 mt-2 font-light leading-relaxed">
                   {exposureDetails.impactLabel}
                 </p>
               </div>
 
-              <div className="p-4 rounded-xl bg-white/[0.02] border border-white/5 text-xs space-y-2 text-slate-300">
-                <div className="flex justify-between font-medium">
-                  <span>Fără Asigurare:</span>
-                  <span className="text-rose-400 font-semibold">Suportat din capital propriu</span>
+              <div className="p-4 rounded-xl bg-white/[0.02] border border-white/5 text-xs space-y-2.5 text-slate-300 font-sans">
+                <div className="flex justify-between items-center">
+                  <span className="text-slate-400">Impact Fără Poliță:</span>
+                  <span className="text-rose-400 font-semibold">Capital propriu</span>
                 </div>
-                <div className="flex justify-between font-medium">
-                  <span>Preluare Risc prin Poliță:</span>
-                  <span className="text-emerald-400 font-semibold">Preluat conform contract</span>
+                <div className="flex justify-between items-center">
+                  <span className="text-slate-400">Preluare Risc:</span>
+                  <span className="text-emerald-400 font-semibold">Poliță Generali</span>
                 </div>
                 <div className="pt-2 border-t border-white/10 text-[11px] text-slate-400 font-mono">
                   {exposureDetails.ratioText}
                 </div>
               </div>
 
-              <p className="text-[11px] text-slate-400 italic leading-normal">
-                „Nu calculezi cât costă asigurarea, ci cât ar costa să acoperi această pierdere din propriile resurse.”
+              <p className="text-[11px] text-slate-400 italic leading-normal border-l-2 border-amber-400/40 pl-3">
+                „Nu calculezi doar prima de asigurare, ci costul acoperirii unei pierderi din fondurile proprii.”
               </p>
             </div>
           </div>
         </div>
 
-        {/* Category Navigation Tabs */}
+        {/* Category Navigation Bar */}
         {!isHomePagePreview && (
-          <div className="flex items-center gap-2 overflow-x-auto pb-4 mb-12 no-scrollbar scroll-smooth">
+          <div className="flex items-center gap-2 overflow-x-auto pb-4 mb-14 no-scrollbar scroll-smooth">
             {RISK_CATEGORIES.map((cat) => {
               const isActive = selectedCategory === cat.id;
               return (
@@ -416,15 +417,16 @@ export function RealWorldRiskScenarios({ isHomePagePreview = false }: RealWorldR
                   key={cat.id}
                   type="button"
                   onClick={() => setSelectedCategory(cat.id)}
-                  className={`px-4 py-2 rounded-full text-xs font-semibold whitespace-nowrap transition-all duration-200 flex items-center gap-2 border cursor-pointer ${
+                  className={`px-4 py-2 rounded-xl text-xs font-semibold whitespace-nowrap transition-all duration-200 flex items-center gap-2 border cursor-pointer ${
                     isActive
-                      ? "bg-white text-slate-950 border-white shadow-md scale-[1.02]"
-                      : "bg-white/5 border-white/10 text-slate-400 hover:bg-white/10 hover:border-white/20 hover:text-white"
+                      ? "bg-slate-800 text-white border-white/30 shadow-md scale-[1.02]"
+                      : "bg-white/[0.03] border-white/10 text-slate-400 hover:bg-white/[0.08] hover:text-white"
                   }`}
                 >
+                  {isActive && <span className="w-1.5 h-1.5 rounded-full bg-amber-400" aria-hidden="true" />}
                   <span>{cat.label}</span>
                   <span
-                    className={`px-2 py-0.5 rounded-full text-[10px] ${
+                    className={`px-2 py-0.5 rounded-md text-[10px] font-mono ${
                       isActive ? "bg-slate-950 text-white" : "bg-white/10 text-slate-400"
                     }`}
                   >
@@ -436,10 +438,12 @@ export function RealWorldRiskScenarios({ isHomePagePreview = false }: RealWorldR
           </div>
         )}
 
-        {/* Scenarios Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
-          {filteredScenarios.map((sc) => {
+        {/* Editorial Scenario Cards Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
+          {filteredScenarios.map((sc, index) => {
             const icon = ICON_MAP[sc.iconName] || <Shield className="w-4 h-4" aria-hidden="true" />;
+            const formattedIndex = (index + 1).toString().padStart(2, "0");
+            
             return (
               <div
                 key={sc.id}
@@ -453,34 +457,25 @@ export function RealWorldRiskScenarios({ isHomePagePreview = false }: RealWorldR
                     setActiveScenario(sc);
                   }
                 }}
-                className="group relative rounded-3xl p-6 md:p-7 bg-slate-900/60 border border-white/10 hover:border-white/25 transition-all duration-300 flex flex-col justify-between cursor-pointer hover:-translate-y-1 shadow-lg backdrop-blur-md overflow-hidden focus:outline-none focus:ring-2 focus:ring-amber-400"
+                className="group relative rounded-2xl p-7 bg-slate-900/50 border border-white/10 hover:border-white/25 transition-all duration-300 flex flex-col justify-between cursor-pointer hover:-translate-y-1 shadow-lg backdrop-blur-md overflow-hidden focus:outline-none focus:ring-2 focus:ring-amber-400"
               >
-                {/* Top Badge & Category */}
+                {/* Card Header & Index */}
                 <div>
-                  <div className="flex justify-between items-start gap-2 mb-4">
-                    <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[11px] font-medium text-slate-300">
+                  <div className="flex justify-between items-center mb-5">
+                    <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.04] border border-white/10 text-[11px] font-medium text-slate-300">
                       <span className="text-slate-400">{icon}</span>
                       {sc.categoryLabel}
                     </span>
-
-                    <span
-                      className={`text-[10px] uppercase font-semibold px-2.5 py-0.5 rounded-full border ${
-                        sc.riskSeverity === "Kritik"
-                          ? "bg-rose-500/10 border-rose-500/30 text-rose-400"
-                          : sc.riskSeverity === "Ridicat"
-                          ? "bg-amber-500/10 border-amber-500/30 text-amber-300"
-                          : "bg-blue-500/10 border-blue-500/30 text-blue-300"
-                      }`}
-                    >
-                      {sc.riskSeverity}
+                    <span className="text-xs font-mono text-slate-500 font-semibold">
+                      #{formattedIndex}
                     </span>
                   </div>
 
-                  <span className="text-[11px] text-slate-400 uppercase tracking-wider font-semibold block mb-1">
+                  <span className="text-[11px] text-slate-400 uppercase tracking-widest font-mono block mb-2">
                     {sc.eyebrow}
                   </span>
 
-                  <h3 className="text-lg md:text-xl font-bold font-heading text-white group-hover:text-amber-300 transition-colors mb-3 leading-snug">
+                  <h3 className="text-xl font-bold font-heading text-white group-hover:text-amber-300 transition-colors mb-3 leading-snug">
                     {sc.title}
                   </h3>
 
@@ -489,17 +484,17 @@ export function RealWorldRiskScenarios({ isHomePagePreview = false }: RealWorldR
                   </p>
                 </div>
 
-                {/* Bottom Cost & CTA */}
+                {/* Card Financial Exposure Footer */}
                 <div>
-                  <div className="p-3.5 rounded-2xl bg-white/[0.02] border border-white/5 mb-4 flex justify-between items-center">
-                    <span className="text-[11px] text-slate-400 font-medium">Expunere Ilustrativă:</span>
-                    <span className="text-xs md:text-sm font-bold text-white font-heading">
+                  <div className="p-3.5 rounded-xl bg-black/40 border border-white/5 mb-5 flex justify-between items-center">
+                    <span className="text-[11px] text-slate-400 font-medium font-mono">Expunere:</span>
+                    <span className="text-sm font-bold font-mono text-white">
                       {sc.exposure.replace("Expunere financiară ilustrativă: ", "")}
                     </span>
                   </div>
 
-                  <div className="flex items-center justify-between text-xs font-semibold text-slate-200 group-hover:text-amber-300 transition-colors">
-                    <span>Explorează Scenariul Complet</span>
+                  <div className="flex items-center justify-between text-xs font-medium text-slate-300 group-hover:text-amber-300 transition-colors">
+                    <span>Explorează scenariul</span>
                     <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
                   </div>
                 </div>
@@ -508,12 +503,12 @@ export function RealWorldRiskScenarios({ isHomePagePreview = false }: RealWorldR
           })}
         </div>
 
-        {/* Homepage Preview Navigation CTA */}
+        {/* Homepage Preview Navigation Button */}
         {isHomePagePreview && (
-          <div className="text-center mb-16">
+          <div className="text-center mb-20">
             <Button
               size="lg"
-              className="text-sm md:text-base h-13 px-8 bg-amber-400 hover:bg-amber-300 text-slate-950 font-bold rounded-2xl shadow-xl hover:scale-105 transition-transform"
+              className="text-sm md:text-base h-13 px-8 bg-amber-400 hover:bg-amber-300 text-slate-950 font-bold rounded-xl shadow-xl hover:scale-105 transition-transform"
               asChild
             >
               <Link href="/scenarii-risc">
@@ -523,10 +518,10 @@ export function RealWorldRiskScenarios({ isHomePagePreview = false }: RealWorldR
           </div>
         )}
 
-        {/* Scenario Story Modal / Drawer */}
+        {/* Story Reader Modal / Drawer */}
         {activeScenario && (
           <div
-            className="fixed inset-0 z-50 flex items-center justify-center p-4 md:p-6 bg-black/80 backdrop-blur-xl animate-in fade-in duration-200"
+            className="fixed inset-0 z-50 flex items-center justify-center p-4 md:p-6 bg-black/85 backdrop-blur-2xl animate-in fade-in duration-200"
             role="dialog"
             aria-modal="true"
             aria-labelledby="modal-title"
@@ -538,7 +533,7 @@ export function RealWorldRiskScenarios({ isHomePagePreview = false }: RealWorldR
           >
             <div
               ref={modalContainerRef}
-              className="relative w-full max-w-3xl max-h-[90vh] overflow-y-auto bg-[#0b0f19] border border-white/15 rounded-3xl p-6 md:p-10 text-white shadow-2xl no-scrollbar focus:outline-none"
+              className="relative w-full max-w-3xl max-h-[90vh] overflow-y-auto bg-[#07090e] border border-white/15 rounded-3xl p-6 md:p-10 text-white shadow-2xl no-scrollbar focus:outline-none"
               tabIndex={-1}
             >
               {/* Close Button */}
@@ -552,8 +547,8 @@ export function RealWorldRiskScenarios({ isHomePagePreview = false }: RealWorldR
               </button>
 
               {/* Modal Category Badge */}
-              <div className="flex items-center gap-2 mb-4">
-                <span className="px-3.5 py-1 rounded-full bg-white/5 border border-white/10 text-slate-300 text-xs font-semibold uppercase tracking-wider flex items-center gap-2">
+              <div className="flex items-center gap-2.5 mb-4">
+                <span className="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-slate-300 text-xs font-mono uppercase tracking-wider flex items-center gap-2">
                   {ICON_MAP[activeScenario.iconName]}
                   {activeScenario.categoryLabel}
                 </span>
@@ -563,45 +558,45 @@ export function RealWorldRiskScenarios({ isHomePagePreview = false }: RealWorldR
               <h3 id="modal-title" className="text-2xl md:text-3xl lg:text-4xl font-bold font-heading text-white mb-2 leading-tight">
                 {activeScenario.title}
               </h3>
-              <p className="text-xs md:text-sm text-slate-300 font-medium mb-8">{activeScenario.eyebrow}</p>
+              <p className="text-xs md:text-sm text-slate-300 font-mono mb-8">{activeScenario.eyebrow}</p>
 
               {/* Step 1 to 5 Story Breakdown */}
-              <div className="space-y-4 md:space-y-5 text-xs md:text-sm leading-relaxed mb-8">
+              <div className="space-y-4 md:space-y-5 text-xs md:text-sm leading-relaxed mb-8 font-sans">
                 {/* 01 - Normal Life */}
-                <div className="p-4 md:p-5 rounded-2xl bg-white/[0.03] border border-white/10">
-                  <div className="text-[11px] font-bold text-slate-400 uppercase tracking-widest mb-1 font-mono">
+                <div className="p-5 rounded-xl bg-white/[0.03] border border-white/10">
+                  <div className="text-[11px] font-bold text-slate-400 uppercase tracking-widest mb-1.5 font-mono">
                     01 — Contextul Inițial (Cotidianul)
                   </div>
                   <p className="text-slate-200 font-light">{activeScenario.situation}</p>
                 </div>
 
                 {/* 02 - Interruption */}
-                <div className="p-4 md:p-5 rounded-2xl bg-amber-500/10 border border-amber-500/20">
-                  <div className="text-[11px] font-bold text-amber-400 uppercase tracking-widest mb-1 font-mono">
+                <div className="p-5 rounded-xl bg-amber-500/10 border border-amber-500/20">
+                  <div className="text-[11px] font-bold text-amber-400 uppercase tracking-widest mb-1.5 font-mono">
                     02 — Întreruperea Neprevăzută
                   </div>
                   <p className="text-white font-light">{activeScenario.interruption}</p>
                 </div>
 
                 {/* 03 - Realization */}
-                <div className="p-4 md:p-5 rounded-2xl bg-white/[0.03] border border-white/10">
-                  <div className="text-[11px] font-bold text-slate-400 uppercase tracking-widest mb-1 font-mono">
+                <div className="p-5 rounded-xl bg-white/[0.03] border border-white/10">
+                  <div className="text-[11px] font-bold text-slate-400 uppercase tracking-widest mb-1.5 font-mono">
                     03 — Momentul Conștientizării
                   </div>
                   <p className="text-slate-200 font-light">{activeScenario.realization}</p>
                 </div>
 
                 {/* 04 - Financial Exposure */}
-                <div className="p-4 md:p-5 rounded-2xl bg-rose-500/10 border border-rose-500/20">
-                  <div className="text-[11px] font-bold text-rose-400 uppercase tracking-widest mb-1 font-mono">
+                <div className="p-5 rounded-xl bg-rose-500/10 border border-rose-500/20">
+                  <div className="text-[11px] font-bold text-rose-400 uppercase tracking-widest mb-1.5 font-mono">
                     04 — Impactul & Expunerea Financiară
                   </div>
                   <p className="text-rose-100 font-bold text-sm md:text-base">{activeScenario.exposure}</p>
                 </div>
 
                 {/* 05 - Protection Control */}
-                <div className="p-4 md:p-5 rounded-2xl bg-emerald-500/10 border border-emerald-500/20">
-                  <div className="text-[11px] font-bold text-emerald-400 uppercase tracking-widest mb-1 font-mono">
+                <div className="p-5 rounded-xl bg-emerald-500/10 border border-emerald-500/20">
+                  <div className="text-[11px] font-bold text-emerald-400 uppercase tracking-widest mb-1.5 font-mono">
                     05 — Controlul Oferit de Asigurare
                   </div>
                   <p className="text-emerald-100 font-light">{activeScenario.protection}</p>
@@ -634,7 +629,7 @@ export function RealWorldRiskScenarios({ isHomePagePreview = false }: RealWorldR
         )}
 
         {/* Global Bottom Conversion Banner & Legal Disclaimer */}
-        <div className="mt-16 p-8 md:p-14 rounded-3xl bg-slate-900/90 border border-white/15 text-center relative overflow-hidden">
+        <div className="mt-16 p-8 md:p-14 rounded-3xl bg-gradient-to-r from-slate-900 via-[#0b0f19] to-slate-900 border border-white/15 text-center relative overflow-hidden">
           <div className="max-w-3xl mx-auto space-y-6">
             <ShieldCheck className="w-10 h-10 md:w-12 md:h-12 text-amber-400 mx-auto mb-2" aria-hidden="true" />
             <h3 className="text-2xl md:text-4xl font-bold font-heading text-white leading-tight">
