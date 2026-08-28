@@ -6,6 +6,11 @@ import dynamic from 'next/dynamic';
 import type { Metadata } from "next";
 
 // Lazy load heavy components for better performance
+const RealWorldRiskScenarios = dynamic(() => import('@/components/sections/real-world-risk-scenarios').then(mod => ({ default: mod.RealWorldRiskScenarios })), {
+  loading: () => <div className="h-96 animate-pulse bg-slate-950/20 rounded-lg" />,
+  ssr: true
+});
+
 const Ecosystem = dynamic(() => import('@/components/sections/ecosystem').then(mod => ({ default: mod.Ecosystem })), {
   loading: () => <div className="h-96 animate-pulse bg-muted/20 rounded-lg" />,
   ssr: true
@@ -34,6 +39,7 @@ export default function Home() {
       <main className="flex-1">
         <Hero />
         <section id="servicii"><Services /></section>
+        <RealWorldRiskScenarios isHomePagePreview={true} />
         <Ecosystem />
         <ContactForm />
       </main>

@@ -280,7 +280,6 @@ export function Navbar() {
                     </div>
                   ))}
                 </div>
-                {typeof window !== 'undefined' && (
                 <div className="mt-8 pt-6 border-t border-border/50 flex justify-between items-center bg-muted/30 -mx-8 -mb-8 p-6 rounded-b-3xl">
                   <div className="text-sm text-muted-foreground">
                     <span className="font-bold text-foreground">Nu ești sigur ce să alegi?</span> Încearcă noul Recomandă-mi Asigurarea Potrivită.
@@ -289,7 +288,6 @@ export function Navbar() {
                     <Link href="/advisor">Deschide Recomandă-mi Asigurarea Potrivită</Link>
                   </Button>
                 </div>
-              )}
               </div>
             </div>
 
