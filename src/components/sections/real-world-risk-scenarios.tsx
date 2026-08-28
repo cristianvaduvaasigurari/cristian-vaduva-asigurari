@@ -834,10 +834,10 @@ export function RealWorldRiskScenarios({ isHomePagePreview = false }: RealWorldR
                 <Link
                   key={filter.id}
                   href={filter.href}
-                  className={`group relative overflow-hidden text-left transition-all duration-700 cursor-pointer focus:outline-none flex flex-col justify-between p-6 md:p-8 bg-[#05070A] w-full max-w-full box-border mx-auto ${
+                  className={`group relative overflow-hidden text-left transition-all duration-700 cursor-pointer focus:outline-none flex flex-col justify-between p-6 md:p-8 bg-[#05070A] w-full max-w-full box-border mx-auto rounded-2xl border border-[#1A3150] sm:border-transparent ${
                     isAnchor
-                      ? "md:col-span-2 lg:col-span-2 aspect-[16/9] md:aspect-[21/9] min-h-[340px]"
-                      : "aspect-[16/10] min-h-[260px]"
+                      ? "md:col-span-2 lg:col-span-2 md:aspect-[21/9] min-h-[220px] sm:min-h-[260px] md:min-h-[340px]"
+                      : "md:aspect-[16/10] min-h-[200px] sm:min-h-[220px] md:min-h-[260px]"
                   }`}
                 >
                   {/* HIGH VISIBILITY PHOTOGRAPHY CANVAS (80-90% VISUALLY PERCEPTIBLE) */}
@@ -1080,8 +1080,8 @@ export function RealWorldRiskScenarios({ isHomePagePreview = false }: RealWorldR
                     setActiveScenario(sc);
                   }
                 }}
-                className={`group relative overflow-hidden bg-[#05070A] transition-all duration-700 cursor-pointer aspect-[16/10] md:aspect-[16/9] min-h-[440px] md:min-h-[480px] w-full max-w-full box-border mx-auto flex flex-col justify-between focus:outline-none ${
-                  isFeatured ? "md:col-span-2 lg:col-span-2 min-h-[500px]" : ""
+                className={`group relative overflow-hidden bg-[#05070A] transition-all duration-700 cursor-pointer w-full max-w-full box-border mx-auto flex flex-col justify-between focus:outline-none rounded-2xl border border-[#1A3150] sm:border-transparent min-h-[380px] sm:min-h-[420px] md:min-h-[480px] ${
+                  isFeatured ? "md:col-span-2 lg:col-span-2 md:aspect-[16/9]" : "md:aspect-[16/10]"
                 }`}
               >
                 {/* HIGH VISIBILITY PHOTOGRAPHY CANVAS (80-90% VISUALLY PERCEPTIBLE) */}
