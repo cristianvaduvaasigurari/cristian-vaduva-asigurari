@@ -840,54 +840,54 @@ export function RealWorldRiskScenarios({ isHomePagePreview = false }: RealWorldR
                       : "aspect-[16/10] min-h-[260px]"
                   }`}
                 >
-                  {/* DOMINANT PHOTOGRAPHY CANVAS WITH HIGH LEGIBILITY LOCALIZED GRADIENTS */}
+                  {/* HIGH VISIBILITY PHOTOGRAPHY CANVAS WITH BALANCED LOCALIZED GRADIENTS */}
                   <div className="absolute inset-0 z-0 overflow-hidden">
                     <Image
                       src={visual.image}
                       alt={visual.alt}
                       fill
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                      className="object-cover w-full h-full opacity-65 group-hover:scale-102 group-hover:opacity-80 transition-all duration-700 pointer-events-none"
+                      className="object-cover w-full h-full opacity-85 sm:opacity-90 group-hover:scale-105 group-hover:opacity-100 transition-all duration-700 pointer-events-none"
                     />
-                    {/* Top Registration Gradient */}
-                    <div className="absolute inset-0 bg-gradient-to-b from-[#05070A]/90 via-[#05070A]/50 to-transparent z-10" />
-                    {/* Bottom Text-Safe Gradient */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#05070A] via-[#05070A]/85 via-45% to-transparent z-10" />
+                    {/* Subtle Upper Header Vignette */}
+                    <div className="absolute inset-0 bg-gradient-to-b from-[#05070A]/60 via-transparent to-transparent z-10" />
+                    {/* Localized Bottom Text-Safe Vignette */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#05070A]/95 via-[#05070A]/65 via-35% to-transparent z-10" />
                   </div>
 
                   {/* TOP INDEX & SUBTITLE REGISTRATION */}
                   <div className="relative z-20 flex items-center justify-between w-full">
-                    <span className="text-[10px] font-mono font-semibold uppercase tracking-[0.2em] text-[#94A3B8]">
+                    <span className="text-[10px] font-mono font-semibold uppercase tracking-[0.2em] text-[#E2E8F0] [text-shadow:0_1px_6px_rgba(0,0,0,0.9)]">
                       {filter.sublabel || "PATRIMONIU"}
                     </span>
-                    <span className="text-[11px] font-mono text-[#94A3B8]/80 font-semibold">
+                    <span className="text-[11px] font-mono text-[#CBD5E1] font-semibold [text-shadow:0_1px_6px_rgba(0,0,0,0.9)]">
                       {formattedIndex} / {PROTECTION_FILTERS.length.toString().padStart(2, "0")}
                     </span>
                   </div>
 
                   {/* MAIN CATEGORY TITLE & SCENARIO COUNT */}
                   <div className="relative z-20 space-y-2 my-auto pt-6 pb-4">
-                    <h4 className={`font-semibold font-heading text-[#F5F5F0] [text-shadow:0_2px_10px_rgba(0,0,0,0.85)] leading-snug group-hover:text-[#FDE68A] transition-colors ${
+                    <h4 className={`font-semibold font-heading text-[#FFFFFF] [text-shadow:0_2px_12px_rgba(0,0,0,0.95),0_1px_4px_rgba(0,0,0,0.8)] leading-snug group-hover:text-[#FDE68A] transition-colors ${
                       isAnchor ? "text-2xl md:text-3xl lg:text-4xl" : "text-xl md:text-2xl"
                     }`}>
                       {filter.label}
                     </h4>
 
                     {isAnchor && (
-                      <p className="text-xs md:text-sm text-[#CBD5E1] font-light max-w-md line-clamp-2">
+                      <p className="text-xs md:text-sm text-[#F1F5F9] font-light max-w-md line-clamp-2 [text-shadow:0_1px_8px_rgba(0,0,0,0.9)]">
                         Portofoliul complet de modele reale de risc și analiză financiară pentru patrimoniu personal și comercial.
                       </p>
                     )}
                   </div>
 
                   {/* BOTTOM INTERACTION & METADATA ROW */}
-                  <div className="relative z-20 pt-4 border-t border-white/15 flex items-center justify-between">
-                    <span className="text-xs font-mono text-[#94A3B8] font-semibold">
+                  <div className="relative z-20 pt-4 border-t border-white/20 flex items-center justify-between">
+                    <span className="text-xs font-mono text-[#E2E8F0] font-semibold [text-shadow:0_1px_6px_rgba(0,0,0,0.9)]">
                       {count.toString().padStart(2, "0")} {count === 1 ? "SCENARIU" : "SCENARII"}
                     </span>
 
                     {/* PURE EDITORIAL TEXT LINK INTERACTION */}
-                    <div className="text-xs font-mono font-bold flex items-center gap-1.5 transition-all duration-300 text-[#F5F5F0] group-hover:text-[#C9A227]">
+                    <div className="text-xs font-mono font-bold flex items-center gap-1.5 transition-all duration-300 text-[#FFFFFF] group-hover:text-[#C9A227] [text-shadow:0_1px_6px_rgba(0,0,0,0.9)]">
                       <span className="group-hover:tracking-wider transition-all">
                         EXPLOREAZĂ
                       </span>
@@ -1060,7 +1060,7 @@ export function RealWorldRiskScenarios({ isHomePagePreview = false }: RealWorldR
           )}
         </div>
 
-        {/* PURE VISUAL ART-DIRECTION — CINEMATIC EDITORIAL PHOTOGRAPHY CANVAS GRID */}
+        {/* PURE VISUAL ART-DIRECTION — HIGH VISIBILITY CINEMATIC PHOTOGRAPHY GRID */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10 mb-20">
           {filteredScenarios.map((sc, index) => {
             const formattedIndex = (index + 1).toString().padStart(2, "0");
@@ -1084,28 +1084,28 @@ export function RealWorldRiskScenarios({ isHomePagePreview = false }: RealWorldR
                   isFeatured ? "md:col-span-2 lg:col-span-2 min-h-[500px]" : ""
                 }`}
               >
-                {/* DOMINANT PHOTOGRAPHY CANVAS COVERING THE ENTIRE VISUAL FIELD */}
+                {/* HIGH VISIBILITY PHOTOGRAPHY CANVAS (85-90% PERCEPTIBLE) */}
                 <div className="absolute inset-0 z-0 overflow-hidden">
                   <Image
                     src={visual.image}
                     alt={visual.alt || sc.title}
                     fill
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                    className="object-cover w-full h-full opacity-65 group-hover:scale-102 group-hover:opacity-80 transition-all duration-700 pointer-events-none"
+                    className="object-cover w-full h-full opacity-85 sm:opacity-90 group-hover:scale-105 group-hover:opacity-100 transition-all duration-700 pointer-events-none"
                   />
                   
-                  {/* Top Registration Gradient */}
-                  <div className="absolute inset-0 bg-gradient-to-b from-[#05070A]/90 via-[#05070A]/50 to-transparent z-10" />
-                  {/* Bottom Text-Safe Gradient */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#05070A] via-[#05070A]/85 via-45% to-transparent z-10" />
+                  {/* Subtle Upper Header Vignette */}
+                  <div className="absolute inset-0 bg-gradient-to-b from-[#05070A]/60 via-transparent to-transparent z-10" />
+                  {/* Localized Bottom Text-Safe Vignette */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#05070A]/95 via-[#05070A]/70 via-35% to-transparent z-10" />
                 </div>
 
                 {/* TOP REGISTRATION MARK: MAGAZINE INSCRIPTION & DISCREET CATALOGUE REFERENCE */}
                 <div className="relative z-20 p-6 md:p-8 flex items-center justify-between">
-                  <span className="text-[10px] font-mono font-semibold uppercase tracking-[0.25em] text-[#94A3B8]">
+                  <span className="text-[10px] font-mono font-semibold uppercase tracking-[0.25em] text-[#E2E8F0] [text-shadow:0_1px_6px_rgba(0,0,0,0.9)]">
                     {sc.categoryLabel}
                   </span>
-                  <span className="text-[11px] font-mono text-[#94A3B8]/80 font-semibold">
+                  <span className="text-[11px] font-mono text-[#CBD5E1] font-semibold [text-shadow:0_1px_6px_rgba(0,0,0,0.9)]">
                     {formattedIndex} / {riskScenarios.length.toString().padStart(2, "0")}
                   </span>
                 </div>
@@ -1113,17 +1113,17 @@ export function RealWorldRiskScenarios({ isHomePagePreview = false }: RealWorldR
                 {/* NARRATIVE CORE & EDITORIAL FINANCIAL EXPOSURE (FLOATING DIRECTLY OVER CANVAS) */}
                 <div className="relative z-20 p-6 md:p-8 space-y-6">
                   <div className="space-y-2">
-                    <span className="text-[10px] font-mono uppercase tracking-widest text-[#C9A227] font-semibold block">
+                    <span className="text-[10px] font-mono uppercase tracking-widest text-[#FDE68A] font-semibold block [text-shadow:0_1px_6px_rgba(0,0,0,0.9)]">
                       {sc.eyebrow || sc.categoryLabel}
                     </span>
 
-                    <h3 className={`font-medium font-heading text-[#F5F5F0] [text-shadow:0_2px_10px_rgba(0,0,0,0.85)] leading-snug group-hover:text-[#FDE68A] transition-colors line-clamp-2 ${
+                    <h3 className={`font-medium font-heading text-[#FFFFFF] [text-shadow:0_2px_12px_rgba(0,0,0,0.95),0_1px_4px_rgba(0,0,0,0.8)] leading-snug group-hover:text-[#FDE68A] transition-colors line-clamp-2 ${
                       isFeatured ? "text-2xl md:text-3xl" : "text-lg md:text-xl"
                     }`}>
                       {sc.title}
                     </h3>
 
-                    <p className="text-xs text-[#CBD5E1] font-normal leading-relaxed line-clamp-2 max-w-xl">
+                    <p className="text-xs text-[#F1F5F9] font-normal leading-relaxed line-clamp-2 max-w-xl [text-shadow:0_1px_8px_rgba(0,0,0,0.9)]">
                       {sc.situation}
                     </p>
                   </div>
@@ -1131,19 +1131,19 @@ export function RealWorldRiskScenarios({ isHomePagePreview = false }: RealWorldR
                   {/* EDITORIAL FINANCIAL EXPOSURE & PURE EDITORIAL TEXT LINK (NO BUTTON CONTAINER) */}
                   <div className="flex items-end justify-between gap-4 pt-2">
                     <div>
-                      <span className="text-[9px] font-mono text-[#94A3B8] uppercase tracking-wider block font-semibold mb-0.5">
+                      <span className="text-[9px] font-mono text-[#E2E8F0] uppercase tracking-wider block font-semibold mb-0.5 [text-shadow:0_1px_6px_rgba(0,0,0,0.9)]">
                         EXPOSURE
                       </span>
-                      <div className="text-xl md:text-2xl font-bold font-mono text-[#F5F5F0] tracking-tight">
+                      <div className="text-xl md:text-2xl font-bold font-mono text-[#FFFFFF] tracking-tight [text-shadow:0_2px_10px_rgba(0,0,0,0.95)]">
                         {sc.exposure.replace("Expunere financiară ilustrativă: ", "")}
                       </div>
-                      <span className="text-[9px] font-mono text-[#C9A227] font-semibold block uppercase tracking-wider mt-0.5">
+                      <span className="text-[9px] font-mono text-[#FDE68A] font-semibold block uppercase tracking-wider mt-0.5 [text-shadow:0_1px_6px_rgba(0,0,0,0.9)]">
                         HIGH IMPACT • SINGLE-EVENT LOSS
                       </span>
                     </div>
 
                     {/* PURE EDITORIAL TEXT LINK INTERACTION */}
-                    <div className="text-xs font-mono font-bold text-[#F5F5F0] group-hover:text-[#C9A227] flex items-center gap-1.5 transition-all duration-300 pb-1 shrink-0">
+                    <div className="text-xs font-mono font-bold text-[#FFFFFF] group-hover:text-[#C9A227] flex items-center gap-1.5 transition-all duration-300 pb-1 shrink-0 [text-shadow:0_1px_6px_rgba(0,0,0,0.9)]">
                       <span className="group-hover:tracking-wider transition-all">VEZI SCENARIUL</span>
                       <SvgIcon name="ArrowRight" className="w-4 h-4 group-hover:translate-x-2 transition-transform duration-300" />
                     </div>
@@ -1215,14 +1215,14 @@ export function RealWorldRiskScenarios({ isHomePagePreview = false }: RealWorldR
 
               {/* SIBLING 2: INDEPENDENT SCROLLABLE CONTENT BODY (THE ONLY SCROLLING ELEMENT) */}
               <div className="flex-1 min-h-0 overflow-y-auto overflow-x-hidden overscroll-contain p-5 sm:p-8 space-y-6 text-[#F5F5F2] touch-pan-y">
-                {/* PHOTOGRAPHY HERO */}
+                {/* PHOTOGRAPHY HERO (CRISP & HIGHLY PERCEPTIBLE 90-95%) */}
                 <div className="relative w-full h-48 sm:h-64 md:h-72 rounded-xl overflow-hidden shrink-0 border border-[#1A3150]">
                   <Image
                     src={getScenarioVisual(activeScenario.id).image}
                     alt={getScenarioVisual(activeScenario.id).alt || activeScenario.title}
                     fill
                     sizes="(max-width: 768px) 100vw, 800px"
-                    className="object-cover w-full h-full opacity-80"
+                    className="object-cover w-full h-full opacity-90 sm:opacity-95"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#09111D] via-[#09111D]/30 to-transparent z-10" />
                 </div>
