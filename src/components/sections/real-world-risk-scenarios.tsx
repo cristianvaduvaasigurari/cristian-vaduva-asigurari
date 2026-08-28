@@ -188,7 +188,7 @@ export const SCENARIO_VISUALS: Record<string, ScenarioVisual> = {
     alt: "Eșafodaj de betonare prăbușit pe șantier peste utilaje de construcții"
   },
   "construction-utility-damage-neighbors": {
-    image: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1200&q=80",
+    image: "https://images.unsplash.com/photo-150337762-592deb58ef4e?auto=format&fit=crop&w=1200&q=80",
     alt: "Săpătură adâncă de fundație cauzând fisuri clădirii vecine"
   }
 };
@@ -768,10 +768,10 @@ export function RealWorldRiskScenarios({ isHomePagePreview = false }: RealWorldR
     <section
       id="scenarii-risc"
       style={{ backgroundColor: "#05070A", color: "#F5F5F2" }}
-      className="py-24 md:py-36 relative overflow-hidden font-sans border-t border-[#1A3150]"
+      className="py-24 md:py-36 relative overflow-hidden font-sans border-t border-[#1A3150] w-full max-w-full box-border"
       aria-label="Scenarii Reale de Risc"
     >
-      <div className="container mx-auto px-4 md:px-8 relative z-10 max-w-7xl">
+      <div className="container mx-auto px-4 sm:px-6 md:px-8 relative z-10 max-w-7xl w-full box-border">
         {/* Luxury Editorial Header */}
         <div className="max-w-4xl mx-auto text-center mb-16 md:mb-24 space-y-6">
           <div
@@ -796,9 +796,9 @@ export function RealWorldRiskScenarios({ isHomePagePreview = false }: RealWorldR
         </div>
 
         {/* LAYER 1: LUXURY EDITORIAL PROTECTION PORTFOLIO SELECTOR */}
-        <div className="mb-16 max-w-7xl mx-auto">
+        <div className="mb-16 max-w-7xl mx-auto w-full box-border">
           {/* SECTION HEADER */}
-          <div className="flex flex-col md:flex-row items-start md:items-end justify-between gap-6 mb-12 pb-6 border-b border-[#1A3150]">
+          <div className="flex flex-col md:flex-row items-start md:items-end justify-between gap-6 mb-12 pb-6 border-b border-[#1A3150] w-full">
             <div className="space-y-2">
               <span className="text-[11px] font-mono uppercase tracking-[0.25em] text-[#94A3B8] font-semibold block">
                 PROTECTION PORTFOLIO
@@ -823,7 +823,7 @@ export function RealWorldRiskScenarios({ isHomePagePreview = false }: RealWorldR
           </div>
 
           {/* PORTFOLIO GRID WITH REAL NEXT.JS LINK NAVIGATION */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 w-full max-w-full box-border">
             {visibleFilterOptions.map((filter, fIdx) => {
               const isAnchor = filter.id === "all";
               const count = getFilterCount(filter);
@@ -834,60 +834,60 @@ export function RealWorldRiskScenarios({ isHomePagePreview = false }: RealWorldR
                 <Link
                   key={filter.id}
                   href={filter.href}
-                  className={`group relative overflow-hidden text-left transition-all duration-700 cursor-pointer focus:outline-none flex flex-col justify-between p-6 md:p-8 bg-[#05070A] ${
+                  className={`group relative overflow-hidden text-left transition-all duration-700 cursor-pointer focus:outline-none flex flex-col justify-between p-6 md:p-8 bg-[#05070A] w-full max-w-full box-border mx-auto ${
                     isAnchor
                       ? "md:col-span-2 lg:col-span-2 aspect-[16/9] md:aspect-[21/9] min-h-[340px]"
                       : "aspect-[16/10] min-h-[260px]"
                   }`}
                 >
-                  {/* HIGH VISIBILITY PHOTOGRAPHY CANVAS WITH BALANCED LOCALIZED GRADIENTS */}
-                  <div className="absolute inset-0 z-0 overflow-hidden">
+                  {/* HIGH VISIBILITY PHOTOGRAPHY CANVAS (80-90% VISUALLY PERCEPTIBLE) */}
+                  <div className="absolute inset-0 z-0 overflow-hidden w-full h-full">
                     <Image
                       src={visual.image}
                       alt={visual.alt}
                       fill
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                      className="object-cover w-full h-full opacity-85 sm:opacity-90 group-hover:scale-105 group-hover:opacity-100 transition-all duration-700 pointer-events-none"
+                      className="object-cover object-center w-full h-full opacity-95 sm:opacity-100 group-hover:scale-105 transition-all duration-700 pointer-events-none"
                     />
-                    {/* Subtle Upper Header Vignette */}
-                    <div className="absolute inset-0 bg-gradient-to-b from-[#05070A]/60 via-transparent to-transparent z-10" />
+                    {/* Very Light Upper Header Vignette */}
+                    <div className="absolute inset-0 bg-gradient-to-b from-[#05070A]/35 via-transparent to-transparent z-10" />
                     {/* Localized Bottom Text-Safe Vignette */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#05070A]/95 via-[#05070A]/65 via-35% to-transparent z-10" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#05070A]/90 via-[#05070A]/45 via-30% to-transparent z-10" />
                   </div>
 
                   {/* TOP INDEX & SUBTITLE REGISTRATION */}
                   <div className="relative z-20 flex items-center justify-between w-full">
-                    <span className="text-[10px] font-mono font-semibold uppercase tracking-[0.2em] text-[#E2E8F0] [text-shadow:0_1px_6px_rgba(0,0,0,0.9)]">
+                    <span className="text-[10px] font-mono font-semibold uppercase tracking-[0.2em] text-[#E2E8F0] [text-shadow:0_2px_10px_rgba(0,0,0,0.95)]">
                       {filter.sublabel || "PATRIMONIU"}
                     </span>
-                    <span className="text-[11px] font-mono text-[#CBD5E1] font-semibold [text-shadow:0_1px_6px_rgba(0,0,0,0.9)]">
+                    <span className="text-[11px] font-mono text-[#CBD5E1] font-semibold [text-shadow:0_2px_10px_rgba(0,0,0,0.95)]">
                       {formattedIndex} / {PROTECTION_FILTERS.length.toString().padStart(2, "0")}
                     </span>
                   </div>
 
                   {/* MAIN CATEGORY TITLE & SCENARIO COUNT */}
-                  <div className="relative z-20 space-y-2 my-auto pt-6 pb-4">
-                    <h4 className={`font-semibold font-heading text-[#FFFFFF] [text-shadow:0_2px_12px_rgba(0,0,0,0.95),0_1px_4px_rgba(0,0,0,0.8)] leading-snug group-hover:text-[#FDE68A] transition-colors ${
+                  <div className="relative z-20 space-y-2 my-auto pt-6 pb-4 w-full">
+                    <h4 className={`font-semibold font-heading text-[#FFFFFF] [text-shadow:0_2px_14px_rgba(0,0,0,0.98),0_1px_4px_rgba(0,0,0,0.95)] leading-snug group-hover:text-[#FDE68A] transition-colors ${
                       isAnchor ? "text-2xl md:text-3xl lg:text-4xl" : "text-xl md:text-2xl"
                     }`}>
                       {filter.label}
                     </h4>
 
                     {isAnchor && (
-                      <p className="text-xs md:text-sm text-[#F1F5F9] font-light max-w-md line-clamp-2 [text-shadow:0_1px_8px_rgba(0,0,0,0.9)]">
+                      <p className="text-xs md:text-sm text-[#F1F5F9] font-light max-w-md line-clamp-2 [text-shadow:0_2px_10px_rgba(0,0,0,0.95)]">
                         Portofoliul complet de modele reale de risc și analiză financiară pentru patrimoniu personal și comercial.
                       </p>
                     )}
                   </div>
 
                   {/* BOTTOM INTERACTION & METADATA ROW */}
-                  <div className="relative z-20 pt-4 border-t border-white/20 flex items-center justify-between">
-                    <span className="text-xs font-mono text-[#E2E8F0] font-semibold [text-shadow:0_1px_6px_rgba(0,0,0,0.9)]">
+                  <div className="relative z-20 pt-4 border-t border-white/20 flex items-center justify-between w-full">
+                    <span className="text-xs font-mono text-[#E2E8F0] font-semibold [text-shadow:0_2px_10px_rgba(0,0,0,0.95)]">
                       {count.toString().padStart(2, "0")} {count === 1 ? "SCENARIU" : "SCENARII"}
                     </span>
 
                     {/* PURE EDITORIAL TEXT LINK INTERACTION */}
-                    <div className="text-xs font-mono font-bold flex items-center gap-1.5 transition-all duration-300 text-[#FFFFFF] group-hover:text-[#C9A227] [text-shadow:0_1px_6px_rgba(0,0,0,0.9)]">
+                    <div className="text-xs font-mono font-bold flex items-center gap-1.5 transition-all duration-300 text-[#FFFFFF] group-hover:text-[#C9A227] [text-shadow:0_2px_10px_rgba(0,0,0,0.95)]">
                       <span className="group-hover:tracking-wider transition-all">
                         EXPLOREAZĂ
                       </span>
@@ -903,11 +903,11 @@ export function RealWorldRiskScenarios({ isHomePagePreview = false }: RealWorldR
         {/* Financial Calculator */}
         <div
           style={{ backgroundColor: "#09111D", borderColor: "#1A3150" }}
-          className="mb-20 md:mb-28 p-8 md:p-12 rounded-2xl border shadow-2xl relative overflow-hidden"
+          className="mb-20 md:mb-28 p-6 sm:p-8 md:p-12 rounded-2xl border shadow-2xl relative overflow-hidden w-full max-w-full box-border"
         >
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center w-full">
             {/* Left Control Panel */}
-            <div className="lg:col-span-7 space-y-6">
+            <div className="lg:col-span-7 space-y-6 w-full">
               <div>
                 <span style={{ color: "#94A3B8" }} className="text-xs uppercase tracking-widest font-mono block mb-1 font-semibold">
                   CALCULEAZĂ EXPUNEREA FINANCIARĂ
@@ -922,7 +922,7 @@ export function RealWorldRiskScenarios({ isHomePagePreview = false }: RealWorldR
               </p>
 
               {/* Asset Class Selector */}
-              <div className="flex flex-wrap gap-2 pt-2">
+              <div className="flex flex-wrap gap-2 pt-2 w-full">
                 {[
                   { id: "auto", label: "Vehicul Auto" },
                   { id: "home", label: "Locuință & Bunuri" },
@@ -949,7 +949,7 @@ export function RealWorldRiskScenarios({ isHomePagePreview = false }: RealWorldR
                         color: isActive ? "#05070A" : "#94A3B8",
                         borderColor: isActive ? "#F5F5F2" : "#1A3150"
                       }}
-                      className="px-4 py-2 rounded-xl text-xs font-bold transition-all border cursor-pointer"
+                      className="px-3.5 py-2 rounded-xl text-xs font-bold transition-all border cursor-pointer shrink-0"
                     >
                       {item.label}
                     </button>
@@ -958,8 +958,8 @@ export function RealWorldRiskScenarios({ isHomePagePreview = false }: RealWorldR
               </div>
 
               {/* Asset Value Slider */}
-              <div className="space-y-4 pt-3">
-                <div className="flex justify-between items-end">
+              <div className="space-y-4 pt-3 w-full">
+                <div className="flex justify-between items-end w-full">
                   <span style={{ color: "#94A3B8" }} className="text-xs font-semibold uppercase tracking-wider font-mono">
                     VALOAREA ACTIVULUI
                   </span>
@@ -980,7 +980,7 @@ export function RealWorldRiskScenarios({ isHomePagePreview = false }: RealWorldR
                   className="w-full h-2.5 rounded-lg appearance-none cursor-pointer accent-[#C9A227]"
                 />
 
-                <div style={{ color: "#94A3B8" }} className="flex justify-between text-[11px] font-mono font-semibold">
+                <div style={{ color: "#94A3B8" }} className="flex justify-between text-[11px] font-mono font-semibold w-full">
                   <span>{formatCurrency(exposureDetails.min)}</span>
                   <span>{formatCurrency(exposureDetails.max)}</span>
                 </div>
@@ -990,7 +990,7 @@ export function RealWorldRiskScenarios({ isHomePagePreview = false }: RealWorldR
             {/* Right Financial Display */}
             <div
               style={{ backgroundColor: "#05070A", borderColor: "#1A3150" }}
-              className="lg:col-span-5 border p-6 md:p-8 rounded-xl flex flex-col justify-between space-y-6 shadow-inner"
+              className="lg:col-span-5 border p-6 md:p-8 rounded-xl flex flex-col justify-between space-y-6 shadow-inner w-full box-border"
             >
               <div>
                 <span style={{ color: "#94A3B8" }} className="text-[11px] uppercase tracking-widest font-mono block font-semibold">
@@ -1012,17 +1012,17 @@ export function RealWorldRiskScenarios({ isHomePagePreview = false }: RealWorldR
 
               <div
                 style={{ backgroundColor: "#0D1929", borderColor: "#1A3150", color: "#F5F5F2" }}
-                className="p-4 rounded-xl border text-xs space-y-2.5 font-sans"
+                className="p-4 rounded-xl border text-xs space-y-2.5 font-sans w-full"
               >
-                <div className="flex justify-between items-center">
+                <div className="flex justify-between items-center w-full">
                   <span style={{ color: "#94A3B8" }} className="font-medium">Impact Fără Poliță:</span>
                   <span style={{ color: "#FB7185" }} className="font-bold">Capital propriu</span>
                 </div>
-                <div className="flex justify-between items-center">
+                <div className="flex justify-between items-center w-full">
                   <span style={{ color: "#94A3B8" }} className="font-medium">Preluare Risc:</span>
                   <span style={{ color: "#34D399" }} className="font-bold">Poliță Generali</span>
                 </div>
-                <div style={{ borderColor: "#1A3150", color: "#94A3B8" }} className="pt-2 border-t text-[11px] font-mono font-semibold">
+                <div style={{ borderColor: "#1A3150", color: "#94A3B8" }} className="pt-2 border-t text-[11px] font-mono font-semibold w-full">
                   {exposureDetails.ratioText}
                 </div>
               </div>
@@ -1035,7 +1035,7 @@ export function RealWorldRiskScenarios({ isHomePagePreview = false }: RealWorldR
         </div>
 
         {/* LAYER 2: SCENARIO RESULTS HEADER & ACTION B (RESET FILTER) */}
-        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-8 pb-4 border-b border-[#1A3150]">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-8 pb-4 border-b border-[#1A3150] w-full">
           <div className="flex items-center gap-3">
             <span className="w-2.5 h-2.5 rounded-full bg-[#C9A227]" aria-hidden="true" />
             <div>
@@ -1060,8 +1060,8 @@ export function RealWorldRiskScenarios({ isHomePagePreview = false }: RealWorldR
           )}
         </div>
 
-        {/* PURE VISUAL ART-DIRECTION — HIGH VISIBILITY CINEMATIC PHOTOGRAPHY GRID */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10 mb-20">
+        {/* PURE VISUAL ART-DIRECTION — HIGH VISIBILITY CINEMATIC PHOTOGRAPHY GRID (80-90% PERCEPTIBLE) */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10 mb-20 w-full max-w-full box-border">
           {filteredScenarios.map((sc, index) => {
             const formattedIndex = (index + 1).toString().padStart(2, "0");
             const isFeatured = index === 0;
@@ -1080,70 +1080,70 @@ export function RealWorldRiskScenarios({ isHomePagePreview = false }: RealWorldR
                     setActiveScenario(sc);
                   }
                 }}
-                className={`group relative overflow-hidden bg-[#05070A] transition-all duration-700 cursor-pointer aspect-[16/10] md:aspect-[16/9] min-h-[440px] md:min-h-[480px] w-full flex flex-col justify-between focus:outline-none ${
+                className={`group relative overflow-hidden bg-[#05070A] transition-all duration-700 cursor-pointer aspect-[16/10] md:aspect-[16/9] min-h-[440px] md:min-h-[480px] w-full max-w-full box-border mx-auto flex flex-col justify-between focus:outline-none ${
                   isFeatured ? "md:col-span-2 lg:col-span-2 min-h-[500px]" : ""
                 }`}
               >
-                {/* HIGH VISIBILITY PHOTOGRAPHY CANVAS (85-90% PERCEPTIBLE) */}
-                <div className="absolute inset-0 z-0 overflow-hidden">
+                {/* HIGH VISIBILITY PHOTOGRAPHY CANVAS (80-90% VISUALLY PERCEPTIBLE) */}
+                <div className="absolute inset-0 z-0 overflow-hidden w-full h-full">
                   <Image
                     src={visual.image}
                     alt={visual.alt || sc.title}
                     fill
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                    className="object-cover w-full h-full opacity-85 sm:opacity-90 group-hover:scale-105 group-hover:opacity-100 transition-all duration-700 pointer-events-none"
+                    className="object-cover object-center w-full h-full opacity-95 sm:opacity-100 group-hover:scale-105 transition-all duration-700 pointer-events-none"
                   />
                   
-                  {/* Subtle Upper Header Vignette */}
-                  <div className="absolute inset-0 bg-gradient-to-b from-[#05070A]/60 via-transparent to-transparent z-10" />
+                  {/* Very Light Upper Header Vignette */}
+                  <div className="absolute inset-0 bg-gradient-to-b from-[#05070A]/35 via-transparent to-transparent z-10" />
                   {/* Localized Bottom Text-Safe Vignette */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#05070A]/95 via-[#05070A]/70 via-35% to-transparent z-10" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#05070A]/90 via-[#05070A]/45 via-30% to-transparent z-10" />
                 </div>
 
                 {/* TOP REGISTRATION MARK: MAGAZINE INSCRIPTION & DISCREET CATALOGUE REFERENCE */}
-                <div className="relative z-20 p-6 md:p-8 flex items-center justify-between">
-                  <span className="text-[10px] font-mono font-semibold uppercase tracking-[0.25em] text-[#E2E8F0] [text-shadow:0_1px_6px_rgba(0,0,0,0.9)]">
+                <div className="relative z-20 p-6 md:p-8 flex items-center justify-between w-full">
+                  <span className="text-[10px] font-mono font-semibold uppercase tracking-[0.25em] text-[#E2E8F0] [text-shadow:0_2px_10px_rgba(0,0,0,0.95)]">
                     {sc.categoryLabel}
                   </span>
-                  <span className="text-[11px] font-mono text-[#CBD5E1] font-semibold [text-shadow:0_1px_6px_rgba(0,0,0,0.9)]">
+                  <span className="text-[11px] font-mono text-[#CBD5E1] font-semibold [text-shadow:0_2px_10px_rgba(0,0,0,0.95)]">
                     {formattedIndex} / {riskScenarios.length.toString().padStart(2, "0")}
                   </span>
                 </div>
 
                 {/* NARRATIVE CORE & EDITORIAL FINANCIAL EXPOSURE (FLOATING DIRECTLY OVER CANVAS) */}
-                <div className="relative z-20 p-6 md:p-8 space-y-6">
-                  <div className="space-y-2">
-                    <span className="text-[10px] font-mono uppercase tracking-widest text-[#FDE68A] font-semibold block [text-shadow:0_1px_6px_rgba(0,0,0,0.9)]">
+                <div className="relative z-20 p-6 md:p-8 space-y-6 w-full">
+                  <div className="space-y-2 w-full">
+                    <span className="text-[10px] font-mono uppercase tracking-widest text-[#FDE68A] font-semibold block [text-shadow:0_2px_10px_rgba(0,0,0,0.95)]">
                       {sc.eyebrow || sc.categoryLabel}
                     </span>
 
-                    <h3 className={`font-medium font-heading text-[#FFFFFF] [text-shadow:0_2px_12px_rgba(0,0,0,0.95),0_1px_4px_rgba(0,0,0,0.8)] leading-snug group-hover:text-[#FDE68A] transition-colors line-clamp-2 ${
+                    <h3 className={`font-medium font-heading text-[#FFFFFF] [text-shadow:0_2px_14px_rgba(0,0,0,0.98),0_1px_4px_rgba(0,0,0,0.95)] leading-snug group-hover:text-[#FDE68A] transition-colors line-clamp-2 ${
                       isFeatured ? "text-2xl md:text-3xl" : "text-lg md:text-xl"
                     }`}>
                       {sc.title}
                     </h3>
 
-                    <p className="text-xs text-[#F1F5F9] font-normal leading-relaxed line-clamp-2 max-w-xl [text-shadow:0_1px_8px_rgba(0,0,0,0.9)]">
+                    <p className="text-xs text-[#F1F5F9] font-normal leading-relaxed line-clamp-2 max-w-xl [text-shadow:0_2px_10px_rgba(0,0,0,0.95)]">
                       {sc.situation}
                     </p>
                   </div>
 
                   {/* EDITORIAL FINANCIAL EXPOSURE & PURE EDITORIAL TEXT LINK (NO BUTTON CONTAINER) */}
-                  <div className="flex items-end justify-between gap-4 pt-2">
+                  <div className="flex items-end justify-between gap-4 pt-2 w-full">
                     <div>
-                      <span className="text-[9px] font-mono text-[#E2E8F0] uppercase tracking-wider block font-semibold mb-0.5 [text-shadow:0_1px_6px_rgba(0,0,0,0.9)]">
+                      <span className="text-[9px] font-mono text-[#E2E8F0] uppercase tracking-wider block font-semibold mb-0.5 [text-shadow:0_2px_10px_rgba(0,0,0,0.95)]">
                         EXPOSURE
                       </span>
-                      <div className="text-xl md:text-2xl font-bold font-mono text-[#FFFFFF] tracking-tight [text-shadow:0_2px_10px_rgba(0,0,0,0.95)]">
+                      <div className="text-xl md:text-2xl font-bold font-mono text-[#FFFFFF] tracking-tight [text-shadow:0_2px_12px_rgba(0,0,0,0.98)]">
                         {sc.exposure.replace("Expunere financiară ilustrativă: ", "")}
                       </div>
-                      <span className="text-[9px] font-mono text-[#FDE68A] font-semibold block uppercase tracking-wider mt-0.5 [text-shadow:0_1px_6px_rgba(0,0,0,0.9)]">
+                      <span className="text-[9px] font-mono text-[#FDE68A] font-semibold block uppercase tracking-wider mt-0.5 [text-shadow:0_2px_10px_rgba(0,0,0,0.95)]">
                         HIGH IMPACT • SINGLE-EVENT LOSS
                       </span>
                     </div>
 
                     {/* PURE EDITORIAL TEXT LINK INTERACTION */}
-                    <div className="text-xs font-mono font-bold text-[#FFFFFF] group-hover:text-[#C9A227] flex items-center gap-1.5 transition-all duration-300 pb-1 shrink-0 [text-shadow:0_1px_6px_rgba(0,0,0,0.9)]">
+                    <div className="text-xs font-mono font-bold text-[#FFFFFF] group-hover:text-[#C9A227] flex items-center gap-1.5 transition-all duration-300 pb-1 shrink-0 [text-shadow:0_2px_10px_rgba(0,0,0,0.95)]">
                       <span className="group-hover:tracking-wider transition-all">VEZI SCENARIUL</span>
                       <SvgIcon name="ArrowRight" className="w-4 h-4 group-hover:translate-x-2 transition-transform duration-300" />
                     </div>
@@ -1156,7 +1156,7 @@ export function RealWorldRiskScenarios({ isHomePagePreview = false }: RealWorldR
 
         {/* Homepage Preview Navigation Button */}
         {isHomePagePreview && (
-          <div className="text-center mb-20">
+          <div className="text-center mb-20 w-full">
             <Link
               href="/scenarii-risc"
               style={{ backgroundColor: "#F5F5F2", color: "#05070A" }}
@@ -1190,7 +1190,7 @@ export function RealWorldRiskScenarios({ isHomePagePreview = false }: RealWorldR
               {/* SIBLING 1: FIXED MODAL HEADER (OUTSIDE SCROLL CONTAINER) */}
               <div
                 style={{ backgroundColor: "#09111D", borderColor: "#1A3150" }}
-                className="flex items-center justify-between px-5 py-3.5 sm:px-6 sm:py-4 border-b shrink-0 z-10"
+                className="flex items-center justify-between px-5 py-3.5 sm:px-6 sm:py-4 border-b shrink-0 z-10 w-full"
               >
                 <div className="flex items-center gap-2.5">
                   <span className="px-3 py-1 rounded-full bg-[#0D1929] border border-[#1A3150] text-xs font-mono font-bold text-[#F5F5F2] uppercase tracking-wider flex items-center gap-2">
@@ -1214,21 +1214,21 @@ export function RealWorldRiskScenarios({ isHomePagePreview = false }: RealWorldR
               </div>
 
               {/* SIBLING 2: INDEPENDENT SCROLLABLE CONTENT BODY (THE ONLY SCROLLING ELEMENT) */}
-              <div className="flex-1 min-h-0 overflow-y-auto overflow-x-hidden overscroll-contain p-5 sm:p-8 space-y-6 text-[#F5F5F2] touch-pan-y">
-                {/* PHOTOGRAPHY HERO (CRISP & HIGHLY PERCEPTIBLE 90-95%) */}
+              <div className="flex-1 min-h-0 overflow-y-auto overflow-x-hidden overscroll-contain p-5 sm:p-8 space-y-6 text-[#F5F5F2] touch-pan-y w-full">
+                {/* PHOTOGRAPHY HERO (CRISP & HIGHLY PERCEPTIBLE 95-100%) */}
                 <div className="relative w-full h-48 sm:h-64 md:h-72 rounded-xl overflow-hidden shrink-0 border border-[#1A3150]">
                   <Image
                     src={getScenarioVisual(activeScenario.id).image}
                     alt={getScenarioVisual(activeScenario.id).alt || activeScenario.title}
                     fill
                     sizes="(max-width: 768px) 100vw, 800px"
-                    className="object-cover w-full h-full opacity-90 sm:opacity-95"
+                    className="object-cover object-center w-full h-full opacity-95 sm:opacity-100"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#09111D] via-[#09111D]/30 to-transparent z-10" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#09111D]/80 via-[#09111D]/20 to-transparent z-10" />
                 </div>
 
                 {/* HEADLINE & EYEBROW */}
-                <div className="space-y-1.5">
+                <div className="space-y-1.5 w-full">
                   <span className="text-xs font-mono font-semibold uppercase tracking-widest text-[#C9A227] block">
                     {activeScenario.eyebrow}
                   </span>
@@ -1238,9 +1238,9 @@ export function RealWorldRiskScenarios({ isHomePagePreview = false }: RealWorldR
                 </div>
 
                 {/* 5-STEP EDITORIAL RISK BREAKDOWN */}
-                <div className="space-y-4 text-xs sm:text-sm md:text-base leading-relaxed font-sans">
+                <div className="space-y-4 text-xs sm:text-sm md:text-base leading-relaxed font-sans w-full">
                   {/* 01 - Normal Life */}
-                  <div style={{ backgroundColor: "#0D1929", borderColor: "#1A3150" }} className="p-4 sm:p-6 rounded-xl border">
+                  <div style={{ backgroundColor: "#0D1929", borderColor: "#1A3150" }} className="p-4 sm:p-6 rounded-xl border w-full">
                     <div style={{ color: "#94A3B8" }} className="text-xs font-bold uppercase tracking-widest mb-1.5 font-mono">
                       01 — Contextul Inițial (Cotidianul)
                     </div>
@@ -1248,7 +1248,7 @@ export function RealWorldRiskScenarios({ isHomePagePreview = false }: RealWorldR
                   </div>
 
                   {/* 02 - Interruption */}
-                  <div style={{ backgroundColor: "rgba(245,158,11,0.15)", borderColor: "rgba(245,158,11,0.30)" }} className="p-4 sm:p-6 rounded-xl border">
+                  <div style={{ backgroundColor: "rgba(245,158,11,0.15)", borderColor: "rgba(245,158,11,0.30)" }} className="p-4 sm:p-6 rounded-xl border w-full">
                     <div style={{ color: "#FCD34D" }} className="text-xs font-bold uppercase tracking-widest mb-1.5 font-mono">
                       02 — Întreruperea Neprevăzută
                     </div>
@@ -1256,7 +1256,7 @@ export function RealWorldRiskScenarios({ isHomePagePreview = false }: RealWorldR
                   </div>
 
                   {/* 03 - Realization */}
-                  <div style={{ backgroundColor: "#0D1929", borderColor: "#1A3150" }} className="p-4 sm:p-6 rounded-xl border">
+                  <div style={{ backgroundColor: "#0D1929", borderColor: "#1A3150" }} className="p-4 sm:p-6 rounded-xl border w-full">
                     <div style={{ color: "#94A3B8" }} className="text-xs font-bold uppercase tracking-widest mb-1.5 font-mono">
                       03 — Momentul Conștientizării
                     </div>
@@ -1264,7 +1264,7 @@ export function RealWorldRiskScenarios({ isHomePagePreview = false }: RealWorldR
                   </div>
 
                   {/* 04 - Financial Exposure */}
-                  <div style={{ backgroundColor: "rgba(244,63,94,0.15)", borderColor: "rgba(244,63,94,0.30)" }} className="p-4 sm:p-6 rounded-xl border">
+                  <div style={{ backgroundColor: "rgba(244,63,94,0.15)", borderColor: "rgba(244,63,94,0.30)" }} className="p-4 sm:p-6 rounded-xl border w-full">
                     <div style={{ color: "#FDA4AF" }} className="text-xs font-bold uppercase tracking-widest mb-1.5 font-mono">
                       04 — Impactul & Expunerea Financiară
                     </div>
@@ -1272,7 +1272,7 @@ export function RealWorldRiskScenarios({ isHomePagePreview = false }: RealWorldR
                   </div>
 
                   {/* 05 - Protection Control */}
-                  <div style={{ backgroundColor: "rgba(16,185,129,0.15)", borderColor: "rgba(16,185,129,0.30)" }} className="p-4 sm:p-6 rounded-xl border">
+                  <div style={{ backgroundColor: "rgba(16,185,129,0.15)", borderColor: "rgba(16,185,129,0.30)" }} className="p-4 sm:p-6 rounded-xl border w-full">
                     <div style={{ color: "#6EE7B7" }} className="text-xs font-bold uppercase tracking-widest mb-1.5 font-mono">
                       05 — Controlul Oferit de Asigurare
                     </div>
@@ -1284,7 +1284,7 @@ export function RealWorldRiskScenarios({ isHomePagePreview = false }: RealWorldR
               {/* SIBLING 3: FIXED MODAL FOOTER (OUTSIDE SCROLL CONTAINER WITH SAFE AREA SUPPORT) */}
               <div
                 style={{ backgroundColor: "#09111D", borderColor: "#1A3150", paddingBottom: "max(14px, env(safe-area-inset-bottom))" }}
-                className="flex flex-col sm:flex-row gap-3 px-5 py-3.5 sm:px-6 sm:py-4 border-t shrink-0 z-10"
+                className="flex flex-col sm:flex-row gap-3 px-5 py-3.5 sm:px-6 sm:py-4 border-t shrink-0 z-10 w-full"
               >
                 <Link
                   href={activeScenario.ctaHref}
@@ -1311,9 +1311,9 @@ export function RealWorldRiskScenarios({ isHomePagePreview = false }: RealWorldR
         {/* Global Bottom Conversion Banner & Legal Disclaimer */}
         <div
           style={{ backgroundColor: "#09111D", borderColor: "#1A3150" }}
-          className="mt-16 p-8 md:p-14 rounded-2xl border text-center relative overflow-hidden"
+          className="mt-16 p-8 md:p-14 rounded-2xl border text-center relative overflow-hidden w-full max-w-full box-border"
         >
-          <div className="max-w-3xl mx-auto space-y-6">
+          <div className="max-w-3xl mx-auto space-y-6 w-full">
             <div
               style={{ backgroundColor: "rgba(201,162,39,0.15)", borderColor: "rgba(201,162,39,0.30)", color: "#C9A227" }}
               className="w-12 h-12 rounded-full border flex items-center justify-center mx-auto mb-2"
@@ -1327,7 +1327,7 @@ export function RealWorldRiskScenarios({ isHomePagePreview = false }: RealWorldR
               Programează o analiză discretă a portofoliului tău de riscuri. Cristian Văduva îți va identifica expunerile reale și îți va recomanda soluții optimizate Generali.
             </p>
             
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2 w-full">
               <Link
                 href="/contact"
                 style={{ backgroundColor: "#F5F5F2", color: "#05070A" }}
