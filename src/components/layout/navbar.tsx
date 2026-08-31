@@ -176,7 +176,7 @@ export function Navbar() {
           <nav className="hidden md:flex items-center gap-8">
             {/* Credits Dropdown */}
             <div className="group relative">
-              <button className="flex items-center gap-1 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors py-4">
+              <button type="button" aria-expanded="false" aria-haspopup="true" className="flex items-center gap-1 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors py-4">
                 Credite
                 <ChevronDown className="w-4 h-4 transition-transform group-hover:rotate-180" />
               </button>
@@ -255,7 +255,7 @@ export function Navbar() {
             </div>
             {/* Mega Menu Trigger */}
             <div className="group relative">
-              <button className="flex items-center gap-1 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors py-4">
+              <button type="button" aria-expanded="false" aria-haspopup="true" className="flex items-center gap-1 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors py-4">
                 Asigurări
                 <ChevronDown className="w-4 h-4 transition-transform group-hover:rotate-180" />
               </button>
@@ -294,7 +294,7 @@ export function Navbar() {
             
 
             <div className="group relative">
-              <button className="flex items-center gap-1 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors py-4">
+              <button type="button" aria-expanded="false" aria-haspopup="true" className="flex items-center gap-1 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors py-4">
                 Ecosistem AiX
                 <ChevronDown className="w-4 h-4 transition-transform group-hover:rotate-180" />
               </button>
@@ -337,6 +337,8 @@ export function Navbar() {
           <button
             type="button"
             aria-label="Toggle mobile navigation menu"
+            aria-expanded={isMobileMenuOpen}
+            aria-controls="mobile-nav-menu"
             className="md:hidden flex items-center justify-center w-12 h-12 p-2 text-foreground bg-transparent relative z-60 cursor-pointer"
             ref={buttonRef}
             onClick={(e) => { e.stopPropagation(); setIsMobileMenuOpen(prev => !prev); }}
@@ -352,6 +354,7 @@ export function Navbar() {
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
+            id="mobile-nav-menu"
             ref={menuRef}
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "100vh" }}
@@ -364,6 +367,8 @@ export function Navbar() {
               {/* Credits Mobile Accordion */}
               <div className="flex flex-col border-b border-border/50">
                 <button
+                  type="button"
+                  aria-expanded={activeMobileMegaMenu === 3}
                   className="text-2xl font-bold p-2 text-left flex justify-between items-center"
                   onClick={() => setActiveMobileMegaMenu(activeMobileMegaMenu === 3 ? null : 3)}
                 >
@@ -384,6 +389,8 @@ export function Navbar() {
               {/* Asigurări Mobile Accordion */}
               <div className="flex flex-col border-b border-border/50">
                 <button
+                  type="button"
+                  aria-expanded={activeMobileMegaMenu === 1}
                   className="text-2xl font-bold p-2 text-left flex justify-between items-center"
                   onClick={() => setActiveMobileMegaMenu(activeMobileMegaMenu === 1 ? null : 1)}
                 >
@@ -409,6 +416,8 @@ export function Navbar() {
               {/* Ecosistem AiX Mobile Accordion */}
               <div className="flex flex-col border-b border-border/50">
                 <button
+                  type="button"
+                  aria-expanded={activeMobileMegaMenu === 2}
                   className="text-2xl font-bold p-2 text-left flex justify-between items-center"
                   onClick={() => setActiveMobileMegaMenu(activeMobileMegaMenu === 2 ? null : 2)}
                 >

@@ -2,7 +2,7 @@ import { MetadataRoute } from "next";
 import { servicesData } from "@/data/services";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://cristianvaduva.com";
+  const baseUrl = "https://insurance.cristianvaduva.com";
   
   const staticRoutes = [
     { route: "", priority: 1.0, changeFrequency: "daily" as const },

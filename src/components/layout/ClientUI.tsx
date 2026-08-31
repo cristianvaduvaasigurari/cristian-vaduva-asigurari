@@ -28,11 +28,14 @@ export default function ClientUI() {
 
   useEffect(() => {
     if (typeof window !== "undefined") {
-      if ("requestIdleCallback" in window) {
-        window.requestIdleCallback(() => setMounted(true));
-      } else {
-        setTimeout(() => setMounted(true), 200);
-      }
+      const timer = setTimeout(() => {
+        if ("requestIdleCallback" in window) {
+          window.requestIdleCallback(() => setMounted(true));
+        } else {
+          setMounted(true);
+        }
+      }, 1500);
+      return () => clearTimeout(timer);
     }
   }, []);
 
@@ -47,4 +50,3 @@ export default function ClientUI() {
     </>
   );
 }
-

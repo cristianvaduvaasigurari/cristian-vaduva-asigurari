@@ -34,7 +34,9 @@ export function SmartPopup() {
                   </p>
                 </div>
                 <button
+                  type="button"
                   onClick={() => setIsOpen(false)}
+                  aria-label="Închide fereastra de contact rapid"
                   className="p-2 text-muted-foreground hover:text-foreground transition-colors rounded-full hover:bg-white/5"
                 >
                   <X className="w-5 h-5" />
@@ -73,7 +75,10 @@ export function SmartPopup() {
       </AnimatePresence>
 
       <button
+        type="button"
         onClick={() => setIsOpen(!isOpen)}
+        aria-label={isOpen ? "Închide contact rapid" : "Deschide contact rapid"}
+        aria-expanded={isOpen}
         className="h-16 w-16 bg-blue-600 hover:bg-blue-500 text-white rounded-full flex items-center justify-center shadow-2xl transition-transform hover:scale-105"
       >
         {isOpen ? <X className="w-6 h-6" /> : <Bot className="w-8 h-8" />}

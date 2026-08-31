@@ -75,22 +75,30 @@ export async function sendTelegramAlert(lead: TelegramLeadData): Promise<boolean
   const body = JSON.stringify(payload);
 
 
-  try {
-    const response = await fetch(url, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body,
-    });
-    if (response.ok) {
-      return true;
-    } else {
-      const errBody = await response.text().catch(() => "(unreadable)");
-      console.warn(`[Telegram Alert] HTTP ${response.status} error: ${errBody}`);
-      return false;
+  for (let attempt = 0; attempt <= MAX_RETRIES; attempt++) {
+    try {
+      const response = await fetchWithTimeout(
+        url,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body,
+        },
+        TIMEOUT_MS
+      );
+      if (response.ok) {
+        return true;
+      } else {
+        const errBody = await response.text().catch(() => "(unreadable)");
+        console.warn(`[Telegram Alert] HTTP ${response.status} error (attempt ${attempt + 1}): ${errBody}`);
+      }
+    } catch (err: unknown) {
+      const errorMsg = err instanceof Error ? err.message : String(err);
+      console.error(`[Telegram Alert] Network error (attempt ${attempt + 1}):`, errorMsg);
     }
-  } catch (err: unknown) {
-    const errorMsg = err instanceof Error ? err.message : String(err);
-    console.error(`[Telegram Alert] Network error:`, errorMsg);
-    return false;
+    if (attempt < MAX_RETRIES) {
+      await sleep(INITIAL_BACKOFF_MS * (attempt + 1));
+    }
   }
+  return false;
 }

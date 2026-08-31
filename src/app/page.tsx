@@ -2,23 +2,17 @@ import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { Hero } from "@/components/sections/hero";
 import { Services } from "@/components/sections/services";
+import { Ecosystem } from "@/components/sections/ecosystem";
 import dynamic from 'next/dynamic';
 import type { Metadata } from "next";
 
-// Lazy load heavy components for better performance
+// Lazy load heavy interactive components
 const RealWorldRiskScenarios = dynamic(() => import('@/components/sections/real-world-risk-scenarios').then(mod => ({ default: mod.RealWorldRiskScenarios })), {
   loading: () => <div className="h-96 animate-pulse bg-slate-950/20 rounded-lg" />,
-  ssr: true
-});
-
-const Ecosystem = dynamic(() => import('@/components/sections/ecosystem').then(mod => ({ default: mod.Ecosystem })), {
-  loading: () => <div className="h-96 animate-pulse bg-muted/20 rounded-lg" />,
-  ssr: true
 });
 
 const ContactForm = dynamic(() => import('@/components/sections/contact-form').then(mod => ({ default: mod.ContactForm })), {
   loading: () => <div className="h-96 animate-pulse bg-muted/20 rounded-lg" />,
-  ssr: true
 });
 
 export const metadata: Metadata = {
@@ -28,7 +22,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Cristian Văduva | Consultant Asigurări Premium & Real Estate de Lux",
     description: "Expertiză premium în asigurări Generali, real estate de lux și optimizare patrimoniu. Consultant asigurări București cu focus pe protecție financiară.",
-    url: "https://cristianvaduva.com",
+    url: "https://insurance.cristianvaduva.com",
   },
 };
 

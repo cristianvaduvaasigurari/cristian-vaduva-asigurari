@@ -42,7 +42,9 @@ export function CookieBanner() {
             <div className="glass p-6 rounded-2xl border border-white/10 shadow-2xl relative pointer-events-auto flex flex-col md:flex-row items-center gap-6">
               
               <button 
+                type="button"
                 onClick={() => setIsVisible(false)}
+                aria-label="Închide notificarea cookie"
                 className="absolute top-4 right-4 text-muted-foreground hover:text-white transition-colors md:hidden"
               >
                 <X className="w-5 h-5" />

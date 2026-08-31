@@ -1062,7 +1062,7 @@ export function RealWorldRiskScenarios({ isHomePagePreview = false }: RealWorldR
 
         {/* PURE VISUAL ART-DIRECTION — HIGH VISIBILITY CINEMATIC PHOTOGRAPHY GRID (80-90% PERCEPTIBLE) */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10 mb-20 w-full max-w-full box-border">
-          {filteredScenarios.map((sc, index) => {
+          {(isHomePagePreview ? filteredScenarios.slice(0, 6) : filteredScenarios).map((sc, index) => {
             const formattedIndex = (index + 1).toString().padStart(2, "0");
             const isFeatured = index === 0;
             const visual = getScenarioVisual(sc.id);
@@ -1072,7 +1072,6 @@ export function RealWorldRiskScenarios({ isHomePagePreview = false }: RealWorldR
                 key={sc.id}
                 tabIndex={0}
                 role="button"
-                aria-label={`Vezi detalii pentru scenariul: ${sc.title}`}
                 onClick={() => setActiveScenario(sc)}
                 onKeyDown={(e) => {
                   if (e.key === "Enter" || e.key === " ") {

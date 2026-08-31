@@ -87,37 +87,37 @@ export function Footer() {
             </Link>
             <p className="text-white/60 max-w-sm mb-8 leading-relaxed">{t('footer.description')}</p>
             <div className="flex items-center gap-4 text-white/60 mb-8">
-              <a href={CONTACT.social.linkedin} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors p-3 rounded-full bg-white/5 border border-white/10 hover:bg-white/10">
+              <a href={CONTACT.social.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Cristian Văduva" className="hover:text-white transition-colors p-3 rounded-full bg-white/5 border border-white/10 hover:bg-white/10">
                 <FaLinkedin size={20} />
               </a>
-              <a href={CONTACT.social.instagram} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors p-3 rounded-full bg-white/5 border border-white/10 hover:bg-white/10">
+              <a href={CONTACT.social.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram Cristian Văduva" className="hover:text-white transition-colors p-3 rounded-full bg-white/5 border border-white/10 hover:bg-white/10">
                 <FaInstagram size={20} />
               </a>
-              <a href={CONTACT.social.facebook} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors p-3 rounded-full bg-white/5 border border-white/10 hover:bg-white/10">
+              <a href={CONTACT.social.facebook} target="_blank" rel="noopener noreferrer" aria-label="Facebook Cristian Văduva" className="hover:text-white transition-colors p-3 rounded-full bg-white/5 border border-white/10 hover:bg-white/10">
                 <FaFacebook size={20} />
               </a>
-              <a href={CONTACT.social.youtube} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors p-3 rounded-full bg-white/5 border border-white/10 hover:bg-white/10">
+              <a href={CONTACT.social.youtube} target="_blank" rel="noopener noreferrer" aria-label="YouTube Cristian Văduva" className="hover:text-white transition-colors p-3 rounded-full bg-white/5 border border-white/10 hover:bg-white/10">
                 <FaYoutube size={20} />
               </a>
-              <a href={CONTACT.social.telegram} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors p-3 rounded-full bg-white/5 border border-white/10 hover:bg-white/10">
+              <a href={CONTACT.social.telegram} target="_blank" rel="noopener noreferrer" aria-label="Telegram Cristian Văduva" className="hover:text-white transition-colors p-3 rounded-full bg-white/5 border border-white/10 hover:bg-white/10">
                 <FaTelegram size={20} />
               </a>
             </div>
             <div className="space-y-3 text-sm text-white/80 font-medium bg-white/5 p-6 rounded-lg border border-white/10">
               <div className="flex items-center gap-3">
-                <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center">📞</div>
+                <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center" aria-hidden="true">📞</div>
                 <a href={CONTACT.phone.href} className="hover:text-white transition-colors">{CONTACT.phone.display}</a>
               </div>
               <div className="flex items-center gap-3">
-                <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center">💬</div>
+                <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center" aria-hidden="true">💬</div>
                 <a href={CONTACT.whatsapp.href} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">{CONTACT.whatsapp.display}</a>
               </div>
               <div className="flex items-center gap-3">
-                <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center">📲</div>
+                <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center" aria-hidden="true">📲</div>
                 <a href={CONTACT.telegram.href} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">{CONTACT.telegram.display}</a>
               </div>
               <div className="flex items-center gap-3">
-                <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center">✉️</div>
+                <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center" aria-hidden="true">✉️</div>
                 <a href={CONTACT.email.href} className="hover:text-white transition-colors">{CONTACT.email.display}</a>
               </div>
             </div>
@@ -190,12 +190,12 @@ export function Footer() {
         </div>
 
         <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-6">
-          <p className="text-white/40 text-sm text-center md:text-left font-medium">
+          <p className="text-white/70 text-sm text-center md:text-left font-medium">
             &copy; {new Date().getFullYear()} Cristian Văduva. Toate drepturile rezervate. Powered by cristianvaduva.com
           </p>
-          <div className="flex flex-wrap items-center justify-center gap-6 text-sm text-white/40 font-medium">
+          <div className="flex flex-wrap items-center justify-center gap-6 text-sm text-white/70 font-medium">
             {footerLinks.legal.map((link) => (
-              <Link key={link.key} href={link.href} className="hover:text-white transition-colors">
+              <Link key={link.key} href={link.href} prefetch={false} className="hover:text-white transition-colors">
                 {t(`footer.links.${link.key}`)}
               </Link>
             ))}

@@ -1,5 +1,4 @@
-"use client";
-
+// Server Component
 import { CTAButton } from "@/components/ui/cta-button";
 import { ArrowRight, ShieldCheck, Award, Building } from "lucide-react";
 import Link from "next/link";
@@ -8,9 +7,8 @@ export function Hero() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20" aria-labelledby="hero-heading">
       {/* Background Gradients */}
-      <div className="absolute inset-0 z-0 bg-background" aria-hidden="true">
-        <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-blue-500/20 rounded-full blur-[60px] md:blur-[120px] mix-blend-screen" />
-        <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-purple-500/20 rounded-full blur-[60px] md:blur-[120px] mix-blend-screen" />
+      <div className="absolute inset-0 z-0 bg-background pointer-events-none" aria-hidden="true">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(59,130,246,0.15),transparent_40%),radial-gradient(circle_at_80%_80%,rgba(168,85,247,0.15),transparent_40%)]" />
       </div>
 
       <div className="container mx-auto px-4 relative z-10 text-center">
@@ -30,7 +28,6 @@ export function Hero() {
               `}} />
               <a
                 href="https://cristianvaduva.com"
-                aria-label="Vizitează site-ul oficial Cristian Văduva"
                 title="Cristian Văduva"
                 className="px-4 py-1.5 rounded-full text-sm font-medium tracking-wide text-muted-foreground bg-white/40 hover:bg-white/80 hover:text-foreground border border-border/40 hover:border-border/80 hover:-translate-y-0.5 transition-all duration-300 whitespace-nowrap cursor-pointer"
               >
@@ -38,7 +35,6 @@ export function Hero() {
               </a>
               <a
                 href="https://homefind.cristianvaduva.com"
-                aria-label="Accesează platforma Home Find imobiliară"
                 title="Home Find"
                 className="px-4 py-1.5 rounded-full text-sm font-medium tracking-wide text-muted-foreground bg-white/40 hover:bg-white/80 hover:text-foreground border border-border/40 hover:border-border/80 hover:-translate-y-0.5 transition-all duration-300 whitespace-nowrap cursor-pointer"
               >
@@ -46,7 +42,6 @@ export function Hero() {
               </a>
               <a
                 href="https://insurance.cristianvaduva.com"
-                aria-label="Accesează secțiunea de asigurări premium"
                 title="Insurance"
                 className="px-4 py-1.5 rounded-full text-sm font-medium tracking-wide text-muted-foreground bg-white/40 hover:bg-white/80 hover:text-foreground border border-border/40 hover:border-border/80 hover:-translate-y-0.5 transition-all duration-300 whitespace-nowrap cursor-pointer"
               >
@@ -54,7 +49,6 @@ export function Hero() {
               </a>
               <a
                 href="https://os.cristianvaduva.com"
-                aria-label="Deschide sistemul de operare AiX OS"
                 title="AiX OS"
                 className="px-4 py-1.5 rounded-full text-sm font-medium tracking-wide text-muted-foreground bg-white/40 hover:bg-white/80 hover:text-foreground border border-border/40 hover:border-border/80 hover:-translate-y-0.5 transition-all duration-300 whitespace-nowrap cursor-pointer"
               >
@@ -62,7 +56,6 @@ export function Hero() {
               </a>
               <a
                 href="https://aixluxury.com"
-                aria-label="Vizitează AiXLuxury - imobiliare și bunuri de lux"
                 title="AiXLuxury"
                 className="px-4 py-1.5 rounded-full text-sm font-medium tracking-wide text-muted-foreground bg-white/40 hover:bg-white/80 hover:text-foreground border border-border/40 hover:border-border/80 hover:-translate-y-0.5 transition-all duration-300 whitespace-nowrap cursor-pointer"
               >
@@ -70,7 +63,6 @@ export function Hero() {
               </a>
               <a
                 href="https://cristianvaduva.com/market-pulse"
-                aria-label="Vezi analizele financiare Market Pulse"
                 title="Market Pulse"
                 className="px-4 py-1.5 rounded-full text-sm font-medium tracking-wide text-muted-foreground bg-white/40 hover:bg-white/80 hover:text-foreground border border-border/40 hover:border-border/80 hover:-translate-y-0.5 transition-all duration-300 whitespace-nowrap cursor-pointer"
               >
@@ -79,8 +71,8 @@ export function Hero() {
             </div>
           </div>
 
-          <h1 id="hero-heading" className="text-5xl md:text-7xl font-heading font-bold tracking-tight mb-8 leading-tight">
-            Excelență în <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600">Asigurări</span> și <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">Real Estate</span>
+          <h1 id="hero-heading" className="text-3xl sm:text-5xl md:text-7xl font-heading font-bold tracking-tight mb-8 leading-tight">
+            Excelență în <span className="text-blue-400 sm:text-transparent sm:bg-clip-text sm:bg-gradient-to-r from-blue-400 to-purple-600">Asigurări</span> și <span className="text-purple-400 sm:text-transparent sm:bg-clip-text sm:bg-gradient-to-r from-purple-400 to-pink-600">Real Estate</span>
           </h1>
           
           <p className="text-lg md:text-xl text-muted-foreground mb-12 max-w-2xl mx-auto font-light leading-relaxed">
@@ -104,21 +96,21 @@ export function Hero() {
             <div className="flex items-start gap-3">
               <ShieldCheck className="w-6 h-6 text-blue-500 shrink-0 mt-0.5" />
               <div>
-                <h4 className="font-semibold text-sm text-foreground">Partener Generali</h4>
+                <p className="font-semibold text-sm text-foreground">Partener Generali</p>
                 <p className="text-xs text-muted-foreground">Polițe de asigurare de top emise direct și securizat.</p>
               </div>
             </div>
             <div className="flex items-start gap-3">
               <Award className="w-6 h-6 text-purple-500 shrink-0 mt-0.5" />
               <div>
-                <h4 className="font-semibold text-sm text-foreground">10+ Ani Experiență</h4>
+                <p className="font-semibold text-sm text-foreground">10+ Ani Experiență</p>
                 <p className="text-xs text-muted-foreground">Consultanță financiară premium bazată pe rezultate dovedite.</p>
               </div>
             </div>
             <div className="flex items-start gap-3">
               <Building className="w-6 h-6 text-pink-500 shrink-0 mt-0.5" />
               <div>
-                <h4 className="font-semibold text-sm text-foreground">Real Estate Premium</h4>
+                <p className="font-semibold text-sm text-foreground">Real Estate Premium</p>
                 <p className="text-xs text-muted-foreground">Acces exclusiv la portofolii off-market prin AiX OS.</p>
               </div>
             </div>

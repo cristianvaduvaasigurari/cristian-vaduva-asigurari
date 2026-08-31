@@ -1,6 +1,3 @@
-"use client";
-
-import { motion } from "framer-motion";
 import { ArrowRight, Building, Smartphone, Globe } from "lucide-react";
 import Link from "next/link";
 import { CONTACT } from "@/config/contact";
@@ -97,34 +94,19 @@ export function Ecosystem() {
     <section id="ecosistem" className="py-24 relative overflow-hidden bg-muted/50">
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16">
-          <motion.h2 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-4xl md:text-5xl font-heading font-bold mb-6"
-          >
+          <h2 className="text-4xl md:text-5xl font-heading font-bold mb-6">
             Ecosistemul <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600">AiX</span>
-          </motion.h2>
-          <motion.p 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="text-lg text-muted-foreground max-w-2xl mx-auto"
-          >
+          </h2>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Descoperă suite-ul nostru complet de platforme și servicii interconectate.
-          </motion.p>
+          </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {ecosystems.map((eco, index) => (
-            <motion.div
+          {ecosystems.map((eco) => (
+            <div
               key={eco.title}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.15 }}
-              className="relative group rounded-[2.5rem] p-8 glass premium-card overflow-hidden border border-border/50 h-full flex flex-col"
+              className="relative group rounded-[2.5rem] p-8 glass premium-card overflow-hidden border border-border/50 h-full flex flex-col transition-all duration-300"
             >
               <div className={`absolute inset-0 bg-gradient-to-br ${eco.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-500 pointer-events-none`} />
               
@@ -149,7 +131,7 @@ export function Ecosystem() {
                   <ArrowRight className="ml-2 w-4 h-4" />
                 </Link>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>
