@@ -26,6 +26,24 @@ const nextConfig: NextConfig = {
 
   // Headers for caching and security
   async headers() {
+    const cspDirectives = [
+      "default-src 'self'",
+      "script-src 'self' 'unsafe-inline'",
+      "style-src 'self' 'unsafe-inline'",
+      "img-src 'self' data: blob: https://images.unsplash.com https://insurance.cristianvaduva.com",
+      "font-src 'self' data:",
+      "connect-src 'self' https://fcpsafjgjnecdlyqfcid.supabase.co https://*.supabase.co wss://*.supabase.co",
+      "frame-src 'self'",
+      "frame-ancestors 'self'",
+      "form-action 'self'",
+      "base-uri 'self'",
+      "object-src 'none'",
+      "manifest-src 'self'",
+      "media-src 'self'",
+      "upgrade-insecure-requests",
+    ];
+    const cspHeaderValue = cspDirectives.join("; ");
+
     return [
       {
         source: '/:all*(svg|jpg|jpeg|png|gif|webp|avif)',
@@ -41,25 +59,33 @@ const nextConfig: NextConfig = {
         source: '/:path*',
         headers: [
           {
+            key: 'Content-Security-Policy',
+            value: cspHeaderValue,
+          },
+          {
+            key: 'Strict-Transport-Security',
+            value: 'max-age=63072000; includeSubDomains; preload',
+          },
+          {
             key: 'X-DNS-Prefetch-Control',
-            value: 'on'
+            value: 'on',
           },
           {
             key: 'X-Frame-Options',
-            value: 'SAMEORIGIN'
+            value: 'SAMEORIGIN',
           },
           {
             key: 'X-Content-Type-Options',
-            value: 'nosniff'
+            value: 'nosniff',
           },
           {
             key: 'Referrer-Policy',
-            value: 'origin-when-cross-origin'
+            value: 'origin-when-cross-origin',
           },
           {
             key: 'Permissions-Policy',
-            value: 'camera=(), microphone=(), geolocation=()'
-          }
+            value: 'camera=(), microphone=(), geolocation=()',
+          },
         ],
       },
     ];
