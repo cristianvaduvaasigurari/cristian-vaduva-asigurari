@@ -11,6 +11,7 @@ export default defineConfig([
     ".next/**",
     "out/**",
     "build/**",
+    "scripts/**",
     "next-env.d.ts",
   ]),
   // Disable react/no-unescaped-entities globally as content is carefully curated.

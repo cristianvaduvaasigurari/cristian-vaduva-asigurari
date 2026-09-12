@@ -4,9 +4,11 @@ import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { RealWorldRiskScenarios } from "@/components/sections/real-world-risk-scenarios";
 
+import { riskScenarios } from "@/data/riskScenariosData";
+
 export const metadata: Metadata = {
-  title: "Scenarii Reale de Risc — Când Neprevăzutul Devine Costisitor | Cristian Văduva",
-  description: "Descoperă 37 de scenarii reale de risc din auto, locuință, sănătate, călătorii și business. Înțelege expunerea ta financiară și cum schimbă o asigurare ecuația pierderilor.",
+  title: "Scenarii Reale de Risc — Ghid Practic de Prevenție & Protecție Financiară | Cristian Văduva",
+  description: `Descoperă cele ${riskScenarios.length} de scenarii reale de risc din auto, locuință, sănătate, călătorii și business. Înțelege expunerea ta financiară și cum schimbă o asigurare ecuația pierderilor.`,
   keywords: [
     "scenarii de risc",
     "asigurari generali",
@@ -18,11 +20,30 @@ export const metadata: Metadata = {
     "raspundere manageriala dno",
     "cristian vaduva consultant"
   ],
+  alternates: {
+    canonical: "https://insurance.cristianvaduva.com/scenarii-risc",
+  },
   openGraph: {
-    title: "Scenarii Reale de Risc | Cristian Văduva Insurance",
-    description: "Explorează scenariile ilustrative de risc și calculează valoarea expusă la neprevăzut.",
-    url: "https://insurance.cristianvaduva.com/scenarii-risc"
-  }
+    title: "Scenarii Reale de Risc — Ghid Practic de Prevenție & Protecție Financiară | Cristian Văduva",
+    description: `Descoperă cele ${riskScenarios.length} de scenarii reale de risc din auto, locuință, sănătate, călătorii și business.`,
+    url: "https://insurance.cristianvaduva.com/scenarii-risc",
+    locale: "ro_RO",
+    type: "article",
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "Scenarii Reale de Risc — Cristian Văduva Asigurări",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Scenarii Reale de Risc — Ghid Practic de Prevenție & Protecție Financiară | Cristian Văduva",
+    description: `Descoperă cele ${riskScenarios.length} de scenarii reale de risc din auto, locuință, sănătate, călătorii și business.`,
+    images: ["/twitter-image"],
+  },
 };
 
 export default function RiskScenariosPage() {

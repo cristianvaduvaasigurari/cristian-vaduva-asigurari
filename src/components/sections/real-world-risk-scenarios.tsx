@@ -519,7 +519,7 @@ export interface ProtectionFilterOption {
 }
 
 export const PROTECTION_FILTERS: ProtectionFilterOption[] = [
-  { id: "all", label: "Toate Scenariile", sublabel: "37 scenarii complete", icon: "ShieldCheck", href: "/servicii", isPrimary: true, categories: [] },
+  { id: "all", label: "Toate Scenariile", sublabel: `${riskScenarios.length} scenarii complete`, icon: "ShieldCheck", href: "/servicii", isPrimary: true, categories: [] },
   { id: "auto", label: "Auto & Flotă", sublabel: "CASCO & RCA", icon: "Car", href: "/servicii/casco-insurance", isPrimary: true, categories: ["casco", "rca"], personas: ["car"] },
   { id: "home", label: "Proprietate & Casă", sublabel: "Clădiri & Imobile", icon: "Home", href: "/servicii/home-insurance", isPrimary: true, categories: ["home"], personas: ["home"] },
   { id: "life", label: "Asigurări de Viață", sublabel: "Venit & Capital", icon: "Heart", href: "/servicii/life-insurance", isPrimary: true, categories: ["life"] },
@@ -846,7 +846,8 @@ export function RealWorldRiskScenarios({ isHomePagePreview = false }: RealWorldR
                       src={visual.image}
                       alt={visual.alt}
                       fill
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      sizes="(max-width: 768px) 92vw, (max-width: 1200px) 48vw, 420px"
+                      loading="lazy"
                       className="object-cover object-center w-full h-full opacity-95 sm:opacity-100 group-hover:scale-105 transition-all duration-700 pointer-events-none"
                     />
                     {/* Very Light Upper Header Vignette */}
@@ -1040,22 +1041,22 @@ export function RealWorldRiskScenarios({ isHomePagePreview = false }: RealWorldR
             <span className="w-2.5 h-2.5 rounded-full bg-[#C9A227]" aria-hidden="true" />
             <div>
               <h3 className="text-lg md:text-xl font-bold font-heading text-[#F5F5F2] uppercase tracking-wide">
-                {activeFilter === "all" ? "37 SCENARII DE RISC" : selectedFilterOption.label}
+                {activeFilter === "all" ? `${riskScenarios.length} SCENARII DE RISC` : selectedFilterOption.label}
               </h3>
               <span className="text-xs font-mono text-[#94A3B8]">
-                {filteredScenarios.length} {filteredScenarios.length === 1 ? "SCENARIU AFISAT" : "SCENARII AFISATE"} DIN 37
+                {filteredScenarios.length} {filteredScenarios.length === 1 ? "SCENARIU AFIȘAT" : "SCENARII AFIȘATE"} DIN {riskScenarios.length}
               </span>
             </div>
           </div>
 
-          {/* ACTION B: VEZI TOATE CELE 37 DE SCENARII RESET BUTTON */}
+          {/* ACTION B: VEZI TOATE SCENARIILE RESET BUTTON */}
           {activeFilter !== "all" && (
             <button
               type="button"
               onClick={() => setActiveFilter("all")}
               className="text-xs font-mono text-[#C9A227] hover:text-[#F5F5F2] uppercase tracking-wider font-semibold transition-colors flex items-center gap-1.5 cursor-pointer"
             >
-              <span>[ VEZI TOATE CELE 37 DE SCENARII → ]</span>
+              <span>[ VEZI TOATE CELE {riskScenarios.length} DE SCENARII → ]</span>
             </button>
           )}
         </div>
@@ -1089,7 +1090,8 @@ export function RealWorldRiskScenarios({ isHomePagePreview = false }: RealWorldR
                     src={visual.image}
                     alt={visual.alt || sc.title}
                     fill
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    sizes="(max-width: 768px) 92vw, (max-width: 1200px) 48vw, 420px"
+                    loading="lazy"
                     className="object-cover object-center w-full h-full opacity-95 sm:opacity-100 group-hover:scale-105 transition-all duration-700 pointer-events-none"
                   />
                   
@@ -1161,7 +1163,7 @@ export function RealWorldRiskScenarios({ isHomePagePreview = false }: RealWorldR
               style={{ backgroundColor: "#F5F5F2", color: "#05070A" }}
               className="inline-flex items-center justify-center gap-2 h-13 px-8 text-sm md:text-base font-bold rounded-xl shadow-2xl transition-all hover:bg-[#C9A227]"
             >
-              <span>Explorează Toate cele 37 de Scenarii de Risc</span>
+              <span>Explorează Toate cele {riskScenarios.length} de Scenarii de Risc</span>
               <SvgIcon name="ArrowRight" className="w-5 h-5" />
             </Link>
           </div>

@@ -6,11 +6,9 @@ import { CONTACT } from "@/config/contact";
 const footerLinks = {
   ecosystem: [
     { key: "generali", href: CONTACT.ecosystem.generali },
-    { key: "realEstate", href: CONTACT.ecosystem.website },
     { key: "aixLuxury", href: CONTACT.ecosystem.aixluxury },
-    { key: "aixOs", href: CONTACT.ecosystem.aixos },
+    { key: "aixOs", href: CONTACT.ecosystem.os },
     { key: "homeFind", href: CONTACT.ecosystem.homefind },
-
     { key: "ecosystemAix", href: CONTACT.ecosystem.website },
   ],
   servicesPersonal: [
@@ -87,19 +85,19 @@ export function Footer() {
             </Link>
             <p className="text-white/60 max-w-sm mb-8 leading-relaxed">{t('footer.description')}</p>
             <div className="flex items-center gap-4 text-white/60 mb-8">
-              <a href={CONTACT.social.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Cristian Văduva" className="hover:text-white transition-colors p-3 rounded-full bg-white/5 border border-white/10 hover:bg-white/10">
+              <a href={CONTACT.social.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Cristian Văduva" className="hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 transition-colors p-3 rounded-full bg-white/5 border border-white/10 hover:bg-white/10">
                 <FaLinkedin size={20} />
               </a>
-              <a href={CONTACT.social.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram Cristian Văduva" className="hover:text-white transition-colors p-3 rounded-full bg-white/5 border border-white/10 hover:bg-white/10">
+              <a href={CONTACT.social.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram Cristian Văduva" className="hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 transition-colors p-3 rounded-full bg-white/5 border border-white/10 hover:bg-white/10">
                 <FaInstagram size={20} />
               </a>
-              <a href={CONTACT.social.facebook} target="_blank" rel="noopener noreferrer" aria-label="Facebook Cristian Văduva" className="hover:text-white transition-colors p-3 rounded-full bg-white/5 border border-white/10 hover:bg-white/10">
+              <a href={CONTACT.social.facebook} target="_blank" rel="noopener noreferrer" aria-label="Facebook Cristian Văduva" className="hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 transition-colors p-3 rounded-full bg-white/5 border border-white/10 hover:bg-white/10">
                 <FaFacebook size={20} />
               </a>
-              <a href={CONTACT.social.youtube} target="_blank" rel="noopener noreferrer" aria-label="YouTube Cristian Văduva" className="hover:text-white transition-colors p-3 rounded-full bg-white/5 border border-white/10 hover:bg-white/10">
+              <a href={CONTACT.social.youtube} target="_blank" rel="noopener noreferrer" aria-label="YouTube Cristian Văduva" className="hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 transition-colors p-3 rounded-full bg-white/5 border border-white/10 hover:bg-white/10">
                 <FaYoutube size={20} />
               </a>
-              <a href={CONTACT.social.telegram} target="_blank" rel="noopener noreferrer" aria-label="Telegram Cristian Văduva" className="hover:text-white transition-colors p-3 rounded-full bg-white/5 border border-white/10 hover:bg-white/10">
+              <a href={CONTACT.social.telegram} target="_blank" rel="noopener noreferrer" aria-label="Telegram Cristian Văduva" className="hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 transition-colors p-3 rounded-full bg-white/5 border border-white/10 hover:bg-white/10">
                 <FaTelegram size={20} />
               </a>
             </div>

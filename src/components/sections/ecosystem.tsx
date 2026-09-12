@@ -1,14 +1,14 @@
-import { ArrowRight, Building, Smartphone, Globe } from "lucide-react";
+import { ArrowRight, Smartphone, Globe } from "lucide-react";
 import Link from "next/link";
 import { CONTACT } from "@/config/contact";
 
 const ecosystems = [
   {
-    icon: <Building className="w-8 h-8" />,
-    title: "Real Estate",
-    description: "Consultanță de top pentru investiții, proprietăți de lux și optimizarea portofoliilor imobiliare.",
+    icon: <Globe className="w-8 h-8" />,
+    title: "Site Personal",
+    description: "Portofoliul complet de servicii, expertiză și consultanță strategică Cristian Văduva.",
     href: CONTACT.ecosystem.website,
-    gradient: "from-blue-500 to-cyan-400"
+    gradient: "from-purple-500 to-pink-600"
   },
   {
     icon: <Globe className="w-8 h-8" />,
@@ -20,22 +20,15 @@ const ecosystems = [
   {
     icon: <Globe className="w-8 h-8" />,
     title: "Generali",
-    description: "Partenerul principal pentru asigurări de viață și bunuri.",
+    description: "Partenerul principal pentru asigurări de viață, sănătate, bunuri și protecția patrimoniului.",
     href: CONTACT.ecosystem.generali,
     gradient: "from-green-500 to-teal-400"
   },
   {
-    icon: <Globe className="w-8 h-8" />,
-    title: "Site Personal",
-    description: "Portofoliul complet de servicii și informații.",
-    href: CONTACT.ecosystem.website,
-    gradient: "from-purple-500 to-pink-600"
-  },
-  {
     icon: <Smartphone className="w-8 h-8" />,
     title: "AiX OS",
-    description: "Sistemul de operare al viitorului pentru management imobiliar și portofolii.",
-    href: CONTACT.ecosystem.aixos,
+    description: "Sistemul de operare al viitorului pentru management financiar inteligent și portofolii de active.",
+    href: CONTACT.ecosystem.os,
     gradient: "from-purple-500 to-pink-500"
   },
   {
@@ -72,13 +65,6 @@ const ecosystems = [
     description: "Credite și soluții financiare pentru afaceri.",
     href: CONTACT.ecosystem.credite,
     gradient: "from-yellow-500 to-amber-400"
-  },
-  {
-    icon: <Globe className="w-8 h-8" />,
-    title: "OS",
-    description: "Platforma operațională AI pentru gestionarea activelor.",
-    href: CONTACT.ecosystem.os,
-    gradient: "from-indigo-500 to-purple-400"
   },
   {
     icon: <Globe className="w-8 h-8" />,

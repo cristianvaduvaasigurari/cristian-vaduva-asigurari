@@ -16,13 +16,23 @@ const ContactForm = dynamic(() => import('@/components/sections/contact-form').t
 });
 
 export const metadata: Metadata = {
-  title: "Cristian Văduva | Consultant Asigurări Premium & Real Estate de Lux",
-  description: "Expertiză premium în asigurări Generali, real estate de lux și optimizare patrimoniu. Consultant asigurări București cu focus pe protecție financiară și investiții inteligente.",
-  keywords: ["consultant asigurări București", "asigurări Generali", "real estate de lux", "investiții imobiliare", "protecție financiară", "AiX OS", "Home Find"],
+  title: "Cristian Văduva | Consultant Asigurări Premium & Partener Generali",
+  description: "Consultanță strategică în asigurări Generali România, protecție financiară personală și optimizarea patrimoniului de afaceri. Consultant autorizat București.",
+  keywords: ["consultant asigurări București", "asigurări Generali", "asigurare de viață", "asigurare de sănătate", "CASCO", "RCA", "protecție financiară", "AiX OS"],
+  alternates: {
+    canonical: "https://insurance.cristianvaduva.com",
+  },
   openGraph: {
-    title: "Cristian Văduva | Consultant Asigurări Premium & Real Estate de Lux",
-    description: "Expertiză premium în asigurări Generali, real estate de lux și optimizare patrimoniu. Consultant asigurări București cu focus pe protecție financiară.",
+    title: "Cristian Văduva | Consultant Asigurări Premium & Partener Generali",
+    description: "Consultanță strategică în asigurări Generali România, protecție financiară și optimizarea riscurilor de patrimoniu.",
     url: "https://insurance.cristianvaduva.com",
+    locale: "ro_RO",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Cristian Văduva | Consultant Asigurări Premium & Partener Generali",
+    description: "Consultanță strategică în asigurări Generali România, protecție financiară și optimizarea riscurilor de patrimoniu.",
   },
 };
 

@@ -32,7 +32,7 @@ export const CONTACT = {
   ecosystem: {
     aixmedia: "https://aixmedia.cristianvaduva.com",
     aixluxury: "https://aixluxury.com",
-    aixos: "https://os.aixluxury.com",
+    aixos: "https://os.cristianvaduva.com",
     homefind: "https://homefind.cristianvaduva.com",
     generali: "https://www.generali.ro",
     website: "https://cristianvaduva.com",

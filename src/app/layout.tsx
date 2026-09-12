@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { StructuredData, organizationSchema, localBusinessSchema } from "@/lib/structuredData";
+import { StructuredData, organizationSchema, localBusinessSchema, personSchema } from "@/lib/structuredData";
 import { Inter, Outfit } from "next/font/google";
 import "./globals.css";
 import { NextIntlClientProvider } from "next-intl";
@@ -8,56 +8,74 @@ import LocaleInitializer from "@/components/layout/LocaleInitializer";
 import { getLocale } from "@/lib/locale";
 import { getMessages } from "next-intl/server";
 import Telemetry from "@/components/providers/Telemetry";
+import { CONTACT } from "@/config/contact";
 
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
-  display: "optional",
+  display: "swap",
   adjustFontFallback: true,
 });
 
 const outfit = Outfit({
   variable: "--font-outfit",
   subsets: ["latin"],
-  display: "optional",
+  display: "swap",
   adjustFontFallback: true,
 });
 
+const siteTitle = "Cristian Văduva | Consultant Asigurări Premium & Partener Generali";
+const siteDescription = "Platformă premium dedicată consultanței în asigurări Generali România, protecției financiare a familiei și optimizării patrimoniului de afaceri. Consultant autorizat București.";
+
 export const metadata: Metadata = {
   title: {
-    default: "Cristian Văduva | Insurance, Real Estate & Investments",
-    template: "%s | Cristian Văduva",
+    default: siteTitle,
+    template: "%s",
   },
-  description: "Platformă premium dedicată protecției financiare, investițiilor de lux și optimizării patrimoniului. Expertiză în asigurări Generali, luxury real estate Home Find și AiX OS. Consultant asigurări București.",
-  keywords: ["asigurări", "asigurări Generali", "asigurare de viață", "asigurare de sănătate", "RCA", "CASCO", "imobiliare", "real estate", "investiții", "Cristian Văduva", "consultant asigurări București", "AiX OS", "Home Find"],
-  authors: [{ name: "Cristian Văduva", url: "https://cristianvaduva.com" }],
+  description: siteDescription,
+  keywords: [
+    "asigurări",
+    "asigurări Generali",
+    "asigurare de viață",
+    "asigurare de sănătate",
+    "RCA",
+    "CASCO",
+    "imobiliare",
+    "investiții",
+    "Cristian Văduva",
+    "consultant asigurări București",
+    "AiX OS",
+    "Home Find",
+    "protecție financiară"
+  ],
+  authors: [{ name: "Cristian Văduva", url: "https://insurance.cristianvaduva.com" }],
   creator: "Cristian Văduva",
-  publisher: "Cristian Văduva Premium Portfolio",
+  publisher: "Cristian Văduva",
   metadataBase: new URL("https://insurance.cristianvaduva.com"),
   alternates: {
     canonical: "https://insurance.cristianvaduva.com",
   },
   openGraph: {
-    title: "Cristian Văduva | Insurance, Real Estate & Investments",
-    description: "Platformă premium dedicată protecției financiare, investițiilor de lux și optimizării patrimoniului. Expertiză în asigurări Generali, luxury real estate și AiX OS.",
-    url: "https://cristianvaduva.com",
-    siteName: "Cristian Văduva",
+    title: siteTitle,
+    description: siteDescription,
+    url: "https://insurance.cristianvaduva.com",
+    siteName: "Cristian Văduva Asigurări",
     locale: "ro_RO",
     type: "website",
     images: [
       {
-        url: "https://cristianvaduva.com/og-image.png",
+        url: "/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "Cristian Văduva - Insurance, Real Estate & Investments",
+        alt: "Cristian Văduva — Asigurări Premium Generali",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Cristian Văduva | Insurance, Real Estate & Investments",
-    description: "Platformă premium dedicată protecției financiare, investițiilor de lux și optimizării patrimoniului.",
-    images: ["https://cristianvaduva.com/og-image.png"],
+    title: siteTitle,
+    description: siteDescription,
+    images: ["/twitter-image"],
     creator: "@cristianvaduva",
   },
   robots: {
@@ -71,9 +89,11 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-  verification: {
-    google: "google-site-verification-code",
-  },
+  ...(process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION ? {
+    verification: {
+      google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION,
+    }
+  } : {}),
 };
 
 export const viewport: Viewport = {
@@ -99,20 +119,22 @@ export default async function RootLayout({
           <LocaleInitializer />
           {children}
           <StructuredData data={organizationSchema({
-            name: "Cristian Văduva Premium Portfolio",
-            url: "https://cristianvaduva.com",
-            logo: "https://cristianvaduva.com/logo.png",
+            name: "Cristian Văduva Asigurări",
+            url: "https://insurance.cristianvaduva.com",
+            logo: "https://insurance.cristianvaduva.com/logo.png",
             sameAs: [
-              "https://www.facebook.com/cristianvaduva",
-              "https://www.linkedin.com/in/cristianvaduva",
-              "https://www.instagram.com/cristianvaduva",
+              CONTACT.social.linkedin,
+              CONTACT.social.facebook,
+              CONTACT.social.instagram,
+              CONTACT.social.youtube,
+              CONTACT.social.telegram,
             ],
           })} />
           <StructuredData data={localBusinessSchema({
-            name: "Cristian Văduva - Consultant Asigurări București",
-            url: "https://cristianvaduva.com",
-            telephone: "+40767110439",
-            email: "cristianvaduva@duck.com",
+            name: "Cristian Văduva - Consultant Asigurări Premium București",
+            url: "https://insurance.cristianvaduva.com",
+            telephone: CONTACT.phone.display,
+            email: CONTACT.email.display,
             address: {
               streetAddress: "Clădirea Globalworth, Et. 15",
               addressLocality: "București",
@@ -122,6 +144,21 @@ export default async function RootLayout({
             },
             geo: { latitude: "44.4268", longitude: "26.1025" },
             openingHours: "Mo-Fr 09:00-18:00",
+          })} />
+          <StructuredData data={personSchema({
+            name: "Cristian Văduva",
+            jobTitle: "Consultant Asigurări Premium & Partener Generali",
+            worksFor: {
+              name: "Generali România",
+              url: "https://www.generali.ro",
+            },
+            sameAs: [
+              CONTACT.social.linkedin,
+              CONTACT.social.facebook,
+              CONTACT.social.instagram,
+              CONTACT.social.youtube,
+              CONTACT.social.telegram,
+            ],
           })} />
           <ClientUI />
         </NextIntlClientProvider>

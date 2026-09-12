@@ -44,21 +44,26 @@ export type RiskScenario = {
   riskSeverity: "Mediu" | "Ridicat" | "Kritik";
 };
 
+export const getCategoryScenarioCount = (catId: RiskCategory | "all"): number => {
+  if (catId === "all") return riskScenarios.length;
+  return riskScenarios.filter((s) => s.category === catId).length;
+};
+
 export const RISK_CATEGORIES: { id: RiskCategory | "all"; label: string; count: number }[] = [
-  { id: "all", label: "Toate Scenariile", count: 37 },
-  { id: "casco", label: "CASCO", count: 4 },
-  { id: "rca", label: "RCA", count: 3 },
-  { id: "home", label: "Locuință", count: 3 },
-  { id: "travel", label: "Călatorii", count: 3 },
-  { id: "accident", label: "Accidente", count: 3 },
-  { id: "life", label: "Viață", count: 2 },
-  { id: "health", label: "Sănătate", count: 3 },
-  { id: "imm", label: "IMM & Business", count: 4 },
-  { id: "corporate", label: "Corporate", count: 3 },
-  { id: "cyber", label: "Cyber Risk", count: 3 },
-  { id: "dno", label: "D&O (Directori)", count: 2 },
-  { id: "cargo", label: "Cargo & Marfă", count: 2 },
-  { id: "construction", label: "Șantier & Proiecte", count: 2 },
+  { id: "all", label: "Toate Scenariile", get count() { return riskScenarios.length; } },
+  { id: "casco", label: "CASCO", get count() { return getCategoryScenarioCount("casco"); } },
+  { id: "rca", label: "RCA", get count() { return getCategoryScenarioCount("rca"); } },
+  { id: "home", label: "Locuință", get count() { return getCategoryScenarioCount("home"); } },
+  { id: "travel", label: "Călatorii", get count() { return getCategoryScenarioCount("travel"); } },
+  { id: "accident", label: "Accidente", get count() { return getCategoryScenarioCount("accident"); } },
+  { id: "life", label: "Viață", get count() { return getCategoryScenarioCount("life"); } },
+  { id: "health", label: "Sănătate", get count() { return getCategoryScenarioCount("health"); } },
+  { id: "imm", label: "IMM & Business", get count() { return getCategoryScenarioCount("imm"); } },
+  { id: "corporate", label: "Corporate", get count() { return getCategoryScenarioCount("corporate"); } },
+  { id: "cyber", label: "Cyber Risk", get count() { return getCategoryScenarioCount("cyber"); } },
+  { id: "dno", label: "D&O (Directori)", get count() { return getCategoryScenarioCount("dno"); } },
+  { id: "cargo", label: "Cargo & Marfă", get count() { return getCategoryScenarioCount("cargo"); } },
+  { id: "construction", label: "Șantier & Proiecte", get count() { return getCategoryScenarioCount("construction"); } },
 ];
 
 export const ASSET_PERSONAS: { id: AssetPersona; label: string; icon: string }[] = [
