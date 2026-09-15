@@ -19,7 +19,6 @@ import { trackConversion } from "@/lib/analytics";
 
 export function QuickOfferModal() {
   const [isOpen, setIsOpen] = useState(false);
-  const [isVisible, setIsVisible] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
   const [errorMessage, setErrorMessage] = useState("");
@@ -42,29 +41,6 @@ export function QuickOfferModal() {
   const [agreePrivacy, setAgreePrivacy] = useState(true);
 
   const modalRef = useRef<HTMLDivElement>(null);
-
-  // Monitor scroll position to display button at ~85% of total document height
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
-      if (scrollHeight <= 0) {
-        setIsVisible(true);
-        return;
-      }
-      const progress = window.scrollY / scrollHeight;
-      // Activates at ~85% of page scroll progress
-      if (progress >= 0.85) {
-        setIsVisible(true);
-      } else {
-        setIsVisible(false);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    handleScroll();
-
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   // Lock body scroll when modal is open
   useEffect(() => {
@@ -199,14 +175,8 @@ export function QuickOfferModal() {
 
   return (
     <>
-      {/* ALWAYS-ON FLOATING CTA BUTTON (Activated at ~85% page scroll) */}
-      <div
-        className={`fixed bottom-6 right-6 z-40 pb-[env(safe-area-inset-bottom)] transition-all duration-300 ${
-          isVisible
-            ? "opacity-100 translate-y-0 pointer-events-auto"
-            : "opacity-0 translate-y-4 pointer-events-none"
-        }`}
-      >
+      {/* ALWAYS-ON FLOATING CTA BUTTON (Positioned at ~16% from bottom of viewport / ~84% screen height) */}
+      <div className="fixed bottom-[16vh] right-4 sm:right-6 z-40 pb-[env(safe-area-inset-bottom)] pointer-events-auto">
         <button
           type="button"
           onClick={handleOpen}

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useSyncExternalStore } from "react";
 import dynamic from "next/dynamic";
 
 const GlobalHomeButton = dynamic(
@@ -28,21 +28,14 @@ const QuickOfferModal = dynamic(
   { ssr: false }
 );
 
-export default function ClientUI() {
-  const [mounted, setMounted] = useState(false);
+const emptySubscribe = () => () => {};
 
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      const timer = setTimeout(() => {
-        if ("requestIdleCallback" in window) {
-          window.requestIdleCallback(() => setMounted(true));
-        } else {
-          setMounted(true);
-        }
-      }, 1500);
-      return () => clearTimeout(timer);
-    }
-  }, []);
+export default function ClientUI() {
+  const mounted = useSyncExternalStore(
+    emptySubscribe,
+    () => true,
+    () => false
+  );
 
   if (!mounted) return null;
 
