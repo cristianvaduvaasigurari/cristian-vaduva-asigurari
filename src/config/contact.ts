@@ -41,5 +41,7 @@ export const CONTACT = {
     credite: "https://credite.cristianvaduva.com",
     os: "https://os.cristianvaduva.com",
     marketPulse: "https://cristianvaduva.com/market-pulse",
+    air: "https://fly.cristianvaduva.com",
+    constructions: "https://constructions.cristianvaduva.com",
   },
 } as const;

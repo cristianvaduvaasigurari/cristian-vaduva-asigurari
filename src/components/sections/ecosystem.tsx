@@ -1,4 +1,4 @@
-import { ArrowRight, Smartphone, Globe } from "lucide-react";
+import { ArrowRight, Smartphone, Globe, Plane, Building2 } from "lucide-react";
 import Link from "next/link";
 import { CONTACT } from "@/config/contact";
 
@@ -72,6 +72,20 @@ const ecosystems = [
     description: "Insight-uri de piață și analize financiare.",
     href: CONTACT.ecosystem.marketPulse,
     gradient: "from-gray-500 to-slate-400"
+  },
+  {
+    icon: <Plane className="w-8 h-8" />,
+    title: "AIR",
+    description: "Aviație privată, mobilitate aeriană și servicii executive de transport.",
+    href: CONTACT.ecosystem.air,
+    gradient: "from-sky-500 to-blue-600"
+  },
+  {
+    icon: <Building2 className="w-8 h-8" />,
+    title: "Constructions",
+    description: "Dezvoltări imobiliare, construcții premium și management de proiect.",
+    href: CONTACT.ecosystem.constructions,
+    gradient: "from-amber-600 to-orange-500"
   }
 ];
 
