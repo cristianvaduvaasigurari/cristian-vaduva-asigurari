@@ -18,23 +18,8 @@ export const POST = async (request: Request) => {
     let source = "Website Lead";
     let metadata: Record<string, unknown> | null = null;
 
-    try {
-      const formData = await request.formData();
-      name = (formData.get("name") as string || "Anonim").trim();
-      phone = (formData.get("phone") as string || "").trim();
-      email = (formData.get("email") as string || "").trim();
-      service = (formData.get("service") as string || "Website Lead").trim();
-      message = (formData.get("message") as string || "").trim();
-      source = (formData.get("source") as string || "Website Lead").trim();
-      const metadataStr = formData.get("metadata") as string;
-      if (metadataStr) {
-        try {
-          metadata = JSON.parse(metadataStr);
-        } catch {
-          metadata = { raw: metadataStr };
-        }
-      }
-    } catch {
+    const contentType = request.headers.get("content-type") || "";
+    if (contentType.includes("application/json")) {
       try {
         const json = await request.json();
         name = (json.name || "Anonim").toString().trim();
@@ -47,7 +32,27 @@ export const POST = async (request: Request) => {
           metadata = typeof json.metadata === "string" ? JSON.parse(json.metadata) : json.metadata;
         }
       } catch (e) {
-        console.error("[Insurance Lead] Body parse error:", e);
+        console.error("[Insurance Lead] JSON body parse error:", e);
+      }
+    } else {
+      try {
+        const formData = await request.formData();
+        name = (formData.get("name") as string || "Anonim").trim();
+        phone = (formData.get("phone") as string || "").trim();
+        email = (formData.get("email") as string || "").trim();
+        service = (formData.get("service") as string || "Website Lead").trim();
+        message = (formData.get("message") as string || "").trim();
+        source = (formData.get("source") as string || "Website Lead").trim();
+        const metadataStr = formData.get("metadata") as string;
+        if (metadataStr) {
+          try {
+            metadata = JSON.parse(metadataStr);
+          } catch {
+            metadata = { raw: metadataStr };
+          }
+        }
+      } catch (e) {
+        console.error("[Insurance Lead] FormData parse error:", e);
       }
     }
 
@@ -119,24 +124,44 @@ export const POST = async (request: Request) => {
     }
 
     // 2. Trigger Telegram Notification
+    let tgSuccess = false;
     const token = process.env.TELEGRAM_BOT_TOKEN || DEFAULT_TELEGRAM_BOT_TOKEN;
     const chatId = process.env.TELEGRAM_CHAT_ID || DEFAULT_TELEGRAM_CHAT_ID;
 
     if (token && chatId) {
-      const tgText = [
-        `🧠 Cristian Văduva Premium Lead`,
+      const escapeHtml = (str: string) =>
+        (str || "")
+          .replace(/&/g, "&amp;")
+          .replace(/</g, "&lt;")
+          .replace(/>/g, "&gt;");
+
+      const tgLines = [
+        `🔔 <b>CERERE OFERTĂ — INSURANCE</b>`,
         `─────────────────────`,
-        `👤 Nume: ${dbPayload.name}`,
-        `📞 Telefon: ${dbPayload.phone}`,
-        `📧 Email: ${dbPayload.email || "N/A"}`,
-        `💼 Serviciu: ${dbPayload.service_type}`,
-        `💬 Mesaj: ${formattedMessage || "—"}`,
-        `📍 URL Pagină: ${request.headers.get("referer") || "Website Lead"}`,
-        `🕒 Data/Oră: ${new Date().toISOString()}`,
-      ].join("\n");
+        `👤 <b>Nume:</b> ${escapeHtml(dbPayload.name)}`,
+        `📞 <b>Telefon:</b> ${escapeHtml(dbPayload.phone)}`,
+        `📧 <b>Email:</b> ${escapeHtml(dbPayload.email || "Nespecificat")}`,
+        `💼 <b>Asigurare:</b> ${escapeHtml(dbPayload.service_type)}`,
+      ];
+
+      if (message) {
+        tgLines.push(`\n📝 <b>Detalii / Mesaj:</b>\n${escapeHtml(message)}`);
+      }
+
+      if (metadata && Object.keys(metadata).length > 0) {
+        const metaEntries = Object.entries(metadata)
+          .map(([k, v]) => `• ${escapeHtml(k)}: ${escapeHtml(String(v))}`)
+          .join("\n");
+        tgLines.push(`\n📋 <b>Context / Detalii Specifice:</b>\n${metaEntries}`);
+      }
+
+      tgLines.push(`\n🌐 <b>Sursă:</b> ${escapeHtml(source || "insurance.cristianvaduva.com")}`);
+      tgLines.push(`🕒 <b>Data:</b> ${new Date().toISOString()}`);
+
+      const tgText = tgLines.join("\n");
 
       try {
-        await fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
+        const tgRes = await fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
@@ -145,12 +170,18 @@ export const POST = async (request: Request) => {
             parse_mode: "HTML",
           }),
         });
+        if (tgRes.ok) {
+          tgSuccess = true;
+        } else {
+          const tgErrTxt = await tgRes.text().catch(() => "");
+          console.error(`[Insurance Lead] Telegram alert failed status ${tgRes.status}:`, tgErrTxt);
+        }
       } catch (tgErr) {
         console.error("[Insurance Lead] Telegram alert error:", tgErr);
       }
     }
 
-    if (dbSuccess) {
+    if (dbSuccess || tgSuccess) {
       return NextResponse.json(
         { success: true, message: "Lead salvat cu succes." },
         { status: 200 }

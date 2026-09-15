@@ -23,6 +23,11 @@ const CookieBanner = dynamic(
   { ssr: false }
 );
 
+const QuickOfferModal = dynamic(
+  () => import("@/components/ui/quick-offer-modal").then((m) => m.QuickOfferModal),
+  { ssr: false }
+);
+
 export default function ClientUI() {
   const [mounted, setMounted] = useState(false);
 
@@ -47,6 +52,7 @@ export default function ClientUI() {
       <SmartPopup />
       <AiChatbot />
       <CookieBanner />
+      <QuickOfferModal />
     </>
   );
 }
