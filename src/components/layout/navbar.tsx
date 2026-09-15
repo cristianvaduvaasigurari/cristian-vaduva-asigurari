@@ -7,9 +7,8 @@ import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { Menu, X, ChevronDown, Shield, Car, Briefcase, Building2, Home } from "lucide-react";
 import { Button } from "@/components/ui/button";
-
-
 import { motion, AnimatePresence } from "framer-motion";
+import { TopTicker } from "@/components/layout/top-ticker";
 
 const megaMenuData = [
   {
@@ -155,22 +154,24 @@ export function Navbar() {
 
 
   return (
-    <header
-      className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-500 border-b",
-        isScrolled
-          ? "bg-white/95 backdrop-blur-xl border-border/50 shadow-sm py-3"
-          : "bg-transparent border-transparent py-5"
-      )}
-    >
-      <div className="container mx-auto px-4 md:px-6">
-        <div className="flex items-center justify-between">
-          <div className="flex flex-col items-start justify-center gap-0.5 relative z-50">
-            <Link href="/" className="font-heading font-bold text-xl tracking-tight leading-none text-foreground flex items-center hover:text-foreground transition-colors">
-              <Home className="w-5 h-5 mr-1" />
-              Insurance
-            </Link>
-          </div>
+    <header className="fixed top-0 left-0 right-0 z-50">
+      <TopTicker />
+      <div
+        className={cn(
+          "transition-all duration-300 border-b",
+          isScrolled
+            ? "bg-white/95 backdrop-blur-xl border-border/50 shadow-sm py-3"
+            : "bg-transparent border-transparent py-4"
+        )}
+      >
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="flex items-center justify-between">
+            <div className="flex flex-col items-start justify-center gap-0.5 relative z-50">
+              <Link href="/" className="font-heading font-bold text-xl tracking-tight leading-none text-foreground flex items-center hover:text-foreground transition-colors">
+                <Home className="w-5 h-5 mr-1" />
+                Insurance
+              </Link>
+            </div>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-8">
@@ -348,6 +349,7 @@ export function Navbar() {
           {/* Outside click and Escape handling */}
           
         </div>
+      </div>
       </div>
 
       {/* Mobile Navigation */}
