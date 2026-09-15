@@ -5,6 +5,8 @@ export const dynamic = "force-dynamic";
 export const runtime = "nodejs";
 
 const DEFAULT_SUPABASE_URL = "https://fcpsafjgjnecdlyqfcid.supabase.co";
+const DEFAULT_SUPABASE_ANON_KEY =
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZjcHNhZmpnam5lY2RseXFmY2lkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODI3MzAyMTksImV4cCI6MjA5ODMwNjIxOX0.n-Obp-2j284umEvkKHBiTmmTfYARKvGrx3dUDhvcGPY";
 const DEFAULT_TELEGRAM_BOT_TOKEN = "8879456913:AAEQtberMOikmLjLkq7Okrjw47znlBzhokM";
 const DEFAULT_TELEGRAM_CHAT_ID = "-1003998698561";
 
@@ -85,42 +87,39 @@ export const POST = async (request: Request) => {
       DEFAULT_SUPABASE_URL
     ).trim();
 
-    const supabaseServiceKey = (
+    const supabaseKey = (
       process.env.SUPABASE_SERVICE_ROLE_KEY ||
-      process.env.SUPABASE_KEY
+      process.env.SUPABASE_KEY ||
+      process.env.SUPABASE_ANON_KEY ||
+      process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY ||
+      DEFAULT_SUPABASE_ANON_KEY
     )?.trim();
 
-    if (!supabaseServiceKey) {
-      console.error("[Insurance Lead] Server configuration error: SUPABASE_SERVICE_ROLE_KEY environment variable is missing.");
-      return NextResponse.json(
-        { ok: false, success: false, error: "Eroare la salvarea datelor." },
-        { status: 200 }
-      );
-    }
-
-    // 1. Insert into Supabase REST API using SUPABASE_SERVICE_ROLE_KEY exclusively
+    // 1. Insert into Supabase REST API
     let dbSuccess = false;
-    try {
-      const restRes = await fetch(`${supabaseUrl}/rest/v1/leads`, {
-        method: "POST",
-        headers: {
-          "apikey": supabaseServiceKey,
-          "Authorization": `Bearer ${supabaseServiceKey}`,
-          "Content-Type": "application/json",
-          "Prefer": "return=minimal"
-        },
-        body: JSON.stringify(dbPayload),
-        cache: "no-store",
-      });
+    if (supabaseKey && supabaseUrl) {
+      try {
+        const restRes = await fetch(`${supabaseUrl}/rest/v1/leads`, {
+          method: "POST",
+          headers: {
+            "apikey": supabaseKey,
+            "Authorization": `Bearer ${supabaseKey}`,
+            "Content-Type": "application/json",
+            "Prefer": "return=minimal"
+          },
+          body: JSON.stringify(dbPayload),
+          cache: "no-store",
+        });
 
-      if (restRes.ok || restRes.status === 201 || restRes.status === 200 || restRes.status === 204) {
-        dbSuccess = true;
-      } else {
-        const errTxt = await restRes.text().catch(() => "");
-        console.error(`[Insurance Lead] DB insert failed status ${restRes.status}:`, errTxt);
+        if (restRes.ok || restRes.status === 201 || restRes.status === 200 || restRes.status === 204) {
+          dbSuccess = true;
+        } else {
+          const errTxt = await restRes.text().catch(() => "");
+          console.error(`[Insurance Lead] DB insert failed status ${restRes.status}:`, errTxt);
+        }
+      } catch (dbExc) {
+        console.error("[Insurance Lead] DB insert exception:", dbExc);
       }
-    } catch (dbExc) {
-      console.error("[Insurance Lead] DB insert exception:", dbExc);
     }
 
     // 2. Trigger Telegram Notification
