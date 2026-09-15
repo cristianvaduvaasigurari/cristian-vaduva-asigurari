@@ -320,6 +320,16 @@ export function Navbar() {
                 </div>
               </div>
             </div>
+
+            <Link
+              href="/stiri"
+              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors py-4 inline-flex items-center gap-1.5"
+            >
+              <span>Intelligence</span>
+              <span className="text-[10px] font-bold px-1.5 py-0.2 rounded bg-amber-500/10 text-amber-600 border border-amber-500/20">
+                Știri
+              </span>
+            </Link>
           </nav>
 
           <div className="hidden md:flex items-center gap-3">
@@ -455,6 +465,12 @@ export function Navbar() {
               {/* Despre Mine Link */}
               <Link href="/despre-mine" onClick={() => setIsMobileMenuOpen(false)} className="text-2xl font-bold p-2 border-b border-border/50">
                 Despre Mine
+              </Link>
+
+              {/* Insurance Intelligence Link */}
+              <Link href="/stiri" onClick={() => setIsMobileMenuOpen(false)} className="text-2xl font-bold p-2 border-b border-border/50 flex items-center justify-between text-amber-600">
+                <span>Insurance Intelligence</span>
+                <span className="text-xs font-semibold px-2 py-0.5 rounded-full bg-amber-500/10 text-amber-600 border border-amber-500/20">Știri</span>
               </Link>
 
               {/* Action Buttons */}

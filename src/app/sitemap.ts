@@ -1,11 +1,13 @@
 import { MetadataRoute } from "next";
 import { servicesData } from "@/data/services";
+import { getPublishedNewsArticles } from "@/data/insuranceNewsData";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://insurance.cristianvaduva.com";
   
   const staticRoutes = [
     { route: "", priority: 1.0, changeFrequency: "daily" as const },
+    { route: "/stiri", priority: 0.9, changeFrequency: "daily" as const },
     { route: "/scenarii-risc", priority: 0.9, changeFrequency: "weekly" as const },
     { route: "/servicii", priority: 0.9, changeFrequency: "weekly" as const },
     { route: "/contact", priority: 0.8, changeFrequency: "monthly" as const },
@@ -44,12 +46,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority,
   }));
 
-  const dynamicRoutes = Object.keys(servicesData).map(slug => ({
+  const dynamicServicesRoutes = Object.keys(servicesData).map(slug => ({
     url: `${baseUrl}/servicii/${slug}`,
     lastModified: new Date(),
     changeFrequency: "monthly" as const,
     priority: 0.7,
   }));
 
-  return [...staticRoutes, ...dynamicRoutes];
+  const dynamicNewsRoutes = getPublishedNewsArticles().map(article => ({
+    url: `${baseUrl}/stiri/${article.slug}`,
+    lastModified: new Date(article.updatedAt || article.publishedAt),
+    changeFrequency: "weekly" as const,
+    priority: 0.8,
+  }));
+
+  return [...staticRoutes, ...dynamicServicesRoutes, ...dynamicNewsRoutes];
 }

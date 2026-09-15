@@ -48,6 +48,7 @@ const footerLinks = {
     { key: "advisor", href: "/advisor" },
     { key: "coverageGap", href: "/gap-analyzer" },
     { key: "quickOffer", href: "/oferta-rapida" },
+    { key: "insuranceIntelligence", href: "/stiri" },
     { key: "aixInsights", href: "/insights" },
     { key: "premiumResources", href: "/resurse" },
     { key: "aboutMe", href: "/despre-mine" },

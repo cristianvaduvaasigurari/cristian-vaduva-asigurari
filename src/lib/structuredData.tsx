@@ -68,3 +68,56 @@ export const personSchema = (params: {
   worksFor: { "@type": "Organization", ...params.worksFor },
   sameAs: params.sameAs,
 });
+
+/** Helper for NewsArticle schema */
+export const newsArticleSchema = (params: {
+  headline: string;
+  description: string;
+  url: string;
+  image?: string;
+  datePublished: string;
+  dateModified?: string;
+  authorName: string;
+  authorUrl?: string;
+  publisherName: string;
+  publisherUrl: string;
+  publisherLogo: string;
+  sourceName?: string;
+  sourceUrl?: string;
+}) => ({
+  "@context": "https://schema.org",
+  "@type": "NewsArticle",
+  headline: params.headline,
+  description: params.description,
+  url: params.url,
+  image: params.image ? [params.image] : undefined,
+  datePublished: params.datePublished,
+  dateModified: params.dateModified || params.datePublished,
+  author: {
+    "@type": "Person",
+    name: params.authorName,
+    url: params.authorUrl || "https://insurance.cristianvaduva.com/despre-mine",
+  },
+  publisher: {
+    "@type": "Organization",
+    name: params.publisherName,
+    url: params.publisherUrl,
+    logo: {
+      "@type": "ImageObject",
+      url: params.publisherLogo,
+    },
+  },
+  mainEntityOfPage: {
+    "@type": "WebPage",
+    "@id": params.url,
+  },
+  ...(params.sourceName && params.sourceUrl
+    ? {
+        isBasedOn: {
+          "@type": "CreativeWork",
+          name: params.sourceName,
+          url: params.sourceUrl,
+        },
+      }
+    : {}),
+});

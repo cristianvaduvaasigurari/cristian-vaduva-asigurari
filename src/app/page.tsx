@@ -3,6 +3,7 @@ import { Footer } from "@/components/layout/footer";
 import { Hero } from "@/components/sections/hero";
 import { Services } from "@/components/sections/services";
 import { CustomerReviews } from "@/components/sections/customer-reviews";
+import { InsuranceIntelligencePreview } from "@/components/sections/insurance-intelligence-preview";
 import { Ecosystem } from "@/components/sections/ecosystem";
 import dynamic from 'next/dynamic';
 import type { Metadata } from "next";
@@ -45,6 +46,7 @@ export default function Home() {
         <Hero />
         <section id="servicii"><Services /></section>
         <RealWorldRiskScenarios isHomePagePreview={true} />
+        <InsuranceIntelligencePreview />
         <CustomerReviews />
         <Ecosystem />
         <ContactForm />
