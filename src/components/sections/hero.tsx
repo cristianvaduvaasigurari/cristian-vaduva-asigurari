@@ -5,12 +5,7 @@ import Link from "next/link";
 
 export function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20" aria-labelledby="hero-heading">
-      {/* Background Gradients */}
-      <div className="absolute inset-0 z-0 bg-background pointer-events-none" aria-hidden="true">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(59,130,246,0.15),transparent_40%),radial-gradient(circle_at_80%_80%,rgba(168,85,247,0.15),transparent_40%)]" />
-      </div>
-
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 bg-white" aria-labelledby="hero-heading">
       <div className="container mx-auto px-4 relative z-10 text-center">
         <div className="max-w-4xl mx-auto">
           <div className="flex justify-center mb-8 max-w-full">
