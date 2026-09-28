@@ -15,7 +15,7 @@ const inter = Inter({
   subsets: ["latin", "latin-ext"],
   display: "swap",
   adjustFontFallback: true,
-  weight: ["400", "500", "600", "700"],
+  weight: ["400", "500", "600", "700", "800", "900"],
 });
 
 const manrope = Manrope({
@@ -23,7 +23,7 @@ const manrope = Manrope({
   subsets: ["latin", "latin-ext"],
   display: "swap",
   adjustFontFallback: true,
-  weight: ["500", "600", "700"],
+  weight: ["500", "600", "700", "800"],
 });
 
 const siteTitle = "Cristian Văduva | Consultant Asigurări Premium & Partener Generali";

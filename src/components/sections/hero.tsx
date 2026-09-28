@@ -71,8 +71,8 @@ export function Hero() {
             </div>
           </div>
 
-          <h1 id="hero-heading" className="text-3xl sm:text-5xl md:text-7xl font-heading font-bold tracking-tight mb-8 leading-tight">
-            Excelență în <span className="text-blue-400 sm:text-transparent sm:bg-clip-text sm:bg-gradient-to-r from-blue-400 to-purple-600">Asigurări</span> și <span className="text-purple-400 sm:text-transparent sm:bg-clip-text sm:bg-gradient-to-r from-purple-400 to-pink-600">Real Estate</span>
+          <h1 id="hero-heading" className="text-3xl sm:text-5xl md:text-7xl font-heading font-extrabold tracking-tight mb-8 leading-tight">
+            Excelență în <span className="inline-block whitespace-nowrap text-transparent bg-clip-text bg-gradient-to-r from-[#2563eb] via-[#8b5cf6] to-[#ec4899]">Asigurări</span> și <span className="inline-block whitespace-nowrap text-transparent bg-clip-text bg-gradient-to-r from-[#2563eb] via-[#8b5cf6] to-[#ec4899]">Real Estate</span>
           </h1>
           
           <p className="text-lg md:text-xl text-muted-foreground mb-12 max-w-2xl mx-auto font-light leading-relaxed">
