@@ -2,7 +2,21 @@
   "layout": {
     "title": "Cristian Văduva | Premium Insurance Consultant & Generali Partner",
     "description": "Premium platform dedicated to Generali Romania insurance consulting, family financial protection and business asset optimization. Authorized consultant Bucharest.",
-    "keywords": ["insurance","Generali insurance","life insurance","health insurance","RCA","CASCO","real estate","investments","Cristian Văduva","insurance consultant Bucharest","AiX OS","Home Find","financial protection"]
+    "keywords": [
+      "insurance",
+      "Generali insurance",
+      "life insurance",
+      "health insurance",
+      "RCA",
+      "CASCO",
+      "real estate",
+      "investments",
+      "Cristian Văduva",
+      "insurance consultant Bucharest",
+      "AiX OS",
+      "Home Find",
+      "financial protection"
+    ]
   },
   "footer": {
     "description": "Premium platform dedicated to excellence in insurance, real estate and technological innovation. Personalized solutions for a safe and prosperous future.",
@@ -73,7 +87,9 @@
       "accessibility": "Accessibility",
       "security": "Security",
       "copyright": "Copyright",
-      "legalContact": "Legal Contact"
+      "legalContact": "Legal Contact",
+      "constructions": "CONSTRUCTIONS by AiXLuxury",
+      "fly": "FLY"
     }
   },
   "navbar": {

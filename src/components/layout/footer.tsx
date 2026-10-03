@@ -9,6 +9,8 @@ const footerLinks = {
     { key: "aixLuxury", href: CONTACT.ecosystem.aixluxury },
     { key: "aixOs", href: CONTACT.ecosystem.os },
     { key: "homeFind", href: CONTACT.ecosystem.homefind },
+    { key: "constructions", href: CONTACT.ecosystem.constructions },
+    { key: "fly", href: CONTACT.ecosystem.fly },
     { key: "ecosystemAix", href: CONTACT.ecosystem.website },
   ],
   servicesPersonal: [

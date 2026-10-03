@@ -75,14 +75,14 @@ const ecosystems = [
   },
   {
     icon: <Plane className="w-8 h-8" />,
-    title: "AIR",
+    title: "FLY",
     description: "Aviație privată, mobilitate aeriană și servicii executive de transport.",
-    href: CONTACT.ecosystem.air,
+    href: CONTACT.ecosystem.fly,
     gradient: "from-sky-500 to-blue-600"
   },
   {
     icon: <Building2 className="w-8 h-8" />,
-    title: "Constructions",
+    title: "CONSTRUCTIONS by AiXLuxury",
     description: "Dezvoltări imobiliare, construcții premium și management de proiect.",
     href: CONTACT.ecosystem.constructions,
     gradient: "from-amber-600 to-orange-500"
