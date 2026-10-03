@@ -134,13 +134,19 @@ export const POST = async (request: Request) => {
           .replace(/</g, "&lt;")
           .replace(/>/g, "&gt;");
 
+      const isPrivateClient = 
+        (service && service.toUpperCase().includes("PRIVATE CLIENT")) ||
+        (metadata && (metadata.division === "PRIVATE CLIENT" || metadata.lead_type === "PRIVATE CLIENT"));
+
       const tgLines = [
-        `🔔 <b>CERERE OFERTĂ — INSURANCE</b>`,
+        isPrivateClient 
+          ? `🏛️ <b>CERERE CONFIDENȚIALĂ — PRIVATE CLIENT</b>` 
+          : `🔔 <b>CERERE OFERTĂ — INSURANCE</b>`,
         `─────────────────────`,
         `👤 <b>Nume:</b> ${escapeHtml(dbPayload.name)}`,
         `📞 <b>Telefon:</b> ${escapeHtml(dbPayload.phone)}`,
         `📧 <b>Email:</b> ${escapeHtml(dbPayload.email || "Nespecificat")}`,
-        `💼 <b>Asigurare:</b> ${escapeHtml(dbPayload.service_type)}`,
+        `💼 <b>${isPrivateClient ? "Divizie / Serviciu" : "Asigurare"}:</b> ${escapeHtml(dbPayload.service_type)}`,
       ];
 
       if (message) {

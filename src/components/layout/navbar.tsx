@@ -114,6 +114,17 @@ const creditsMenuLinks = [
   { name: "Credit Verde", href: "/credite/credit-verde" },
 ];
 
+const privateClientMenuLinks = [
+  { name: "Supercars & Exotics", href: "/private-client/supercars", badge: "Automotive" },
+  { name: "Yachts & Superyachts", href: "/private-client/yachts", badge: "Maritime" },
+  { name: "Private Aviation", href: "/private-client/private-aviation", badge: "Aviation" },
+  { name: "Jewellery & Watches", href: "/private-client/jewellery-watches", badge: "Horology" },
+  { name: "Fine Art & Collectibles", href: "/private-client/fine-art-collectibles", badge: "Fine Art" },
+  { name: "Luxury Homes & Estates", href: "/private-client/luxury-homes", badge: "Estates" },
+  { name: "Personal Collections", href: "/private-client/collections", badge: "Collections" },
+  { name: "Private Client Liability", href: "/private-client/private-client-liability", badge: "Liability" },
+];
+
 export function Navbar() {
   const [isScrolled, setIsScrolled] = React.useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
@@ -174,7 +185,88 @@ export function Navbar() {
             </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-8">
+          <nav className="hidden md:flex items-center gap-7">
+            {/* Private Client Item */}
+            <div className="group relative">
+              <Link
+                href="/private-client"
+                className="flex items-center gap-1.5 text-xs font-bold tracking-widest text-zinc-900 hover:text-black transition-colors py-4 uppercase"
+              >
+                <span>PRIVATE CLIENT</span>
+                <ChevronDown className="w-3.5 h-3.5 transition-transform group-hover:rotate-180 text-zinc-500" />
+              </Link>
+              <div className="absolute top-full left-0 w-[640px] max-w-[calc(100vw-2.5rem)] bg-[#0c0e12] text-white border border-zinc-800 shadow-2xl rounded-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform origin-top-left translate-y-4 group-hover:translate-y-0 p-6 z-50">
+                <div className="flex items-center justify-between pb-4 mb-4 border-b border-zinc-800">
+                  <div>
+                    <div className="text-[10px] font-mono font-bold tracking-widest text-zinc-400 uppercase">PRIVATE CLIENT DIVISION</div>
+                    <div className="text-sm font-bold text-white">Insurance for Extraordinary Assets</div>
+                  </div>
+                  <Button size="sm" className="rounded-full bg-white text-zinc-950 hover:bg-zinc-200 text-xs font-semibold px-4" asChild>
+                    <Link href="/private-client">Explore Division</Link>
+                  </Button>
+                </div>
+                <div className="grid grid-cols-2 gap-2.5">
+                  {privateClientMenuLinks.map((item, i) => (
+                    <Link
+                      key={i}
+                      href={item.href}
+                      className="p-3 rounded-xl bg-zinc-900/60 hover:bg-zinc-800/80 border border-zinc-800/60 transition-colors flex items-center justify-between group/item"
+                    >
+                      <div>
+                        <div className="text-xs font-semibold text-white group-hover/item:text-zinc-100">{item.name}</div>
+                        <div className="text-[10px] text-zinc-400">{item.badge}</div>
+                      </div>
+                      <ChevronDown className="w-3.5 h-3.5 -rotate-90 text-zinc-500 group-hover/item:text-white transition-colors" />
+                    </Link>
+                  ))}
+                </div>
+                <div className="mt-4 pt-3 border-t border-zinc-800/80 flex items-center justify-between text-[11px] text-zinc-400">
+                  <span>Confidential advisory & bespoke placement</span>
+                  <Link href="/private-client/enquiry" className="text-zinc-200 hover:text-white font-medium underline">
+                    Confidential Enquiry →
+                  </Link>
+                </div>
+              </div>
+            </div>
+
+            {/* Mega Menu Trigger: Asigurări */}
+            <div className="group relative">
+              <button type="button" aria-expanded="false" aria-haspopup="true" className="flex items-center gap-1 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors py-4">
+                Asigurări
+                <ChevronDown className="w-4 h-4 transition-transform group-hover:rotate-180" />
+              </button>
+              {/* Mega Menu Dropdown */}
+              <div className="absolute top-full left-1/2 -translate-x-1/2 w-[900px] bg-white border border-border/50 shadow-2xl rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform origin-top translate-y-4 group-hover:translate-y-0 p-8">
+                <div className="grid grid-cols-4 gap-8">
+                  {megaMenuData.map((col, i) => (
+                    <div key={i} className="flex flex-col">
+                      <div className="flex flex-col items-start mb-4 pb-4 border-b border-border/50">
+                        {col.icon}
+                        <h4 className="font-bold text-foreground text-sm tracking-tight">{col.title}</h4>
+                      </div>
+                      <ul className="space-y-3">
+                        {col.items.map((item, j) => (
+                          <li key={j}>
+                            <Link href={item.href} className="text-sm text-muted-foreground hover:text-blue-600 transition-colors block">
+                              {item.name}
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  ))}
+                </div>
+                <div className="mt-8 pt-6 border-t border-border/50 flex justify-between items-center bg-muted/30 -mx-8 -mb-8 p-6 rounded-b-3xl">
+                  <div className="text-sm text-muted-foreground">
+                    <span className="font-bold text-foreground">Nu ești sigur ce să alegi?</span> Încearcă noul Recomandă-mi Asigurarea Potrivită.
+                  </div>
+                  <Button className="bg-blue-600 hover:bg-blue-700 rounded-full" asChild>
+                    <Link href="/advisor">Deschide Recomandă-mi Asigurarea Potrivită</Link>
+                  </Button>
+                </div>
+              </div>
+            </div>
+
             {/* Credits Dropdown */}
             <div className="group relative">
               <button type="button" aria-expanded="false" aria-haspopup="true" className="flex items-center gap-1 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors py-4">
@@ -254,45 +346,6 @@ export function Navbar() {
                 </div>
               </div>
             </div>
-            {/* Mega Menu Trigger */}
-            <div className="group relative">
-              <button type="button" aria-expanded="false" aria-haspopup="true" className="flex items-center gap-1 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors py-4">
-                Asigurări
-                <ChevronDown className="w-4 h-4 transition-transform group-hover:rotate-180" />
-              </button>
-              {/* Mega Menu Dropdown */}
-              <div className="absolute top-full left-1/2 -translate-x-1/2 w-[900px] bg-white border border-border/50 shadow-2xl rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform origin-top translate-y-4 group-hover:translate-y-0 p-8">
-                <div className="grid grid-cols-4 gap-8">
-                  {megaMenuData.map((col, i) => (
-                    <div key={i} className="flex flex-col">
-                      <div className="flex flex-col items-start mb-4 pb-4 border-b border-border/50">
-                        {col.icon}
-                        <h4 className="font-bold text-foreground text-sm tracking-tight">{col.title}</h4>
-                      </div>
-                      <ul className="space-y-3">
-                        {col.items.map((item, j) => (
-                          <li key={j}>
-                            <Link href={item.href} className="text-sm text-muted-foreground hover:text-blue-600 transition-colors block">
-                              {item.name}
-                            </Link>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  ))}
-                </div>
-                <div className="mt-8 pt-6 border-t border-border/50 flex justify-between items-center bg-muted/30 -mx-8 -mb-8 p-6 rounded-b-3xl">
-                  <div className="text-sm text-muted-foreground">
-                    <span className="font-bold text-foreground">Nu ești sigur ce să alegi?</span> Încearcă noul Recomandă-mi Asigurarea Potrivită.
-                  </div>
-                  <Button className="bg-blue-600 hover:bg-blue-700 rounded-full" asChild>
-                    <Link href="/advisor">Deschide Recomandă-mi Asigurarea Potrivită</Link>
-                  </Button>
-                </div>
-              </div>
-            </div>
-
-            
 
             <div className="group relative">
               <button type="button" aria-expanded="false" aria-haspopup="true" className="flex items-center gap-1 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors py-4">
@@ -356,7 +409,6 @@ export function Navbar() {
           >
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
-          {/* Outside click and Escape handling */}
           
         </div>
       </div>
@@ -376,6 +428,38 @@ export function Navbar() {
             onClick={(e) => e.stopPropagation()}
           >
             <div className="flex flex-col gap-4">
+              {/* Private Client Mobile Accordion */}
+              <div className="flex flex-col border-b border-border/50">
+                <button
+                  type="button"
+                  aria-expanded={activeMobileMegaMenu === 4}
+                  className="text-2xl font-bold p-2 text-left flex justify-between items-center text-zinc-900"
+                  onClick={() => setActiveMobileMegaMenu(activeMobileMegaMenu === 4 ? null : 4)}
+                >
+                  <span className="flex items-center gap-2">
+                    Private Client
+                    <span className="text-[10px] font-mono uppercase px-2 py-0.5 rounded bg-zinc-900 text-white font-semibold">Division</span>
+                  </span>
+                  <ChevronDown className={cn("w-6 h-6 transition-transform", activeMobileMegaMenu === 4 ? "rotate-180" : "")} />
+                </button>
+                {activeMobileMegaMenu === 4 && (
+                  <div className="pl-4 pb-4 flex flex-col gap-2 bg-[#0c0e12] text-white p-4 rounded-2xl my-2">
+                    <Link href="/private-client" onClick={() => setIsMobileMenuOpen(false)} className="text-sm font-bold text-zinc-200 py-1.5 border-b border-zinc-800 flex justify-between items-center">
+                      <span>Division Overview</span>
+                      <span>→</span>
+                    </Link>
+                    {privateClientMenuLinks.map((item, i) => (
+                      <Link key={i} href={item.href} onClick={() => setIsMobileMenuOpen(false)} className="text-sm text-zinc-300 py-1 pl-2 hover:text-white flex justify-between items-center">
+                        <span>{item.name}</span>
+                        <span className="text-[10px] text-zinc-500">{item.badge}</span>
+                      </Link>
+                    ))}
+                    <Link href="/private-client/enquiry" onClick={() => setIsMobileMenuOpen(false)} className="mt-2 text-xs font-bold text-center py-2.5 rounded-xl bg-white text-zinc-950">
+                      Start Confidential Enquiry
+                    </Link>
+                  </div>
+                )}
+              </div>
               {/* Credits Mobile Accordion */}
               <div className="flex flex-col border-b border-border/50">
                 <button

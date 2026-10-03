@@ -48,9 +48,9 @@ export const metadata: Metadata = {
 
 export default function RiskScenariosPage() {
   return (
-    <div className="bg-[#07090E] text-white min-h-screen flex flex-col">
+    <div className="min-h-screen bg-background text-foreground flex flex-col">
       <Navbar />
-      <main className="flex-1 pt-16 bg-[#07090E]">
+      <main className="flex-1 pt-24 md:pt-32">
         <RealWorldRiskScenarios />
       </main>
       <Footer />

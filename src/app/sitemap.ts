@@ -7,6 +7,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
   
   const staticRoutes = [
     { route: "", priority: 1.0, changeFrequency: "daily" as const },
+    { route: "/private-client", priority: 0.95, changeFrequency: "weekly" as const },
+    { route: "/private-client/supercars", priority: 0.9, changeFrequency: "monthly" as const },
+    { route: "/private-client/yachts", priority: 0.9, changeFrequency: "monthly" as const },
+    { route: "/private-client/private-aviation", priority: 0.9, changeFrequency: "monthly" as const },
+    { route: "/private-client/jewellery-watches", priority: 0.9, changeFrequency: "monthly" as const },
+    { route: "/private-client/fine-art-collectibles", priority: 0.9, changeFrequency: "monthly" as const },
+    { route: "/private-client/luxury-homes", priority: 0.9, changeFrequency: "monthly" as const },
+    { route: "/private-client/collections", priority: 0.9, changeFrequency: "monthly" as const },
+    { route: "/private-client/private-client-liability", priority: 0.9, changeFrequency: "monthly" as const },
+    { route: "/private-client/enquiry", priority: 0.85, changeFrequency: "monthly" as const },
     { route: "/stiri", priority: 0.9, changeFrequency: "daily" as const },
     { route: "/scenarii-risc", priority: 0.9, changeFrequency: "weekly" as const },
     { route: "/servicii", priority: 0.9, changeFrequency: "weekly" as const },

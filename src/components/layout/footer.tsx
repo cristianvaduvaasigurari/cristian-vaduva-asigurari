@@ -43,6 +43,17 @@ const footerLinks = {
     { key: "luxuryAssets", href: "/luxury-assets" },
     { key: "emergencyCenter", href: "/urgente" },
   ],
+  privateClient: [
+    { key: "pcOverview", href: "/private-client" },
+    { key: "pcSupercars", href: "/private-client/supercars" },
+    { key: "pcYachts", href: "/private-client/yachts" },
+    { key: "pcAviation", href: "/private-client/private-aviation" },
+    { key: "pcJewellery", href: "/private-client/jewellery-watches" },
+    { key: "pcArt", href: "/private-client/fine-art-collectibles" },
+    { key: "pcEstates", href: "/private-client/luxury-homes" },
+    { key: "pcCollections", href: "/private-client/collections" },
+    { key: "pcLiability", href: "/private-client/private-client-liability" },
+  ],
   company: [
     { key: "aixAcademy", href: "/academy" },
     { key: "advisor", href: "/advisor" },
@@ -167,6 +178,22 @@ export function Footer() {
               {footerLinks.tools.map((link) => (
                 <li key={link.key}>
                   <Link href={link.href} className="text-white/50 hover:text-white transition-colors text-sm font-medium">
+                    {t(`footer.links.${link.key}`)}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="font-bold text-lg mb-6 text-white tracking-wide flex items-center gap-2">
+              <span>Private Client</span>
+              <span className="text-[10px] uppercase font-mono px-1.5 py-0.5 rounded bg-white/10 text-zinc-300">Tier</span>
+            </h3>
+            <ul className="space-y-3">
+              {footerLinks.privateClient.map((link) => (
+                <li key={link.key}>
+                  <Link href={link.href} className="text-white/60 hover:text-white transition-colors text-sm font-medium">
                     {t(`footer.links.${link.key}`)}
                   </Link>
                 </li>

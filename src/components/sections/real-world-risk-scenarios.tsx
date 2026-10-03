@@ -767,63 +767,58 @@ export function RealWorldRiskScenarios({ isHomePagePreview = false }: RealWorldR
   return (
     <section
       id="scenarii-risc"
-      style={{ backgroundColor: "#05070A", color: "#F5F5F2" }}
-      className="py-24 md:py-36 relative overflow-hidden font-sans border-t border-[#1A3150] w-full max-w-full box-border"
+      className="py-20 md:py-28 relative overflow-hidden bg-background text-foreground border-t border-border/50"
       aria-label="Scenarii Reale de Risc"
     >
-      <div className="container mx-auto px-4 sm:px-6 md:px-8 relative z-10 max-w-7xl w-full box-border">
-        {/* Luxury Editorial Header */}
-        <div className="max-w-4xl mx-auto text-center mb-16 md:mb-24 space-y-6">
-          <div
-            style={{ backgroundColor: "#09111D", color: "#94A3B8", borderColor: "#1A3150" }}
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border font-mono text-xs uppercase tracking-[0.25em]"
-          >
-            <span className="w-1.5 h-1.5 rounded-full bg-[#C9A227] animate-pulse" aria-hidden="true" />
-            RISK INTELLIGENCE • PRIVATE WEALTH
+      <div className="container mx-auto px-4 sm:px-6 md:px-8 relative z-10 max-w-7xl">
+        {/* Section Header */}
+        <div className="max-w-3xl mx-auto text-center mb-16 md:mb-20 space-y-4">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 text-blue-700 border border-blue-100 text-xs font-semibold tracking-wider uppercase mb-2 shadow-2xs">
+            <span className="w-2 h-2 rounded-full bg-blue-600" aria-hidden="true" />
+            Risk Intelligence & Prevenție
           </div>
 
-          <h2 style={{ color: "#F5F5F2" }} className="text-4xl md:text-6xl lg:text-7xl font-heading font-bold tracking-tight leading-[1.08]">
-            Când neprevăzutul <br className="hidden sm:inline" />
-            <span style={{ color: "#94A3B8" }} className="font-light">devine costisitor.</span>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-heading font-bold tracking-tight text-foreground leading-tight">
+            Când neprevăzutul devine costisitor.
           </h2>
 
-          <p style={{ color: "#CBD5E1" }} className="text-base md:text-xl max-w-2xl mx-auto font-light leading-relaxed pt-2">
+          <p className="text-base sm:text-lg text-muted-foreground leading-relaxed">
             Asigurarea nu este o cheltuială. Este decizia din timp privind{" "}
-            <strong style={{ color: "#F5F5F2" }} className="font-semibold underline underline-offset-4 decoration-[#C9A227]">
+            <span className="font-semibold text-foreground">
               cine preia impactul financiar
-            </strong>.
+            </span>.
           </p>
         </div>
 
-        {/* LAYER 1: LUXURY EDITORIAL PROTECTION PORTFOLIO SELECTOR */}
-        <div className="mb-16 max-w-7xl mx-auto w-full box-border">
-          {/* SECTION HEADER */}
-          <div className="flex flex-col md:flex-row items-start md:items-end justify-between gap-6 mb-12 pb-6 border-b border-[#1A3150] w-full">
-            <div className="space-y-2">
-              <span className="text-[11px] font-mono uppercase tracking-[0.25em] text-[#94A3B8] font-semibold block">
-                PROTECTION PORTFOLIO
+        {/* LAYER 1: PROTECTION PORTFOLIO SELECTOR */}
+        <div className="mb-16 max-w-7xl mx-auto">
+          {/* Section Header */}
+          <div className="flex flex-col md:flex-row items-start md:items-end justify-between gap-4 mb-8 pb-4 border-b border-border/60">
+            <div>
+              <span className="text-xs font-semibold uppercase tracking-wider text-muted-foreground block mb-1">
+                Portofoliu de Protecție
               </span>
-              <h3 className="text-2xl md:text-4xl font-bold font-heading text-[#F5F5F0] tracking-tight">
-                CE MERITĂ PROTEJAT?
+              <h3 className="text-xl sm:text-2xl font-bold font-heading text-foreground tracking-tight">
+                Ce merită protejat?
               </h3>
-              <p className="text-sm text-[#94A3B8] font-light">
-                Selectează ceea ce ai cel mai mult de pierdut.
+              <p className="text-xs sm:text-sm text-muted-foreground">
+                Selectează categoria de active pe care dorești să o analizezi.
               </p>
             </div>
 
-            {/* EXPLICIT EDITORIAL NAVIGATION CONTROL */}
+            {/* Expansion control */}
             <button
               type="button"
               onClick={() => setIsCategoriesExpanded(!isCategoriesExpanded)}
-              className="text-xs font-mono font-semibold text-[#F5F5F0] hover:text-[#C9A227] bg-[#09111D] hover:bg-[#0D1929] border border-[#1A3150] hover:border-[#C9A227]/50 rounded-xl px-5 py-3.5 transition-all flex items-center gap-3 cursor-pointer shadow-xl shrink-0"
+              className="text-xs font-semibold text-slate-800 bg-white hover:bg-slate-50 border border-slate-200 rounded-full px-4 py-2.5 transition-all flex items-center gap-2 cursor-pointer shadow-2xs shrink-0"
             >
-              <span className="tracking-wider">{isCategoriesExpanded ? "ÎNCHIDE CATEGORIILE" : "VEZI TOATE CATEGORIILE · 18 ZONE"}</span>
-              <SvgIcon name={isCategoriesExpanded ? "ChevronDown" : "ArrowRight"} className="w-4 h-4 text-[#C9A227]" />
+              <span>{isCategoriesExpanded ? "Restrânge categoriile" : `Vezi toate categoriile (${PROTECTION_FILTERS.length})`}</span>
+              <SvgIcon name={isCategoriesExpanded ? "ChevronDown" : "ArrowRight"} className="w-3.5 h-3.5 text-blue-600" />
             </button>
           </div>
 
-          {/* PORTFOLIO GRID WITH REAL NEXT.JS LINK NAVIGATION */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 w-full max-w-full box-border">
+          {/* Portfolio Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {visibleFilterOptions.map((filter, fIdx) => {
               const isAnchor = filter.id === "all";
               const count = getFilterCount(filter);
@@ -834,65 +829,60 @@ export function RealWorldRiskScenarios({ isHomePagePreview = false }: RealWorldR
                 <Link
                   key={filter.id}
                   href={filter.href}
-                  className={`group relative overflow-hidden text-left transition-all duration-700 cursor-pointer focus:outline-none flex flex-col justify-between p-6 md:p-8 bg-[#05070A] w-full max-w-full box-border mx-auto rounded-2xl border border-[#1A3150] sm:border-transparent ${
+                  className={`group relative overflow-hidden text-left transition-all duration-300 cursor-pointer flex flex-col justify-between p-6 md:p-8 bg-slate-900 rounded-2xl border border-border/80 shadow-xs hover:shadow-xl hover:-translate-y-1 ${
                     isAnchor
-                      ? "md:col-span-2 lg:col-span-2 md:aspect-[21/9] min-h-[220px] sm:min-h-[260px] md:min-h-[340px]"
-                      : "md:aspect-[16/10] min-h-[200px] sm:min-h-[220px] md:min-h-[260px]"
+                      ? "md:col-span-2 lg:col-span-2 min-h-[220px] sm:min-h-[260px] md:min-h-[300px]"
+                      : "min-h-[200px] sm:min-h-[220px] md:min-h-[260px]"
                   }`}
                 >
-                  {/* HIGH VISIBILITY PHOTOGRAPHY CANVAS (80-90% VISUALLY PERCEPTIBLE) */}
-                  <div className="absolute inset-0 z-0 overflow-hidden w-full h-full">
+                  {/* Photography Canvas */}
+                  <div className="absolute inset-0 z-0 overflow-hidden">
                     <Image
                       src={visual.image}
                       alt={visual.alt}
                       fill
                       sizes="(max-width: 768px) 92vw, (max-width: 1200px) 48vw, 420px"
                       loading="lazy"
-                      className="object-cover object-center w-full h-full opacity-95 sm:opacity-100 group-hover:scale-105 transition-all duration-700 pointer-events-none"
+                      className="object-cover object-center w-full h-full opacity-90 group-hover:scale-105 transition-transform duration-500 pointer-events-none"
                     />
-                    {/* Very Light Upper Header Vignette */}
-                    <div className="absolute inset-0 bg-gradient-to-b from-[#05070A]/35 via-transparent to-transparent z-10" />
-                    {/* Localized Bottom Text-Safe Vignette */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#05070A]/90 via-[#05070A]/45 via-30% to-transparent z-10" />
+                    <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-transparent z-10" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent z-10" />
                   </div>
 
-                  {/* TOP INDEX & SUBTITLE REGISTRATION */}
+                  {/* Top Metadata */}
                   <div className="relative z-20 flex items-center justify-between w-full">
-                    <span className="text-[11px] font-sans font-medium uppercase tracking-[0.08em] text-[#E2E8F0] [text-shadow:0_2px_10px_rgba(0,0,0,0.95)]">
+                    <span className="text-xs font-semibold uppercase tracking-wider text-slate-200">
                       {filter.sublabel || "PATRIMONIU"}
                     </span>
-                    <span className="text-xs font-sans text-[#CBD5E1] font-medium tracking-[0.08em] [text-shadow:0_2px_10px_rgba(0,0,0,0.95)]">
+                    <span className="text-xs text-slate-300 font-medium">
                       {formattedIndex} / {PROTECTION_FILTERS.length.toString().padStart(2, "0")}
                     </span>
                   </div>
 
-                  {/* MAIN CATEGORY TITLE & SCENARIO COUNT */}
-                  <div className="relative z-20 space-y-2 my-auto pt-6 pb-4 w-full">
-                    <h4 className={`font-semibold font-heading text-[#FFFFFF] [text-shadow:0_2px_14px_rgba(0,0,0,0.98),0_1px_4px_rgba(0,0,0,0.95)] leading-snug tracking-tight group-hover:text-[#FDE68A] transition-colors ${
-                      isAnchor ? "text-2xl md:text-3xl lg:text-4xl" : "text-xl md:text-2xl"
+                  {/* Title & Count */}
+                  <div className="relative z-20 space-y-1.5 my-auto pt-4 pb-2">
+                    <h4 className={`font-bold font-heading text-white leading-snug tracking-tight group-hover:text-blue-200 transition-colors ${
+                      isAnchor ? "text-2xl md:text-3xl" : "text-xl md:text-2xl"
                     }`}>
                       {filter.label}
                     </h4>
 
                     {isAnchor && (
-                      <p className="text-xs md:text-sm text-[#F1F5F9] font-normal leading-relaxed max-w-md line-clamp-2 [text-shadow:0_2px_10px_rgba(0,0,0,0.95)]">
+                      <p className="text-xs md:text-sm text-slate-200 font-normal leading-relaxed max-w-md line-clamp-2">
                         Portofoliul complet de modele reale de risc și analiză financiară pentru patrimoniu personal și comercial.
                       </p>
                     )}
                   </div>
 
-                  {/* BOTTOM INTERACTION & METADATA ROW */}
-                  <div className="relative z-20 pt-4 border-t border-white/20 flex items-center justify-between w-full">
-                    <span className="text-xs font-sans text-[#E2E8F0] font-medium tracking-[0.04em] [text-shadow:0_2px_10px_rgba(0,0,0,0.95)]">
-                      {count.toString().padStart(2, "0")} {count === 1 ? "SCENARIU" : "SCENARII"}
+                  {/* Bottom Interaction */}
+                  <div className="relative z-20 pt-4 border-t border-white/20 flex items-center justify-between">
+                    <span className="text-xs text-slate-300 font-medium">
+                      {count} {count === 1 ? "scenariu" : "scenarii"}
                     </span>
 
-                    {/* PURE EDITORIAL TEXT LINK INTERACTION */}
-                    <div className="text-xs font-sans font-semibold flex items-center gap-1.5 transition-all duration-300 text-[#FFFFFF] group-hover:text-[#C9A227] tracking-[0.04em] [text-shadow:0_2px_10px_rgba(0,0,0,0.95)]">
-                      <span className="group-hover:tracking-wider transition-all">
-                        EXPLOREAZĂ
-                      </span>
-                      <SvgIcon name="ArrowRight" className="w-4 h-4 group-hover:translate-x-1.5 transition-transform duration-300" />
+                    <div className="text-xs font-semibold text-white group-hover:text-blue-200 flex items-center gap-1.5 transition-colors">
+                      <span>Explorează</span>
+                      <SvgIcon name="ArrowRight" className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                     </div>
                   </div>
                 </Link>
@@ -902,28 +892,25 @@ export function RealWorldRiskScenarios({ isHomePagePreview = false }: RealWorldR
         </div>
 
         {/* Financial Calculator */}
-        <div
-          style={{ backgroundColor: "#09111D", borderColor: "#1A3150" }}
-          className="mb-20 md:mb-28 p-6 sm:p-8 md:p-12 rounded-2xl border shadow-2xl relative overflow-hidden w-full max-w-full box-border"
-        >
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center w-full">
+        <div className="mb-16 md:mb-24 p-6 sm:p-8 md:p-10 rounded-3xl bg-slate-50 border border-slate-200/80 shadow-xs relative">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
             {/* Left Control Panel */}
-            <div className="lg:col-span-7 space-y-6 w-full">
+            <div className="lg:col-span-7 space-y-6">
               <div>
-                <span style={{ color: "#94A3B8" }} className="text-xs uppercase tracking-[0.08em] font-sans block mb-1 font-semibold">
-                  CALCULEAZĂ EXPUNEREA FINANCIARĂ
+                <span className="text-xs font-semibold uppercase tracking-wider text-muted-foreground block mb-1">
+                  Calculează Expunerea Financiară
                 </span>
-                <h3 style={{ color: "#F5F5F2" }} className="text-2xl md:text-4xl font-bold font-heading tracking-tight leading-tight">
+                <h3 className="text-2xl md:text-3xl font-bold font-heading text-foreground tracking-tight leading-tight">
                   Ce se întâmplă dacă un singur incident lovește acest activ?
                 </h3>
               </div>
 
-              <p style={{ color: "#CBD5E1" }} className="text-xs md:text-sm leading-relaxed font-normal">
+              <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
                 Selectează categoria de patrimoniu și simulează valoarea protejată. Evaluează scara financiară a unei daune majore dintr-un singur eveniment.
               </p>
 
               {/* Asset Class Selector */}
-              <div className="flex flex-wrap gap-2 pt-2 w-full">
+              <div className="flex flex-wrap gap-2 pt-1">
                 {[
                   { id: "auto", label: "Vehicul Auto" },
                   { id: "home", label: "Locuință & Bunuri" },
@@ -945,12 +932,11 @@ export function RealWorldRiskScenarios({ isHomePagePreview = false }: RealWorldR
                         if (type === "business") setAssetValueEUR(450000);
                         if (type === "project") setAssetValueEUR(750000);
                       }}
-                      style={{
-                        backgroundColor: isActive ? "#F5F5F2" : "#0D1929",
-                        color: isActive ? "#05070A" : "#94A3B8",
-                        borderColor: isActive ? "#F5F5F2" : "#1A3150"
-                      }}
-                      className="px-3.5 py-2 rounded-xl text-xs font-semibold transition-all border cursor-pointer shrink-0"
+                      className={`px-3.5 py-2 rounded-full text-xs font-semibold transition-all border cursor-pointer ${
+                        isActive
+                          ? "bg-slate-900 text-white border-slate-900 shadow-xs"
+                          : "bg-white text-slate-700 border-slate-200 hover:bg-slate-100"
+                      }`}
                     >
                       {item.label}
                     </button>
@@ -959,12 +945,12 @@ export function RealWorldRiskScenarios({ isHomePagePreview = false }: RealWorldR
               </div>
 
               {/* Asset Value Slider */}
-              <div className="space-y-4 pt-3 w-full">
-                <div className="flex justify-between items-end w-full">
-                  <span style={{ color: "#94A3B8" }} className="text-xs font-semibold uppercase tracking-[0.08em] font-sans">
-                    VALOAREA ACTIVULUI
+              <div className="space-y-4 pt-2">
+                <div className="flex justify-between items-end">
+                  <span className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+                    Valoarea Activului
                   </span>
-                  <div style={{ color: "#F5F5F2" }} className="text-2xl md:text-4xl font-bold font-heading tracking-tight">
+                  <div className="text-2xl md:text-3xl font-bold font-heading text-foreground tracking-tight">
                     {formatCurrency(assetValueEUR)}
                   </div>
                 </div>
@@ -977,11 +963,10 @@ export function RealWorldRiskScenarios({ isHomePagePreview = false }: RealWorldR
                   step={exposureDetails.step}
                   value={assetValueEUR}
                   onChange={(e) => setAssetValueEUR(Number(e.target.value))}
-                  style={{ backgroundColor: "#0D1929" }}
-                  className="w-full h-2.5 rounded-lg appearance-none cursor-pointer accent-[#C9A227]"
+                  className="w-full h-2 rounded-lg bg-slate-200 appearance-none cursor-pointer accent-blue-600"
                 />
 
-                <div style={{ color: "#94A3B8" }} className="flex justify-between text-xs font-sans font-medium w-full">
+                <div className="flex justify-between text-xs text-muted-foreground font-medium">
                   <span>{formatCurrency(exposureDetails.min)}</span>
                   <span>{formatCurrency(exposureDetails.max)}</span>
                 </div>
@@ -989,80 +974,70 @@ export function RealWorldRiskScenarios({ isHomePagePreview = false }: RealWorldR
             </div>
 
             {/* Right Financial Display */}
-            <div
-              style={{ backgroundColor: "#05070A", borderColor: "#1A3150" }}
-              className="lg:col-span-5 border p-6 md:p-8 rounded-xl flex flex-col justify-between space-y-6 shadow-inner w-full box-border"
-            >
+            <div className="lg:col-span-5 bg-white border border-slate-200/80 p-6 md:p-8 rounded-2xl flex flex-col justify-between space-y-6 shadow-sm">
               <div>
-                <span style={{ color: "#94A3B8" }} className="text-xs uppercase tracking-[0.08em] font-sans block font-semibold">
-                  UN SINGUR INCIDENT • EXPUNERE ESTIMATĂ
+                <span className="text-xs uppercase tracking-wider text-muted-foreground block font-semibold">
+                  Un Singur Incident • Expunere Estimată
                 </span>
-                <div style={{ color: "#FB7185" }} className="text-3xl md:text-5xl font-bold font-heading tracking-tight mt-3">
+                <div className="text-3xl md:text-4xl font-bold font-heading text-red-600 tracking-tight mt-2">
                   ~{formatCurrency(estimatedLossAmount)}
                 </div>
-                <div
-                  style={{ backgroundColor: "rgba(244,63,94,0.15)", borderColor: "rgba(244,63,94,0.30)", color: "#FDA4AF" }}
-                  className="inline-block mt-2 px-2.5 py-1 rounded border text-xs font-sans font-medium"
-                >
+                <div className="inline-block mt-2 px-3 py-1 rounded-full bg-red-50 border border-red-200 text-red-700 text-xs font-medium">
                   ≈ {lossPercentage}% din valoarea totală a activului
                 </div>
-                <p style={{ color: "#94A3B8" }} className="text-xs md:text-sm mt-3 font-normal leading-relaxed">
+                <p className="text-xs sm:text-sm text-muted-foreground mt-3 leading-relaxed">
                   {exposureDetails.impactLabel}
                 </p>
               </div>
 
-              <div
-                style={{ backgroundColor: "#0D1929", borderColor: "#1A3150", color: "#F5F5F2" }}
-                className="p-4 rounded-xl border text-xs space-y-2.5 font-sans w-full"
-              >
-                <div className="flex justify-between items-center w-full">
-                  <span style={{ color: "#94A3B8" }} className="font-medium">Impact Fără Poliță:</span>
-                  <span style={{ color: "#FB7185" }} className="font-semibold">Capital propriu</span>
+              <div className="p-4 rounded-xl bg-slate-50 border border-slate-200/80 text-xs space-y-2.5 font-sans">
+                <div className="flex justify-between items-center">
+                  <span className="text-muted-foreground font-medium">Impact Fără Poliță:</span>
+                  <span className="text-red-600 font-semibold">Capital propriu</span>
                 </div>
-                <div className="flex justify-between items-center w-full">
-                  <span style={{ color: "#94A3B8" }} className="font-medium">Preluare Risc:</span>
-                  <span style={{ color: "#34D399" }} className="font-semibold">Poliță Generali</span>
+                <div className="flex justify-between items-center">
+                  <span className="text-muted-foreground font-medium">Preluare Risc:</span>
+                  <span className="text-emerald-700 font-semibold">Poliță Generali</span>
                 </div>
-                <div style={{ borderColor: "#1A3150", color: "#94A3B8" }} className="pt-2 border-t text-xs font-sans font-medium w-full">
+                <div className="pt-2 border-t border-slate-200 text-muted-foreground font-medium">
                   {exposureDetails.ratioText}
                 </div>
               </div>
 
-              <p style={{ color: "#94A3B8", borderColor: "#C9A227" }} className="text-xs italic leading-relaxed border-l-2 pl-3">
+              <p className="text-xs italic text-muted-foreground leading-relaxed border-l-2 border-blue-500 pl-3">
                 „Nu calculezi doar prima de asigurare, ci costul acoperirii unei pierderi din fondurile proprii.”
               </p>
             </div>
           </div>
         </div>
 
-        {/* LAYER 2: SCENARIO RESULTS HEADER & ACTION B (RESET FILTER) */}
-        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-8 pb-4 border-b border-[#1A3150] w-full">
+        {/* LAYER 2: SCENARIO RESULTS HEADER */}
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-8 pb-4 border-b border-border/60">
           <div className="flex items-center gap-3">
-            <span className="w-2.5 h-2.5 rounded-full bg-[#C9A227]" aria-hidden="true" />
+            <span className="w-2.5 h-2.5 rounded-full bg-blue-600" aria-hidden="true" />
             <div>
-              <h3 className="text-lg md:text-xl font-bold font-heading text-[#F5F5F2] uppercase tracking-wide">
-                {activeFilter === "all" ? `${riskScenarios.length} SCENARII DE RISC` : selectedFilterOption.label}
+              <h3 className="text-lg md:text-xl font-bold font-heading text-foreground uppercase tracking-tight">
+                {activeFilter === "all" ? `${riskScenarios.length} Scenarii de Risc` : selectedFilterOption.label}
               </h3>
-              <span className="text-xs font-sans text-[#94A3B8] font-medium">
-                {filteredScenarios.length} {filteredScenarios.length === 1 ? "SCENARIU AFIȘAT" : "SCENARII AFIȘATE"} DIN {riskScenarios.length}
+              <span className="text-xs text-muted-foreground font-medium">
+                {filteredScenarios.length} {filteredScenarios.length === 1 ? "scenariu afișat" : "scenarii afișate"} din {riskScenarios.length}
               </span>
             </div>
           </div>
 
-          {/* ACTION B: VEZI TOATE SCENARIILE RESET BUTTON */}
           {activeFilter !== "all" && (
             <button
               type="button"
               onClick={() => setActiveFilter("all")}
-              className="text-xs font-sans text-[#C9A227] hover:text-[#F5F5F2] uppercase tracking-[0.08em] font-semibold transition-colors flex items-center gap-1.5 cursor-pointer"
+              className="text-xs font-semibold text-blue-600 hover:text-blue-700 uppercase tracking-wider transition-colors cursor-pointer"
             >
-              <span>[ VEZI TOATE CELE {riskScenarios.length} DE SCENARII → ]</span>
+              Vezi toate cele {riskScenarios.length} de scenarii →
             </button>
           )}
         </div>
 
-        {/* PURE VISUAL ART-DIRECTION — HIGH VISIBILITY CINEMATIC PHOTOGRAPHY GRID (80-90% PERCEPTIBLE) */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10 mb-20 w-full max-w-full box-border">
+        {/* SCENARIOS PHOTOGRAPHY GRID */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mb-16">
           {(isHomePagePreview ? filteredScenarios.slice(0, 6) : filteredScenarios).map((sc, index) => {
             const formattedIndex = (index + 1).toString().padStart(2, "0");
             const isFeatured = index === 0;
@@ -1080,73 +1055,66 @@ export function RealWorldRiskScenarios({ isHomePagePreview = false }: RealWorldR
                     setActiveScenario(sc);
                   }
                 }}
-                className={`group relative overflow-hidden bg-[#05070A] transition-all duration-700 cursor-pointer w-full max-w-full box-border mx-auto flex flex-col justify-between focus:outline-none rounded-2xl border border-[#1A3150] sm:border-transparent min-h-[380px] sm:min-h-[420px] md:min-h-[480px] ${
-                  isFeatured ? "md:col-span-2 lg:col-span-2 md:aspect-[16/9]" : "md:aspect-[16/10]"
+                className={`group relative overflow-hidden bg-slate-900 transition-all duration-300 cursor-pointer flex flex-col justify-between focus:outline-none rounded-2xl border border-slate-200/80 hover:shadow-xl hover:-translate-y-1 min-h-[380px] sm:min-h-[420px] md:min-h-[460px] ${
+                  isFeatured ? "md:col-span-2 lg:col-span-2" : ""
                 }`}
               >
-                {/* HIGH VISIBILITY PHOTOGRAPHY CANVAS (80-90% VISUALLY PERCEPTIBLE) */}
-                <div className="absolute inset-0 z-0 overflow-hidden w-full h-full">
+                {/* Photography Canvas */}
+                <div className="absolute inset-0 z-0 overflow-hidden">
                   <Image
                     src={visual.image}
                     alt={visual.alt || sc.title}
                     fill
                     sizes="(max-width: 768px) 92vw, (max-width: 1200px) 48vw, 420px"
                     loading="lazy"
-                    className="object-cover object-center w-full h-full opacity-95 sm:opacity-100 group-hover:scale-105 transition-all duration-700 pointer-events-none"
+                    className="object-cover object-center w-full h-full opacity-90 group-hover:scale-105 transition-transform duration-500 pointer-events-none"
                   />
-                  
-                  {/* Very Light Upper Header Vignette */}
-                  <div className="absolute inset-0 bg-gradient-to-b from-[#05070A]/35 via-transparent to-transparent z-10" />
-                  {/* Localized Bottom Text-Safe Vignette */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#05070A]/90 via-[#05070A]/45 via-30% to-transparent z-10" />
+                  <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-transparent z-10" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent z-10" />
                 </div>
 
-                {/* TOP REGISTRATION MARK: MAGAZINE INSCRIPTION & DISCREET CATALOGUE REFERENCE */}
-                <div className="relative z-20 p-6 md:p-8 flex items-center justify-between w-full">
-                  <span className="text-xs font-sans font-medium uppercase tracking-[0.08em] text-[#E2E8F0] [text-shadow:0_2px_10px_rgba(0,0,0,0.95)]">
+                {/* Top Registration Mark */}
+                <div className="relative z-20 p-6 md:p-8 flex items-center justify-between">
+                  <span className="text-xs font-semibold uppercase tracking-wider text-slate-200">
                     {sc.categoryLabel}
                   </span>
-                  <span className="text-xs font-sans text-[#CBD5E1] font-medium tracking-[0.08em] [text-shadow:0_2px_10px_rgba(0,0,0,0.95)]">
+                  <span className="text-xs text-slate-300 font-medium">
                     {formattedIndex} / {riskScenarios.length.toString().padStart(2, "0")}
                   </span>
                 </div>
 
-                {/* NARRATIVE CORE & EDITORIAL FINANCIAL EXPOSURE (FLOATING DIRECTLY OVER CANVAS) */}
-                <div className="relative z-20 p-6 md:p-8 space-y-6 w-full">
-                  <div className="space-y-2 w-full">
-                    <span className="text-[11px] font-sans uppercase tracking-[0.08em] text-[#FDE68A] font-medium block [text-shadow:0_2px_10px_rgba(0,0,0,0.95)]">
+                {/* Narrative Core */}
+                <div className="relative z-20 p-6 md:p-8 space-y-4">
+                  <div className="space-y-1.5">
+                    <span className="text-xs uppercase tracking-wider text-amber-300 font-semibold block">
                       {sc.eyebrow || sc.categoryLabel}
                     </span>
 
-                    <h3 className={`font-semibold font-heading text-[#FFFFFF] [text-shadow:0_2px_14px_rgba(0,0,0,0.98),0_1px_4px_rgba(0,0,0,0.95)] leading-snug tracking-tight group-hover:text-[#FDE68A] transition-colors line-clamp-2 ${
+                    <h3 className={`font-bold font-heading text-white leading-snug tracking-tight group-hover:text-blue-200 transition-colors line-clamp-2 ${
                       isFeatured ? "text-2xl md:text-3xl" : "text-lg md:text-xl"
                     }`}>
                       {sc.title}
                     </h3>
 
-                    <p className="text-xs md:text-sm text-[#F1F5F9] font-normal leading-relaxed line-clamp-2 max-w-xl [text-shadow:0_2px_10px_rgba(0,0,0,0.95)]">
+                    <p className="text-xs md:text-sm text-slate-200 font-normal leading-relaxed line-clamp-2 max-w-xl">
                       {sc.situation}
                     </p>
                   </div>
 
-                  {/* EDITORIAL FINANCIAL EXPOSURE & PURE EDITORIAL TEXT LINK (NO BUTTON CONTAINER) */}
-                  <div className="flex items-end justify-between gap-4 pt-2 w-full">
+                  {/* Financial Exposure & Action Link */}
+                  <div className="flex items-end justify-between gap-4 pt-2">
                     <div>
-                      <span className="text-[10px] font-sans text-[#CBD5E1] uppercase tracking-[0.08em] block font-semibold mb-0.5 [text-shadow:0_2px_10px_rgba(0,0,0,0.95)]">
-                        EXPOSURE
+                      <span className="text-[10px] text-slate-300 uppercase tracking-wider block font-semibold mb-0.5">
+                        Expunere
                       </span>
-                      <div className="text-xl md:text-2xl font-bold font-heading text-[#FFFFFF] tracking-tight [text-shadow:0_2px_12px_rgba(0,0,0,0.98)]">
+                      <div className="text-xl md:text-2xl font-bold font-heading text-white tracking-tight">
                         {sc.exposure.replace("Expunere financiară ilustrativă: ", "")}
                       </div>
-                      <span className="text-[10px] font-sans text-[#FDE68A] font-semibold block uppercase tracking-[0.08em] mt-1 [text-shadow:0_2px_10px_rgba(0,0,0,0.95)]">
-                        HIGH IMPACT • SINGLE-EVENT LOSS
-                      </span>
                     </div>
 
-                    {/* PURE EDITORIAL TEXT LINK INTERACTION */}
-                    <div className="text-xs font-sans font-semibold text-[#FFFFFF] group-hover:text-[#C9A227] flex items-center gap-1.5 transition-all duration-300 pb-1 shrink-0 tracking-[0.04em] [text-shadow:0_2px_10px_rgba(0,0,0,0.95)]">
-                      <span className="group-hover:tracking-wider transition-all">VEZI SCENARIUL</span>
-                      <SvgIcon name="ArrowRight" className="w-4 h-4 group-hover:translate-x-2 transition-transform duration-300" />
+                    <div className="text-xs font-semibold text-white group-hover:text-blue-200 flex items-center gap-1.5 transition-colors pb-1 shrink-0">
+                      <span>Vezi scenariul</span>
+                      <SvgIcon name="ArrowRight" className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                     </div>
                   </div>
                 </div>
@@ -1157,22 +1125,21 @@ export function RealWorldRiskScenarios({ isHomePagePreview = false }: RealWorldR
 
         {/* Homepage Preview Navigation Button */}
         {isHomePagePreview && (
-          <div className="text-center mb-20 w-full">
+          <div className="text-center mb-16">
             <Link
               href="/scenarii-risc"
-              style={{ backgroundColor: "#F5F5F2", color: "#05070A" }}
-              className="inline-flex items-center justify-center gap-2 h-13 px-8 text-sm md:text-base font-bold rounded-xl shadow-2xl transition-all hover:bg-[#C9A227]"
+              className="inline-flex items-center justify-center gap-2 h-12 px-8 text-sm font-semibold rounded-full bg-slate-900 text-white hover:bg-slate-800 transition-all shadow-md"
             >
               <span>Explorează Toate cele {riskScenarios.length} de Scenarii de Risc</span>
-              <SvgIcon name="ArrowRight" className="w-5 h-5" />
+              <SvgIcon name="ArrowRight" className="w-4 h-4" />
             </Link>
           </div>
         )}
 
-        {/* Story Reader Modal / 3-Zone Dialog with Fixed Header, Independent Scrollable Content, and Fixed Footer */}
+        {/* Story Reader Modal */}
         {activeScenario && (
           <div
-            className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 md:p-6 bg-black/90 backdrop-blur-2xl animate-in fade-in duration-200"
+            className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 md:p-6 bg-slate-950/60 backdrop-blur-md animate-in fade-in duration-200"
             role="dialog"
             aria-modal="true"
             aria-labelledby="modal-title"
@@ -1184,21 +1151,17 @@ export function RealWorldRiskScenarios({ isHomePagePreview = false }: RealWorldR
           >
             <div
               ref={modalContainerRef}
-              style={{ backgroundColor: "#09111D", borderColor: "#1A3150", color: "#F5F5F2", height: "min(85dvh, 850px)", maxHeight: "85dvh" }}
-              className="relative w-full max-w-2xl lg:max-w-3xl flex flex-col border border-[#1A3150] rounded-2xl shadow-2xl overflow-hidden focus:outline-none shrink-0"
+              className="relative w-full max-w-2xl lg:max-w-3xl bg-white text-foreground border border-slate-200 rounded-3xl shadow-2xl overflow-hidden focus:outline-none flex flex-col max-h-[85vh]"
               tabIndex={-1}
             >
-              {/* SIBLING 1: FIXED MODAL HEADER (OUTSIDE SCROLL CONTAINER) */}
-              <div
-                style={{ backgroundColor: "#09111D", borderColor: "#1A3150" }}
-                className="flex items-center justify-between px-5 py-3.5 sm:px-6 sm:py-4 border-b shrink-0 z-10 w-full"
-              >
+              {/* FIXED MODAL HEADER */}
+              <div className="flex items-center justify-between px-6 py-4 bg-slate-50 border-b border-slate-200 shrink-0 z-10">
                 <div className="flex items-center gap-2.5">
-                  <span className="px-3 py-1 rounded-full bg-[#0D1929] border border-[#1A3150] text-xs font-sans font-semibold text-[#F5F5F2] uppercase tracking-[0.08em] flex items-center gap-2">
-                    <SvgIcon name={activeScenario.iconName} className="w-3.5 h-3.5 text-[#C9A227]" />
+                  <span className="px-3 py-1 rounded-full bg-white border border-slate-200 text-xs font-semibold text-slate-800 uppercase tracking-wider flex items-center gap-2 shadow-2xs">
+                    <SvgIcon name={activeScenario.iconName} className="w-3.5 h-3.5 text-blue-600" />
                     <span>{activeScenario.categoryLabel}</span>
                   </span>
-                  <span className="text-xs font-sans text-[#94A3B8] font-medium hidden sm:inline">
+                  <span className="text-xs text-muted-foreground font-medium hidden sm:inline">
                     • Scenariu Ilustrativ
                   </span>
                 </div>
@@ -1206,100 +1169,94 @@ export function RealWorldRiskScenarios({ isHomePagePreview = false }: RealWorldR
                 <button
                   type="button"
                   onClick={() => setActiveScenario(null)}
-                  style={{ backgroundColor: "#122238", borderColor: "#1A3150", color: "#F5F5F2" }}
-                  className="p-2 sm:p-2.5 rounded-full hover:bg-[#1A3150] transition-colors cursor-pointer border shadow-md shrink-0"
+                  className="p-2 rounded-full hover:bg-slate-200 text-slate-600 transition-colors cursor-pointer"
                   aria-label="Închide scenariul"
                 >
-                  <SvgIcon name="X" className="w-4 h-4 sm:w-5 sm:h-5" />
+                  <SvgIcon name="X" className="w-4 h-4" />
                 </button>
               </div>
 
-              {/* SIBLING 2: INDEPENDENT SCROLLABLE CONTENT BODY (THE ONLY SCROLLING ELEMENT) */}
-              <div className="flex-1 min-h-0 overflow-y-auto overflow-x-hidden overscroll-contain p-5 sm:p-8 space-y-6 text-[#F5F5F2] touch-pan-y w-full">
-                {/* PHOTOGRAPHY HERO (CRISP & HIGHLY PERCEPTIBLE 95-100%) */}
-                <div className="relative w-full h-48 sm:h-64 md:h-72 rounded-xl overflow-hidden shrink-0 border border-[#1A3150]">
+              {/* SCROLLABLE CONTENT BODY */}
+              <div className="flex-1 min-h-0 overflow-y-auto p-6 sm:p-8 space-y-6">
+                {/* Image */}
+                <div className="relative w-full h-48 sm:h-60 rounded-2xl overflow-hidden shrink-0 border border-slate-200">
                   <Image
                     src={getScenarioVisual(activeScenario.id).image}
                     alt={getScenarioVisual(activeScenario.id).alt || activeScenario.title}
                     fill
                     sizes="(max-width: 768px) 100vw, 800px"
-                    className="object-cover object-center w-full h-full opacity-95 sm:opacity-100"
+                    className="object-cover object-center w-full h-full"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#09111D]/80 via-[#09111D]/20 to-transparent z-10" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent z-10" />
                 </div>
 
-                {/* HEADLINE & EYEBROW */}
-                <div className="space-y-1.5 w-full">
-                  <span className="text-xs font-sans font-semibold uppercase tracking-[0.08em] text-[#C9A227] block">
+                {/* Headline */}
+                <div className="space-y-1">
+                  <span className="text-xs font-semibold uppercase tracking-wider text-blue-600 block">
                     {activeScenario.eyebrow}
                   </span>
-                  <h3 id="modal-title" className="text-xl sm:text-2xl md:text-3xl font-bold font-heading text-[#F5F5F0] leading-snug tracking-tight">
+                  <h3 id="modal-title" className="text-xl sm:text-2xl font-bold font-heading text-foreground leading-snug tracking-tight">
                     {activeScenario.title}
                   </h3>
                 </div>
 
-                {/* 5-STEP EDITORIAL RISK BREAKDOWN */}
-                <div className="space-y-4 text-xs sm:text-sm md:text-base leading-relaxed font-sans w-full">
-                  {/* 01 - Normal Life */}
-                  <div style={{ backgroundColor: "#0D1929", borderColor: "#1A3150" }} className="p-4 sm:p-6 rounded-xl border w-full">
-                    <div style={{ color: "#94A3B8" }} className="text-xs font-bold uppercase tracking-[0.08em] mb-1.5 font-sans">
-                      01 — Contextul Inițial (Cotidianul)
+                {/* 5-Step Editorial Breakdown */}
+                <div className="space-y-4 text-xs sm:text-sm leading-relaxed">
+                  {/* 01 Context */}
+                  <div className="p-4 sm:p-5 rounded-2xl bg-slate-50 border border-slate-200/80">
+                    <div className="text-xs font-bold uppercase tracking-wider text-slate-500 mb-1">
+                      01 — Contextul Inițial
                     </div>
-                    <p style={{ color: "#F5F5F2" }} className="font-normal leading-relaxed">{activeScenario.situation}</p>
+                    <p className="text-slate-800 font-normal leading-relaxed">{activeScenario.situation}</p>
                   </div>
 
-                  {/* 02 - Interruption */}
-                  <div style={{ backgroundColor: "rgba(245,158,11,0.15)", borderColor: "rgba(245,158,11,0.30)" }} className="p-4 sm:p-6 rounded-xl border w-full">
-                    <div style={{ color: "#FCD34D" }} className="text-xs font-bold uppercase tracking-[0.08em] mb-1.5 font-sans">
+                  {/* 02 Interruption */}
+                  <div className="p-4 sm:p-5 rounded-2xl bg-amber-50/80 border border-amber-200">
+                    <div className="text-xs font-bold uppercase tracking-wider text-amber-700 mb-1">
                       02 — Întreruperea Neprevăzută
                     </div>
-                    <p style={{ color: "#FFFFFF" }} className="font-normal leading-relaxed">{activeScenario.interruption}</p>
+                    <p className="text-amber-950 font-normal leading-relaxed">{activeScenario.interruption}</p>
                   </div>
 
-                  {/* 03 - Realization */}
-                  <div style={{ backgroundColor: "#0D1929", borderColor: "#1A3150" }} className="p-4 sm:p-6 rounded-xl border w-full">
-                    <div style={{ color: "#94A3B8" }} className="text-xs font-bold uppercase tracking-[0.08em] mb-1.5 font-sans">
+                  {/* 03 Realization */}
+                  <div className="p-4 sm:p-5 rounded-2xl bg-slate-50 border border-slate-200/80">
+                    <div className="text-xs font-bold uppercase tracking-wider text-slate-500 mb-1">
                       03 — Momentul Conștientizării
                     </div>
-                    <p style={{ color: "#F5F5F2" }} className="font-normal leading-relaxed">{activeScenario.realization}</p>
+                    <p className="text-slate-800 font-normal leading-relaxed">{activeScenario.realization}</p>
                   </div>
 
-                  {/* 04 - Financial Exposure */}
-                  <div style={{ backgroundColor: "rgba(244,63,94,0.15)", borderColor: "rgba(244,63,94,0.30)" }} className="p-4 sm:p-6 rounded-xl border w-full">
-                    <div style={{ color: "#FDA4AF" }} className="text-xs font-bold uppercase tracking-[0.08em] mb-1.5 font-sans">
+                  {/* 04 Financial Exposure */}
+                  <div className="p-4 sm:p-5 rounded-2xl bg-red-50 border border-red-200">
+                    <div className="text-xs font-bold uppercase tracking-wider text-red-700 mb-1">
                       04 — Impactul & Expunerea Financiară
                     </div>
-                    <p style={{ color: "#FFE4E6" }} className="font-bold font-heading text-base sm:text-lg md:text-xl tracking-tight">{activeScenario.exposure}</p>
+                    <p className="text-red-950 font-bold font-heading text-base sm:text-lg tracking-tight">{activeScenario.exposure}</p>
                   </div>
 
-                  {/* 05 - Protection Control */}
-                  <div style={{ backgroundColor: "rgba(16,185,129,0.15)", borderColor: "rgba(16,185,129,0.30)" }} className="p-4 sm:p-6 rounded-xl border w-full">
-                    <div style={{ color: "#6EE7B7" }} className="text-xs font-bold uppercase tracking-[0.08em] mb-1.5 font-sans">
+                  {/* 05 Protection */}
+                  <div className="p-4 sm:p-5 rounded-2xl bg-emerald-50 border border-emerald-200">
+                    <div className="text-xs font-bold uppercase tracking-wider text-emerald-700 mb-1">
                       05 — Controlul Oferit de Asigurare
                     </div>
-                    <p style={{ color: "#D1FAE5" }} className="font-normal leading-relaxed">{activeScenario.protection}</p>
+                    <p className="text-emerald-950 font-normal leading-relaxed">{activeScenario.protection}</p>
                   </div>
                 </div>
               </div>
 
-              {/* SIBLING 3: FIXED MODAL FOOTER (OUTSIDE SCROLL CONTAINER WITH SAFE AREA SUPPORT) */}
-              <div
-                style={{ backgroundColor: "#09111D", borderColor: "#1A3150", paddingBottom: "max(14px, env(safe-area-inset-bottom))" }}
-                className="flex flex-col sm:flex-row gap-3 px-5 py-3.5 sm:px-6 sm:py-4 border-t shrink-0 z-10 w-full"
-              >
+              {/* FIXED FOOTER */}
+              <div className="flex flex-col sm:flex-row gap-3 px-6 py-4 bg-slate-50 border-t border-slate-200 shrink-0 z-10">
                 <Link
                   href={activeScenario.ctaHref}
-                  style={{ backgroundColor: "#F5F5F2", color: "#05070A" }}
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 text-xs sm:text-sm md:text-base h-11 sm:h-12 px-6 font-bold rounded-xl shadow-lg transition-all hover:bg-[#C9A227]"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 text-xs sm:text-sm h-11 px-6 font-semibold rounded-full bg-blue-600 hover:bg-blue-700 text-white shadow-sm transition-colors"
                 >
                   <span>{activeScenario.ctaLabel}</span>
-                  <SvgIcon name="ArrowRight" className="w-4 h-4 sm:w-5 sm:h-5" />
+                  <SvgIcon name="ArrowRight" className="w-4 h-4" />
                 </Link>
                 
                 <button
                   type="button"
-                  style={{ backgroundColor: "#0D1929", color: "#F5F5F2", borderColor: "#1A3150" }}
-                  className="w-full sm:w-auto h-11 sm:h-12 px-6 border rounded-xl font-semibold text-xs sm:text-sm transition-colors hover:bg-[#122238]"
+                  className="w-full sm:w-auto h-11 px-6 border border-slate-300 rounded-full font-semibold text-xs sm:text-sm bg-white hover:bg-slate-100 text-slate-700 transition-colors"
                   onClick={() => setActiveScenario(null)}
                 >
                   Închide Scenariul
@@ -1309,45 +1266,38 @@ export function RealWorldRiskScenarios({ isHomePagePreview = false }: RealWorldR
           </div>
         )}
 
-        {/* Global Bottom Conversion Banner & Legal Disclaimer */}
-        <div
-          style={{ backgroundColor: "#09111D", borderColor: "#1A3150" }}
-          className="mt-16 p-8 md:p-14 rounded-2xl border text-center relative overflow-hidden w-full max-w-full box-border"
-        >
-          <div className="max-w-3xl mx-auto space-y-6 w-full">
-            <div
-              style={{ backgroundColor: "rgba(201,162,39,0.15)", borderColor: "rgba(201,162,39,0.30)", color: "#C9A227" }}
-              className="w-12 h-12 rounded-full border flex items-center justify-center mx-auto mb-2"
-            >
+        {/* Global Bottom Conversion Banner */}
+        <div className="mt-12 p-8 md:p-12 rounded-3xl bg-slate-900 text-white border border-slate-800 text-center relative overflow-hidden shadow-xl">
+          <div className="max-w-2xl mx-auto space-y-6">
+            <div className="w-12 h-12 rounded-full bg-white/10 border border-white/20 flex items-center justify-center mx-auto text-white">
               <SvgIcon name="ShieldCheck" className="w-6 h-6" />
             </div>
-            <h3 style={{ color: "#F5F5F2" }} className="text-2xl md:text-4xl font-bold font-heading leading-tight">
+            
+            <h3 className="text-2xl md:text-3xl font-bold font-heading leading-tight text-white">
               „Nu trebuie să asiguri totul. Trebuie doar să înțelegi ce te-ar durea să pierzi.”
             </h3>
-            <p style={{ color: "#CBD5E1" }} className="text-sm md:text-base font-normal max-w-xl mx-auto leading-relaxed">
+            
+            <p className="text-sm md:text-base text-slate-300 max-w-xl mx-auto leading-relaxed">
               Programează o analiză discretă a portofoliului tău de riscuri. Cristian Văduva îți va identifica expunerile reale și îți va recomanda soluții optimizate Generali.
             </p>
             
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2 w-full">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
               <Link
                 href="/contact"
-                style={{ backgroundColor: "#F5F5F2", color: "#05070A" }}
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 text-sm md:text-base h-13 px-8 font-bold rounded-xl shadow-xl transition-all hover:scale-105 hover:bg-[#C9A227]"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 text-sm h-12 px-8 font-semibold rounded-full bg-white text-slate-950 hover:bg-slate-100 shadow-md transition-all"
               >
-                <span>Solicită Analiză de Risc Personalizată</span>
-                <SvgIcon name="ArrowRight" className="w-5 h-5" />
+                <span>Solicită Analiză de Risc</span>
+                <SvgIcon name="ArrowRight" className="w-4 h-4" />
               </Link>
               <Link
                 href="/servicii"
-                style={{ backgroundColor: "#0D1929", color: "#F5F5F2", borderColor: "#1A3150" }}
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 text-sm md:text-base h-13 px-8 border rounded-xl font-semibold transition-all hover:bg-[#122238]"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 text-sm h-12 px-8 border border-white/20 rounded-full font-semibold bg-white/5 hover:bg-white/10 text-white transition-all"
               >
-                Vezi Toate Soluțiile de Asigurare
+                Vezi Toate Soluțiile
               </Link>
             </div>
 
-            {/* Discreet Legal Compliance Notice */}
-            <p style={{ color: "#94A3B8", borderColor: "#1A3150" }} className="text-[11px] font-normal pt-6 border-t leading-relaxed max-w-2xl mx-auto">
+            <p className="text-[11px] text-slate-400 pt-6 border-t border-white/10 leading-relaxed max-w-xl mx-auto">
               Notă de conformitate: Scenariile prezentate sunt modele ilustrative de risc cu rol educativ și de conștientizare. Acoperirile, excluderile, limitele financiare și condițiile de eligibilitate depind strict de produsul de asigurare ales și de termenii contractuali agreați în polița emisă.
             </p>
           </div>
