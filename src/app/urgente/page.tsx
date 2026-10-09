@@ -29,23 +29,20 @@ export const metadata: Metadata = {
 
 export default function UrgentePage() {
   return (
-    <div className="min-h-screen bg-[#0b0d10] text-zinc-100 flex flex-col selection:bg-rose-600 selection:text-white">
+    <div className="min-h-screen bg-white text-zinc-900 flex flex-col selection:bg-rose-600 selection:text-white">
       <Navbar />
 
-      <main className="flex-1 pt-36 pb-24 relative overflow-hidden">
-        {/* Subtle background emergency ambient glow */}
-        <div className="absolute top-20 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-rose-600/10 rounded-full blur-[160px] pointer-events-none" />
-
+      <main className="flex-1 pt-36 pb-24 relative overflow-hidden bg-gradient-to-b from-rose-50/40 via-white to-white">
         <div className="container mx-auto px-4 sm:px-6 relative z-10 max-w-5xl">
           <div className="max-w-3xl mx-auto text-center mb-12">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-rose-500/10 border border-rose-500/30 text-rose-400 font-bold text-xs mb-6 uppercase tracking-widest">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-rose-50 border border-rose-200 text-rose-700 font-bold text-xs mb-6 uppercase tracking-widest shadow-sm">
               <AlertTriangle className="w-3.5 h-3.5" />
               Safety-First Emergency Hub
             </div>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-heading font-bold mb-6 text-white tracking-tight leading-[1.1]">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-heading font-bold mb-6 text-zinc-900 tracking-tight leading-[1.1]">
               Centru de Urgențe & Ghid de Conduită
             </h1>
-            <p className="text-lg sm:text-xl text-zinc-300 font-light leading-relaxed max-w-2xl mx-auto">
+            <p className="text-lg sm:text-xl text-zinc-600 font-normal leading-relaxed max-w-2xl mx-auto">
               În caz de pericol iminent sau vătămări corporale, apelați imediat <strong>112</strong>. Pentru etapele ulterioare punerii în siguranță, urmați ghidul de mai jos pentru protejarea drepturilor din contractul de asigurare.
             </p>
           </div>

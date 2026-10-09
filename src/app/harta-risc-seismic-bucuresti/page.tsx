@@ -39,13 +39,10 @@ export default function HartaRiscSeismicBucurestiPage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#0b0d10] text-zinc-100 flex flex-col selection:bg-blue-600 selection:text-white">
+    <div className="min-h-screen bg-white text-zinc-900 flex flex-col selection:bg-blue-600 selection:text-white">
       <Navbar />
 
-      <main className="flex-1 pt-32 pb-24 relative overflow-hidden">
-        {/* Subtle Ambient Glow - Hardware accelerated radial gradient */}
-        <div className="absolute top-20 left-1/2 -translate-x-1/2 w-[600px] sm:w-[800px] h-[400px] sm:h-[500px] bg-[radial-gradient(ellipse_at_center,_rgba(245,158,11,0.12)_0%,_transparent_70%)] pointer-events-none" />
-
+      <main className="flex-1 pt-28 pb-20 relative">
         <div className="container mx-auto px-4 sm:px-6 relative z-10 max-w-6xl">
           <script
             type="application/ld+json"

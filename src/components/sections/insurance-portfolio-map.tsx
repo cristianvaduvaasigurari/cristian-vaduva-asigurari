@@ -428,10 +428,10 @@ export function InsurancePortfolioMap() {
       case "professional_liability":
         return <Briefcase className="w-5 h-5 text-purple-400" />;
       case "private_client":
-        return <Sparkles className="w-5 h-5 text-amber-300" />;
+        return <Sparkles className="w-5 h-5 text-amber-800" />;
       case "other":
       default:
-        return <Layers className="w-5 h-5 text-zinc-400" />;
+        return <Layers className="w-5 h-5 text-zinc-500" />;
     }
   };
 
@@ -439,53 +439,53 @@ export function InsurancePortfolioMap() {
     <div className="space-y-8">
       {/* Top Banner & Stats Overview */}
       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
-        <div className="bg-zinc-900/90 border border-zinc-800/80 rounded-xl p-4 flex flex-col justify-between">
-          <div className="text-zinc-400 text-xs font-medium uppercase tracking-wider">Total Polițe</div>
-          <div className="text-2xl sm:text-3xl font-bold text-white mt-1">{stats.totalPolicies}</div>
+        <div className="bg-white border border-zinc-200/80 rounded-xl p-4 flex flex-col justify-between">
+          <div className="text-zinc-500 text-xs font-medium uppercase tracking-wider">Total Polițe</div>
+          <div className="text-2xl sm:text-3xl font-bold text-zinc-900 mt-1">{stats.totalPolicies}</div>
           <div className="text-[11px] text-zinc-500 mt-1">Înregistrate manual</div>
         </div>
 
-        <div className="bg-zinc-900/90 border border-zinc-800/80 rounded-xl p-4 flex flex-col justify-between">
-          <div className="text-zinc-400 text-xs font-medium uppercase tracking-wider">Detalii Lipsă</div>
+        <div className="bg-white border border-zinc-200/80 rounded-xl p-4 flex flex-col justify-between">
+          <div className="text-zinc-500 text-xs font-medium uppercase tracking-wider">Detalii Lipsă</div>
           <div className="text-2xl sm:text-3xl font-bold text-amber-400 mt-1">{stats.policiesWithMissingInfo}</div>
           <div className="text-[11px] text-zinc-500 mt-1">Necesită completare</div>
         </div>
 
-        <div className="bg-zinc-900/90 border border-zinc-800/80 rounded-xl p-4 flex flex-col justify-between">
-          <div className="text-zinc-400 text-xs font-medium uppercase tracking-wider">Expiră &lt; 30 Zile</div>
+        <div className="bg-white border border-zinc-200/80 rounded-xl p-4 flex flex-col justify-between">
+          <div className="text-zinc-500 text-xs font-medium uppercase tracking-wider">Expiră &lt; 30 Zile</div>
           <div className="text-2xl sm:text-3xl font-bold text-orange-400 mt-1">{stats.expiringSoonCount}</div>
           <div className="text-[11px] text-zinc-500 mt-1">Reînnoire apropiată</div>
         </div>
 
-        <div className="bg-zinc-900/90 border border-zinc-800/80 rounded-xl p-4 flex flex-col justify-between">
-          <div className="text-zinc-400 text-xs font-medium uppercase tracking-wider">Expirate</div>
+        <div className="bg-white border border-zinc-200/80 rounded-xl p-4 flex flex-col justify-between">
+          <div className="text-zinc-500 text-xs font-medium uppercase tracking-wider">Expirate</div>
           <div className="text-2xl sm:text-3xl font-bold text-red-400 mt-1">{stats.expiredCount}</div>
           <div className="text-[11px] text-zinc-500 mt-1">Conform datei notate</div>
         </div>
 
-        <div className="bg-zinc-900/90 border border-zinc-800/80 rounded-xl p-4 flex flex-col justify-between">
-          <div className="text-zinc-400 text-xs font-medium uppercase tracking-wider">De Revizuit</div>
+        <div className="bg-white border border-zinc-200/80 rounded-xl p-4 flex flex-col justify-between">
+          <div className="text-zinc-500 text-xs font-medium uppercase tracking-wider">De Revizuit</div>
           <div className="text-2xl sm:text-3xl font-bold text-purple-400 mt-1">{stats.needsReviewCount}</div>
           <div className="text-[11px] text-zinc-500 mt-1">Marcate de utilizator</div>
         </div>
 
-        <div className="bg-zinc-900/90 border border-zinc-800/80 rounded-xl p-4 flex flex-col justify-between">
-          <div className="text-zinc-400 text-xs font-medium uppercase tracking-wider">Suprapuneri</div>
+        <div className="bg-white border border-zinc-200/80 rounded-xl p-4 flex flex-col justify-between">
+          <div className="text-zinc-500 text-xs font-medium uppercase tracking-wider">Suprapuneri</div>
           <div className="text-2xl sm:text-3xl font-bold text-cyan-400 mt-1">{stats.overlapCount}</div>
           <div className="text-[11px] text-zinc-500 mt-1">Intervale paralele</div>
         </div>
       </div>
 
       {/* Main Tab Bar & Action Bar */}
-      <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4 border-b border-zinc-800 pb-4">
+      <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4 border-b border-zinc-200 pb-4">
         {/* Navigation Tabs */}
-        <div className="flex items-center gap-1.5 p-1 bg-zinc-900/90 border border-zinc-800 rounded-xl overflow-x-auto">
+        <div className="flex items-center gap-1.5 p-1 bg-white border border-zinc-200 rounded-xl overflow-x-auto">
           <button
             onClick={() => setActiveTab("map")}
             className={`flex items-center gap-2 px-3.5 py-2 rounded-lg text-xs font-medium transition-all whitespace-nowrap ${
               activeTab === "map"
                 ? "bg-blue-600 text-white shadow-lg shadow-blue-500/20"
-                : "text-zinc-400 hover:text-white hover:bg-zinc-800/60"
+                : "text-zinc-500 hover:text-white hover:bg-zinc-800/60"
             }`}
           >
             <Map className="w-3.5 h-3.5" />
@@ -497,7 +497,7 @@ export function InsurancePortfolioMap() {
             className={`flex items-center gap-2 px-3.5 py-2 rounded-lg text-xs font-medium transition-all whitespace-nowrap ${
               activeTab === "register"
                 ? "bg-blue-600 text-white shadow-lg shadow-blue-500/20"
-                : "text-zinc-400 hover:text-white hover:bg-zinc-800/60"
+                : "text-zinc-500 hover:text-white hover:bg-zinc-800/60"
             }`}
           >
             <LayersIcon className="w-3.5 h-3.5" />
@@ -509,7 +509,7 @@ export function InsurancePortfolioMap() {
             className={`flex items-center gap-2 px-3.5 py-2 rounded-lg text-xs font-medium transition-all whitespace-nowrap ${
               activeTab === "alerts"
                 ? "bg-blue-600 text-white shadow-lg shadow-blue-500/20"
-                : "text-zinc-400 hover:text-white hover:bg-zinc-800/60"
+                : "text-zinc-500 hover:text-white hover:bg-zinc-800/60"
             }`}
           >
             <AlertTriangle className="w-3.5 h-3.5" />
@@ -521,7 +521,7 @@ export function InsurancePortfolioMap() {
             className={`flex items-center gap-2 px-3.5 py-2 rounded-lg text-xs font-medium transition-all whitespace-nowrap ${
               activeTab === "report"
                 ? "bg-blue-600 text-white shadow-lg shadow-blue-500/20"
-                : "text-zinc-400 hover:text-white hover:bg-zinc-800/60"
+                : "text-zinc-500 hover:text-white hover:bg-zinc-800/60"
             }`}
           >
             <FileText className="w-3.5 h-3.5" />
@@ -543,7 +543,7 @@ export function InsurancePortfolioMap() {
             variant="outline"
             size="sm"
             onClick={handleExportPdf}
-            className="border-zinc-700 bg-zinc-800/60 text-zinc-300 hover:text-white hover:bg-zinc-800 text-xs"
+            className="border-zinc-300 bg-zinc-800/60 text-zinc-600 hover:text-white hover:bg-zinc-800 text-xs"
           >
             <Download className="w-3.5 h-3.5 mr-1.5" />
             PDF
@@ -553,7 +553,7 @@ export function InsurancePortfolioMap() {
 
       {/* Notifications */}
       {importSuccess && (
-        <div className="p-3 bg-emerald-500/10 border border-emerald-500/30 rounded-xl text-emerald-400 text-xs flex items-center gap-2">
+        <div className="p-3 bg-emerald-50 border border-emerald-200 rounded-xl text-emerald-400 text-xs flex items-center gap-2">
           <CheckCircle2 className="w-4 h-4 shrink-0" />
           <span>{importSuccess}</span>
         </div>
@@ -568,10 +568,10 @@ export function InsurancePortfolioMap() {
       {/* TAB 1: COVERAGE CATEGORY MAP */}
       {activeTab === "map" && (
         <div className="space-y-6">
-          <div className="bg-zinc-900/40 border border-zinc-800/60 rounded-xl p-4 text-xs text-zinc-400 flex items-start gap-3">
+          <div className="bg-zinc-50 border border-zinc-200/60 rounded-xl p-4 text-xs text-zinc-500 flex items-start gap-3">
             <Info className="w-4 h-4 text-blue-400 shrink-0 mt-0.5" />
             <div>
-              <span className="font-semibold text-zinc-200">Harta vizuală a categoriilor de asigurare:</span> Categoriile fără polițe înregistrate sunt afișate transparent ca neacoperite în portofoliu. Prezența mai multor înregistrări într-o categorie indică polițe distincte (ex: două autoturisme sau două imobile), nu o dublă asigurare automată.
+              <span className="font-semibold text-zinc-800">Harta vizuală a categoriilor de asigurare:</span> Categoriile fără polițe înregistrate sunt afișate transparent ca neacoperite în portofoliu. Prezența mai multor înregistrări într-o categorie indică polițe distincte (ex: două autoturisme sau două imobile), nu o dublă asigurare automată.
             </div>
           </div>
 
@@ -586,15 +586,15 @@ export function InsurancePortfolioMap() {
                   key={cat}
                   className={`border rounded-2xl p-5 transition-all flex flex-col justify-between ${
                     isCovered
-                      ? "bg-zinc-900/80 border-zinc-700/70 shadow-lg shadow-black/20"
-                      : "bg-zinc-950/40 border-zinc-800/40 opacity-75 hover:opacity-100"
+                      ? "bg-white border-zinc-300/70 shadow-lg shadow-black/20"
+                      : "bg-zinc-50 border-zinc-200/50 opacity-75 hover:opacity-100"
                   }`}
                 >
                   <div>
                     {/* Header */}
                     <div className="flex items-start justify-between gap-3 mb-3">
                       <div className="flex items-center gap-3">
-                        <div className="p-2 rounded-xl bg-zinc-800/80 border border-zinc-700/50">
+                        <div className="p-2 rounded-xl bg-zinc-800/80 border border-zinc-300/50">
                           {getCategoryIcon(cat)}
                         </div>
                         <div>
@@ -608,7 +608,7 @@ export function InsurancePortfolioMap() {
                           {catPolicies.length} {catPolicies.length === 1 ? "poliță" : "polițe"}
                         </span>
                       ) : (
-                        <span className="px-2 py-0.5 rounded-full text-[10px] font-semibold bg-zinc-800 text-zinc-500 border border-zinc-700/50">
+                        <span className="px-2 py-0.5 rounded-full text-[10px] font-semibold bg-zinc-800 text-zinc-500 border border-zinc-300/50">
                           Neînregistrat
                         </span>
                       )}
@@ -625,16 +625,16 @@ export function InsurancePortfolioMap() {
                             <div
                               key={p.id}
                               onClick={() => setViewingPolicy(p)}
-                              className="p-2.5 rounded-lg bg-zinc-800/40 border border-zinc-700/40 hover:border-zinc-600 cursor-pointer transition-all flex items-center justify-between gap-2"
+                              className="p-2.5 rounded-lg bg-zinc-800/40 border border-zinc-300/40 hover:border-zinc-600 cursor-pointer transition-all flex items-center justify-between gap-2"
                             >
                               <div className="min-w-0 flex-1">
-                                <div className="text-xs font-medium text-zinc-200 truncate">{p.nickname}</div>
-                                <div className="text-[11px] text-zinc-400 flex items-center gap-1.5 mt-0.5">
+                                <div className="text-xs font-medium text-zinc-800 truncate">{p.nickname}</div>
+                                <div className="text-[11px] text-zinc-500 flex items-center gap-1.5 mt-0.5">
                                   <span>{p.insurer || "Asigurator nespecificat"}</span>
                                   {p.expiryDate && (
                                     <>
                                       <span>•</span>
-                                      <span className={expiry.status === "expired" ? "text-red-400" : expiry.status === "urgent_7_days" ? "text-amber-400" : "text-zinc-400"}>
+                                      <span className={expiry.status === "expired" ? "text-red-400" : expiry.status === "urgent_7_days" ? "text-amber-400" : "text-zinc-500"}>
                                         {expiry.labelRo}
                                       </span>
                                     </>
@@ -646,7 +646,7 @@ export function InsurancePortfolioMap() {
                                 {missing.length > 0 && (
                                   <span className="w-2 h-2 rounded-full bg-amber-400" title={`Detalii lipsă: ${missing.length}`} />
                                 )}
-                                <Eye className="w-3.5 h-3.5 text-zinc-400" />
+                                <Eye className="w-3.5 h-3.5 text-zinc-500" />
                               </div>
                             </div>
                           );
@@ -661,10 +661,10 @@ export function InsurancePortfolioMap() {
                   </div>
 
                   {/* Add action */}
-                  <div className="mt-4 pt-3 border-t border-zinc-800/60 flex items-center justify-between">
+                  <div className="mt-4 pt-3 border-t border-zinc-200/60 flex items-center justify-between">
                     <button
                       onClick={() => handleOpenAdd(cat)}
-                      className="text-[11px] text-blue-400 hover:text-blue-300 inline-flex items-center gap-1 font-medium"
+                      className="text-[11px] text-blue-400 hover:text-blue-800 inline-flex items-center gap-1 font-medium"
                     >
                       <Plus className="w-3 h-3" />
                       <span>Adaugă în această categorie</span>
@@ -684,21 +684,21 @@ export function InsurancePortfolioMap() {
       {activeTab === "register" && (
         <div className="space-y-6">
           {/* Filter & Search Bar */}
-          <div className="bg-zinc-900/80 border border-zinc-800 rounded-2xl p-4 space-y-4">
+          <div className="bg-white border border-zinc-200 rounded-2xl p-4 space-y-4">
             <div className="flex flex-col md:flex-row items-stretch md:items-center gap-3">
               {/* Search */}
               <div className="relative flex-1">
-                <Search className="w-4 h-4 text-zinc-400 absolute left-3 top-1/2 -translate-y-1/2" />
+                <Search className="w-4 h-4 text-zinc-500 absolute left-3 top-1/2 -translate-y-1/2" />
                 <Input
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   placeholder="Caută după denumire, asigurator, produs, notițe..."
-                  className="pl-9 bg-zinc-950 border-zinc-800 text-xs text-white placeholder:text-zinc-500"
+                  className="pl-9 bg-zinc-50 border-zinc-200 text-xs text-white placeholder:text-zinc-500"
                 />
                 {searchQuery && (
                   <button
                     onClick={() => setSearchQuery("")}
-                    className="absolute right-3 top-1/2 -translate-y-1/2 text-zinc-500 hover:text-zinc-300"
+                    className="absolute right-3 top-1/2 -translate-y-1/2 text-zinc-500 hover:text-zinc-600"
                   >
                     <X className="w-3.5 h-3.5" />
                   </button>
@@ -710,7 +710,7 @@ export function InsurancePortfolioMap() {
                 <select
                   value={filterCategory}
                   onChange={(e) => setFilterCategory(e.target.value)}
-                  className="bg-zinc-950 border border-zinc-800 rounded-lg px-2.5 py-1.5 text-xs text-zinc-300 focus:outline-none focus:border-blue-500"
+                  className="bg-zinc-50 border border-zinc-200 rounded-lg px-2.5 py-1.5 text-xs text-zinc-600 focus:outline-none focus:border-blue-500"
                 >
                   <option value="all">Toate Categoriile</option>
                   {allCategories.map((c) => (
@@ -723,7 +723,7 @@ export function InsurancePortfolioMap() {
                 <select
                   value={filterReviewStatus}
                   onChange={(e) => setFilterReviewStatus(e.target.value)}
-                  className="bg-zinc-950 border border-zinc-800 rounded-lg px-2.5 py-1.5 text-xs text-zinc-300 focus:outline-none focus:border-blue-500"
+                  className="bg-zinc-50 border border-zinc-200 rounded-lg px-2.5 py-1.5 text-xs text-zinc-600 focus:outline-none focus:border-blue-500"
                 >
                   <option value="all">Toate Statusurile</option>
                   <option value="needs_review">Necesită revizuire</option>
@@ -735,7 +735,7 @@ export function InsurancePortfolioMap() {
                 <select
                   value={filterExpiry}
                   onChange={(e) => setFilterExpiry(e.target.value)}
-                  className="bg-zinc-950 border border-zinc-800 rounded-lg px-2.5 py-1.5 text-xs text-zinc-300 focus:outline-none focus:border-blue-500"
+                  className="bg-zinc-50 border border-zinc-200 rounded-lg px-2.5 py-1.5 text-xs text-zinc-600 focus:outline-none focus:border-blue-500"
                 >
                   <option value="all">Toate Termenele</option>
                   <option value="urgent_7_days">Urgent (&lt; 7 zile)</option>
@@ -748,7 +748,7 @@ export function InsurancePortfolioMap() {
                 <select
                   value={sortBy}
                   onChange={(e) => setSortBy(e.target.value as "nickname" | "expiry_asc" | "expiry_desc" | "category")}
-                  className="bg-zinc-950 border border-zinc-800 rounded-lg px-2.5 py-1.5 text-xs text-zinc-300 focus:outline-none focus:border-blue-500"
+                  className="bg-zinc-50 border border-zinc-200 rounded-lg px-2.5 py-1.5 text-xs text-zinc-600 focus:outline-none focus:border-blue-500"
                 >
                   <option value="expiry_asc">Sortare: Expirare (Urgent prima)</option>
                   <option value="expiry_desc">Sortare: Expirare (Depărtat prima)</option>
@@ -759,13 +759,13 @@ export function InsurancePortfolioMap() {
             </div>
 
             {/* Toggle Missing */}
-            <div className="flex items-center gap-2 pt-2 border-t border-zinc-800/60">
-              <label className="flex items-center gap-2 text-xs text-zinc-400 cursor-pointer select-none">
+            <div className="flex items-center gap-2 pt-2 border-t border-zinc-200/60">
+              <label className="flex items-center gap-2 text-xs text-zinc-500 cursor-pointer select-none">
                 <input
                   type="checkbox"
                   checked={filterMissing}
                   onChange={(e) => setFilterMissing(e.target.checked)}
-                  className="rounded bg-zinc-950 border-zinc-700 text-blue-600 focus:ring-0"
+                  className="rounded bg-zinc-50 border-zinc-300 text-blue-600 focus:ring-0"
                 />
                 <span>Afișează doar polițele cu detalii incomplete / lipsă</span>
               </label>
@@ -779,7 +779,7 @@ export function InsurancePortfolioMap() {
                     setFilterExpiry("all");
                     setFilterMissing(false);
                   }}
-                  className="ml-auto text-[11px] text-blue-400 hover:text-blue-300 underline underline-offset-2"
+                  className="ml-auto text-[11px] text-blue-400 hover:text-blue-800 underline underline-offset-2"
                 >
                   Resetează filtrele
                 </button>
@@ -799,18 +799,18 @@ export function InsurancePortfolioMap() {
                 return (
                   <div
                     key={p.id}
-                    className="bg-zinc-900/90 border border-zinc-800 hover:border-zinc-700 rounded-2xl p-5 transition-all flex flex-col justify-between shadow-lg shadow-black/10"
+                    className="bg-white border border-zinc-200 hover:border-zinc-300 rounded-2xl p-5 transition-all flex flex-col justify-between shadow-lg shadow-black/10"
                   >
                     <div>
                       {/* Top bar */}
                       <div className="flex items-start justify-between gap-3 mb-2">
                         <div className="flex items-center gap-2.5">
-                          <div className="p-1.5 rounded-lg bg-zinc-800 border border-zinc-700/60">
+                          <div className="p-1.5 rounded-lg bg-zinc-800 border border-zinc-300">
                             {getCategoryIcon(p.category)}
                           </div>
                           <div>
-                            <h4 className="text-sm font-bold text-white leading-snug">{p.nickname}</h4>
-                            <div className="text-[11px] text-zinc-400">{catInfo.labelRo}</div>
+                            <h4 className="text-sm font-bold text-zinc-900 leading-snug">{p.nickname}</h4>
+                            <div className="text-[11px] text-zinc-500">{catInfo.labelRo}</div>
                           </div>
                         </div>
 
@@ -831,14 +831,14 @@ export function InsurancePortfolioMap() {
                       </div>
 
                       {/* Insurer & Product */}
-                      <div className="text-xs text-zinc-300 mb-3">
+                      <div className="text-xs text-zinc-600 mb-3">
                         <span className="text-zinc-500">Asigurator: </span>
-                        <span className="font-medium text-zinc-200">{p.insurer || "Nespecificat"}</span>
+                        <span className="font-medium text-zinc-800">{p.insurer || "Nespecificat"}</span>
                         {p.productName && <span className="text-zinc-500"> • {p.productName}</span>}
                       </div>
 
                       {/* Key Financials & Dates */}
-                      <div className="grid grid-cols-2 gap-2 p-3 bg-zinc-950/60 rounded-xl border border-zinc-800/60 text-xs mb-3">
+                      <div className="grid grid-cols-2 gap-2 p-3 bg-zinc-50 rounded-xl border border-zinc-200/60 text-xs mb-3">
                         <div>
                           <div className="text-[10px] text-zinc-500 uppercase tracking-wider">Valoare Primă</div>
                           <div className="font-semibold text-white mt-0.5">
@@ -850,7 +850,7 @@ export function InsurancePortfolioMap() {
                               <span className="text-zinc-500 italic">Nespecificată</span>
                             )}
                           </div>
-                          <div className="text-[10px] text-zinc-400 capitalize">{p.paymentFrequency || "Frecvență n/a"}</div>
+                          <div className="text-[10px] text-zinc-500 capitalize">{p.paymentFrequency || "Frecvență n/a"}</div>
                         </div>
 
                         <div>
@@ -861,24 +861,24 @@ export function InsurancePortfolioMap() {
                                 ? "text-red-400"
                                 : expiry.status === "urgent_7_days"
                                 ? "text-amber-400"
-                                : "text-zinc-200"
+                                : "text-zinc-800"
                             }`}
                           >
                             {p.expiryDate || "Dată lipsă"}
                           </div>
-                          <div className="text-[10px] text-zinc-400">{expiry.labelRo}</div>
+                          <div className="text-[10px] text-zinc-500">{expiry.labelRo}</div>
                         </div>
 
                         <div>
                           <div className="text-[10px] text-zinc-500 uppercase tracking-wider">Limită Despăgubire</div>
-                          <div className="text-zinc-300 font-medium mt-0.5 truncate">
+                          <div className="text-zinc-600 font-medium mt-0.5 truncate">
                             {p.coverageLimit ? `${p.coverageLimit.toLocaleString("ro-RO")} ${p.limitCurrency}` : p.limitBasis || "Nespecificată"}
                           </div>
                         </div>
 
                         <div>
                           <div className="text-[10px] text-zinc-500 uppercase tracking-wider">Franșiză</div>
-                          <div className="text-zinc-300 font-medium mt-0.5 truncate">
+                          <div className="text-zinc-600 font-medium mt-0.5 truncate">
                             {p.deductible !== undefined ? `${p.deductible.toLocaleString("ro-RO")} ${p.deductibleCurrency}` : p.deductibleBasis || "Fără franșiză / nespecificată"}
                           </div>
                         </div>
@@ -886,7 +886,7 @@ export function InsurancePortfolioMap() {
 
                       {/* Missing warnings */}
                       {missing.length > 0 && (
-                        <div className="p-2.5 rounded-lg bg-amber-500/10 border border-amber-500/20 text-[11px] text-amber-300 flex items-start gap-2 mb-3">
+                        <div className="p-2.5 rounded-lg bg-amber-500/10 border border-amber-500/20 text-[11px] text-amber-800 flex items-start gap-2 mb-3">
                           <AlertTriangle className="w-3.5 h-3.5 shrink-0 mt-0.5 text-amber-400" />
                           <div>
                             <span className="font-semibold">Detalii de completat: </span>
@@ -897,17 +897,17 @@ export function InsurancePortfolioMap() {
 
                       {/* Notes snippet */}
                       {p.notes && (
-                        <p className="text-[11px] text-zinc-400 line-clamp-2 italic mb-3">
+                        <p className="text-[11px] text-zinc-500 line-clamp-2 italic mb-3">
                           &ldquo;{p.notes}&rdquo;
                         </p>
                       )}
                     </div>
 
                     {/* Bottom Actions */}
-                    <div className="pt-3 border-t border-zinc-800/80 flex items-center justify-between gap-2">
+                    <div className="pt-3 border-t border-zinc-200/80 flex items-center justify-between gap-2">
                       <button
                         onClick={() => setViewingPolicy(p)}
-                        className="text-xs text-zinc-400 hover:text-white inline-flex items-center gap-1 font-medium"
+                        className="text-xs text-zinc-500 hover:text-white inline-flex items-center gap-1 font-medium"
                       >
                         <Eye className="w-3.5 h-3.5" />
                         <span>Detalii complete</span>
@@ -916,14 +916,14 @@ export function InsurancePortfolioMap() {
                       <div className="flex items-center gap-1">
                         <button
                           onClick={() => handleOpenEdit(p)}
-                          className="p-1.5 rounded-lg bg-zinc-800 text-zinc-300 hover:text-white hover:bg-zinc-700 transition-colors"
+                          className="p-1.5 rounded-lg bg-zinc-800 text-zinc-600 hover:text-white hover:bg-zinc-700 transition-colors"
                           title="Editează polița"
                         >
                           <Edit3 className="w-3.5 h-3.5" />
                         </button>
                         <button
                           onClick={() => setPolicyToDelete(p)}
-                          className="p-1.5 rounded-lg bg-zinc-800 text-zinc-400 hover:text-red-400 hover:bg-red-500/10 transition-colors"
+                          className="p-1.5 rounded-lg bg-zinc-800 text-zinc-500 hover:text-red-400 hover:bg-red-500/10 transition-colors"
                           title="Șterge polița"
                         >
                           <Trash2 className="w-3.5 h-3.5" />
@@ -935,9 +935,9 @@ export function InsurancePortfolioMap() {
               })}
             </div>
           ) : (
-            <div className="p-12 text-center bg-zinc-900/40 border border-zinc-800/60 rounded-2xl">
+            <div className="p-12 text-center bg-zinc-50 border border-zinc-200/60 rounded-2xl">
               <Layers className="w-8 h-8 text-zinc-600 mx-auto mb-3" />
-              <h3 className="text-base font-semibold text-zinc-300">Nicio poliță găsită</h3>
+              <h3 className="text-base font-semibold text-zinc-600">Nicio poliță găsită</h3>
               <p className="text-xs text-zinc-500 mt-1 max-w-sm mx-auto">
                 Nu există nicio înregistrare care să corespundă criteriilor de filtrare selectate sau portofoliul este gol.
               </p>
@@ -954,13 +954,13 @@ export function InsurancePortfolioMap() {
       {activeTab === "alerts" && (
         <div className="space-y-6">
           {/* Overlaps Section */}
-          <div className="bg-zinc-900/80 border border-zinc-800 rounded-2xl p-5 space-y-4">
+          <div className="bg-white border border-zinc-200 rounded-2xl p-5 space-y-4">
             <div className="flex items-center gap-2">
               <AlertTriangle className="w-5 h-5 text-amber-400" />
-              <h3 className="text-base font-bold text-white">Analiză Suprapuneri de Perioadă în Aceeași Categorie</h3>
+              <h3 className="text-base font-bold text-zinc-900">Analiză Suprapuneri de Perioadă în Aceeași Categorie</h3>
             </div>
 
-            <p className="text-xs text-zinc-400 leading-relaxed">
+            <p className="text-xs text-zinc-500 leading-relaxed">
               Verifică dacă ai înregistrat două sau mai multe polițe în aceeași categorie a căror perioadă de valabilitate se suprapune calendaristic. Acest lucru te ajută să clarifici dacă obiectele asigurate sunt distincte (ex: două mașini) sau dacă există clauze redundante.
             </p>
 
@@ -972,19 +972,19 @@ export function InsurancePortfolioMap() {
                   return (
                     <div
                       key={idx}
-                      className="p-4 rounded-xl bg-amber-500/10 border border-amber-500/30 text-xs text-zinc-200 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3"
+                      className="p-4 rounded-xl bg-amber-50 border border-amber-200 text-xs text-zinc-800 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3"
                     >
                       <div>
-                        <div className="font-semibold text-amber-300 flex items-center gap-2">
+                        <div className="font-semibold text-amber-800 flex items-center gap-2">
                           <span>Suprapunere în categoria: {catInfo.labelRo}</span>
                           <span className="px-2 py-0.5 rounded bg-amber-500/20 text-[10px] font-mono">
                             {o.overlapPeriod}
                           </span>
                         </div>
-                        <p className="text-zinc-300 mt-1">
+                        <p className="text-zinc-600 mt-1">
                           Polițele <strong className="text-white">&ldquo;{o.policy1.nickname}&rdquo;</strong> și <strong className="text-white">&ldquo;{o.policy2.nickname}&rdquo;</strong> au intervale de valabilitate paralele.
                         </p>
-                        <p className="text-zinc-400 text-[11px] mt-0.5">
+                        <p className="text-zinc-500 text-[11px] mt-0.5">
                           💡 Recomandare: Confirmă dacă acestea protejează bunuri diferite sau dacă una este o extensie a celeilalte.
                         </p>
                       </div>
@@ -994,7 +994,7 @@ export function InsurancePortfolioMap() {
                           size="sm"
                           variant="outline"
                           onClick={() => setViewingPolicy(o.policy1)}
-                          className="text-xs border-zinc-700 bg-zinc-800"
+                          className="text-xs border-zinc-300 bg-zinc-800"
                         >
                           Polița 1
                         </Button>
@@ -1002,7 +1002,7 @@ export function InsurancePortfolioMap() {
                           size="sm"
                           variant="outline"
                           onClick={() => setViewingPolicy(o.policy2)}
-                          className="text-xs border-zinc-700 bg-zinc-800"
+                          className="text-xs border-zinc-300 bg-zinc-800"
                         >
                           Polița 2
                         </Button>
@@ -1020,13 +1020,13 @@ export function InsurancePortfolioMap() {
           </div>
 
           {/* Missing Fields List */}
-          <div className="bg-zinc-900/80 border border-zinc-800 rounded-2xl p-5 space-y-4">
+          <div className="bg-white border border-zinc-200 rounded-2xl p-5 space-y-4">
             <div className="flex items-center gap-2">
               <SlidersHorizontal className="w-5 h-5 text-blue-400" />
-              <h3 className="text-base font-bold text-white">Inventar Informații Incomplete pe Polițe</h3>
+              <h3 className="text-base font-bold text-zinc-900">Inventar Informații Incomplete pe Polițe</h3>
             </div>
 
-            <p className="text-xs text-zinc-400 leading-relaxed">
+            <p className="text-xs text-zinc-500 leading-relaxed">
               O documentație completă îți permite să compari mai ușor ofertele la reînnoire și să transmiți rapid datele către un consilier.
             </p>
 
@@ -1040,11 +1040,11 @@ export function InsurancePortfolioMap() {
                     return (
                       <div
                         key={p.id}
-                        className="p-3.5 rounded-xl bg-zinc-950 border border-zinc-800 text-xs flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3"
+                        className="p-3.5 rounded-xl bg-zinc-50 border border-zinc-200 text-xs flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3"
                       >
                         <div>
-                          <div className="font-semibold text-zinc-200">{p.nickname}</div>
-                          <div className="text-zinc-400 text-[11px] mt-0.5">
+                          <div className="font-semibold text-zinc-800">{p.nickname}</div>
+                          <div className="text-zinc-500 text-[11px] mt-0.5">
                             Câmpuri necompletate: <span className="text-amber-400">{missing.map((m) => m.labelRo).join(", ")}</span>
                           </div>
                         </div>
@@ -1052,7 +1052,7 @@ export function InsurancePortfolioMap() {
                         <Button
                           size="sm"
                           onClick={() => handleOpenEdit(p)}
-                          className="bg-zinc-800 hover:bg-zinc-700 text-zinc-200 text-xs shrink-0"
+                          className="bg-zinc-800 hover:bg-zinc-700 text-zinc-800 text-xs shrink-0"
                         >
                           <Edit3 className="w-3.5 h-3.5 mr-1" />
                           Completează
@@ -1074,17 +1074,17 @@ export function InsurancePortfolioMap() {
       {/* TAB 4: REPORT & BACKUP */}
       {activeTab === "report" && (
         <div className="space-y-6">
-          <div className="bg-zinc-900/80 border border-zinc-800 rounded-2xl p-6 space-y-6">
+          <div className="bg-white border border-zinc-200 rounded-2xl p-6 space-y-6">
             <div>
-              <h3 className="text-lg font-bold text-white">Export & Backup Portofoliu</h3>
-              <p className="text-xs text-zinc-400 mt-1">
+              <h3 className="text-lg font-bold text-zinc-900">Export & Backup Portofoliu</h3>
+              <p className="text-xs text-zinc-500 mt-1">
                 Generează un document PDF tipărit pentru dosarul personal sau salvează un fișier JSON pentru a-ți transfera datele în siguranță între dispozitive.
               </p>
             </div>
 
             {/* Notes Section */}
             <div>
-              <label className="block text-xs font-semibold text-zinc-300 uppercase tracking-wider mb-2">
+              <label className="block text-xs font-semibold text-zinc-600 uppercase tracking-wider mb-2">
                 Notițe Generale Portofoliu / Obiective Revizuire
               </label>
               <textarea
@@ -1092,17 +1092,17 @@ export function InsurancePortfolioMap() {
                 onChange={(e) => setUserNotes(e.target.value)}
                 placeholder="Exemplu: Vreau să reduc cheltuiala anuală totală cu 10% și să verific dacă acoperirea CASCO este competitivă..."
                 rows={3}
-                className="w-full bg-zinc-950 border border-zinc-800 rounded-xl p-3 text-xs text-zinc-200 placeholder:text-zinc-600 focus:outline-none focus:border-blue-500"
+                className="w-full bg-zinc-50 border border-zinc-200 rounded-xl p-3 text-xs text-zinc-800 placeholder:text-zinc-600 focus:outline-none focus:border-blue-500"
               />
             </div>
 
             {/* Actions Grid */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
-              <div className="p-4 rounded-xl bg-zinc-950/60 border border-zinc-800/80 flex flex-col justify-between">
+              <div className="p-4 rounded-xl bg-zinc-50 border border-zinc-200/80 flex flex-col justify-between">
                 <div>
                   <FileText className="w-6 h-6 text-blue-400 mb-2" />
                   <h4 className="text-sm font-semibold text-white">Raport PDF Structurat</h4>
-                  <p className="text-[11px] text-zinc-400 mt-1">
+                  <p className="text-[11px] text-zinc-500 mt-1">
                     Include inventarul complet al polițelor, avertizările de expirare și disclaimerul legal.
                   </p>
                 </div>
@@ -1112,29 +1112,29 @@ export function InsurancePortfolioMap() {
                 </Button>
               </div>
 
-              <div className="p-4 rounded-xl bg-zinc-950/60 border border-zinc-800/80 flex flex-col justify-between">
+              <div className="p-4 rounded-xl bg-zinc-50 border border-zinc-200/80 flex flex-col justify-between">
                 <div>
                   <Download className="w-6 h-6 text-emerald-400 mb-2" />
                   <h4 className="text-sm font-semibold text-white">Export JSON Backup</h4>
-                  <p className="text-[11px] text-zinc-400 mt-1">
+                  <p className="text-[11px] text-zinc-500 mt-1">
                     Descarcă un fișier JSON securizat local pentru a reîncărca oricând datele înapoi.
                   </p>
                 </div>
-                <Button onClick={handleExportJson} variant="outline" className="mt-4 border-zinc-700 text-xs">
+                <Button onClick={handleExportJson} variant="outline" className="mt-4 border-zinc-300 text-xs">
                   <Download className="w-3.5 h-3.5 mr-1.5" />
                   Export JSON
                 </Button>
               </div>
 
-              <div className="p-4 rounded-xl bg-zinc-950/60 border border-zinc-800/80 flex flex-col justify-between">
+              <div className="p-4 rounded-xl bg-zinc-50 border border-zinc-200/80 flex flex-col justify-between">
                 <div>
                   <Upload className="w-6 h-6 text-purple-400 mb-2" />
                   <h4 className="text-sm font-semibold text-white">Import Fișier JSON</h4>
-                  <p className="text-[11px] text-zinc-400 mt-1">
+                  <p className="text-[11px] text-zinc-500 mt-1">
                     Încarcă un backup JSON salvat anterior pentru a continua organizarea.
                   </p>
                 </div>
-                <label className="mt-4 inline-flex items-center justify-center rounded-md text-xs font-medium border border-zinc-700 bg-zinc-800 px-4 py-2 text-zinc-200 hover:bg-zinc-700 cursor-pointer">
+                <label className="mt-4 inline-flex items-center justify-center rounded-md text-xs font-medium border border-zinc-300 bg-zinc-800 px-4 py-2 text-zinc-800 hover:bg-zinc-700 cursor-pointer">
                   <Upload className="w-3.5 h-3.5 mr-1.5" />
                   <span>Încarcă Fișier</span>
                   <input type="file" accept=".json" onChange={handleImportJson} className="hidden" />
@@ -1143,7 +1143,7 @@ export function InsurancePortfolioMap() {
             </div>
 
             {/* Privacy & Reset bar */}
-            <div className="pt-6 border-t border-zinc-800/80 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div className="pt-6 border-t border-zinc-200/80 flex flex-col sm:flex-row items-center justify-between gap-4">
               <div className="flex items-center gap-2 text-xs text-zinc-500">
                 <Lock className="w-4 h-4 text-emerald-400 shrink-0" />
                 <span>Datele sunt prelucrate 100% în memoria browserului și nu părăsesc dispozitivul tău.</span>
@@ -1171,15 +1171,15 @@ export function InsurancePortfolioMap() {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.95 }}
-              className="bg-zinc-900 border border-zinc-800 rounded-2xl w-full max-w-2xl max-h-[90vh] flex flex-col overflow-hidden shadow-2xl"
+              className="bg-white border border-zinc-200 rounded-2xl w-full max-w-2xl max-h-[90vh] flex flex-col overflow-hidden shadow-2xl"
             >
               {/* Header */}
-              <div className="px-6 py-4 border-b border-zinc-800 flex items-center justify-between">
+              <div className="px-6 py-4 border-b border-zinc-200 flex items-center justify-between">
                 <div className="flex items-center gap-2">
                   <div className="p-1.5 rounded-lg bg-blue-500/10 text-blue-400">
                     {editingPolicy ? <Edit3 className="w-4 h-4" /> : <Plus className="w-4 h-4" />}
                   </div>
-                  <h3 className="text-base font-bold text-white">
+                  <h3 className="text-base font-bold text-zinc-900">
                     {editingPolicy ? "Editează Polița" : "Adaugă Poliță Nouă"}
                   </h3>
                 </div>
@@ -1196,7 +1196,7 @@ export function InsurancePortfolioMap() {
                 {/* Nickname & Category */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-zinc-300 font-semibold mb-1">
+                    <label className="block text-zinc-600 font-semibold mb-1">
                       Denumire Poliță (Nickname) <span className="text-red-400">*</span>
                     </label>
                     <Input
@@ -1204,18 +1204,18 @@ export function InsurancePortfolioMap() {
                       value={formData.nickname || ""}
                       onChange={(e) => setFormData({ ...formData, nickname: e.target.value })}
                       placeholder="Ex: CASCO Mașină Familie, RCA BMW..."
-                      className="bg-zinc-950 border-zinc-800 text-xs text-white"
+                      className="bg-zinc-50 border-zinc-200 text-xs text-white"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-zinc-300 font-semibold mb-1">
+                    <label className="block text-zinc-600 font-semibold mb-1">
                       Categorie de Asigurare <span className="text-red-400">*</span>
                     </label>
                     <select
                       value={formData.category || "rca"}
                       onChange={(e) => setFormData({ ...formData, category: e.target.value as PortfolioCategory })}
-                      className="w-full bg-zinc-950 border border-zinc-800 rounded-lg px-3 py-2 text-xs text-zinc-200 focus:outline-none focus:border-blue-500"
+                      className="w-full bg-zinc-50 border border-zinc-200 rounded-lg px-3 py-2 text-xs text-zinc-800 focus:outline-none focus:border-blue-500"
                     >
                       {allCategories.map((c) => (
                         <option key={c} value={c}>
@@ -1229,22 +1229,22 @@ export function InsurancePortfolioMap() {
                 {/* Insurer & Product */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-zinc-300 font-medium mb-1">Companie Asigurare (Opțional)</label>
+                    <label className="block text-zinc-600 font-medium mb-1">Companie Asigurare (Opțional)</label>
                     <Input
                       value={formData.insurer || ""}
                       onChange={(e) => setFormData({ ...formData, insurer: e.target.value })}
                       placeholder="Ex: Allianz-Țiriac, Omniasig, Generali..."
-                      className="bg-zinc-950 border-zinc-800 text-xs text-white"
+                      className="bg-zinc-50 border-zinc-200 text-xs text-white"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-zinc-300 font-medium mb-1">Denumire Produs / Pachet</label>
+                    <label className="block text-zinc-600 font-medium mb-1">Denumire Produs / Pachet</label>
                     <Input
                       value={formData.productName || ""}
                       onChange={(e) => setFormData({ ...formData, productName: e.target.value })}
                       placeholder="Ex: CASCO All Risks, Confort Extra..."
-                      className="bg-zinc-950 border-zinc-800 text-xs text-white"
+                      className="bg-zinc-50 border-zinc-200 text-xs text-white"
                     />
                   </div>
                 </div>
@@ -1252,22 +1252,22 @@ export function InsurancePortfolioMap() {
                 {/* Dates */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-zinc-300 font-medium mb-1">Data Început Valabilitate</label>
+                    <label className="block text-zinc-600 font-medium mb-1">Data Început Valabilitate</label>
                     <Input
                       type="date"
                       value={formData.startDate || ""}
                       onChange={(e) => setFormData({ ...formData, startDate: e.target.value })}
-                      className="bg-zinc-950 border-zinc-800 text-xs text-white"
+                      className="bg-zinc-50 border-zinc-200 text-xs text-white"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-zinc-300 font-medium mb-1">Data Expirării</label>
+                    <label className="block text-zinc-600 font-medium mb-1">Data Expirării</label>
                     <Input
                       type="date"
                       value={formData.expiryDate || ""}
                       onChange={(e) => setFormData({ ...formData, expiryDate: e.target.value })}
-                      className="bg-zinc-950 border-zinc-800 text-xs text-white"
+                      className="bg-zinc-50 border-zinc-200 text-xs text-white"
                     />
                   </div>
                 </div>
@@ -1275,7 +1275,7 @@ export function InsurancePortfolioMap() {
                 {/* Premium & Frequency */}
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                   <div>
-                    <label className="block text-zinc-300 font-medium mb-1">Valoare Primă</label>
+                    <label className="block text-zinc-600 font-medium mb-1">Valoare Primă</label>
                     <Input
                       type="number"
                       step="any"
@@ -1287,16 +1287,16 @@ export function InsurancePortfolioMap() {
                         })
                       }
                       placeholder="Ex: 1200"
-                      className="bg-zinc-950 border-zinc-800 text-xs text-white"
+                      className="bg-zinc-50 border-zinc-200 text-xs text-white"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-zinc-300 font-medium mb-1">Monedă</label>
+                    <label className="block text-zinc-600 font-medium mb-1">Monedă</label>
                     <select
                       value={formData.currency || "EUR"}
                       onChange={(e) => setFormData({ ...formData, currency: e.target.value as CurrencyCode })}
-                      className="w-full bg-zinc-950 border border-zinc-800 rounded-lg px-3 py-2 text-xs text-zinc-200 focus:outline-none focus:border-blue-500"
+                      className="w-full bg-zinc-50 border border-zinc-200 rounded-lg px-3 py-2 text-xs text-zinc-800 focus:outline-none focus:border-blue-500"
                     >
                       <option value="RON">RON</option>
                       <option value="EUR">EUR</option>
@@ -1307,11 +1307,11 @@ export function InsurancePortfolioMap() {
                   </div>
 
                   <div>
-                    <label className="block text-zinc-300 font-medium mb-1">Frecvență Plată</label>
+                    <label className="block text-zinc-600 font-medium mb-1">Frecvență Plată</label>
                     <select
                       value={formData.paymentFrequency || "annual"}
                       onChange={(e) => setFormData({ ...formData, paymentFrequency: e.target.value as PaymentFrequency })}
-                      className="w-full bg-zinc-950 border border-zinc-800 rounded-lg px-3 py-2 text-xs text-zinc-200 focus:outline-none focus:border-blue-500"
+                      className="w-full bg-zinc-50 border border-zinc-200 rounded-lg px-3 py-2 text-xs text-zinc-800 focus:outline-none focus:border-blue-500"
                     >
                       <option value="annual">Anuală (1 rată)</option>
                       <option value="semiannual">Semestrială (2 rate)</option>
@@ -1326,7 +1326,7 @@ export function InsurancePortfolioMap() {
                 {/* Coverage Limit & Deductible */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div className="space-y-2">
-                    <label className="block text-zinc-300 font-medium">Limită Despăgubire / Bază</label>
+                    <label className="block text-zinc-600 font-medium">Limită Despăgubire / Bază</label>
                     <div className="grid grid-cols-2 gap-2">
                       <Input
                         type="number"
@@ -1339,19 +1339,19 @@ export function InsurancePortfolioMap() {
                             coverageLimit: e.target.value === "" ? undefined : parseFloat(e.target.value),
                           })
                         }
-                        className="bg-zinc-950 border-zinc-800 text-xs text-white"
+                        className="bg-zinc-50 border-zinc-200 text-xs text-white"
                       />
                       <Input
                         placeholder="Bază (ex: De nou)"
                         value={formData.limitBasis || ""}
                         onChange={(e) => setFormData({ ...formData, limitBasis: e.target.value })}
-                        className="bg-zinc-950 border-zinc-800 text-xs text-white"
+                        className="bg-zinc-50 border-zinc-200 text-xs text-white"
                       />
                     </div>
                   </div>
 
                   <div className="space-y-2">
-                    <label className="block text-zinc-300 font-medium">Franșiză / Condiție</label>
+                    <label className="block text-zinc-600 font-medium">Franșiză / Condiție</label>
                     <div className="grid grid-cols-2 gap-2">
                       <Input
                         type="number"
@@ -1364,13 +1364,13 @@ export function InsurancePortfolioMap() {
                             deductible: e.target.value === "" ? undefined : parseFloat(e.target.value),
                           })
                         }
-                        className="bg-zinc-950 border-zinc-800 text-xs text-white"
+                        className="bg-zinc-50 border-zinc-200 text-xs text-white"
                       />
                       <Input
                         placeholder="Bază (ex: Pe eveniment)"
                         value={formData.deductibleBasis || ""}
                         onChange={(e) => setFormData({ ...formData, deductibleBasis: e.target.value })}
-                        className="bg-zinc-950 border-zinc-800 text-xs text-white"
+                        className="bg-zinc-50 border-zinc-200 text-xs text-white"
                       />
                     </div>
                   </div>
@@ -1378,33 +1378,33 @@ export function InsurancePortfolioMap() {
 
                 {/* Declared Protection & Exclusions */}
                 <div>
-                  <label className="block text-zinc-300 font-medium mb-1">Protecție Declarată / Obiect Asigurat</label>
+                  <label className="block text-zinc-600 font-medium mb-1">Protecție Declarată / Obiect Asigurat</label>
                   <Input
                     value={formData.declaredProtection || ""}
                     onChange={(e) => setFormData({ ...formData, declaredProtection: e.target.value })}
                     placeholder="Ex: Apartament 3 camere, 95mp + bunuri casnice..."
-                    className="bg-zinc-950 border-zinc-800 text-xs text-white"
+                    className="bg-zinc-50 border-zinc-200 text-xs text-white"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-zinc-300 font-medium mb-1">Excluderi sau Restricții Notate</label>
+                  <label className="block text-zinc-600 font-medium mb-1">Excluderi sau Restricții Notate</label>
                   <Input
                     value={formData.exclusions || ""}
                     onChange={(e) => setFormData({ ...formData, exclusions: e.target.value })}
                     placeholder="Ex: Fără asistență rutieră externă, excludere daune prin îngheț..."
-                    className="bg-zinc-950 border-zinc-800 text-xs text-white"
+                    className="bg-zinc-50 border-zinc-200 text-xs text-white"
                   />
                 </div>
 
                 {/* Review Status & Notes */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-zinc-300 font-medium mb-1">Status Revizuire</label>
+                    <label className="block text-zinc-600 font-medium mb-1">Status Revizuire</label>
                     <select
                       value={formData.reviewStatus || "needs_review"}
                       onChange={(e) => setFormData({ ...formData, reviewStatus: e.target.value as PortfolioReviewStatus })}
-                      className="w-full bg-zinc-950 border border-zinc-800 rounded-lg px-3 py-2 text-xs text-zinc-200 focus:outline-none focus:border-blue-500"
+                      className="w-full bg-zinc-50 border border-zinc-200 rounded-lg px-3 py-2 text-xs text-zinc-800 focus:outline-none focus:border-blue-500"
                     >
                       <option value="needs_review">Necesită revizuire</option>
                       <option value="info_requested">Informații solicitate</option>
@@ -1414,33 +1414,33 @@ export function InsurancePortfolioMap() {
                   </div>
 
                   <div>
-                    <label className="block text-zinc-300 font-medium mb-1">Data Ultimei Revizuiri</label>
+                    <label className="block text-zinc-600 font-medium mb-1">Data Ultimei Revizuiri</label>
                     <Input
                       type="date"
                       value={formData.lastReviewedDate || ""}
                       onChange={(e) => setFormData({ ...formData, lastReviewedDate: e.target.value })}
-                      className="bg-zinc-950 border-zinc-800 text-xs text-white"
+                      className="bg-zinc-50 border-zinc-200 text-xs text-white"
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label className="block text-zinc-300 font-medium mb-1">Notă Personală</label>
+                  <label className="block text-zinc-600 font-medium mb-1">Notă Personală</label>
                   <Input
                     value={formData.notes || ""}
                     onChange={(e) => setFormData({ ...formData, notes: e.target.value })}
                     placeholder="Observații proprii, număr de telefon asistență, clauze speciale..."
-                    className="bg-zinc-950 border-zinc-800 text-xs text-white"
+                    className="bg-zinc-50 border-zinc-200 text-xs text-white"
                   />
                 </div>
 
                 {/* Footer Submit */}
-                <div className="pt-4 border-t border-zinc-800 flex items-center justify-end gap-2">
+                <div className="pt-4 border-t border-zinc-200 flex items-center justify-end gap-2">
                   <Button
                     type="button"
                     variant="outline"
                     onClick={() => setIsAddModalOpen(false)}
-                    className="border-zinc-700 text-xs"
+                    className="border-zinc-300 text-xs"
                   >
                     Anulează
                   </Button>
@@ -1462,16 +1462,16 @@ export function InsurancePortfolioMap() {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.95 }}
-              className="bg-zinc-900 border border-zinc-800 rounded-2xl w-full max-w-xl flex flex-col overflow-hidden shadow-2xl text-xs"
+              className="bg-white border border-zinc-200 rounded-2xl w-full max-w-xl flex flex-col overflow-hidden shadow-2xl text-xs"
             >
-              <div className="px-6 py-4 border-b border-zinc-800 flex items-center justify-between">
+              <div className="px-6 py-4 border-b border-zinc-200 flex items-center justify-between">
                 <div className="flex items-center gap-2">
                   <div className="p-1.5 rounded-lg bg-zinc-800">
                     {getCategoryIcon(viewingPolicy.category)}
                   </div>
                   <div>
-                    <h3 className="text-sm font-bold text-white">{viewingPolicy.nickname}</h3>
-                    <div className="text-[11px] text-zinc-400">
+                    <h3 className="text-sm font-bold text-zinc-900">{viewingPolicy.nickname}</h3>
+                    <div className="text-[11px] text-zinc-500">
                       {CATEGORY_INFO[viewingPolicy.category].labelRo}
                     </div>
                   </div>
@@ -1485,30 +1485,30 @@ export function InsurancePortfolioMap() {
               </div>
 
               <div className="p-6 space-y-4 max-h-[75vh] overflow-y-auto">
-                <div className="grid grid-cols-2 gap-3 p-3 bg-zinc-950 rounded-xl border border-zinc-800">
+                <div className="grid grid-cols-2 gap-3 p-3 bg-zinc-50 rounded-xl border border-zinc-200">
                   <div>
                     <div className="text-[10px] text-zinc-500 uppercase">Asigurator</div>
-                    <div className="text-zinc-200 font-medium mt-0.5">{viewingPolicy.insurer || "Nespecificat"}</div>
+                    <div className="text-zinc-800 font-medium mt-0.5">{viewingPolicy.insurer || "Nespecificat"}</div>
                   </div>
                   <div>
                     <div className="text-[10px] text-zinc-500 uppercase">Produs</div>
-                    <div className="text-zinc-200 font-medium mt-0.5">{viewingPolicy.productName || "Nespecificat"}</div>
+                    <div className="text-zinc-800 font-medium mt-0.5">{viewingPolicy.productName || "Nespecificat"}</div>
                   </div>
                   <div>
                     <div className="text-[10px] text-zinc-500 uppercase">Perioadă</div>
-                    <div className="text-zinc-200 font-medium mt-0.5">
+                    <div className="text-zinc-800 font-medium mt-0.5">
                       {viewingPolicy.startDate || "Nedefinit"} → {viewingPolicy.expiryDate || "Nedefinit"}
                     </div>
                   </div>
                   <div>
                     <div className="text-[10px] text-zinc-500 uppercase">Status Expirare</div>
-                    <div className="text-zinc-200 font-medium mt-0.5">
+                    <div className="text-zinc-800 font-medium mt-0.5">
                       {getPolicyExpiryStatus(viewingPolicy.expiryDate).labelRo}
                     </div>
                   </div>
                   <div>
                     <div className="text-[10px] text-zinc-500 uppercase">Primă Anuală / Plată</div>
-                    <div className="text-zinc-200 font-medium mt-0.5">
+                    <div className="text-zinc-800 font-medium mt-0.5">
                       {viewingPolicy.premiumAmount !== undefined
                         ? `${viewingPolicy.premiumAmount.toLocaleString("ro-RO")} ${viewingPolicy.currency} (${viewingPolicy.paymentFrequency || "frecvență n/a"})`
                         : "Nespecificată"}
@@ -1516,13 +1516,13 @@ export function InsurancePortfolioMap() {
                   </div>
                   <div>
                     <div className="text-[10px] text-zinc-500 uppercase">Status Revizuire</div>
-                    <div className="text-zinc-200 font-medium mt-0.5">
+                    <div className="text-zinc-800 font-medium mt-0.5">
                       {REVIEW_STATUS_INFO[viewingPolicy.reviewStatus].labelRo}
                     </div>
                   </div>
                   <div>
                     <div className="text-[10px] text-zinc-500 uppercase">Limită Acoperire</div>
-                    <div className="text-zinc-200 font-medium mt-0.5">
+                    <div className="text-zinc-800 font-medium mt-0.5">
                       {viewingPolicy.coverageLimit
                         ? `${viewingPolicy.coverageLimit.toLocaleString("ro-RO")} ${viewingPolicy.limitCurrency || ""}`
                         : viewingPolicy.limitBasis || "Nespecificată"}
@@ -1530,7 +1530,7 @@ export function InsurancePortfolioMap() {
                   </div>
                   <div>
                     <div className="text-[10px] text-zinc-500 uppercase">Franșiză</div>
-                    <div className="text-zinc-200 font-medium mt-0.5">
+                    <div className="text-zinc-800 font-medium mt-0.5">
                       {viewingPolicy.deductible !== undefined
                         ? `${viewingPolicy.deductible.toLocaleString("ro-RO")} ${viewingPolicy.deductibleCurrency || ""}`
                         : viewingPolicy.deductibleBasis || "Fără franșiză / nespecificată"}
@@ -1540,8 +1540,8 @@ export function InsurancePortfolioMap() {
 
                 {viewingPolicy.declaredProtection && (
                   <div>
-                    <div className="text-zinc-400 font-semibold mb-1">Protecție Declarată</div>
-                    <div className="p-2.5 rounded-lg bg-zinc-950 text-zinc-300 border border-zinc-800">
+                    <div className="text-zinc-500 font-semibold mb-1">Protecție Declarată</div>
+                    <div className="p-2.5 rounded-lg bg-zinc-50 text-zinc-600 border border-zinc-200">
                       {viewingPolicy.declaredProtection}
                     </div>
                   </div>
@@ -1549,8 +1549,8 @@ export function InsurancePortfolioMap() {
 
                 {viewingPolicy.exclusions && (
                   <div>
-                    <div className="text-zinc-400 font-semibold mb-1">Excluderi & Restricții Notate</div>
-                    <div className="p-2.5 rounded-lg bg-zinc-950 text-zinc-300 border border-zinc-800">
+                    <div className="text-zinc-500 font-semibold mb-1">Excluderi & Restricții Notate</div>
+                    <div className="p-2.5 rounded-lg bg-zinc-50 text-zinc-600 border border-zinc-200">
                       {viewingPolicy.exclusions}
                     </div>
                   </div>
@@ -1558,15 +1558,15 @@ export function InsurancePortfolioMap() {
 
                 {viewingPolicy.notes && (
                   <div>
-                    <div className="text-zinc-400 font-semibold mb-1">Notițe Utilizator</div>
-                    <div className="p-2.5 rounded-lg bg-zinc-950 text-zinc-300 border border-zinc-800 italic">
+                    <div className="text-zinc-500 font-semibold mb-1">Notițe Utilizator</div>
+                    <div className="p-2.5 rounded-lg bg-zinc-50 text-zinc-600 border border-zinc-200 italic">
                       &ldquo;{viewingPolicy.notes}&rdquo;
                     </div>
                   </div>
                 )}
               </div>
 
-              <div className="px-6 py-4 border-t border-zinc-800 flex items-center justify-between">
+              <div className="px-6 py-4 border-t border-zinc-200 flex items-center justify-between">
                 <Button
                   variant="destructive"
                   size="sm"
@@ -1586,7 +1586,7 @@ export function InsurancePortfolioMap() {
                       setViewingPolicy(null);
                       handleOpenEdit(p);
                     }}
-                    className="border-zinc-700 text-xs"
+                    className="border-zinc-300 text-xs"
                   >
                     Editează
                   </Button>
@@ -1612,13 +1612,13 @@ export function InsurancePortfolioMap() {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.95 }}
-              className="bg-zinc-900 border border-zinc-800 rounded-2xl w-full max-w-md p-6 text-xs shadow-2xl"
+              className="bg-white border border-zinc-200 rounded-2xl w-full max-w-md p-6 text-xs shadow-2xl"
             >
               <div className="flex items-center gap-3 text-red-400 mb-3">
                 <Trash2 className="w-5 h-5" />
-                <h3 className="text-sm font-bold text-white">Confirmă Ștergerea Poliței</h3>
+                <h3 className="text-sm font-bold text-zinc-900">Confirmă Ștergerea Poliței</h3>
               </div>
-              <p className="text-zinc-300 mb-4">
+              <p className="text-zinc-600 mb-4">
                 Sigur dorești să ștergi înregistrarea <strong className="text-white">&ldquo;{policyToDelete.nickname}&rdquo;</strong> din portofoliu?
               </p>
               <div className="flex items-center justify-end gap-2">
@@ -1626,7 +1626,7 @@ export function InsurancePortfolioMap() {
                   variant="outline"
                   size="sm"
                   onClick={() => setPolicyToDelete(null)}
-                  className="border-zinc-700 text-xs"
+                  className="border-zinc-300 text-xs"
                 >
                   Anulează
                 </Button>
@@ -1652,13 +1652,13 @@ export function InsurancePortfolioMap() {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.95 }}
-              className="bg-zinc-900 border border-zinc-800 rounded-2xl w-full max-w-md p-6 text-xs shadow-2xl"
+              className="bg-white border border-zinc-200 rounded-2xl w-full max-w-md p-6 text-xs shadow-2xl"
             >
               <div className="flex items-center gap-3 text-red-400 mb-3">
                 <AlertTriangle className="w-5 h-5" />
-                <h3 className="text-sm font-bold text-white">Resetare Completă Portofoliu</h3>
+                <h3 className="text-sm font-bold text-zinc-900">Resetare Completă Portofoliu</h3>
               </div>
-              <p className="text-zinc-300 mb-4 leading-relaxed">
+              <p className="text-zinc-600 mb-4 leading-relaxed">
                 Această acțiune va șterge toate polițele introduse în această sesiune de navigare. Asigură-te că ai descărcat un raport PDF sau un export JSON înainte de a reseta.
               </p>
               <div className="flex items-center justify-end gap-2">
@@ -1666,7 +1666,7 @@ export function InsurancePortfolioMap() {
                   variant="outline"
                   size="sm"
                   onClick={() => setIsResetConfirmOpen(false)}
-                  className="border-zinc-700 text-xs"
+                  className="border-zinc-300 text-xs"
                 >
                   Anulează
                 </Button>

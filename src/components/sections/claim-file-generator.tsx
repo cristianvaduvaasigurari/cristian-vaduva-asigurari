@@ -64,18 +64,18 @@ export function ClaimFileGenerator() {
   return (
     <div className="w-full space-y-10 max-w-4xl mx-auto">
       {/* 1. TOP CONTROLS & LANGUAGE TOGGLE */}
-      <div className="flex flex-col sm:flex-row items-center justify-between gap-4 p-4 rounded-2xl bg-zinc-900/60 border border-zinc-800">
-        <div className="flex items-center gap-2 text-xs text-zinc-300 font-medium">
+      <div className="flex flex-col sm:flex-row items-center justify-between gap-4 p-4 rounded-2xl bg-white border border-zinc-200">
+        <div className="flex items-center gap-2 text-xs text-zinc-600 font-medium">
           <FileText className="w-4 h-4 text-blue-400" />
           <span>{isRo ? "Pasul 1: Alege Tipul Incidentului & Limba" : "Step 1: Select Incident & Language"}</span>
         </div>
 
-        <div className="flex items-center gap-1 p-1 rounded-full bg-zinc-950 border border-zinc-800 text-xs">
+        <div className="flex items-center gap-1 p-1 rounded-full bg-zinc-50 border border-zinc-200 text-xs">
           <button
             type="button"
             onClick={() => setLang("ro")}
             className={`px-3 py-1 rounded-full font-medium transition-all ${
-              lang === "ro" ? "bg-blue-600 text-white" : "text-zinc-400 hover:text-white"
+              lang === "ro" ? "bg-blue-600 text-white" : "text-zinc-500 hover:text-white"
             }`}
           >
             Română
@@ -84,7 +84,7 @@ export function ClaimFileGenerator() {
             type="button"
             onClick={() => setLang("en")}
             className={`px-3 py-1 rounded-full font-medium transition-all ${
-              lang === "en" ? "bg-blue-600 text-white" : "text-zinc-400 hover:text-white"
+              lang === "en" ? "bg-blue-600 text-white" : "text-zinc-500 hover:text-white"
             }`}
           >
             English
@@ -100,17 +100,17 @@ export function ClaimFileGenerator() {
           className={`p-6 rounded-3xl border text-left transition-all flex flex-col justify-between ${
             incidentType === "auto"
               ? "bg-rose-500/10 border-rose-500/50 shadow-lg"
-              : "bg-zinc-900/40 border-zinc-800 hover:border-zinc-700"
+              : "bg-zinc-50 border-zinc-200 hover:border-zinc-300"
           }`}
         >
           <div className="w-12 h-12 rounded-2xl bg-rose-500/10 text-rose-400 flex items-center justify-center mb-4">
             <Car className="w-6 h-6" />
           </div>
           <div>
-            <h3 className="font-heading font-bold text-white text-base">
+            <h3 className="font-heading font-bold text-zinc-900 text-base">
               {isRo ? "Accident Auto / Tamponare" : "Road Accident / Collision"}
             </h3>
-            <p className="text-xs text-zinc-400 mt-1">
+            <p className="text-xs text-zinc-500 mt-1">
               {isRo ? "RCA, CASCO, Amiabilă sau Poliție" : "RCA, CASCO, Amicable or Police"}
             </p>
           </div>
@@ -122,17 +122,17 @@ export function ClaimFileGenerator() {
           className={`p-6 rounded-3xl border text-left transition-all flex flex-col justify-between ${
             incidentType === "water"
               ? "bg-blue-500/10 border-blue-500/50 shadow-lg"
-              : "bg-zinc-900/40 border-zinc-800 hover:border-zinc-700"
+              : "bg-zinc-50 border-zinc-200 hover:border-zinc-300"
           }`}
         >
           <div className="w-12 h-12 rounded-2xl bg-blue-500/10 text-blue-400 flex items-center justify-center mb-4">
             <Waves className="w-6 h-6" />
           </div>
           <div>
-            <h3 className="font-heading font-bold text-white text-base">
+            <h3 className="font-heading font-bold text-zinc-900 text-base">
               {isRo ? "Inundație / Avarii Instalații" : "Water Damage / Flooding"}
             </h3>
-            <p className="text-xs text-zinc-400 mt-1">
+            <p className="text-xs text-zinc-500 mt-1">
               {isRo ? "Conducte sparte, infiltrații, vecini" : "Burst pipes, leaks, neighbor liability"}
             </p>
           </div>
@@ -144,17 +144,17 @@ export function ClaimFileGenerator() {
           className={`p-6 rounded-3xl border text-left transition-all flex flex-col justify-between ${
             incidentType === "theft"
               ? "bg-amber-500/10 border-amber-500/50 shadow-lg"
-              : "bg-zinc-900/40 border-zinc-800 hover:border-zinc-700"
+              : "bg-zinc-50 border-zinc-200 hover:border-zinc-300"
           }`}
         >
           <div className="w-12 h-12 rounded-2xl bg-amber-500/10 text-amber-400 flex items-center justify-center mb-4">
             <ShieldAlert className="w-6 h-6" />
           </div>
           <div>
-            <h3 className="font-heading font-bold text-white text-base">
+            <h3 className="font-heading font-bold text-zinc-900 text-base">
               {isRo ? "Furt / Efracție" : "Theft / Burglary"}
             </h3>
-            <p className="text-xs text-zinc-400 mt-1">
+            <p className="text-xs text-zinc-500 mt-1">
               {isRo ? "Bunuri furate, forțare încuietori" : "Stolen goods, forced locks, police log"}
             </p>
           </div>
@@ -162,15 +162,15 @@ export function ClaimFileGenerator() {
       </div>
 
       {/* 3. SAFETY PRIORITY BANNER */}
-      <div className="p-5 rounded-2xl bg-rose-950/40 border border-rose-500/40 flex items-start gap-4 text-xs sm:text-sm">
+      <div className="p-5 rounded-2xl bg-rose-50 border border-rose-200 flex items-start gap-4 text-xs sm:text-sm">
         <div className="p-2.5 rounded-xl bg-rose-600 text-white font-bold shrink-0">
           112
         </div>
-        <div className="space-y-1 text-rose-200">
+        <div className="space-y-1 text-rose-800">
           <strong className="block text-white font-bold">
             {isRo ? "Măsură de Urgență Vitală:" : "Critical Emergency Precaution:"}
           </strong>
-          <p className="leading-relaxed text-xs text-rose-200/90">
+          <p className="leading-relaxed text-xs text-rose-800/90">
             {isRo
               ? "Siguranța personală are prioritate absolută. Nu colectați documente și nu fotografiați locul faptei dacă există pericol activ, incendiu sau vătămări corporale. Apelați imediat 112."
               : "Personal safety takes priority over collecting paperwork. Do not document active hazards or injuries before reaching safety. Call 112 immediately."}
@@ -179,13 +179,13 @@ export function ClaimFileGenerator() {
       </div>
 
       {/* 4. DYNAMIC INTERACTIVE CHECKLIST PREVIEW */}
-      <div className="p-8 sm:p-10 rounded-[2.5rem] bg-zinc-950 border border-zinc-800 shadow-2xl space-y-8">
-        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pb-6 border-b border-zinc-800">
+      <div className="p-8 sm:p-10 rounded-[2.5rem] bg-zinc-50 border border-zinc-200 shadow-2xl space-y-8">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pb-6 border-b border-zinc-200">
           <div>
             <span className="text-xs uppercase tracking-widest text-blue-400 font-bold block mb-1">
               {isRo ? "PREVIZUALIZARE DOSAR DE DAUNĂ" : "CLAIM FILE CHECKLIST PREVIEW"}
             </span>
-            <h3 className="text-xl sm:text-2xl font-heading font-bold text-white">
+            <h3 className="text-xl sm:text-2xl font-heading font-bold text-zinc-900">
               {incidentType === "auto"
                 ? isRo ? "Accident Rutier: Documente & Acțiuni" : "Road Accident: Documents & Steps"
                 : incidentType === "water"
@@ -205,7 +205,7 @@ export function ClaimFileGenerator() {
         </div>
 
         {downloadSuccess && (
-          <div className="p-4 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 text-xs flex items-center gap-2">
+          <div className="p-4 rounded-2xl bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs flex items-center gap-2">
             <CheckCircle2 className="w-4 h-4 text-emerald-400" />
             <span>{isRo ? "Documentul PDF a fost generat și descărcat cu succes!" : "PDF document successfully generated and downloaded!"}</span>
           </div>
@@ -237,9 +237,9 @@ export function ClaimFileGenerator() {
                   desc: isRo ? "Apelați numărul de asistență de pe poliță. Nu reparați mașina înainte de efectuarea constatării oficiale de daună." : "Call roadside recovery on your policy. Do not repair vehicle prior to official insurance survey.",
                 },
               ].map((step, idx) => (
-                <div key={idx} className="p-4 rounded-2xl bg-zinc-900/50 border border-zinc-800 space-y-1">
+                <div key={idx} className="p-4 rounded-2xl bg-white border border-zinc-200 space-y-1">
                   <strong className="text-white text-xs sm:text-sm block">{step.title}</strong>
-                  <p className="text-xs text-zinc-400 leading-relaxed">{step.desc}</p>
+                  <p className="text-xs text-zinc-500 leading-relaxed">{step.desc}</p>
                 </div>
               ))}
             </div>
@@ -265,9 +265,9 @@ export function ClaimFileGenerator() {
                   desc: isRo ? "Notificați asiguratorul în termenul din contract (24-48h). Nu aruncați parchetul sau mobilierul înainte de vizita inspectorului." : "Notify insurer within contractual window (24-48h). Do not discard damaged furniture before surveyor inspection.",
                 },
               ].map((step, idx) => (
-                <div key={idx} className="p-4 rounded-2xl bg-zinc-900/50 border border-zinc-800 space-y-1">
+                <div key={idx} className="p-4 rounded-2xl bg-white border border-zinc-200 space-y-1">
                   <strong className="text-white text-xs sm:text-sm block">{step.title}</strong>
-                  <p className="text-xs text-zinc-400 leading-relaxed">{step.desc}</p>
+                  <p className="text-xs text-zinc-500 leading-relaxed">{step.desc}</p>
                 </div>
               ))}
             </div>
@@ -293,9 +293,9 @@ export function ClaimFileGenerator() {
                   desc: isRo ? "Solicitați numărul de înregistrare al plângerii penale de la secția de Poliție, document esențial la deschiderea dosarului de daună." : "Request the official Police Crime Case Number (Număr Dosar Penal) needed for insurer claim filing.",
                 },
               ].map((step, idx) => (
-                <div key={idx} className="p-4 rounded-2xl bg-zinc-900/50 border border-zinc-800 space-y-1">
+                <div key={idx} className="p-4 rounded-2xl bg-white border border-zinc-200 space-y-1">
                   <strong className="text-white text-xs sm:text-sm block">{step.title}</strong>
-                  <p className="text-xs text-zinc-400 leading-relaxed">{step.desc}</p>
+                  <p className="text-xs text-zinc-500 leading-relaxed">{step.desc}</p>
                 </div>
               ))}
             </div>
@@ -303,8 +303,8 @@ export function ClaimFileGenerator() {
         </div>
 
         {/* Download PDF Bottom CTA */}
-        <div className="pt-6 border-t border-zinc-800 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div className="text-xs text-zinc-400">
+        <div className="pt-6 border-t border-zinc-200 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div className="text-xs text-zinc-500">
             {isRo
               ? "PDF-ul include spațiu de notițe tipăribil și contactul direct de consultanță."
               : "The generated PDF includes printable note-taking space and advisory contact info."}
@@ -322,16 +322,16 @@ export function ClaimFileGenerator() {
       </div>
 
       {/* 5. CLAIMS ADVISORY FOOTER */}
-      <div className="p-8 rounded-[2rem] bg-zinc-900/40 border border-zinc-800 space-y-4">
+      <div className="p-8 rounded-[2rem] bg-zinc-50 border border-zinc-200 space-y-4">
         <div className="flex items-start gap-4">
           <div className="p-3 rounded-2xl bg-blue-500/10 text-blue-400 shrink-0">
             <PhoneCall className="w-6 h-6" />
           </div>
           <div className="space-y-2">
-            <h4 className="text-base sm:text-lg font-heading font-bold text-white">
+            <h4 className="text-base sm:text-lg font-heading font-bold text-zinc-900">
               {isRo ? "Consultanță & Asistență la Deschiderea Dosarului de Daună" : "Insurance Claims Advisory & Broker Support"}
             </h4>
-            <p className="text-xs sm:text-sm text-zinc-400 leading-relaxed">
+            <p className="text-xs sm:text-sm text-zinc-500 leading-relaxed">
               {isRo
                 ? "Ai nevoie de îndrumare privind clauzele contractuale, devizele de reparație sau comunicarea cu inspectorul de daune? Contactează consultantul Cristian Văduva. Acest număr este destinat exclusiv consultanței de asigurare (nu este un serviciu de dispecerat de urgență)."
                 : "Need guidance regarding policy wording, repair estimates, or insurer communication? Contact advisor Cristian Văduva. This contact is strictly for insurance advisory and is not an emergency dispatch service."}
@@ -346,7 +346,7 @@ export function ClaimFileGenerator() {
               </a>
               <Link
                 href="/verifica-polita"
-                className="text-zinc-400 hover:text-white underline underline-offset-4"
+                className="text-zinc-500 hover:text-white underline underline-offset-4"
               >
                 {isRo ? "Verifică o poliță existentă &rarr;" : "Review an existing policy &rarr;"}
               </Link>

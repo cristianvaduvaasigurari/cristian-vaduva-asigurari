@@ -510,17 +510,17 @@ export function EmergencyCenter() {
     <div className="w-full max-w-5xl mx-auto">
       
       {/* 1. TOP EMERGENCY HIERARCHY NOTICE (112 SAFETY-FIRST BANNER) */}
-      <div className="mb-10 p-6 sm:p-8 rounded-[2rem] bg-rose-950/30 border-2 border-rose-500/50 shadow-2xl relative overflow-hidden">
+      <div className="mb-10 p-6 sm:p-8 rounded-[2rem] bg-rose-50 border-2 border-rose-300 shadow-sm relative overflow-hidden">
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 relative z-10">
           <div className="space-y-2 max-w-2xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-500 text-white font-bold text-xs uppercase tracking-widest animate-pulse">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-600 text-white font-bold text-xs uppercase tracking-widest animate-pulse shadow-sm">
               <AlertTriangle className="w-4 h-4" />
               {lang === "ro" ? "PERICOL IMINENT / URGENȚĂ VITALĂ" : "IMMEDIATE DANGER / LIFE THREAT"}
             </div>
-            <h2 className="text-2xl sm:text-3xl font-heading font-bold text-white tracking-tight">
+            <h2 className="text-2xl sm:text-3xl font-heading font-bold text-zinc-900 tracking-tight">
               {lang === "ro" ? "Apelați Numărul Național de Urgență: 112" : "Call National Emergency Dispatch: 112"}
             </h2>
-            <p className="text-sm text-rose-200/90 leading-relaxed">
+            <p className="text-sm text-zinc-700 leading-relaxed">
               {lang === "ro"
                 ? "Dacă există persoane rănite, pericol de incendiu, prăbușiri sau amenințare la adresa vieții, prioritatea absolută este punerea în siguranță și apelarea imediată a numărului 112. Nu faceți fotografii și nu căutați documente înainte de a vă asigura că sunteți în afara oricărui pericol."
                 : "If there are injuries, active fire, structural hazard, or immediate life threat, prioritize personal safety and call 112 immediately. Do not take photos or search for insurance papers before reaching safety."}
@@ -530,30 +530,30 @@ export function EmergencyCenter() {
           <div className="flex flex-col items-stretch sm:items-center gap-2 shrink-0 w-full md:w-auto">
             <a
               href="tel:112"
-              className="flex items-center justify-center gap-3 px-8 py-4 rounded-2xl bg-rose-600 hover:bg-rose-700 text-white font-heading font-black text-2xl sm:text-3xl tracking-wider shadow-xl transition-transform hover:scale-105"
+              className="flex items-center justify-center gap-3 px-8 py-4 rounded-2xl bg-rose-600 hover:bg-rose-700 text-white font-heading font-black text-2xl sm:text-3xl tracking-wider shadow-md transition-transform hover:scale-105"
             >
               <PhoneCall className="w-7 h-7" />
               112
             </a>
-            <span className="text-[11px] text-rose-300/80 text-center">
+            <span className="text-[11px] text-zinc-500 font-medium text-center">
               {lang === "ro" ? "Dispecerat Național • Gratuit 24/7" : "National Dispatch • Toll-Free 24/7"}
             </span>
           </div>
         </div>
 
         {/* Language selector inside banner header */}
-        <div className="mt-6 pt-4 border-t border-rose-500/20 flex flex-col sm:flex-row items-center justify-between text-xs text-rose-300 gap-2">
+        <div className="mt-6 pt-4 border-t border-rose-200 flex flex-col sm:flex-row items-center justify-between text-xs text-zinc-600 gap-2">
           <span>
             {lang === "ro" 
               ? "Acest ghid este informativ și NU înlocuiește dispeceratul serviciilor de urgență."
               : "This guide is informative and DOES NOT replace national emergency services."}
           </span>
-          <div className="flex items-center gap-1 p-1 rounded-full bg-zinc-900 border border-zinc-800 text-xs">
+          <div className="flex items-center gap-1 p-1 rounded-full bg-white border border-rose-200 text-xs shadow-xs">
             <button
               type="button"
               onClick={() => setLang("ro")}
               className={`px-3 py-0.5 rounded-full font-medium transition-all ${
-                lang === "ro" ? "bg-rose-600 text-white" : "text-zinc-400 hover:text-white"
+                lang === "ro" ? "bg-rose-600 text-white shadow-xs" : "text-zinc-600 hover:text-zinc-900"
               }`}
             >
               Română
@@ -562,7 +562,7 @@ export function EmergencyCenter() {
               type="button"
               onClick={() => setLang("en")}
               className={`px-3 py-0.5 rounded-full font-medium transition-all ${
-                lang === "en" ? "bg-rose-600 text-white" : "text-zinc-400 hover:text-white"
+                lang === "en" ? "bg-rose-600 text-white shadow-xs" : "text-zinc-600 hover:text-zinc-900"
               }`}
             >
               English
@@ -575,13 +575,13 @@ export function EmergencyCenter() {
       {!selectedScenario ? (
         <div className="space-y-6">
           <div className="text-center max-w-xl mx-auto mb-8">
-            <span className="text-xs uppercase tracking-[0.2em] text-zinc-400 font-bold block mb-2">
+            <span className="text-xs uppercase tracking-[0.2em] text-zinc-500 font-bold block mb-2">
               {lang === "ro" ? "ETAPA POST-PERICOL: GHID DE CONDUITĂ" : "POST-HAZARD STEP-BY-STEP GUIDANCE"}
             </span>
-            <h3 className="text-2xl sm:text-3xl font-heading font-bold text-white">
+            <h3 className="text-2xl sm:text-3xl font-heading font-bold text-zinc-900">
               {lang === "ro" ? "Selectează Tipul Incidentului" : "Select Incident Type"}
             </h3>
-            <p className="text-xs sm:text-sm text-zinc-400 mt-2">
+            <p className="text-xs sm:text-sm text-zinc-600 mt-2">
               {lang === "ro"
                 ? "Ghid structurat pentru protejarea dreptului la despăgubire și evitarea erorilor procedurale."
                 : "Structured guidance to preserve your insurance claim rights and avoid procedural mistakes."}
@@ -597,26 +597,26 @@ export function EmergencyCenter() {
                   key={em.id}
                   type="button"
                   onClick={() => setSelectedScenario(em)}
-                  className="p-6 rounded-3xl border border-zinc-800 bg-zinc-950/70 hover:border-zinc-700 hover:bg-zinc-900 transition-all text-left flex flex-col justify-between group shadow-lg"
+                  className="p-6 rounded-3xl border border-zinc-200/80 bg-white hover:border-zinc-300 hover:shadow-md transition-all text-left flex flex-col justify-between group shadow-sm"
                 >
                   <div>
                     <div className="flex items-center justify-between mb-4">
                       <div className={`w-12 h-12 rounded-2xl flex items-center justify-center ${em.color}`}>
                         {em.icon}
                       </div>
-                      <span className="text-[10px] uppercase font-bold tracking-wider px-2.5 py-1 rounded-full bg-zinc-900 text-zinc-400 border border-zinc-800">
+                      <span className="text-[10px] uppercase font-bold tracking-wider px-2.5 py-1 rounded-full bg-zinc-100 text-zinc-700 border border-zinc-200">
                         {badge}
                       </span>
                     </div>
-                    <h4 className="text-lg font-heading font-bold text-white mb-2 group-hover:text-blue-400 transition-colors">
+                    <h4 className="text-lg font-heading font-bold text-zinc-900 mb-2 group-hover:text-rose-600 transition-colors">
                       {title}
                     </h4>
-                    <p className="text-xs text-zinc-400 line-clamp-2 leading-relaxed">
+                    <p className="text-xs text-zinc-600 line-clamp-2 leading-relaxed">
                       {lang === "ro" ? em.firstActionRo : em.firstActionEn}
                     </p>
                   </div>
 
-                  <div className="mt-5 pt-3 border-t border-zinc-800/60 flex items-center justify-between text-xs text-zinc-500 group-hover:text-zinc-300 transition-colors">
+                  <div className="mt-5 pt-3 border-t border-zinc-100 flex items-center justify-between text-xs text-zinc-500 group-hover:text-zinc-900 transition-colors">
                     <span>{lang === "ro" ? "Vezi pașii obligatorii" : "View mandatory steps"}</span>
                     <ChevronRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                   </div>
@@ -630,30 +630,30 @@ export function EmergencyCenter() {
         <motion.div 
           initial={{ opacity: 0, scale: 0.98 }}
           animate={{ opacity: 1, scale: 1 }}
-          className="glass p-6 sm:p-10 rounded-[2.5rem] border border-zinc-800 bg-zinc-950/90 shadow-2xl relative"
+          className="p-6 sm:p-10 rounded-[2.5rem] border border-zinc-200/80 bg-white shadow-lg relative"
         >
           <button 
             type="button"
             onClick={() => setSelectedScenario(null)}
-            className="absolute top-6 right-6 p-2.5 text-zinc-400 hover:text-white transition-colors bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 rounded-full"
+            className="absolute top-6 right-6 p-2.5 text-zinc-500 hover:text-zinc-900 transition-colors bg-zinc-100 hover:bg-zinc-200 border border-zinc-200 rounded-full"
             title="Închide"
           >
             <X className="w-5 h-5" />
           </button>
 
           {/* Header */}
-          <div className="flex flex-col sm:flex-row gap-6 items-start mb-8 pb-6 border-b border-zinc-800/80 pr-12">
+          <div className="flex flex-col sm:flex-row gap-6 items-start mb-8 pb-6 border-b border-zinc-200 pr-12">
             <div className={`w-16 h-16 rounded-2xl flex items-center justify-center shrink-0 ${selectedScenario.color}`}>
               {selectedScenario.icon}
             </div>
             <div>
-              <span className="text-xs uppercase tracking-widest text-zinc-400 font-bold block mb-1">
+              <span className="text-xs uppercase tracking-widest text-zinc-500 font-bold block mb-1">
                 {lang === "ro" ? selectedScenario.badgeRo : selectedScenario.badgeEn}
               </span>
-              <h3 className="text-2xl sm:text-3xl font-heading font-bold text-white mb-2">
+              <h3 className="text-2xl sm:text-3xl font-heading font-bold text-zinc-900 mb-2">
                 {lang === "ro" ? selectedScenario.titleRo : selectedScenario.titleEn}
               </h3>
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-rose-500/10 border border-rose-500/30 text-rose-400 text-xs font-semibold">
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-rose-50 border border-rose-200 text-rose-700 text-xs font-semibold">
                 <AlertTriangle className="w-4 h-4" />
                 <span>{lang === "ro" ? selectedScenario.firstActionRo : selectedScenario.firstActionEn}</span>
               </div>
@@ -661,8 +661,8 @@ export function EmergencyCenter() {
           </div>
 
           {/* Critical Safety Warning */}
-          <div className="mb-8 p-4 sm:p-5 rounded-2xl bg-amber-500/10 border border-amber-500/30 text-amber-300 text-xs sm:text-sm flex items-start gap-3">
-            <Info className="w-5 h-5 shrink-0 mt-0.5" />
+          <div className="mb-8 p-4 sm:p-5 rounded-2xl bg-amber-50 border border-amber-200 text-amber-900 text-xs sm:text-sm flex items-start gap-3">
+            <Info className="w-5 h-5 shrink-0 mt-0.5 text-amber-700" />
             <div>
               <span className="font-bold block mb-0.5">
                 {lang === "ro" ? "Măsură Critică de Siguranță:" : "Critical Safety Precaution:"}
@@ -674,18 +674,18 @@ export function EmergencyCenter() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
             {/* Steps (Left Column) */}
             <div className="lg:col-span-7 space-y-6">
-              <h4 className="text-xl font-heading font-bold text-white flex items-center gap-2">
-                <ShieldCheck className="w-5 h-5 text-blue-400" />
+              <h4 className="text-xl font-heading font-bold text-zinc-900 flex items-center gap-2">
+                <ShieldCheck className="w-5 h-5 text-blue-600" />
                 {lang === "ro" ? "Pași Recomandați (Secvență Cronologică)" : "Recommended Step-by-Step Sequence"}
               </h4>
 
               <div className="space-y-4">
                 {(lang === "ro" ? selectedScenario.stepsRo : selectedScenario.stepsEn).map((step, idx) => (
-                  <div key={idx} className="p-5 rounded-2xl bg-zinc-900/50 border border-zinc-800 space-y-1.5">
-                    <h5 className="font-semibold text-white text-sm sm:text-base">
+                  <div key={idx} className="p-5 rounded-2xl bg-zinc-50 border border-zinc-200 space-y-1.5">
+                    <h5 className="font-semibold text-zinc-900 text-sm sm:text-base">
                       {step.title}
                     </h5>
-                    <p className="text-xs sm:text-sm text-zinc-400 leading-relaxed">
+                    <p className="text-xs sm:text-sm text-zinc-600 leading-relaxed">
                       {step.desc}
                     </p>
                   </div>
@@ -696,15 +696,15 @@ export function EmergencyCenter() {
             {/* Documents & Rules (Right Column) */}
             <div className="lg:col-span-5 space-y-6">
               {/* Docs */}
-              <div className="p-6 rounded-2xl bg-zinc-900/60 border border-zinc-800 space-y-3">
-                <h5 className="font-bold text-white text-sm flex items-center gap-2">
-                  <FileText className="w-4 h-4 text-blue-400" />
+              <div className="p-6 rounded-2xl bg-zinc-50 border border-zinc-200 space-y-3">
+                <h5 className="font-bold text-zinc-900 text-sm flex items-center gap-2">
+                  <FileText className="w-4 h-4 text-blue-600" />
                   {lang === "ro" ? "Documente Necesare la Dosar" : "Required Claim Documents"}
                 </h5>
                 <ul className="space-y-2">
                   {(lang === "ro" ? selectedScenario.docsRo : selectedScenario.docsEn).map((doc, idx) => (
-                    <li key={idx} className="text-xs text-zinc-300 flex items-start gap-2">
-                      <span className="text-blue-400 font-bold">•</span>
+                    <li key={idx} className="text-xs text-zinc-700 flex items-start gap-2">
+                      <span className="text-blue-600 font-bold">•</span>
                       <span>{doc}</span>
                     </li>
                   ))}
@@ -712,15 +712,15 @@ export function EmergencyCenter() {
               </div>
 
               {/* Critical rules */}
-              <div className="p-6 rounded-2xl bg-zinc-900/60 border border-zinc-800 space-y-3">
-                <h5 className="font-bold text-white text-sm flex items-center gap-2 text-amber-400">
-                  <AlertTriangle className="w-4 h-4" />
+              <div className="p-6 rounded-2xl bg-amber-50/60 border border-amber-200 space-y-3">
+                <h5 className="font-bold text-amber-900 text-sm flex items-center gap-2">
+                  <AlertTriangle className="w-4 h-4 text-amber-700" />
                   {lang === "ro" ? "Ce să NU faci niciodată" : "Critical Pitfalls to Avoid"}
                 </h5>
                 <ul className="space-y-2">
                   {(lang === "ro" ? selectedScenario.criticalRulesRo : selectedScenario.criticalRulesEn).map((rule, idx) => (
-                    <li key={idx} className="text-xs text-zinc-300 flex items-start gap-2">
-                      <span className="text-amber-400 font-bold">•</span>
+                    <li key={idx} className="text-xs text-amber-950 flex items-start gap-2">
+                      <span className="text-amber-700 font-bold">•</span>
                       <span>{rule}</span>
                     </li>
                   ))}
@@ -732,7 +732,7 @@ export function EmergencyCenter() {
                 type="button"
                 variant="outline"
                 onClick={() => setSelectedScenario(null)}
-                className="w-full rounded-full border-zinc-800 hover:bg-zinc-900 text-zinc-300 text-xs h-11"
+                className="w-full rounded-full border-zinc-300 hover:bg-zinc-100 text-zinc-800 text-xs h-11 font-medium shadow-xs"
               >
                 {lang === "ro" ? "← Înapoi la toate scenariile" : "← Back to all scenarios"}
               </Button>
@@ -742,16 +742,16 @@ export function EmergencyCenter() {
       )}
 
       {/* 3. INSURANCE ADVISORY & BROKER ASSISTANCE DISTINCTION */}
-      <div className="mt-14 p-8 rounded-[2rem] bg-zinc-900/40 border border-zinc-800 space-y-4">
+      <div className="mt-14 p-8 rounded-[2rem] bg-zinc-50 border border-zinc-200/80 shadow-sm space-y-4">
         <div className="flex items-start gap-4">
-          <div className="p-3 rounded-2xl bg-blue-500/10 text-blue-400 shrink-0">
+          <div className="p-3 rounded-2xl bg-blue-50 text-blue-600 border border-blue-200 shrink-0">
             <LifeBuoy className="w-6 h-6" />
           </div>
           <div className="space-y-2">
-            <h4 className="text-lg font-heading font-bold text-white">
+            <h4 className="text-lg font-heading font-bold text-zinc-900">
               {lang === "ro" ? "Consultanță Broker & Asistență la Dosarul de Daună" : "Insurance Broker & Claims Advisory Contact"}
             </h4>
-            <p className="text-xs sm:text-sm text-zinc-400 leading-relaxed">
+            <p className="text-xs sm:text-sm text-zinc-600 leading-relaxed">
               {lang === "ro"
                 ? "Pentru deschiderea dosarului de daună, interpretarea clauzelor contractuale sau asistență în raport cu asiguratorul, contactați consultantul Cristian Văduva. Acest număr este dedicat exclusiv consultanței de asigurare (nu este un serviciu de dispecerat de urgență)."
                 : "For claims advocacy, clause interpretation, and guidance with insurance companies, contact advisor Cristian Văduva. This contact is strictly for insurance advisory and is not an emergency dispatch service."}
@@ -759,7 +759,7 @@ export function EmergencyCenter() {
             <div className="pt-2 flex flex-wrap items-center gap-4">
               <a
                 href={CONTACT.phone.href}
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-blue-600 hover:bg-blue-700 text-white text-xs font-semibold transition-colors"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-blue-600 hover:bg-blue-700 text-white text-xs font-semibold shadow-sm transition-colors"
               >
                 <PhoneCall className="w-3.5 h-3.5" />
                 {lang === "ro" ? `Consultanță: ${CONTACT.phone.display}` : `Advisory: ${CONTACT.phone.display}`}
@@ -768,13 +768,13 @@ export function EmergencyCenter() {
                 href={CONTACT.whatsapp.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-semibold transition-colors"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-semibold shadow-sm transition-colors"
               >
                 WhatsApp Advisory
               </a>
               <Link
                 href="/verifica-polita"
-                className="text-xs text-zinc-400 hover:text-white underline underline-offset-4"
+                className="text-xs text-zinc-600 hover:text-blue-600 underline underline-offset-4"
               >
                 {lang === "ro" ? "Verifică acoperirea unei polițe existente &rarr;" : "Review an existing policy &rarr;"}
               </Link>

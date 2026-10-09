@@ -219,7 +219,7 @@ export function RenewalOfferReview() {
   return (
     <div className="w-full space-y-8 max-w-5xl mx-auto">
       {/* 1. TOP TOOLBAR */}
-      <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4 p-4 sm:p-5 rounded-3xl bg-zinc-900/80 border border-zinc-800">
+      <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4 p-4 sm:p-5 rounded-3xl bg-white border border-zinc-200">
         <div className="flex items-center gap-1.5 overflow-x-auto pb-1 sm:pb-0 text-xs">
           {[
             { id: "inputs" as const, labelRo: "1. Date Polițe & Prime", labelEn: "1. Policies & Premiums" },
@@ -234,7 +234,7 @@ export function RenewalOfferReview() {
               className={`px-3.5 py-2 rounded-xl font-medium transition-all shrink-0 ${
                 activeTab === tab.id
                   ? "bg-blue-600 text-white shadow-md font-bold"
-                  : "bg-zinc-950 text-zinc-400 hover:text-white border border-zinc-800"
+                  : "bg-zinc-50 text-zinc-500 hover:text-white border border-zinc-200"
               }`}
             >
               {isRo ? tab.labelRo : tab.labelEn}
@@ -242,12 +242,12 @@ export function RenewalOfferReview() {
           ))}
         </div>
 
-        <div className="flex items-center justify-between sm:justify-end gap-2 text-xs border-t sm:border-t-0 pt-3 sm:pt-0 border-zinc-800">
+        <div className="flex items-center justify-between sm:justify-end gap-2 text-xs border-t sm:border-t-0 pt-3 sm:pt-0 border-zinc-200">
           <Button
             type="button"
             variant="outline"
             onClick={handleDownloadPdf}
-            className="rounded-full border-zinc-800 hover:bg-zinc-800 text-zinc-300 h-9 px-3.5 flex items-center gap-1.5"
+            className="rounded-full border-zinc-200 hover:bg-zinc-800 text-zinc-600 h-9 px-3.5 flex items-center gap-1.5"
           >
             <Download className="w-3.5 h-3.5 text-blue-400" />
             <span>PDF</span>
@@ -257,14 +257,14 @@ export function RenewalOfferReview() {
             type="button"
             variant="outline"
             onClick={handleExportJson}
-            className="rounded-full border-zinc-800 hover:bg-zinc-800 text-zinc-300 h-9 px-3"
+            className="rounded-full border-zinc-200 hover:bg-zinc-800 text-zinc-600 h-9 px-3"
             title="Export JSON"
           >
             <Download className="w-3.5 h-3.5 text-amber-400" />
             <span className="hidden md:inline">JSON</span>
           </Button>
 
-          <label className="cursor-pointer rounded-full border border-zinc-800 hover:bg-zinc-800 text-zinc-300 h-9 px-3 inline-flex items-center gap-1.5 transition-colors">
+          <label className="cursor-pointer rounded-full border border-zinc-200 hover:bg-zinc-800 text-zinc-600 h-9 px-3 inline-flex items-center gap-1.5 transition-colors">
             <Upload className="w-3.5 h-3.5 text-emerald-400" />
             <span className="hidden md:inline">Import</span>
             <input type="file" accept=".json" onChange={handleImportJson} className="hidden" />
@@ -279,18 +279,18 @@ export function RenewalOfferReview() {
             <Trash2 className="w-3.5 h-3.5" />
           </button>
 
-          <div className="flex items-center gap-1 p-1 rounded-full bg-zinc-950 border border-zinc-800">
+          <div className="flex items-center gap-1 p-1 rounded-full bg-zinc-50 border border-zinc-200">
             <button
               type="button"
               onClick={() => setLang("ro")}
-              className={`px-2.5 py-0.5 rounded-full font-medium ${lang === "ro" ? "bg-blue-600 text-white" : "text-zinc-400 hover:text-white"}`}
+              className={`px-2.5 py-0.5 rounded-full font-medium ${lang === "ro" ? "bg-blue-600 text-white" : "text-zinc-500 hover:text-white"}`}
             >
               RO
             </button>
             <button
               type="button"
               onClick={() => setLang("en")}
-              className={`px-2.5 py-0.5 rounded-full font-medium ${lang === "en" ? "bg-blue-600 text-white" : "text-zinc-400 hover:text-white"}`}
+              className={`px-2.5 py-0.5 rounded-full font-medium ${lang === "en" ? "bg-blue-600 text-white" : "text-zinc-500 hover:text-white"}`}
             >
               EN
             </button>
@@ -299,7 +299,7 @@ export function RenewalOfferReview() {
       </div>
 
       {importStatus && (
-        <div className="p-4 rounded-2xl bg-blue-500/10 border border-blue-500/30 text-blue-300 text-xs flex items-center gap-2">
+        <div className="p-4 rounded-2xl bg-blue-50 border border-blue-200 text-blue-800 text-xs flex items-center gap-2">
           <Info className="w-4 h-4 text-blue-400" />
           <span>{importStatus}</span>
         </div>
@@ -310,32 +310,32 @@ export function RenewalOfferReview() {
       {/* ======================================================== */}
       {activeTab === "inputs" && (
         <div className="space-y-6">
-          <div className="p-6 sm:p-8 rounded-[2.5rem] bg-zinc-950 border border-zinc-800 shadow-xl space-y-6">
-            <div className="space-y-1 pb-4 border-b border-zinc-800">
+          <div className="p-6 sm:p-8 rounded-[2.5rem] bg-zinc-50 border border-zinc-200 shadow-xl space-y-6">
+            <div className="space-y-1 pb-4 border-b border-zinc-200">
               <span className="text-[10px] uppercase font-bold text-blue-400 tracking-wider">
                 {isRo ? "CONFIGURARE ANALIZĂ & DATE GENERALE" : "REVIEW CONFIGURATION"}
               </span>
-              <h3 className="text-xl font-heading font-bold text-white">
+              <h3 className="text-xl font-heading font-bold text-zinc-900">
                 {review.title}
               </h3>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
               <div className="space-y-1.5">
-                <label className="text-zinc-300 font-medium">{isRo ? "Titlu Analiză *" : "Review Title *"}</label>
+                <label className="text-zinc-600 font-medium">{isRo ? "Titlu Analiză *" : "Review Title *"}</label>
                 <Input
                   value={review.title}
                   onChange={(e) => setReview({ ...review, title: e.target.value })}
-                  className="h-10 bg-zinc-900 border-zinc-800 text-white rounded-xl text-xs"
+                  className="h-10 bg-white border-zinc-200 text-white rounded-xl text-xs"
                 />
               </div>
 
               <div className="space-y-1.5">
-                <label className="text-zinc-300 font-medium">{isRo ? "Categorie Asigurare" : "Policy Category"}</label>
+                <label className="text-zinc-600 font-medium">{isRo ? "Categorie Asigurare" : "Policy Category"}</label>
                 <select
                   value={review.category}
                   onChange={(e) => setReview({ ...review, category: e.target.value as PolicyCategory })}
-                  className="w-full h-10 px-3 rounded-xl bg-zinc-900 border border-zinc-800 text-white text-xs focus:outline-none"
+                  className="w-full h-10 px-3 rounded-xl bg-white border border-zinc-200 text-white text-xs focus:outline-none"
                 >
                   {Object.entries(isRo ? CATEGORY_LABELS_RO : CATEGORY_LABELS_EN).map(([cat, lbl]) => (
                     <option key={cat} value={cat}>
@@ -349,9 +349,9 @@ export function RenewalOfferReview() {
             {/* SIDE-BY-SIDE PANELS */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-2">
               {/* CURRENT POLICY PANEL */}
-              <div className="p-5 sm:p-6 rounded-2xl bg-zinc-900/40 border border-zinc-800 space-y-4">
-                <div className="pb-3 border-b border-zinc-800 flex items-center justify-between">
-                  <h4 className="font-heading font-bold text-sm text-zinc-200">
+              <div className="p-5 sm:p-6 rounded-2xl bg-zinc-50 border border-zinc-200 space-y-4">
+                <div className="pb-3 border-b border-zinc-200 flex items-center justify-between">
+                  <h4 className="font-heading font-bold text-sm text-zinc-800">
                     {isRo ? "1. Polița Curentă (În Vigoare)" : "1. Current Policy Terms"}
                   </h4>
                   <span className="text-[10px] text-zinc-500 uppercase font-semibold">Bază Comparație</span>
@@ -360,7 +360,7 @@ export function RenewalOfferReview() {
                 <div className="space-y-3.5 text-xs">
                   <div className="grid grid-cols-2 gap-3">
                     <div className="space-y-1">
-                      <label className="text-zinc-400">Primă Curentă:</label>
+                      <label className="text-zinc-500">Primă Curentă:</label>
                       <Input
                         type="number"
                         placeholder="Ex: 2400"
@@ -374,12 +374,12 @@ export function RenewalOfferReview() {
                             },
                           })
                         }
-                        className="h-10 bg-zinc-900 border-zinc-800 text-white rounded-xl text-xs"
+                        className="h-10 bg-white border-zinc-200 text-white rounded-xl text-xs"
                       />
                     </div>
 
                     <div className="space-y-1">
-                      <label className="text-zinc-400">Valută:</label>
+                      <label className="text-zinc-500">Valută:</label>
                       <select
                         value={review.current.currency}
                         onChange={(e) =>
@@ -388,7 +388,7 @@ export function RenewalOfferReview() {
                             current: { ...review.current, currency: e.target.value as CurrencyCode },
                           })
                         }
-                        className="w-full h-10 px-2.5 rounded-xl bg-zinc-900 border border-zinc-800 text-white text-xs"
+                        className="w-full h-10 px-2.5 rounded-xl bg-white border border-zinc-200 text-white text-xs"
                       >
                         {Object.entries(CURRENCY_LABELS).map(([c, lbl]) => (
                           <option key={c} value={c}>
@@ -400,7 +400,7 @@ export function RenewalOfferReview() {
                   </div>
 
                   <div className="space-y-1">
-                    <label className="text-zinc-400">Frecvență Plată:</label>
+                    <label className="text-zinc-500">Frecvență Plată:</label>
                     <select
                       value={review.current.paymentFrequency}
                       onChange={(e) =>
@@ -409,7 +409,7 @@ export function RenewalOfferReview() {
                           current: { ...review.current, paymentFrequency: e.target.value as PaymentFrequency },
                         })
                       }
-                      className="w-full h-10 px-2.5 rounded-xl bg-zinc-900 border border-zinc-800 text-white text-xs"
+                      className="w-full h-10 px-2.5 rounded-xl bg-white border border-zinc-200 text-white text-xs"
                     >
                       {Object.entries(isRo ? FREQUENCY_LABELS_RO : FREQUENCY_LABELS_EN).map(([f, lbl]) => (
                         <option key={f} value={f}>
@@ -421,7 +421,7 @@ export function RenewalOfferReview() {
 
                   <div className="grid grid-cols-2 gap-3">
                     <div className="space-y-1">
-                      <label className="text-zinc-400">Sumă Asigurată / Limită:</label>
+                      <label className="text-zinc-500">Sumă Asigurată / Limită:</label>
                       <Input
                         type="number"
                         placeholder="Ex: 85000"
@@ -435,12 +435,12 @@ export function RenewalOfferReview() {
                             },
                           })
                         }
-                        className="h-10 bg-zinc-900 border-zinc-800 text-white rounded-xl text-xs"
+                        className="h-10 bg-white border-zinc-200 text-white rounded-xl text-xs"
                       />
                     </div>
 
                     <div className="space-y-1">
-                      <label className="text-zinc-400">Franșiză (Deductible):</label>
+                      <label className="text-zinc-500">Franșiză (Deductible):</label>
                       <Input
                         type="number"
                         placeholder="Ex: 500"
@@ -454,13 +454,13 @@ export function RenewalOfferReview() {
                             },
                           })
                         }
-                        className="h-10 bg-zinc-900 border-zinc-800 text-white rounded-xl text-xs"
+                        className="h-10 bg-white border-zinc-200 text-white rounded-xl text-xs"
                       />
                     </div>
                   </div>
 
                   <div className="space-y-1">
-                    <label className="text-zinc-400">Excluderi / Restricții Specifice:</label>
+                    <label className="text-zinc-500">Excluderi / Restricții Specifice:</label>
                     <Input
                       placeholder="Ex: Fără daune produse în afara carosabilului..."
                       value={review.current.exclusions || ""}
@@ -470,15 +470,15 @@ export function RenewalOfferReview() {
                           current: { ...review.current, exclusions: e.target.value },
                         })
                       }
-                      className="h-10 bg-zinc-900 border-zinc-800 text-white rounded-xl text-xs"
+                      className="h-10 bg-white border-zinc-200 text-white rounded-xl text-xs"
                     />
                   </div>
                 </div>
               </div>
 
               {/* RENEWAL OFFER PANEL */}
-              <div className="p-5 sm:p-6 rounded-2xl bg-zinc-900/40 border border-blue-500/30 space-y-4">
-                <div className="pb-3 border-b border-zinc-800 flex items-center justify-between">
+              <div className="p-5 sm:p-6 rounded-2xl bg-zinc-50 border border-blue-500/30 space-y-4">
+                <div className="pb-3 border-b border-zinc-200 flex items-center justify-between">
                   <h4 className="font-heading font-bold text-sm text-blue-400">
                     {isRo ? "2. Oferta Nouă de Reînnoire" : "2. Proposed Renewal Offer"}
                   </h4>
@@ -488,7 +488,7 @@ export function RenewalOfferReview() {
                 <div className="space-y-3.5 text-xs">
                   <div className="grid grid-cols-2 gap-3">
                     <div className="space-y-1">
-                      <label className="text-zinc-400">Primă Cotată Reînnoire:</label>
+                      <label className="text-zinc-500">Primă Cotată Reînnoire:</label>
                       <Input
                         type="number"
                         placeholder="Ex: 2650"
@@ -502,12 +502,12 @@ export function RenewalOfferReview() {
                             },
                           })
                         }
-                        className="h-10 bg-zinc-900 border-zinc-800 text-white rounded-xl text-xs font-semibold"
+                        className="h-10 bg-white border-zinc-200 text-white rounded-xl text-xs font-semibold"
                       />
                     </div>
 
                     <div className="space-y-1">
-                      <label className="text-zinc-400">Valută:</label>
+                      <label className="text-zinc-500">Valută:</label>
                       <select
                         value={review.renewal.currency}
                         onChange={(e) =>
@@ -516,7 +516,7 @@ export function RenewalOfferReview() {
                             renewal: { ...review.renewal, currency: e.target.value as CurrencyCode },
                           })
                         }
-                        className="w-full h-10 px-2.5 rounded-xl bg-zinc-900 border border-zinc-800 text-white text-xs"
+                        className="w-full h-10 px-2.5 rounded-xl bg-white border border-zinc-200 text-white text-xs"
                       >
                         {Object.entries(CURRENCY_LABELS).map(([c, lbl]) => (
                           <option key={c} value={c}>
@@ -528,7 +528,7 @@ export function RenewalOfferReview() {
                   </div>
 
                   <div className="space-y-1">
-                    <label className="text-zinc-400">Frecvență Plată:</label>
+                    <label className="text-zinc-500">Frecvență Plată:</label>
                     <select
                       value={review.renewal.paymentFrequency}
                       onChange={(e) =>
@@ -537,7 +537,7 @@ export function RenewalOfferReview() {
                           renewal: { ...review.renewal, paymentFrequency: e.target.value as PaymentFrequency },
                         })
                       }
-                      className="w-full h-10 px-2.5 rounded-xl bg-zinc-900 border border-zinc-800 text-white text-xs"
+                      className="w-full h-10 px-2.5 rounded-xl bg-white border border-zinc-200 text-white text-xs"
                     >
                       {Object.entries(isRo ? FREQUENCY_LABELS_RO : FREQUENCY_LABELS_EN).map(([f, lbl]) => (
                         <option key={f} value={f}>
@@ -549,7 +549,7 @@ export function RenewalOfferReview() {
 
                   <div className="grid grid-cols-2 gap-3">
                     <div className="space-y-1">
-                      <label className="text-zinc-400">Sumă Asigurată Propusă:</label>
+                      <label className="text-zinc-500">Sumă Asigurată Propusă:</label>
                       <Input
                         type="number"
                         placeholder="Ex: 80000"
@@ -563,12 +563,12 @@ export function RenewalOfferReview() {
                             },
                           })
                         }
-                        className="h-10 bg-zinc-900 border-zinc-800 text-white rounded-xl text-xs"
+                        className="h-10 bg-white border-zinc-200 text-white rounded-xl text-xs"
                       />
                     </div>
 
                     <div className="space-y-1">
-                      <label className="text-zinc-400">Franșiză Propusă:</label>
+                      <label className="text-zinc-500">Franșiză Propusă:</label>
                       <Input
                         type="number"
                         placeholder="Ex: 500"
@@ -582,13 +582,13 @@ export function RenewalOfferReview() {
                             },
                           })
                         }
-                        className="h-10 bg-zinc-900 border-zinc-800 text-white rounded-xl text-xs"
+                        className="h-10 bg-white border-zinc-200 text-white rounded-xl text-xs"
                       />
                     </div>
                   </div>
 
                   <div className="space-y-1">
-                    <label className="text-zinc-400">Excluderi Propuse:</label>
+                    <label className="text-zinc-500">Excluderi Propuse:</label>
                     <Input
                       placeholder="Ex: Verifică Condițiile Generale noi..."
                       value={review.renewal.exclusions || ""}
@@ -598,7 +598,7 @@ export function RenewalOfferReview() {
                           renewal: { ...review.renewal, exclusions: e.target.value },
                         })
                       }
-                      className="h-10 bg-zinc-900 border-zinc-800 text-white rounded-xl text-xs"
+                      className="h-10 bg-white border-zinc-200 text-white rounded-xl text-xs"
                     />
                   </div>
                 </div>
@@ -606,9 +606,9 @@ export function RenewalOfferReview() {
             </div>
 
             {/* LIVE PREMIUM COMPARISON RESULT */}
-            <div className="p-4 sm:p-5 rounded-2xl bg-zinc-900/60 border border-zinc-800 flex flex-col sm:flex-row sm:items-center justify-between gap-4 text-xs">
+            <div className="p-4 sm:p-5 rounded-2xl bg-white border border-zinc-200 flex flex-col sm:flex-row sm:items-center justify-between gap-4 text-xs">
               <div className="space-y-1">
-                <span className="text-[10px] uppercase font-bold text-zinc-400 tracking-wider">
+                <span className="text-[10px] uppercase font-bold text-zinc-500 tracking-wider">
                   {isRo ? "REZULTAT DETERMINISTIC PRIMĂ" : "PREMIUM DELTA CALCULATION"}
                 </span>
                 {premDiff.isComparable && premDiff.difference !== undefined ? (
@@ -623,7 +623,7 @@ export function RenewalOfferReview() {
                             ? "bg-rose-500/10 text-rose-400 border border-rose-500/20"
                             : premDiff.direction === "decrease"
                             ? "bg-emerald-500/10 text-emerald-400 border border-emerald-500/20"
-                            : "bg-zinc-800 text-zinc-300"
+                            : "bg-zinc-800 text-zinc-600"
                         }`}
                       >
                         {premDiff.direction === "increase" ? <TrendingUp className="w-3 h-3" /> : <TrendingDown className="w-3 h-3" />}
@@ -632,7 +632,7 @@ export function RenewalOfferReview() {
                     )}
                   </div>
                 ) : (
-                  <p className="text-zinc-400 italic">{premDiff.reason || (isRo ? "Completează ambele valori de primă." : "Enter both values.")}</p>
+                  <p className="text-zinc-500 italic">{premDiff.reason || (isRo ? "Completează ambele valori de primă." : "Enter both values.")}</p>
                 )}
               </div>
 
@@ -653,15 +653,15 @@ export function RenewalOfferReview() {
       {/* TAB 2: TERMS DELTA MATRIX */}
       {/* ======================================================== */}
       {activeTab === "terms" && (
-        <div className="p-6 sm:p-8 rounded-[2.5rem] bg-zinc-950 border border-zinc-800 shadow-xl space-y-6">
-          <div className="pb-4 border-b border-zinc-800 space-y-1">
+        <div className="p-6 sm:p-8 rounded-[2.5rem] bg-zinc-50 border border-zinc-200 shadow-xl space-y-6">
+          <div className="pb-4 border-b border-zinc-200 space-y-1">
             <span className="text-[10px] uppercase font-bold text-blue-400 tracking-wider">
               {isRo ? "MATRICE COMPARATIVĂ DETALIATĂ A TERMENILOR" : "TERMS COMPARISON MATRIX"}
             </span>
-            <h3 className="text-xl font-heading font-bold text-white">
+            <h3 className="text-xl font-heading font-bold text-zinc-900">
               {isRo ? "Verifică diferențele dintre contractul vechi și oferta nouă" : "Evaluate contractual differences side-by-side"}
             </h3>
-            <p className="text-xs text-zinc-400">
+            <p className="text-xs text-zinc-500">
               {isRo
                 ? "Bifează starea fiecărui termen contractual. Dacă un termen nu este specificat pe ofertă, marchează 'Lipsește din Ofertă'."
                 : "Mark the status of each term. Missing information should be clarified before accepting."}
@@ -672,16 +672,16 @@ export function RenewalOfferReview() {
             {review.terms.map((row) => (
               <div
                 key={row.id}
-                className="p-4 sm:p-5 rounded-2xl bg-zinc-900/50 border border-zinc-800 hover:border-zinc-700 transition-all space-y-3 text-xs"
+                className="p-4 sm:p-5 rounded-2xl bg-white border border-zinc-200 hover:border-zinc-300 transition-all space-y-3 text-xs"
               >
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
-                  <h4 className="text-sm font-heading font-bold text-white">
+                  <h4 className="text-sm font-heading font-bold text-zinc-900">
                     {isRo ? row.labelRo : row.labelEn}
                   </h4>
                   <select
                     value={row.status}
                     onChange={(e) => updateTermStatus(row.id, e.target.value as TermComparisonStatus)}
-                    className="h-8 px-2.5 rounded-lg bg-zinc-900 border border-zinc-700 text-white text-[11px] focus:outline-none"
+                    className="h-8 px-2.5 rounded-lg bg-white border border-zinc-300 text-white text-[11px] focus:outline-none"
                   >
                     {Object.entries(isRo ? TERM_STATUS_LABELS_RO : TERM_STATUS_LABELS_EN).map(([s, lbl]) => (
                       <option key={s} value={s}>
@@ -698,7 +698,7 @@ export function RenewalOfferReview() {
                       placeholder={isRo ? "Ex: 85.000 RON..." : "Current value..."}
                       value={row.currentVal || ""}
                       onChange={(e) => updateTermValues(row.id, e.target.value, row.renewalVal || "", row.notes)}
-                      className="h-9 bg-zinc-900 border-zinc-800 text-white rounded-xl text-xs"
+                      className="h-9 bg-white border-zinc-200 text-white rounded-xl text-xs"
                     />
                   </div>
 
@@ -708,7 +708,7 @@ export function RenewalOfferReview() {
                       placeholder={isRo ? "Ex: 80.000 RON..." : "Renewal value..."}
                       value={row.renewalVal || ""}
                       onChange={(e) => updateTermValues(row.id, row.currentVal || "", e.target.value, row.notes)}
-                      className="h-9 bg-zinc-900 border-zinc-800 text-white rounded-xl text-xs"
+                      className="h-9 bg-white border-zinc-200 text-white rounded-xl text-xs"
                     />
                   </div>
                 </div>
@@ -716,12 +716,12 @@ export function RenewalOfferReview() {
             ))}
           </div>
 
-          <div className="flex justify-between pt-4 border-t border-zinc-800">
+          <div className="flex justify-between pt-4 border-t border-zinc-200">
             <Button
               type="button"
               variant="outline"
               onClick={() => setActiveTab("inputs")}
-              className="rounded-full border-zinc-800 text-zinc-300 text-xs h-11 px-5 flex items-center gap-2"
+              className="rounded-full border-zinc-200 text-zinc-600 text-xs h-11 px-5 flex items-center gap-2"
             >
               <ArrowLeft className="w-4 h-4" />
               <span>{isRo ? "Înapoi la Prime" : "Back to Premiums"}</span>
@@ -743,15 +743,15 @@ export function RenewalOfferReview() {
       {/* TAB 3: QUESTIONS & CLARIFICATIONS */}
       {/* ======================================================== */}
       {activeTab === "questions" && (
-        <div className="p-6 sm:p-8 rounded-[2.5rem] bg-zinc-950 border border-zinc-800 shadow-xl space-y-6">
-          <div className="pb-4 border-b border-zinc-800 space-y-1">
+        <div className="p-6 sm:p-8 rounded-[2.5rem] bg-zinc-50 border border-zinc-200 shadow-xl space-y-6">
+          <div className="pb-4 border-b border-zinc-200 space-y-1">
             <span className="text-[10px] uppercase font-bold text-blue-400 tracking-wider">
               {isRo ? "ÎNTREBĂRI CHEIE DE ADRESAT ASIGURATORULUI" : "RENEWAL CLARIFICATION QUESTIONS"}
             </span>
-            <h3 className="text-xl font-heading font-bold text-white">
+            <h3 className="text-xl font-heading font-bold text-zinc-900">
               {isRo ? "Ce trebuie să clarifici înainte de a semna reînnoirea?" : "Key questions to resolve before renewing"}
             </h3>
-            <p className="text-xs text-zinc-400">
+            <p className="text-xs text-zinc-500">
               {isRo
                 ? "Întrebările de mai jos sunt generate pe baza diferențelor identificate în analiza ta."
                 : "Questions below are generated based on your comparison delta."}
@@ -762,7 +762,7 @@ export function RenewalOfferReview() {
             {review.questions.map((q, idx) => (
               <div
                 key={idx}
-                className="p-4 rounded-2xl bg-zinc-900/60 border border-zinc-800 flex items-start justify-between gap-3 text-zinc-200"
+                className="p-4 rounded-2xl bg-white border border-zinc-200 flex items-start justify-between gap-3 text-zinc-800"
               >
                 <div className="flex items-start gap-3 flex-1">
                   <div className="w-5 h-5 rounded-full bg-blue-500/10 text-blue-400 flex items-center justify-center font-bold text-[11px] shrink-0 mt-0.5">
@@ -775,7 +775,7 @@ export function RenewalOfferReview() {
                   <button
                     type="button"
                     onClick={() => handleCopyQuestion(q, idx)}
-                    className="p-1.5 rounded-lg bg-zinc-800 text-zinc-400 hover:text-white"
+                    className="p-1.5 rounded-lg bg-zinc-800 text-zinc-500 hover:text-white"
                     title={isRo ? "Copiază" : "Copy"}
                   >
                     {copiedQuestionIdx === idx ? <Check className="w-3.5 h-3.5 text-emerald-400" /> : <Copy className="w-3.5 h-3.5" />}
@@ -783,7 +783,7 @@ export function RenewalOfferReview() {
                   <button
                     type="button"
                     onClick={() => handleDeleteQuestion(idx)}
-                    className="p-1.5 rounded-lg bg-zinc-800 text-zinc-400 hover:text-rose-400"
+                    className="p-1.5 rounded-lg bg-zinc-800 text-zinc-500 hover:text-rose-400"
                     title={isRo ? "Șterge" : "Delete"}
                   >
                     <Trash2 className="w-3.5 h-3.5" />
@@ -798,7 +798,7 @@ export function RenewalOfferReview() {
                 placeholder={isRo ? "Adaugă o întrebare personalizată..." : "Add custom question..."}
                 value={newQuestionText}
                 onChange={(e) => setNewQuestionText(e.target.value)}
-                className="h-10 bg-zinc-900 border-zinc-800 text-white rounded-xl text-xs flex-1"
+                className="h-10 bg-white border-zinc-200 text-white rounded-xl text-xs flex-1"
               />
               <Button type="submit" className="rounded-xl bg-zinc-800 hover:bg-zinc-700 text-white text-xs h-10 px-4">
                 <Plus className="w-3.5 h-3.5 mr-1" />
@@ -807,12 +807,12 @@ export function RenewalOfferReview() {
             </form>
           </div>
 
-          <div className="flex justify-between pt-4 border-t border-zinc-800">
+          <div className="flex justify-between pt-4 border-t border-zinc-200">
             <Button
               type="button"
               variant="outline"
               onClick={() => setActiveTab("terms")}
-              className="rounded-full border-zinc-800 text-zinc-300 text-xs h-11 px-5 flex items-center gap-2"
+              className="rounded-full border-zinc-200 text-zinc-600 text-xs h-11 px-5 flex items-center gap-2"
             >
               <ArrowLeft className="w-4 h-4" />
               <span>{isRo ? "Înapoi la Termeni" : "Back to Terms"}</span>
@@ -835,13 +835,13 @@ export function RenewalOfferReview() {
       {/* ======================================================== */}
       {activeTab === "export" && (
         <div className="space-y-6">
-          <div className="p-6 sm:p-8 rounded-[2.5rem] bg-zinc-950 border border-zinc-800 shadow-xl space-y-6">
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-zinc-800">
+          <div className="p-6 sm:p-8 rounded-[2.5rem] bg-zinc-50 border border-zinc-200 shadow-xl space-y-6">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-zinc-200">
               <div className="space-y-1">
                 <span className="text-[10px] uppercase font-bold text-blue-400 tracking-wider">
                   {isRo ? "SUMAR ANALIZĂ & RAPORT DESCARCABIL" : "RENEWAL SUMMARY & REPORT"}
                 </span>
-                <h3 className="text-xl font-heading font-bold text-white">
+                <h3 className="text-xl font-heading font-bold text-zinc-900">
                   {review.title}
                 </h3>
               </div>
@@ -858,9 +858,9 @@ export function RenewalOfferReview() {
 
             {/* METRICS SUMMARY */}
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 text-xs">
-              <div className="p-4 rounded-2xl bg-zinc-900/60 border border-zinc-800 space-y-1">
+              <div className="p-4 rounded-2xl bg-white border border-zinc-200 space-y-1">
                 <span className="text-zinc-500 font-semibold">{isRo ? "Diferență Primă" : "Premium Delta"}</span>
-                <div className="text-xl font-bold text-white font-heading truncate">
+                <div className="text-xl font-bold text-zinc-900 font-heading truncate">
                   {premDiff.isComparable && premDiff.difference !== undefined
                     ? `${premDiff.difference > 0 ? `+${premDiff.difference}` : premDiff.difference} ${review.current.currency}`
                     : "—"}
@@ -881,8 +881,8 @@ export function RenewalOfferReview() {
             </div>
 
             {/* NEUTRAL DECISION NOTICE */}
-            <div className="p-5 rounded-2xl bg-zinc-900/50 border border-zinc-800 space-y-2 text-xs text-zinc-400">
-              <div className="flex items-center gap-2 text-zinc-300 font-bold">
+            <div className="p-5 rounded-2xl bg-white border border-zinc-200 space-y-2 text-xs text-zinc-500">
+              <div className="flex items-center gap-2 text-zinc-600 font-bold">
                 <Scale className="w-4 h-4 text-blue-400" />
                 <span>{isRo ? "Neutralitate Decizională" : "Decision Neutrality"}</span>
               </div>
@@ -896,10 +896,10 @@ export function RenewalOfferReview() {
             {/* ADVISORY CTA */}
             <div className="p-6 rounded-3xl bg-blue-600/10 border border-blue-500/30 flex flex-col sm:flex-row items-center justify-between gap-4">
               <div className="space-y-1 text-center sm:text-left">
-                <h4 className="text-sm font-bold text-white">
+                <h4 className="text-sm font-bold text-zinc-900">
                   {isRo ? "Vrei o părere independentă înainte de semnare?" : "Want an independent second opinion before signing?"}
                 </h4>
-                <p className="text-xs text-zinc-400">
+                <p className="text-xs text-zinc-500">
                   {isRo ? "Trimite oferta pentru un audit profesionist și cotare pe întreaga piață a asigurărilor." : "Submit your renewal notice for a comprehensive terms audit and alternative quotes."}
                 </p>
               </div>
@@ -914,8 +914,8 @@ export function RenewalOfferReview() {
       )}
 
       {/* 2. PRIVACY & LOCAL MEMORY NOTICE */}
-      <div className="p-6 rounded-3xl bg-zinc-900/40 border border-zinc-800 space-y-2 text-xs text-zinc-400">
-        <div className="flex items-center gap-2 text-zinc-300 font-bold">
+      <div className="p-6 rounded-3xl bg-zinc-50 border border-zinc-200 space-y-2 text-xs text-zinc-500">
+        <div className="flex items-center gap-2 text-zinc-600 font-bold">
           <Lock className="w-4 h-4 text-emerald-400" />
           <span>{isRo ? "Confidențialitate Totală & Stocare Volatilă" : "Total Privacy & Active Session Memory"}</span>
         </div>
@@ -936,15 +936,15 @@ export function RenewalOfferReview() {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.95 }}
-              className="w-full max-w-md p-6 rounded-3xl bg-zinc-950 border border-rose-500/30 shadow-2xl space-y-4 text-center"
+              className="w-full max-w-md p-6 rounded-3xl bg-zinc-50 border border-rose-500/30 shadow-2xl space-y-4 text-center"
             >
               <div className="w-12 h-12 rounded-full bg-rose-500/10 text-rose-400 flex items-center justify-center mx-auto">
                 <AlertTriangle className="w-6 h-6" />
               </div>
-              <h3 className="text-base font-bold text-white">
+              <h3 className="text-base font-bold text-zinc-900">
                 {isRo ? "Golești analiza de reînnoire curentă?" : "Clear active renewal review?"}
               </h3>
-              <p className="text-xs text-zinc-400 leading-relaxed">
+              <p className="text-xs text-zinc-500 leading-relaxed">
                 {isRo
                   ? "Această acțiune va reseta toate datele din memoria activă. Asigură-te că ai descărcat un raport PDF sau backup JSON."
                   : "This will clear all in-memory comparison values. Download a PDF or JSON backup first if needed."}
@@ -954,7 +954,7 @@ export function RenewalOfferReview() {
                   type="button"
                   variant="outline"
                   onClick={() => setIsClearConfirmOpen(false)}
-                  className="flex-1 rounded-xl border-zinc-800 text-zinc-300 text-xs h-10"
+                  className="flex-1 rounded-xl border-zinc-200 text-zinc-600 text-xs h-10"
                 >
                   {isRo ? "Anulează" : "Cancel"}
                 </Button>

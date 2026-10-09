@@ -262,27 +262,27 @@ export function PortfolioRenewalPlanner() {
     <div className="w-full space-y-12 max-w-5xl mx-auto">
       {/* 1. TOP STATS CARDS & CONTROLS */}
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-        <div className="p-5 rounded-2xl bg-zinc-900/60 border border-zinc-800 space-y-1">
-          <span className="text-[11px] uppercase tracking-wider text-zinc-400 font-bold">Total Polițe</span>
-          <div className="text-2xl sm:text-3xl font-heading font-black text-white">{policies.length}</div>
+        <div className="p-5 rounded-2xl bg-white border border-zinc-200 space-y-1">
+          <span className="text-[11px] uppercase tracking-wider text-zinc-500 font-bold">Total Polițe</span>
+          <div className="text-2xl sm:text-3xl font-heading font-black text-zinc-900">{policies.length}</div>
           <span className="text-[10px] text-zinc-500">Înregistrate local</span>
         </div>
 
-        <div className={`p-5 rounded-2xl border space-y-1 ${urgentCount > 0 ? "bg-rose-500/10 border-rose-500/30 text-rose-400" : "bg-zinc-900/60 border-zinc-800 text-zinc-300"}`}>
+        <div className={`p-5 rounded-2xl border space-y-1 ${urgentCount > 0 ? "bg-rose-500/10 border-rose-500/30 text-rose-400" : "bg-white border-zinc-200 text-zinc-600"}`}>
           <span className="text-[11px] uppercase tracking-wider font-bold">Expiră în &le; 7 Zile</span>
           <div className="text-2xl sm:text-3xl font-heading font-black">{urgentCount}</div>
           <span className="text-[10px] opacity-80">Acțiune urgentă</span>
         </div>
 
-        <div className="p-5 rounded-2xl bg-zinc-900/60 border border-zinc-800 space-y-1 text-amber-400">
+        <div className="p-5 rounded-2xl bg-white border border-zinc-200 space-y-1 text-amber-400">
           <span className="text-[11px] uppercase tracking-wider font-bold">Expiră în 30 Zile</span>
           <div className="text-2xl sm:text-3xl font-heading font-black">{monthCount}</div>
           <span className="text-[10px] text-zinc-500">Faza de ofertare</span>
         </div>
 
-        <div className="p-5 rounded-2xl bg-zinc-900/60 border border-zinc-800 space-y-1 text-zinc-400">
+        <div className="p-5 rounded-2xl bg-white border border-zinc-200 space-y-1 text-zinc-500">
           <span className="text-[11px] uppercase tracking-wider font-bold">Prime Totale / An</span>
-          <div className="text-sm sm:text-base font-heading font-bold text-white truncate">
+          <div className="text-sm sm:text-base font-heading font-bold text-zinc-900 truncate">
             {totalRonPremium > 0 && `${totalRonPremium.toLocaleString("ro-RO")} RON`}
             {totalRonPremium > 0 && totalEurPremium > 0 && " • "}
             {totalEurPremium > 0 && `${totalEurPremium.toLocaleString("ro-RO")} EUR`}
@@ -293,7 +293,7 @@ export function PortfolioRenewalPlanner() {
       </div>
 
       {/* 2. MAIN TOOLBAR: ADD, EXPORT, IMPORT, CLEAR */}
-      <div className="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-4 p-5 rounded-3xl bg-zinc-900/80 border border-zinc-800">
+      <div className="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-4 p-5 rounded-3xl bg-white border border-zinc-200">
         <div className="flex flex-wrap items-center gap-2">
           <Button
             type="button"
@@ -309,7 +309,7 @@ export function PortfolioRenewalPlanner() {
             variant="outline"
             onClick={handleExportIcs}
             disabled={policies.length === 0}
-            className="rounded-full border-zinc-800 text-zinc-300 text-xs h-11 px-4 flex items-center gap-1.5"
+            className="rounded-full border-zinc-200 text-zinc-600 text-xs h-11 px-4 flex items-center gap-1.5"
           >
             <CalendarDays className="w-4 h-4 text-emerald-400" />
             <span>Export Calendar .ICS</span>
@@ -320,32 +320,32 @@ export function PortfolioRenewalPlanner() {
             variant="outline"
             onClick={handleExportJson}
             disabled={policies.length === 0}
-            className="rounded-full border-zinc-800 text-zinc-300 text-xs h-11 px-4 flex items-center gap-1.5"
+            className="rounded-full border-zinc-200 text-zinc-600 text-xs h-11 px-4 flex items-center gap-1.5"
           >
             <Download className="w-4 h-4 text-blue-400" />
             <span>Backup JSON</span>
           </Button>
 
-          <label className="cursor-pointer rounded-full border border-zinc-800 hover:bg-zinc-800 text-zinc-300 text-xs h-11 px-4 inline-flex items-center gap-1.5 transition-colors">
+          <label className="cursor-pointer rounded-full border border-zinc-200 hover:bg-zinc-800 text-zinc-600 text-xs h-11 px-4 inline-flex items-center gap-1.5 transition-colors">
             <Upload className="w-4 h-4 text-amber-400" />
             <span>Import JSON</span>
             <input type="file" accept=".json" onChange={handleImportJson} className="hidden" />
           </label>
         </div>
 
-        <div className="flex items-center justify-between md:justify-end gap-3 text-xs border-t md:border-t-0 pt-3 md:pt-0 border-zinc-800">
-          <div className="flex items-center gap-1 p-1 rounded-full bg-zinc-950 border border-zinc-800">
+        <div className="flex items-center justify-between md:justify-end gap-3 text-xs border-t md:border-t-0 pt-3 md:pt-0 border-zinc-200">
+          <div className="flex items-center gap-1 p-1 rounded-full bg-zinc-50 border border-zinc-200">
             <button
               type="button"
               onClick={() => setLang("ro")}
-              className={`px-2.5 py-0.5 rounded-full font-medium ${lang === "ro" ? "bg-blue-600 text-white" : "text-zinc-400 hover:text-white"}`}
+              className={`px-2.5 py-0.5 rounded-full font-medium ${lang === "ro" ? "bg-blue-600 text-white" : "text-zinc-500 hover:text-white"}`}
             >
               RO
             </button>
             <button
               type="button"
               onClick={() => setLang("en")}
-              className={`px-2.5 py-0.5 rounded-full font-medium ${lang === "en" ? "bg-blue-600 text-white" : "text-zinc-400 hover:text-white"}`}
+              className={`px-2.5 py-0.5 rounded-full font-medium ${lang === "en" ? "bg-blue-600 text-white" : "text-zinc-500 hover:text-white"}`}
             >
               EN
             </button>
@@ -365,7 +365,7 @@ export function PortfolioRenewalPlanner() {
       </div>
 
       {importStatus && (
-        <div className="p-4 rounded-2xl bg-blue-500/10 border border-blue-500/30 text-blue-300 text-xs flex items-center gap-2">
+        <div className="p-4 rounded-2xl bg-blue-50 border border-blue-200 text-blue-800 text-xs flex items-center gap-2">
           <Info className="w-4 h-4 text-blue-400" />
           <span>{importStatus}</span>
         </div>
@@ -378,7 +378,7 @@ export function PortfolioRenewalPlanner() {
             <select
               value={selectedCategory}
               onChange={(e) => setSelectedCategory(e.target.value)}
-              className="h-9 px-3 rounded-xl bg-zinc-900 border border-zinc-800 text-white text-xs focus:outline-none focus:border-blue-500"
+              className="h-9 px-3 rounded-xl bg-white border border-zinc-200 text-white text-xs focus:outline-none focus:border-blue-500"
             >
               <option value="all">{isRo ? "Toate Categoriile" : "All Categories"}</option>
               {Object.entries(isRo ? CATEGORY_LABELS_RO : CATEGORY_LABELS_EN).map(([cat, lbl]) => (
@@ -391,7 +391,7 @@ export function PortfolioRenewalPlanner() {
             <select
               value={selectedWindow}
               onChange={(e) => setSelectedWindow(e.target.value)}
-              className="h-9 px-3 rounded-xl bg-zinc-900 border border-zinc-800 text-white text-xs focus:outline-none focus:border-blue-500"
+              className="h-9 px-3 rounded-xl bg-white border border-zinc-200 text-white text-xs focus:outline-none focus:border-blue-500"
             >
               <option value="all">{isRo ? "Toate Orizonturile" : "All Windows"}</option>
               <option value="urgent_7_days">{isRo ? "Urgent (&le; 7 zile)" : "Urgent (&le; 7 days)"}</option>
@@ -407,7 +407,7 @@ export function PortfolioRenewalPlanner() {
             <select
               value={sortOrder}
               onChange={(e) => setSortOrder(e.target.value as "date_asc" | "date_desc" | "name")}
-              className="h-9 px-3 rounded-xl bg-zinc-900 border border-zinc-800 text-white text-xs focus:outline-none focus:border-blue-500"
+              className="h-9 px-3 rounded-xl bg-white border border-zinc-200 text-white text-xs focus:outline-none focus:border-blue-500"
             >
               <option value="date_asc">{isRo ? "Dată Expirare (Apropiată)" : "Expiry Date (Nearest)"}</option>
               <option value="date_desc">{isRo ? "Dată Expirare (Îndepărtată)" : "Expiry Date (Furthest)"}</option>
@@ -419,17 +419,17 @@ export function PortfolioRenewalPlanner() {
 
       {/* 4. POLICY LIST OR EMPTY STATE */}
       {filteredPolicies.length === 0 ? (
-        <div className="p-12 sm:p-16 rounded-[2.5rem] bg-zinc-950 border border-zinc-800 text-center space-y-4">
-          <div className="w-14 h-14 rounded-3xl bg-zinc-900 border border-zinc-800 text-zinc-500 flex items-center justify-center mx-auto">
+        <div className="p-12 sm:p-16 rounded-[2.5rem] bg-zinc-50 border border-zinc-200 text-center space-y-4">
+          <div className="w-14 h-14 rounded-3xl bg-white border border-zinc-200 text-zinc-500 flex items-center justify-center mx-auto">
             <CalendarIcon className="w-7 h-7" />
           </div>
           <div className="space-y-1 max-w-md mx-auto">
-            <h3 className="text-lg font-heading font-bold text-white">
+            <h3 className="text-lg font-heading font-bold text-zinc-900">
               {policies.length === 0
                 ? isRo ? "Nu ai adăugat încă nicio poliță" : "No policies added yet"
                 : isRo ? "Nicio poliță conform filtrelor selectate" : "No policies match the selected filter"}
             </h3>
-            <p className="text-xs text-zinc-400 leading-relaxed">
+            <p className="text-xs text-zinc-500 leading-relaxed">
               {policies.length === 0
                 ? isRo
                   ? "Organizează-ți polițele RCA, CASCO, Locuință, Sănătate sau Viață pentru a primi alerte de reînnoire din timp."
@@ -457,11 +457,11 @@ export function PortfolioRenewalPlanner() {
             return (
               <div
                 key={p.id}
-                className="p-5 sm:p-6 rounded-2xl bg-zinc-950 border border-zinc-800/80 hover:border-zinc-700 transition-all flex flex-col md:flex-row items-start md:items-center justify-between gap-4"
+                className="p-5 sm:p-6 rounded-2xl bg-zinc-50 border border-zinc-200/80 hover:border-zinc-300 transition-all flex flex-col md:flex-row items-start md:items-center justify-between gap-4"
               >
                 <div className="space-y-1.5 flex-1">
                   <div className="flex flex-wrap items-center gap-2">
-                    <span className="text-[10px] uppercase font-bold tracking-wider px-2.5 py-0.5 rounded-full bg-zinc-900 text-blue-400 border border-zinc-800">
+                    <span className="text-[10px] uppercase font-bold tracking-wider px-2.5 py-0.5 rounded-full bg-white text-blue-400 border border-zinc-200">
                       {isRo ? CATEGORY_LABELS_RO[p.category] : CATEGORY_LABELS_EN[p.category]}
                     </span>
 
@@ -484,45 +484,45 @@ export function PortfolioRenewalPlanner() {
                     )}
 
                     {windowType === "upcoming_60_days" && (
-                      <span className="text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded-full bg-zinc-800 text-zinc-300">
+                      <span className="text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded-full bg-zinc-800 text-zinc-600">
                         {isRo ? `${daysLeft} zile rămase` : `${daysLeft} days left`}
                       </span>
                     )}
 
                     {p.insurer && (
-                      <span className="text-xs text-zinc-400">
+                      <span className="text-xs text-zinc-500">
                         • {p.insurer}
                       </span>
                     )}
                   </div>
 
-                  <h4 className="text-base font-heading font-bold text-white">
+                  <h4 className="text-base font-heading font-bold text-zinc-900">
                     {p.nickname}
                   </h4>
 
-                  <div className="flex flex-wrap items-center gap-4 text-xs text-zinc-400">
+                  <div className="flex flex-wrap items-center gap-4 text-xs text-zinc-500">
                     <span>
-                      {isRo ? "Dată Expirare:" : "Expiry Date:"} <strong className="text-zinc-200">{p.expiryDate}</strong>
+                      {isRo ? "Dată Expirare:" : "Expiry Date:"} <strong className="text-zinc-800">{p.expiryDate}</strong>
                     </span>
                     {p.premiumAmount && (
                       <span>
-                        {isRo ? "Primă:" : "Premium:"} <strong className="text-zinc-200">{p.premiumAmount} {p.currency || "RON"}</strong>
+                        {isRo ? "Primă:" : "Premium:"} <strong className="text-zinc-800">{p.premiumAmount} {p.currency || "RON"}</strong>
                       </span>
                     )}
                     {p.policyNumber && (
                       <span>
-                        Nr: <span className="font-mono text-zinc-400">{p.policyNumber}</span>
+                        Nr: <span className="font-mono text-zinc-500">{p.policyNumber}</span>
                       </span>
                     )}
                   </div>
                 </div>
 
-                <div className="flex items-center gap-2 shrink-0 pt-2 md:pt-0 border-t md:border-t-0 border-zinc-800/80 w-full md:w-auto justify-end">
+                <div className="flex items-center gap-2 shrink-0 pt-2 md:pt-0 border-t md:border-t-0 border-zinc-200/80 w-full md:w-auto justify-end">
                   <Button
                     type="button"
                     variant="outline"
                     onClick={() => setChecklistPolicy(p)}
-                    className="rounded-xl border-zinc-800 hover:bg-zinc-900 text-zinc-300 text-xs h-9 px-3"
+                    className="rounded-xl border-zinc-200 hover:bg-white text-zinc-600 text-xs h-9 px-3"
                   >
                     <FileText className="w-3.5 h-3.5 mr-1 text-blue-400" />
                     <span>Checklist</span>
@@ -532,7 +532,7 @@ export function PortfolioRenewalPlanner() {
                     type="button"
                     variant="outline"
                     onClick={() => openEditModal(p)}
-                    className="rounded-xl border-zinc-800 hover:bg-zinc-900 text-zinc-300 text-xs h-9 px-3"
+                    className="rounded-xl border-zinc-200 hover:bg-white text-zinc-600 text-xs h-9 px-3"
                   >
                     <Edit3 className="w-3.5 h-3.5" />
                   </Button>
@@ -553,17 +553,17 @@ export function PortfolioRenewalPlanner() {
       )}
 
       {/* 5. PRIVACY NOTICE & ADVISORY CALLOUT */}
-      <div className="p-6 rounded-3xl bg-zinc-900/40 border border-zinc-800 space-y-3 text-xs text-zinc-400">
-        <div className="flex items-center gap-2 text-zinc-300 font-bold">
+      <div className="p-6 rounded-3xl bg-zinc-50 border border-zinc-200 space-y-3 text-xs text-zinc-500">
+        <div className="flex items-center gap-2 text-zinc-600 font-bold">
           <Lock className="w-4 h-4 text-emerald-400" />
           <span>Garanția Confidențialității Locale</span>
         </div>
         <p className="leading-relaxed">
           Polițele și datele introduse sunt salvate <strong>strict în memoria locală a browserului tău</strong> (Local Storage). Nu sunt transmise către servere externe sau baze de date. Dacă ștergi memoria cache a browserului, înregistrările vor fi eliminate (folosește butonul <em>Backup JSON</em> pentru păstrare sigură).
         </p>
-        <div className="pt-2 border-t border-zinc-800 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+        <div className="pt-2 border-t border-zinc-200 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
           <span>Dorești un audit independent al termenilor înainte de semnare?</span>
-          <Link href="/verifica-polita" className="text-blue-400 hover:text-blue-300 underline underline-offset-4 inline-flex items-center gap-1 font-semibold">
+          <Link href="/verifica-polita" className="text-blue-400 hover:text-blue-800 underline underline-offset-4 inline-flex items-center gap-1 font-semibold">
             <span>Trimite o solicitare de audit &rarr;</span>
           </Link>
         </div>
@@ -579,16 +579,16 @@ export function PortfolioRenewalPlanner() {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.95 }}
-              className="w-full max-w-lg p-6 sm:p-8 rounded-[2.5rem] bg-zinc-950 border border-zinc-800 shadow-2xl relative space-y-6"
+              className="w-full max-w-lg p-6 sm:p-8 rounded-[2.5rem] bg-zinc-50 border border-zinc-200 shadow-2xl relative space-y-6"
             >
-              <div className="flex items-center justify-between pb-4 border-b border-zinc-800">
-                <h3 className="text-lg font-heading font-bold text-white">
+              <div className="flex items-center justify-between pb-4 border-b border-zinc-200">
+                <h3 className="text-lg font-heading font-bold text-zinc-900">
                   {editingPolicy ? (isRo ? "Editează Polița" : "Edit Policy") : (isRo ? "Adaugă Poliță Nouă" : "Add New Policy")}
                 </h3>
                 <button
                   type="button"
                   onClick={() => setIsAddModalOpen(false)}
-                  className="p-2 text-zinc-400 hover:text-white rounded-full bg-zinc-900 border border-zinc-800"
+                  className="p-2 text-zinc-500 hover:text-white rounded-full bg-white border border-zinc-200"
                 >
                   <X className="w-4 h-4" />
                 </button>
@@ -596,23 +596,23 @@ export function PortfolioRenewalPlanner() {
 
               <form onSubmit={handleSavePolicy} className="space-y-4 text-xs">
                 <div className="space-y-1.5">
-                  <label className="text-zinc-300 font-medium">Denumire / Nickname *</label>
+                  <label className="text-zinc-600 font-medium">Denumire / Nickname *</label>
                   <Input
                     placeholder="Ex: BMW CASCO, Apartament Victoriei, RCA Ford..."
                     value={formNickname}
                     onChange={(e) => setFormNickname(e.target.value)}
                     required
-                    className="h-11 bg-zinc-900 border-zinc-800 text-white rounded-xl"
+                    className="h-11 bg-white border-zinc-200 text-white rounded-xl"
                   />
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div className="space-y-1.5">
-                    <label className="text-zinc-300 font-medium">Categorie *</label>
+                    <label className="text-zinc-600 font-medium">Categorie *</label>
                     <select
                       value={formCategory}
                       onChange={(e) => setFormCategory(e.target.value as PolicyCategory)}
-                      className="w-full h-11 px-3 rounded-xl bg-zinc-900 border border-zinc-800 text-white focus:outline-none focus:border-blue-500"
+                      className="w-full h-11 px-3 rounded-xl bg-white border border-zinc-200 text-white focus:outline-none focus:border-blue-500"
                     >
                       {Object.entries(isRo ? CATEGORY_LABELS_RO : CATEGORY_LABELS_EN).map(([cat, lbl]) => (
                         <option key={cat} value={cat}>
@@ -623,54 +623,54 @@ export function PortfolioRenewalPlanner() {
                   </div>
 
                   <div className="space-y-1.5">
-                    <label className="text-zinc-300 font-medium">Companie Asigurare</label>
+                    <label className="text-zinc-600 font-medium">Companie Asigurare</label>
                     <Input
                       placeholder="Ex: Generali, Allianz, Groupama..."
                       value={formInsurer}
                       onChange={(e) => setFormInsurer(e.target.value)}
-                      className="h-11 bg-zinc-900 border-zinc-800 text-white rounded-xl"
+                      className="h-11 bg-white border-zinc-200 text-white rounded-xl"
                     />
                   </div>
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div className="space-y-1.5">
-                    <label className="text-zinc-300 font-medium">Dată Expirare / Reînnoire *</label>
+                    <label className="text-zinc-600 font-medium">Dată Expirare / Reînnoire *</label>
                     <Input
                       type="date"
                       value={formExpiryDate}
                       onChange={(e) => setFormExpiryDate(e.target.value)}
                       required
-                      className="h-11 bg-zinc-900 border-zinc-800 text-white rounded-xl"
+                      className="h-11 bg-white border-zinc-200 text-white rounded-xl"
                     />
                   </div>
 
                   <div className="space-y-1.5">
-                    <label className="text-zinc-300 font-medium">Număr Poliță (Opțional)</label>
+                    <label className="text-zinc-600 font-medium">Număr Poliță (Opțional)</label>
                     <Input
                       placeholder="Ex: RO/01/2026/..."
                       value={formPolicyNumber}
                       onChange={(e) => setFormPolicyNumber(e.target.value)}
-                      className="h-11 bg-zinc-900 border-zinc-800 text-white rounded-xl font-mono"
+                      className="h-11 bg-white border-zinc-200 text-white rounded-xl font-mono"
                     />
                   </div>
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div className="space-y-1.5">
-                    <label className="text-zinc-300 font-medium">Valoare Primă (Opțional)</label>
+                    <label className="text-zinc-600 font-medium">Valoare Primă (Opțional)</label>
                     <div className="flex gap-2">
                       <Input
                         type="number"
                         placeholder="Ex: 1450"
                         value={formPremium}
                         onChange={(e) => setFormPremium(e.target.value)}
-                        className="h-11 bg-zinc-900 border-zinc-800 text-white rounded-xl flex-1"
+                        className="h-11 bg-white border-zinc-200 text-white rounded-xl flex-1"
                       />
                       <select
                         value={formCurrency}
                         onChange={(e) => setFormCurrency(e.target.value as "RON" | "EUR")}
-                        className="h-11 px-3 rounded-xl bg-zinc-900 border border-zinc-800 text-white focus:outline-none"
+                        className="h-11 px-3 rounded-xl bg-white border border-zinc-200 text-white focus:outline-none"
                       >
                         <option value="RON">RON</option>
                         <option value="EUR">EUR</option>
@@ -679,11 +679,11 @@ export function PortfolioRenewalPlanner() {
                   </div>
 
                   <div className="space-y-1.5">
-                    <label className="text-zinc-300 font-medium">Frecvență Plată</label>
+                    <label className="text-zinc-600 font-medium">Frecvență Plată</label>
                     <select
                       value={formFrequency}
                       onChange={(e) => setFormFrequency(e.target.value as "annual" | "semiannual" | "quarterly" | "monthly")}
-                      className="w-full h-11 px-3 rounded-xl bg-zinc-900 border border-zinc-800 text-white focus:outline-none"
+                      className="w-full h-11 px-3 rounded-xl bg-white border border-zinc-200 text-white focus:outline-none"
                     >
                       <option value="annual">{isRo ? "Anuală (Integral)" : "Annual"}</option>
                       <option value="semiannual">{isRo ? "Semestrială (2 rate)" : "Semi-Annual"}</option>
@@ -694,21 +694,21 @@ export function PortfolioRenewalPlanner() {
                 </div>
 
                 <div className="space-y-1.5">
-                  <label className="text-zinc-300 font-medium">Notițe Personale (Opțional)</label>
+                  <label className="text-zinc-600 font-medium">Notițe Personale (Opțional)</label>
                   <Input
                     placeholder="Ex: Franșiză 150 EUR, include asistență rutieră extinsă..."
                     value={formNotes}
                     onChange={(e) => setFormNotes(e.target.value)}
-                    className="h-11 bg-zinc-900 border-zinc-800 text-white rounded-xl"
+                    className="h-11 bg-white border-zinc-200 text-white rounded-xl"
                   />
                 </div>
 
-                <div className="pt-4 border-t border-zinc-800 flex gap-3">
+                <div className="pt-4 border-t border-zinc-200 flex gap-3">
                   <Button
                     type="button"
                     variant="outline"
                     onClick={() => setIsAddModalOpen(false)}
-                    className="flex-1 rounded-xl border-zinc-800 text-zinc-300 h-11"
+                    className="flex-1 rounded-xl border-zinc-200 text-zinc-600 h-11"
                   >
                     {isRo ? "Anulează" : "Cancel"}
                   </Button>
@@ -735,28 +735,28 @@ export function PortfolioRenewalPlanner() {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.95 }}
-              className="w-full max-w-lg p-6 sm:p-8 rounded-[2.5rem] bg-zinc-950 border border-zinc-800 shadow-2xl relative space-y-6"
+              className="w-full max-w-lg p-6 sm:p-8 rounded-[2.5rem] bg-zinc-50 border border-zinc-200 shadow-2xl relative space-y-6"
             >
-              <div className="flex items-center justify-between pb-4 border-b border-zinc-800">
+              <div className="flex items-center justify-between pb-4 border-b border-zinc-200">
                 <div>
                   <span className="text-[10px] uppercase font-bold text-blue-400 tracking-wider block">
                     {isRo ? "PREGĂTIRE REÎNNOIRE CONTRACT" : "RENEWAL PREPARATION CHECKLIST"}
                   </span>
-                  <h3 className="text-lg font-heading font-bold text-white">
+                  <h3 className="text-lg font-heading font-bold text-zinc-900">
                     {checklistPolicy.nickname}
                   </h3>
                 </div>
                 <button
                   type="button"
                   onClick={() => setChecklistPolicy(null)}
-                  className="p-2 text-zinc-400 hover:text-white rounded-full bg-zinc-900 border border-zinc-800"
+                  className="p-2 text-zinc-500 hover:text-white rounded-full bg-white border border-zinc-200"
                 >
                   <X className="w-4 h-4" />
                 </button>
               </div>
 
               <div className="space-y-3 text-xs">
-                <p className="text-zinc-400 leading-relaxed">
+                <p className="text-zinc-500 leading-relaxed">
                   {isRo
                     ? "Înainte de a accepta automat oferta de reînnoire primită de la asigurator, parcurge acest checklist de verificare:"
                     : "Before accepting the insurer renewal notice, verify these key contractual points:"}
@@ -780,14 +780,14 @@ export function PortfolioRenewalPlanner() {
                     desc: isRo ? "Compară oferta primită cu alte 3 alternative de pe piață prin intermediul unui consultant independent." : "Compare with alternative market quotes through an independent advisor.",
                   },
                 ].map((item, idx) => (
-                  <div key={idx} className="p-3.5 rounded-xl bg-zinc-900/60 border border-zinc-800 space-y-0.5">
-                    <strong className="text-zinc-200 block">{item.title}</strong>
-                    <p className="text-zinc-400 text-[11px] leading-relaxed">{item.desc}</p>
+                  <div key={idx} className="p-3.5 rounded-xl bg-white border border-zinc-200 space-y-0.5">
+                    <strong className="text-zinc-800 block">{item.title}</strong>
+                    <p className="text-zinc-500 text-[11px] leading-relaxed">{item.desc}</p>
                   </div>
                 ))}
               </div>
 
-              <div className="pt-4 border-t border-zinc-800 flex flex-col sm:flex-row gap-3">
+              <div className="pt-4 border-t border-zinc-200 flex flex-col sm:flex-row gap-3">
                 <Button asChild className="flex-1 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs h-11">
                   <Link href="/verifica-polita">
                     Auditează Gratuit Oferta &rarr;
@@ -797,7 +797,7 @@ export function PortfolioRenewalPlanner() {
                   type="button"
                   variant="outline"
                   onClick={() => setChecklistPolicy(null)}
-                  className="rounded-xl border-zinc-800 text-zinc-300 text-xs h-11"
+                  className="rounded-xl border-zinc-200 text-zinc-600 text-xs h-11"
                 >
                   {isRo ? "Închide" : "Close"}
                 </Button>
@@ -817,15 +817,15 @@ export function PortfolioRenewalPlanner() {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.95 }}
-              className="w-full max-w-md p-6 rounded-3xl bg-zinc-950 border border-rose-500/30 shadow-2xl space-y-4 text-center"
+              className="w-full max-w-md p-6 rounded-3xl bg-zinc-50 border border-rose-500/30 shadow-2xl space-y-4 text-center"
             >
               <div className="w-12 h-12 rounded-full bg-rose-500/10 text-rose-400 flex items-center justify-center mx-auto">
                 <AlertTriangle className="w-6 h-6" />
               </div>
-              <h3 className="text-base font-bold text-white">
+              <h3 className="text-base font-bold text-zinc-900">
                 {isRo ? "Ștergi toate polițele salvate?" : "Delete all saved policies?"}
               </h3>
-              <p className="text-xs text-zinc-400 leading-relaxed">
+              <p className="text-xs text-zinc-500 leading-relaxed">
                 {isRo
                   ? "Această acțiune va șterge toate datele din memoria locală a browserului tău. Asigură-te că ai descărcat un backup JSON înainte."
                   : "This action will clear all local data from your browser storage. Download a JSON backup first if needed."}
@@ -835,7 +835,7 @@ export function PortfolioRenewalPlanner() {
                   type="button"
                   variant="outline"
                   onClick={() => setIsDeleteConfirmOpen(false)}
-                  className="flex-1 rounded-xl border-zinc-800 text-zinc-300 text-xs h-10"
+                  className="flex-1 rounded-xl border-zinc-200 text-zinc-600 text-xs h-10"
                 >
                   {isRo ? "Anulează" : "Cancel"}
                 </Button>

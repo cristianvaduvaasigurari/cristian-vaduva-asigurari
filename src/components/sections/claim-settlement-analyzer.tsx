@@ -362,9 +362,9 @@ export function ClaimSettlementAnalyzer() {
     <div className="space-y-8">
       {/* Top KPI Header Bar */}
       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
-        <div className="bg-zinc-900/90 border border-zinc-800/80 rounded-xl p-4 flex flex-col justify-between">
-          <div className="text-zinc-400 text-xs font-medium uppercase tracking-wider">Ofertă Netă Asigurator</div>
-          <div className="text-xl sm:text-2xl font-bold text-white mt-1">
+        <div className="bg-white border border-zinc-200/80 rounded-xl p-4 flex flex-col justify-between">
+          <div className="text-zinc-500 text-xs font-medium uppercase tracking-wider">Ofertă Netă Asigurator</div>
+          <div className="text-xl sm:text-2xl font-bold text-zinc-900 mt-1">
             {data.financials.insurerStatedNetOffer !== undefined ? (
               <span>
                 {data.financials.insurerStatedNetOffer.toLocaleString("ro-RO")} {curr}
@@ -376,8 +376,8 @@ export function ClaimSettlementAnalyzer() {
           <div className="text-[11px] text-zinc-500 mt-1">Suma propusă la plată</div>
         </div>
 
-        <div className="bg-zinc-900/90 border border-zinc-800/80 rounded-xl p-4 flex flex-col justify-between">
-          <div className="text-zinc-400 text-xs font-medium uppercase tracking-wider">Deviz / Estimare Proprie</div>
+        <div className="bg-white border border-zinc-200/80 rounded-xl p-4 flex flex-col justify-between">
+          <div className="text-zinc-500 text-xs font-medium uppercase tracking-wider">Deviz / Estimare Proprie</div>
           <div className="text-xl sm:text-2xl font-bold text-blue-400 mt-1">
             {data.financials.userEstimate !== undefined ? (
               <span>
@@ -390,15 +390,15 @@ export function ClaimSettlementAnalyzer() {
           <div className="text-[11px] text-zinc-500 mt-1">Calcul service / bunuri</div>
         </div>
 
-        <div className="bg-zinc-900/90 border border-zinc-800/80 rounded-xl p-4 flex flex-col justify-between">
-          <div className="text-zinc-400 text-xs font-medium uppercase tracking-wider">Diferență Estimare</div>
+        <div className="bg-white border border-zinc-200/80 rounded-xl p-4 flex flex-col justify-between">
+          <div className="text-zinc-500 text-xs font-medium uppercase tracking-wider">Diferență Estimare</div>
           <div
             className={`text-xl sm:text-2xl font-bold mt-1 ${
               recon.isEstimateHigher
                 ? "text-amber-400"
                 : recon.isEstimateLower
                 ? "text-emerald-400"
-                : "text-zinc-300"
+                : "text-zinc-600"
             }`}
           >
             {recon.isComparisonPossible && recon.estimateVsOfferDifference !== undefined ? (
@@ -419,8 +419,8 @@ export function ClaimSettlementAnalyzer() {
           </div>
         </div>
 
-        <div className="bg-zinc-900/90 border border-zinc-800/80 rounded-xl p-4 flex flex-col justify-between">
-          <div className="text-zinc-400 text-xs font-medium uppercase tracking-wider">Rest de Încasat</div>
+        <div className="bg-white border border-zinc-200/80 rounded-xl p-4 flex flex-col justify-between">
+          <div className="text-zinc-500 text-xs font-medium uppercase tracking-wider">Rest de Încasat</div>
           <div className="text-xl sm:text-2xl font-bold text-teal-400 mt-1">
             {recon.remainingPayable !== undefined ? (
               <span>
@@ -433,16 +433,16 @@ export function ClaimSettlementAnalyzer() {
           <div className="text-[11px] text-zinc-500 mt-1">După avansuri / plăți parțiale</div>
         </div>
 
-        <div className="bg-zinc-900/90 border border-zinc-800/80 rounded-xl p-4 flex flex-col justify-between">
-          <div className="text-zinc-400 text-xs font-medium uppercase tracking-wider">Poziții în Dispută</div>
+        <div className="bg-white border border-zinc-200/80 rounded-xl p-4 flex flex-col justify-between">
+          <div className="text-zinc-500 text-xs font-medium uppercase tracking-wider">Poziții în Dispută</div>
           <div className="text-xl sm:text-2xl font-bold text-rose-400 mt-1">
             {data.lineItems.filter((i) => i.reviewStatus === "unresolved" || i.reviewStatus === "requires_clarification").length}
           </div>
           <div className="text-[11px] text-zinc-500 mt-1">Din {data.lineItems.length} poziții notate</div>
         </div>
 
-        <div className="bg-zinc-900/90 border border-zinc-800/80 rounded-xl p-4 flex flex-col justify-between">
-          <div className="text-zinc-400 text-xs font-medium uppercase tracking-wider">Reconciliere Cifre</div>
+        <div className="bg-white border border-zinc-200/80 rounded-xl p-4 flex flex-col justify-between">
+          <div className="text-zinc-500 text-xs font-medium uppercase tracking-wider">Reconciliere Cifre</div>
           <div className="mt-1">
             {recon.hasReconciliationDiscrepancy ? (
               <span className="inline-flex items-center gap-1 text-xs font-bold text-amber-400 bg-amber-500/10 px-2 py-0.5 rounded border border-amber-500/20">
@@ -461,15 +461,15 @@ export function ClaimSettlementAnalyzer() {
       </div>
 
       {/* Main Tab Bar & Action Buttons */}
-      <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4 border-b border-zinc-800 pb-4">
+      <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4 border-b border-zinc-200 pb-4">
         {/* Navigation Tabs */}
-        <div className="flex items-center gap-1.5 p-1 bg-zinc-900/90 border border-zinc-800 rounded-xl overflow-x-auto">
+        <div className="flex items-center gap-1.5 p-1 bg-white border border-zinc-200 rounded-xl overflow-x-auto">
           <button
             onClick={() => setActiveTab("reconciliation")}
             className={`flex items-center gap-2 px-3.5 py-2 rounded-lg text-xs font-medium transition-all whitespace-nowrap ${
               activeTab === "reconciliation"
                 ? "bg-blue-600 text-white shadow-lg shadow-blue-500/20"
-                : "text-zinc-400 hover:text-white hover:bg-zinc-800/60"
+                : "text-zinc-500 hover:text-white hover:bg-zinc-800/60"
             }`}
           >
             <Calculator className="w-3.5 h-3.5" />
@@ -481,7 +481,7 @@ export function ClaimSettlementAnalyzer() {
             className={`flex items-center gap-2 px-3.5 py-2 rounded-lg text-xs font-medium transition-all whitespace-nowrap ${
               activeTab === "line_items"
                 ? "bg-blue-600 text-white shadow-lg shadow-blue-500/20"
-                : "text-zinc-400 hover:text-white hover:bg-zinc-800/60"
+                : "text-zinc-500 hover:text-white hover:bg-zinc-800/60"
             }`}
           >
             <SlidersHorizontal className="w-3.5 h-3.5" />
@@ -493,7 +493,7 @@ export function ClaimSettlementAnalyzer() {
             className={`flex items-center gap-2 px-3.5 py-2 rounded-lg text-xs font-medium transition-all whitespace-nowrap ${
               activeTab === "questions"
                 ? "bg-blue-600 text-white shadow-lg shadow-blue-500/20"
-                : "text-zinc-400 hover:text-white hover:bg-zinc-800/60"
+                : "text-zinc-500 hover:text-white hover:bg-zinc-800/60"
             }`}
           >
             <HelpCircle className="w-3.5 h-3.5" />
@@ -505,7 +505,7 @@ export function ClaimSettlementAnalyzer() {
             className={`flex items-center gap-2 px-3.5 py-2 rounded-lg text-xs font-medium transition-all whitespace-nowrap ${
               activeTab === "overview"
                 ? "bg-blue-600 text-white shadow-lg shadow-blue-500/20"
-                : "text-zinc-400 hover:text-white hover:bg-zinc-800/60"
+                : "text-zinc-500 hover:text-white hover:bg-zinc-800/60"
             }`}
           >
             <FileText className="w-3.5 h-3.5" />
@@ -517,7 +517,7 @@ export function ClaimSettlementAnalyzer() {
             className={`flex items-center gap-2 px-3.5 py-2 rounded-lg text-xs font-medium transition-all whitespace-nowrap ${
               activeTab === "report"
                 ? "bg-blue-600 text-white shadow-lg shadow-blue-500/20"
-                : "text-zinc-400 hover:text-white hover:bg-zinc-800/60"
+                : "text-zinc-500 hover:text-white hover:bg-zinc-800/60"
             }`}
           >
             <FileCheck className="w-3.5 h-3.5" />
@@ -562,7 +562,7 @@ export function ClaimSettlementAnalyzer() {
             variant="outline"
             size="sm"
             onClick={handleExportPdf}
-            className="border-zinc-700 bg-zinc-800/60 text-zinc-300 hover:text-white hover:bg-zinc-800 text-xs"
+            className="border-zinc-300 bg-zinc-800/60 text-zinc-600 hover:text-white hover:bg-zinc-800 text-xs"
           >
             <Download className="w-3.5 h-3.5 mr-1.5" />
             PDF
@@ -572,7 +572,7 @@ export function ClaimSettlementAnalyzer() {
 
       {/* Notifications */}
       {importSuccess && (
-        <div className="p-3 bg-emerald-500/10 border border-emerald-500/30 rounded-xl text-emerald-400 text-xs flex items-center gap-2">
+        <div className="p-3 bg-emerald-50 border border-emerald-200 rounded-xl text-emerald-400 text-xs flex items-center gap-2">
           <CheckCircle2 className="w-4 h-4 shrink-0" />
           <span>{importSuccess}</span>
         </div>
@@ -588,18 +588,18 @@ export function ClaimSettlementAnalyzer() {
       {activeTab === "reconciliation" && (
         <div className="space-y-6">
           {/* Transparent Formula & Warning Callouts */}
-          <div className="bg-zinc-900/40 border border-zinc-800/60 rounded-xl p-4 text-xs text-zinc-300 space-y-2">
+          <div className="bg-zinc-50 border border-zinc-200/60 rounded-xl p-4 text-xs text-zinc-600 space-y-2">
             <div className="flex items-start gap-2.5">
               <Info className="w-4 h-4 text-blue-400 shrink-0 mt-0.5" />
               <div>
                 <span className="font-semibold text-white">Principiu de calcul:</span> Reconcilierea compară componentele declarate în oferta asiguratorului cu oferta netă comunicată, precum și diferența semnată față de devizul propriu de reparație:
-                <div className="mt-1 font-mono text-[11px] text-blue-300 bg-zinc-950/80 p-2 rounded border border-zinc-800">
+                <div className="mt-1 font-mono text-[11px] text-blue-800 bg-zinc-50 p-2 rounded border border-zinc-200">
                   Diferență = Deviz Propriu Utilizator − Ofertă Netă Asigurator
                 </div>
               </div>
             </div>
             {recon.warnings.length > 0 && (
-              <div className="pt-2 border-t border-zinc-800/60 space-y-1">
+              <div className="pt-2 border-t border-zinc-200/60 space-y-1">
                 {recon.warnings.map((w, idx) => (
                   <div key={idx} className="text-amber-400 text-[11px] flex items-start gap-1.5">
                     <AlertTriangle className="w-3.5 h-3.5 shrink-0 mt-0.5" />
@@ -612,9 +612,9 @@ export function ClaimSettlementAnalyzer() {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             {/* Panel 1: Insurer Offer Breakdown */}
-            <div className="bg-zinc-900/80 border border-zinc-800 rounded-2xl p-5 space-y-4">
+            <div className="bg-white border border-zinc-200 rounded-2xl p-5 space-y-4">
               <div className="flex items-center justify-between">
-                <h3 className="text-sm font-bold text-white flex items-center gap-2">
+                <h3 className="text-sm font-bold text-zinc-900 flex items-center gap-2">
                   <span className="w-2 h-2 rounded-full bg-purple-400" />
                   1. Componente Ofertă Asigurator
                 </h3>
@@ -627,7 +627,7 @@ export function ClaimSettlementAnalyzer() {
                         financials: { ...data.financials, currency: e.target.value as CurrencyCode },
                       })
                     }
-                    className="bg-zinc-950 border border-zinc-800 rounded px-2 py-1 text-xs text-zinc-200"
+                    className="bg-zinc-50 border border-zinc-200 rounded px-2 py-1 text-xs text-zinc-800"
                   >
                     <option value="RON">RON</option>
                     <option value="EUR">EUR</option>
@@ -639,7 +639,7 @@ export function ClaimSettlementAnalyzer() {
 
               <div className="space-y-3 text-xs">
                 <div>
-                  <label className="block text-zinc-400 mb-1">Ofertă Brută Asigurator (înainte de deduceri)</label>
+                  <label className="block text-zinc-500 mb-1">Ofertă Brută Asigurator (înainte de deduceri)</label>
                   <Input
                     type="number"
                     step="any"
@@ -654,13 +654,13 @@ export function ClaimSettlementAnalyzer() {
                         },
                       })
                     }
-                    className="bg-zinc-950 border-zinc-800 text-xs text-white"
+                    className="bg-zinc-50 border-zinc-200 text-xs text-white"
                   />
                 </div>
 
                 <div className="grid grid-cols-2 gap-3">
                   <div>
-                    <label className="block text-zinc-400 mb-1">Franșiză Reținută (−)</label>
+                    <label className="block text-zinc-500 mb-1">Franșiză Reținută (−)</label>
                     <Input
                       type="number"
                       step="any"
@@ -675,12 +675,12 @@ export function ClaimSettlementAnalyzer() {
                           },
                         })
                       }
-                      className="bg-zinc-950 border-zinc-800 text-xs text-white"
+                      className="bg-zinc-50 border-zinc-200 text-xs text-white"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-zinc-400 mb-1">Uzura / Deprecierea Reținută (−)</label>
+                    <label className="block text-zinc-500 mb-1">Uzura / Deprecierea Reținută (−)</label>
                     <Input
                       type="number"
                       step="any"
@@ -695,14 +695,14 @@ export function ClaimSettlementAnalyzer() {
                           },
                         })
                       }
-                      className="bg-zinc-950 border-zinc-800 text-xs text-white"
+                      className="bg-zinc-50 border-zinc-200 text-xs text-white"
                     />
                   </div>
                 </div>
 
                 <div className="grid grid-cols-2 gap-3">
                   <div>
-                    <label className="block text-zinc-400 mb-1">Valoare Epavă / Resturi (−)</label>
+                    <label className="block text-zinc-500 mb-1">Valoare Epavă / Resturi (−)</label>
                     <Input
                       type="number"
                       step="any"
@@ -717,12 +717,12 @@ export function ClaimSettlementAnalyzer() {
                           },
                         })
                       }
-                      className="bg-zinc-950 border-zinc-800 text-xs text-white"
+                      className="bg-zinc-50 border-zinc-200 text-xs text-white"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-zinc-400 mb-1">Sume Adiționale / Transport (+)</label>
+                    <label className="block text-zinc-500 mb-1">Sume Adiționale / Transport (+)</label>
                     <Input
                       type="number"
                       step="any"
@@ -737,14 +737,14 @@ export function ClaimSettlementAnalyzer() {
                           },
                         })
                       }
-                      className="bg-zinc-950 border-zinc-800 text-xs text-white"
+                      className="bg-zinc-50 border-zinc-200 text-xs text-white"
                     />
                   </div>
                 </div>
 
                 <div className="grid grid-cols-2 gap-3">
                   <div>
-                    <label className="block text-zinc-400 mb-1">Alte Deduceri (−)</label>
+                    <label className="block text-zinc-500 mb-1">Alte Deduceri (−)</label>
                     <Input
                       type="number"
                       step="any"
@@ -759,12 +759,12 @@ export function ClaimSettlementAnalyzer() {
                           },
                         })
                       }
-                      className="bg-zinc-950 border-zinc-800 text-xs text-white"
+                      className="bg-zinc-50 border-zinc-200 text-xs text-white"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-zinc-400 mb-1">Descriere alte deduceri</label>
+                    <label className="block text-zinc-500 mb-1">Descriere alte deduceri</label>
                     <Input
                       placeholder="Ex: Neconformitate documente"
                       value={data.financials.otherDeductionsDescription || ""}
@@ -777,13 +777,13 @@ export function ClaimSettlementAnalyzer() {
                           },
                         })
                       }
-                      className="bg-zinc-950 border-zinc-800 text-xs text-white"
+                      className="bg-zinc-50 border-zinc-200 text-xs text-white"
                     />
                   </div>
                 </div>
 
-                <div className="pt-2 border-t border-zinc-800">
-                  <label className="block text-zinc-200 font-semibold mb-1">
+                <div className="pt-2 border-t border-zinc-200">
+                  <label className="block text-zinc-800 font-semibold mb-1">
                     Oferta Netă Comunicată de Asigurator (Suma Finală Propusă)
                   </label>
                   <Input
@@ -800,23 +800,23 @@ export function ClaimSettlementAnalyzer() {
                         },
                       })
                     }
-                    className="bg-zinc-950 border-blue-500/50 text-xs text-white font-bold text-base"
+                    className="bg-zinc-50 border-blue-500/50 text-xs text-white font-bold text-base"
                   />
                 </div>
               </div>
             </div>
 
             {/* Panel 2: User Estimates & Reconciliation Diff */}
-            <div className="bg-zinc-900/80 border border-zinc-800 rounded-2xl p-5 space-y-4 flex flex-col justify-between">
+            <div className="bg-white border border-zinc-200 rounded-2xl p-5 space-y-4 flex flex-col justify-between">
               <div>
-                <h3 className="text-sm font-bold text-white flex items-center gap-2 mb-4">
+                <h3 className="text-sm font-bold text-zinc-900 flex items-center gap-2 mb-4">
                   <span className="w-2 h-2 rounded-full bg-blue-400" />
                   2. Deviz Propriu & Comparație Finală
                 </h3>
 
                 <div className="space-y-4 text-xs">
                   <div>
-                    <label className="block text-zinc-300 font-semibold mb-1">
+                    <label className="block text-zinc-600 font-semibold mb-1">
                       Estimarea / Devizul Propriu de Reparație sau Înlocuire
                     </label>
                     <Input
@@ -833,13 +833,13 @@ export function ClaimSettlementAnalyzer() {
                           },
                         })
                       }
-                      className="bg-zinc-950 border-zinc-800 text-xs text-white font-bold text-base"
+                      className="bg-zinc-50 border-zinc-200 text-xs text-white font-bold text-base"
                     />
                   </div>
 
                   <div className="grid grid-cols-2 gap-3">
                     <div>
-                      <label className="block text-zinc-400 mb-1">Bază Evaluare Asigurator</label>
+                      <label className="block text-zinc-500 mb-1">Bază Evaluare Asigurator</label>
                       <select
                         value={data.financials.basisInsurer || "vat_inclusive"}
                         onChange={(e) =>
@@ -848,7 +848,7 @@ export function ClaimSettlementAnalyzer() {
                             financials: { ...data.financials, basisInsurer: e.target.value as ValuationBasis },
                           })
                         }
-                        className="w-full bg-zinc-950 border border-zinc-800 rounded px-2.5 py-1.5 text-xs text-zinc-200"
+                        className="w-full bg-zinc-50 border border-zinc-200 rounded px-2.5 py-1.5 text-xs text-zinc-800"
                       >
                         {Object.keys(VALUATION_BASIS_INFO).map((k) => (
                           <option key={k} value={k}>
@@ -859,7 +859,7 @@ export function ClaimSettlementAnalyzer() {
                     </div>
 
                     <div>
-                      <label className="block text-zinc-400 mb-1">Bază Deviz Propriu</label>
+                      <label className="block text-zinc-500 mb-1">Bază Deviz Propriu</label>
                       <select
                         value={data.financials.basisUser || "repair_estimate"}
                         onChange={(e) =>
@@ -868,7 +868,7 @@ export function ClaimSettlementAnalyzer() {
                             financials: { ...data.financials, basisUser: e.target.value as ValuationBasis },
                           })
                         }
-                        className="w-full bg-zinc-950 border border-zinc-800 rounded px-2.5 py-1.5 text-xs text-zinc-200"
+                        className="w-full bg-zinc-50 border border-zinc-200 rounded px-2.5 py-1.5 text-xs text-zinc-800"
                       >
                         {Object.keys(VALUATION_BASIS_INFO).map((k) => (
                           <option key={k} value={k}>
@@ -880,7 +880,7 @@ export function ClaimSettlementAnalyzer() {
                   </div>
 
                   <div>
-                    <label className="block text-zinc-400 mb-1">Sumă Deja Încasată / Avans Achitat</label>
+                    <label className="block text-zinc-500 mb-1">Sumă Deja Încasată / Avans Achitat</label>
                     <Input
                       type="number"
                       step="any"
@@ -895,14 +895,14 @@ export function ClaimSettlementAnalyzer() {
                           },
                         })
                       }
-                      className="bg-zinc-950 border-zinc-800 text-xs text-white"
+                      className="bg-zinc-50 border-zinc-200 text-xs text-white"
                     />
                   </div>
                 </div>
               </div>
 
               {/* Live Calculation Display Card */}
-              <div className="p-4 bg-zinc-950 rounded-xl border border-zinc-800 text-xs space-y-2 mt-4">
+              <div className="p-4 bg-zinc-50 rounded-xl border border-zinc-200 text-xs space-y-2 mt-4">
                 <div className="text-[10px] text-zinc-500 uppercase font-bold tracking-wider">
                   Rezultat Comparativ Deviz vs Ofertă
                 </div>
@@ -910,14 +910,14 @@ export function ClaimSettlementAnalyzer() {
                 {recon.isComparisonPossible && recon.estimateVsOfferDifference !== undefined ? (
                   <div className="space-y-1">
                     <div className="flex items-center justify-between">
-                      <span className="text-zinc-300">Diferență semnată:</span>
+                      <span className="text-zinc-600">Diferență semnată:</span>
                       <span
                         className={`font-bold text-sm ${
                           recon.isEstimateHigher
                             ? "text-amber-400"
                             : recon.isEstimateLower
                             ? "text-emerald-400"
-                            : "text-zinc-300"
+                            : "text-zinc-600"
                         }`}
                       >
                         {recon.estimateVsOfferDifference > 0 ? "+" : ""}
@@ -925,7 +925,7 @@ export function ClaimSettlementAnalyzer() {
                       </span>
                     </div>
 
-                    <div className="text-[11px] text-zinc-400">
+                    <div className="text-[11px] text-zinc-500">
                       {recon.isEstimateHigher
                         ? "Devizul tău este mai mare decât oferta asiguratorului. Recomandare: verifică pozițiile neacoperite în tab-ul „Diferențe pe Poziții”."
                         : recon.isEstimateLower
@@ -940,7 +940,7 @@ export function ClaimSettlementAnalyzer() {
                 )}
 
                 {recon.remainingPayable !== undefined && (
-                  <div className="pt-2 border-t border-zinc-800/80 flex items-center justify-between text-zinc-300">
+                  <div className="pt-2 border-t border-zinc-200/80 flex items-center justify-between text-zinc-600">
                     <span>Rest de plată din ofertă:</span>
                     <span className="font-bold text-teal-400">
                       {recon.remainingPayable.toLocaleString("ro-RO")} {curr}
@@ -956,10 +956,10 @@ export function ClaimSettlementAnalyzer() {
       {/* TAB 2: LINE ITEMS */}
       {activeTab === "line_items" && (
         <div className="space-y-6">
-          <div className="bg-zinc-900/40 border border-zinc-800/60 rounded-xl p-4 text-xs text-zinc-400 flex items-start gap-3">
+          <div className="bg-zinc-50 border border-zinc-200/60 rounded-xl p-4 text-xs text-zinc-500 flex items-start gap-3">
             <Info className="w-4 h-4 text-blue-400 shrink-0 mt-0.5" />
             <div>
-              <span className="font-semibold text-zinc-200">Inventar pe poziții:</span> Compară manopera, piesele sau bunurile revendicate cu ceea ce a aprobat efectiv asiguratorul. Poți evidenția diferențele de preț sau piesele refuzate.
+              <span className="font-semibold text-zinc-800">Inventar pe poziții:</span> Compară manopera, piesele sau bunurile revendicate cu ceea ce a aprobat efectiv asiguratorul. Poți evidenția diferențele de preț sau piesele refuzate.
             </div>
           </div>
 
@@ -977,11 +977,11 @@ export function ClaimSettlementAnalyzer() {
                 return (
                   <div
                     key={item.id}
-                    className="bg-zinc-900/90 border border-zinc-800 hover:border-zinc-700 rounded-2xl p-4 transition-all flex flex-col md:flex-row items-start md:items-center justify-between gap-4 shadow-lg shadow-black/10 text-xs"
+                    className="bg-white border border-zinc-200 hover:border-zinc-300 rounded-2xl p-4 transition-all flex flex-col md:flex-row items-start md:items-center justify-between gap-4 shadow-lg shadow-black/10 text-xs"
                   >
                     <div className="space-y-1 flex-1">
                       <div className="flex flex-wrap items-center gap-2">
-                        <span className="px-2 py-0.5 rounded text-[10px] font-semibold bg-zinc-800 text-blue-400 border border-zinc-700">
+                        <span className="px-2 py-0.5 rounded text-[10px] font-semibold bg-zinc-800 text-blue-400 border border-zinc-300">
                           {cat}
                         </span>
                         <span
@@ -996,29 +996,29 @@ export function ClaimSettlementAnalyzer() {
                           {revStatus.labelRo}
                         </span>
                         <span className="text-[10px] text-zinc-500">
-                          Dovadă: <strong className="text-zinc-300">{evStatus.labelRo}</strong>
+                          Dovadă: <strong className="text-zinc-600">{evStatus.labelRo}</strong>
                         </span>
                       </div>
 
-                      <h4 className="font-bold text-white text-sm pt-0.5">{item.description}</h4>
+                      <h4 className="font-bold text-zinc-900 text-sm pt-0.5">{item.description}</h4>
 
                       {item.notes && (
-                        <p className="text-zinc-400 text-[11px] italic pt-0.5">&ldquo;{item.notes}&rdquo;</p>
+                        <p className="text-zinc-500 text-[11px] italic pt-0.5">&ldquo;{item.notes}&rdquo;</p>
                       )}
                     </div>
 
                     {/* Financials & Diff */}
-                    <div className="flex flex-wrap items-center gap-4 bg-zinc-950 p-2.5 rounded-xl border border-zinc-800 shrink-0">
+                    <div className="flex flex-wrap items-center gap-4 bg-zinc-50 p-2.5 rounded-xl border border-zinc-200 shrink-0">
                       <div>
                         <div className="text-[10px] text-zinc-500 uppercase">Revendicat</div>
-                        <div className="font-semibold text-zinc-200">
+                        <div className="font-semibold text-zinc-800">
                           {item.amountClaimed !== undefined ? `${item.amountClaimed.toLocaleString("ro-RO")} ${item.currency}` : "N/A"}
                         </div>
                       </div>
 
                       <div>
                         <div className="text-[10px] text-zinc-500 uppercase">Aprobat Ofertă</div>
-                        <div className="font-semibold text-zinc-200">
+                        <div className="font-semibold text-zinc-800">
                           {item.amountOffered !== undefined ? `${item.amountOffered.toLocaleString("ro-RO")} ${item.currency}` : "N/A"}
                         </div>
                       </div>
@@ -1028,7 +1028,7 @@ export function ClaimSettlementAnalyzer() {
                           <div className="text-[10px] text-zinc-500 uppercase">Diferență</div>
                           <div
                             className={`font-bold ${
-                              diff > 0 ? "text-amber-400" : diff < 0 ? "text-emerald-400" : "text-zinc-400"
+                              diff > 0 ? "text-amber-400" : diff < 0 ? "text-emerald-400" : "text-zinc-500"
                             }`}
                           >
                             {diff > 0 ? `+${diff.toLocaleString("ro-RO")}` : diff.toLocaleString("ro-RO")} {item.currency}
@@ -1045,7 +1045,7 @@ export function ClaimSettlementAnalyzer() {
                           setEditingItem(item);
                           setIsItemModalOpen(true);
                         }}
-                        className="p-1.5 rounded-lg bg-zinc-800 text-zinc-300 hover:text-white hover:bg-zinc-700 transition-colors"
+                        className="p-1.5 rounded-lg bg-zinc-800 text-zinc-600 hover:text-white hover:bg-zinc-700 transition-colors"
                         title="Editează poziția"
                       >
                         <Edit3 className="w-3.5 h-3.5" />
@@ -1053,7 +1053,7 @@ export function ClaimSettlementAnalyzer() {
 
                       <button
                         onClick={() => setItemToDelete({ type: "item", id: item.id, title: item.description })}
-                        className="p-1.5 rounded-lg bg-zinc-800 text-zinc-400 hover:text-red-400 hover:bg-red-500/10 transition-colors"
+                        className="p-1.5 rounded-lg bg-zinc-800 text-zinc-500 hover:text-red-400 hover:bg-red-500/10 transition-colors"
                         title="Șterge poziția"
                       >
                         <Trash2 className="w-3.5 h-3.5" />
@@ -1064,9 +1064,9 @@ export function ClaimSettlementAnalyzer() {
               })}
             </div>
           ) : (
-            <div className="p-12 text-center bg-zinc-900/40 border border-zinc-800/60 rounded-2xl">
+            <div className="p-12 text-center bg-zinc-50 border border-zinc-200/60 rounded-2xl">
               <SlidersHorizontal className="w-8 h-8 text-zinc-600 mx-auto mb-3" />
-              <h3 className="text-base font-semibold text-zinc-300">Nicio poziție de deviz înregistrată</h3>
+              <h3 className="text-base font-semibold text-zinc-600">Nicio poziție de deviz înregistrată</h3>
               <p className="text-xs text-zinc-500 mt-1 max-w-sm mx-auto">
                 Adaugă piesele de schimb, orele de manoperă sau cheltuielile de cazare pentru a evidenția reducerile operate de asigurator.
               </p>
@@ -1095,18 +1095,18 @@ export function ClaimSettlementAnalyzer() {
       {/* TAB 3: QUESTIONS & ACTIONS */}
       {activeTab === "questions" && (
         <div className="space-y-6">
-          <div className="bg-zinc-900/40 border border-zinc-800/60 rounded-xl p-4 text-xs text-zinc-400 flex items-start justify-between gap-3">
+          <div className="bg-zinc-50 border border-zinc-200/60 rounded-xl p-4 text-xs text-zinc-500 flex items-start justify-between gap-3">
             <div className="flex items-start gap-2.5">
               <HelpCircle className="w-4 h-4 text-purple-400 shrink-0 mt-0.5" />
               <div>
-                <span className="font-semibold text-zinc-200">Pregătire dialog cu asiguratorul:</span> Întrebările neutre te ajută să ceri clarificări scrise fără a genera tensiuni inutile sau a formula acuzații nefondate.
+                <span className="font-semibold text-zinc-800">Pregătire dialog cu asiguratorul:</span> Întrebările neutre te ajută să ceri clarificări scrise fără a genera tensiuni inutile sau a formula acuzații nefondate.
               </div>
             </div>
             <Button
               size="sm"
               variant="outline"
               onClick={handleAddSuggestedQuestions}
-              className="border-zinc-700 bg-zinc-800 text-xs shrink-0 text-zinc-200 hover:text-white"
+              className="border-zinc-300 bg-zinc-800 text-xs shrink-0 text-zinc-800 hover:text-white"
             >
               <Sparkles className="w-3.5 h-3.5 mr-1 text-purple-400" />
               Sugerează Întrebări
@@ -1118,7 +1118,7 @@ export function ClaimSettlementAnalyzer() {
               {data.questionsActions.map((q) => (
                 <div
                   key={q.id}
-                  className="bg-zinc-900/90 border border-zinc-800 hover:border-zinc-700 rounded-2xl p-4 transition-all space-y-3 text-xs shadow-lg shadow-black/10"
+                  className="bg-white border border-zinc-200 hover:border-zinc-300 rounded-2xl p-4 transition-all space-y-3 text-xs shadow-lg shadow-black/10"
                 >
                   <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-3">
                     <div className="space-y-1">
@@ -1134,7 +1134,7 @@ export function ClaimSettlementAnalyzer() {
                               ? "bg-emerald-500/10 text-emerald-400 border-emerald-500/20"
                               : q.status === "in_progress"
                               ? "bg-blue-500/10 text-blue-400 border-blue-500/20"
-                              : "bg-zinc-800 text-zinc-400 border-zinc-700"
+                              : "bg-zinc-800 text-zinc-500 border-zinc-300"
                           }`}
                         >
                           {q.status === "resolved" ? "Răspuns primit" : q.status === "in_progress" ? "În discuție" : "În așteptare"}
@@ -1150,7 +1150,7 @@ export function ClaimSettlementAnalyzer() {
                           setEditingQuestion(q);
                           setIsQuestionModalOpen(true);
                         }}
-                        className="p-1.5 rounded-lg bg-zinc-800 text-zinc-300 hover:text-white hover:bg-zinc-700 transition-colors"
+                        className="p-1.5 rounded-lg bg-zinc-800 text-zinc-600 hover:text-white hover:bg-zinc-700 transition-colors"
                         title="Editează întrebarea"
                       >
                         <Edit3 className="w-3.5 h-3.5" />
@@ -1158,7 +1158,7 @@ export function ClaimSettlementAnalyzer() {
 
                       <button
                         onClick={() => setItemToDelete({ type: "question", id: q.id, title: q.question })}
-                        className="p-1.5 rounded-lg bg-zinc-800 text-zinc-400 hover:text-red-400 hover:bg-red-500/10 transition-colors"
+                        className="p-1.5 rounded-lg bg-zinc-800 text-zinc-500 hover:text-red-400 hover:bg-red-500/10 transition-colors"
                         title="Șterge întrebarea"
                       >
                         <Trash2 className="w-3.5 h-3.5" />
@@ -1167,19 +1167,19 @@ export function ClaimSettlementAnalyzer() {
                   </div>
 
                   {/* Answer & Responsible */}
-                  <div className="p-3 bg-zinc-950 rounded-xl border border-zinc-800/80 space-y-1.5">
+                  <div className="p-3 bg-zinc-50 rounded-xl border border-zinc-200/80 space-y-1.5">
                     <div>
                       <span className="text-zinc-500 font-semibold">Răspuns primit de la asigurator: </span>
                       {q.answer ? (
-                        <span className="text-emerald-300 font-medium">{q.answer}</span>
+                        <span className="text-emerald-800 font-medium">{q.answer}</span>
                       ) : (
                         <span className="text-zinc-500 italic">Niciun răspuns înregistrat încă</span>
                       )}
                     </div>
                     {(q.responsibleParty || q.followUpDate) && (
-                      <div className="text-[11px] text-zinc-400 flex flex-wrap items-center gap-3 pt-1">
-                        {q.responsibleParty && <span>Responsabil: <strong className="text-zinc-200">{q.responsibleParty}</strong></span>}
-                        {q.followUpDate && <span>Follow-up: <strong className="text-zinc-200">{q.followUpDate}</strong></span>}
+                      <div className="text-[11px] text-zinc-500 flex flex-wrap items-center gap-3 pt-1">
+                        {q.responsibleParty && <span>Responsabil: <strong className="text-zinc-800">{q.responsibleParty}</strong></span>}
+                        {q.followUpDate && <span>Follow-up: <strong className="text-zinc-800">{q.followUpDate}</strong></span>}
                       </div>
                     )}
                   </div>
@@ -1187,9 +1187,9 @@ export function ClaimSettlementAnalyzer() {
               ))}
             </div>
           ) : (
-            <div className="p-12 text-center bg-zinc-900/40 border border-zinc-800/60 rounded-2xl">
+            <div className="p-12 text-center bg-zinc-50 border border-zinc-200/60 rounded-2xl">
               <HelpCircle className="w-8 h-8 text-zinc-600 mx-auto mb-3" />
-              <h3 className="text-base font-semibold text-zinc-300">Nicio întrebare pregătită</h3>
+              <h3 className="text-base font-semibold text-zinc-600">Nicio întrebare pregătită</h3>
               <p className="text-xs text-zinc-500 mt-1 max-w-sm mx-auto">
                 Generează întrebări sugerate bazate pe calculele tale sau adaugă întrebări proprii pentru asigurator.
               </p>
@@ -1206,26 +1206,26 @@ export function ClaimSettlementAnalyzer() {
 
       {/* TAB 4: OVERVIEW & NOTES */}
       {activeTab === "overview" && (
-        <div className="bg-zinc-900/80 border border-zinc-800 rounded-2xl p-6 space-y-4 text-xs">
-          <h3 className="text-sm font-bold text-white mb-2">Detalii Generale Dosar Daună</h3>
+        <div className="bg-white border border-zinc-200 rounded-2xl p-6 space-y-4 text-xs">
+          <h3 className="text-sm font-bold text-zinc-900 mb-2">Detalii Generale Dosar Daună</h3>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
-              <label className="block text-zinc-400 mb-1 font-semibold">Referință / Denumire Dosar</label>
+              <label className="block text-zinc-500 mb-1 font-semibold">Referință / Denumire Dosar</label>
               <Input
                 value={data.claimReference}
                 onChange={(e) => setData({ ...data, claimReference: e.target.value })}
                 placeholder="Ex: Daună CASCO Parcare, Inundație Apartament..."
-                className="bg-zinc-950 border-zinc-800 text-xs text-white"
+                className="bg-zinc-50 border-zinc-200 text-xs text-white"
               />
             </div>
 
             <div>
-              <label className="block text-zinc-400 mb-1 font-semibold">Categorie Daună</label>
+              <label className="block text-zinc-500 mb-1 font-semibold">Categorie Daună</label>
               <select
                 value={data.category}
                 onChange={(e) => setData({ ...data, category: e.target.value as ClaimCategory })}
-                className="w-full bg-zinc-950 border border-zinc-800 rounded-lg px-3 py-2 text-xs text-zinc-200"
+                className="w-full bg-zinc-50 border border-zinc-200 rounded-lg px-3 py-2 text-xs text-zinc-800"
               >
                 {Object.keys(CLAIM_CATEGORY_INFO).map((k) => (
                   <option key={k} value={k}>
@@ -1238,31 +1238,31 @@ export function ClaimSettlementAnalyzer() {
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             <div>
-              <label className="block text-zinc-400 mb-1 font-semibold">Dată Eveniment (Opțional)</label>
+              <label className="block text-zinc-500 mb-1 font-semibold">Dată Eveniment (Opțional)</label>
               <Input
                 type="date"
                 value={data.incidentDate || ""}
                 onChange={(e) => setData({ ...data, incidentDate: e.target.value })}
-                className="bg-zinc-950 border-zinc-800 text-xs text-white"
+                className="bg-zinc-50 border-zinc-200 text-xs text-white"
               />
             </div>
 
             <div>
-              <label className="block text-zinc-400 mb-1 font-semibold">Dată Ofertă Asigurator</label>
+              <label className="block text-zinc-500 mb-1 font-semibold">Dată Ofertă Asigurator</label>
               <Input
                 type="date"
                 value={data.offerReceivedDate || ""}
                 onChange={(e) => setData({ ...data, offerReceivedDate: e.target.value })}
-                className="bg-zinc-950 border-zinc-800 text-xs text-white"
+                className="bg-zinc-50 border-zinc-200 text-xs text-white"
               />
             </div>
 
             <div>
-              <label className="block text-zinc-400 mb-1 font-semibold">Stadiu Revizuire Dosar</label>
+              <label className="block text-zinc-500 mb-1 font-semibold">Stadiu Revizuire Dosar</label>
               <select
                 value={data.reviewStatus}
                 onChange={(e) => setData({ ...data, reviewStatus: e.target.value as ClaimReviewStatus })}
-                className="w-full bg-zinc-950 border border-zinc-800 rounded-lg px-3 py-2 text-xs text-zinc-200"
+                className="w-full bg-zinc-50 border border-zinc-200 rounded-lg px-3 py-2 text-xs text-zinc-800"
               >
                 {Object.keys(REVIEW_STATUS_INFO).map((k) => (
                   <option key={k} value={k}>
@@ -1274,24 +1274,24 @@ export function ClaimSettlementAnalyzer() {
           </div>
 
           <div>
-            <label className="block text-zinc-400 mb-1 font-semibold">Scurtă Descriere a Evenimentului</label>
+            <label className="block text-zinc-500 mb-1 font-semibold">Scurtă Descriere a Evenimentului</label>
             <textarea
               value={data.description || ""}
               onChange={(e) => setData({ ...data, description: e.target.value })}
               placeholder="Descrie pe scurt circumstanțele producerii daunei..."
               rows={2}
-              className="w-full bg-zinc-950 border border-zinc-800 rounded-lg p-2.5 text-xs text-zinc-200"
+              className="w-full bg-zinc-50 border border-zinc-200 rounded-lg p-2.5 text-xs text-zinc-800"
             />
           </div>
 
           <div>
-            <label className="block text-zinc-400 mb-1 font-semibold">Explicațiile / Motivele Invocate de Asigurator</label>
+            <label className="block text-zinc-500 mb-1 font-semibold">Explicațiile / Motivele Invocate de Asigurator</label>
             <textarea
               value={data.insurerExplanationNotes || ""}
               onChange={(e) => setData({ ...data, insurerExplanationNotes: e.target.value })}
               placeholder="Ex: Asiguratorul a motivat că piesa nu poate fi înlocuită de nou..."
               rows={2}
-              className="w-full bg-zinc-950 border border-zinc-800 rounded-lg p-2.5 text-xs text-zinc-200"
+              className="w-full bg-zinc-50 border border-zinc-200 rounded-lg p-2.5 text-xs text-zinc-800"
             />
           </div>
         </div>
@@ -1300,17 +1300,17 @@ export function ClaimSettlementAnalyzer() {
       {/* TAB 5: REPORT & BACKUP */}
       {activeTab === "report" && (
         <div className="space-y-6">
-          <div className="bg-zinc-900/80 border border-zinc-800 rounded-2xl p-6 space-y-6 text-xs">
+          <div className="bg-white border border-zinc-200 rounded-2xl p-6 space-y-6 text-xs">
             <div>
-              <h3 className="text-lg font-bold text-white">Export & Backup Dosar Despăgubire</h3>
-              <p className="text-zinc-400 mt-1">
+              <h3 className="text-lg font-bold text-zinc-900">Export & Backup Dosar Despăgubire</h3>
+              <p className="text-zinc-500 mt-1">
                 Descarcă un dosar complet PDF sau salvează un backup JSON securizat local în memoria browserului.
               </p>
             </div>
 
             {/* Notes Section */}
             <div>
-              <label className="block font-semibold text-zinc-300 uppercase tracking-wider mb-2">
+              <label className="block font-semibold text-zinc-600 uppercase tracking-wider mb-2">
                 Notițe Generale Utilizator / Strategie Contestație
               </label>
               <textarea
@@ -1318,17 +1318,17 @@ export function ClaimSettlementAnalyzer() {
                 onChange={(e) => setData({ ...data, userNotes: e.target.value })}
                 placeholder="Ex: Pregătit cerere de reanalizare împreună cu Cristian Văduva..."
                 rows={3}
-                className="w-full bg-zinc-950 border border-zinc-800 rounded-xl p-3 text-xs text-zinc-200"
+                className="w-full bg-zinc-50 border border-zinc-200 rounded-xl p-3 text-xs text-zinc-800"
               />
             </div>
 
             {/* Export Actions Grid */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
-              <div className="p-4 rounded-xl bg-zinc-950/60 border border-zinc-800/80 flex flex-col justify-between">
+              <div className="p-4 rounded-xl bg-zinc-50 border border-zinc-200/80 flex flex-col justify-between">
                 <div>
                   <FileText className="w-6 h-6 text-blue-400 mb-2" />
                   <h4 className="text-sm font-semibold text-white">Raport PDF Structurat</h4>
-                  <p className="text-[11px] text-zinc-400 mt-1">
+                  <p className="text-[11px] text-zinc-500 mt-1">
                     Document PDF cu reconcilierea cifrelor, pozițiile din deviz, întrebările și disclaimerul legal.
                   </p>
                 </div>
@@ -1338,29 +1338,29 @@ export function ClaimSettlementAnalyzer() {
                 </Button>
               </div>
 
-              <div className="p-4 rounded-xl bg-zinc-950/60 border border-zinc-800/80 flex flex-col justify-between">
+              <div className="p-4 rounded-xl bg-zinc-50 border border-zinc-200/80 flex flex-col justify-between">
                 <div>
                   <Download className="w-6 h-6 text-emerald-400 mb-2" />
                   <h4 className="text-sm font-semibold text-white">Export JSON Backup</h4>
-                  <p className="text-[11px] text-zinc-400 mt-1">
+                  <p className="text-[11px] text-zinc-500 mt-1">
                     Fișier securizat local pentru transfer între calculatoare sau reluarea sesiunii.
                   </p>
                 </div>
-                <Button onClick={handleExportJson} variant="outline" className="mt-4 border-zinc-700 text-xs">
+                <Button onClick={handleExportJson} variant="outline" className="mt-4 border-zinc-300 text-xs">
                   <Download className="w-3.5 h-3.5 mr-1.5" />
                   Export JSON
                 </Button>
               </div>
 
-              <div className="p-4 rounded-xl bg-zinc-950/60 border border-zinc-800/80 flex flex-col justify-between">
+              <div className="p-4 rounded-xl bg-zinc-50 border border-zinc-200/80 flex flex-col justify-between">
                 <div>
                   <Upload className="w-6 h-6 text-purple-400 mb-2" />
                   <h4 className="text-sm font-semibold text-white">Import Fișier JSON</h4>
-                  <p className="text-[11px] text-zinc-400 mt-1">
+                  <p className="text-[11px] text-zinc-500 mt-1">
                     Încarcă un backup JSON salvat anterior pentru a continua reconcilierea.
                   </p>
                 </div>
-                <label className="mt-4 inline-flex items-center justify-center rounded-md text-xs font-medium border border-zinc-700 bg-zinc-800 px-4 py-2 text-zinc-200 hover:bg-zinc-700 cursor-pointer">
+                <label className="mt-4 inline-flex items-center justify-center rounded-md text-xs font-medium border border-zinc-300 bg-zinc-800 px-4 py-2 text-zinc-800 hover:bg-zinc-700 cursor-pointer">
                   <Upload className="w-3.5 h-3.5 mr-1.5" />
                   <span>Încarcă Fișier</span>
                   <input type="file" accept=".json" onChange={handleImportJson} className="hidden" />
@@ -1369,7 +1369,7 @@ export function ClaimSettlementAnalyzer() {
             </div>
 
             {/* Privacy note & Reset button */}
-            <div className="pt-6 border-t border-zinc-800/80 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div className="pt-6 border-t border-zinc-200/80 flex flex-col sm:flex-row items-center justify-between gap-4">
               <div className="flex items-center gap-2 text-zinc-500">
                 <Lock className="w-4 h-4 text-emerald-400 shrink-0" />
                 <span>Toate informațiile rămân strict în memoria browserului tău și nu sunt trimise către servere.</span>
@@ -1397,14 +1397,14 @@ export function ClaimSettlementAnalyzer() {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.95 }}
-              className="bg-zinc-900 border border-zinc-800 rounded-2xl w-full max-w-lg flex flex-col overflow-hidden shadow-2xl"
+              className="bg-white border border-zinc-200 rounded-2xl w-full max-w-lg flex flex-col overflow-hidden shadow-2xl"
             >
-              <div className="px-6 py-4 border-b border-zinc-800 flex items-center justify-between">
+              <div className="px-6 py-4 border-b border-zinc-200 flex items-center justify-between">
                 <div className="flex items-center gap-2">
                   <div className="p-1.5 rounded-lg bg-blue-500/10 text-blue-400">
                     <SlidersHorizontal className="w-4 h-4" />
                   </div>
-                  <h3 className="text-base font-bold text-white">
+                  <h3 className="text-base font-bold text-zinc-900">
                     {editingItem ? "Editează Poziție Deviz" : "Adaugă Poziție Deviz"}
                   </h3>
                 </div>
@@ -1418,7 +1418,7 @@ export function ClaimSettlementAnalyzer() {
 
               <form onSubmit={handleSaveLineItem} className="p-6 space-y-4 text-xs">
                 <div>
-                  <label className="block text-zinc-300 font-semibold mb-1">
+                  <label className="block text-zinc-600 font-semibold mb-1">
                     Descriere Poziție / Piesă / Lucrare <span className="text-red-400">*</span>
                   </label>
                   <Input
@@ -1426,17 +1426,17 @@ export function ClaimSettlementAnalyzer() {
                     value={itemFormData.description || ""}
                     onChange={(e) => setItemFormData({ ...itemFormData, description: e.target.value })}
                     placeholder="Ex: Înlocuire bară protecție față OEM, Manoperă vopsitorie..."
-                    className="bg-zinc-950 border-zinc-800 text-xs text-white"
+                    className="bg-zinc-50 border-zinc-200 text-xs text-white"
                   />
                 </div>
 
                 <div className="grid grid-cols-2 gap-3">
                   <div>
-                    <label className="block text-zinc-300 font-medium mb-1">Categorie</label>
+                    <label className="block text-zinc-600 font-medium mb-1">Categorie</label>
                     <select
                       value={itemFormData.category || "parts"}
                       onChange={(e) => setItemFormData({ ...itemFormData, category: e.target.value as LineItemCategory })}
-                      className="w-full bg-zinc-950 border border-zinc-800 rounded px-2.5 py-1.5 text-xs text-zinc-200"
+                      className="w-full bg-zinc-50 border border-zinc-200 rounded px-2.5 py-1.5 text-xs text-zinc-800"
                     >
                       {Object.keys(LINE_ITEM_CATEGORY_INFO).map((k) => (
                         <option key={k} value={k}>
@@ -1447,11 +1447,11 @@ export function ClaimSettlementAnalyzer() {
                   </div>
 
                   <div>
-                    <label className="block text-zinc-300 font-medium mb-1">Stadiu Poziție</label>
+                    <label className="block text-zinc-600 font-medium mb-1">Stadiu Poziție</label>
                     <select
                       value={itemFormData.reviewStatus || "unresolved"}
                       onChange={(e) => setItemFormData({ ...itemFormData, reviewStatus: e.target.value as ItemReviewStatus })}
-                      className="w-full bg-zinc-950 border border-zinc-800 rounded px-2.5 py-1.5 text-xs text-zinc-200"
+                      className="w-full bg-zinc-50 border border-zinc-200 rounded px-2.5 py-1.5 text-xs text-zinc-800"
                     >
                       {Object.keys(ITEM_REVIEW_STATUS_INFO).map((k) => (
                         <option key={k} value={k}>
@@ -1464,7 +1464,7 @@ export function ClaimSettlementAnalyzer() {
 
                 <div className="grid grid-cols-2 gap-3">
                   <div>
-                    <label className="block text-zinc-300 font-medium mb-1">Sumă Revendicată / Deviz</label>
+                    <label className="block text-zinc-600 font-medium mb-1">Sumă Revendicată / Deviz</label>
                     <Input
                       type="number"
                       step="any"
@@ -1476,12 +1476,12 @@ export function ClaimSettlementAnalyzer() {
                           amountClaimed: e.target.value === "" ? undefined : parseFloat(e.target.value),
                         })
                       }
-                      className="bg-zinc-950 border-zinc-800 text-xs text-white"
+                      className="bg-zinc-50 border-zinc-200 text-xs text-white"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-zinc-300 font-medium mb-1">Sumă Aprobată în Ofertă</label>
+                    <label className="block text-zinc-600 font-medium mb-1">Sumă Aprobată în Ofertă</label>
                     <Input
                       type="number"
                       step="any"
@@ -1493,17 +1493,17 @@ export function ClaimSettlementAnalyzer() {
                           amountOffered: e.target.value === "" ? undefined : parseFloat(e.target.value),
                         })
                       }
-                      className="bg-zinc-950 border-zinc-800 text-xs text-white"
+                      className="bg-zinc-50 border-zinc-200 text-xs text-white"
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label className="block text-zinc-300 font-medium mb-1">Stadiu Documente Doveditoare</label>
+                  <label className="block text-zinc-600 font-medium mb-1">Stadiu Documente Doveditoare</label>
                   <select
                     value={itemFormData.evidenceStatus || "available"}
                     onChange={(e) => setItemFormData({ ...itemFormData, evidenceStatus: e.target.value as EvidenceStatus })}
-                    className="w-full bg-zinc-950 border border-zinc-800 rounded px-2.5 py-1.5 text-xs text-zinc-200"
+                    className="w-full bg-zinc-50 border border-zinc-200 rounded px-2.5 py-1.5 text-xs text-zinc-800"
                   >
                     {Object.keys(EVIDENCE_STATUS_INFO).map((k) => (
                       <option key={k} value={k}>
@@ -1514,22 +1514,22 @@ export function ClaimSettlementAnalyzer() {
                 </div>
 
                 <div>
-                  <label className="block text-zinc-300 font-medium mb-1">Observații / Notițe</label>
+                  <label className="block text-zinc-600 font-medium mb-1">Observații / Notițe</label>
                   <textarea
                     value={itemFormData.notes || ""}
                     onChange={(e) => setItemFormData({ ...itemFormData, notes: e.target.value })}
                     placeholder="Ex: Asiguratorul a diminuat tariful cu 20% fără justificare..."
                     rows={2}
-                    className="w-full bg-zinc-950 border border-zinc-800 rounded-lg p-2.5 text-xs text-zinc-200"
+                    className="w-full bg-zinc-50 border border-zinc-200 rounded-lg p-2.5 text-xs text-zinc-800"
                   />
                 </div>
 
-                <div className="pt-4 border-t border-zinc-800 flex items-center justify-end gap-2">
+                <div className="pt-4 border-t border-zinc-200 flex items-center justify-end gap-2">
                   <Button
                     type="button"
                     variant="outline"
                     onClick={() => setIsItemModalOpen(false)}
-                    className="border-zinc-700 text-xs"
+                    className="border-zinc-300 text-xs"
                   >
                     Anulează
                   </Button>
@@ -1551,14 +1551,14 @@ export function ClaimSettlementAnalyzer() {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.95 }}
-              className="bg-zinc-900 border border-zinc-800 rounded-2xl w-full max-w-lg flex flex-col overflow-hidden shadow-2xl"
+              className="bg-white border border-zinc-200 rounded-2xl w-full max-w-lg flex flex-col overflow-hidden shadow-2xl"
             >
-              <div className="px-6 py-4 border-b border-zinc-800 flex items-center justify-between">
+              <div className="px-6 py-4 border-b border-zinc-200 flex items-center justify-between">
                 <div className="flex items-center gap-2">
                   <div className="p-1.5 rounded-lg bg-blue-500/10 text-blue-400">
                     <HelpCircle className="w-4 h-4" />
                   </div>
-                  <h3 className="text-base font-bold text-white">
+                  <h3 className="text-base font-bold text-zinc-900">
                     {editingQuestion ? "Editează Întrebare" : "Adaugă Întrebare pentru Asigurator"}
                   </h3>
                 </div>
@@ -1572,7 +1572,7 @@ export function ClaimSettlementAnalyzer() {
 
               <form onSubmit={handleSaveQuestion} className="p-6 space-y-4 text-xs">
                 <div>
-                  <label className="block text-zinc-300 font-semibold mb-1">
+                  <label className="block text-zinc-600 font-semibold mb-1">
                     Întrebare / Clarificare Solicitată <span className="text-red-400">*</span>
                   </label>
                   <textarea
@@ -1581,49 +1581,49 @@ export function ClaimSettlementAnalyzer() {
                     onChange={(e) => setQuestionFormData({ ...questionFormData, question: e.target.value })}
                     placeholder="Ex: Puteți clarifica temeiul legal al aplicării coeficientului de uzură?"
                     rows={2}
-                    className="w-full bg-zinc-950 border border-zinc-800 rounded-lg p-2.5 text-xs text-white"
+                    className="w-full bg-zinc-50 border border-zinc-200 rounded-lg p-2.5 text-xs text-white"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-zinc-300 font-medium mb-1">Răspuns Primit de la Asigurator</label>
+                  <label className="block text-zinc-600 font-medium mb-1">Răspuns Primit de la Asigurator</label>
                   <textarea
                     value={questionFormData.answer || ""}
                     onChange={(e) => setQuestionFormData({ ...questionFormData, answer: e.target.value })}
                     placeholder="Notează răspunsul sau poziția transmisă de companie..."
                     rows={2}
-                    className="w-full bg-zinc-950 border border-zinc-800 rounded-lg p-2.5 text-xs text-zinc-200"
+                    className="w-full bg-zinc-50 border border-zinc-200 rounded-lg p-2.5 text-xs text-zinc-800"
                   />
                 </div>
 
                 <div className="grid grid-cols-2 gap-3">
                   <div>
-                    <label className="block text-zinc-300 font-medium mb-1">Persoană / Departament Responsabil</label>
+                    <label className="block text-zinc-600 font-medium mb-1">Persoană / Departament Responsabil</label>
                     <Input
                       value={questionFormData.responsibleParty || ""}
                       onChange={(e) => setQuestionFormData({ ...questionFormData, responsibleParty: e.target.value })}
                       placeholder="Ex: Inspector daune, Lichidator..."
-                      className="bg-zinc-950 border-zinc-800 text-xs text-white"
+                      className="bg-zinc-50 border-zinc-200 text-xs text-white"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-zinc-300 font-medium mb-1">Dată Scadență / Follow-up</label>
+                    <label className="block text-zinc-600 font-medium mb-1">Dată Scadență / Follow-up</label>
                     <Input
                       type="date"
                       value={questionFormData.followUpDate || ""}
                       onChange={(e) => setQuestionFormData({ ...questionFormData, followUpDate: e.target.value })}
-                      className="bg-zinc-950 border-zinc-800 text-xs text-white"
+                      className="bg-zinc-50 border-zinc-200 text-xs text-white"
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label className="block text-zinc-300 font-medium mb-1">Status Întrebare</label>
+                  <label className="block text-zinc-600 font-medium mb-1">Status Întrebare</label>
                   <select
                     value={questionFormData.status || "pending"}
                     onChange={(e) => setQuestionFormData({ ...questionFormData, status: e.target.value as "pending" | "in_progress" | "resolved" })}
-                    className="w-full bg-zinc-950 border border-zinc-800 rounded px-2.5 py-1.5 text-xs text-zinc-200"
+                    className="w-full bg-zinc-50 border border-zinc-200 rounded px-2.5 py-1.5 text-xs text-zinc-800"
                   >
                     <option value="pending">În așteptare răspuns</option>
                     <option value="in_progress">În discuție / clarificare</option>
@@ -1631,12 +1631,12 @@ export function ClaimSettlementAnalyzer() {
                   </select>
                 </div>
 
-                <div className="pt-4 border-t border-zinc-800 flex items-center justify-end gap-2">
+                <div className="pt-4 border-t border-zinc-200 flex items-center justify-end gap-2">
                   <Button
                     type="button"
                     variant="outline"
                     onClick={() => setIsQuestionModalOpen(false)}
-                    className="border-zinc-700 text-xs"
+                    className="border-zinc-300 text-xs"
                   >
                     Anulează
                   </Button>
@@ -1658,15 +1658,15 @@ export function ClaimSettlementAnalyzer() {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.95 }}
-              className="bg-zinc-900 border border-zinc-800 rounded-2xl w-full max-w-md p-6 text-xs shadow-2xl"
+              className="bg-white border border-zinc-200 rounded-2xl w-full max-w-md p-6 text-xs shadow-2xl"
             >
               <div className="flex items-center gap-3 text-red-400 mb-3">
                 <Trash2 className="w-5 h-5" />
-                <h3 className="text-sm font-bold text-white">
+                <h3 className="text-sm font-bold text-zinc-900">
                   Confirmă Ștergerea {itemToDelete.type === "item" ? "Poziției" : "Întrebării"}
                 </h3>
               </div>
-              <p className="text-zinc-300 mb-4">
+              <p className="text-zinc-600 mb-4">
                 Sigur dorești să ștergi <strong className="text-white">&ldquo;{itemToDelete.title}&rdquo;</strong>?
               </p>
               <div className="flex items-center justify-end gap-2">
@@ -1674,7 +1674,7 @@ export function ClaimSettlementAnalyzer() {
                   variant="outline"
                   size="sm"
                   onClick={() => setItemToDelete(null)}
-                  className="border-zinc-700 text-xs"
+                  className="border-zinc-300 text-xs"
                 >
                   Anulează
                 </Button>
@@ -1700,13 +1700,13 @@ export function ClaimSettlementAnalyzer() {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.95 }}
-              className="bg-zinc-900 border border-zinc-800 rounded-2xl w-full max-w-md p-6 text-xs shadow-2xl"
+              className="bg-white border border-zinc-200 rounded-2xl w-full max-w-md p-6 text-xs shadow-2xl"
             >
               <div className="flex items-center gap-3 text-red-400 mb-3">
                 <AlertTriangle className="w-5 h-5" />
-                <h3 className="text-sm font-bold text-white">Resetare Fișă Despăgubire</h3>
+                <h3 className="text-sm font-bold text-zinc-900">Resetare Fișă Despăgubire</h3>
               </div>
-              <p className="text-zinc-300 mb-4 leading-relaxed">
+              <p className="text-zinc-600 mb-4 leading-relaxed">
                 Această acțiune va șterge toate cifrele, devizele și întrebările înregistrate în această sesiune de navigare. Descarcă un raport PDF sau un export JSON înainte de resetare.
               </p>
               <div className="flex items-center justify-end gap-2">
@@ -1714,7 +1714,7 @@ export function ClaimSettlementAnalyzer() {
                   variant="outline"
                   size="sm"
                   onClick={() => setIsResetConfirmOpen(false)}
-                  className="border-zinc-700 text-xs"
+                  className="border-zinc-300 text-xs"
                 >
                   Anulează
                 </Button>

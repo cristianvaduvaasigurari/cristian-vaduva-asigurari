@@ -312,13 +312,13 @@ export function PolicyDeadlineTimeline() {
     <div className="w-full space-y-8">
       {/* Expiry Prompt if passed */}
       {stats.expiryPassedPrompt && (
-        <div className="bg-amber-500/10 border border-amber-500/30 rounded-2xl p-4 sm:p-5 flex items-start gap-4 text-amber-200">
+        <div className="bg-amber-50 border border-amber-200 rounded-2xl p-4 sm:p-5 flex items-start gap-4 text-amber-950">
           <AlertTriangle className="w-6 h-6 text-amber-400 shrink-0 mt-0.5" />
           <div className="space-y-1">
-            <h4 className="text-sm font-semibold text-amber-300">
+            <h4 className="text-sm font-semibold text-amber-800">
               Notă Importantă: Data expirării poliței a trecut
             </h4>
-            <p className="text-xs sm:text-sm text-zinc-300 leading-relaxed">
+            <p className="text-xs sm:text-sm text-zinc-600 leading-relaxed">
               Polița consemnată are o dată de expirare anterioară zilei curente. Vă rugăm să verificați statutul activ și continuitatea acoperirii direct cu asigurătorul emitent sau brokerul dumneavoastră. Acest instrument organizatoric nu determină valabilitatea juridică sau încetarea automată a contractului.
             </p>
           </div>
@@ -326,20 +326,20 @@ export function PolicyDeadlineTimeline() {
       )}
 
       {/* Policy Header Box */}
-      <div className="bg-zinc-900/90 border border-zinc-800/80 rounded-2xl p-5 sm:p-6 backdrop-blur-sm shadow-xl space-y-4">
-        <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-zinc-800/60 pb-4">
+      <div className="bg-white border border-zinc-200/80 rounded-2xl p-5 sm:p-6 backdrop-blur-sm shadow-xl space-y-4">
+        <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-zinc-200/60 pb-4">
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400">
               <CalendarDays className="w-5 h-5" />
             </div>
             <div>
-              <h2 className="text-lg font-bold text-white tracking-tight flex items-center gap-2">
+              <h2 className="text-lg font-bold text-zinc-900 tracking-tight flex items-center gap-2">
                 {data.policyNickname || "Poliță Fără Titlu"}
-                <span className="text-xs px-2.5 py-0.5 rounded-full bg-zinc-800 text-zinc-400 font-mono">
+                <span className="text-xs px-2.5 py-0.5 rounded-full bg-zinc-800 text-zinc-500 font-mono">
                   {data.policyReference}
                 </span>
               </h2>
-              <p className="text-xs text-zinc-400">
+              <p className="text-xs text-zinc-500">
                 Registru cronologic & evidență termene scadente | Stocare 100% în browser (volatilă)
               </p>
             </div>
@@ -351,7 +351,7 @@ export function PolicyDeadlineTimeline() {
               variant="outline"
               size="sm"
               onClick={() => generatePolicyDeadlinesPdf(data)}
-              className="bg-zinc-800/60 border-zinc-700 hover:bg-zinc-700 text-zinc-200 text-xs h-9 gap-1.5"
+              className="bg-zinc-800/60 border-zinc-300 hover:bg-zinc-700 text-zinc-800 text-xs h-9 gap-1.5"
             >
               <Download className="w-3.5 h-3.5 text-blue-400" />
               Descarcă PDF
@@ -360,16 +360,16 @@ export function PolicyDeadlineTimeline() {
               variant="outline"
               size="sm"
               onClick={handleExportJson}
-              className="bg-zinc-800/60 border-zinc-700 hover:bg-zinc-700 text-zinc-200 text-xs h-9 gap-1.5"
+              className="bg-zinc-800/60 border-zinc-300 hover:bg-zinc-700 text-zinc-800 text-xs h-9 gap-1.5"
             >
-              <Upload className="w-3.5 h-3.5 text-zinc-400" />
+              <Upload className="w-3.5 h-3.5 text-zinc-500" />
               Export Backup JSON
             </Button>
             <Button
               variant="outline"
               size="sm"
               onClick={() => fileInputRef.current?.click()}
-              className="bg-zinc-800/60 border-zinc-700 hover:bg-zinc-700 text-zinc-200 text-xs h-9 gap-1.5"
+              className="bg-zinc-800/60 border-zinc-300 hover:bg-zinc-700 text-zinc-800 text-xs h-9 gap-1.5"
             >
               <Download className="w-3.5 h-3.5 text-emerald-400" />
               Import JSON
@@ -385,7 +385,7 @@ export function PolicyDeadlineTimeline() {
               variant="outline"
               size="sm"
               onClick={() => setIsResetConfirmOpen(true)}
-              className="bg-zinc-800/60 border-zinc-700 hover:bg-rose-950/40 hover:border-rose-800 text-zinc-400 hover:text-rose-300 text-xs h-9"
+              className="bg-zinc-800/60 border-zinc-300 hover:bg-rose-950/40 hover:border-rose-800 text-zinc-500 hover:text-rose-800 text-xs h-9"
             >
               <RotateCcw className="w-3.5 h-3.5" />
             </Button>
@@ -394,14 +394,14 @@ export function PolicyDeadlineTimeline() {
 
         {/* Error Alert if JSON import failed */}
         {importError && (
-          <div className="p-3 bg-rose-500/10 border border-rose-500/30 rounded-xl text-rose-300 text-xs flex items-center justify-between">
+          <div className="p-3 bg-rose-500/10 border border-rose-500/30 rounded-xl text-rose-800 text-xs flex items-center justify-between">
             <div className="flex items-center gap-2">
               <AlertTriangle className="w-4 h-4 text-rose-400" />
               <span>{importError}</span>
             </div>
             <button
               onClick={() => setImportError(null)}
-              className="text-zinc-400 hover:text-white"
+              className="text-zinc-500 hover:text-white"
             >
               <X className="w-4 h-4" />
             </button>
@@ -411,47 +411,47 @@ export function PolicyDeadlineTimeline() {
         {/* Editable Metadata Fields */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 pt-1">
           <div>
-            <label className="text-[11px] font-medium text-zinc-400 uppercase tracking-wider block mb-1">
+            <label className="text-[11px] font-medium text-zinc-500 uppercase tracking-wider block mb-1">
               Denumire / Nickname Poliță
             </label>
             <Input
               value={data.policyNickname}
               onChange={(e) => updatePolicyInfo("policyNickname", e.target.value)}
               placeholder="Ex: CASCO Autoturism, Locuință"
-              className="bg-zinc-950/60 border-zinc-800 text-zinc-100 text-xs h-8 focus:border-blue-500"
+              className="bg-zinc-50 border-zinc-200 text-zinc-900 text-xs h-8 focus:border-blue-500"
             />
           </div>
           <div>
-            <label className="text-[11px] font-medium text-zinc-400 uppercase tracking-wider block mb-1">
+            <label className="text-[11px] font-medium text-zinc-500 uppercase tracking-wider block mb-1">
               Referință Non-Sensibilă
             </label>
             <Input
               value={data.policyReference}
               onChange={(e) => updatePolicyInfo("policyReference", e.target.value)}
               placeholder="Ex: POL-2026-01"
-              className="bg-zinc-950/60 border-zinc-800 text-zinc-100 text-xs h-8 focus:border-blue-500"
+              className="bg-zinc-50 border-zinc-200 text-zinc-900 text-xs h-8 focus:border-blue-500"
             />
           </div>
           <div>
-            <label className="text-[11px] font-medium text-zinc-400 uppercase tracking-wider block mb-1">
+            <label className="text-[11px] font-medium text-zinc-500 uppercase tracking-wider block mb-1">
               Companie Asigurare / Broker
             </label>
             <Input
               value={data.insurerName || ""}
               onChange={(e) => updatePolicyInfo("insurerName", e.target.value)}
               placeholder="Ex: Allianz, Omniasig, Groupama"
-              className="bg-zinc-950/60 border-zinc-800 text-zinc-100 text-xs h-8 focus:border-blue-500"
+              className="bg-zinc-50 border-zinc-200 text-zinc-900 text-xs h-8 focus:border-blue-500"
             />
           </div>
           <div>
-            <label className="text-[11px] font-medium text-zinc-400 uppercase tracking-wider block mb-1">
+            <label className="text-[11px] font-medium text-zinc-500 uppercase tracking-wider block mb-1">
               Categorie Poliță
             </label>
             <Input
               value={data.policyCategory || ""}
               onChange={(e) => updatePolicyInfo("policyCategory", e.target.value)}
               placeholder="Ex: Auto, Locuință, Sănătate"
-              className="bg-zinc-950/60 border-zinc-800 text-zinc-100 text-xs h-8 focus:border-blue-500"
+              className="bg-zinc-50 border-zinc-200 text-zinc-900 text-xs h-8 focus:border-blue-500"
             />
           </div>
         </div>
@@ -459,18 +459,18 @@ export function PolicyDeadlineTimeline() {
 
       {/* KPI Dashboard Metrics */}
       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
-        <div className="bg-zinc-900/60 border border-zinc-800/80 rounded-xl p-3.5 flex flex-col justify-between">
-          <div className="flex items-center justify-between text-zinc-400 text-xs">
+        <div className="bg-white border border-zinc-200/80 rounded-xl p-3.5 flex flex-col justify-between">
+          <div className="flex items-center justify-between text-zinc-500 text-xs">
             <span>Total Evenimente</span>
             <Layers className="w-4 h-4 text-blue-400" />
           </div>
-          <div className="mt-2 text-2xl font-bold text-white tracking-tight">
+          <div className="mt-2 text-2xl font-bold text-zinc-900 tracking-tight">
             {stats.totalEvents}
           </div>
         </div>
 
-        <div className="bg-zinc-900/60 border border-zinc-800/80 rounded-xl p-3.5 flex flex-col justify-between">
-          <div className="flex items-center justify-between text-zinc-400 text-xs">
+        <div className="bg-white border border-zinc-200/80 rounded-xl p-3.5 flex flex-col justify-between">
+          <div className="flex items-center justify-between text-zinc-500 text-xs">
             <span>Viitoare / Active</span>
             <Clock className="w-4 h-4 text-cyan-400" />
           </div>
@@ -483,10 +483,10 @@ export function PolicyDeadlineTimeline() {
           className={`border rounded-xl p-3.5 flex flex-col justify-between ${
             stats.overdueCount > 0
               ? "bg-rose-500/10 border-rose-500/30"
-              : "bg-zinc-900/60 border-zinc-800/80"
+              : "bg-white border-zinc-200/80"
           }`}
         >
-          <div className="flex items-center justify-between text-zinc-400 text-xs">
+          <div className="flex items-center justify-between text-zinc-500 text-xs">
             <span>Scadențe Depășite</span>
             <AlertTriangle
               className={`w-4 h-4 ${
@@ -496,15 +496,15 @@ export function PolicyDeadlineTimeline() {
           </div>
           <div
             className={`mt-2 text-2xl font-bold tracking-tight ${
-              stats.overdueCount > 0 ? "text-rose-400" : "text-zinc-400"
+              stats.overdueCount > 0 ? "text-rose-400" : "text-zinc-500"
             }`}
           >
             {stats.overdueCount}
           </div>
         </div>
 
-        <div className="bg-zinc-900/60 border border-zinc-800/80 rounded-xl p-3.5 flex flex-col justify-between">
-          <div className="flex items-center justify-between text-zinc-400 text-xs">
+        <div className="bg-white border border-zinc-200/80 rounded-xl p-3.5 flex flex-col justify-between">
+          <div className="flex items-center justify-between text-zinc-500 text-xs">
             <span>Așteaptă Confirmare</span>
             <HelpCircle className="w-4 h-4 text-amber-400" />
           </div>
@@ -513,8 +513,8 @@ export function PolicyDeadlineTimeline() {
           </div>
         </div>
 
-        <div className="bg-zinc-900/60 border border-zinc-800/80 rounded-xl p-3.5 flex flex-col justify-between">
-          <div className="flex items-center justify-between text-zinc-400 text-xs">
+        <div className="bg-white border border-zinc-200/80 rounded-xl p-3.5 flex flex-col justify-between">
+          <div className="flex items-center justify-between text-zinc-500 text-xs">
             <span>Finalizate</span>
             <CheckCircle2 className="w-4 h-4 text-emerald-400" />
           </div>
@@ -523,8 +523,8 @@ export function PolicyDeadlineTimeline() {
           </div>
         </div>
 
-        <div className="bg-zinc-900/60 border border-zinc-800/80 rounded-xl p-3.5 flex flex-col justify-between">
-          <div className="flex items-center justify-between text-zinc-400 text-xs">
+        <div className="bg-white border border-zinc-200/80 rounded-xl p-3.5 flex flex-col justify-between">
+          <div className="flex items-center justify-between text-zinc-500 text-xs">
             <span>Clarificări Necesare</span>
             <FileWarning className="w-4 h-4 text-yellow-400" />
           </div>
@@ -535,9 +535,9 @@ export function PolicyDeadlineTimeline() {
       </div>
 
       {/* Quick Add Templates Bar */}
-      <div className="bg-zinc-900/40 border border-zinc-800/60 rounded-2xl p-4">
+      <div className="bg-zinc-50 border border-zinc-200/60 rounded-2xl p-4">
         <div className="flex items-center justify-between mb-3">
-          <span className="text-xs font-semibold text-zinc-300 uppercase tracking-wider flex items-center gap-1.5">
+          <span className="text-xs font-semibold text-zinc-600 uppercase tracking-wider flex items-center gap-1.5">
             <Sparkles className="w-3.5 h-3.5 text-blue-400" />
             Adăugare Rapidă din Șabloane Uzuale
           </span>
@@ -555,7 +555,7 @@ export function PolicyDeadlineTimeline() {
             <button
               key={idx}
               onClick={() => openNewEventModal(tmpl)}
-              className="px-3 py-1.5 rounded-lg bg-zinc-800/80 hover:bg-zinc-700/80 border border-zinc-700/60 text-xs text-zinc-200 transition-colors flex items-center gap-1.5"
+              className="px-3 py-1.5 rounded-lg bg-zinc-800/80 hover:bg-zinc-700/80 border border-zinc-300 text-xs text-zinc-800 transition-colors flex items-center gap-1.5"
             >
               <Plus className="w-3 h-3 text-blue-400" />
               <span>{tmpl.title}</span>
@@ -565,13 +565,13 @@ export function PolicyDeadlineTimeline() {
       </div>
 
       {/* Navigation Tabs */}
-      <div className="flex items-center gap-2 border-b border-zinc-800/80 pb-2 overflow-x-auto">
+      <div className="flex items-center gap-2 border-b border-zinc-200/80 pb-2 overflow-x-auto">
         <button
           onClick={() => setActiveTab("timeline")}
           className={`px-4 py-2 rounded-xl text-xs font-semibold transition-colors flex items-center gap-2 whitespace-nowrap ${
             activeTab === "timeline"
               ? "bg-blue-600/20 text-blue-400 border border-blue-500/30"
-              : "text-zinc-400 hover:text-white hover:bg-zinc-800/50"
+              : "text-zinc-500 hover:text-white hover:bg-zinc-800/50"
           }`}
         >
           <CalendarDays className="w-4 h-4" />
@@ -582,7 +582,7 @@ export function PolicyDeadlineTimeline() {
           className={`px-4 py-2 rounded-xl text-xs font-semibold transition-colors flex items-center gap-2 whitespace-nowrap ${
             activeTab === "list"
               ? "bg-blue-600/20 text-blue-400 border border-blue-500/30"
-              : "text-zinc-400 hover:text-white hover:bg-zinc-800/50"
+              : "text-zinc-500 hover:text-white hover:bg-zinc-800/50"
           }`}
         >
           <Layers className="w-4 h-4" />
@@ -593,7 +593,7 @@ export function PolicyDeadlineTimeline() {
           className={`px-4 py-2 rounded-xl text-xs font-semibold transition-colors flex items-center gap-2 whitespace-nowrap ${
             activeTab === "deadlines"
               ? "bg-blue-600/20 text-blue-400 border border-blue-500/30"
-              : "text-zinc-400 hover:text-white hover:bg-zinc-800/50"
+              : "text-zinc-500 hover:text-white hover:bg-zinc-800/50"
           }`}
         >
           <BellRing className="w-4 h-4" />
@@ -607,7 +607,7 @@ export function PolicyDeadlineTimeline() {
           className={`px-4 py-2 rounded-xl text-xs font-semibold transition-colors flex items-center gap-2 whitespace-nowrap ${
             activeTab === "guide"
               ? "bg-blue-600/20 text-blue-400 border border-blue-500/30"
-              : "text-zinc-400 hover:text-white hover:bg-zinc-800/50"
+              : "text-zinc-500 hover:text-white hover:bg-zinc-800/50"
           }`}
         >
           <Info className="w-4 h-4" />
@@ -619,9 +619,9 @@ export function PolicyDeadlineTimeline() {
       {activeTab === "timeline" && (
         <div className="space-y-6">
           {data.events.length === 0 ? (
-            <div className="p-12 text-center border border-dashed border-zinc-800 rounded-2xl bg-zinc-900/30">
+            <div className="p-12 text-center border border-dashed border-zinc-200 rounded-2xl bg-zinc-50">
               <Calendar className="w-10 h-10 text-zinc-600 mx-auto mb-3" />
-              <h3 className="text-base font-medium text-zinc-300">
+              <h3 className="text-base font-medium text-zinc-600">
                 Nu există repere consemnate în această cronologie
               </h3>
               <p className="text-xs text-zinc-500 max-w-md mx-auto mt-1 mb-4">
@@ -637,7 +637,7 @@ export function PolicyDeadlineTimeline() {
               </Button>
             </div>
           ) : (
-            <div className="relative border-l border-zinc-800 ml-4 sm:ml-8 pl-6 sm:pl-8 space-y-8 py-2">
+            <div className="relative border-l border-zinc-200 ml-4 sm:ml-8 pl-6 sm:pl-8 space-y-8 py-2">
               {[...data.events]
                 .sort((a, b) => (a.eventDate || "").localeCompare(b.eventDate || ""))
                 .map((ev, index) => {
@@ -669,18 +669,18 @@ export function PolicyDeadlineTimeline() {
                           isOverdue
                             ? "bg-rose-950/20 border-rose-800/60"
                             : isCompleted
-                            ? "bg-zinc-900/60 border-zinc-800/80 opacity-80"
-                            : "bg-zinc-900/90 border-zinc-800 hover:border-zinc-700"
+                            ? "bg-white border-zinc-200/80 opacity-80"
+                            : "bg-white border-zinc-200 hover:border-zinc-300"
                         }`}
                       >
                         <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-3">
                           <div className="space-y-1">
                             <div className="flex flex-wrap items-center gap-2">
-                              <span className="text-sm font-bold text-white">
+                              <span className="text-sm font-bold text-zinc-900">
                                 {formatLocalDateRo(ev.eventDate)}
                               </span>
                               {ev.eventTime && (
-                                <span className="text-xs text-zinc-400 font-mono">
+                                <span className="text-xs text-zinc-500 font-mono">
                                   ({ev.eventTime})
                                 </span>
                               )}
@@ -696,7 +696,7 @@ export function PolicyDeadlineTimeline() {
                               </span>
                             </div>
 
-                            <h3 className="text-base font-semibold text-zinc-100 flex items-center gap-2 pt-0.5">
+                            <h3 className="text-base font-semibold text-zinc-900 flex items-center gap-2 pt-0.5">
                               {ev.title}
                             </h3>
                             <p className="text-xs text-blue-400 font-medium">
@@ -712,8 +712,8 @@ export function PolicyDeadlineTimeline() {
                               onClick={() => handleToggleComplete(ev.id)}
                               className={`h-8 px-2.5 text-xs gap-1 ${
                                 isCompleted
-                                  ? "text-emerald-400 hover:text-emerald-300 bg-emerald-500/10"
-                                  : "text-zinc-400 hover:text-white"
+                                  ? "text-emerald-400 hover:text-emerald-800 bg-emerald-500/10"
+                                  : "text-zinc-500 hover:text-white"
                               }`}
                               title={isCompleted ? "Marchează ca nefinalizat" : "Marchează ca finalizat"}
                             >
@@ -729,7 +729,7 @@ export function PolicyDeadlineTimeline() {
                                 setEditingEvent(ev);
                                 setIsEditModalOpen(true);
                               }}
-                              className="h-8 w-8 text-zinc-400 hover:text-white"
+                              className="h-8 w-8 text-zinc-500 hover:text-white"
                               title="Editează"
                             >
                               <Edit3 className="w-3.5 h-3.5" />
@@ -738,7 +738,7 @@ export function PolicyDeadlineTimeline() {
                               variant="ghost"
                               size="icon"
                               onClick={() => handleDuplicateEvent(ev)}
-                              className="h-8 w-8 text-zinc-400 hover:text-white"
+                              className="h-8 w-8 text-zinc-500 hover:text-white"
                               title="Duplică"
                             >
                               <Copy className="w-3.5 h-3.5" />
@@ -747,7 +747,7 @@ export function PolicyDeadlineTimeline() {
                               variant="ghost"
                               size="icon"
                               onClick={() => setDeleteCandidateId(ev.id)}
-                              className="h-8 w-8 text-zinc-400 hover:text-rose-400"
+                              className="h-8 w-8 text-zinc-500 hover:text-rose-400"
                               title="Șterge"
                             >
                               <Trash2 className="w-3.5 h-3.5" />
@@ -757,27 +757,27 @@ export function PolicyDeadlineTimeline() {
 
                         {/* Notes and Context */}
                         {ev.notes && (
-                          <p className="text-xs text-zinc-300 mt-2.5 leading-relaxed bg-zinc-950/40 p-2.5 rounded-lg border border-zinc-800/60">
+                          <p className="text-xs text-zinc-600 mt-2.5 leading-relaxed bg-zinc-50 p-2.5 rounded-lg border border-zinc-200/60">
                             {ev.notes}
                           </p>
                         )}
 
                         {/* Metadata pills & Evidence */}
-                        <div className="mt-3 pt-3 border-t border-zinc-800/60 flex flex-wrap items-center gap-x-4 gap-y-2 text-xs text-zinc-400">
+                        <div className="mt-3 pt-3 border-t border-zinc-200/60 flex flex-wrap items-center gap-x-4 gap-y-2 text-xs text-zinc-500">
                           <div>
                             <span className="text-zinc-500">Responsabil:</span>{" "}
-                            <span className="text-zinc-200">
+                            <span className="text-zinc-800">
                               {RESPONSIBLE_PARTY_DEFINITIONS[ev.responsibleParty]?.labelRo || ev.responsibleParty}
                             </span>
                             {ev.relatedOrganization && (
-                              <span className="text-zinc-400"> ({ev.relatedOrganization})</span>
+                              <span className="text-zinc-500"> ({ev.relatedOrganization})</span>
                             )}
                           </div>
 
                           {ev.sourceTitle && (
                             <div>
                               <span className="text-zinc-500">Sursă:</span>{" "}
-                              <span className="text-zinc-200">{ev.sourceTitle}</span>
+                              <span className="text-zinc-800">{ev.sourceTitle}</span>
                             </div>
                           )}
 
@@ -827,7 +827,7 @@ export function PolicyDeadlineTimeline() {
       {activeTab === "list" && (
         <div className="space-y-4">
           {/* Filter Bar */}
-          <div className="bg-zinc-900/60 border border-zinc-800 p-4 rounded-2xl space-y-3">
+          <div className="bg-white border border-zinc-200 p-4 rounded-2xl space-y-3">
             <div className="flex flex-col sm:flex-row gap-3">
               <div className="relative flex-1">
                 <Search className="w-4 h-4 text-zinc-500 absolute left-3 top-1/2 -translate-y-1/2" />
@@ -835,7 +835,7 @@ export function PolicyDeadlineTimeline() {
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   placeholder="Caută după titlu, sursă, organizație, note..."
-                  className="pl-9 bg-zinc-950/60 border-zinc-800 text-xs h-9 text-zinc-100"
+                  className="pl-9 bg-zinc-50 border-zinc-200 text-xs h-9 text-zinc-900"
                 />
               </div>
 
@@ -843,7 +843,7 @@ export function PolicyDeadlineTimeline() {
                 <select
                   value={sortBy}
                   onChange={(e) => setSortBy(e.target.value as SortOption)}
-                  className="bg-zinc-950/60 border border-zinc-800 rounded-lg text-xs h-9 px-2.5 text-zinc-200"
+                  className="bg-zinc-50 border border-zinc-200 rounded-lg text-xs h-9 px-2.5 text-zinc-800"
                 >
                   <option value="date_asc">Sortează: Dată (Crescător)</option>
                   <option value="date_desc">Sortează: Dată (Descrescător)</option>
@@ -858,7 +858,7 @@ export function PolicyDeadlineTimeline() {
               <select
                 value={filterCategory}
                 onChange={(e) => setFilterCategory(e.target.value)}
-                className="bg-zinc-950/60 border border-zinc-800 rounded-lg h-8 px-2 text-zinc-300"
+                className="bg-zinc-50 border border-zinc-200 rounded-lg h-8 px-2 text-zinc-600"
               >
                 <option value="all">Toate Categoriile</option>
                 {Object.entries(CATEGORY_DEFINITIONS).map(([key, val]) => (
@@ -871,7 +871,7 @@ export function PolicyDeadlineTimeline() {
               <select
                 value={filterStatus}
                 onChange={(e) => setFilterStatus(e.target.value)}
-                className="bg-zinc-950/60 border border-zinc-800 rounded-lg h-8 px-2 text-zinc-300"
+                className="bg-zinc-50 border border-zinc-200 rounded-lg h-8 px-2 text-zinc-600"
               >
                 <option value="all">Toate Statusurile</option>
                 {Object.entries(STATUS_DEFINITIONS).map(([key, val]) => (
@@ -884,7 +884,7 @@ export function PolicyDeadlineTimeline() {
               <select
                 value={filterDateType}
                 onChange={(e) => setFilterDateType(e.target.value)}
-                className="bg-zinc-950/60 border border-zinc-800 rounded-lg h-8 px-2 text-zinc-300"
+                className="bg-zinc-50 border border-zinc-200 rounded-lg h-8 px-2 text-zinc-600"
               >
                 <option value="all">Toate Tipurile de Dată</option>
                 {Object.entries(DATE_TYPE_DEFINITIONS).map(([key, val]) => (
@@ -897,7 +897,7 @@ export function PolicyDeadlineTimeline() {
               <select
                 value={filterResponsible}
                 onChange={(e) => setFilterResponsible(e.target.value)}
-                className="bg-zinc-950/60 border border-zinc-800 rounded-lg h-8 px-2 text-zinc-300"
+                className="bg-zinc-50 border border-zinc-200 rounded-lg h-8 px-2 text-zinc-600"
               >
                 <option value="all">Toți Responsabilii</option>
                 {Object.entries(RESPONSIBLE_PARTY_DEFINITIONS).map(([key, val]) => (
@@ -910,7 +910,7 @@ export function PolicyDeadlineTimeline() {
               <select
                 value={filterSourceType}
                 onChange={(e) => setFilterSourceType(e.target.value)}
-                className="bg-zinc-950/60 border border-zinc-800 rounded-lg h-8 px-2 text-zinc-300"
+                className="bg-zinc-50 border border-zinc-200 rounded-lg h-8 px-2 text-zinc-600"
               >
                 <option value="all">Toate Tipuri Surse</option>
                 {Object.entries(SOURCE_TYPE_DEFINITIONS).map(([key, val]) => (
@@ -924,7 +924,7 @@ export function PolicyDeadlineTimeline() {
 
           {/* Events List */}
           {filteredEvents.length === 0 ? (
-            <div className="p-8 text-center text-zinc-500 border border-zinc-800 rounded-xl">
+            <div className="p-8 text-center text-zinc-500 border border-zinc-200 rounded-xl">
               Niciun eveniment nu corespunde filtrelor selectate.
             </div>
           ) : (
@@ -938,11 +938,11 @@ export function PolicyDeadlineTimeline() {
                 return (
                   <div
                     key={ev.id}
-                    className="p-4 rounded-xl bg-zinc-900/70 border border-zinc-800 hover:border-zinc-700 transition-colors flex flex-col md:flex-row md:items-center justify-between gap-4"
+                    className="p-4 rounded-xl bg-white/70 border border-zinc-200 hover:border-zinc-300 transition-colors flex flex-col md:flex-row md:items-center justify-between gap-4"
                   >
                     <div className="space-y-1.5 flex-1">
                       <div className="flex flex-wrap items-center gap-2">
-                        <span className="text-xs font-bold text-white">
+                        <span className="text-xs font-bold text-zinc-900">
                           {formatLocalDateRo(ev.eventDate)}
                         </span>
                         <span
@@ -955,26 +955,26 @@ export function PolicyDeadlineTimeline() {
                         >
                           {dateTypeInfo.labelRo}
                         </span>
-                        <span className="text-[11px] text-zinc-400">
+                        <span className="text-[11px] text-zinc-500">
                           [{catInfo.labelRo}]
                         </span>
                       </div>
 
-                      <h4 className="text-sm font-semibold text-zinc-100">
+                      <h4 className="text-sm font-semibold text-zinc-900">
                         {ev.title}
                       </h4>
 
-                      <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-zinc-400">
+                      <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-zinc-500">
                         <span>
                           Responsabil:{" "}
-                          <strong className="text-zinc-300">
+                          <strong className="text-zinc-600">
                             {RESPONSIBLE_PARTY_DEFINITIONS[ev.responsibleParty]?.labelRo || ev.responsibleParty}
                           </strong>
                         </span>
                         {ev.sourceTitle && (
                           <span>
                             Sursă:{" "}
-                            <strong className="text-zinc-300">{ev.sourceTitle}</strong>
+                            <strong className="text-zinc-600">{ev.sourceTitle}</strong>
                           </span>
                         )}
                         {ev.followUpRequired && (
@@ -993,7 +993,7 @@ export function PolicyDeadlineTimeline() {
                         className={`h-8 px-2 text-xs gap-1 ${
                           ev.status === "completed"
                             ? "text-emerald-400 bg-emerald-500/10"
-                            : "text-zinc-400 hover:text-white"
+                            : "text-zinc-500 hover:text-white"
                         }`}
                       >
                         <CheckCircle2 className="w-3.5 h-3.5" />
@@ -1006,7 +1006,7 @@ export function PolicyDeadlineTimeline() {
                           setEditingEvent(ev);
                           setIsEditModalOpen(true);
                         }}
-                        className="h-8 w-8 text-zinc-400 hover:text-white"
+                        className="h-8 w-8 text-zinc-500 hover:text-white"
                       >
                         <Edit3 className="w-3.5 h-3.5" />
                       </Button>
@@ -1014,7 +1014,7 @@ export function PolicyDeadlineTimeline() {
                         variant="ghost"
                         size="icon"
                         onClick={() => handleDuplicateEvent(ev)}
-                        className="h-8 w-8 text-zinc-400 hover:text-white"
+                        className="h-8 w-8 text-zinc-500 hover:text-white"
                       >
                         <Copy className="w-3.5 h-3.5" />
                       </Button>
@@ -1022,7 +1022,7 @@ export function PolicyDeadlineTimeline() {
                         variant="ghost"
                         size="icon"
                         onClick={() => setDeleteCandidateId(ev.id)}
-                        className="h-8 w-8 text-zinc-400 hover:text-rose-400"
+                        className="h-8 w-8 text-zinc-500 hover:text-rose-400"
                       >
                         <Trash2 className="w-3.5 h-3.5" />
                       </Button>
@@ -1038,19 +1038,19 @@ export function PolicyDeadlineTimeline() {
       {/* TAB 3: DEADLINES & FOLLOW-UPS */}
       {activeTab === "deadlines" && (
         <div className="space-y-6">
-          <div className="bg-zinc-900/40 border border-zinc-800 p-4 rounded-xl text-xs text-zinc-300">
+          <div className="bg-zinc-50 border border-zinc-200 p-4 rounded-xl text-xs text-zinc-600">
             <h4 className="font-semibold text-white mb-1 flex items-center gap-1.5">
               <BellRing className="w-4 h-4 text-blue-400" />
               Monitorizare Scadențe & Follow-up-uri Active
             </h4>
-            <p className="text-zinc-400 leading-relaxed">
+            <p className="text-zinc-500 leading-relaxed">
               Această secțiune evidențiază termenele țintă stabilite de utilizator pentru acțiuni de reînnoire, notificări, primiri de documente sau solicitări de daune.
             </p>
           </div>
 
           <div className="space-y-3">
             {deadlineItems.length === 0 ? (
-              <div className="p-8 text-center text-zinc-500 border border-zinc-800 rounded-xl">
+              <div className="p-8 text-center text-zinc-500 border border-zinc-200 rounded-xl">
                 Nu există evenimente active.
               </div>
             ) : (
@@ -1064,20 +1064,20 @@ export function PolicyDeadlineTimeline() {
                     key={ev.id}
                     className={`p-4 rounded-xl border transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-3 ${
                       isOverdue
-                        ? "bg-rose-950/20 border-rose-800/60 text-rose-200"
+                        ? "bg-rose-950/20 border-rose-800/60 text-rose-800"
                         : isCompleted
-                        ? "bg-zinc-900/40 border-zinc-800/50 opacity-60"
-                        : "bg-zinc-900/80 border-zinc-800"
+                        ? "bg-zinc-50 border-zinc-200/50 opacity-60"
+                        : "bg-white border-zinc-200"
                     }`}
                   >
                     <div className="space-y-1">
                       <div className="flex items-center gap-2">
                         {isOverdue && (
-                          <span className="text-[10px] px-2 py-0.5 rounded-full bg-rose-500/20 text-rose-300 border border-rose-500/30 font-bold uppercase">
+                          <span className="text-[10px] px-2 py-0.5 rounded-full bg-rose-500/20 text-rose-800 border border-rose-500/30 font-bold uppercase">
                             Termen Depășit
                           </span>
                         )}
-                        <span className="text-xs font-bold text-white">
+                        <span className="text-xs font-bold text-zinc-900">
                           Data eveniment: {formatLocalDateRo(ev.eventDate)}
                         </span>
                         {ev.followUpRequired && ev.followUpDate && (
@@ -1087,12 +1087,12 @@ export function PolicyDeadlineTimeline() {
                         )}
                       </div>
 
-                      <h4 className="text-sm font-semibold text-zinc-100">
+                      <h4 className="text-sm font-semibold text-zinc-900">
                         {ev.title}
                       </h4>
 
                       {ev.reminderNotes && (
-                        <p className="text-xs text-zinc-300 font-medium">
+                        <p className="text-xs text-zinc-600 font-medium">
                           Observație / Reminder: {ev.reminderNotes}
                         </p>
                       )}
@@ -1104,7 +1104,7 @@ export function PolicyDeadlineTimeline() {
                         onClick={() => handleToggleComplete(ev.id)}
                         className={`text-xs h-8 gap-1.5 ${
                           isCompleted
-                            ? "bg-zinc-800 text-zinc-300"
+                            ? "bg-zinc-800 text-zinc-600"
                             : "bg-emerald-600 hover:bg-emerald-500 text-white"
                         }`}
                       >
@@ -1122,42 +1122,42 @@ export function PolicyDeadlineTimeline() {
 
       {/* TAB 4: GUIDE & METHODOLOGY */}
       {activeTab === "guide" && (
-        <div className="bg-zinc-900/70 border border-zinc-800 rounded-2xl p-6 space-y-6 text-sm text-zinc-300">
+        <div className="bg-white/70 border border-zinc-200 rounded-2xl p-6 space-y-6 text-sm text-zinc-600">
           <div>
-            <h3 className="text-lg font-bold text-white mb-2">
+            <h3 className="text-lg font-bold text-zinc-900 mb-2">
               Ghid Metodologic: Registrul de Termene & Scadențe
             </h3>
-            <p className="text-xs text-zinc-400 leading-relaxed">
+            <p className="text-xs text-zinc-500 leading-relaxed">
               Acest instrument este conceput pentru a ajuta asigurații să își organizeze cronologia evenimentelor contractuale, fără a depinde de notificări externe și fără a pierde termene importante de analiză sau decizie.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div className="bg-zinc-950/60 border border-zinc-800 p-4 rounded-xl space-y-2">
+            <div className="bg-zinc-50 border border-zinc-200 p-4 rounded-xl space-y-2">
               <h4 className="text-xs font-bold text-blue-400 uppercase tracking-wider">
                 1. Surse Documentare Recomandate
               </h4>
-              <ul className="text-xs text-zinc-400 space-y-1.5 list-disc list-inside">
+              <ul className="text-xs text-zinc-500 space-y-1.5 list-disc list-inside">
                 <li>
-                  <strong className="text-zinc-200">Condiții de asigurare (Wording):</strong> Reglementează preavizul de reziliere sau reînnoire.
+                  <strong className="text-zinc-800">Condiții de asigurare (Wording):</strong> Reglementează preavizul de reziliere sau reînnoire.
                 </li>
                 <li>
-                  <strong className="text-zinc-200">Poliță / Tablou (Schedule):</strong> Specifică data intrării în vigoare, expirării și scadențele ratelor.
+                  <strong className="text-zinc-800">Poliță / Tablou (Schedule):</strong> Specifică data intrării în vigoare, expirării și scadențele ratelor.
                 </li>
                 <li>
-                  <strong className="text-zinc-200">Ofertă Scrisă:</strong> Conține termenele de valabilitate a prețului cotat.
+                  <strong className="text-zinc-800">Ofertă Scrisă:</strong> Conține termenele de valabilitate a prețului cotat.
                 </li>
                 <li>
-                  <strong className="text-zinc-200">Comunicări Scrise:</strong> Confirmă primirea notificărilor sau cererilor de emitere addendum.
+                  <strong className="text-zinc-800">Comunicări Scrise:</strong> Confirmă primirea notificărilor sau cererilor de emitere addendum.
                 </li>
               </ul>
             </div>
 
-            <div className="bg-zinc-950/60 border border-zinc-800 p-4 rounded-xl space-y-2">
+            <div className="bg-zinc-50 border border-zinc-200 p-4 rounded-xl space-y-2">
               <h4 className="text-xs font-bold text-amber-400 uppercase tracking-wider">
                 2. Limite & Precizări Juridice
               </h4>
-              <ul className="text-xs text-zinc-400 space-y-1.5 list-disc list-inside">
+              <ul className="text-xs text-zinc-500 space-y-1.5 list-disc list-inside">
                 <li>Aplicația nu calculează automat preavize legale fără indicarea clauzei exacte de către utilizator.</li>
                 <li>Un termen depășit în acest timeline nu reprezintă o probă juridică de reziliere sau neplată.</li>
                 <li>Statutul juridic al contractului este stabilit exclusiv conform documentelor oficiale emise de asigurător.</li>
@@ -1176,16 +1176,16 @@ export function PolicyDeadlineTimeline() {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.95 }}
-              className="bg-zinc-900 border border-zinc-800 rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto p-6 space-y-5 shadow-2xl"
+              className="bg-white border border-zinc-200 rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto p-6 space-y-5 shadow-2xl"
             >
-              <div className="flex items-center justify-between border-b border-zinc-800 pb-3">
-                <h3 className="text-base font-bold text-white flex items-center gap-2">
+              <div className="flex items-center justify-between border-b border-zinc-200 pb-3">
+                <h3 className="text-base font-bold text-zinc-900 flex items-center gap-2">
                   <Calendar className="w-4 h-4 text-blue-400" />
                   {editingEvent.title ? "Editare Reper Timeline" : "Adăugare Reper Nou"}
                 </h3>
                 <button
                   onClick={() => setIsEditModalOpen(false)}
-                  className="text-zinc-400 hover:text-white"
+                  className="text-zinc-500 hover:text-white"
                 >
                   <X className="w-5 h-5" />
                 </button>
@@ -1194,7 +1194,7 @@ export function PolicyDeadlineTimeline() {
               <div className="space-y-4 text-xs">
                 {/* Title */}
                 <div>
-                  <label className="block text-zinc-300 font-medium mb-1">
+                  <label className="block text-zinc-600 font-medium mb-1">
                     Titlu Eveniment / Reper *
                   </label>
                   <Input
@@ -1203,14 +1203,14 @@ export function PolicyDeadlineTimeline() {
                       setEditingEvent({ ...editingEvent, title: e.target.value })
                     }
                     placeholder="Ex: Primire Ofertă Reînnoire de la Asigurător"
-                    className="bg-zinc-950/80 border-zinc-800 text-zinc-100 text-xs h-9"
+                    className="bg-zinc-50 border-zinc-200 text-zinc-900 text-xs h-9"
                   />
                 </div>
 
                 {/* Category & Status */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   <div>
-                    <label className="block text-zinc-300 font-medium mb-1">
+                    <label className="block text-zinc-600 font-medium mb-1">
                       Categorie Eveniment
                     </label>
                     <select
@@ -1221,7 +1221,7 @@ export function PolicyDeadlineTimeline() {
                           category: e.target.value as TimelineEventCategory,
                         })
                       }
-                      className="w-full bg-zinc-950/80 border border-zinc-800 rounded-lg h-9 px-2 text-zinc-200"
+                      className="w-full bg-zinc-50 border border-zinc-200 rounded-lg h-9 px-2 text-zinc-800"
                     >
                       {Object.entries(CATEGORY_DEFINITIONS).map(([k, v]) => (
                         <option key={k} value={k}>
@@ -1232,7 +1232,7 @@ export function PolicyDeadlineTimeline() {
                   </div>
 
                   <div>
-                    <label className="block text-zinc-300 font-medium mb-1">
+                    <label className="block text-zinc-600 font-medium mb-1">
                       Status Eveniment
                     </label>
                     <select
@@ -1243,7 +1243,7 @@ export function PolicyDeadlineTimeline() {
                           status: e.target.value as TimelineEventStatus,
                         })
                       }
-                      className="w-full bg-zinc-950/80 border border-zinc-800 rounded-lg h-9 px-2 text-zinc-200"
+                      className="w-full bg-zinc-50 border border-zinc-200 rounded-lg h-9 px-2 text-zinc-800"
                     >
                       {Object.entries(STATUS_DEFINITIONS).map(([k, v]) => (
                         <option key={k} value={k}>
@@ -1257,7 +1257,7 @@ export function PolicyDeadlineTimeline() {
                 {/* Dates: Event Date & Date Type */}
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                   <div>
-                    <label className="block text-zinc-300 font-medium mb-1">
+                    <label className="block text-zinc-600 font-medium mb-1">
                       Dată Eveniment (YYYY-MM-DD) *
                     </label>
                     <Input
@@ -1266,12 +1266,12 @@ export function PolicyDeadlineTimeline() {
                       onChange={(e) =>
                         setEditingEvent({ ...editingEvent, eventDate: e.target.value })
                       }
-                      className="bg-zinc-950/80 border-zinc-800 text-zinc-100 text-xs h-9"
+                      className="bg-zinc-50 border-zinc-200 text-zinc-900 text-xs h-9"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-zinc-300 font-medium mb-1">
+                    <label className="block text-zinc-600 font-medium mb-1">
                       Oră Opțională (HH:MM)
                     </label>
                     <Input
@@ -1280,12 +1280,12 @@ export function PolicyDeadlineTimeline() {
                       onChange={(e) =>
                         setEditingEvent({ ...editingEvent, eventTime: e.target.value })
                       }
-                      className="bg-zinc-950/80 border-zinc-800 text-zinc-100 text-xs h-9"
+                      className="bg-zinc-50 border-zinc-200 text-zinc-900 text-xs h-9"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-zinc-300 font-medium mb-1">
+                    <label className="block text-zinc-600 font-medium mb-1">
                       Tip Certitudine Dată
                     </label>
                     <select
@@ -1296,7 +1296,7 @@ export function PolicyDeadlineTimeline() {
                           dateType: e.target.value as EventDateType,
                         })
                       }
-                      className="w-full bg-zinc-950/80 border border-zinc-800 rounded-lg h-9 px-2 text-zinc-200"
+                      className="w-full bg-zinc-50 border border-zinc-200 rounded-lg h-9 px-2 text-zinc-800"
                     >
                       {Object.entries(DATE_TYPE_DEFINITIONS).map(([k, v]) => (
                         <option key={k} value={k}>
@@ -1310,7 +1310,7 @@ export function PolicyDeadlineTimeline() {
                 {/* Completion Date (if completed) */}
                 {editingEvent.status === "completed" && (
                   <div>
-                    <label className="block text-zinc-300 font-medium mb-1">
+                    <label className="block text-zinc-600 font-medium mb-1">
                       Dată Efectivă Finalizare (YYYY-MM-DD)
                     </label>
                     <Input
@@ -1319,7 +1319,7 @@ export function PolicyDeadlineTimeline() {
                       onChange={(e) =>
                         setEditingEvent({ ...editingEvent, completionDate: e.target.value })
                       }
-                      className="bg-zinc-950/80 border-zinc-800 text-zinc-100 text-xs h-9"
+                      className="bg-zinc-50 border-zinc-200 text-zinc-900 text-xs h-9"
                     />
                   </div>
                 )}
@@ -1327,7 +1327,7 @@ export function PolicyDeadlineTimeline() {
                 {/* Responsible Party & Organization */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   <div>
-                    <label className="block text-zinc-300 font-medium mb-1">
+                    <label className="block text-zinc-600 font-medium mb-1">
                       Parte Responsabilă
                     </label>
                     <select
@@ -1338,7 +1338,7 @@ export function PolicyDeadlineTimeline() {
                           responsibleParty: e.target.value as ResponsibleParty,
                         })
                       }
-                      className="w-full bg-zinc-950/80 border border-zinc-800 rounded-lg h-9 px-2 text-zinc-200"
+                      className="w-full bg-zinc-50 border border-zinc-200 rounded-lg h-9 px-2 text-zinc-800"
                     >
                       {Object.entries(RESPONSIBLE_PARTY_DEFINITIONS).map(([k, v]) => (
                         <option key={k} value={k}>
@@ -1349,7 +1349,7 @@ export function PolicyDeadlineTimeline() {
                   </div>
 
                   <div>
-                    <label className="block text-zinc-300 font-medium mb-1">
+                    <label className="block text-zinc-600 font-medium mb-1">
                       Organizație Conexă (Opțional)
                     </label>
                     <Input
@@ -1358,20 +1358,20 @@ export function PolicyDeadlineTimeline() {
                         setEditingEvent({ ...editingEvent, relatedOrganization: e.target.value })
                       }
                       placeholder="Ex: Allianz, Broker Partener, Service Auto"
-                      className="bg-zinc-950/80 border-zinc-800 text-zinc-100 text-xs h-9"
+                      className="bg-zinc-50 border-zinc-200 text-zinc-900 text-xs h-9"
                     />
                   </div>
                 </div>
 
                 {/* Source & Evidence */}
-                <div className="bg-zinc-950/40 p-3.5 rounded-xl border border-zinc-800/80 space-y-3">
-                  <span className="font-semibold text-zinc-300 block">
+                <div className="bg-zinc-50 p-3.5 rounded-xl border border-zinc-200/80 space-y-3">
+                  <span className="font-semibold text-zinc-600 block">
                     Înregistrare Sursă & Dovadă Documentară
                   </span>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     <div>
-                      <label className="block text-zinc-400 mb-1">Tip Sursă</label>
+                      <label className="block text-zinc-500 mb-1">Tip Sursă</label>
                       <select
                         value={editingEvent.sourceType}
                         onChange={(e) =>
@@ -1380,7 +1380,7 @@ export function PolicyDeadlineTimeline() {
                             sourceType: e.target.value as SourceType,
                           })
                         }
-                        className="w-full bg-zinc-900 border border-zinc-800 rounded-lg h-8 px-2 text-zinc-200"
+                        className="w-full bg-white border border-zinc-200 rounded-lg h-8 px-2 text-zinc-800"
                       >
                         {Object.entries(SOURCE_TYPE_DEFINITIONS).map(([k, v]) => (
                           <option key={k} value={k}>
@@ -1391,7 +1391,7 @@ export function PolicyDeadlineTimeline() {
                     </div>
 
                     <div>
-                      <label className="block text-zinc-400 mb-1">
+                      <label className="block text-zinc-500 mb-1">
                         Titlu / Referință Sursă Text
                       </label>
                       <Input
@@ -1400,7 +1400,7 @@ export function PolicyDeadlineTimeline() {
                           setEditingEvent({ ...editingEvent, sourceTitle: e.target.value })
                         }
                         placeholder="Ex: Condiții Specifice Art. 12, Email din 10.10"
-                        className="bg-zinc-900 border-zinc-800 text-zinc-100 text-xs h-8"
+                        className="bg-white border-zinc-200 text-zinc-900 text-xs h-8"
                       />
                     </div>
                   </div>
@@ -1416,11 +1416,11 @@ export function PolicyDeadlineTimeline() {
                           hasWrittenConfirmation: e.target.checked,
                         })
                       }
-                      className="rounded border-zinc-700 bg-zinc-900 text-blue-600 focus:ring-0"
+                      className="rounded border-zinc-300 bg-white text-blue-600 focus:ring-0"
                     />
                     <label
                       htmlFor="hasWrittenConfirmation"
-                      className="text-zinc-300 text-xs cursor-pointer select-none"
+                      className="text-zinc-600 text-xs cursor-pointer select-none"
                     >
                       Există confirmare scrisă înregistrată (email, număr înregistrare, chitanță)
                     </label>
@@ -1428,7 +1428,7 @@ export function PolicyDeadlineTimeline() {
                 </div>
 
                 {/* Follow-up Section */}
-                <div className="bg-zinc-950/40 p-3.5 rounded-xl border border-zinc-800/80 space-y-3">
+                <div className="bg-zinc-50 p-3.5 rounded-xl border border-zinc-200/80 space-y-3">
                   <div className="flex items-center gap-2">
                     <input
                       type="checkbox"
@@ -1440,11 +1440,11 @@ export function PolicyDeadlineTimeline() {
                           followUpRequired: e.target.checked,
                         })
                       }
-                      className="rounded border-zinc-700 bg-zinc-900 text-blue-600 focus:ring-0"
+                      className="rounded border-zinc-300 bg-white text-blue-600 focus:ring-0"
                     />
                     <label
                       htmlFor="followUpRequired"
-                      className="text-zinc-300 font-medium text-xs cursor-pointer select-none"
+                      className="text-zinc-600 font-medium text-xs cursor-pointer select-none"
                     >
                       Necesită acțiune de follow-up / monitorizare
                     </label>
@@ -1453,7 +1453,7 @@ export function PolicyDeadlineTimeline() {
                   {editingEvent.followUpRequired && (
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
                       <div>
-                        <label className="block text-zinc-400 mb-1">
+                        <label className="block text-zinc-500 mb-1">
                           Dată Țintă Follow-up
                         </label>
                         <Input
@@ -1462,12 +1462,12 @@ export function PolicyDeadlineTimeline() {
                           onChange={(e) =>
                             setEditingEvent({ ...editingEvent, followUpDate: e.target.value })
                           }
-                          className="bg-zinc-900 border-zinc-800 text-zinc-100 text-xs h-8"
+                          className="bg-white border-zinc-200 text-zinc-900 text-xs h-8"
                         />
                       </div>
 
                       <div>
-                        <label className="block text-zinc-400 mb-1">
+                        <label className="block text-zinc-500 mb-1">
                           Observație / Reminder Follow-up
                         </label>
                         <Input
@@ -1476,7 +1476,7 @@ export function PolicyDeadlineTimeline() {
                             setEditingEvent({ ...editingEvent, reminderNotes: e.target.value })
                           }
                           placeholder="Ex: Sună brokerul dacă nu a trimis oferta"
-                          className="bg-zinc-900 border-zinc-800 text-zinc-100 text-xs h-8"
+                          className="bg-white border-zinc-200 text-zinc-900 text-xs h-8"
                         />
                       </div>
                     </div>
@@ -1485,7 +1485,7 @@ export function PolicyDeadlineTimeline() {
 
                 {/* Notes */}
                 <div>
-                  <label className="block text-zinc-300 font-medium mb-1">
+                  <label className="block text-zinc-600 font-medium mb-1">
                     Note & Detalii Suplimentare
                   </label>
                   <textarea
@@ -1495,18 +1495,18 @@ export function PolicyDeadlineTimeline() {
                       setEditingEvent({ ...editingEvent, notes: e.target.value })
                     }
                     placeholder="Alte detalii sau instrucțiuni specifice..."
-                    className="w-full bg-zinc-950/80 border border-zinc-800 rounded-lg p-2.5 text-zinc-100 text-xs focus:border-blue-500 focus:outline-none"
+                    className="w-full bg-zinc-50 border border-zinc-200 rounded-lg p-2.5 text-zinc-900 text-xs focus:border-blue-500 focus:outline-none"
                   />
                 </div>
               </div>
 
               {/* Modal Footer */}
-              <div className="flex items-center justify-end gap-2 border-t border-zinc-800 pt-4">
+              <div className="flex items-center justify-end gap-2 border-t border-zinc-200 pt-4">
                 <Button
                   variant="outline"
                   size="sm"
                   onClick={() => setIsEditModalOpen(false)}
-                  className="bg-zinc-800 border-zinc-700 text-zinc-300 text-xs h-9"
+                  className="bg-zinc-800 border-zinc-300 text-zinc-600 text-xs h-9"
                 >
                   Anulează
                 </Button>
@@ -1532,15 +1532,15 @@ export function PolicyDeadlineTimeline() {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.95 }}
-              className="bg-zinc-900 border border-zinc-800 rounded-2xl max-w-md w-full p-6 space-y-4 shadow-2xl"
+              className="bg-white border border-zinc-200 rounded-2xl max-w-md w-full p-6 space-y-4 shadow-2xl"
             >
               <div className="flex items-center gap-3 text-rose-400">
                 <AlertTriangle className="w-6 h-6" />
-                <h3 className="text-base font-bold text-white">
+                <h3 className="text-base font-bold text-zinc-900">
                   Resetare Spațiu de Lucru
                 </h3>
               </div>
-              <p className="text-xs text-zinc-300 leading-relaxed">
+              <p className="text-xs text-zinc-600 leading-relaxed">
                 Datele din acest timeline există exclusiv în memoria temporară a browserului. Dacă resetați spațiul de lucru fără a descărca un fișier de backup JSON sau raportul PDF, toate evenimentele consemnate se vor pierde.
               </p>
               <div className="flex items-center justify-end gap-2 pt-2">
@@ -1548,7 +1548,7 @@ export function PolicyDeadlineTimeline() {
                   variant="outline"
                   size="sm"
                   onClick={() => setIsResetConfirmOpen(false)}
-                  className="bg-zinc-800 border-zinc-700 text-zinc-300 text-xs h-9"
+                  className="bg-zinc-800 border-zinc-300 text-zinc-600 text-xs h-9"
                 >
                   Păstrează Datele
                 </Button>
@@ -1573,13 +1573,13 @@ export function PolicyDeadlineTimeline() {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.95 }}
-              className="bg-zinc-900 border border-zinc-800 rounded-2xl max-w-sm w-full p-6 space-y-4 shadow-2xl"
+              className="bg-white border border-zinc-200 rounded-2xl max-w-sm w-full p-6 space-y-4 shadow-2xl"
             >
               <div className="flex items-center gap-3 text-rose-400">
                 <Trash2 className="w-5 h-5" />
-                <h3 className="text-base font-bold text-white">Ștergere Eveniment</h3>
+                <h3 className="text-base font-bold text-zinc-900">Ștergere Eveniment</h3>
               </div>
-              <p className="text-xs text-zinc-300 leading-relaxed">
+              <p className="text-xs text-zinc-600 leading-relaxed">
                 Sunteți sigur că doriți să ștergeți acest reper din cronologie?
               </p>
               <div className="flex items-center justify-end gap-2 pt-2">
@@ -1587,7 +1587,7 @@ export function PolicyDeadlineTimeline() {
                   variant="outline"
                   size="sm"
                   onClick={() => setDeleteCandidateId(null)}
-                  className="bg-zinc-800 border-zinc-700 text-zinc-300 text-xs h-8"
+                  className="bg-zinc-800 border-zinc-300 text-zinc-600 text-xs h-8"
                 >
                   Anulează
                 </Button>

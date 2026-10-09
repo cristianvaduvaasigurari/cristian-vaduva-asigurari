@@ -41,11 +41,11 @@ export default function GlosarAsigurariPage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#0b0d10] text-zinc-100 flex flex-col selection:bg-blue-600 selection:text-white">
+    <div className="min-h-screen bg-white text-zinc-900 flex flex-col selection:bg-blue-600 selection:text-white">
       <Navbar />
 
       <main className="flex-1 pt-32 pb-24 relative overflow-hidden">
-        <div className="absolute top-20 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-blue-600/10 rounded-full blur-[160px] pointer-events-none" />
+        
 
         <div className="container mx-auto px-4 sm:px-6 relative z-10 max-w-6xl">
           <script

@@ -370,26 +370,28 @@ export function PolicyReviewJourney() {
   }
 
   return (
-    <div className="w-full max-w-4xl mx-auto">
-      {/* LANGUAGE & PROCESS BANNER */}
+    <div className="w-full max-w-4xl mx-auto space-y-8">
+      {/* TOP CONTROLS */}
       <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mb-8">
+
         <div className="flex items-center gap-2">
-          <span className="px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-semibold uppercase tracking-wider flex items-center gap-1.5">
-            <Sparkles className="w-3.5 h-3.5" />
+          <span className="px-3 py-1 rounded-full bg-blue-50 border border-blue-200 text-blue-700 text-xs font-semibold uppercase tracking-wider flex items-center gap-1.5 shadow-xs">
+            <Sparkles className="w-3.5 h-3.5 text-blue-600" />
             {lang === "ro" ? "Audit Independent de Polițe" : "Independent Policy Review"}
           </span>
+          <span className="text-zinc-300">•</span>
           <span className="text-xs text-zinc-500 flex items-center gap-1">
             <Clock className="w-3 h-3" />
             {lang === "ro" ? "~2 min completare" : "~2 min completion"}
           </span>
         </div>
 
-        <div className="flex items-center gap-1 p-1 rounded-full bg-zinc-900 border border-zinc-800 text-xs">
+        <div className="flex items-center gap-1 p-1 rounded-full bg-zinc-100 border border-zinc-200 text-xs">
           <button
             type="button"
             onClick={() => setLang("ro")}
             className={`px-3 py-1 rounded-full font-medium transition-all ${
-              lang === "ro" ? "bg-blue-600 text-white shadow-sm" : "text-zinc-400 hover:text-zinc-200"
+              lang === "ro" ? "bg-blue-600 text-white shadow-sm" : "text-zinc-600 hover:text-zinc-900"
             }`}
           >
             Română
@@ -398,7 +400,7 @@ export function PolicyReviewJourney() {
             type="button"
             onClick={() => setLang("en")}
             className={`px-3 py-1 rounded-full font-medium transition-all ${
-              lang === "en" ? "bg-blue-600 text-white shadow-sm" : "text-zinc-400 hover:text-zinc-200"
+              lang === "en" ? "bg-blue-600 text-white shadow-sm" : "text-zinc-600 hover:text-zinc-900"
             }`}
           >
             English
@@ -407,24 +409,24 @@ export function PolicyReviewJourney() {
       </div>
 
       {/* MAIN CONTAINER */}
-      <div className="glass rounded-[2.5rem] border border-zinc-800/80 bg-zinc-950/70 p-6 sm:p-10 shadow-2xl relative overflow-hidden">
+      <div className="rounded-[2.5rem] border border-zinc-200/80 bg-white p-6 sm:p-10 shadow-lg relative overflow-hidden">
         {/* PROGRESS STEP INDICATOR */}
-        <div className="grid grid-cols-3 gap-2 mb-10 pb-6 border-b border-zinc-800/60">
+        <div className="grid grid-cols-3 gap-2 mb-10 pb-6 border-b border-zinc-200">
           <div className="flex flex-col gap-1.5">
-            <div className={`h-1.5 rounded-full transition-all ${step >= 1 ? "bg-blue-500" : "bg-zinc-800"}`} />
-            <span className={`text-xs font-medium ${step >= 1 ? "text-blue-400" : "text-zinc-600"}`}>
+            <div className={`h-1.5 rounded-full transition-all ${step >= 1 ? "bg-blue-600" : "bg-zinc-200"}`} />
+            <span className={`text-xs font-semibold ${step >= 1 ? "text-blue-600" : "text-zinc-400"}`}>
               1. {lang === "ro" ? "Categorie & Obiectiv" : "Category & Goal"}
             </span>
           </div>
           <div className="flex flex-col gap-1.5">
-            <div className={`h-1.5 rounded-full transition-all ${step >= 2 ? "bg-blue-500" : "bg-zinc-800"}`} />
-            <span className={`text-xs font-medium ${step >= 2 ? "text-blue-400" : "text-zinc-600"}`}>
+            <div className={`h-1.5 rounded-full transition-all ${step >= 2 ? "bg-blue-600" : "bg-zinc-200"}`} />
+            <span className={`text-xs font-semibold ${step >= 2 ? "text-blue-600" : "text-zinc-400"}`}>
               2. {lang === "ro" ? "Detalii Poliță" : "Policy Details"}
             </span>
           </div>
           <div className="flex flex-col gap-1.5">
-            <div className={`h-1.5 rounded-full transition-all ${step >= 3 ? "bg-blue-500" : "bg-zinc-800"}`} />
-            <span className={`text-xs font-medium ${step >= 3 ? "text-blue-400" : "text-zinc-600"}`}>
+            <div className={`h-1.5 rounded-full transition-all ${step >= 3 ? "bg-blue-600" : "bg-zinc-200"}`} />
+            <span className={`text-xs font-semibold ${step >= 3 ? "text-blue-600" : "text-zinc-400"}`}>
               3. {lang === "ro" ? "Contact & Canal" : "Contact & Channel"}
             </span>
           </div>
@@ -441,10 +443,10 @@ export function PolicyReviewJourney() {
               className="space-y-8"
             >
               <div>
-                <h3 className="text-2xl sm:text-3xl font-heading font-bold text-white mb-2">
+                <h3 className="text-2xl sm:text-3xl font-heading font-bold text-zinc-900 mb-2">
                   {lang === "ro" ? "Ce poliță dorești să analizăm?" : "Which policy would you like us to review?"}
                 </h3>
-                <p className="text-zinc-400 text-sm sm:text-base">
+                <p className="text-zinc-600 text-sm sm:text-base">
                   {lang === "ro"
                     ? "Selectează categoria pentru a adapta criteriile de evaluare și clauzele specifice."
                     : "Select the category to customize underwriting criteria and specific policy clauses."}
@@ -466,27 +468,27 @@ export function PolicyReviewJourney() {
                       }}
                       className={`text-left p-5 rounded-2xl border transition-all relative flex flex-col justify-between ${
                         isSelected
-                          ? "bg-blue-600/10 border-blue-500 ring-1 ring-blue-500/50 shadow-lg shadow-blue-500/5"
-                          : "bg-zinc-900/50 border-zinc-800 hover:border-zinc-700 hover:bg-zinc-900"
+                          ? "bg-blue-50/60 border-blue-500 ring-2 ring-blue-500/20 shadow-sm"
+                          : "bg-zinc-50 border-zinc-200 hover:border-zinc-300 hover:bg-zinc-100"
                       }`}
                     >
                       <div>
-                        <div className="mb-3 p-2.5 rounded-xl bg-zinc-900 border border-zinc-800 inline-block">
+                        <div className="mb-3 p-2.5 rounded-xl bg-white border border-zinc-200 inline-block shadow-xs">
                           {cat.icon}
                         </div>
-                        <h4 className="font-semibold text-white text-base mb-1">
+                        <h4 className="font-bold text-zinc-900 text-base mb-1">
                           {lang === "ro" ? cat.titleRo : cat.titleEn}
                         </h4>
-                        <p className="text-xs text-zinc-400 leading-relaxed">
+                        <p className="text-xs text-zinc-600 leading-relaxed">
                           {lang === "ro" ? cat.descRo : cat.descEn}
                         </p>
                       </div>
 
-                      <div className="mt-4 pt-3 border-t border-zinc-800/60 flex items-center justify-between text-xs">
-                        <span className={isSelected ? "text-blue-400 font-medium" : "text-zinc-500"}>
+                      <div className="mt-4 pt-3 border-t border-zinc-200 flex items-center justify-between text-xs">
+                        <span className={isSelected ? "text-blue-600 font-semibold" : "text-zinc-500"}>
                           {isSelected ? (lang === "ro" ? "Selectat" : "Selected") : (lang === "ro" ? "Alege" : "Select")}
                         </span>
-                        {isSelected && <CheckCircle2 className="w-4 h-4 text-blue-400" />}
+                        {isSelected && <CheckCircle2 className="w-4 h-4 text-blue-600" />}
                       </div>
                     </button>
                   );
@@ -495,7 +497,7 @@ export function PolicyReviewJourney() {
 
               {/* REVIEW GOAL SELECTOR */}
               <div className="pt-4 space-y-4">
-                <label className="block text-sm font-semibold text-zinc-200">
+                <label className="block text-sm font-semibold text-zinc-900">
                   {lang === "ro" ? "Care este principalul obiectiv al verificării?" : "What is your primary review objective?"}
                 </label>
 
@@ -513,12 +515,12 @@ export function PolicyReviewJourney() {
                         }}
                         className={`text-left px-4 py-3 rounded-xl border text-xs sm:text-sm transition-all flex items-center justify-between ${
                           isSelected
-                            ? "bg-blue-600/20 border-blue-500 text-white font-medium"
-                            : "bg-zinc-900/40 border-zinc-800 text-zinc-300 hover:border-zinc-700 hover:text-white"
+                            ? "bg-blue-600 text-white font-semibold border-blue-600 shadow-sm"
+                            : "bg-zinc-50 border-zinc-200 text-zinc-700 hover:border-zinc-300 hover:bg-zinc-100"
                         }`}
                       >
                         <span>{goal}</span>
-                        {isSelected && <Check className="w-4 h-4 text-blue-400 shrink-0 ml-2" />}
+                        {isSelected && <Check className="w-4 h-4 text-white shrink-0 ml-2" />}
                       </button>
                     );
                   })}
@@ -540,10 +542,10 @@ export function PolicyReviewJourney() {
                       }
                       setValidationErrors({});
                     }}
-                    className="bg-zinc-900/60 border-zinc-800 text-zinc-200 text-sm h-12"
+                    className="bg-zinc-50 border-zinc-300 text-zinc-900 text-sm h-12 focus:ring-2 focus:ring-blue-600 placeholder:text-zinc-400"
                   />
                   {validationErrors.reviewGoal && (
-                    <p className="text-xs text-rose-400 mt-1.5 flex items-center gap-1">
+                    <p className="text-xs text-red-600 mt-1.5 flex items-center gap-1">
                       <AlertCircle className="w-3.5 h-3.5" />
                       {validationErrors.reviewGoal}
                     </p>
@@ -556,7 +558,7 @@ export function PolicyReviewJourney() {
                 <Button
                   type="button"
                   onClick={handleNextFromStep1}
-                  className="rounded-full bg-blue-600 hover:bg-blue-700 text-white px-8 h-12 text-sm font-semibold flex items-center gap-2"
+                  className="rounded-full bg-blue-600 hover:bg-blue-700 text-white px-8 h-12 text-sm font-semibold flex items-center gap-2 shadow-md"
                 >
                   <span>{lang === "ro" ? "Continuă spre detalii" : "Next: Policy details"}</span>
                   <ArrowRight className="w-4 h-4" />
@@ -575,10 +577,10 @@ export function PolicyReviewJourney() {
               className="space-y-6"
             >
               <div>
-                <h3 className="text-2xl sm:text-3xl font-heading font-bold text-white mb-2">
+                <h3 className="text-2xl sm:text-3xl font-heading font-bold text-zinc-900 mb-2">
                   {lang === "ro" ? "Detalii despre polița actuală" : "Details about your current policy"}
                 </h3>
-                <p className="text-zinc-400 text-sm sm:text-base">
+                <p className="text-zinc-600 text-sm sm:text-base">
                   {lang === "ro"
                     ? "Informațiile ne ajută să pregătim analiza comparativă înainte de discuție."
                     : "These details allow us to prepare accurate comparative terms before our discussion."}
@@ -587,32 +589,32 @@ export function PolicyReviewJourney() {
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="space-y-2">
-                  <label className="text-xs font-semibold text-zinc-300 uppercase tracking-wider">
+                  <label className="text-xs font-semibold text-zinc-700 uppercase tracking-wider">
                     {lang === "ro" ? "Compania de asigurare actuală (opțional)" : "Current Insurance Company (optional)"}
                   </label>
                   <Input
                     placeholder={lang === "ro" ? "ex: Omniasig, Allianz, Generali, Groupama..." : "e.g. Allianz, Generali, Groupama..."}
                     value={currentInsurer}
                     onChange={(e) => setCurrentInsurer(e.target.value)}
-                    className="bg-zinc-900/60 border-zinc-800 text-zinc-200 text-sm h-12"
+                    className="bg-zinc-50 border-zinc-300 text-zinc-900 text-sm h-12 focus:ring-2 focus:ring-blue-600 placeholder:text-zinc-400"
                   />
                 </div>
 
                 <div className="space-y-2">
-                  <label className="text-xs font-semibold text-zinc-300 uppercase tracking-wider">
+                  <label className="text-xs font-semibold text-zinc-700 uppercase tracking-wider">
                     {lang === "ro" ? "Când expiră sau se reînnoiește? (opțional)" : "When does it expire or renew? (optional)"}
                   </label>
                   <Input
                     placeholder={lang === "ro" ? "ex: Luna viitoare, În 3 luni, A expirat recent..." : "e.g. Next month, In 3 months, Expired..."}
                     value={expiryTimeline}
                     onChange={(e) => setExpiryTimeline(e.target.value)}
-                    className="bg-zinc-900/60 border-zinc-800 text-zinc-200 text-sm h-12"
+                    className="bg-zinc-50 border-zinc-300 text-zinc-900 text-sm h-12 focus:ring-2 focus:ring-blue-600 placeholder:text-zinc-400"
                   />
                 </div>
               </div>
 
               <div className="space-y-2">
-                <label className="text-xs font-semibold text-zinc-300 uppercase tracking-wider">
+                <label className="text-xs font-semibold text-zinc-700 uppercase tracking-wider">
                   {lang === "ro" ? "Ce te nemulțumește sau ce întrebări ai despre contract?" : "Specific concerns or questions regarding the policy"}
                 </label>
                 <Textarea
@@ -623,15 +625,15 @@ export function PolicyReviewJourney() {
                   }
                   value={clientNotes}
                   onChange={(e) => setClientNotes(e.target.value)}
-                  className="bg-zinc-900/60 border-zinc-800 text-zinc-200 text-sm min-h-[110px]"
+                  className="bg-zinc-50 border-zinc-300 text-zinc-900 text-sm min-h-[110px] focus:ring-2 focus:ring-blue-600 placeholder:text-zinc-400"
                 />
               </div>
 
               {/* ZERO PUBLIC UPLOADS NOTICE */}
-              <div className="p-4 rounded-2xl bg-zinc-900/70 border border-zinc-800 flex items-start gap-3 text-xs text-zinc-400">
-                <Lock className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+              <div className="p-4 rounded-2xl bg-zinc-50 border border-zinc-200 flex items-start gap-3 text-xs text-zinc-600">
+                <Lock className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
                 <div>
-                  <span className="font-semibold text-zinc-200 block mb-0.5">
+                  <span className="font-semibold text-zinc-900 block mb-0.5">
                     {lang === "ro" ? "Protecția Documentelor Tale:" : "Document Privacy & Security:"}
                   </span>
                   <span>
@@ -648,7 +650,7 @@ export function PolicyReviewJourney() {
                   type="button"
                   variant="outline"
                   onClick={() => setStep(1)}
-                  className="rounded-full border-zinc-800 hover:bg-zinc-900 text-zinc-300 h-12 px-6 text-sm"
+                  className="rounded-full border-zinc-300 hover:bg-zinc-100 text-zinc-800 h-12 px-6 text-sm font-semibold shadow-xs"
                 >
                   <ArrowLeft className="w-4 h-4 mr-2" />
                   <span>{lang === "ro" ? "Înapoi" : "Back"}</span>
@@ -656,7 +658,7 @@ export function PolicyReviewJourney() {
                 <Button
                   type="button"
                   onClick={handleNextFromStep2}
-                  className="rounded-full bg-blue-600 hover:bg-blue-700 text-white px-8 h-12 text-sm font-semibold flex items-center gap-2"
+                  className="rounded-full bg-blue-600 hover:bg-blue-700 text-white px-8 h-12 text-sm font-semibold flex items-center gap-2 shadow-md"
                 >
                   <span>{lang === "ro" ? "Continuă spre date de contact" : "Next: Contact details"}</span>
                   <ArrowRight className="w-4 h-4" />
@@ -676,10 +678,10 @@ export function PolicyReviewJourney() {
               className="space-y-6"
             >
               <div>
-                <h3 className="text-2xl sm:text-3xl font-heading font-bold text-white mb-2">
+                <h3 className="text-2xl sm:text-3xl font-heading font-bold text-zinc-900 mb-2">
                   {lang === "ro" ? "Unde îți trimitem concluziile analizei?" : "Where should we send your review summary?"}
                 </h3>
-                <p className="text-zinc-400 text-sm sm:text-base">
+                <p className="text-zinc-600 text-sm sm:text-base">
                   {lang === "ro"
                     ? "Datele tale sunt confidențiale și utilizate strict pentru această verificare."
                     : "Your contact details are strictly protected and used solely for this evaluation."}
@@ -688,7 +690,7 @@ export function PolicyReviewJourney() {
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="space-y-2">
-                  <label className="text-xs font-semibold text-zinc-300 uppercase tracking-wider">
+                  <label className="text-xs font-semibold text-zinc-700 uppercase tracking-wider">
                     {lang === "ro" ? "Nume și Prenume *" : "Full Name *"}
                   </label>
                   <Input
@@ -698,11 +700,11 @@ export function PolicyReviewJourney() {
                       setName(e.target.value);
                       setValidationErrors((prev) => ({ ...prev, name: "" }));
                     }}
-                    className="bg-zinc-900/60 border-zinc-800 text-zinc-200 text-sm h-12"
+                    className="bg-zinc-50 border-zinc-300 text-zinc-900 text-sm h-12 focus:ring-2 focus:ring-blue-600 placeholder:text-zinc-400"
                     required
                   />
                   {validationErrors.name && (
-                    <p className="text-xs text-rose-400 flex items-center gap-1">
+                    <p className="text-xs text-red-600 mt-1.5 flex items-center gap-1">
                       <AlertCircle className="w-3.5 h-3.5" />
                       {validationErrors.name}
                     </p>
@@ -710,7 +712,7 @@ export function PolicyReviewJourney() {
                 </div>
 
                 <div className="space-y-2">
-                  <label className="text-xs font-semibold text-zinc-300 uppercase tracking-wider">
+                  <label className="text-xs font-semibold text-zinc-700 uppercase tracking-wider">
                     {lang === "ro" ? "Număr de Telefon *" : "Phone Number *"}
                   </label>
                   <Input
@@ -721,11 +723,11 @@ export function PolicyReviewJourney() {
                       setPhone(e.target.value);
                       setValidationErrors((prev) => ({ ...prev, phone: "" }));
                     }}
-                    className="bg-zinc-900/60 border-zinc-800 text-zinc-200 text-sm h-12"
+                    className="bg-zinc-50 border-zinc-300 text-zinc-900 text-sm h-12 focus:ring-2 focus:ring-blue-600 placeholder:text-zinc-400"
                     required
                   />
                   {validationErrors.phone && (
-                    <p className="text-xs text-rose-400 flex items-center gap-1">
+                    <p className="text-xs text-red-600 mt-1.5 flex items-center gap-1">
                       <AlertCircle className="w-3.5 h-3.5" />
                       {validationErrors.phone}
                     </p>
@@ -734,7 +736,7 @@ export function PolicyReviewJourney() {
               </div>
 
               <div className="space-y-2">
-                <label className="text-xs font-semibold text-zinc-300 uppercase tracking-wider">
+                <label className="text-xs font-semibold text-zinc-700 uppercase tracking-wider">
                   {lang === "ro" ? "Email (opțional, pentru transmiterea raportului scris)" : "Email (optional, for written review report)"}
                 </label>
                 <Input
@@ -745,10 +747,10 @@ export function PolicyReviewJourney() {
                     setEmail(e.target.value);
                     setValidationErrors((prev) => ({ ...prev, email: "" }));
                   }}
-                  className="bg-zinc-900/60 border-zinc-800 text-zinc-200 text-sm h-12"
+                  className="bg-zinc-50 border-zinc-300 text-zinc-900 text-sm h-12 focus:ring-2 focus:ring-blue-600 placeholder:text-zinc-400"
                 />
                 {validationErrors.email && (
-                  <p className="text-xs text-rose-400 flex items-center gap-1">
+                  <p className="text-xs text-red-600 mt-1.5 flex items-center gap-1">
                     <AlertCircle className="w-3.5 h-3.5" />
                     {validationErrors.email}
                   </p>
@@ -757,17 +759,17 @@ export function PolicyReviewJourney() {
 
               {/* PREFERRED CONTACT METHOD */}
               <div className="space-y-2">
-                <label className="text-xs font-semibold text-zinc-300 uppercase tracking-wider block">
+                <label className="text-xs font-semibold text-zinc-700 uppercase tracking-wider block">
                   {lang === "ro" ? "Canalul de comunicare preferat:" : "Preferred communication channel:"}
                 </label>
                 <div className="grid grid-cols-3 gap-3">
                   <button
                     type="button"
                     onClick={() => setPreferredContact("whatsapp")}
-                    className={`py-3 px-4 rounded-xl border text-xs sm:text-sm font-medium transition-all flex items-center justify-center gap-2 ${
+                    className={`py-3 px-4 rounded-xl border text-xs sm:text-sm font-semibold transition-all flex items-center justify-center gap-2 ${
                       preferredContact === "whatsapp"
-                        ? "bg-emerald-600/20 border-emerald-500 text-emerald-300 ring-1 ring-emerald-500/50"
-                        : "bg-zinc-900/50 border-zinc-800 text-zinc-400 hover:text-zinc-200"
+                        ? "bg-emerald-600 text-white border-emerald-600 shadow-sm"
+                        : "bg-zinc-50 border-zinc-200 text-zinc-700 hover:bg-zinc-100"
                     }`}
                   >
                     <MessageSquare className="w-4 h-4" />
@@ -776,10 +778,10 @@ export function PolicyReviewJourney() {
                   <button
                     type="button"
                     onClick={() => setPreferredContact("phone")}
-                    className={`py-3 px-4 rounded-xl border text-xs sm:text-sm font-medium transition-all flex items-center justify-center gap-2 ${
+                    className={`py-3 px-4 rounded-xl border text-xs sm:text-sm font-semibold transition-all flex items-center justify-center gap-2 ${
                       preferredContact === "phone"
-                        ? "bg-blue-600/20 border-blue-500 text-blue-300 ring-1 ring-blue-500/50"
-                        : "bg-zinc-900/50 border-zinc-800 text-zinc-400 hover:text-zinc-200"
+                        ? "bg-blue-600 text-white border-blue-600 shadow-sm"
+                        : "bg-zinc-50 border-zinc-200 text-zinc-700 hover:bg-zinc-100"
                     }`}
                   >
                     <Phone className="w-4 h-4" />
@@ -788,10 +790,10 @@ export function PolicyReviewJourney() {
                   <button
                     type="button"
                     onClick={() => setPreferredContact("email")}
-                    className={`py-3 px-4 rounded-xl border text-xs sm:text-sm font-medium transition-all flex items-center justify-center gap-2 ${
+                    className={`py-3 px-4 rounded-xl border text-xs sm:text-sm font-semibold transition-all flex items-center justify-center gap-2 ${
                       preferredContact === "email"
-                        ? "bg-purple-600/20 border-purple-500 text-purple-300 ring-1 ring-purple-500/50"
-                        : "bg-zinc-900/50 border-zinc-800 text-zinc-400 hover:text-zinc-200"
+                        ? "bg-purple-600 text-white border-purple-600 shadow-sm"
+                        : "bg-zinc-50 border-zinc-200 text-zinc-700 hover:bg-zinc-100"
                     }`}
                   >
                     <Mail className="w-4 h-4" />
@@ -802,7 +804,7 @@ export function PolicyReviewJourney() {
 
               {/* PRIVACY CONSENT CHECKBOX */}
               <div className="pt-2">
-                <label className="flex items-start gap-3 cursor-pointer text-xs text-zinc-400">
+                <label className="flex items-start gap-3 cursor-pointer text-xs text-zinc-600">
                   <input
                     type="checkbox"
                     checked={consent}
@@ -810,13 +812,13 @@ export function PolicyReviewJourney() {
                       setConsent(e.target.checked);
                       setValidationErrors((prev) => ({ ...prev, consent: "" }));
                     }}
-                    className="mt-0.5 rounded border-zinc-700 bg-zinc-900 text-blue-600 focus:ring-blue-500 h-4 w-4"
+                    className="mt-0.5 rounded border-zinc-300 text-blue-600 focus:ring-blue-600 h-4 w-4"
                   />
                   <span>
                     {lang === "ro" ? (
                       <>
                         Sunt de acord cu prelucrarea datelor pentru realizarea analizei comparative, conform{" "}
-                        <Link href="/politica-de-confidentialitate" className="text-blue-400 hover:underline" target="_blank">
+                        <Link href="/politica-de-confidentialitate" className="text-blue-600 hover:underline" target="_blank">
                           Politicii de Confidențialitate
                         </Link>
                         . Fără apeluri spam sau transmitere către terți.
@@ -824,7 +826,7 @@ export function PolicyReviewJourney() {
                     ) : (
                       <>
                         I consent to processing my details for the policy review pursuant to the{" "}
-                        <Link href="/politica-de-confidentialitate" className="text-blue-400 hover:underline" target="_blank">
+                        <Link href="/politica-de-confidentialitate" className="text-blue-600 hover:underline" target="_blank">
                           Privacy Policy
                         </Link>
                         . No spam, no third-party distribution.
@@ -833,7 +835,7 @@ export function PolicyReviewJourney() {
                   </span>
                 </label>
                 {validationErrors.consent && (
-                  <p className="text-xs text-rose-400 mt-1 flex items-center gap-1">
+                  <p className="text-xs text-red-600 mt-1 flex items-center gap-1">
                     <AlertCircle className="w-3.5 h-3.5" />
                     {validationErrors.consent}
                   </p>
@@ -841,8 +843,8 @@ export function PolicyReviewJourney() {
               </div>
 
               {errorMessage && (
-                <div className="p-4 rounded-xl bg-rose-500/10 border border-rose-500/30 text-rose-400 text-xs sm:text-sm flex items-center gap-2">
-                  <AlertCircle className="w-4 h-4 shrink-0" />
+                <div className="p-4 rounded-xl bg-red-50 border border-red-200 text-red-700 text-xs sm:text-sm flex items-center gap-2">
+                  <AlertCircle className="w-4 h-4 shrink-0 text-red-500" />
                   <span>{errorMessage}</span>
                 </div>
               )}
@@ -854,7 +856,7 @@ export function PolicyReviewJourney() {
                   variant="outline"
                   onClick={() => setStep(2)}
                   disabled={isSubmitting}
-                  className="rounded-full border-zinc-800 hover:bg-zinc-900 text-zinc-300 h-12 px-6 text-sm"
+                  className="rounded-full border-zinc-300 hover:bg-zinc-100 text-zinc-800 h-12 px-6 text-sm font-semibold shadow-xs"
                 >
                   <ArrowLeft className="w-4 h-4 mr-2" />
                   <span>{lang === "ro" ? "Înapoi" : "Back"}</span>
@@ -862,7 +864,7 @@ export function PolicyReviewJourney() {
                 <Button
                   type="submit"
                   disabled={isSubmitting}
-                  className="rounded-full bg-blue-600 hover:bg-blue-700 text-white px-10 h-12 text-sm font-semibold flex items-center gap-2 shadow-lg shadow-blue-600/20"
+                  className="rounded-full bg-blue-600 hover:bg-blue-700 text-white px-10 h-12 text-sm font-semibold flex items-center gap-2 shadow-md"
                 >
                   {isSubmitting ? (
                     <>
@@ -884,3 +886,4 @@ export function PolicyReviewJourney() {
     </div>
   );
 }
+

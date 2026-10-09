@@ -167,14 +167,14 @@ export function RiskProfileEngine() {
       case "existing_reported":
         return <span className="text-[10px] px-2.5 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 font-semibold">{isRo ? "Protecție Raportată" : "Reported Covered"}</span>;
       default:
-        return <span className="text-[10px] px-2.5 py-0.5 rounded-full bg-zinc-800 text-zinc-400 border border-zinc-700 font-semibold">{isRo ? "Informație Lipsă" : "Missing Info"}</span>;
+        return <span className="text-[10px] px-2.5 py-0.5 rounded-full bg-zinc-800 text-zinc-500 border border-zinc-300 font-semibold">{isRo ? "Informație Lipsă" : "Missing Info"}</span>;
     }
   };
 
   return (
     <div className="w-full space-y-8 max-w-5xl mx-auto">
       {/* 1. TOP WIZARD HEADER & TOOLBAR */}
-      <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4 p-4 sm:p-5 rounded-3xl bg-zinc-900/80 border border-zinc-800">
+      <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4 p-4 sm:p-5 rounded-3xl bg-white border border-zinc-200">
         <div className="flex items-center gap-2 overflow-x-auto pb-1 sm:pb-0 text-xs">
           {[
             { num: 1, labelRo: "1. Profile", labelEn: "1. Profiles" },
@@ -189,7 +189,7 @@ export function RiskProfileEngine() {
               className={`px-3 py-1.5 rounded-xl font-medium transition-all shrink-0 ${
                 currentStep === s.num
                   ? "bg-blue-600 text-white shadow-md font-bold"
-                  : "bg-zinc-950 text-zinc-400 hover:text-white border border-zinc-800"
+                  : "bg-zinc-50 text-zinc-500 hover:text-white border border-zinc-200"
               }`}
             >
               {isRo ? s.labelRo : s.labelEn}
@@ -197,12 +197,12 @@ export function RiskProfileEngine() {
           ))}
         </div>
 
-        <div className="flex items-center justify-between sm:justify-end gap-3 text-xs border-t sm:border-t-0 pt-3 sm:pt-0 border-zinc-800">
+        <div className="flex items-center justify-between sm:justify-end gap-3 text-xs border-t sm:border-t-0 pt-3 sm:pt-0 border-zinc-200">
           <Button
             type="button"
             variant="outline"
             onClick={handleDownloadPdf}
-            className="rounded-full border-zinc-800 hover:bg-zinc-800 text-zinc-300 h-9 px-3.5 flex items-center gap-1.5"
+            className="rounded-full border-zinc-200 hover:bg-zinc-800 text-zinc-600 h-9 px-3.5 flex items-center gap-1.5"
           >
             <Download className="w-3.5 h-3.5 text-blue-400" />
             <span>PDF Raport</span>
@@ -211,24 +211,24 @@ export function RiskProfileEngine() {
           <button
             type="button"
             onClick={handleReset}
-            className="text-zinc-500 hover:text-zinc-300 transition-colors flex items-center gap-1"
+            className="text-zinc-500 hover:text-zinc-600 transition-colors flex items-center gap-1"
           >
             <RotateCcw className="w-3.5 h-3.5" />
             <span>{isRo ? "Resetează" : "Reset"}</span>
           </button>
 
-          <div className="flex items-center gap-1 p-1 rounded-full bg-zinc-950 border border-zinc-800">
+          <div className="flex items-center gap-1 p-1 rounded-full bg-zinc-50 border border-zinc-200">
             <button
               type="button"
               onClick={() => setLang("ro")}
-              className={`px-2.5 py-0.5 rounded-full font-medium ${lang === "ro" ? "bg-blue-600 text-white" : "text-zinc-400 hover:text-white"}`}
+              className={`px-2.5 py-0.5 rounded-full font-medium ${lang === "ro" ? "bg-blue-600 text-white" : "text-zinc-500 hover:text-white"}`}
             >
               RO
             </button>
             <button
               type="button"
               onClick={() => setLang("en")}
-              className={`px-2.5 py-0.5 rounded-full font-medium ${lang === "en" ? "bg-blue-600 text-white" : "text-zinc-400 hover:text-white"}`}
+              className={`px-2.5 py-0.5 rounded-full font-medium ${lang === "en" ? "bg-blue-600 text-white" : "text-zinc-500 hover:text-white"}`}
             >
               EN
             </button>
@@ -240,15 +240,15 @@ export function RiskProfileEngine() {
       {/* STEP 1: PROFILE SELECTOR (MULTI-SELECT) */}
       {/* ======================================================== */}
       {currentStep === 1 && (
-        <div className="p-6 sm:p-8 rounded-[2.5rem] bg-zinc-950 border border-zinc-800 shadow-xl space-y-6">
-          <div className="space-y-1 pb-4 border-b border-zinc-800">
+        <div className="p-6 sm:p-8 rounded-[2.5rem] bg-zinc-50 border border-zinc-200 shadow-xl space-y-6">
+          <div className="space-y-1 pb-4 border-b border-zinc-200">
             <span className="text-[10px] uppercase font-bold text-blue-400 tracking-wider">
               {isRo ? "PASUL 1 DIN 4: SELECȚIE PROFILURI" : "STEP 1 OF 4: PROFILE SELECTION"}
             </span>
-            <h3 className="text-xl font-heading font-bold text-white">
+            <h3 className="text-xl font-heading font-bold text-zinc-900">
               {isRo ? "Ce categorii de patrimoniu sau activitate dorești să evaluezi?" : "Which risk and asset categories apply to you?"}
             </h3>
-            <p className="text-xs text-zinc-400">
+            <p className="text-xs text-zinc-500">
               {isRo
                 ? "Poți selecta multiple profiluri concomitent (ex: Familie + Proprietar Imobil + Auto)."
                 : "You can select multiple profiles simultaneously (e.g. Household + Homeowner + Auto)."}
@@ -265,7 +265,7 @@ export function RiskProfileEngine() {
                   className={`cursor-pointer p-5 rounded-2xl border transition-all space-y-2 ${
                     isSelected
                       ? "bg-blue-600/10 border-blue-500 shadow-lg"
-                      : "bg-zinc-900/40 border-zinc-800/80 hover:border-zinc-700"
+                      : "bg-zinc-50 border-zinc-200/80 hover:border-zinc-300"
                   }`}
                 >
                   <div className="flex items-center justify-between">
@@ -276,13 +276,13 @@ export function RiskProfileEngine() {
                       className={`w-5 h-5 rounded-full flex items-center justify-center border text-xs ${
                         isSelected
                           ? "bg-blue-600 border-blue-600 text-white"
-                          : "border-zinc-700 bg-zinc-800 text-transparent"
+                          : "border-zinc-300 bg-zinc-800 text-transparent"
                       }`}
                     >
                       ✓
                     </div>
                   </div>
-                  <p className="text-xs text-zinc-400 leading-relaxed">
+                  <p className="text-xs text-zinc-500 leading-relaxed">
                     {isRo ? opt.descRo : opt.descEn}
                   </p>
                 </div>
@@ -290,7 +290,7 @@ export function RiskProfileEngine() {
             })}
           </div>
 
-          <div className="flex justify-end pt-4 border-t border-zinc-800">
+          <div className="flex justify-end pt-4 border-t border-zinc-200">
             <Button
               type="button"
               onClick={() => setCurrentStep(2)}
@@ -307,15 +307,15 @@ export function RiskProfileEngine() {
       {/* STEP 2: ADAPTIVE QUESTIONNAIRE */}
       {/* ======================================================== */}
       {currentStep === 2 && (
-        <div className="p-6 sm:p-8 rounded-[2.5rem] bg-zinc-950 border border-zinc-800 shadow-xl space-y-8">
-          <div className="space-y-1 pb-4 border-b border-zinc-800">
+        <div className="p-6 sm:p-8 rounded-[2.5rem] bg-zinc-50 border border-zinc-200 shadow-xl space-y-8">
+          <div className="space-y-1 pb-4 border-b border-zinc-200">
             <span className="text-[10px] uppercase font-bold text-blue-400 tracking-wider">
               {isRo ? "PASUL 2 DIN 4: CHESTIONAR DE EXPUNERE" : "STEP 2 OF 4: EXPOSURE QUESTIONNAIRE"}
             </span>
-            <h3 className="text-xl font-heading font-bold text-white">
+            <h3 className="text-xl font-heading font-bold text-zinc-900">
               {isRo ? "Răspunde la întrebările relevante pentru profilurile alese" : "Answer questions relevant to your selected profiles"}
             </h3>
-            <p className="text-xs text-zinc-400">
+            <p className="text-xs text-zinc-500">
               {isRo
                 ? "Fără date personale sau numere de poliță. Poți lăsa necompletat dacă nu cunoști răspunsul."
                 : "No personal data or policy numbers required. Skip any question if unsure."}
@@ -325,7 +325,7 @@ export function RiskProfileEngine() {
           <div className="space-y-6 text-xs">
             {/* INDIVIDUAL SECTION */}
             {selectedProfiles.includes("individual") && (
-              <div className="p-5 rounded-2xl bg-zinc-900/50 border border-zinc-800 space-y-4">
+              <div className="p-5 rounded-2xl bg-white border border-zinc-200 space-y-4">
                 <h4 className="text-sm font-bold text-blue-400 flex items-center gap-2">
                   <User className="w-4 h-4" />
                   <span>{isRo ? "Persoană Fizică & Familie" : "Individual & Family"}</span>
@@ -333,19 +333,19 @@ export function RiskProfileEngine() {
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div className="space-y-1.5">
-                    <label className="text-zinc-300 font-medium">Ai persoane în întreținere (copii / părinți)?</label>
+                    <label className="text-zinc-600 font-medium">Ai persoane în întreținere (copii / părinți)?</label>
                     <div className="flex gap-2">
                       <button
                         type="button"
                         onClick={() => setAnswers({ ...answers, hasDependants: true })}
-                        className={`flex-1 py-2 rounded-xl border text-xs ${answers.hasDependants ? "bg-blue-600 text-white border-blue-600" : "bg-zinc-900 text-zinc-400 border-zinc-800"}`}
+                        className={`flex-1 py-2 rounded-xl border text-xs ${answers.hasDependants ? "bg-blue-600 text-white border-blue-600" : "bg-white text-zinc-500 border-zinc-200"}`}
                       >
                         {isRo ? "Da" : "Yes"}
                       </button>
                       <button
                         type="button"
                         onClick={() => setAnswers({ ...answers, hasDependants: false })}
-                        className={`flex-1 py-2 rounded-xl border text-xs ${!answers.hasDependants ? "bg-blue-600 text-white border-blue-600" : "bg-zinc-900 text-zinc-400 border-zinc-800"}`}
+                        className={`flex-1 py-2 rounded-xl border text-xs ${!answers.hasDependants ? "bg-blue-600 text-white border-blue-600" : "bg-white text-zinc-500 border-zinc-200"}`}
                       >
                         {isRo ? "Nu" : "No"}
                       </button>
@@ -353,11 +353,11 @@ export function RiskProfileEngine() {
                   </div>
 
                   <div className="space-y-1.5">
-                    <label className="text-zinc-300 font-medium">Deții o asigurare de viață activă?</label>
+                    <label className="text-zinc-600 font-medium">Deții o asigurare de viață activă?</label>
                     <select
                       value={answers.hasExistingLifePolicy}
                       onChange={(e) => setAnswers({ ...answers, hasExistingLifePolicy: e.target.value as "yes" | "no" | "unclear" })}
-                      className="w-full h-10 px-3 rounded-xl bg-zinc-900 border border-zinc-800 text-white focus:outline-none"
+                      className="w-full h-10 px-3 rounded-xl bg-white border border-zinc-200 text-white focus:outline-none"
                     >
                       <option value="yes">{isRo ? "Da, dețin o poliță de viață" : "Yes, I have life insurance"}</option>
                       <option value="no">{isRo ? "Nu dețin" : "No"}</option>
@@ -366,11 +366,11 @@ export function RiskProfileEngine() {
                   </div>
 
                   <div className="space-y-1.5">
-                    <label className="text-zinc-300 font-medium">Deții asigurare privată de sănătate (spitalizare)?</label>
+                    <label className="text-zinc-600 font-medium">Deții asigurare privată de sănătate (spitalizare)?</label>
                     <select
                       value={answers.hasPrivateHealth}
                       onChange={(e) => setAnswers({ ...answers, hasPrivateHealth: e.target.value as "yes" | "no" | "unclear" })}
-                      className="w-full h-10 px-3 rounded-xl bg-zinc-900 border border-zinc-800 text-white focus:outline-none"
+                      className="w-full h-10 px-3 rounded-xl bg-white border border-zinc-200 text-white focus:outline-none"
                     >
                       <option value="yes">{isRo ? "Da, cu spitalizare inclusă" : "Yes, with inpatient surgery"}</option>
                       <option value="no">{isRo ? "Nu dețin (doar abonament clinică/CASS)" : "No (only outpatient subscription)"}</option>
@@ -379,11 +379,11 @@ export function RiskProfileEngine() {
                   </div>
 
                   <div className="space-y-1.5">
-                    <label className="text-zinc-300 font-medium">Frecvență călătorii în străinătate:</label>
+                    <label className="text-zinc-600 font-medium">Frecvență călătorii în străinătate:</label>
                     <select
                       value={answers.travelsInternationally}
                       onChange={(e) => setAnswers({ ...answers, travelsInternationally: e.target.value as "frequent" | "occasional" | "rare" })}
-                      className="w-full h-10 px-3 rounded-xl bg-zinc-900 border border-zinc-800 text-white focus:outline-none"
+                      className="w-full h-10 px-3 rounded-xl bg-white border border-zinc-200 text-white focus:outline-none"
                     >
                       <option value="frequent">{isRo ? "Frecvent (3+ ieșiri pe an)" : "Frequent (3+ trips/year)"}</option>
                       <option value="occasional">{isRo ? "Ocazional (1-2 vacanțe pe an)" : "Occasional (1-2 trips/year)"}</option>
@@ -396,7 +396,7 @@ export function RiskProfileEngine() {
 
             {/* HOMEOWNER SECTION */}
             {selectedProfiles.includes("homeowner") && (
-              <div className="p-5 rounded-2xl bg-zinc-900/50 border border-zinc-800 space-y-4">
+              <div className="p-5 rounded-2xl bg-white border border-zinc-200 space-y-4">
                 <h4 className="text-sm font-bold text-amber-400 flex items-center gap-2">
                   <Home className="w-4 h-4" />
                   <span>{isRo ? "Proprietate Imobiliară & Locuință" : "Home & Property"}</span>
@@ -404,11 +404,11 @@ export function RiskProfileEngine() {
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div className="space-y-1.5">
-                    <label className="text-zinc-300 font-medium">Ce asigurare de locuință deții în prezent?</label>
+                    <label className="text-zinc-600 font-medium">Ce asigurare de locuință deții în prezent?</label>
                     <select
                       value={answers.knowsReconstructionValue}
                       onChange={(e) => setAnswers({ ...answers, knowsReconstructionValue: e.target.value as "yes" | "no" | "pad_only" })}
-                      className="w-full h-10 px-3 rounded-xl bg-zinc-900 border border-zinc-800 text-white focus:outline-none"
+                      className="w-full h-10 px-3 rounded-xl bg-white border border-zinc-200 text-white focus:outline-none"
                     >
                       <option value="yes">{isRo ? "Facultativă completă + PAD" : "Comprehensive + PAD"}</option>
                       <option value="pad_only">{isRo ? "Doar PAD obligatoriu (max 20.000 EUR)" : "Only mandatory PAD (20k EUR cap)"}</option>
@@ -417,19 +417,19 @@ export function RiskProfileEngine() {
                   </div>
 
                   <div className="space-y-1.5">
-                    <label className="text-zinc-300 font-medium">Închiriezi imobilul către chiriași?</label>
+                    <label className="text-zinc-600 font-medium">Închiriezi imobilul către chiriași?</label>
                     <div className="flex gap-2">
                       <button
                         type="button"
                         onClick={() => setAnswers({ ...answers, rentsToTenants: true })}
-                        className={`flex-1 py-2 rounded-xl border text-xs ${answers.rentsToTenants ? "bg-amber-600 text-white border-amber-600" : "bg-zinc-900 text-zinc-400 border-zinc-800"}`}
+                        className={`flex-1 py-2 rounded-xl border text-xs ${answers.rentsToTenants ? "bg-amber-600 text-white border-amber-600" : "bg-white text-zinc-500 border-zinc-200"}`}
                       >
                         {isRo ? "Da, este închiriat" : "Yes, rented out"}
                       </button>
                       <button
                         type="button"
                         onClick={() => setAnswers({ ...answers, rentsToTenants: false })}
-                        className={`flex-1 py-2 rounded-xl border text-xs ${!answers.rentsToTenants ? "bg-amber-600 text-white border-amber-600" : "bg-zinc-900 text-zinc-400 border-zinc-800"}`}
+                        className={`flex-1 py-2 rounded-xl border text-xs ${!answers.rentsToTenants ? "bg-amber-600 text-white border-amber-600" : "bg-white text-zinc-500 border-zinc-200"}`}
                       >
                         {isRo ? "Nu, locuință proprie" : "No, primary home"}
                       </button>
@@ -441,7 +441,7 @@ export function RiskProfileEngine() {
 
             {/* VEHICLE SECTION */}
             {selectedProfiles.includes("vehicle") && (
-              <div className="p-5 rounded-2xl bg-zinc-900/50 border border-zinc-800 space-y-4">
+              <div className="p-5 rounded-2xl bg-white border border-zinc-200 space-y-4">
                 <h4 className="text-sm font-bold text-emerald-400 flex items-center gap-2">
                   <Car className="w-4 h-4" />
                   <span>{isRo ? "Vehicule & Mobilitate Auto" : "Vehicles & Mobility"}</span>
@@ -449,11 +449,11 @@ export function RiskProfileEngine() {
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div className="space-y-1.5">
-                    <label className="text-zinc-300 font-medium">Nivel protecție CASCO actual:</label>
+                    <label className="text-zinc-600 font-medium">Nivel protecție CASCO actual:</label>
                     <select
                       value={answers.hasCasco}
                       onChange={(e) => setAnswers({ ...answers, hasCasco: e.target.value as "all_risk" | "basic" | "rca_only" | "none" })}
-                      className="w-full h-10 px-3 rounded-xl bg-zinc-900 border border-zinc-800 text-white focus:outline-none"
+                      className="w-full h-10 px-3 rounded-xl bg-white border border-zinc-200 text-white focus:outline-none"
                     >
                       <option value="all_risk">{isRo ? "CASCO All-Risk complet" : "CASCO All-Risk"}</option>
                       <option value="basic">{isRo ? "CASCO Economic / Avarii majore" : "Basic CASCO"}</option>
@@ -467,7 +467,7 @@ export function RiskProfileEngine() {
 
             {/* PROFESSIONAL SECTION */}
             {selectedProfiles.includes("professional") && (
-              <div className="p-5 rounded-2xl bg-zinc-900/50 border border-zinc-800 space-y-4">
+              <div className="p-5 rounded-2xl bg-white border border-zinc-200 space-y-4">
                 <h4 className="text-sm font-bold text-purple-400 flex items-center gap-2">
                   <Briefcase className="w-4 h-4" />
                   <span>{isRo ? "Profesii Liberale & Consultanță" : "Professional & Consulting"}</span>
@@ -475,11 +475,11 @@ export function RiskProfileEngine() {
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div className="space-y-1.5">
-                    <label className="text-zinc-300 font-medium">Deții asigurare de răspundere profesională (E&O)?</label>
+                    <label className="text-zinc-600 font-medium">Deții asigurare de răspundere profesională (E&O)?</label>
                     <select
                       value={answers.hasProfessionalIndemnity}
                       onChange={(e) => setAnswers({ ...answers, hasProfessionalIndemnity: e.target.value as "yes" | "no" | "unclear" })}
-                      className="w-full h-10 px-3 rounded-xl bg-zinc-900 border border-zinc-800 text-white focus:outline-none"
+                      className="w-full h-10 px-3 rounded-xl bg-white border border-zinc-200 text-white focus:outline-none"
                     >
                       <option value="yes">{isRo ? "Da, activă" : "Yes, active"}</option>
                       <option value="no">{isRo ? "Nu dețin" : "No"}</option>
@@ -488,19 +488,19 @@ export function RiskProfileEngine() {
                   </div>
 
                   <div className="space-y-1.5">
-                    <label className="text-zinc-300 font-medium">Gestionezi baze de date sau sisteme IT ale clienților?</label>
+                    <label className="text-zinc-600 font-medium">Gestionezi baze de date sau sisteme IT ale clienților?</label>
                     <div className="flex gap-2">
                       <button
                         type="button"
                         onClick={() => setAnswers({ ...answers, handlesClientData: true })}
-                        className={`flex-1 py-2 rounded-xl border text-xs ${answers.handlesClientData ? "bg-purple-600 text-white border-purple-600" : "bg-zinc-900 text-zinc-400 border-zinc-800"}`}
+                        className={`flex-1 py-2 rounded-xl border text-xs ${answers.handlesClientData ? "bg-purple-600 text-white border-purple-600" : "bg-white text-zinc-500 border-zinc-200"}`}
                       >
                         {isRo ? "Da" : "Yes"}
                       </button>
                       <button
                         type="button"
                         onClick={() => setAnswers({ ...answers, handlesClientData: false })}
-                        className={`flex-1 py-2 rounded-xl border text-xs ${!answers.handlesClientData ? "bg-purple-600 text-white border-purple-600" : "bg-zinc-900 text-zinc-400 border-zinc-800"}`}
+                        className={`flex-1 py-2 rounded-xl border text-xs ${!answers.handlesClientData ? "bg-purple-600 text-white border-purple-600" : "bg-white text-zinc-500 border-zinc-200"}`}
                       >
                         {isRo ? "Nu" : "No"}
                       </button>
@@ -512,7 +512,7 @@ export function RiskProfileEngine() {
 
             {/* BUSINESS SECTION */}
             {selectedProfiles.includes("business") && (
-              <div className="p-5 rounded-2xl bg-zinc-900/50 border border-zinc-800 space-y-4">
+              <div className="p-5 rounded-2xl bg-white border border-zinc-200 space-y-4">
                 <h4 className="text-sm font-bold text-sky-400 flex items-center gap-2">
                   <Building2 className="w-4 h-4" />
                   <span>{isRo ? "Companie & IMM" : "Business & SME"}</span>
@@ -520,11 +520,11 @@ export function RiskProfileEngine() {
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div className="space-y-1.5">
-                    <label className="text-zinc-300 font-medium">Deții clauză de Pierderi Financiare (Business Interruption)?</label>
+                    <label className="text-zinc-600 font-medium">Deții clauză de Pierderi Financiare (Business Interruption)?</label>
                     <select
                       value={answers.hasBusinessInterruptionCoverage}
                       onChange={(e) => setAnswers({ ...answers, hasBusinessInterruptionCoverage: e.target.value as "yes" | "no" | "unclear" })}
-                      className="w-full h-10 px-3 rounded-xl bg-zinc-900 border border-zinc-800 text-white focus:outline-none"
+                      className="w-full h-10 px-3 rounded-xl bg-white border border-zinc-200 text-white focus:outline-none"
                     >
                       <option value="yes">{isRo ? "Da, acoperă salariile și profitul nerealizat" : "Yes, covers payroll & profit"}</option>
                       <option value="no">{isRo ? "Nu dețin" : "No"}</option>
@@ -533,11 +533,11 @@ export function RiskProfileEngine() {
                   </div>
 
                   <div className="space-y-1.5">
-                    <label className="text-zinc-300 font-medium">Deții poliță D&O (Răspunderea Administratorilor)?</label>
+                    <label className="text-zinc-600 font-medium">Deții poliță D&O (Răspunderea Administratorilor)?</label>
                     <select
                       value={answers.hasDirectorsLiability}
                       onChange={(e) => setAnswers({ ...answers, hasDirectorsLiability: e.target.value as "yes" | "no" | "unclear" })}
-                      className="w-full h-10 px-3 rounded-xl bg-zinc-900 border border-zinc-800 text-white focus:outline-none"
+                      className="w-full h-10 px-3 rounded-xl bg-white border border-zinc-200 text-white focus:outline-none"
                     >
                       <option value="yes">{isRo ? "Da, activă" : "Yes, active"}</option>
                       <option value="no">{isRo ? "Nu dețin" : "No"}</option>
@@ -550,7 +550,7 @@ export function RiskProfileEngine() {
 
             {/* PRIVATE CLIENT SECTION */}
             {selectedProfiles.includes("private_client") && (
-              <div className="p-5 rounded-2xl bg-zinc-900/50 border border-zinc-800 space-y-4">
+              <div className="p-5 rounded-2xl bg-white border border-zinc-200 space-y-4">
                 <h4 className="text-sm font-bold text-rose-400 flex items-center gap-2">
                   <Gem className="w-4 h-4" />
                   <span>{isRo ? "Private Client & Active de Lux" : "Private Client & Luxury Assets"}</span>
@@ -558,11 +558,11 @@ export function RiskProfileEngine() {
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div className="space-y-1.5">
-                    <label className="text-zinc-300 font-medium">Deții clauză de Valoare Agreată (Agreed Value) pe baza evaluării?</label>
+                    <label className="text-zinc-600 font-medium">Deții clauză de Valoare Agreată (Agreed Value) pe baza evaluării?</label>
                     <select
                       value={answers.hasAgreedValueClause}
                       onChange={(e) => setAnswers({ ...answers, hasAgreedValueClause: e.target.value as "yes" | "no" | "unclear" })}
-                      className="w-full h-10 px-3 rounded-xl bg-zinc-900 border border-zinc-800 text-white focus:outline-none"
+                      className="w-full h-10 px-3 rounded-xl bg-white border border-zinc-200 text-white focus:outline-none"
                     >
                       <option value="yes">{isRo ? "Da, valoare agreată fără depreciere" : "Yes, agreed value without depreciation"}</option>
                       <option value="no">{isRo ? "Nu, polițe standard de serie" : "No, standard off-the-shelf policies"}</option>
@@ -574,12 +574,12 @@ export function RiskProfileEngine() {
             )}
           </div>
 
-          <div className="flex justify-between pt-4 border-t border-zinc-800">
+          <div className="flex justify-between pt-4 border-t border-zinc-200">
             <Button
               type="button"
               variant="outline"
               onClick={() => setCurrentStep(1)}
-              className="rounded-full border-zinc-800 text-zinc-300 text-xs h-11 px-5 flex items-center gap-2"
+              className="rounded-full border-zinc-200 text-zinc-600 text-xs h-11 px-5 flex items-center gap-2"
             >
               <ArrowLeft className="w-4 h-4" />
               <span>{isRo ? "Înapoi la Profile" : "Back to Profiles"}</span>
@@ -601,15 +601,15 @@ export function RiskProfileEngine() {
       {/* STEP 3: FINANCIAL GAP WORKSHEET (OPTIONAL) */}
       {/* ======================================================== */}
       {currentStep === 3 && (
-        <div className="p-6 sm:p-8 rounded-[2.5rem] bg-zinc-950 border border-zinc-800 shadow-xl space-y-6">
-          <div className="space-y-1 pb-4 border-b border-zinc-800">
+        <div className="p-6 sm:p-8 rounded-[2.5rem] bg-zinc-50 border border-zinc-200 shadow-xl space-y-6">
+          <div className="space-y-1 pb-4 border-b border-zinc-200">
             <span className="text-[10px] uppercase font-bold text-blue-400 tracking-wider">
               {isRo ? "PASUL 3 DIN 4: ESTIMATOR DEFICIT FINANCIAR (OPȚIONAL)" : "STEP 3 OF 4: FINANCIAL GAP WORKSHEET (OPTIONAL)"}
             </span>
-            <h3 className="text-xl font-heading font-bold text-white">
+            <h3 className="text-xl font-heading font-bold text-zinc-900">
               {isRo ? "Compară valorile estimate cu limitele actuale din polițe" : "Compare estimated asset values with current insured sums"}
             </h3>
-            <p className="text-xs text-zinc-400 leading-relaxed">
+            <p className="text-xs text-zinc-500 leading-relaxed">
               {isRo
                 ? "Calculele de mai jos folosesc formule matematice transparente pentru a evidenția potențiala subasigurare sau deficitul de protecție."
                 : "The calculations below compare user estimates using explicit formulas to highlight underinsurance or coverage gaps."}
@@ -618,35 +618,35 @@ export function RiskProfileEngine() {
 
           <div className="space-y-6 text-xs">
             {/* PROPERTY RECONSTRUCTION GAP */}
-            <div className="p-5 rounded-2xl bg-zinc-900/50 border border-zinc-800 space-y-4">
-              <h4 className="font-bold text-white flex items-center justify-between">
+            <div className="p-5 rounded-2xl bg-white border border-zinc-200 space-y-4">
+              <h4 className="font-bold text-zinc-900 flex items-center justify-between">
                 <span>{isRo ? "1. Clădire & Locuință (Cost Reconstrucție vs. Sumă Asigurată)" : "1. Property Reconstruction Gap"}</span>
                 <span className="text-xs text-blue-400 font-mono">{worksheet.currency}</span>
               </h4>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="space-y-1.5">
-                  <label className="text-zinc-400">Cost estimat de reconstrucție (de nou):</label>
+                  <label className="text-zinc-500">Cost estimat de reconstrucție (de nou):</label>
                   <Input
                     type="number"
                     value={worksheet.estimatedReconstructionCost || ""}
                     onChange={(e) => setWorksheet({ ...worksheet, estimatedReconstructionCost: e.target.value ? parseFloat(e.target.value) : undefined })}
-                    className="h-10 bg-zinc-900 border-zinc-800 text-white rounded-xl"
+                    className="h-10 bg-white border-zinc-200 text-white rounded-xl"
                   />
                 </div>
                 <div className="space-y-1.5">
-                  <label className="text-zinc-400">Sumă asigurată curentă pe clădire:</label>
+                  <label className="text-zinc-500">Sumă asigurată curentă pe clădire:</label>
                   <Input
                     type="number"
                     value={worksheet.currentHomeSumInsured || ""}
                     onChange={(e) => setWorksheet({ ...worksheet, currentHomeSumInsured: e.target.value ? parseFloat(e.target.value) : undefined })}
-                    className="h-10 bg-zinc-900 border-zinc-800 text-white rounded-xl"
+                    className="h-10 bg-white border-zinc-200 text-white rounded-xl"
                   />
                 </div>
               </div>
 
               {gaps.homeGap && (
-                <div className="p-3.5 rounded-xl bg-zinc-950 border border-zinc-800 text-zinc-300 font-mono text-[11px] flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                <div className="p-3.5 rounded-xl bg-zinc-50 border border-zinc-200 text-zinc-600 font-mono text-[11px] flex flex-col sm:flex-row sm:items-center justify-between gap-2">
                   <span>{gaps.homeGap.formula}</span>
                   <span className={`font-bold px-2 py-0.5 rounded-full ${gaps.homeGap.status === "underinsured" ? "bg-rose-500/10 text-rose-400 border border-rose-500/20" : "bg-emerald-500/10 text-emerald-400"}`}>
                     {gaps.homeGap.status === "underinsured" ? isRo ? "Subasigurare Detectată" : "Underinsured" : isRo ? "Acoperire Adecvată" : "Adequate"}
@@ -656,28 +656,28 @@ export function RiskProfileEngine() {
             </div>
 
             {/* LIFE / INCOME GAP */}
-            <div className="p-5 rounded-2xl bg-zinc-900/50 border border-zinc-800 space-y-4">
-              <h4 className="font-bold text-white flex items-center justify-between">
+            <div className="p-5 rounded-2xl bg-white border border-zinc-200 space-y-4">
+              <h4 className="font-bold text-zinc-900 flex items-center justify-between">
                 <span>{isRo ? "2. Protecție Venit Familie (Venit Anual × Ani vs. Asigurare Viață)" : "2. Family Income Protection Gap"}</span>
                 <span className="text-xs text-blue-400 font-mono">{worksheet.currency}</span>
               </h4>
 
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                 <div className="space-y-1.5">
-                  <label className="text-zinc-400">Venit net anual de protejat:</label>
+                  <label className="text-zinc-500">Venit net anual de protejat:</label>
                   <Input
                     type="number"
                     value={worksheet.annualNetIncome || ""}
                     onChange={(e) => setWorksheet({ ...worksheet, annualNetIncome: e.target.value ? parseFloat(e.target.value) : undefined })}
-                    className="h-10 bg-zinc-900 border-zinc-800 text-white rounded-xl"
+                    className="h-10 bg-white border-zinc-200 text-white rounded-xl"
                   />
                 </div>
                 <div className="space-y-1.5">
-                  <label className="text-zinc-400">Orizont protecție (Ani):</label>
+                  <label className="text-zinc-500">Orizont protecție (Ani):</label>
                   <select
                     value={worksheet.replacementYears}
                     onChange={(e) => setWorksheet({ ...worksheet, replacementYears: parseInt(e.target.value, 10) })}
-                    className="w-full h-10 px-3 rounded-xl bg-zinc-900 border border-zinc-800 text-white focus:outline-none"
+                    className="w-full h-10 px-3 rounded-xl bg-white border border-zinc-200 text-white focus:outline-none"
                   >
                     <option value={3}>3 Ani</option>
                     <option value={5}>5 Ani (Recomandat)</option>
@@ -685,18 +685,18 @@ export function RiskProfileEngine() {
                   </select>
                 </div>
                 <div className="space-y-1.5">
-                  <label className="text-zinc-400">Sumă asigurată de viață curentă:</label>
+                  <label className="text-zinc-500">Sumă asigurată de viață curentă:</label>
                   <Input
                     type="number"
                     value={worksheet.currentLifeSumInsured || ""}
                     onChange={(e) => setWorksheet({ ...worksheet, currentLifeSumInsured: e.target.value ? parseFloat(e.target.value) : undefined })}
-                    className="h-10 bg-zinc-900 border-zinc-800 text-white rounded-xl"
+                    className="h-10 bg-white border-zinc-200 text-white rounded-xl"
                   />
                 </div>
               </div>
 
               {gaps.lifeGap && (
-                <div className="p-3.5 rounded-xl bg-zinc-950 border border-zinc-800 text-zinc-300 font-mono text-[11px] flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                <div className="p-3.5 rounded-xl bg-zinc-50 border border-zinc-200 text-zinc-600 font-mono text-[11px] flex flex-col sm:flex-row sm:items-center justify-between gap-2">
                   <span>{gaps.lifeGap.formula}</span>
                   <span className={`font-bold px-2 py-0.5 rounded-full ${gaps.lifeGap.status === "gap" ? "bg-rose-500/10 text-rose-400 border border-rose-500/20" : "bg-emerald-500/10 text-emerald-400"}`}>
                     {gaps.lifeGap.status === "gap" ? isRo ? `Deficit: ${Math.abs(gaps.lifeGap.difference)} ${worksheet.currency}` : `Gap: ${Math.abs(gaps.lifeGap.difference)} ${worksheet.currency}` : isRo ? "Acoperit" : "Adequate"}
@@ -706,12 +706,12 @@ export function RiskProfileEngine() {
             </div>
           </div>
 
-          <div className="flex justify-between pt-4 border-t border-zinc-800">
+          <div className="flex justify-between pt-4 border-t border-zinc-200">
             <Button
               type="button"
               variant="outline"
               onClick={() => setCurrentStep(2)}
-              className="rounded-full border-zinc-800 text-zinc-300 text-xs h-11 px-5 flex items-center gap-2"
+              className="rounded-full border-zinc-200 text-zinc-600 text-xs h-11 px-5 flex items-center gap-2"
             >
               <ArrowLeft className="w-4 h-4" />
               <span>{isRo ? "Înapoi la Chestionar" : "Back to Questions"}</span>
@@ -734,13 +734,13 @@ export function RiskProfileEngine() {
       {/* ======================================================== */}
       {currentStep === 4 && (
         <div className="space-y-8">
-          <div className="p-6 sm:p-8 rounded-[2.5rem] bg-zinc-950 border border-zinc-800 shadow-xl space-y-6">
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-zinc-800">
+          <div className="p-6 sm:p-8 rounded-[2.5rem] bg-zinc-50 border border-zinc-200 shadow-xl space-y-6">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-zinc-200">
               <div className="space-y-1">
                 <span className="text-[10px] uppercase font-bold text-blue-400 tracking-wider">
                   {isRo ? "REZULTATE EVALUARE RISCURI" : "RISK ASSESSMENT RESULTS"}
                 </span>
-                <h3 className="text-xl font-heading font-bold text-white">
+                <h3 className="text-xl font-heading font-bold text-zinc-900">
                   {isRo ? "Inventar Expuneri & Recomandări de Verificare" : "Exposure Inventory & Review Recommendations"}
                 </h3>
               </div>
@@ -748,7 +748,7 @@ export function RiskProfileEngine() {
                 type="button"
                 variant="outline"
                 onClick={handleDownloadPdf}
-                className="rounded-full border-zinc-800 hover:bg-zinc-800 text-zinc-300 text-xs h-10 px-4 flex items-center gap-1.5 shrink-0"
+                className="rounded-full border-zinc-200 hover:bg-zinc-800 text-zinc-600 text-xs h-10 px-4 flex items-center gap-1.5 shrink-0"
               >
                 <Download className="w-4 h-4 text-blue-400" />
                 <span>{isRo ? "Descarcă Raport PDF" : "Download PDF Report"}</span>
@@ -760,29 +760,29 @@ export function RiskProfileEngine() {
               {assessments.map((item) => (
                 <div
                   key={item.id}
-                  className="p-5 rounded-2xl bg-zinc-900/50 border border-zinc-800/80 space-y-3"
+                  className="p-5 rounded-2xl bg-white border border-zinc-200/80 space-y-3"
                 >
                   <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
-                    <h4 className="text-sm font-heading font-bold text-white">
+                    <h4 className="text-sm font-heading font-bold text-zinc-900">
                       {isRo ? item.titleRo : item.titleEn}
                     </h4>
                     <div>{getStatusBadge(item.status)}</div>
                   </div>
 
-                  <p className="text-zinc-300 leading-relaxed text-xs">
+                  <p className="text-zinc-600 leading-relaxed text-xs">
                     {isRo ? item.triggerReasonRo : item.triggerReasonEn}
                   </p>
 
-                  <div className="p-3.5 rounded-xl bg-zinc-950/80 border border-zinc-800 space-y-1.5">
+                  <div className="p-3.5 rounded-xl bg-zinc-50 border border-zinc-200 space-y-1.5">
                     <span className="text-[10px] font-bold uppercase text-blue-400 tracking-wider block">
                       {isRo ? "Întrebare Recomandată pentru Broker:" : "Suggested Question for Advisor:"}
                     </span>
-                    <div className="flex items-start justify-between gap-2 text-zinc-200">
+                    <div className="flex items-start justify-between gap-2 text-zinc-800">
                       <p className="italic">{isRo ? item.suggestedQuestionRo : item.suggestedQuestionEn}</p>
                       <button
                         type="button"
                         onClick={() => handleCopy(isRo ? item.suggestedQuestionRo : item.suggestedQuestionEn, 99)}
-                        className="p-1.5 text-zinc-400 hover:text-white rounded-lg bg-zinc-900 border border-zinc-800 shrink-0"
+                        className="p-1.5 text-zinc-500 hover:text-white rounded-lg bg-white border border-zinc-200 shrink-0"
                         title={isRo ? "Copiază" : "Copy"}
                       >
                         <Copy className="w-3.5 h-3.5" />
@@ -794,7 +794,7 @@ export function RiskProfileEngine() {
                     <div className="pt-2 flex justify-end">
                       <Link
                         href={item.relatedLink.url}
-                        className="text-blue-400 hover:text-blue-300 inline-flex items-center gap-1 font-semibold text-[11px]"
+                        className="text-blue-400 hover:text-blue-800 inline-flex items-center gap-1 font-semibold text-[11px]"
                       >
                         <span>{isRo ? item.relatedLink.labelRo : item.relatedLink.labelEn}</span>
                         <ExternalLink className="w-3 h-3" />
@@ -808,10 +808,10 @@ export function RiskProfileEngine() {
             {/* ADVISORY CTA */}
             <div className="p-6 rounded-3xl bg-blue-600/10 border border-blue-500/30 flex flex-col sm:flex-row items-center justify-between gap-4">
               <div className="space-y-1 text-center sm:text-left">
-                <h4 className="text-sm font-bold text-white">
+                <h4 className="text-sm font-bold text-zinc-900">
                   {isRo ? "Dorești un audit profesionist al polițelor tale?" : "Want a professional audit of your existing policies?"}
                 </h4>
-                <p className="text-xs text-zinc-400">
+                <p className="text-xs text-zinc-500">
                   {isRo ? "Trimite polițele pentru o verificare independentă a excluderilor și franșizelor." : "Submit your contracts for an independent terms and deductible audit."}
                 </p>
               </div>
@@ -826,8 +826,8 @@ export function RiskProfileEngine() {
       )}
 
       {/* 2. PRIVACY GUARANTEE */}
-      <div className="p-6 rounded-3xl bg-zinc-900/40 border border-zinc-800 space-y-2 text-xs text-zinc-400">
-        <div className="flex items-center gap-2 text-zinc-300 font-bold">
+      <div className="p-6 rounded-3xl bg-zinc-50 border border-zinc-200 space-y-2 text-xs text-zinc-500">
+        <div className="flex items-center gap-2 text-zinc-600 font-bold">
           <Lock className="w-4 h-4 text-emerald-400" />
           <span>{isRo ? "Confidențialitate Totală & Stocare Volatilă" : "Total Privacy & In-Memory Execution"}</span>
         </div>

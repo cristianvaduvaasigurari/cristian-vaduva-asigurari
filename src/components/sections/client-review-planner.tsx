@@ -365,7 +365,7 @@ export function ClientReviewPlanner() {
   return (
     <div className="w-full space-y-8 max-w-5xl mx-auto">
       {/* 1. TOP TOOLBAR */}
-      <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4 p-4 sm:p-5 rounded-3xl bg-zinc-900/80 border border-zinc-800">
+      <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4 p-4 sm:p-5 rounded-3xl bg-white border border-zinc-200">
         <div className="flex items-center gap-1.5 overflow-x-auto pb-1 sm:pb-0 text-xs">
           {[
             { id: "scope", labelRo: "1. Scop & Teme", labelEn: "1. Scope & Areas" },
@@ -381,7 +381,7 @@ export function ClientReviewPlanner() {
               className={`px-3 py-2 rounded-xl font-medium transition-all shrink-0 ${
                 activeTab === tab.id
                   ? "bg-blue-600 text-white shadow-md font-bold"
-                  : "bg-zinc-950 text-zinc-400 hover:text-white border border-zinc-800"
+                  : "bg-zinc-50 text-zinc-500 hover:text-white border border-zinc-200"
               }`}
             >
               {isRo ? tab.labelRo : tab.labelEn}
@@ -389,12 +389,12 @@ export function ClientReviewPlanner() {
           ))}
         </div>
 
-        <div className="flex items-center justify-between sm:justify-end gap-2 text-xs border-t sm:border-t-0 pt-3 sm:pt-0 border-zinc-800">
+        <div className="flex items-center justify-between sm:justify-end gap-2 text-xs border-t sm:border-t-0 pt-3 sm:pt-0 border-zinc-200">
           <Button
             type="button"
             variant="outline"
             onClick={handleDownloadPdf}
-            className="rounded-full border-zinc-800 hover:bg-zinc-800 text-zinc-300 h-9 px-3.5 flex items-center gap-1.5"
+            className="rounded-full border-zinc-200 hover:bg-zinc-800 text-zinc-600 h-9 px-3.5 flex items-center gap-1.5"
           >
             <Download className="w-3.5 h-3.5 text-blue-400" />
             <span>PDF</span>
@@ -404,14 +404,14 @@ export function ClientReviewPlanner() {
             type="button"
             variant="outline"
             onClick={handleExportJson}
-            className="rounded-full border-zinc-800 hover:bg-zinc-800 text-zinc-300 h-9 px-3"
+            className="rounded-full border-zinc-200 hover:bg-zinc-800 text-zinc-600 h-9 px-3"
             title="Export JSON"
           >
             <Download className="w-3.5 h-3.5 text-amber-400" />
             <span className="hidden md:inline">JSON</span>
           </Button>
 
-          <label className="cursor-pointer rounded-full border border-zinc-800 hover:bg-zinc-800 text-zinc-300 h-9 px-3 inline-flex items-center gap-1.5 transition-colors">
+          <label className="cursor-pointer rounded-full border border-zinc-200 hover:bg-zinc-800 text-zinc-600 h-9 px-3 inline-flex items-center gap-1.5 transition-colors">
             <Upload className="w-3.5 h-3.5 text-emerald-400" />
             <span className="hidden md:inline">Import</span>
             <input type="file" accept=".json" onChange={handleImportJson} className="hidden" />
@@ -426,18 +426,18 @@ export function ClientReviewPlanner() {
             <Trash2 className="w-3.5 h-3.5" />
           </button>
 
-          <div className="flex items-center gap-1 p-1 rounded-full bg-zinc-950 border border-zinc-800">
+          <div className="flex items-center gap-1 p-1 rounded-full bg-zinc-50 border border-zinc-200">
             <button
               type="button"
               onClick={() => setLang("ro")}
-              className={`px-2.5 py-0.5 rounded-full font-medium ${lang === "ro" ? "bg-blue-600 text-white" : "text-zinc-400 hover:text-white"}`}
+              className={`px-2.5 py-0.5 rounded-full font-medium ${lang === "ro" ? "bg-blue-600 text-white" : "text-zinc-500 hover:text-white"}`}
             >
               RO
             </button>
             <button
               type="button"
               onClick={() => setLang("en")}
-              className={`px-2.5 py-0.5 rounded-full font-medium ${lang === "en" ? "bg-blue-600 text-white" : "text-zinc-400 hover:text-white"}`}
+              className={`px-2.5 py-0.5 rounded-full font-medium ${lang === "en" ? "bg-blue-600 text-white" : "text-zinc-500 hover:text-white"}`}
             >
               EN
             </button>
@@ -446,7 +446,7 @@ export function ClientReviewPlanner() {
       </div>
 
       {importStatus && (
-        <div className="p-4 rounded-2xl bg-blue-500/10 border border-blue-500/30 text-blue-300 text-xs flex items-center gap-2">
+        <div className="p-4 rounded-2xl bg-blue-50 border border-blue-200 text-blue-800 text-xs flex items-center gap-2">
           <Info className="w-4 h-4 text-blue-400" />
           <span>{importStatus}</span>
         </div>
@@ -456,32 +456,32 @@ export function ClientReviewPlanner() {
       {/* TAB 1: SCOPE & DISCUSSION AREAS */}
       {/* ======================================================== */}
       {activeTab === "scope" && (
-        <div className="p-6 sm:p-8 rounded-[2.5rem] bg-zinc-950 border border-zinc-800 shadow-xl space-y-6">
-          <div className="space-y-1 pb-4 border-b border-zinc-800">
+        <div className="p-6 sm:p-8 rounded-[2.5rem] bg-zinc-50 border border-zinc-200 shadow-xl space-y-6">
+          <div className="space-y-1 pb-4 border-b border-zinc-200">
             <span className="text-[10px] uppercase font-bold text-blue-400 tracking-wider">
               {isRo ? "SCOP REVIZUIRE & TEMATICI CHEIE" : "REVIEW SCOPE & TOPICS"}
             </span>
-            <h3 className="text-xl font-heading font-bold text-white">
+            <h3 className="text-xl font-heading font-bold text-zinc-900">
               {plan.title}
             </h3>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
             <div className="space-y-1.5 sm:col-span-2">
-              <label className="text-zinc-300 font-medium">{isRo ? "Titlu Ședință Revizuire *" : "Review Meeting Title *"}</label>
+              <label className="text-zinc-600 font-medium">{isRo ? "Titlu Ședință Revizuire *" : "Review Meeting Title *"}</label>
               <Input
                 value={plan.title}
                 onChange={(e) => setPlan({ ...plan, title: e.target.value })}
-                className="h-11 bg-zinc-900 border-zinc-800 text-white rounded-xl text-xs"
+                className="h-11 bg-white border-zinc-200 text-white rounded-xl text-xs"
               />
             </div>
 
             <div className="space-y-1.5">
-              <label className="text-zinc-300 font-medium">{isRo ? "Tip Revizuire" : "Review Type"}</label>
+              <label className="text-zinc-600 font-medium">{isRo ? "Tip Revizuire" : "Review Type"}</label>
               <select
                 value={plan.reviewType}
                 onChange={(e) => setPlan({ ...plan, reviewType: e.target.value as ReviewType })}
-                className="w-full h-11 px-3 rounded-xl bg-zinc-900 border border-zinc-800 text-white text-xs focus:outline-none"
+                className="w-full h-11 px-3 rounded-xl bg-white border border-zinc-200 text-white text-xs focus:outline-none"
               >
                 {Object.entries(isRo ? REVIEW_TYPE_LABELS_RO : REVIEW_TYPE_LABELS_EN).map(([t, lbl]) => (
                   <option key={t} value={t}>
@@ -492,39 +492,39 @@ export function ClientReviewPlanner() {
             </div>
 
             <div className="space-y-1.5">
-              <label className="text-zinc-300 font-medium">{isRo ? "Dată Planificată Întâlnire" : "Planned Review Date"}</label>
+              <label className="text-zinc-600 font-medium">{isRo ? "Dată Planificată Întâlnire" : "Planned Review Date"}</label>
               <Input
                 type="date"
                 value={plan.plannedDate || ""}
                 onChange={(e) => setPlan({ ...plan, plannedDate: e.target.value })}
-                className="h-11 bg-zinc-900 border-zinc-800 text-white rounded-xl text-xs"
+                className="h-11 bg-white border-zinc-200 text-white rounded-xl text-xs"
               />
             </div>
 
             <div className="space-y-1.5 sm:col-span-2">
-              <label className="text-zinc-300 font-medium">{isRo ? "Participanți / Persoane Implicate" : "Participants / Roles"}</label>
+              <label className="text-zinc-600 font-medium">{isRo ? "Participanți / Persoane Implicate" : "Participants / Roles"}</label>
               <Input
                 placeholder="Ex: Cristian Văduva (Broker), Client, Director Financiar..."
                 value={plan.participants || ""}
                 onChange={(e) => setPlan({ ...plan, participants: e.target.value })}
-                className="h-11 bg-zinc-900 border-zinc-800 text-white rounded-xl text-xs"
+                className="h-11 bg-white border-zinc-200 text-white rounded-xl text-xs"
               />
             </div>
 
             <div className="space-y-1.5 sm:col-span-2">
-              <label className="text-zinc-300 font-medium">{isRo ? "Context General & Obiective Urmărite" : "General Context & Goals"}</label>
+              <label className="text-zinc-600 font-medium">{isRo ? "Context General & Obiective Urmărite" : "General Context & Goals"}</label>
               <textarea
                 rows={2}
                 placeholder={isRo ? "Scurt context despre evoluția patrimoniului sau schimbările dorite..." : "Context..."}
                 value={plan.generalContext || ""}
                 onChange={(e) => setPlan({ ...plan, generalContext: e.target.value })}
-                className="w-full p-3 rounded-2xl bg-zinc-900 border border-zinc-800 text-white text-xs focus:outline-none"
+                className="w-full p-3 rounded-2xl bg-white border border-zinc-200 text-white text-xs focus:outline-none"
               />
             </div>
           </div>
 
           <div className="space-y-3 pt-2">
-            <label className="text-zinc-300 font-bold text-xs block">
+            <label className="text-zinc-600 font-bold text-xs block">
               {isRo ? "Selectează Tematicile de Discutat (Multi-Select):" : "Select Discussion Areas:"}
             </label>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2.5 text-xs">
@@ -537,7 +537,7 @@ export function ClientReviewPlanner() {
                     className={`cursor-pointer p-3 rounded-xl border transition-all flex items-center justify-between ${
                       isSelected
                         ? "bg-blue-600/10 border-blue-500 text-white"
-                        : "bg-zinc-900/40 border-zinc-800/80 text-zinc-400 hover:text-white"
+                        : "bg-zinc-50 border-zinc-200/80 text-zinc-500 hover:text-white"
                     }`}
                   >
                     <span className="font-medium text-xs truncate">{lbl}</span>
@@ -548,7 +548,7 @@ export function ClientReviewPlanner() {
             </div>
           </div>
 
-          <div className="flex justify-end pt-4 border-t border-zinc-800">
+          <div className="flex justify-end pt-4 border-t border-zinc-200">
             <Button
               type="button"
               onClick={() => setActiveTab("changes")}
@@ -565,13 +565,13 @@ export function ClientReviewPlanner() {
       {/* TAB 2: CHANGE REGISTER */}
       {/* ======================================================== */}
       {activeTab === "changes" && (
-        <div className="p-6 sm:p-8 rounded-[2.5rem] bg-zinc-950 border border-zinc-800 shadow-xl space-y-6">
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-zinc-800">
+        <div className="p-6 sm:p-8 rounded-[2.5rem] bg-zinc-50 border border-zinc-200 shadow-xl space-y-6">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-zinc-200">
             <div className="space-y-1">
               <span className="text-[10px] uppercase font-bold text-blue-400 tracking-wider">
                 {isRo ? "REGISTRU SCHIMBĂRI RECENTE ÎN PATRIMONIU" : "CHANGE REGISTER"}
               </span>
-              <h3 className="text-xl font-heading font-bold text-white">
+              <h3 className="text-xl font-heading font-bold text-zinc-900">
                 {isRo ? "Ce s-a schimbat de la ultima revizuire?" : "What changed since your last review?"}
               </h3>
             </div>
@@ -587,12 +587,12 @@ export function ClientReviewPlanner() {
           </div>
 
           {plan.changes.length === 0 ? (
-            <div className="p-12 text-center space-y-3 rounded-3xl bg-zinc-900/40 border border-zinc-800/80">
+            <div className="p-12 text-center space-y-3 rounded-3xl bg-zinc-50 border border-zinc-200/80">
               <Sparkles className="w-10 h-10 text-zinc-600 mx-auto" />
-              <h4 className="text-sm font-bold text-white">
+              <h4 className="text-sm font-bold text-zinc-900">
                 {isRo ? "Nicio schimbare înregistrată" : "No changes recorded"}
               </h4>
-              <p className="text-xs text-zinc-400 max-w-sm mx-auto">
+              <p className="text-xs text-zinc-500 max-w-sm mx-auto">
                 {isRo
                   ? "Consemnează renovările, achizițiile auto sau schimbările de activitate pentru a le discuta cu brokerul."
                   : "Record renovations, auto purchases, or business shifts to discuss with your advisor."}
@@ -615,15 +615,15 @@ export function ClientReviewPlanner() {
                 return (
                   <div
                     key={ch.id}
-                    className="p-4 sm:p-5 rounded-2xl bg-zinc-900/50 border border-zinc-800 hover:border-zinc-700 transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs"
+                    className="p-4 sm:p-5 rounded-2xl bg-white border border-zinc-200 hover:border-zinc-300 transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs"
                   >
                     <div className="space-y-1 flex-1">
                       <div className="flex flex-wrap items-center gap-2">
-                        <span className="text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded-full bg-zinc-900 text-blue-400 border border-zinc-800">
+                        <span className="text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded-full bg-white text-blue-400 border border-zinc-200">
                           {areaLabel}
                         </span>
                         {ch.changeDate && (
-                          <span className="text-[11px] text-zinc-400 font-mono">
+                          <span className="text-[11px] text-zinc-500 font-mono">
                             {ch.changeDate}
                           </span>
                         )}
@@ -633,27 +633,27 @@ export function ClientReviewPlanner() {
                               ? "bg-amber-500/10 text-amber-400 border-amber-500/20"
                               : ch.status === "discussed"
                               ? "bg-emerald-500/10 text-emerald-400 border-emerald-500/20"
-                              : "bg-zinc-800 text-zinc-400 border-zinc-700"
+                              : "bg-zinc-800 text-zinc-500 border-zinc-300"
                           }`}
                         >
                           {statusLabel}
                         </span>
                       </div>
-                      <p className="text-zinc-200 font-medium text-xs pt-1">{ch.description}</p>
+                      <p className="text-zinc-800 font-medium text-xs pt-1">{ch.description}</p>
                     </div>
 
                     <div className="flex items-center gap-1.5 shrink-0">
                       <button
                         type="button"
                         onClick={() => openEditChange(ch)}
-                        className="p-1.5 rounded-lg bg-zinc-900 text-zinc-400 hover:text-white border border-zinc-800"
+                        className="p-1.5 rounded-lg bg-white text-zinc-500 hover:text-white border border-zinc-200"
                       >
                         <Edit3 className="w-3.5 h-3.5" />
                       </button>
                       <button
                         type="button"
                         onClick={() => handleDeleteChange(ch.id)}
-                        className="p-1.5 rounded-lg bg-zinc-900 text-zinc-500 hover:text-rose-400 border border-zinc-800"
+                        className="p-1.5 rounded-lg bg-white text-zinc-500 hover:text-rose-400 border border-zinc-200"
                       >
                         <Trash2 className="w-3.5 h-3.5" />
                       </button>
@@ -670,13 +670,13 @@ export function ClientReviewPlanner() {
       {/* TAB 3: DISCUSSION AGENDA */}
       {/* ======================================================== */}
       {activeTab === "agenda" && (
-        <div className="p-6 sm:p-8 rounded-[2.5rem] bg-zinc-950 border border-zinc-800 shadow-xl space-y-6">
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-zinc-800">
+        <div className="p-6 sm:p-8 rounded-[2.5rem] bg-zinc-50 border border-zinc-200 shadow-xl space-y-6">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-zinc-200">
             <div className="space-y-1">
               <span className="text-[10px] uppercase font-bold text-blue-400 tracking-wider">
                 {isRo ? "AGENDA DE DISCUȚIE & ÎNTREBĂRI CLARIFICATOARE" : "DISCUSSION AGENDA"}
               </span>
-              <h3 className="text-xl font-heading font-bold text-white">
+              <h3 className="text-xl font-heading font-bold text-zinc-900">
                 {isRo ? "Subiecte și întrebări pregătite pentru întâlnire" : "Key questions and topics for the review"}
               </h3>
             </div>
@@ -699,24 +699,24 @@ export function ClientReviewPlanner() {
               return (
                 <div
                   key={ag.id}
-                  className="p-4 sm:p-5 rounded-2xl bg-zinc-900/50 border border-zinc-800 hover:border-zinc-700 transition-all space-y-2 text-xs"
+                  className="p-4 sm:p-5 rounded-2xl bg-white border border-zinc-200 hover:border-zinc-300 transition-all space-y-2 text-xs"
                 >
                   <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
                     <div className="flex flex-wrap items-center gap-2">
-                      <span className="text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded-full bg-zinc-900 text-blue-400 border border-zinc-800">
+                      <span className="text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded-full bg-white text-blue-400 border border-zinc-200">
                         {areaLabel}
                       </span>
                       <span
                         className={`text-[10px] uppercase font-bold px-2 py-0.5 rounded-full ${
                           ag.priority === "high"
                             ? "bg-rose-500/10 text-rose-400 border border-rose-500/20"
-                            : "bg-zinc-800 text-zinc-300"
+                            : "bg-zinc-800 text-zinc-600"
                         }`}
                       >
                         {ag.priority}
                       </span>
-                      <span className="text-[10px] text-zinc-400">
-                        Status: <strong className="text-zinc-200">{statusLabel}</strong>
+                      <span className="text-[10px] text-zinc-500">
+                        Status: <strong className="text-zinc-800">{statusLabel}</strong>
                       </span>
                     </div>
 
@@ -724,26 +724,26 @@ export function ClientReviewPlanner() {
                       <button
                         type="button"
                         onClick={() => openEditAgenda(ag)}
-                        className="p-1.5 rounded-lg bg-zinc-900 text-zinc-400 hover:text-white border border-zinc-800"
+                        className="p-1.5 rounded-lg bg-white text-zinc-500 hover:text-white border border-zinc-200"
                       >
                         <Edit3 className="w-3.5 h-3.5" />
                       </button>
                       <button
                         type="button"
                         onClick={() => handleDeleteAgenda(ag.id)}
-                        className="p-1.5 rounded-lg bg-zinc-900 text-zinc-500 hover:text-rose-400 border border-zinc-800"
+                        className="p-1.5 rounded-lg bg-white text-zinc-500 hover:text-rose-400 border border-zinc-200"
                       >
                         <Trash2 className="w-3.5 h-3.5" />
                       </button>
                     </div>
                   </div>
 
-                  <h4 className="text-sm font-heading font-bold text-white">{ag.title}</h4>
+                  <h4 className="text-sm font-heading font-bold text-zinc-900">{ag.title}</h4>
                   {ag.questionDetails && (
-                    <p className="text-xs text-zinc-300 leading-relaxed">{ag.questionDetails}</p>
+                    <p className="text-xs text-zinc-600 leading-relaxed">{ag.questionDetails}</p>
                   )}
                   {ag.advisorNotes && (
-                    <div className="p-2.5 rounded-xl bg-zinc-950 text-zinc-400 italic text-[11px]">
+                    <div className="p-2.5 rounded-xl bg-zinc-50 text-zinc-500 italic text-[11px]">
                       {isRo ? "Răspuns / Notițe Consultant:" : "Advisor Notes:"} {ag.advisorNotes}
                     </div>
                   )}
@@ -758,13 +758,13 @@ export function ClientReviewPlanner() {
       {/* TAB 4: DECISION REGISTER */}
       {/* ======================================================== */}
       {activeTab === "decisions" && (
-        <div className="p-6 sm:p-8 rounded-[2.5rem] bg-zinc-950 border border-zinc-800 shadow-xl space-y-6">
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-zinc-800">
+        <div className="p-6 sm:p-8 rounded-[2.5rem] bg-zinc-50 border border-zinc-200 shadow-xl space-y-6">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-zinc-200">
             <div className="space-y-1">
               <span className="text-[10px] uppercase font-bold text-blue-400 tracking-wider">
                 {isRo ? "REGISTRU DECIZII & RESPONSABILITĂȚI" : "DECISION REGISTER"}
               </span>
-              <h3 className="text-xl font-heading font-bold text-white">
+              <h3 className="text-xl font-heading font-bold text-zinc-900">
                 {isRo ? "Decizii convenite și pași de urmat" : "Agreed decisions and action items"}
               </h3>
             </div>
@@ -780,12 +780,12 @@ export function ClientReviewPlanner() {
           </div>
 
           {plan.decisions.length === 0 ? (
-            <div className="p-12 text-center space-y-3 rounded-3xl bg-zinc-900/40 border border-zinc-800/80">
+            <div className="p-12 text-center space-y-3 rounded-3xl bg-zinc-50 border border-zinc-200/80">
               <CalendarCheck className="w-10 h-10 text-zinc-600 mx-auto" />
-              <h4 className="text-sm font-bold text-white">
+              <h4 className="text-sm font-bold text-zinc-900">
                 {isRo ? "Nicio decizie înregistrată încă" : "No decisions recorded yet"}
               </h4>
-              <p className="text-xs text-zinc-400 max-w-sm mx-auto">
+              <p className="text-xs text-zinc-500 max-w-sm mx-auto">
                 {isRo
                   ? "Consemnează concluziile ședinței, persoana responsabilă și termenul limită stabilit."
                   : "Record meeting outcomes, assigned parties, and target deadlines."}
@@ -810,8 +810,8 @@ export function ClientReviewPlanner() {
                     key={dec.id}
                     className={`p-4 sm:p-5 rounded-2xl border transition-all space-y-2 text-xs ${
                       dec.isCompleted
-                        ? "bg-zinc-950/60 border-zinc-800/60 opacity-75"
-                        : "bg-zinc-900/50 border-zinc-800 hover:border-zinc-700"
+                        ? "bg-zinc-50 border-zinc-200/60 opacity-75"
+                        : "bg-white border-zinc-200 hover:border-zinc-300"
                     }`}
                   >
                     <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
@@ -822,13 +822,13 @@ export function ClientReviewPlanner() {
                               ? "bg-emerald-500/10 text-emerald-400 border-emerald-500/20"
                               : dec.outcome === "further_info_required"
                               ? "bg-amber-500/10 text-amber-400 border-amber-500/20"
-                              : "bg-zinc-800 text-zinc-300"
+                              : "bg-zinc-800 text-zinc-600"
                           }`}
                         >
                           {outcomeLabel}
                         </span>
-                        <span className="text-[11px] text-zinc-400">
-                          {isRo ? "Responsabil:" : "Responsible:"} <strong className="text-zinc-200">{respLabel}</strong>
+                        <span className="text-[11px] text-zinc-500">
+                          {isRo ? "Responsabil:" : "Responsible:"} <strong className="text-zinc-800">{respLabel}</strong>
                         </span>
                         {dec.targetFollowUpDate && (
                           <span className="text-[11px] font-mono text-blue-400">
@@ -844,7 +844,7 @@ export function ClientReviewPlanner() {
                           className={`text-xs px-2.5 py-1 rounded-lg border flex items-center gap-1 ${
                             dec.isCompleted
                               ? "bg-emerald-500/10 text-emerald-400 border-emerald-500/20"
-                              : "bg-zinc-900 text-zinc-400 border-zinc-800 hover:text-white"
+                              : "bg-white text-zinc-500 border-zinc-200 hover:text-white"
                           }`}
                         >
                           <CheckCircle2 className="w-3.5 h-3.5" />
@@ -854,7 +854,7 @@ export function ClientReviewPlanner() {
                         <button
                           type="button"
                           onClick={() => openEditDecision(dec)}
-                          className="p-1.5 rounded-lg bg-zinc-900 text-zinc-400 hover:text-white border border-zinc-800"
+                          className="p-1.5 rounded-lg bg-white text-zinc-500 hover:text-white border border-zinc-200"
                         >
                           <Edit3 className="w-3.5 h-3.5" />
                         </button>
@@ -862,19 +862,19 @@ export function ClientReviewPlanner() {
                         <button
                           type="button"
                           onClick={() => handleDeleteDecision(dec.id)}
-                          className="p-1.5 rounded-lg bg-zinc-900 text-zinc-500 hover:text-rose-400 border border-zinc-800"
+                          className="p-1.5 rounded-lg bg-white text-zinc-500 hover:text-rose-400 border border-zinc-200"
                         >
                           <Trash2 className="w-3.5 h-3.5" />
                         </button>
                       </div>
                     </div>
 
-                    <h4 className={`text-sm font-heading font-bold ${dec.isCompleted ? "line-through text-zinc-400" : "text-white"}`}>
+                    <h4 className={`text-sm font-heading font-bold ${dec.isCompleted ? "line-through text-zinc-500" : "text-white"}`}>
                       {dec.decisionText}
                     </h4>
 
                     {dec.followUpAction && (
-                      <p className="text-xs text-zinc-300">
+                      <p className="text-xs text-zinc-600">
                         <strong className="text-blue-400">{isRo ? "Acțiune de urmat:" : "Action:"}</strong> {dec.followUpAction}
                       </p>
                     )}
@@ -891,13 +891,13 @@ export function ClientReviewPlanner() {
       {/* ======================================================== */}
       {activeTab === "summary" && (
         <div className="space-y-6">
-          <div className="p-6 sm:p-8 rounded-[2.5rem] bg-zinc-950 border border-zinc-800 shadow-xl space-y-6">
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-zinc-800">
+          <div className="p-6 sm:p-8 rounded-[2.5rem] bg-zinc-50 border border-zinc-200 shadow-xl space-y-6">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-zinc-200">
               <div className="space-y-1">
                 <span className="text-[10px] uppercase font-bold text-blue-400 tracking-wider">
                   {isRo ? "SUMAR ACȚIUNI & EXPORT DOSAR" : "ACTION SUMMARY & EXPORT"}
                 </span>
-                <h3 className="text-xl font-heading font-bold text-white">
+                <h3 className="text-xl font-heading font-bold text-zinc-900">
                   {plan.title}
                 </h3>
               </div>
@@ -914,9 +914,9 @@ export function ClientReviewPlanner() {
 
             {/* METRICS CARDS */}
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 text-xs">
-              <div className="p-4 rounded-2xl bg-zinc-900/60 border border-zinc-800 space-y-1">
+              <div className="p-4 rounded-2xl bg-white border border-zinc-200 space-y-1">
                 <span className="text-zinc-500 font-semibold">{isRo ? "Întrebări Deschise" : "Open Questions"}</span>
-                <div className="text-2xl font-bold text-white">{openAgendaCount}</div>
+                <div className="text-2xl font-bold text-zinc-900">{openAgendaCount}</div>
               </div>
               <div className="p-4 rounded-2xl bg-rose-500/10 border border-rose-500/20 text-rose-400 space-y-1">
                 <span className="font-semibold">{isRo ? "Prioritate Mare" : "High Priority"}</span>
@@ -935,10 +935,10 @@ export function ClientReviewPlanner() {
             {/* ADVISORY CTA */}
             <div className="p-6 rounded-3xl bg-blue-600/10 border border-blue-500/30 flex flex-col sm:flex-row items-center justify-between gap-4">
               <div className="space-y-1 text-center sm:text-left">
-                <h4 className="text-sm font-bold text-white">
+                <h4 className="text-sm font-bold text-zinc-900">
                   {isRo ? "Dorești o ședință de revizuire cu Cristian Văduva?" : "Book your insurance review meeting with Cristian Vaduva"}
                 </h4>
-                <p className="text-xs text-zinc-400">
+                <p className="text-xs text-zinc-500">
                   {isRo ? "Trimite solicitarea pentru stabilirea datei și auditul preliminar al portofoliului tău." : "Schedule an independent meeting to review your active policies and asset portfolio."}
                 </p>
               </div>
@@ -953,8 +953,8 @@ export function ClientReviewPlanner() {
       )}
 
       {/* 2. PRIVACY & LOCAL MEMORY NOTICE */}
-      <div className="p-6 rounded-3xl bg-zinc-900/40 border border-zinc-800 space-y-2 text-xs text-zinc-400">
-        <div className="flex items-center gap-2 text-zinc-300 font-bold">
+      <div className="p-6 rounded-3xl bg-zinc-50 border border-zinc-200 space-y-2 text-xs text-zinc-500">
+        <div className="flex items-center gap-2 text-zinc-600 font-bold">
           <Lock className="w-4 h-4 text-emerald-400" />
           <span>{isRo ? "Confidențialitate Totală & Stocare Volatilă" : "Total Privacy & Active Session Memory"}</span>
         </div>
@@ -975,10 +975,10 @@ export function ClientReviewPlanner() {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.95 }}
-              className="w-full max-w-lg p-6 sm:p-8 rounded-[2.5rem] bg-zinc-950 border border-zinc-800 shadow-2xl relative space-y-5"
+              className="w-full max-w-lg p-6 sm:p-8 rounded-[2.5rem] bg-zinc-50 border border-zinc-200 shadow-2xl relative space-y-5"
             >
-              <div className="flex items-center justify-between pb-3 border-b border-zinc-800">
-                <h3 className="text-base font-heading font-bold text-white">
+              <div className="flex items-center justify-between pb-3 border-b border-zinc-200">
+                <h3 className="text-base font-heading font-bold text-zinc-900">
                   {editingChange
                     ? isRo ? "Editează Schimbare" : "Edit Change"
                     : isRo ? "Adaugă Schimbare Patrimoniu" : "Add Asset Change"}
@@ -986,7 +986,7 @@ export function ClientReviewPlanner() {
                 <button
                   type="button"
                   onClick={() => setIsChangeModalOpen(false)}
-                  className="p-2 text-zinc-400 hover:text-white rounded-full bg-zinc-900 border border-zinc-800"
+                  className="p-2 text-zinc-500 hover:text-white rounded-full bg-white border border-zinc-200"
                 >
                   <X className="w-4 h-4" />
                 </button>
@@ -995,11 +995,11 @@ export function ClientReviewPlanner() {
               <form onSubmit={handleSaveChange} className="space-y-4 text-xs">
                 <div className="grid grid-cols-2 gap-3">
                   <div className="space-y-1.5">
-                    <label className="text-zinc-300 font-medium">{isRo ? "Tematică / Categorie" : "Category"}</label>
+                    <label className="text-zinc-600 font-medium">{isRo ? "Tematică / Categorie" : "Category"}</label>
                     <select
                       value={chCategory}
                       onChange={(e) => setChCategory(e.target.value as DiscussionArea)}
-                      className="w-full h-10 px-2.5 rounded-xl bg-zinc-900 border border-zinc-800 text-white text-xs focus:outline-none"
+                      className="w-full h-10 px-2.5 rounded-xl bg-white border border-zinc-200 text-white text-xs focus:outline-none"
                     >
                       {Object.entries(isRo ? DISCUSSION_AREA_LABELS_RO : DISCUSSION_AREA_LABELS_EN).map(([cat, lbl]) => (
                         <option key={cat} value={cat}>
@@ -1010,34 +1010,34 @@ export function ClientReviewPlanner() {
                   </div>
 
                   <div className="space-y-1.5">
-                    <label className="text-zinc-300 font-medium">{isRo ? "Dată Aproximativă" : "Date of Change"}</label>
+                    <label className="text-zinc-600 font-medium">{isRo ? "Dată Aproximativă" : "Date of Change"}</label>
                     <Input
                       type="date"
                       value={chDate}
                       onChange={(e) => setChDate(e.target.value)}
-                      className="h-10 bg-zinc-900 border-zinc-800 text-white rounded-xl text-xs"
+                      className="h-10 bg-white border-zinc-200 text-white rounded-xl text-xs"
                     />
                   </div>
                 </div>
 
                 <div className="space-y-1.5">
-                  <label className="text-zinc-300 font-medium">{isRo ? "Descriere Schimbare *" : "Change Description *"}</label>
+                  <label className="text-zinc-600 font-medium">{isRo ? "Descriere Schimbare *" : "Change Description *"}</label>
                   <textarea
                     rows={3}
                     placeholder={isRo ? "Ex: Renovare acoperiș, achiziție echipament nou, schimbare domiciliu..." : "Description..."}
                     value={chDesc}
                     onChange={(e) => setChDesc(e.target.value)}
                     required
-                    className="w-full p-2.5 rounded-xl bg-zinc-900 border border-zinc-800 text-white text-xs focus:outline-none"
+                    className="w-full p-2.5 rounded-xl bg-white border border-zinc-200 text-white text-xs focus:outline-none"
                   />
                 </div>
 
                 <div className="space-y-1.5">
-                  <label className="text-zinc-300 font-medium">{isRo ? "Status Discuție" : "Discussion Status"}</label>
+                  <label className="text-zinc-600 font-medium">{isRo ? "Status Discuție" : "Discussion Status"}</label>
                   <select
                     value={chStatus}
                     onChange={(e) => setChStatus(e.target.value as ChangeStatus)}
-                    className="w-full h-10 px-2.5 rounded-xl bg-zinc-900 border border-zinc-800 text-white text-xs focus:outline-none"
+                    className="w-full h-10 px-2.5 rounded-xl bg-white border border-zinc-200 text-white text-xs focus:outline-none"
                   >
                     {Object.entries(isRo ? CHANGE_STATUS_LABELS_RO : CHANGE_STATUS_LABELS_EN).map(([st, lbl]) => (
                       <option key={st} value={st}>
@@ -1047,12 +1047,12 @@ export function ClientReviewPlanner() {
                   </select>
                 </div>
 
-                <div className="pt-3 border-t border-zinc-800 flex gap-2">
+                <div className="pt-3 border-t border-zinc-200 flex gap-2">
                   <Button
                     type="button"
                     variant="outline"
                     onClick={() => setIsChangeModalOpen(false)}
-                    className="flex-1 rounded-xl border-zinc-800 text-zinc-300 text-xs h-10"
+                    className="flex-1 rounded-xl border-zinc-200 text-zinc-600 text-xs h-10"
                   >
                     {isRo ? "Anulează" : "Cancel"}
                   </Button>
@@ -1079,10 +1079,10 @@ export function ClientReviewPlanner() {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.95 }}
-              className="w-full max-w-lg p-6 sm:p-8 rounded-[2.5rem] bg-zinc-950 border border-zinc-800 shadow-2xl relative space-y-5"
+              className="w-full max-w-lg p-6 sm:p-8 rounded-[2.5rem] bg-zinc-50 border border-zinc-200 shadow-2xl relative space-y-5"
             >
-              <div className="flex items-center justify-between pb-3 border-b border-zinc-800">
-                <h3 className="text-base font-heading font-bold text-white">
+              <div className="flex items-center justify-between pb-3 border-b border-zinc-200">
+                <h3 className="text-base font-heading font-bold text-zinc-900">
                   {editingAgenda
                     ? isRo ? "Editează Întrebare Agendă" : "Edit Agenda Question"
                     : isRo ? "Adaugă Întrebare în Agendă" : "Add Agenda Question"}
@@ -1090,7 +1090,7 @@ export function ClientReviewPlanner() {
                 <button
                   type="button"
                   onClick={() => setIsAgendaModalOpen(false)}
-                  className="p-2 text-zinc-400 hover:text-white rounded-full bg-zinc-900 border border-zinc-800"
+                  className="p-2 text-zinc-500 hover:text-white rounded-full bg-white border border-zinc-200"
                 >
                   <X className="w-4 h-4" />
                 </button>
@@ -1098,23 +1098,23 @@ export function ClientReviewPlanner() {
 
               <form onSubmit={handleSaveAgenda} className="space-y-4 text-xs">
                 <div className="space-y-1.5">
-                  <label className="text-zinc-300 font-medium">{isRo ? "Titlu Subiect *" : "Topic Title *"}</label>
+                  <label className="text-zinc-600 font-medium">{isRo ? "Titlu Subiect *" : "Topic Title *"}</label>
                   <Input
                     placeholder={isRo ? "Ex: Verificare franșiză inundație, Sublimită bijuterii..." : "Topic..."}
                     value={agTitle}
                     onChange={(e) => setAgTitle(e.target.value)}
                     required
-                    className="h-10 bg-zinc-900 border-zinc-800 text-white rounded-xl text-xs"
+                    className="h-10 bg-white border-zinc-200 text-white rounded-xl text-xs"
                   />
                 </div>
 
                 <div className="grid grid-cols-2 gap-3">
                   <div className="space-y-1.5">
-                    <label className="text-zinc-300 font-medium">{isRo ? "Tematică" : "Area"}</label>
+                    <label className="text-zinc-600 font-medium">{isRo ? "Tematică" : "Area"}</label>
                     <select
                       value={agArea}
                       onChange={(e) => setAgArea(e.target.value as DiscussionArea)}
-                      className="w-full h-10 px-2.5 rounded-xl bg-zinc-900 border border-zinc-800 text-white text-xs focus:outline-none"
+                      className="w-full h-10 px-2.5 rounded-xl bg-white border border-zinc-200 text-white text-xs focus:outline-none"
                     >
                       {Object.entries(isRo ? DISCUSSION_AREA_LABELS_RO : DISCUSSION_AREA_LABELS_EN).map(([cat, lbl]) => (
                         <option key={cat} value={cat}>
@@ -1125,11 +1125,11 @@ export function ClientReviewPlanner() {
                   </div>
 
                   <div className="space-y-1.5">
-                    <label className="text-zinc-300 font-medium">{isRo ? "Prioritate" : "Priority"}</label>
+                    <label className="text-zinc-600 font-medium">{isRo ? "Prioritate" : "Priority"}</label>
                     <select
                       value={agPriority}
                       onChange={(e) => setAgPriority(e.target.value as AgendaPriority)}
-                      className="w-full h-10 px-2.5 rounded-xl bg-zinc-900 border border-zinc-800 text-white text-xs focus:outline-none"
+                      className="w-full h-10 px-2.5 rounded-xl bg-white border border-zinc-200 text-white text-xs focus:outline-none"
                     >
                       <option value="high">{isRo ? "Mare (High)" : "High"}</option>
                       <option value="normal">{isRo ? "Normală" : "Normal"}</option>
@@ -1139,22 +1139,22 @@ export function ClientReviewPlanner() {
                 </div>
 
                 <div className="space-y-1.5">
-                  <label className="text-zinc-300 font-medium">{isRo ? "Detalii Întrebare / Scenariu" : "Detailed Question"}</label>
+                  <label className="text-zinc-600 font-medium">{isRo ? "Detalii Întrebare / Scenariu" : "Detailed Question"}</label>
                   <textarea
                     rows={2}
                     placeholder={isRo ? "Formulează întrebarea exactă pe care dorești să o adresezi..." : "Question..."}
                     value={agDetails}
                     onChange={(e) => setAgDetails(e.target.value)}
-                    className="w-full p-2.5 rounded-xl bg-zinc-900 border border-zinc-800 text-white text-xs focus:outline-none"
+                    className="w-full p-2.5 rounded-xl bg-white border border-zinc-200 text-white text-xs focus:outline-none"
                   />
                 </div>
 
                 <div className="space-y-1.5">
-                  <label className="text-zinc-300 font-medium">{isRo ? "Status" : "Status"}</label>
+                  <label className="text-zinc-600 font-medium">{isRo ? "Status" : "Status"}</label>
                   <select
                     value={agStatus}
                     onChange={(e) => setAgStatus(e.target.value as AgendaStatus)}
-                    className="w-full h-10 px-2.5 rounded-xl bg-zinc-900 border border-zinc-800 text-white text-xs focus:outline-none"
+                    className="w-full h-10 px-2.5 rounded-xl bg-white border border-zinc-200 text-white text-xs focus:outline-none"
                   >
                     {Object.entries(isRo ? AGENDA_STATUS_LABELS_RO : AGENDA_STATUS_LABELS_EN).map(([st, lbl]) => (
                       <option key={st} value={st}>
@@ -1164,12 +1164,12 @@ export function ClientReviewPlanner() {
                   </select>
                 </div>
 
-                <div className="pt-3 border-t border-zinc-800 flex gap-2">
+                <div className="pt-3 border-t border-zinc-200 flex gap-2">
                   <Button
                     type="button"
                     variant="outline"
                     onClick={() => setIsAgendaModalOpen(false)}
-                    className="flex-1 rounded-xl border-zinc-800 text-zinc-300 text-xs h-10"
+                    className="flex-1 rounded-xl border-zinc-200 text-zinc-600 text-xs h-10"
                   >
                     {isRo ? "Anulează" : "Cancel"}
                   </Button>
@@ -1196,10 +1196,10 @@ export function ClientReviewPlanner() {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.95 }}
-              className="w-full max-w-lg p-6 sm:p-8 rounded-[2.5rem] bg-zinc-950 border border-zinc-800 shadow-2xl relative space-y-5"
+              className="w-full max-w-lg p-6 sm:p-8 rounded-[2.5rem] bg-zinc-50 border border-zinc-200 shadow-2xl relative space-y-5"
             >
-              <div className="flex items-center justify-between pb-3 border-b border-zinc-800">
-                <h3 className="text-base font-heading font-bold text-white">
+              <div className="flex items-center justify-between pb-3 border-b border-zinc-200">
+                <h3 className="text-base font-heading font-bold text-zinc-900">
                   {editingDecision
                     ? isRo ? "Editează Decizie" : "Edit Decision"
                     : isRo ? "Adaugă Decizie / Rezoluție" : "Add Decision"}
@@ -1207,7 +1207,7 @@ export function ClientReviewPlanner() {
                 <button
                   type="button"
                   onClick={() => setIsDecisionModalOpen(false)}
-                  className="p-2 text-zinc-400 hover:text-white rounded-full bg-zinc-900 border border-zinc-800"
+                  className="p-2 text-zinc-500 hover:text-white rounded-full bg-white border border-zinc-200"
                 >
                   <X className="w-4 h-4" />
                 </button>
@@ -1215,24 +1215,24 @@ export function ClientReviewPlanner() {
 
               <form onSubmit={handleSaveDecision} className="space-y-4 text-xs">
                 <div className="space-y-1.5">
-                  <label className="text-zinc-300 font-medium">{isRo ? "Decizie Convenită *" : "Agreed Decision *"}</label>
+                  <label className="text-zinc-600 font-medium">{isRo ? "Decizie Convenită *" : "Agreed Decision *"}</label>
                   <textarea
                     rows={2}
                     placeholder={isRo ? "Ex: Majorare sumă asigurată la 200.000 EUR, trimitere cotații CASCO alternative..." : "Decision text..."}
                     value={decText}
                     onChange={(e) => setDecText(e.target.value)}
                     required
-                    className="w-full p-2.5 rounded-xl bg-zinc-900 border border-zinc-800 text-white text-xs focus:outline-none"
+                    className="w-full p-2.5 rounded-xl bg-white border border-zinc-200 text-white text-xs focus:outline-none"
                   />
                 </div>
 
                 <div className="grid grid-cols-2 gap-3">
                   <div className="space-y-1.5">
-                    <label className="text-zinc-300 font-medium">{isRo ? "Rezultat / Concluzie" : "Outcome"}</label>
+                    <label className="text-zinc-600 font-medium">{isRo ? "Rezultat / Concluzie" : "Outcome"}</label>
                     <select
                       value={decOutcome}
                       onChange={(e) => setDecOutcome(e.target.value as DecisionOutcome)}
-                      className="w-full h-10 px-2.5 rounded-xl bg-zinc-900 border border-zinc-800 text-white text-xs focus:outline-none"
+                      className="w-full h-10 px-2.5 rounded-xl bg-white border border-zinc-200 text-white text-xs focus:outline-none"
                     >
                       {Object.entries(isRo ? DECISION_OUTCOME_LABELS_RO : DECISION_OUTCOME_LABELS_EN).map(([o, lbl]) => (
                         <option key={o} value={o}>
@@ -1243,11 +1243,11 @@ export function ClientReviewPlanner() {
                   </div>
 
                   <div className="space-y-1.5">
-                    <label className="text-zinc-300 font-medium">{isRo ? "Responsabil Acțiune" : "Responsible Party"}</label>
+                    <label className="text-zinc-600 font-medium">{isRo ? "Responsabil Acțiune" : "Responsible Party"}</label>
                     <select
                       value={decResp}
                       onChange={(e) => setDecResp(e.target.value as ResponsibleParty)}
-                      className="w-full h-10 px-2.5 rounded-xl bg-zinc-900 border border-zinc-800 text-white text-xs focus:outline-none"
+                      className="w-full h-10 px-2.5 rounded-xl bg-white border border-zinc-200 text-white text-xs focus:outline-none"
                     >
                       {Object.entries(isRo ? RESPONSIBLE_PARTY_LABELS_RO : RESPONSIBLE_PARTY_LABELS_EN).map(([r, lbl]) => (
                         <option key={r} value={r}>
@@ -1260,32 +1260,32 @@ export function ClientReviewPlanner() {
 
                 <div className="grid grid-cols-2 gap-3">
                   <div className="space-y-1.5">
-                    <label className="text-zinc-300 font-medium">{isRo ? "Următorul Pas (Action Item)" : "Action Item"}</label>
+                    <label className="text-zinc-600 font-medium">{isRo ? "Următorul Pas (Action Item)" : "Action Item"}</label>
                     <Input
                       placeholder={isRo ? "Ex: Trimitere ofertă nouă..." : "Action item..."}
                       value={decAction}
                       onChange={(e) => setDecAction(e.target.value)}
-                      className="h-10 bg-zinc-900 border-zinc-800 text-white rounded-xl text-xs"
+                      className="h-10 bg-white border-zinc-200 text-white rounded-xl text-xs"
                     />
                   </div>
 
                   <div className="space-y-1.5">
-                    <label className="text-zinc-300 font-medium">{isRo ? "Termen Limită (Follow-up)" : "Target Date"}</label>
+                    <label className="text-zinc-600 font-medium">{isRo ? "Termen Limită (Follow-up)" : "Target Date"}</label>
                     <Input
                       type="date"
                       value={decTargetDate}
                       onChange={(e) => setDecTargetDate(e.target.value)}
-                      className="h-10 bg-zinc-900 border-zinc-800 text-white rounded-xl text-xs"
+                      className="h-10 bg-white border-zinc-200 text-white rounded-xl text-xs"
                     />
                   </div>
                 </div>
 
-                <div className="pt-3 border-t border-zinc-800 flex gap-2">
+                <div className="pt-3 border-t border-zinc-200 flex gap-2">
                   <Button
                     type="button"
                     variant="outline"
                     onClick={() => setIsDecisionModalOpen(false)}
-                    className="flex-1 rounded-xl border-zinc-800 text-zinc-300 text-xs h-10"
+                    className="flex-1 rounded-xl border-zinc-200 text-zinc-600 text-xs h-10"
                   >
                     {isRo ? "Anulează" : "Cancel"}
                   </Button>
@@ -1312,15 +1312,15 @@ export function ClientReviewPlanner() {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.95 }}
-              className="w-full max-w-md p-6 rounded-3xl bg-zinc-950 border border-rose-500/30 shadow-2xl space-y-4 text-center"
+              className="w-full max-w-md p-6 rounded-3xl bg-zinc-50 border border-rose-500/30 shadow-2xl space-y-4 text-center"
             >
               <div className="w-12 h-12 rounded-full bg-rose-500/10 text-rose-400 flex items-center justify-center mx-auto">
                 <AlertTriangle className="w-6 h-6" />
               </div>
-              <h3 className="text-base font-bold text-white">
+              <h3 className="text-base font-bold text-zinc-900">
                 {isRo ? "Golești planul de revizuire curent?" : "Clear active review plan?"}
               </h3>
-              <p className="text-xs text-zinc-400 leading-relaxed">
+              <p className="text-xs text-zinc-500 leading-relaxed">
                 {isRo
                   ? "Această acțiune va reseta toate întrebările, schimbările și deciziile din memoria activă. Asigură-te că ai descărcat un raport PDF sau backup JSON."
                   : "This will clear all in-memory agenda items and decisions. Download a PDF or JSON backup first if needed."}
@@ -1330,7 +1330,7 @@ export function ClientReviewPlanner() {
                   type="button"
                   variant="outline"
                   onClick={() => setIsClearConfirmOpen(false)}
-                  className="flex-1 rounded-xl border-zinc-800 text-zinc-300 text-xs h-10"
+                  className="flex-1 rounded-xl border-zinc-200 text-zinc-600 text-xs h-10"
                 >
                   {isRo ? "Anulează" : "Cancel"}
                 </Button>

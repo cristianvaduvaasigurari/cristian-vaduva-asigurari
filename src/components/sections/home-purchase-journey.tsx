@@ -101,45 +101,45 @@ export function HomePurchaseJourney() {
       {/* 1. EDUCATIONAL 4-PILLAR ARCHITECTURE */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {/* Pillar 1: PAD */}
-        <div className="p-6 rounded-3xl bg-zinc-900/60 border border-zinc-800 space-y-3">
+        <div className="p-6 rounded-3xl bg-white border border-zinc-200 space-y-3">
           <div className="w-10 h-10 rounded-2xl bg-blue-500/10 border border-blue-500/20 text-blue-400 flex items-center justify-center font-bold text-xs">
             01
           </div>
-          <h3 className="text-lg font-heading font-bold text-white">1. Asigurarea Obligatorie (PAD)</h3>
-          <p className="text-xs text-zinc-400 leading-relaxed">
+          <h3 className="text-lg font-heading font-bold text-zinc-900">1. Asigurarea Obligatorie (PAD)</h3>
+          <p className="text-xs text-zinc-500 leading-relaxed">
             Obligație legală prevăzută de Legea 260/2008. Acoperă strict 3 riscuri de dezastre naturale (cutremur, inundație naturală, alunecare de teren) în limita a 20.000 € (Tip A) sau 10.000 € (Tip B).
           </p>
-          <div className="pt-2 text-[11px] text-zinc-500 border-t border-zinc-800/80 flex items-center gap-1.5">
+          <div className="pt-2 text-[11px] text-zinc-500 border-t border-zinc-200/80 flex items-center gap-1.5">
             <Info className="w-3.5 h-3.5 text-blue-400 shrink-0" />
             <span>Condiție prealabilă obligatorie pentru credit și notariat.</span>
           </div>
         </div>
 
         {/* Pillar 2: Facultativa */}
-        <div className="p-6 rounded-3xl bg-zinc-900/60 border border-zinc-800 space-y-3">
+        <div className="p-6 rounded-3xl bg-white border border-zinc-200 space-y-3">
           <div className="w-10 h-10 rounded-2xl bg-amber-500/10 border border-amber-500/20 text-amber-400 flex items-center justify-center font-bold text-xs">
             02
           </div>
-          <h3 className="text-lg font-heading font-bold text-white">2. Asigurarea Facultativă Clădire</h3>
-          <p className="text-xs text-zinc-400 leading-relaxed">
+          <h3 className="text-lg font-heading font-bold text-zinc-900">2. Asigurarea Facultativă Clădire</h3>
+          <p className="text-xs text-zinc-500 leading-relaxed">
             Protejează valoarea reală de reconstrucție a imobilului împotriva incendiilor, exploziilor, furtunilor, avariilor la conductele de apă și răspunderii civile față de vecini.
           </p>
-          <div className="pt-2 text-[11px] text-zinc-500 border-t border-zinc-800/80 flex items-center gap-1.5">
+          <div className="pt-2 text-[11px] text-zinc-500 border-t border-zinc-200/80 flex items-center gap-1.5">
             <Info className="w-3.5 h-3.5 text-amber-400 shrink-0" />
             <span>Acoperirea depinde de termenii contractuali și clauzele alese.</span>
           </div>
         </div>
 
         {/* Pillar 3: Bank Requirements */}
-        <div className="p-6 rounded-3xl bg-zinc-900/60 border border-zinc-800 space-y-3">
+        <div className="p-6 rounded-3xl bg-white border border-zinc-200 space-y-3">
           <div className="w-10 h-10 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold text-xs">
             03
           </div>
-          <h3 className="text-lg font-heading font-bold text-white">3. Cerințele Băncii & Ipotecă</h3>
-          <p className="text-xs text-zinc-400 leading-relaxed">
+          <h3 className="text-lg font-heading font-bold text-zinc-900">3. Cerințele Băncii & Ipotecă</h3>
+          <p className="text-xs text-zinc-500 leading-relaxed">
             În cazul achiziției prin credit, banca impune cesionarea poliței de locuință în favoarea sa. De asemenea, poate solicita sau recomanda o asigurare de viață corelată cu soldul creditului.
           </p>
-          <div className="pt-2 text-[11px] text-zinc-500 border-t border-zinc-800/80 flex items-center gap-1.5">
+          <div className="pt-2 text-[11px] text-zinc-500 border-t border-zinc-200/80 flex items-center gap-1.5">
             <Info className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
             <span>Pregătim polițele cu anexa de cesiune conform normelor băncii.</span>
           </div>
@@ -147,44 +147,44 @@ export function HomePurchaseJourney() {
       </div>
 
       {/* 2. PREPARATION CHECKLIST BOX */}
-      <div className="p-8 rounded-[2.5rem] bg-gradient-to-br from-zinc-900/80 to-zinc-950 border border-zinc-800 relative overflow-hidden">
-        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 mb-6 pb-6 border-b border-zinc-800">
+      <div className="p-8 rounded-[2.5rem] bg-gradient-to-br from-zinc-900/80 to-zinc-950 border border-zinc-200 relative overflow-hidden">
+        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 mb-6 pb-6 border-b border-zinc-200">
           <div>
             <span className="text-xs uppercase tracking-widest text-blue-400 font-bold block mb-1">
               CHECKLIST PREGĂTIRE DOSAR
             </span>
-            <h3 className="text-2xl font-heading font-bold text-white">
+            <h3 className="text-2xl font-heading font-bold text-zinc-900">
               Ce documente și informații sunt necesare înainte de semnare
             </h3>
           </div>
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-zinc-800 text-zinc-300 text-xs font-semibold shrink-0">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-zinc-800 text-zinc-600 text-xs font-semibold shrink-0">
             <Clock className="w-4 h-4 text-blue-400" />
             Recomandat cu 3-5 zile înainte de Notar
           </div>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-xs">
-          <div className="p-4 rounded-2xl bg-zinc-950/70 border border-zinc-800/80 space-y-1">
-            <p className="font-bold text-zinc-200">1. Date Tehnice Imobil</p>
-            <p className="text-zinc-400 leading-relaxed">Adresă completă, suprafață utilă, an construcție, structură de rezistență (beton, cărămidă etc.).</p>
+          <div className="p-4 rounded-2xl bg-zinc-50/70 border border-zinc-200/80 space-y-1">
+            <p className="font-bold text-zinc-800">1. Date Tehnice Imobil</p>
+            <p className="text-zinc-500 leading-relaxed">Adresă completă, suprafață utilă, an construcție, structură de rezistență (beton, cărămidă etc.).</p>
           </div>
-          <div className="p-4 rounded-2xl bg-zinc-950/70 border border-zinc-800/80 space-y-1">
-            <p className="font-bold text-zinc-200">2. Acte Proprietate / Cadastru</p>
-            <p className="text-zinc-400 leading-relaxed">Extras de Carte Funciară recent, releveu / schiță cadastrală și contract de vânzare-cumpărare / antecontract.</p>
+          <div className="p-4 rounded-2xl bg-zinc-50/70 border border-zinc-200/80 space-y-1">
+            <p className="font-bold text-zinc-800">2. Acte Proprietate / Cadastru</p>
+            <p className="text-zinc-500 leading-relaxed">Extras de Carte Funciară recent, releveu / schiță cadastrală și contract de vânzare-cumpărare / antecontract.</p>
           </div>
-          <div className="p-4 rounded-2xl bg-zinc-950/70 border border-zinc-800/80 space-y-1">
-            <p className="font-bold text-zinc-200">3. Datele Băncii Finanțatoare</p>
-            <p className="text-zinc-400 leading-relaxed">Denumirea băncii, sucursala, numărul contractului de credit și clauzele standard de cesiune cerute de bancă.</p>
+          <div className="p-4 rounded-2xl bg-zinc-50/70 border border-zinc-200/80 space-y-1">
+            <p className="font-bold text-zinc-800">3. Datele Băncii Finanțatoare</p>
+            <p className="text-zinc-500 leading-relaxed">Denumirea băncii, sucursala, numărul contractului de credit și clauzele standard de cesiune cerute de bancă.</p>
           </div>
-          <div className="p-4 rounded-2xl bg-zinc-950/70 border border-zinc-800/80 space-y-1">
-            <p className="font-bold text-zinc-200">4. Evaluarea Bunurilor</p>
-            <p className="text-zinc-400 leading-relaxed">Suma estimată pentru finisaje premium, mobilier și echipamente casnice incluse în polița facultativă.</p>
+          <div className="p-4 rounded-2xl bg-zinc-50/70 border border-zinc-200/80 space-y-1">
+            <p className="font-bold text-zinc-800">4. Evaluarea Bunurilor</p>
+            <p className="text-zinc-500 leading-relaxed">Suma estimată pentru finisaje premium, mobilier și echipamente casnice incluse în polița facultativă.</p>
           </div>
         </div>
       </div>
 
       {/* 3. INTERACTIVE ADVISORY FORM */}
-      <div id="formular-achizitie" className="p-8 sm:p-12 rounded-[2.5rem] bg-zinc-950/90 border border-zinc-800 shadow-2xl relative">
+      <div id="formular-achizitie" className="p-8 sm:p-12 rounded-[2.5rem] bg-zinc-50/90 border border-zinc-200 shadow-2xl relative">
         <AnimatePresence mode="wait">
           {submittedReference ? (
             <motion.div
@@ -193,20 +193,20 @@ export function HomePurchaseJourney() {
               animate={{ opacity: 1, scale: 1 }}
               className="text-center py-12 space-y-6 max-w-xl mx-auto"
             >
-              <div className="w-16 h-16 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 flex items-center justify-center mx-auto">
+              <div className="w-16 h-16 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-400 flex items-center justify-center mx-auto">
                 <CheckCircle2 className="w-8 h-8" />
               </div>
               <div className="space-y-2">
-                <h3 className="text-3xl font-heading font-bold text-white">
+                <h3 className="text-3xl font-heading font-bold text-zinc-900">
                   Solicitarea a fost înregistrată!
                 </h3>
-                <p className="text-sm text-zinc-400 leading-relaxed">
+                <p className="text-sm text-zinc-500 leading-relaxed">
                   Număr de referință solicitare: <strong className="text-white font-mono">{submittedReference}</strong>.
                   Consultantul Cristian Văduva va analiza cerințele transmise și vă va contacta pentru pregătirea ofertelor și a anexelor de cesiune.
                 </p>
               </div>
-              <div className="p-4 rounded-2xl bg-zinc-900 border border-zinc-800 text-xs text-zinc-400 text-left space-y-1">
-                <p className="font-bold text-zinc-200 flex items-center gap-1.5">
+              <div className="p-4 rounded-2xl bg-white border border-zinc-200 text-xs text-zinc-500 text-left space-y-1">
+                <p className="font-bold text-zinc-800 flex items-center gap-1.5">
                   <ShieldCheck className="w-4 h-4 text-emerald-400" />
                   Etapele următoare:
                 </p>
@@ -218,7 +218,7 @@ export function HomePurchaseJourney() {
                 type="button"
                 variant="outline"
                 onClick={() => setSubmittedReference(null)}
-                className="rounded-full border-zinc-800 text-zinc-300 text-xs"
+                className="rounded-full border-zinc-200 text-zinc-600 text-xs"
               >
                 Trimite o altă solicitare
               </Button>
@@ -231,23 +231,23 @@ export function HomePurchaseJourney() {
               onSubmit={handleSubmit}
               className="space-y-8 max-w-3xl mx-auto"
             >
-              <div className="text-center space-y-2 pb-6 border-b border-zinc-800/80">
+              <div className="text-center space-y-2 pb-6 border-b border-zinc-200/80">
                 {source !== "Direct" && (
-                  <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/30 text-blue-400 text-xs font-semibold mb-2">
+                  <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 border border-blue-200 text-blue-400 text-xs font-semibold mb-2">
                     <Sparkles className="w-3.5 h-3.5" />
                     <span>Parteneriat Ecosistem: {source.toUpperCase()}{listingId ? ` • Listing #${listingId}` : ""}</span>
                   </div>
                 )}
-                <h3 className="text-2xl sm:text-3xl font-heading font-bold text-white">
+                <h3 className="text-2xl sm:text-3xl font-heading font-bold text-zinc-900">
                   Pregătește Asigurarea pentru Noua Ta Locuință
                 </h3>
-                <p className="text-xs sm:text-sm text-zinc-400">
+                <p className="text-xs sm:text-sm text-zinc-500">
                   Completează datele esențiale pentru a primi o analiză comparativă și proiectul de poliță conform cerințelor băncii sau notarului.
                 </p>
               </div>
 
               {errorMessage && (
-                <div className="p-4 rounded-2xl bg-rose-500/10 border border-rose-500/30 text-rose-300 text-xs flex items-start gap-2">
+                <div className="p-4 rounded-2xl bg-rose-500/10 border border-rose-500/30 text-rose-800 text-xs flex items-start gap-2">
                   <AlertTriangle className="w-4 h-4 shrink-0 mt-0.5" />
                   <span>{errorMessage}</span>
                 </div>
@@ -255,18 +255,18 @@ export function HomePurchaseJourney() {
 
               {/* Step A: Property Details */}
               <div className="space-y-4">
-                <h4 className="text-sm uppercase tracking-wider font-bold text-zinc-300 flex items-center gap-2">
+                <h4 className="text-sm uppercase tracking-wider font-bold text-zinc-600 flex items-center gap-2">
                   <Home className="w-4 h-4 text-blue-400" />
                   1. Detalii despre Proprietate & Stadiu Achiziție
                 </h4>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div className="space-y-1.5">
-                    <label className="text-xs text-zinc-400">Tip Imobil</label>
+                    <label className="text-xs text-zinc-500">Tip Imobil</label>
                     <select
                       value={propertyType}
                       onChange={(e) => setPropertyType(e.target.value)}
-                      className="w-full h-11 px-4 rounded-xl bg-zinc-900 border border-zinc-800 text-white text-xs focus:outline-none focus:border-blue-500"
+                      className="w-full h-11 px-4 rounded-xl bg-white border border-zinc-200 text-white text-xs focus:outline-none focus:border-blue-500"
                     >
                       <option value="Apartament">Apartament (Bloc)</option>
                       <option value="Casă / Vilă Individuală">Casă / Vilă Individuală</option>
@@ -277,23 +277,23 @@ export function HomePurchaseJourney() {
                   </div>
 
                   <div className="space-y-1.5">
-                    <label className="text-xs text-zinc-400">Localitate / Sector</label>
+                    <label className="text-xs text-zinc-500">Localitate / Sector</label>
                     <Input
                       placeholder="Ex: București, Sector 1 sau Cluj-Napoca"
                       value={propertyLocation}
                       onChange={(e) => setPropertyLocation(e.target.value)}
-                      className="h-11 bg-zinc-900 border-zinc-800 text-white text-xs rounded-xl"
+                      className="h-11 bg-white border-zinc-200 text-white text-xs rounded-xl"
                     />
                   </div>
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div className="space-y-1.5">
-                    <label className="text-xs text-zinc-400">Stadiu Achiziție</label>
+                    <label className="text-xs text-zinc-500">Stadiu Achiziție</label>
                     <select
                       value={purchaseStage}
                       onChange={(e) => setPurchaseStage(e.target.value)}
-                      className="w-full h-11 px-4 rounded-xl bg-zinc-900 border border-zinc-800 text-white text-xs focus:outline-none focus:border-blue-500"
+                      className="w-full h-11 px-4 rounded-xl bg-white border border-zinc-200 text-white text-xs focus:outline-none focus:border-blue-500"
                     >
                       <option value="Explorare / Căutare">Explorare / Căutare proprietate</option>
                       <option value="Proprietate selectată / Antecontract semnat">Proprietate selectată / Antecontract semnat</option>
@@ -303,31 +303,31 @@ export function HomePurchaseJourney() {
                   </div>
 
                   <div className="space-y-1.5">
-                    <label className="text-xs text-zinc-400">Suprafață Utilă Aproximativă (mp)</label>
+                    <label className="text-xs text-zinc-500">Suprafață Utilă Aproximativă (mp)</label>
                     <Input
                       placeholder="Ex: 85"
                       value={surfaceArea}
                       onChange={(e) => setSurfaceArea(e.target.value)}
-                      className="h-11 bg-zinc-900 border-zinc-800 text-white text-xs rounded-xl"
+                      className="h-11 bg-white border-zinc-200 text-white text-xs rounded-xl"
                     />
                   </div>
                 </div>
               </div>
 
               {/* Step B: Financing & Bank */}
-              <div className="space-y-4 pt-4 border-t border-zinc-800/60">
-                <h4 className="text-sm uppercase tracking-wider font-bold text-zinc-300 flex items-center gap-2">
+              <div className="space-y-4 pt-4 border-t border-zinc-200/60">
+                <h4 className="text-sm uppercase tracking-wider font-bold text-zinc-600 flex items-center gap-2">
                   <Landmark className="w-4 h-4 text-emerald-400" />
                   2. Finanțare & Data Semnării
                 </h4>
 
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                   <div className="space-y-1.5">
-                    <label className="text-xs text-zinc-400">Credit Ipotecar</label>
+                    <label className="text-xs text-zinc-500">Credit Ipotecar</label>
                     <select
                       value={hasMortgage}
                       onChange={(e) => setHasMortgage(e.target.value)}
-                      className="w-full h-11 px-4 rounded-xl bg-zinc-900 border border-zinc-800 text-white text-xs focus:outline-none focus:border-blue-500"
+                      className="w-full h-11 px-4 rounded-xl bg-white border border-zinc-200 text-white text-xs focus:outline-none focus:border-blue-500"
                     >
                       <option value="Da — Credit Ipotecar">Da — Credit Ipotecar</option>
                       <option value="Da — Noua Casă">Da — Programul Noua Casă</option>
@@ -337,30 +337,30 @@ export function HomePurchaseJourney() {
                   </div>
 
                   <div className="space-y-1.5">
-                    <label className="text-xs text-zinc-400">Banca Finanțatoare (Opțional)</label>
+                    <label className="text-xs text-zinc-500">Banca Finanțatoare (Opțional)</label>
                     <Input
                       placeholder="Ex: BCR, Banca Transilvania, ING, BRD..."
                       value={bankName}
                       onChange={(e) => setBankName(e.target.value)}
-                      className="h-11 bg-zinc-900 border-zinc-800 text-white text-xs rounded-xl"
+                      className="h-11 bg-white border-zinc-200 text-white text-xs rounded-xl"
                     />
                   </div>
 
                   <div className="space-y-1.5">
-                    <label className="text-xs text-zinc-400">Data Estimată a Semnării</label>
+                    <label className="text-xs text-zinc-500">Data Estimată a Semnării</label>
                     <Input
                       type="date"
                       value={estimatedSigningDate}
                       onChange={(e) => setEstimatedSigningDate(e.target.value)}
-                      className="h-11 bg-zinc-900 border-zinc-800 text-white text-xs rounded-xl"
+                      className="h-11 bg-white border-zinc-200 text-white text-xs rounded-xl"
                     />
                   </div>
                 </div>
               </div>
 
               {/* Step C: Assistance Packages */}
-              <div className="space-y-3 pt-4 border-t border-zinc-800/60">
-                <label className="text-xs uppercase tracking-wider font-bold text-zinc-300 block">
+              <div className="space-y-3 pt-4 border-t border-zinc-200/60">
+                <label className="text-xs uppercase tracking-wider font-bold text-zinc-600 block">
                   Ce tipuri de asistență dorești să analizăm?
                 </label>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
@@ -378,7 +378,7 @@ export function HomePurchaseJourney() {
                       className={`p-3 rounded-xl border text-left text-xs transition-all flex items-center justify-between ${
                         requestedAssistance.includes(ast)
                           ? "bg-blue-500/10 border-blue-500/40 text-white font-medium"
-                          : "bg-zinc-900/40 border-zinc-800 text-zinc-400 hover:text-zinc-200"
+                          : "bg-zinc-50 border-zinc-200 text-zinc-500 hover:text-zinc-800"
                       }`}
                     >
                       <span>{ast}</span>
@@ -391,43 +391,43 @@ export function HomePurchaseJourney() {
               </div>
 
               {/* Step D: Contact Details */}
-              <div className="space-y-4 pt-4 border-t border-zinc-800/60">
-                <h4 className="text-sm uppercase tracking-wider font-bold text-zinc-300 flex items-center gap-2">
+              <div className="space-y-4 pt-4 border-t border-zinc-200/60">
+                <h4 className="text-sm uppercase tracking-wider font-bold text-zinc-600 flex items-center gap-2">
                   <FileCheck2 className="w-4 h-4 text-blue-400" />
                   3. Date de Contact pentru Transmiterea Ofertelor
                 </h4>
 
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                   <div className="space-y-1.5">
-                    <label className="text-xs text-zinc-400">Nume & Prenume *</label>
+                    <label className="text-xs text-zinc-500">Nume & Prenume *</label>
                     <Input
                       placeholder="Ex: Andrei Popescu"
                       value={name}
                       onChange={(e) => setName(e.target.value)}
                       required
-                      className="h-11 bg-zinc-900 border-zinc-800 text-white text-xs rounded-xl"
+                      className="h-11 bg-white border-zinc-200 text-white text-xs rounded-xl"
                     />
                   </div>
 
                   <div className="space-y-1.5">
-                    <label className="text-xs text-zinc-400">Număr Telefon *</label>
+                    <label className="text-xs text-zinc-500">Număr Telefon *</label>
                     <Input
                       placeholder="Ex: 0722 000 000"
                       value={phone}
                       onChange={(e) => setPhone(e.target.value)}
                       required
-                      className="h-11 bg-zinc-900 border-zinc-800 text-white text-xs rounded-xl"
+                      className="h-11 bg-white border-zinc-200 text-white text-xs rounded-xl"
                     />
                   </div>
 
                   <div className="space-y-1.5">
-                    <label className="text-xs text-zinc-400">Adresă Email (Opțional)</label>
+                    <label className="text-xs text-zinc-500">Adresă Email (Opțional)</label>
                     <Input
                       type="email"
                       placeholder="Ex: andrei@exemplu.ro"
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
-                      className="h-11 bg-zinc-900 border-zinc-800 text-white text-xs rounded-xl"
+                      className="h-11 bg-white border-zinc-200 text-white text-xs rounded-xl"
                     />
                   </div>
                 </div>
@@ -440,11 +440,11 @@ export function HomePurchaseJourney() {
                   id="consent-purchase"
                   checked={consent}
                   onChange={(e) => setConsent(e.target.checked)}
-                  className="mt-1 w-4 h-4 rounded border-zinc-800 bg-zinc-900 text-blue-600 focus:ring-0"
+                  className="mt-1 w-4 h-4 rounded border-zinc-200 bg-white text-blue-600 focus:ring-0"
                 />
-                <label htmlFor="consent-purchase" className="text-xs text-zinc-400 leading-relaxed cursor-pointer">
+                <label htmlFor="consent-purchase" className="text-xs text-zinc-500 leading-relaxed cursor-pointer">
                   Sunt de acord cu prelucrarea datelor de contact în scopul pregătirii consultanței de asigurare, conform{" "}
-                  <a href="/politica-de-confidentialitate" target="_blank" className="text-zinc-300 underline underline-offset-2">
+                  <a href="/politica-de-confidentialitate" target="_blank" className="text-zinc-600 underline underline-offset-2">
                     Politicii de Confidențialitate
                   </a>
                   . Emiterea oricărei polițe este condiționată de eligibilitate și termenii asiguratorului.

@@ -14,11 +14,12 @@ export function GlobalHomeButton() {
     <Link 
       href="/" 
       aria-label="Mergi la pagina principală"
-      className="fixed top-28 right-6 z-50 flex items-center gap-2 px-4 py-2.5 bg-white/85 backdrop-blur-md border border-border shadow-lg rounded-full text-slate-800 hover:text-blue-600 hover:shadow-xl hover:scale-105 transition-all duration-300 font-medium text-xs"
+      className="hidden md:flex fixed top-28 right-6 z-40 items-center gap-2 px-4 py-2.5 bg-white/90 backdrop-blur-md border border-zinc-200/90 shadow-md rounded-full text-zinc-800 hover:text-blue-600 hover:shadow-lg hover:scale-105 transition-all duration-300 font-medium text-xs"
       title="Back to Home"
     >
-      <Home className="w-4 h-4 text-slate-700 hover:text-blue-600 transition-colors" />
+      <Home className="w-4 h-4 text-zinc-700 hover:text-blue-600 transition-colors" />
       <span>Home</span>
     </Link>
+
   );
 }

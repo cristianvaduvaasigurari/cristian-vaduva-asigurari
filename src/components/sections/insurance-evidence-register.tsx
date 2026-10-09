@@ -429,38 +429,38 @@ export function InsuranceEvidenceRegister() {
     <div className="space-y-8">
       {/* KPI Overview Bar */}
       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
-        <div className="bg-zinc-900/90 border border-zinc-800/80 rounded-xl p-4 flex flex-col justify-between">
-          <div className="text-zinc-400 text-xs font-medium uppercase tracking-wider">Surse Notate</div>
-          <div className="text-2xl sm:text-3xl font-bold text-white mt-1">{stats.totalSources}</div>
+        <div className="bg-white border border-zinc-200/80 rounded-xl p-4 flex flex-col justify-between">
+          <div className="text-zinc-500 text-xs font-medium uppercase tracking-wider">Surse Notate</div>
+          <div className="text-2xl sm:text-3xl font-bold text-zinc-900 mt-1">{stats.totalSources}</div>
           <div className="text-[11px] text-zinc-500 mt-1">Documente & adrese</div>
         </div>
 
-        <div className="bg-zinc-900/90 border border-zinc-800/80 rounded-xl p-4 flex flex-col justify-between">
-          <div className="text-zinc-400 text-xs font-medium uppercase tracking-wider">Afirmații & Clauze</div>
+        <div className="bg-white border border-zinc-200/80 rounded-xl p-4 flex flex-col justify-between">
+          <div className="text-zinc-500 text-xs font-medium uppercase tracking-wider">Afirmații & Clauze</div>
           <div className="text-2xl sm:text-3xl font-bold text-blue-400 mt-1">{stats.totalStatements}</div>
           <div className="text-[11px] text-zinc-500 mt-1">Mențiuni inventariate</div>
         </div>
 
-        <div className="bg-zinc-900/90 border border-zinc-800/80 rounded-xl p-4 flex flex-col justify-between">
-          <div className="text-zinc-400 text-xs font-medium uppercase tracking-wider">Clarificări Așteptate</div>
+        <div className="bg-white border border-zinc-200/80 rounded-xl p-4 flex flex-col justify-between">
+          <div className="text-zinc-500 text-xs font-medium uppercase tracking-wider">Clarificări Așteptate</div>
           <div className="text-2xl sm:text-3xl font-bold text-purple-400 mt-1">{stats.clarificationsPending}</div>
           <div className="text-[11px] text-zinc-500 mt-1">Solicitate în scris</div>
         </div>
 
-        <div className="bg-zinc-900/90 border border-zinc-800/80 rounded-xl p-4 flex flex-col justify-between">
-          <div className="text-zinc-400 text-xs font-medium uppercase tracking-wider">Clarificate</div>
+        <div className="bg-white border border-zinc-200/80 rounded-xl p-4 flex flex-col justify-between">
+          <div className="text-zinc-500 text-xs font-medium uppercase tracking-wider">Clarificate</div>
           <div className="text-2xl sm:text-3xl font-bold text-emerald-400 mt-1">{stats.clarificationsReceived}</div>
           <div className="text-[11px] text-zinc-500 mt-1">Confirmate în scris</div>
         </div>
 
-        <div className="bg-zinc-900/90 border border-zinc-800/80 rounded-xl p-4 flex flex-col justify-between">
-          <div className="text-zinc-400 text-xs font-medium uppercase tracking-wider">Follow-Up Depășit</div>
+        <div className="bg-white border border-zinc-200/80 rounded-xl p-4 flex flex-col justify-between">
+          <div className="text-zinc-500 text-xs font-medium uppercase tracking-wider">Follow-Up Depășit</div>
           <div className="text-2xl sm:text-3xl font-bold text-red-400 mt-1">{stats.overdueFollowUps}</div>
           <div className="text-[11px] text-zinc-500 mt-1">Scadențe trecute</div>
         </div>
 
-        <div className="bg-zinc-900/90 border border-zinc-800/80 rounded-xl p-4 flex flex-col justify-between">
-          <div className="text-zinc-400 text-xs font-medium uppercase tracking-wider">Fără Sursă / Conflict</div>
+        <div className="bg-white border border-zinc-200/80 rounded-xl p-4 flex flex-col justify-between">
+          <div className="text-zinc-500 text-xs font-medium uppercase tracking-wider">Fără Sursă / Conflict</div>
           <div className="text-2xl sm:text-3xl font-bold text-amber-400 mt-1">
             {stats.unlinkedStatements + stats.conflictingStatements}
           </div>
@@ -469,15 +469,15 @@ export function InsuranceEvidenceRegister() {
       </div>
 
       {/* Main Tab Navigation & Actions */}
-      <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4 border-b border-zinc-800 pb-4">
+      <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4 border-b border-zinc-200 pb-4">
         {/* Navigation Tabs */}
-        <div className="flex items-center gap-1.5 p-1 bg-zinc-900/90 border border-zinc-800 rounded-xl overflow-x-auto">
+        <div className="flex items-center gap-1.5 p-1 bg-white border border-zinc-200 rounded-xl overflow-x-auto">
           <button
             onClick={() => setActiveTab("sources")}
             className={`flex items-center gap-2 px-3.5 py-2 rounded-lg text-xs font-medium transition-all whitespace-nowrap ${
               activeTab === "sources"
                 ? "bg-blue-600 text-white shadow-lg shadow-blue-500/20"
-                : "text-zinc-400 hover:text-white hover:bg-zinc-800/60"
+                : "text-zinc-500 hover:text-white hover:bg-zinc-800/60"
             }`}
           >
             <FileText className="w-3.5 h-3.5" />
@@ -489,7 +489,7 @@ export function InsuranceEvidenceRegister() {
             className={`flex items-center gap-2 px-3.5 py-2 rounded-lg text-xs font-medium transition-all whitespace-nowrap ${
               activeTab === "statements"
                 ? "bg-blue-600 text-white shadow-lg shadow-blue-500/20"
-                : "text-zinc-400 hover:text-white hover:bg-zinc-800/60"
+                : "text-zinc-500 hover:text-white hover:bg-zinc-800/60"
             }`}
           >
             <MessageSquare className="w-3.5 h-3.5" />
@@ -501,7 +501,7 @@ export function InsuranceEvidenceRegister() {
             className={`flex items-center gap-2 px-3.5 py-2 rounded-lg text-xs font-medium transition-all whitespace-nowrap ${
               activeTab === "matrix"
                 ? "bg-blue-600 text-white shadow-lg shadow-blue-500/20"
-                : "text-zinc-400 hover:text-white hover:bg-zinc-800/60"
+                : "text-zinc-500 hover:text-white hover:bg-zinc-800/60"
             }`}
           >
             <LinkIcon className="w-3.5 h-3.5" />
@@ -513,7 +513,7 @@ export function InsuranceEvidenceRegister() {
             className={`flex items-center gap-2 px-3.5 py-2 rounded-lg text-xs font-medium transition-all whitespace-nowrap ${
               activeTab === "queue"
                 ? "bg-blue-600 text-white shadow-lg shadow-blue-500/20"
-                : "text-zinc-400 hover:text-white hover:bg-zinc-800/60"
+                : "text-zinc-500 hover:text-white hover:bg-zinc-800/60"
             }`}
           >
             <Clock className="w-3.5 h-3.5" />
@@ -525,7 +525,7 @@ export function InsuranceEvidenceRegister() {
             className={`flex items-center gap-2 px-3.5 py-2 rounded-lg text-xs font-medium transition-all whitespace-nowrap ${
               activeTab === "report"
                 ? "bg-blue-600 text-white shadow-lg shadow-blue-500/20"
-                : "text-zinc-400 hover:text-white hover:bg-zinc-800/60"
+                : "text-zinc-500 hover:text-white hover:bg-zinc-800/60"
             }`}
           >
             <FileCheck className="w-3.5 h-3.5" />
@@ -557,7 +557,7 @@ export function InsuranceEvidenceRegister() {
             variant="outline"
             size="sm"
             onClick={handleExportPdf}
-            className="border-zinc-700 bg-zinc-800/60 text-zinc-300 hover:text-white hover:bg-zinc-800 text-xs"
+            className="border-zinc-300 bg-zinc-800/60 text-zinc-600 hover:text-white hover:bg-zinc-800 text-xs"
           >
             <Download className="w-3.5 h-3.5 mr-1.5" />
             PDF
@@ -567,7 +567,7 @@ export function InsuranceEvidenceRegister() {
 
       {/* Notifications */}
       {importSuccess && (
-        <div className="p-3 bg-emerald-500/10 border border-emerald-500/30 rounded-xl text-emerald-400 text-xs flex items-center gap-2">
+        <div className="p-3 bg-emerald-50 border border-emerald-200 rounded-xl text-emerald-400 text-xs flex items-center gap-2">
           <CheckCircle2 className="w-4 h-4 shrink-0" />
           <span>{importSuccess}</span>
         </div>
@@ -583,19 +583,19 @@ export function InsuranceEvidenceRegister() {
       {activeTab === "sources" && (
         <div className="space-y-6">
           {/* Filters Bar */}
-          <div className="bg-zinc-900/80 border border-zinc-800 rounded-2xl p-4 flex flex-col md:flex-row items-stretch md:items-center gap-3">
+          <div className="bg-white border border-zinc-200 rounded-2xl p-4 flex flex-col md:flex-row items-stretch md:items-center gap-3">
             <div className="relative flex-1">
-              <Search className="w-4 h-4 text-zinc-400 absolute left-3 top-1/2 -translate-y-1/2" />
+              <Search className="w-4 h-4 text-zinc-500 absolute left-3 top-1/2 -translate-y-1/2" />
               <Input
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="Caută în surse, emitent, sumar..."
-                className="pl-9 bg-zinc-950 border-zinc-800 text-xs text-white placeholder:text-zinc-500"
+                className="pl-9 bg-zinc-50 border-zinc-200 text-xs text-white placeholder:text-zinc-500"
               />
               {searchQuery && (
                 <button
                   onClick={() => setSearchQuery("")}
-                  className="absolute right-3 top-1/2 -translate-y-1/2 text-zinc-500 hover:text-zinc-300"
+                  className="absolute right-3 top-1/2 -translate-y-1/2 text-zinc-500 hover:text-zinc-600"
                 >
                   <X className="w-3.5 h-3.5" />
                 </button>
@@ -605,7 +605,7 @@ export function InsuranceEvidenceRegister() {
             <select
               value={filterSourceType}
               onChange={(e) => setFilterSourceType(e.target.value)}
-              className="bg-zinc-950 border border-zinc-800 rounded-lg px-2.5 py-1.5 text-xs text-zinc-300 focus:outline-none focus:border-blue-500"
+              className="bg-zinc-50 border border-zinc-200 rounded-lg px-2.5 py-1.5 text-xs text-zinc-600 focus:outline-none focus:border-blue-500"
             >
               <option value="all">Toate Tipurile de Surse</option>
               {Object.keys(SOURCE_TYPE_INFO).map((k) => (
@@ -618,7 +618,7 @@ export function InsuranceEvidenceRegister() {
             <select
               value={filterVerifStatus}
               onChange={(e) => setFilterVerifStatus(e.target.value)}
-              className="bg-zinc-950 border border-zinc-800 rounded-lg px-2.5 py-1.5 text-xs text-zinc-300 focus:outline-none focus:border-blue-500"
+              className="bg-zinc-50 border border-zinc-200 rounded-lg px-2.5 py-1.5 text-xs text-zinc-600 focus:outline-none focus:border-blue-500"
             >
               <option value="all">Toate Statusurile</option>
               {Object.keys(VERIFICATION_STATUS_INFO).map((k) => (
@@ -641,16 +641,16 @@ export function InsuranceEvidenceRegister() {
                 return (
                   <div
                     key={src.id}
-                    className="bg-zinc-900/90 border border-zinc-800 hover:border-zinc-700 rounded-2xl p-5 transition-all flex flex-col justify-between shadow-lg shadow-black/10"
+                    className="bg-white border border-zinc-200 hover:border-zinc-300 rounded-2xl p-5 transition-all flex flex-col justify-between shadow-lg shadow-black/10"
                   >
                     <div>
                       {/* Top Header */}
                       <div className="flex items-start justify-between gap-3 mb-2">
                         <div>
-                          <span className="px-2 py-0.5 rounded text-[10px] font-semibold bg-zinc-800 text-blue-400 border border-zinc-700/60">
+                          <span className="px-2 py-0.5 rounded text-[10px] font-semibold bg-zinc-800 text-blue-400 border border-zinc-300">
                             {srcType.labelRo}
                           </span>
-                          <h4 className="text-sm font-bold text-white mt-1.5 leading-snug">{src.title}</h4>
+                          <h4 className="text-sm font-bold text-zinc-900 mt-1.5 leading-snug">{src.title}</h4>
                         </div>
 
                         <span
@@ -671,10 +671,10 @@ export function InsuranceEvidenceRegister() {
                       </div>
 
                       {/* Meta information */}
-                      <div className="text-xs text-zinc-400 space-y-1 mb-3">
+                      <div className="text-xs text-zinc-500 space-y-1 mb-3">
                         <div>
                           <span className="text-zinc-500">Emitent: </span>
-                          <span className="text-zinc-200 font-medium">{src.authorOrOrganization || "Nespecificat"}</span>
+                          <span className="text-zinc-800 font-medium">{src.authorOrOrganization || "Nespecificat"}</span>
                         </div>
                         {(src.dateOfDocument || src.dateReceived) && (
                           <div>
@@ -686,11 +686,11 @@ export function InsuranceEvidenceRegister() {
                         {src.relatedPolicyNickname && (
                           <div>
                             <span className="text-zinc-500">Poliță asociată: </span>
-                            <span className="text-zinc-300">{src.relatedPolicyNickname}</span>
+                            <span className="text-zinc-600">{src.relatedPolicyNickname}</span>
                           </div>
                         )}
                         {src.referenceOrSection && (
-                          <div className="text-[11px] text-zinc-400 italic">
+                          <div className="text-[11px] text-zinc-500 italic">
                             Ref: {src.referenceOrSection}
                           </div>
                         )}
@@ -698,7 +698,7 @@ export function InsuranceEvidenceRegister() {
 
                       {/* Summary Box */}
                       {src.summary && (
-                        <div className="p-2.5 rounded-xl bg-zinc-950 border border-zinc-800/80 text-xs text-zinc-300 mb-3">
+                        <div className="p-2.5 rounded-xl bg-zinc-50 border border-zinc-200/80 text-xs text-zinc-600 mb-3">
                           {src.summary}
                         </div>
                       )}
@@ -718,18 +718,18 @@ export function InsuranceEvidenceRegister() {
                     </div>
 
                     {/* Actions bar */}
-                    <div className="pt-3 border-t border-zinc-800/80 flex items-center justify-between gap-2 mt-4">
+                    <div className="pt-3 border-t border-zinc-200/80 flex items-center justify-between gap-2 mt-4">
                       <div className="flex items-center gap-1">
                         <button
                           onClick={() => handleOpenEditSource(src)}
-                          className="p-1.5 rounded-lg bg-zinc-800 text-zinc-300 hover:text-white hover:bg-zinc-700 transition-colors"
+                          className="p-1.5 rounded-lg bg-zinc-800 text-zinc-600 hover:text-white hover:bg-zinc-700 transition-colors"
                           title="Editează sursa"
                         >
                           <Edit3 className="w-3.5 h-3.5" />
                         </button>
                         <button
                           onClick={() => setItemToDelete({ type: "source", item: src })}
-                          className="p-1.5 rounded-lg bg-zinc-800 text-zinc-400 hover:text-red-400 hover:bg-red-500/10 transition-colors"
+                          className="p-1.5 rounded-lg bg-zinc-800 text-zinc-500 hover:text-red-400 hover:bg-red-500/10 transition-colors"
                           title="Șterge sursa"
                         >
                           <Trash2 className="w-3.5 h-3.5" />
@@ -756,9 +756,9 @@ export function InsuranceEvidenceRegister() {
               })}
             </div>
           ) : (
-            <div className="p-12 text-center bg-zinc-900/40 border border-zinc-800/60 rounded-2xl">
+            <div className="p-12 text-center bg-zinc-50 border border-zinc-200/60 rounded-2xl">
               <FileText className="w-8 h-8 text-zinc-600 mx-auto mb-3" />
-              <h3 className="text-base font-semibold text-zinc-300">Nicio sursă înregistrată</h3>
+              <h3 className="text-base font-semibold text-zinc-600">Nicio sursă înregistrată</h3>
               <p className="text-xs text-zinc-500 mt-1 max-w-sm mx-auto">
                 Adaugă prima sursă documentară (condiții de asigurare, email asigurator, ofertă scrisă) pentru a fundamenta afirmațiile despre polițe.
               </p>
@@ -775,19 +775,19 @@ export function InsuranceEvidenceRegister() {
       {activeTab === "statements" && (
         <div className="space-y-6">
           {/* Filters Bar */}
-          <div className="bg-zinc-900/80 border border-zinc-800 rounded-2xl p-4 flex flex-col md:flex-row items-stretch md:items-center gap-3">
+          <div className="bg-white border border-zinc-200 rounded-2xl p-4 flex flex-col md:flex-row items-stretch md:items-center gap-3">
             <div className="relative flex-1">
-              <Search className="w-4 h-4 text-zinc-400 absolute left-3 top-1/2 -translate-y-1/2" />
+              <Search className="w-4 h-4 text-zinc-500 absolute left-3 top-1/2 -translate-y-1/2" />
               <Input
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="Caută în conținutul afirmațiilor, clauzelor sau notițelor..."
-                className="pl-9 bg-zinc-950 border-zinc-800 text-xs text-white placeholder:text-zinc-500"
+                className="pl-9 bg-zinc-50 border-zinc-200 text-xs text-white placeholder:text-zinc-500"
               />
               {searchQuery && (
                 <button
                   onClick={() => setSearchQuery("")}
-                  className="absolute right-3 top-1/2 -translate-y-1/2 text-zinc-500 hover:text-zinc-300"
+                  className="absolute right-3 top-1/2 -translate-y-1/2 text-zinc-500 hover:text-zinc-600"
                 >
                   <X className="w-3.5 h-3.5" />
                 </button>
@@ -797,7 +797,7 @@ export function InsuranceEvidenceRegister() {
             <select
               value={filterStatementStatus}
               onChange={(e) => setFilterStatementStatus(e.target.value)}
-              className="bg-zinc-950 border border-zinc-800 rounded-lg px-2.5 py-1.5 text-xs text-zinc-300 focus:outline-none focus:border-blue-500"
+              className="bg-zinc-50 border border-zinc-200 rounded-lg px-2.5 py-1.5 text-xs text-zinc-600 focus:outline-none focus:border-blue-500"
             >
               <option value="all">Toate Statusurile Afirmațiilor</option>
               {Object.keys(STATEMENT_STATUS_INFO).map((k) => (
@@ -818,19 +818,19 @@ export function InsuranceEvidenceRegister() {
                 return (
                   <div
                     key={st.id}
-                    className="bg-zinc-900/90 border border-zinc-800 hover:border-zinc-700 rounded-2xl p-5 transition-all space-y-3 shadow-lg shadow-black/10"
+                    className="bg-white border border-zinc-200 hover:border-zinc-300 rounded-2xl p-5 transition-all space-y-3 shadow-lg shadow-black/10"
                   >
                     <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-3">
                       <div className="space-y-1">
                         <div className="flex flex-wrap items-center gap-2">
                           {st.category && (
-                            <span className="px-2 py-0.5 rounded text-[10px] font-semibold bg-zinc-800 text-zinc-300 border border-zinc-700">
+                            <span className="px-2 py-0.5 rounded text-[10px] font-semibold bg-zinc-800 text-zinc-600 border border-zinc-300">
                               {st.category}
                             </span>
                           )}
                           {st.relatedPolicyNickname && (
-                            <span className="text-xs text-zinc-400 font-medium">
-                              Poliță: <strong className="text-zinc-200">{st.relatedPolicyNickname}</strong>
+                            <span className="text-xs text-zinc-500 font-medium">
+                              Poliță: <strong className="text-zinc-800">{st.relatedPolicyNickname}</strong>
                             </span>
                           )}
                           {st.dateRecorded && (
@@ -861,7 +861,7 @@ export function InsuranceEvidenceRegister() {
                     </div>
 
                     {/* Linked Sources pills */}
-                    <div className="p-3 bg-zinc-950/60 rounded-xl border border-zinc-800/60 text-xs">
+                    <div className="p-3 bg-zinc-50 rounded-xl border border-zinc-200/60 text-xs">
                       <div className="text-[10px] text-zinc-500 uppercase tracking-wider font-semibold mb-1.5">
                         Surse Documentare Asociate ({linkedSources.length})
                       </div>
@@ -870,7 +870,7 @@ export function InsuranceEvidenceRegister() {
                           {linkedSources.map((ls) => (
                             <span
                               key={ls.id}
-                              className="px-2.5 py-1 rounded-lg bg-zinc-800 border border-zinc-700 text-zinc-200 text-[11px] flex items-center gap-1.5"
+                              className="px-2.5 py-1 rounded-lg bg-zinc-800 border border-zinc-300 text-zinc-800 text-[11px] flex items-center gap-1.5"
                             >
                               <FileText className="w-3 h-3 text-blue-400" />
                               <span>{ls.title}</span>
@@ -899,17 +899,17 @@ export function InsuranceEvidenceRegister() {
 
                     {/* Notes snippet */}
                     {st.notes && (
-                      <div className="text-xs text-zinc-400 italic">
+                      <div className="text-xs text-zinc-500 italic">
                         Notă: &ldquo;{st.notes}&rdquo;
                       </div>
                     )}
 
                     {/* Actions */}
-                    <div className="pt-2 border-t border-zinc-800/60 flex items-center justify-between">
+                    <div className="pt-2 border-t border-zinc-200/60 flex items-center justify-between">
                       <div className="flex items-center gap-2">
                         <button
                           onClick={() => handleOpenEditStatement(st)}
-                          className="text-xs text-blue-400 hover:text-blue-300 inline-flex items-center gap-1 font-medium"
+                          className="text-xs text-blue-400 hover:text-blue-800 inline-flex items-center gap-1 font-medium"
                         >
                           <Edit3 className="w-3 h-3" />
                           <span>Editează afirmația</span>
@@ -929,9 +929,9 @@ export function InsuranceEvidenceRegister() {
               })}
             </div>
           ) : (
-            <div className="p-12 text-center bg-zinc-900/40 border border-zinc-800/60 rounded-2xl">
+            <div className="p-12 text-center bg-zinc-50 border border-zinc-200/60 rounded-2xl">
               <MessageSquare className="w-8 h-8 text-zinc-600 mx-auto mb-3" />
-              <h3 className="text-base font-semibold text-zinc-300">Nicio afirmație înregistrată</h3>
+              <h3 className="text-base font-semibold text-zinc-600">Nicio afirmație înregistrată</h3>
               <p className="text-xs text-zinc-500 mt-1 max-w-sm mx-auto">
                 Notează clauze concrete sau întrebări de confirmat, asociindu-le cu sursele existente.
               </p>
@@ -947,15 +947,15 @@ export function InsuranceEvidenceRegister() {
       {/* TAB 3: MATRIX & RECONCILIATION */}
       {activeTab === "matrix" && (
         <div className="space-y-6">
-          <div className="bg-zinc-900/40 border border-zinc-800/60 rounded-xl p-4 text-xs text-zinc-400 flex items-start gap-3">
+          <div className="bg-zinc-50 border border-zinc-200/60 rounded-xl p-4 text-xs text-zinc-500 flex items-start gap-3">
             <Info className="w-4 h-4 text-blue-400 shrink-0 mt-0.5" />
             <div>
-              <span className="font-semibold text-zinc-200">Reconciliere documentară:</span> Această matrice afișează legătura dintre fiecare afirmație/clauză și documentele care o susțin. Dacă există neconcordanțe (ex: promisiuni verbale contrazise de contract), acestea sunt evidențiate pentru discuția cu consilierul sau asiguratorul.
+              <span className="font-semibold text-zinc-800">Reconciliere documentară:</span> Această matrice afișează legătura dintre fiecare afirmație/clauză și documentele care o susțin. Dacă există neconcordanțe (ex: promisiuni verbale contrazise de contract), acestea sunt evidențiate pentru discuția cu consilierul sau asiguratorul.
             </div>
           </div>
 
-          <div className="bg-zinc-900/90 border border-zinc-800 rounded-2xl overflow-hidden shadow-xl">
-            <div className="p-4 border-b border-zinc-800 font-bold text-sm text-white">
+          <div className="bg-white border border-zinc-200 rounded-2xl overflow-hidden shadow-xl">
+            <div className="p-4 border-b border-zinc-200 font-bold text-sm text-white">
               Matrice Afirmații vs. Surse Documentare
             </div>
 
@@ -985,12 +985,12 @@ export function InsuranceEvidenceRegister() {
 
                     {/* Sources mapping */}
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
-                      <div className="p-3 bg-zinc-950 rounded-xl border border-zinc-800/80 text-xs">
+                      <div className="p-3 bg-zinc-50 rounded-xl border border-zinc-200/80 text-xs">
                         <div className="text-[10px] text-zinc-500 uppercase font-semibold mb-1">Surse de Sprijin</div>
                         {linkedSources.length > 0 ? (
                           <ul className="space-y-1">
                             {linkedSources.map((ls) => (
-                              <li key={ls.id} className="text-zinc-300 flex items-center gap-1.5">
+                              <li key={ls.id} className="text-zinc-600 flex items-center gap-1.5">
                                 <span className="w-1.5 h-1.5 rounded-full bg-blue-400" />
                                 <span className="font-medium text-white">{ls.title}</span>
                                 <span className="text-zinc-500">({SOURCE_TYPE_INFO[ls.sourceType].labelRo})</span>
@@ -1002,7 +1002,7 @@ export function InsuranceEvidenceRegister() {
                         )}
                       </div>
 
-                      <div className="p-3 bg-zinc-950 rounded-xl border border-zinc-800/80 text-xs">
+                      <div className="p-3 bg-zinc-50 rounded-xl border border-zinc-200/80 text-xs">
                         <div className="text-[10px] text-zinc-500 uppercase font-semibold mb-1">Status Reconciliere</div>
                         {st.conflictNote ? (
                           <div className="text-red-400">
@@ -1029,12 +1029,12 @@ export function InsuranceEvidenceRegister() {
       {/* TAB 4: FOLLOW-UP QUEUE */}
       {activeTab === "queue" && (
         <div className="space-y-6">
-          <div className="bg-zinc-900/80 border border-zinc-800 rounded-2xl p-5 space-y-4">
+          <div className="bg-white border border-zinc-200 rounded-2xl p-5 space-y-4">
             <div className="flex items-center gap-2">
               <Clock className="w-5 h-5 text-purple-400" />
-              <h3 className="text-base font-bold text-white">Coadă de Acțiuni & Clarificări</h3>
+              <h3 className="text-base font-bold text-zinc-900">Coadă de Acțiuni & Clarificări</h3>
             </div>
-            <p className="text-xs text-zinc-400">
+            <p className="text-xs text-zinc-500">
               Urmărește clarificările solicitate asiguratorilor, termenele de revenire și afirmațiile care au rămas fără confirmare documentară.
             </p>
 
@@ -1049,7 +1049,7 @@ export function InsuranceEvidenceRegister() {
                   .map((src) => (
                     <div
                       key={src.id}
-                      className="p-3 bg-red-500/10 border border-red-500/20 rounded-xl text-xs text-zinc-200 flex items-center justify-between gap-3"
+                      className="p-3 bg-red-500/10 border border-red-500/20 rounded-xl text-xs text-zinc-800 flex items-center justify-between gap-3"
                     >
                       <div>
                         <span className="font-semibold text-white">{src.title}</span> — Data scadenței: {src.followUpDate}
@@ -1079,7 +1079,7 @@ export function InsuranceEvidenceRegister() {
                     .map((s) => (
                       <div
                         key={s.id}
-                        className="p-3 bg-purple-500/10 border border-purple-500/20 rounded-xl text-xs text-zinc-200 flex items-center justify-between"
+                        className="p-3 bg-purple-500/10 border border-purple-500/20 rounded-xl text-xs text-zinc-800 flex items-center justify-between"
                       >
                         <div>
                           <span className="font-semibold text-white">Sursă: {s.title}</span> — Așteaptă răspuns de la {s.authorOrOrganization || "asigurator"}
@@ -1098,7 +1098,7 @@ export function InsuranceEvidenceRegister() {
                     .map((st) => (
                       <div
                         key={st.id}
-                        className="p-3 bg-purple-500/10 border border-purple-500/20 rounded-xl text-xs text-zinc-200 flex items-center justify-between"
+                        className="p-3 bg-purple-500/10 border border-purple-500/20 rounded-xl text-xs text-zinc-800 flex items-center justify-between"
                       >
                         <div>
                           <span className="font-semibold text-white">Afirmație: „{st.statement}”</span>
@@ -1114,7 +1114,7 @@ export function InsuranceEvidenceRegister() {
                     ))}
                 </div>
               ) : (
-                <div className="p-3 bg-zinc-950 rounded-xl border border-zinc-800 text-xs text-zinc-500">
+                <div className="p-3 bg-zinc-50 rounded-xl border border-zinc-200 text-xs text-zinc-500">
                   Nu există clarificări marcate în așteptare.
                 </div>
               )}
@@ -1132,7 +1132,7 @@ export function InsuranceEvidenceRegister() {
                     .map((st) => (
                       <div
                         key={st.id}
-                        className="p-3 bg-amber-500/10 border border-amber-500/20 rounded-xl text-xs text-zinc-200 flex items-center justify-between"
+                        className="p-3 bg-amber-500/10 border border-amber-500/20 rounded-xl text-xs text-zinc-800 flex items-center justify-between"
                       >
                         <div>„{st.statement}”</div>
                         <Button
@@ -1146,7 +1146,7 @@ export function InsuranceEvidenceRegister() {
                     ))}
                 </div>
               ) : (
-                <div className="p-3 bg-zinc-950 rounded-xl border border-zinc-800 text-xs text-zinc-500">
+                <div className="p-3 bg-zinc-50 rounded-xl border border-zinc-200 text-xs text-zinc-500">
                   Toate afirmațiile au cel puțin o sursă asociată.
                 </div>
               )}
@@ -1158,17 +1158,17 @@ export function InsuranceEvidenceRegister() {
       {/* TAB 5: REPORT & BACKUP */}
       {activeTab === "report" && (
         <div className="space-y-6">
-          <div className="bg-zinc-900/80 border border-zinc-800 rounded-2xl p-6 space-y-6">
+          <div className="bg-white border border-zinc-200 rounded-2xl p-6 space-y-6">
             <div>
-              <h3 className="text-lg font-bold text-white">Export & Raport Registru Documentare</h3>
-              <p className="text-xs text-zinc-400 mt-1">
+              <h3 className="text-lg font-bold text-zinc-900">Export & Raport Registru Documentare</h3>
+              <p className="text-xs text-zinc-500 mt-1">
                 Descarcă un dosar complet PDF sau salvează un backup JSON securizat local în browser.
               </p>
             </div>
 
             {/* User notes */}
             <div>
-              <label className="block text-xs font-semibold text-zinc-300 uppercase tracking-wider mb-2">
+              <label className="block text-xs font-semibold text-zinc-600 uppercase tracking-wider mb-2">
                 Notițe Generale / Concluzii Documentare
               </label>
               <textarea
@@ -1176,17 +1176,17 @@ export function InsuranceEvidenceRegister() {
                 onChange={(e) => setUserNotes(e.target.value)}
                 placeholder="Ex: Am adunat toate clarificările pentru CASCO și Locuință, urmează să transmit lista către Cristian Văduva..."
                 rows={3}
-                className="w-full bg-zinc-950 border border-zinc-800 rounded-xl p-3 text-xs text-zinc-200 placeholder:text-zinc-600 focus:outline-none focus:border-blue-500"
+                className="w-full bg-zinc-50 border border-zinc-200 rounded-xl p-3 text-xs text-zinc-800 placeholder:text-zinc-600 focus:outline-none focus:border-blue-500"
               />
             </div>
 
             {/* Actions Grid */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
-              <div className="p-4 rounded-xl bg-zinc-950/60 border border-zinc-800/80 flex flex-col justify-between">
+              <div className="p-4 rounded-xl bg-zinc-50 border border-zinc-200/80 flex flex-col justify-between">
                 <div>
                   <FileText className="w-6 h-6 text-blue-400 mb-2" />
                   <h4 className="text-sm font-semibold text-white">Raport PDF Structurat</h4>
-                  <p className="text-[11px] text-zinc-400 mt-1">
+                  <p className="text-[11px] text-zinc-500 mt-1">
                     Document tipărit cu inventarul surselor, clauzelor și stadiului clarificărilor.
                   </p>
                 </div>
@@ -1196,29 +1196,29 @@ export function InsuranceEvidenceRegister() {
                 </Button>
               </div>
 
-              <div className="p-4 rounded-xl bg-zinc-950/60 border border-zinc-800/80 flex flex-col justify-between">
+              <div className="p-4 rounded-xl bg-zinc-50 border border-zinc-200/80 flex flex-col justify-between">
                 <div>
                   <Download className="w-6 h-6 text-emerald-400 mb-2" />
                   <h4 className="text-sm font-semibold text-white">Export JSON Backup</h4>
-                  <p className="text-[11px] text-zinc-400 mt-1">
+                  <p className="text-[11px] text-zinc-500 mt-1">
                     Fișier securizat local pentru transfer între calculatoare sau sesiuni viitoare.
                   </p>
                 </div>
-                <Button onClick={handleExportJson} variant="outline" className="mt-4 border-zinc-700 text-xs">
+                <Button onClick={handleExportJson} variant="outline" className="mt-4 border-zinc-300 text-xs">
                   <Download className="w-3.5 h-3.5 mr-1.5" />
                   Export JSON
                 </Button>
               </div>
 
-              <div className="p-4 rounded-xl bg-zinc-950/60 border border-zinc-800/80 flex flex-col justify-between">
+              <div className="p-4 rounded-xl bg-zinc-50 border border-zinc-200/80 flex flex-col justify-between">
                 <div>
                   <Upload className="w-6 h-6 text-purple-400 mb-2" />
                   <h4 className="text-sm font-semibold text-white">Import Fișier JSON</h4>
-                  <p className="text-[11px] text-zinc-400 mt-1">
+                  <p className="text-[11px] text-zinc-500 mt-1">
                     Încarcă un fișier de registru salvat anterior pentru a continua lucrul.
                   </p>
                 </div>
-                <label className="mt-4 inline-flex items-center justify-center rounded-md text-xs font-medium border border-zinc-700 bg-zinc-800 px-4 py-2 text-zinc-200 hover:bg-zinc-700 cursor-pointer">
+                <label className="mt-4 inline-flex items-center justify-center rounded-md text-xs font-medium border border-zinc-300 bg-zinc-800 px-4 py-2 text-zinc-800 hover:bg-zinc-700 cursor-pointer">
                   <Upload className="w-3.5 h-3.5 mr-1.5" />
                   <span>Încarcă Fișier</span>
                   <input type="file" accept=".json" onChange={handleImportJson} className="hidden" />
@@ -1227,7 +1227,7 @@ export function InsuranceEvidenceRegister() {
             </div>
 
             {/* Privacy note & Reset button */}
-            <div className="pt-6 border-t border-zinc-800/80 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div className="pt-6 border-t border-zinc-200/80 flex flex-col sm:flex-row items-center justify-between gap-4">
               <div className="flex items-center gap-2 text-xs text-zinc-500">
                 <Lock className="w-4 h-4 text-emerald-400 shrink-0" />
                 <span>Toate informațiile rămân strict în memoria browserului tău și nu sunt trimise către servere.</span>
@@ -1255,14 +1255,14 @@ export function InsuranceEvidenceRegister() {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.95 }}
-              className="bg-zinc-900 border border-zinc-800 rounded-2xl w-full max-w-xl max-h-[90vh] flex flex-col overflow-hidden shadow-2xl"
+              className="bg-white border border-zinc-200 rounded-2xl w-full max-w-xl max-h-[90vh] flex flex-col overflow-hidden shadow-2xl"
             >
-              <div className="px-6 py-4 border-b border-zinc-800 flex items-center justify-between">
+              <div className="px-6 py-4 border-b border-zinc-200 flex items-center justify-between">
                 <div className="flex items-center gap-2">
                   <div className="p-1.5 rounded-lg bg-blue-500/10 text-blue-400">
                     <FileText className="w-4 h-4" />
                   </div>
-                  <h3 className="text-base font-bold text-white">
+                  <h3 className="text-base font-bold text-zinc-900">
                     {editingSource ? "Editează Sursă" : "Adaugă Sursă Documentară"}
                   </h3>
                 </div>
@@ -1276,7 +1276,7 @@ export function InsuranceEvidenceRegister() {
 
               <form onSubmit={handleSaveSource} className="p-6 overflow-y-auto space-y-4 text-xs">
                 <div>
-                  <label className="block text-zinc-300 font-semibold mb-1">
+                  <label className="block text-zinc-600 font-semibold mb-1">
                     Titlu Sursă / Document <span className="text-red-400">*</span>
                   </label>
                   <Input
@@ -1284,17 +1284,17 @@ export function InsuranceEvidenceRegister() {
                     value={sourceFormData.title || ""}
                     onChange={(e) => setSourceFormData({ ...sourceFormData, title: e.target.value })}
                     placeholder="Ex: Condiții Generale CASCO Ediția 2026, Email Clarificare Subscriitor..."
-                    className="bg-zinc-950 border-zinc-800 text-xs text-white"
+                    className="bg-zinc-50 border-zinc-200 text-xs text-white"
                   />
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-zinc-300 font-medium mb-1">Tip Sursă</label>
+                    <label className="block text-zinc-600 font-medium mb-1">Tip Sursă</label>
                     <select
                       value={sourceFormData.sourceType || "policy_wording"}
                       onChange={(e) => setSourceFormData({ ...sourceFormData, sourceType: e.target.value as SourceType })}
-                      className="w-full bg-zinc-950 border border-zinc-800 rounded-lg px-3 py-2 text-xs text-zinc-200 focus:outline-none focus:border-blue-500"
+                      className="w-full bg-zinc-50 border border-zinc-200 rounded-lg px-3 py-2 text-xs text-zinc-800 focus:outline-none focus:border-blue-500"
                     >
                       {Object.keys(SOURCE_TYPE_INFO).map((k) => (
                         <option key={k} value={k}>
@@ -1305,78 +1305,78 @@ export function InsuranceEvidenceRegister() {
                   </div>
 
                   <div>
-                    <label className="block text-zinc-300 font-medium mb-1">Organizație / Autor Emitent</label>
+                    <label className="block text-zinc-600 font-medium mb-1">Organizație / Autor Emitent</label>
                     <Input
                       value={sourceFormData.authorOrOrganization || ""}
                       onChange={(e) => setSourceFormData({ ...sourceFormData, authorOrOrganization: e.target.value })}
                       placeholder="Ex: Allianz-Țiriac, Broker, Evaluator autorizat..."
-                      className="bg-zinc-950 border-zinc-800 text-xs text-white"
+                      className="bg-zinc-50 border-zinc-200 text-xs text-white"
                     />
                   </div>
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-zinc-300 font-medium mb-1">Dată Document</label>
+                    <label className="block text-zinc-600 font-medium mb-1">Dată Document</label>
                     <Input
                       type="date"
                       value={sourceFormData.dateOfDocument || ""}
                       onChange={(e) => setSourceFormData({ ...sourceFormData, dateOfDocument: e.target.value })}
-                      className="bg-zinc-950 border-zinc-800 text-xs text-white"
+                      className="bg-zinc-50 border-zinc-200 text-xs text-white"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-zinc-300 font-medium mb-1">Dată Primire / Accesare</label>
+                    <label className="block text-zinc-600 font-medium mb-1">Dată Primire / Accesare</label>
                     <Input
                       type="date"
                       value={sourceFormData.dateReceived || ""}
                       onChange={(e) => setSourceFormData({ ...sourceFormData, dateReceived: e.target.value })}
-                      className="bg-zinc-950 border-zinc-800 text-xs text-white"
+                      className="bg-zinc-50 border-zinc-200 text-xs text-white"
                     />
                   </div>
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-zinc-300 font-medium mb-1">Poliță / Categorie Asociată</label>
+                    <label className="block text-zinc-600 font-medium mb-1">Poliță / Categorie Asociată</label>
                     <Input
                       value={sourceFormData.relatedPolicyNickname || ""}
                       onChange={(e) => setSourceFormData({ ...sourceFormData, relatedPolicyNickname: e.target.value })}
                       placeholder="Ex: CASCO Autoturism, Asigurare Locuință..."
-                      className="bg-zinc-950 border-zinc-800 text-xs text-white"
+                      className="bg-zinc-50 border-zinc-200 text-xs text-white"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-zinc-300 font-medium mb-1">Secțiune / Pagină / Referință</label>
+                    <label className="block text-zinc-600 font-medium mb-1">Secțiune / Pagină / Referință</label>
                     <Input
                       value={sourceFormData.referenceOrSection || ""}
                       onChange={(e) => setSourceFormData({ ...sourceFormData, referenceOrSection: e.target.value })}
                       placeholder="Ex: Art. 12.3, Pagină 4, Număr înregistrare..."
-                      className="bg-zinc-950 border-zinc-800 text-xs text-white"
+                      className="bg-zinc-50 border-zinc-200 text-xs text-white"
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label className="block text-zinc-300 font-medium mb-1">Sumar Clauză sau Extras Relevat</label>
+                  <label className="block text-zinc-600 font-medium mb-1">Sumar Clauză sau Extras Relevat</label>
                   <textarea
                     value={sourceFormData.summary || ""}
                     onChange={(e) => setSourceFormData({ ...sourceFormData, summary: e.target.value })}
                     placeholder="Scurt rezumat a ceea ce stabilește sau confirmă acest document..."
                     rows={3}
-                    className="w-full bg-zinc-950 border border-zinc-800 rounded-lg p-2.5 text-xs text-zinc-200 placeholder:text-zinc-600 focus:outline-none focus:border-blue-500"
+                    className="w-full bg-zinc-50 border border-zinc-200 rounded-lg p-2.5 text-xs text-zinc-800 placeholder:text-zinc-600 focus:outline-none focus:border-blue-500"
                   />
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-zinc-300 font-medium mb-1">Status Verificare</label>
+                    <label className="block text-zinc-600 font-medium mb-1">Status Verificare</label>
                     <select
                       value={sourceFormData.verificationStatus || "user_entered_unverified"}
                       onChange={(e) => setSourceFormData({ ...sourceFormData, verificationStatus: e.target.value as VerificationStatus })}
-                      className="w-full bg-zinc-950 border border-zinc-800 rounded-lg px-3 py-2 text-xs text-zinc-200 focus:outline-none focus:border-blue-500"
+                      className="w-full bg-zinc-50 border border-zinc-200 rounded-lg px-3 py-2 text-xs text-zinc-800 focus:outline-none focus:border-blue-500"
                     >
                       {Object.keys(VERIFICATION_STATUS_INFO).map((k) => (
                         <option key={k} value={k}>
@@ -1387,22 +1387,22 @@ export function InsuranceEvidenceRegister() {
                   </div>
 
                   <div>
-                    <label className="block text-zinc-300 font-medium mb-1">Dată Follow-up / Scadență</label>
+                    <label className="block text-zinc-600 font-medium mb-1">Dată Follow-up / Scadență</label>
                     <Input
                       type="date"
                       value={sourceFormData.followUpDate || ""}
                       onChange={(e) => setSourceFormData({ ...sourceFormData, followUpDate: e.target.value })}
-                      className="bg-zinc-950 border-zinc-800 text-xs text-white"
+                      className="bg-zinc-50 border-zinc-200 text-xs text-white"
                     />
                   </div>
                 </div>
 
-                <div className="pt-4 border-t border-zinc-800 flex items-center justify-end gap-2">
+                <div className="pt-4 border-t border-zinc-200 flex items-center justify-end gap-2">
                   <Button
                     type="button"
                     variant="outline"
                     onClick={() => setIsSourceModalOpen(false)}
-                    className="border-zinc-700 text-xs"
+                    className="border-zinc-300 text-xs"
                   >
                     Anulează
                   </Button>
@@ -1424,14 +1424,14 @@ export function InsuranceEvidenceRegister() {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.95 }}
-              className="bg-zinc-900 border border-zinc-800 rounded-2xl w-full max-w-xl max-h-[90vh] flex flex-col overflow-hidden shadow-2xl"
+              className="bg-white border border-zinc-200 rounded-2xl w-full max-w-xl max-h-[90vh] flex flex-col overflow-hidden shadow-2xl"
             >
-              <div className="px-6 py-4 border-b border-zinc-800 flex items-center justify-between">
+              <div className="px-6 py-4 border-b border-zinc-200 flex items-center justify-between">
                 <div className="flex items-center gap-2">
                   <div className="p-1.5 rounded-lg bg-blue-500/10 text-blue-400">
                     <MessageSquare className="w-4 h-4" />
                   </div>
-                  <h3 className="text-base font-bold text-white">
+                  <h3 className="text-base font-bold text-zinc-900">
                     {editingStatement ? "Editează Afirmație" : "Adaugă Afirmație / Clauză"}
                   </h3>
                 </div>
@@ -1445,7 +1445,7 @@ export function InsuranceEvidenceRegister() {
 
               <form onSubmit={handleSaveStatement} className="p-6 overflow-y-auto space-y-4 text-xs">
                 <div>
-                  <label className="block text-zinc-300 font-semibold mb-1">
+                  <label className="block text-zinc-600 font-semibold mb-1">
                     Textul Afirmației / Clauzei de Verificat <span className="text-red-400">*</span>
                   </label>
                   <textarea
@@ -1454,45 +1454,45 @@ export function InsuranceEvidenceRegister() {
                     onChange={(e) => setStatementFormData({ ...statementFormData, statement: e.target.value })}
                     placeholder="Ex: „Polița acoperă furtul oglinzilor fără franșiză”, „Am nevoie de confirmare dacă panourile solare sunt asigurate...”"
                     rows={3}
-                    className="w-full bg-zinc-950 border border-zinc-800 rounded-lg p-2.5 text-xs text-white placeholder:text-zinc-600 focus:outline-none focus:border-blue-500"
+                    className="w-full bg-zinc-50 border border-zinc-200 rounded-lg p-2.5 text-xs text-white placeholder:text-zinc-600 focus:outline-none focus:border-blue-500"
                   />
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-zinc-300 font-medium mb-1">Categorie Asigurare</label>
+                    <label className="block text-zinc-600 font-medium mb-1">Categorie Asigurare</label>
                     <Input
                       value={statementFormData.category || ""}
                       onChange={(e) => setStatementFormData({ ...statementFormData, category: e.target.value })}
                       placeholder="Ex: CASCO, Locuință, RCA, Sănătate..."
-                      className="bg-zinc-950 border-zinc-800 text-xs text-white"
+                      className="bg-zinc-50 border-zinc-200 text-xs text-white"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-zinc-300 font-medium mb-1">Poliță Asociată</label>
+                    <label className="block text-zinc-600 font-medium mb-1">Poliță Asociată</label>
                     <Input
                       value={statementFormData.relatedPolicyNickname || ""}
                       onChange={(e) => setStatementFormData({ ...statementFormData, relatedPolicyNickname: e.target.value })}
                       placeholder="Ex: CASCO BMW, Locuință Ilfov..."
-                      className="bg-zinc-950 border-zinc-800 text-xs text-white"
+                      className="bg-zinc-50 border-zinc-200 text-xs text-white"
                     />
                   </div>
                 </div>
 
                 {/* Sources Selection */}
                 <div>
-                  <label className="block text-zinc-300 font-semibold mb-1.5">
+                  <label className="block text-zinc-600 font-semibold mb-1.5">
                     Surse Documentare de Sprijin
                   </label>
                   {sources.length > 0 ? (
-                    <div className="max-h-36 overflow-y-auto p-2 bg-zinc-950 rounded-xl border border-zinc-800 space-y-1.5">
+                    <div className="max-h-36 overflow-y-auto p-2 bg-zinc-50 rounded-xl border border-zinc-200 space-y-1.5">
                       {sources.map((s) => {
                         const isChecked = (statementFormData.sourceIds || []).includes(s.id);
                         return (
                           <label
                             key={s.id}
-                            className="flex items-center gap-2.5 p-1.5 rounded hover:bg-zinc-900 cursor-pointer text-xs text-zinc-300"
+                            className="flex items-center gap-2.5 p-1.5 rounded hover:bg-white cursor-pointer text-xs text-zinc-600"
                           >
                             <input
                               type="checkbox"
@@ -1505,7 +1505,7 @@ export function InsuranceEvidenceRegister() {
                                   setStatementFormData({ ...statementFormData, sourceIds: current.filter((id) => id !== s.id) });
                                 }
                               }}
-                              className="rounded bg-zinc-900 border-zinc-700 text-blue-600 focus:ring-0"
+                              className="rounded bg-white border-zinc-300 text-blue-600 focus:ring-0"
                             />
                             <span className="font-medium text-white truncate">{s.title}</span>
                             <span className="text-zinc-500 text-[10px]">({SOURCE_TYPE_INFO[s.sourceType].labelRo})</span>
@@ -1514,7 +1514,7 @@ export function InsuranceEvidenceRegister() {
                       })}
                     </div>
                   ) : (
-                    <div className="p-3 bg-zinc-950 rounded-xl border border-zinc-800 text-zinc-500 text-xs italic">
+                    <div className="p-3 bg-zinc-50 rounded-xl border border-zinc-200 text-zinc-500 text-xs italic">
                       Nu ai adăugat încă nicio sursă. Poți crea una în tab-ul „Surse & Documente”.
                     </div>
                   )}
@@ -1522,11 +1522,11 @@ export function InsuranceEvidenceRegister() {
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-zinc-300 font-medium mb-1">Status Afirmație</label>
+                    <label className="block text-zinc-600 font-medium mb-1">Status Afirmație</label>
                     <select
                       value={statementFormData.statementStatus || "user_assertion"}
                       onChange={(e) => setStatementFormData({ ...statementFormData, statementStatus: e.target.value as StatementStatus })}
-                      className="w-full bg-zinc-950 border border-zinc-800 rounded-lg px-3 py-2 text-xs text-zinc-200 focus:outline-none focus:border-blue-500"
+                      className="w-full bg-zinc-50 border border-zinc-200 rounded-lg px-3 py-2 text-xs text-zinc-800 focus:outline-none focus:border-blue-500"
                     >
                       {Object.keys(STATEMENT_STATUS_INFO).map((k) => (
                         <option key={k} value={k}>
@@ -1537,32 +1537,32 @@ export function InsuranceEvidenceRegister() {
                   </div>
 
                   <div>
-                    <label className="block text-zinc-300 font-medium mb-1">Referință Paragraf / Pagină</label>
+                    <label className="block text-zinc-600 font-medium mb-1">Referință Paragraf / Pagină</label>
                     <Input
                       value={statementFormData.sourceReference || ""}
                       onChange={(e) => setStatementFormData({ ...statementFormData, sourceReference: e.target.value })}
                       placeholder="Ex: Art. 12.3, Clauza 4..."
-                      className="bg-zinc-950 border-zinc-800 text-xs text-white"
+                      className="bg-zinc-50 border-zinc-200 text-xs text-white"
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label className="block text-zinc-300 font-medium mb-1">Note de Conflict / Nepotrivire (Opțional)</label>
+                  <label className="block text-zinc-600 font-medium mb-1">Note de Conflict / Nepotrivire (Opțional)</label>
                   <Input
                     value={statementFormData.conflictNote || ""}
                     onChange={(e) => setStatementFormData({ ...statementFormData, conflictNote: e.target.value })}
                     placeholder="Ex: Oferta nouă spune că franșiza este 100 EUR, dar condițiile vechi aveau 0 EUR..."
-                    className="bg-zinc-950 border-zinc-800 text-xs text-white"
+                    className="bg-zinc-50 border-zinc-200 text-xs text-white"
                   />
                 </div>
 
-                <div className="pt-4 border-t border-zinc-800 flex items-center justify-end gap-2">
+                <div className="pt-4 border-t border-zinc-200 flex items-center justify-end gap-2">
                   <Button
                     type="button"
                     variant="outline"
                     onClick={() => setIsStatementModalOpen(false)}
-                    className="border-zinc-700 text-xs"
+                    className="border-zinc-300 text-xs"
                   >
                     Anulează
                   </Button>
@@ -1584,15 +1584,15 @@ export function InsuranceEvidenceRegister() {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.95 }}
-              className="bg-zinc-900 border border-zinc-800 rounded-2xl w-full max-w-md p-6 text-xs shadow-2xl"
+              className="bg-white border border-zinc-200 rounded-2xl w-full max-w-md p-6 text-xs shadow-2xl"
             >
               <div className="flex items-center gap-3 text-red-400 mb-3">
                 <Trash2 className="w-5 h-5" />
-                <h3 className="text-sm font-bold text-white">
+                <h3 className="text-sm font-bold text-zinc-900">
                   Confirmă Ștergerea {itemToDelete.type === "source" ? "Sursei" : "Afirmației"}
                 </h3>
               </div>
-              <p className="text-zinc-300 mb-4">
+              <p className="text-zinc-600 mb-4">
                 Sigur dorești să ștergi înregistrarea <strong className="text-white">&ldquo;{itemToDelete.type === "source" ? itemToDelete.item.title : itemToDelete.item.statement}&rdquo;</strong>?
               </p>
               <div className="flex items-center justify-end gap-2">
@@ -1600,7 +1600,7 @@ export function InsuranceEvidenceRegister() {
                   variant="outline"
                   size="sm"
                   onClick={() => setItemToDelete(null)}
-                  className="border-zinc-700 text-xs"
+                  className="border-zinc-300 text-xs"
                 >
                   Anulează
                 </Button>
@@ -1626,13 +1626,13 @@ export function InsuranceEvidenceRegister() {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.95 }}
-              className="bg-zinc-900 border border-zinc-800 rounded-2xl w-full max-w-md p-6 text-xs shadow-2xl"
+              className="bg-white border border-zinc-200 rounded-2xl w-full max-w-md p-6 text-xs shadow-2xl"
             >
               <div className="flex items-center gap-3 text-red-400 mb-3">
                 <AlertTriangle className="w-5 h-5" />
-                <h3 className="text-sm font-bold text-white">Resetare Completă Registru</h3>
+                <h3 className="text-sm font-bold text-zinc-900">Resetare Completă Registru</h3>
               </div>
-              <p className="text-zinc-300 mb-4 leading-relaxed">
+              <p className="text-zinc-600 mb-4 leading-relaxed">
                 Această acțiune va șterge toate sursele și afirmațiile înregistrate în această sesiune de navigare. Descarcă un raport PDF sau un export JSON înainte de resetare.
               </p>
               <div className="flex items-center justify-end gap-2">
@@ -1640,7 +1640,7 @@ export function InsuranceEvidenceRegister() {
                   variant="outline"
                   size="sm"
                   onClick={() => setIsResetConfirmOpen(false)}
-                  className="border-zinc-700 text-xs"
+                  className="border-zinc-300 text-xs"
                 >
                   Anulează
                 </Button>

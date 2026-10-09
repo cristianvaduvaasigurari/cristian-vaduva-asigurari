@@ -464,8 +464,8 @@ export function RenewalDecisionBrief() {
     <div className="space-y-8">
       {/* Top Header Summary Bar */}
       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
-        <div className="bg-zinc-900/90 border border-zinc-800/80 rounded-xl p-4 flex flex-col justify-between">
-          <div className="text-zinc-400 text-xs font-medium uppercase tracking-wider">Status Decizie</div>
+        <div className="bg-white border border-zinc-200/80 rounded-xl p-4 flex flex-col justify-between">
+          <div className="text-zinc-500 text-xs font-medium uppercase tracking-wider">Status Decizie</div>
           <div className="mt-1">
             <span
               className={`px-2 py-0.5 rounded text-xs font-bold border ${
@@ -475,7 +475,7 @@ export function RenewalDecisionBrief() {
                   ? "bg-blue-500/10 text-blue-400 border-blue-500/20"
                   : decStatusInfo.color === "amber"
                   ? "bg-amber-500/10 text-amber-400 border-amber-500/20"
-                  : "bg-zinc-800 text-zinc-300 border-zinc-700"
+                  : "bg-zinc-800 text-zinc-600 border-zinc-300"
               }`}
             >
               {decStatusInfo.labelRo}
@@ -484,8 +484,8 @@ export function RenewalDecisionBrief() {
           <div className="text-[11px] text-zinc-500 mt-1">Consemnat de utilizator</div>
         </div>
 
-        <div className="bg-zinc-900/90 border border-zinc-800/80 rounded-xl p-4 flex flex-col justify-between">
-          <div className="text-zinc-400 text-xs font-medium uppercase tracking-wider">Expirare Poliță</div>
+        <div className="bg-white border border-zinc-200/80 rounded-xl p-4 flex flex-col justify-between">
+          <div className="text-zinc-500 text-xs font-medium uppercase tracking-wider">Expirare Poliță</div>
           <div
             className={`text-lg sm:text-xl font-bold mt-1 ${
               summary.hasExpiryPassed
@@ -506,42 +506,42 @@ export function RenewalDecisionBrief() {
           </div>
         </div>
 
-        <div className="bg-zinc-900/90 border border-zinc-800/80 rounded-xl p-4 flex flex-col justify-between">
-          <div className="text-zinc-400 text-xs font-medium uppercase tracking-wider">Opțiuni Notate</div>
+        <div className="bg-white border border-zinc-200/80 rounded-xl p-4 flex flex-col justify-between">
+          <div className="text-zinc-500 text-xs font-medium uppercase tracking-wider">Opțiuni Notate</div>
           <div className="text-2xl sm:text-3xl font-bold text-blue-400 mt-1">{data.options.length}</div>
           <div className="text-[11px] text-zinc-500 mt-1">Oferte & alternative</div>
         </div>
 
-        <div className="bg-zinc-900/90 border border-zinc-800/80 rounded-xl p-4 flex flex-col justify-between">
-          <div className="text-zinc-400 text-xs font-medium uppercase tracking-wider">Modificări de Risc</div>
+        <div className="bg-white border border-zinc-200/80 rounded-xl p-4 flex flex-col justify-between">
+          <div className="text-zinc-500 text-xs font-medium uppercase tracking-wider">Modificări de Risc</div>
           <div className="text-2xl sm:text-3xl font-bold text-amber-400 mt-1">{data.changes.length}</div>
           <div className="text-[11px] text-zinc-500 mt-1">Bunuri & expuneri noi</div>
         </div>
 
-        <div className="bg-zinc-900/90 border border-zinc-800/80 rounded-xl p-4 flex flex-col justify-between">
-          <div className="text-zinc-400 text-xs font-medium uppercase tracking-wider">Clarificări Deschise</div>
+        <div className="bg-white border border-zinc-200/80 rounded-xl p-4 flex flex-col justify-between">
+          <div className="text-zinc-500 text-xs font-medium uppercase tracking-wider">Clarificări Deschise</div>
           <div className="text-2xl sm:text-3xl font-bold text-purple-400 mt-1">
             {data.unresolvedItems.filter((i) => i.status !== "resolved").length}
           </div>
           <div className="text-[11px] text-zinc-500 mt-1">Întrebări fără răspuns</div>
         </div>
 
-        <div className="bg-zinc-900/90 border border-zinc-800/80 rounded-xl p-4 flex flex-col justify-between">
-          <div className="text-zinc-400 text-xs font-medium uppercase tracking-wider">Acțiuni Deschise</div>
+        <div className="bg-white border border-zinc-200/80 rounded-xl p-4 flex flex-col justify-between">
+          <div className="text-zinc-500 text-xs font-medium uppercase tracking-wider">Acțiuni Deschise</div>
           <div className="text-2xl sm:text-3xl font-bold text-teal-400 mt-1">{summary.outstandingActionsCount}</div>
           <div className="text-[11px] text-zinc-500 mt-1">Din {data.actions.length} sarcini</div>
         </div>
       </div>
 
       {/* Main 4-Step Navigation Tabs */}
-      <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4 border-b border-zinc-800 pb-4">
-        <div className="flex items-center gap-1.5 p-1 bg-zinc-900/90 border border-zinc-800 rounded-xl overflow-x-auto">
+      <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4 border-b border-zinc-200 pb-4">
+        <div className="flex items-center gap-1.5 p-1 bg-white border border-zinc-200 rounded-xl overflow-x-auto">
           <button
             onClick={() => setActiveStep("step_a")}
             className={`flex items-center gap-2 px-3.5 py-2 rounded-lg text-xs font-medium transition-all whitespace-nowrap ${
               activeStep === "step_a"
                 ? "bg-blue-600 text-white shadow-lg shadow-blue-500/20"
-                : "text-zinc-400 hover:text-white hover:bg-zinc-800/60"
+                : "text-zinc-500 hover:text-white hover:bg-zinc-800/60"
             }`}
           >
             <FileText className="w-3.5 h-3.5" />
@@ -553,7 +553,7 @@ export function RenewalDecisionBrief() {
             className={`flex items-center gap-2 px-3.5 py-2 rounded-lg text-xs font-medium transition-all whitespace-nowrap ${
               activeStep === "step_b"
                 ? "bg-blue-600 text-white shadow-lg shadow-blue-500/20"
-                : "text-zinc-400 hover:text-white hover:bg-zinc-800/60"
+                : "text-zinc-500 hover:text-white hover:bg-zinc-800/60"
             }`}
           >
             <SlidersHorizontal className="w-3.5 h-3.5" />
@@ -565,7 +565,7 @@ export function RenewalDecisionBrief() {
             className={`flex items-center gap-2 px-3.5 py-2 rounded-lg text-xs font-medium transition-all whitespace-nowrap ${
               activeStep === "step_c"
                 ? "bg-blue-600 text-white shadow-lg shadow-blue-500/20"
-                : "text-zinc-400 hover:text-white hover:bg-zinc-800/60"
+                : "text-zinc-500 hover:text-white hover:bg-zinc-800/60"
             }`}
           >
             <Layers className="w-3.5 h-3.5" />
@@ -577,7 +577,7 @@ export function RenewalDecisionBrief() {
             className={`flex items-center gap-2 px-3.5 py-2 rounded-lg text-xs font-medium transition-all whitespace-nowrap ${
               activeStep === "step_d"
                 ? "bg-blue-600 text-white shadow-lg shadow-blue-500/20"
-                : "text-zinc-400 hover:text-white hover:bg-zinc-800/60"
+                : "text-zinc-500 hover:text-white hover:bg-zinc-800/60"
             }`}
           >
             <CheckSquare className="w-3.5 h-3.5" />
@@ -589,7 +589,7 @@ export function RenewalDecisionBrief() {
             className={`flex items-center gap-2 px-3.5 py-2 rounded-lg text-xs font-medium transition-all whitespace-nowrap ${
               activeStep === "report"
                 ? "bg-blue-600 text-white shadow-lg shadow-blue-500/20"
-                : "text-zinc-400 hover:text-white hover:bg-zinc-800/60"
+                : "text-zinc-500 hover:text-white hover:bg-zinc-800/60"
             }`}
           >
             <FileCheck2 className="w-3.5 h-3.5" />
@@ -603,7 +603,7 @@ export function RenewalDecisionBrief() {
             variant="outline"
             size="sm"
             onClick={handleExportPdf}
-            className="border-zinc-700 bg-zinc-800/60 text-zinc-300 hover:text-white hover:bg-zinc-800 text-xs"
+            className="border-zinc-300 bg-zinc-800/60 text-zinc-600 hover:text-white hover:bg-zinc-800 text-xs"
           >
             <Download className="w-3.5 h-3.5 mr-1.5" />
             Descarcă PDF
@@ -613,7 +613,7 @@ export function RenewalDecisionBrief() {
 
       {/* Notifications */}
       {importSuccess && (
-        <div className="p-3 bg-emerald-500/10 border border-emerald-500/30 rounded-xl text-emerald-400 text-xs flex items-center gap-2">
+        <div className="p-3 bg-emerald-50 border border-emerald-200 rounded-xl text-emerald-400 text-xs flex items-center gap-2">
           <CheckCircle2 className="w-4 h-4 shrink-0" />
           <span>{importSuccess}</span>
         </div>
@@ -627,28 +627,28 @@ export function RenewalDecisionBrief() {
 
       {/* STEP A: POLICY CONTEXT */}
       {activeStep === "step_a" && (
-        <div className="bg-zinc-900/80 border border-zinc-800 rounded-2xl p-6 space-y-4 text-xs">
-          <h3 className="text-sm font-bold text-white mb-2">Pasul A — Contextul Poliței și al Reînnoirii</h3>
+        <div className="bg-white border border-zinc-200 rounded-2xl p-6 space-y-4 text-xs">
+          <h3 className="text-sm font-bold text-zinc-900 mb-2">Pasul A — Contextul Poliței și al Reînnoirii</h3>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
-              <label className="block text-zinc-400 mb-1 font-semibold">
+              <label className="block text-zinc-500 mb-1 font-semibold">
                 Denumire Poliță / Referință Dosar <span className="text-red-400">*</span>
               </label>
               <Input
                 value={data.policyReference}
                 onChange={(e) => setData({ ...data, policyReference: e.target.value })}
                 placeholder="Ex: CASCO Autoturism, Asigurare Locuință..."
-                className="bg-zinc-950 border-zinc-800 text-xs text-white"
+                className="bg-zinc-50 border-zinc-200 text-xs text-white"
               />
             </div>
 
             <div>
-              <label className="block text-zinc-400 mb-1 font-semibold">Categorie Asigurare</label>
+              <label className="block text-zinc-500 mb-1 font-semibold">Categorie Asigurare</label>
               <select
                 value={data.category}
                 onChange={(e) => setData({ ...data, category: e.target.value as RenewalCategory })}
-                className="w-full bg-zinc-950 border border-zinc-800 rounded-lg px-3 py-2 text-xs text-zinc-200"
+                className="w-full bg-zinc-50 border border-zinc-200 rounded-lg px-3 py-2 text-xs text-zinc-800"
               >
                 {Object.keys(CATEGORY_INFO).map((k) => (
                   <option key={k} value={k}>
@@ -661,56 +661,56 @@ export function RenewalDecisionBrief() {
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             <div>
-              <label className="block text-zinc-400 mb-1 font-semibold">Dată Expirare Poliță Curentă</label>
+              <label className="block text-zinc-500 mb-1 font-semibold">Dată Expirare Poliță Curentă</label>
               <Input
                 type="date"
                 value={data.expiryDate || ""}
                 onChange={(e) => setData({ ...data, expiryDate: e.target.value })}
-                className="bg-zinc-950 border-zinc-800 text-xs text-white"
+                className="bg-zinc-50 border-zinc-200 text-xs text-white"
               />
             </div>
 
             <div>
-              <label className="block text-zinc-400 mb-1 font-semibold">Dată Primire Ofertă Reînnoire</label>
+              <label className="block text-zinc-500 mb-1 font-semibold">Dată Primire Ofertă Reînnoire</label>
               <Input
                 type="date"
                 value={data.offerReceivedDate || ""}
                 onChange={(e) => setData({ ...data, offerReceivedDate: e.target.value })}
-                className="bg-zinc-950 border-zinc-800 text-xs text-white"
+                className="bg-zinc-50 border-zinc-200 text-xs text-white"
               />
             </div>
 
             <div>
-              <label className="block text-zinc-400 mb-1 font-semibold">Dată Țintă pentru Decizie</label>
+              <label className="block text-zinc-500 mb-1 font-semibold">Dată Țintă pentru Decizie</label>
               <Input
                 type="date"
                 value={data.intendedDecisionDate || ""}
                 onChange={(e) => setData({ ...data, intendedDecisionDate: e.target.value })}
-                className="bg-zinc-950 border-zinc-800 text-xs text-white"
+                className="bg-zinc-50 border-zinc-200 text-xs text-white"
               />
             </div>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
             <div>
-              <label className="block text-zinc-400 mb-1 font-semibold">Sumar Poliță Curentă (Termeni existenți)</label>
+              <label className="block text-zinc-500 mb-1 font-semibold">Sumar Poliță Curentă (Termeni existenți)</label>
               <textarea
                 value={data.currentPolicySummary || ""}
                 onChange={(e) => setData({ ...data, currentPolicySummary: e.target.value })}
                 placeholder="Ex: Condiții actuale, franșiză, asistență inclusă..."
                 rows={3}
-                className="w-full bg-zinc-950 border border-zinc-800 rounded-lg p-2.5 text-xs text-zinc-200"
+                className="w-full bg-zinc-50 border border-zinc-200 rounded-lg p-2.5 text-xs text-zinc-800"
               />
             </div>
 
             <div>
-              <label className="block text-zinc-400 mb-1 font-semibold">Sumar Ofertă Nouă (Schimbări sesizate)</label>
+              <label className="block text-zinc-500 mb-1 font-semibold">Sumar Ofertă Nouă (Schimbări sesizate)</label>
               <textarea
                 value={data.renewalOfferSummary || ""}
                 onChange={(e) => setData({ ...data, renewalOfferSummary: e.target.value })}
                 placeholder="Ex: Preț nou, modificări de franșiză, clauze noi..."
                 rows={3}
-                className="w-full bg-zinc-950 border border-zinc-800 rounded-lg p-2.5 text-xs text-zinc-200"
+                className="w-full bg-zinc-50 border border-zinc-200 rounded-lg p-2.5 text-xs text-zinc-800"
               />
             </div>
           </div>
@@ -721,11 +721,11 @@ export function RenewalDecisionBrief() {
       {activeStep === "step_b" && (
         <div className="space-y-6">
           {/* Changes Section */}
-          <div className="bg-zinc-900/80 border border-zinc-800 rounded-2xl p-5 space-y-4 text-xs">
+          <div className="bg-white border border-zinc-200 rounded-2xl p-5 space-y-4 text-xs">
             <div className="flex items-center justify-between">
               <div>
-                <h3 className="text-sm font-bold text-white">1. Modificări de Risc & Bunuri Survenite</h3>
-                <p className="text-zinc-400 text-[11px] mt-0.5">
+                <h3 className="text-sm font-bold text-zinc-900">1. Modificări de Risc & Bunuri Survenite</h3>
+                <p className="text-zinc-500 text-[11px] mt-0.5">
                   Schimbări de adresă, adăugare de echipamente, modificări de valoare sau daune recente.
                 </p>
               </div>
@@ -752,7 +752,7 @@ export function RenewalDecisionBrief() {
                 {data.changes.map((c) => (
                   <div
                     key={c.id}
-                    className="p-3 bg-zinc-950 rounded-xl border border-zinc-800 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3"
+                    className="p-3 bg-zinc-50 rounded-xl border border-zinc-200 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3"
                   >
                     <div className="space-y-1">
                       <div className="flex items-center gap-2">
@@ -763,7 +763,7 @@ export function RenewalDecisionBrief() {
                           </span>
                         )}
                       </div>
-                      <div className="text-[11px] text-zinc-400">
+                      <div className="text-[11px] text-zinc-500">
                         Perioadă: {c.dateOrPeriod || "Nespecificată"} | Declarat: {c.disclosureStatus === "disclosed" ? "Da" : "Nu"} | Sursă: {c.evidenceSource || "Nespecificată"}
                       </div>
                     </div>
@@ -775,13 +775,13 @@ export function RenewalDecisionBrief() {
                           setEditingChange(c);
                           setIsChangeModalOpen(true);
                         }}
-                        className="p-1.5 rounded-lg bg-zinc-800 text-zinc-300 hover:text-white"
+                        className="p-1.5 rounded-lg bg-zinc-800 text-zinc-600 hover:text-white"
                       >
                         <Edit3 className="w-3.5 h-3.5" />
                       </button>
                       <button
                         onClick={() => setItemToDelete({ type: "change", id: c.id, title: c.description })}
-                        className="p-1.5 rounded-lg bg-zinc-800 text-zinc-400 hover:text-red-400"
+                        className="p-1.5 rounded-lg bg-zinc-800 text-zinc-500 hover:text-red-400"
                       >
                         <Trash2 className="w-3.5 h-3.5" />
                       </button>
@@ -790,18 +790,18 @@ export function RenewalDecisionBrief() {
                 ))}
               </div>
             ) : (
-              <div className="p-4 bg-zinc-950 rounded-xl border border-zinc-800 text-zinc-500 italic text-center">
+              <div className="p-4 bg-zinc-50 rounded-xl border border-zinc-200 text-zinc-500 italic text-center">
                 Nu au fost notate modificări de risc.
               </div>
             )}
           </div>
 
           {/* Unresolved items Section */}
-          <div className="bg-zinc-900/80 border border-zinc-800 rounded-2xl p-5 space-y-4 text-xs">
+          <div className="bg-white border border-zinc-200 rounded-2xl p-5 space-y-4 text-xs">
             <div className="flex items-center justify-between">
               <div>
-                <h3 className="text-sm font-bold text-white">2. Registru Întrebări & Informații Neconfirmate</h3>
-                <p className="text-zinc-400 text-[11px] mt-0.5">
+                <h3 className="text-sm font-bold text-zinc-900">2. Registru Întrebări & Informații Neconfirmate</h3>
+                <p className="text-zinc-500 text-[11px] mt-0.5">
                   Subiecte deschise care trebuie lămurite înainte de acceptarea ofertei.
                 </p>
               </div>
@@ -824,7 +824,7 @@ export function RenewalDecisionBrief() {
                 {data.unresolvedItems.map((u) => (
                   <div
                     key={u.id}
-                    className="p-3 bg-zinc-950 rounded-xl border border-zinc-800 space-y-2"
+                    className="p-3 bg-zinc-50 rounded-xl border border-zinc-200 space-y-2"
                   >
                     <div className="flex items-start justify-between gap-2">
                       <div className="font-semibold text-white">Q: {u.topicOrQuestion}</div>
@@ -835,25 +835,25 @@ export function RenewalDecisionBrief() {
                             setEditingUnresolved(u);
                             setIsUnresolvedModalOpen(true);
                           }}
-                          className="p-1.5 rounded-lg bg-zinc-800 text-zinc-300 hover:text-white"
+                          className="p-1.5 rounded-lg bg-zinc-800 text-zinc-600 hover:text-white"
                         >
                           <Edit3 className="w-3.5 h-3.5" />
                         </button>
                         <button
                           onClick={() => setItemToDelete({ type: "unresolved", id: u.id, title: u.topicOrQuestion })}
-                          className="p-1.5 rounded-lg bg-zinc-800 text-zinc-400 hover:text-red-400"
+                          className="p-1.5 rounded-lg bg-zinc-800 text-zinc-500 hover:text-red-400"
                         >
                           <Trash2 className="w-3.5 h-3.5" />
                         </button>
                       </div>
                     </div>
-                    <div className="text-[11px] text-zinc-400 flex flex-wrap items-center gap-3">
+                    <div className="text-[11px] text-zinc-500 flex flex-wrap items-center gap-3">
                       <span>Status: <strong className={u.status === "resolved" ? "text-emerald-400" : "text-amber-400"}>{u.status === "resolved" ? "Clarificat" : "În așteptare"}</strong></span>
                       {u.responsibleParty && <span>Responsabil: {u.responsibleParty}</span>}
                       {u.targetDate && <span>Termen: {u.targetDate}</span>}
                     </div>
                     {u.recordedAnswer && (
-                      <div className="text-[11px] text-emerald-300 p-2 rounded bg-zinc-900 border border-zinc-800">
+                      <div className="text-[11px] text-emerald-800 p-2 rounded bg-white border border-zinc-200">
                         Răspuns: {u.recordedAnswer}
                       </div>
                     )}
@@ -861,7 +861,7 @@ export function RenewalDecisionBrief() {
                 ))}
               </div>
             ) : (
-              <div className="p-4 bg-zinc-950 rounded-xl border border-zinc-800 text-zinc-500 italic text-center">
+              <div className="p-4 bg-zinc-50 rounded-xl border border-zinc-200 text-zinc-500 italic text-center">
                 Nu există întrebări nerezolvate înregistrate.
               </div>
             )}
@@ -873,11 +873,11 @@ export function RenewalDecisionBrief() {
       {activeStep === "step_c" && (
         <div className="space-y-6">
           {/* Options Comparison Cards */}
-          <div className="bg-zinc-900/80 border border-zinc-800 rounded-2xl p-5 space-y-4 text-xs">
+          <div className="bg-white border border-zinc-200 rounded-2xl p-5 space-y-4 text-xs">
             <div className="flex items-center justify-between">
               <div>
-                <h3 className="text-sm font-bold text-white">1. Opțiuni & Oferte de Reînnoire Notate</h3>
-                <p className="text-zinc-400 text-[11px] mt-0.5">
+                <h3 className="text-sm font-bold text-zinc-900">1. Opțiuni & Oferte de Reînnoire Notate</h3>
+                <p className="text-zinc-500 text-[11px] mt-0.5">
                   Compară prețul, frecvența și termenii principali între oferta primită și variantele alternative.
                 </p>
               </div>
@@ -900,11 +900,11 @@ export function RenewalDecisionBrief() {
                 {data.options.map((opt) => (
                   <div
                     key={opt.id}
-                    className="bg-zinc-950 rounded-2xl p-4 border border-zinc-800 space-y-3 flex flex-col justify-between"
+                    className="bg-zinc-50 rounded-2xl p-4 border border-zinc-200 space-y-3 flex flex-col justify-between"
                   >
                     <div className="space-y-2">
                       <div className="flex items-start justify-between gap-2">
-                        <h4 className="font-bold text-white text-sm">{opt.label}</h4>
+                        <h4 className="font-bold text-zinc-900 text-sm">{opt.label}</h4>
                         <div className="flex items-center gap-1">
                           <button
                             onClick={() => {
@@ -912,51 +912,51 @@ export function RenewalDecisionBrief() {
                               setEditingOption(opt);
                               setIsOptionModalOpen(true);
                             }}
-                            className="p-1 rounded bg-zinc-800 text-zinc-300 hover:text-white"
+                            className="p-1 rounded bg-zinc-800 text-zinc-600 hover:text-white"
                           >
                             <Edit3 className="w-3 h-3" />
                           </button>
                           <button
                             onClick={() => setItemToDelete({ type: "option", id: opt.id, title: opt.label })}
-                            className="p-1 rounded bg-zinc-800 text-zinc-400 hover:text-red-400"
+                            className="p-1 rounded bg-zinc-800 text-zinc-500 hover:text-red-400"
                           >
                             <Trash2 className="w-3 h-3" />
                           </button>
                         </div>
                       </div>
 
-                      <div className="p-3 bg-zinc-900 rounded-xl border border-zinc-800 space-y-1">
-                        <div className="text-lg font-bold text-white">
+                      <div className="p-3 bg-white rounded-xl border border-zinc-200 space-y-1">
+                        <div className="text-lg font-bold text-zinc-900">
                           {opt.premiumAmount !== undefined ? `${opt.premiumAmount.toLocaleString("ro-RO")} ${opt.currency}` : "Primă nespecificată"}
                         </div>
-                        <div className="text-[11px] text-zinc-400">
+                        <div className="text-[11px] text-zinc-500">
                           {opt.paymentFrequency ? FREQUENCY_LABELS[opt.paymentFrequency] : "Frecvență n/a"}
                         </div>
                       </div>
 
-                      <div className="space-y-1 text-[11px] text-zinc-300">
+                      <div className="space-y-1 text-[11px] text-zinc-600">
                         {opt.statedDeductible && <div>Franșiză: <strong>{opt.statedDeductible}</strong></div>}
                         {opt.coverageLimits && <div>Limite: <strong>{opt.coverageLimits}</strong></div>}
                         {opt.importantExclusions && <div className="text-amber-400/90">Excluderi: {opt.importantExclusions}</div>}
-                        {opt.userNotes && <div className="italic text-zinc-400">&ldquo;{opt.userNotes}&rdquo;</div>}
+                        {opt.userNotes && <div className="italic text-zinc-500">&ldquo;{opt.userNotes}&rdquo;</div>}
                       </div>
                     </div>
                   </div>
                 ))}
               </div>
             ) : (
-              <div className="p-4 bg-zinc-950 rounded-xl border border-zinc-800 text-zinc-500 italic text-center">
+              <div className="p-4 bg-zinc-50 rounded-xl border border-zinc-200 text-zinc-500 italic text-center">
                 Nu a fost adăugată nicio opțiune.
               </div>
             )}
           </div>
 
           {/* Agenda Section */}
-          <div className="bg-zinc-900/80 border border-zinc-800 rounded-2xl p-5 space-y-4 text-xs">
+          <div className="bg-white border border-zinc-200 rounded-2xl p-5 space-y-4 text-xs">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
               <div>
-                <h3 className="text-sm font-bold text-white">2. Agendă de Discuție cu Consilierul sau Asiguratorul</h3>
-                <p className="text-zinc-400 text-[11px] mt-0.5">
+                <h3 className="text-sm font-bold text-zinc-900">2. Agendă de Discuție cu Consilierul sau Asiguratorul</h3>
+                <p className="text-zinc-500 text-[11px] mt-0.5">
                   Subiecte concrete structurate pe capitole pentru ședința de reînnoire.
                 </p>
               </div>
@@ -966,7 +966,7 @@ export function RenewalDecisionBrief() {
                   size="sm"
                   variant="outline"
                   onClick={handleSuggestAgendaQuestions}
-                  className="border-zinc-700 bg-zinc-800 text-xs text-zinc-200"
+                  className="border-zinc-300 bg-zinc-800 text-xs text-zinc-800"
                 >
                   <Sparkles className="w-3.5 h-3.5 mr-1 text-purple-400" />
                   Sugerează Subiecte
@@ -992,7 +992,7 @@ export function RenewalDecisionBrief() {
                 {data.agendaItems.map((ag) => (
                   <div
                     key={ag.id}
-                    className="p-3 bg-zinc-950 rounded-xl border border-zinc-800 flex items-center justify-between gap-3"
+                    className="p-3 bg-zinc-50 rounded-xl border border-zinc-200 flex items-center justify-between gap-3"
                   >
                     <div className="flex items-start gap-2.5">
                       <button
@@ -1007,7 +1007,7 @@ export function RenewalDecisionBrief() {
                         className={`p-1 rounded border mt-0.5 transition-colors ${
                           ag.resolved
                             ? "bg-emerald-500/20 border-emerald-500/40 text-emerald-400"
-                            : "bg-zinc-900 border-zinc-700 text-transparent"
+                            : "bg-white border-zinc-300 text-transparent"
                         }`}
                       >
                         <Check className="w-3 h-3" />
@@ -1032,13 +1032,13 @@ export function RenewalDecisionBrief() {
                           setEditingAgenda(ag);
                           setIsAgendaModalOpen(true);
                         }}
-                        className="p-1 rounded bg-zinc-800 text-zinc-300 hover:text-white"
+                        className="p-1 rounded bg-zinc-800 text-zinc-600 hover:text-white"
                       >
                         <Edit3 className="w-3 h-3" />
                       </button>
                       <button
                         onClick={() => setItemToDelete({ type: "agenda", id: ag.id, title: ag.topic })}
-                        className="p-1 rounded bg-zinc-800 text-zinc-400 hover:text-red-400"
+                        className="p-1 rounded bg-zinc-800 text-zinc-500 hover:text-red-400"
                       >
                         <Trash2 className="w-3 h-3" />
                       </button>
@@ -1047,7 +1047,7 @@ export function RenewalDecisionBrief() {
                 ))}
               </div>
             ) : (
-              <div className="p-4 bg-zinc-950 rounded-xl border border-zinc-800 text-zinc-500 italic text-center">
+              <div className="p-4 bg-zinc-50 rounded-xl border border-zinc-200 text-zinc-500 italic text-center">
                 Nu există subiecte în agendă. Apasă „Sugerează Subiecte” pentru a începe.
               </div>
             )}
@@ -1058,16 +1058,16 @@ export function RenewalDecisionBrief() {
       {/* STEP D: DECISION & ACTION PLAN */}
       {activeStep === "step_d" && (
         <div className="space-y-6">
-          <div className="bg-zinc-900/80 border border-zinc-800 rounded-2xl p-6 space-y-4 text-xs">
-            <h3 className="text-sm font-bold text-white mb-2">Pasul D — Consemnarea Deciziei & Planul de Acțiune</h3>
+          <div className="bg-white border border-zinc-200 rounded-2xl p-6 space-y-4 text-xs">
+            <h3 className="text-sm font-bold text-zinc-900 mb-2">Pasul D — Consemnarea Deciziei & Planul de Acțiune</h3>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
-                <label className="block text-zinc-400 mb-1 font-semibold">Status Decizie Asumată</label>
+                <label className="block text-zinc-500 mb-1 font-semibold">Status Decizie Asumată</label>
                 <select
                   value={data.decisionStatus}
                   onChange={(e) => setData({ ...data, decisionStatus: e.target.value as DecisionStatus })}
-                  className="w-full bg-zinc-950 border border-zinc-800 rounded-lg px-3 py-2 text-xs text-zinc-200"
+                  className="w-full bg-zinc-50 border border-zinc-200 rounded-lg px-3 py-2 text-xs text-zinc-800"
                 >
                   {Object.keys(DECISION_STATUS_INFO).map((k) => (
                     <option key={k} value={k}>
@@ -1078,34 +1078,34 @@ export function RenewalDecisionBrief() {
               </div>
 
               <div>
-                <label className="block text-zinc-400 mb-1 font-semibold">Dată Decizie / Transmitere</label>
+                <label className="block text-zinc-500 mb-1 font-semibold">Dată Decizie / Transmitere</label>
                 <Input
                   type="date"
                   value={data.actualDecisionDate || ""}
                   onChange={(e) => setData({ ...data, actualDecisionDate: e.target.value })}
-                  className="bg-zinc-950 border-zinc-800 text-xs text-white"
+                  className="bg-zinc-50 border-zinc-200 text-xs text-white"
                 />
               </div>
             </div>
 
             <div>
-              <label className="block text-zinc-400 mb-1 font-semibold">Motivație / Argumente Decizie</label>
+              <label className="block text-zinc-500 mb-1 font-semibold">Motivație / Argumente Decizie</label>
               <textarea
                 value={data.decisionRationale || ""}
                 onChange={(e) => setData({ ...data, decisionRationale: e.target.value })}
                 placeholder="Ex: Am acceptat oferta reînnoită deoarece diferența de preț este mică și păstrează acoperirile dorite..."
                 rows={3}
-                className="w-full bg-zinc-950 border border-zinc-800 rounded-lg p-2.5 text-xs text-zinc-200"
+                className="w-full bg-zinc-50 border border-zinc-200 rounded-lg p-2.5 text-xs text-zinc-800"
               />
             </div>
           </div>
 
           {/* Action Plan Table */}
-          <div className="bg-zinc-900/80 border border-zinc-800 rounded-2xl p-5 space-y-4 text-xs">
+          <div className="bg-white border border-zinc-200 rounded-2xl p-5 space-y-4 text-xs">
             <div className="flex items-center justify-between">
               <div>
-                <h3 className="text-sm font-bold text-white">Plan de Acțiune & Finalizare Reînnoire</h3>
-                <p className="text-zinc-400 text-[11px] mt-0.5">
+                <h3 className="text-sm font-bold text-zinc-900">Plan de Acțiune & Finalizare Reînnoire</h3>
+                <p className="text-zinc-500 text-[11px] mt-0.5">
                   Urmărește semnarea, transmiterea documentelor și primirea poliței oficiale.
                 </p>
               </div>
@@ -1133,7 +1133,7 @@ export function RenewalDecisionBrief() {
                 {data.actions.map((act) => (
                   <div
                     key={act.id}
-                    className="p-3 bg-zinc-950 rounded-xl border border-zinc-800 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3"
+                    className="p-3 bg-zinc-50 rounded-xl border border-zinc-200 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3"
                   >
                     <div className="flex items-start gap-2.5">
                       <button
@@ -1148,7 +1148,7 @@ export function RenewalDecisionBrief() {
                         className={`p-1 rounded border mt-0.5 transition-colors ${
                           act.completed
                             ? "bg-emerald-500/20 border-emerald-500/40 text-emerald-400"
-                            : "bg-zinc-900 border-zinc-700 text-transparent"
+                            : "bg-white border-zinc-300 text-transparent"
                         }`}
                       >
                         <Check className="w-3 h-3" />
@@ -1158,7 +1158,7 @@ export function RenewalDecisionBrief() {
                         <div className={`font-semibold ${act.completed ? "line-through text-zinc-500" : "text-white"}`}>
                           {act.actionTitle}
                         </div>
-                        <div className="text-[11px] text-zinc-400 flex flex-wrap items-center gap-3">
+                        <div className="text-[11px] text-zinc-500 flex flex-wrap items-center gap-3">
                           {act.responsiblePerson && <span>Responsabil: {act.responsiblePerson}</span>}
                           {act.targetDate && <span>Termen: {act.targetDate}</span>}
                         </div>
@@ -1172,13 +1172,13 @@ export function RenewalDecisionBrief() {
                           setEditingAction(act);
                           setIsActionModalOpen(true);
                         }}
-                        className="p-1.5 rounded-lg bg-zinc-800 text-zinc-300 hover:text-white"
+                        className="p-1.5 rounded-lg bg-zinc-800 text-zinc-600 hover:text-white"
                       >
                         <Edit3 className="w-3.5 h-3.5" />
                       </button>
                       <button
                         onClick={() => setItemToDelete({ type: "action", id: act.id, title: act.actionTitle })}
-                        className="p-1.5 rounded-lg bg-zinc-800 text-zinc-400 hover:text-red-400"
+                        className="p-1.5 rounded-lg bg-zinc-800 text-zinc-500 hover:text-red-400"
                       >
                         <Trash2 className="w-3.5 h-3.5" />
                       </button>
@@ -1187,7 +1187,7 @@ export function RenewalDecisionBrief() {
                 ))}
               </div>
             ) : (
-              <div className="p-4 bg-zinc-950 rounded-xl border border-zinc-800 text-zinc-500 italic text-center">
+              <div className="p-4 bg-zinc-50 rounded-xl border border-zinc-200 text-zinc-500 italic text-center">
                 Nu există acțiuni definite.
               </div>
             )}
@@ -1198,17 +1198,17 @@ export function RenewalDecisionBrief() {
       {/* STEP 5: REPORT & BACKUP */}
       {activeStep === "report" && (
         <div className="space-y-6">
-          <div className="bg-zinc-900/80 border border-zinc-800 rounded-2xl p-6 space-y-6 text-xs">
+          <div className="bg-white border border-zinc-200 rounded-2xl p-6 space-y-6 text-xs">
             <div>
-              <h3 className="text-lg font-bold text-white">Export & Backup Fișă de Decizie</h3>
-              <p className="text-zinc-400 mt-1">
+              <h3 className="text-lg font-bold text-zinc-900">Export & Backup Fișă de Decizie</h3>
+              <p className="text-zinc-500 mt-1">
                 Descarcă un dosar PDF structurat sau salvează un backup JSON securizat local în memoria browserului.
               </p>
             </div>
 
             {/* User Notes */}
             <div>
-              <label className="block font-semibold text-zinc-300 uppercase tracking-wider mb-2">
+              <label className="block font-semibold text-zinc-600 uppercase tracking-wider mb-2">
                 Notițe Finale / Concluzii Personale
               </label>
               <textarea
@@ -1216,17 +1216,17 @@ export function RenewalDecisionBrief() {
                 onChange={(e) => setData({ ...data, userNotes: e.target.value })}
                 placeholder="Ex: Decizie finalizată cu consilierul Cristian Văduva..."
                 rows={3}
-                className="w-full bg-zinc-950 border border-zinc-800 rounded-xl p-3 text-xs text-zinc-200"
+                className="w-full bg-zinc-50 border border-zinc-200 rounded-xl p-3 text-xs text-zinc-800"
               />
             </div>
 
             {/* Export Actions Grid */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
-              <div className="p-4 rounded-xl bg-zinc-950/60 border border-zinc-800/80 flex flex-col justify-between">
+              <div className="p-4 rounded-xl bg-zinc-50 border border-zinc-200/80 flex flex-col justify-between">
                 <div>
                   <FileText className="w-6 h-6 text-blue-400 mb-2" />
                   <h4 className="text-sm font-semibold text-white">Raport PDF Structurat</h4>
-                  <p className="text-[11px] text-zinc-400 mt-1">
+                  <p className="text-[11px] text-zinc-500 mt-1">
                     Document PDF cu contextul, opțiunile, agenda de discuție și decizia asumată.
                   </p>
                 </div>
@@ -1236,29 +1236,29 @@ export function RenewalDecisionBrief() {
                 </Button>
               </div>
 
-              <div className="p-4 rounded-xl bg-zinc-950/60 border border-zinc-800/80 flex flex-col justify-between">
+              <div className="p-4 rounded-xl bg-zinc-50 border border-zinc-200/80 flex flex-col justify-between">
                 <div>
                   <Download className="w-6 h-6 text-emerald-400 mb-2" />
                   <h4 className="text-sm font-semibold text-white">Export JSON Backup</h4>
-                  <p className="text-[11px] text-zinc-400 mt-1">
+                  <p className="text-[11px] text-zinc-500 mt-1">
                     Fișier securizat local pentru transfer între calculatoare sau reluarea sesiunii.
                   </p>
                 </div>
-                <Button onClick={handleExportJson} variant="outline" className="mt-4 border-zinc-700 text-xs">
+                <Button onClick={handleExportJson} variant="outline" className="mt-4 border-zinc-300 text-xs">
                   <Download className="w-3.5 h-3.5 mr-1.5" />
                   Export JSON
                 </Button>
               </div>
 
-              <div className="p-4 rounded-xl bg-zinc-950/60 border border-zinc-800/80 flex flex-col justify-between">
+              <div className="p-4 rounded-xl bg-zinc-50 border border-zinc-200/80 flex flex-col justify-between">
                 <div>
                   <Upload className="w-6 h-6 text-purple-400 mb-2" />
                   <h4 className="text-sm font-semibold text-white">Import Fișier JSON</h4>
-                  <p className="text-[11px] text-zinc-400 mt-1">
+                  <p className="text-[11px] text-zinc-500 mt-1">
                     Încarcă o fișă de decizie salvată anterior pentru a continua organizarea.
                   </p>
                 </div>
-                <label className="mt-4 inline-flex items-center justify-center rounded-md text-xs font-medium border border-zinc-700 bg-zinc-800 px-4 py-2 text-zinc-200 hover:bg-zinc-700 cursor-pointer">
+                <label className="mt-4 inline-flex items-center justify-center rounded-md text-xs font-medium border border-zinc-300 bg-zinc-800 px-4 py-2 text-zinc-800 hover:bg-zinc-700 cursor-pointer">
                   <Upload className="w-3.5 h-3.5 mr-1.5" />
                   <span>Încarcă Fișier</span>
                   <input type="file" accept=".json" onChange={handleImportJson} className="hidden" />
@@ -1267,7 +1267,7 @@ export function RenewalDecisionBrief() {
             </div>
 
             {/* Privacy note & Reset button */}
-            <div className="pt-6 border-t border-zinc-800/80 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div className="pt-6 border-t border-zinc-200/80 flex flex-col sm:flex-row items-center justify-between gap-4">
               <div className="flex items-center gap-2 text-zinc-500">
                 <Lock className="w-4 h-4 text-emerald-400 shrink-0" />
                 <span>Toate datele rămân strict în memoria browserului tău și nu sunt trimise către servere.</span>
@@ -1295,10 +1295,10 @@ export function RenewalDecisionBrief() {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.95 }}
-              className="bg-zinc-900 border border-zinc-800 rounded-2xl w-full max-w-lg flex flex-col overflow-hidden shadow-2xl"
+              className="bg-white border border-zinc-200 rounded-2xl w-full max-w-lg flex flex-col overflow-hidden shadow-2xl"
             >
-              <div className="px-6 py-4 border-b border-zinc-800 flex items-center justify-between">
-                <h3 className="text-base font-bold text-white">
+              <div className="px-6 py-4 border-b border-zinc-200 flex items-center justify-between">
+                <h3 className="text-base font-bold text-zinc-900">
                   {editingChange ? "Editează Modificare" : "Adaugă Modificare de Risc"}
                 </h3>
                 <button onClick={() => setIsChangeModalOpen(false)} className="text-zinc-500 hover:text-white">
@@ -1307,7 +1307,7 @@ export function RenewalDecisionBrief() {
               </div>
               <form onSubmit={handleSaveChange} className="p-6 space-y-4 text-xs">
                 <div>
-                  <label className="block text-zinc-300 font-semibold mb-1">
+                  <label className="block text-zinc-600 font-semibold mb-1">
                     Descriere Modificare <span className="text-red-400">*</span>
                   </label>
                   <Input
@@ -1315,25 +1315,25 @@ export function RenewalDecisionBrief() {
                     value={changeFormData.description || ""}
                     onChange={(e) => setChangeFormData({ ...changeFormData, description: e.target.value })}
                     placeholder="Ex: Montaj GPS, Schimbare destinație clădire..."
-                    className="bg-zinc-950 border-zinc-800 text-xs text-white"
+                    className="bg-zinc-50 border-zinc-200 text-xs text-white"
                   />
                 </div>
                 <div className="grid grid-cols-2 gap-3">
                   <div>
-                    <label className="block text-zinc-300 font-medium mb-1">Perioadă / Dată</label>
+                    <label className="block text-zinc-600 font-medium mb-1">Perioadă / Dată</label>
                     <Input
                       value={changeFormData.dateOrPeriod || ""}
                       onChange={(e) => setChangeFormData({ ...changeFormData, dateOrPeriod: e.target.value })}
                       placeholder="Ex: Iunie 2026"
-                      className="bg-zinc-950 border-zinc-800 text-xs text-white"
+                      className="bg-zinc-50 border-zinc-200 text-xs text-white"
                     />
                   </div>
                   <div>
-                    <label className="block text-zinc-300 font-medium mb-1">Declarat Asiguratorului?</label>
+                    <label className="block text-zinc-600 font-medium mb-1">Declarat Asiguratorului?</label>
                     <select
                       value={changeFormData.disclosureStatus || "disclosed"}
                       onChange={(e) => setChangeFormData({ ...changeFormData, disclosureStatus: e.target.value as ChangeDisclosureStatus })}
-                      className="w-full bg-zinc-950 border border-zinc-800 rounded px-2.5 py-1.5 text-xs text-zinc-200"
+                      className="w-full bg-zinc-50 border border-zinc-200 rounded px-2.5 py-1.5 text-xs text-zinc-800"
                     >
                       <option value="disclosed">Da (Declarat)</option>
                       <option value="not_disclosed">Nu (Nedeclarat încă)</option>
@@ -1343,25 +1343,25 @@ export function RenewalDecisionBrief() {
                   </div>
                 </div>
                 <div>
-                  <label className="block text-zinc-300 font-medium mb-1">Dovadă / Sursă Document</label>
+                  <label className="block text-zinc-600 font-medium mb-1">Dovadă / Sursă Document</label>
                   <Input
                     value={changeFormData.evidenceSource || ""}
                     onChange={(e) => setChangeFormData({ ...changeFormData, evidenceSource: e.target.value })}
                     placeholder="Ex: Factură montaj, Certificat..."
-                    className="bg-zinc-950 border-zinc-800 text-xs text-white"
+                    className="bg-zinc-50 border-zinc-200 text-xs text-white"
                   />
                 </div>
-                <label className="flex items-center gap-2 text-zinc-300 cursor-pointer">
+                <label className="flex items-center gap-2 text-zinc-600 cursor-pointer">
                   <input
                     type="checkbox"
                     checked={changeFormData.clarificationNeeded || false}
                     onChange={(e) => setChangeFormData({ ...changeFormData, clarificationNeeded: e.target.checked })}
-                    className="rounded bg-zinc-950 border-zinc-700 text-blue-600"
+                    className="rounded bg-zinc-50 border-zinc-300 text-blue-600"
                   />
                   <span>Necesită clarificare cu privire la declarare</span>
                 </label>
-                <div className="pt-4 border-t border-zinc-800 flex justify-end gap-2">
-                  <Button type="button" variant="outline" onClick={() => setIsChangeModalOpen(false)} className="border-zinc-700 text-xs">Anulează</Button>
+                <div className="pt-4 border-t border-zinc-200 flex justify-end gap-2">
+                  <Button type="button" variant="outline" onClick={() => setIsChangeModalOpen(false)} className="border-zinc-300 text-xs">Anulează</Button>
                   <Button type="submit" className="bg-blue-600 hover:bg-blue-500 text-white text-xs">Salvează</Button>
                 </div>
               </form>
@@ -1378,10 +1378,10 @@ export function RenewalDecisionBrief() {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.95 }}
-              className="bg-zinc-900 border border-zinc-800 rounded-2xl w-full max-w-lg flex flex-col overflow-hidden shadow-2xl"
+              className="bg-white border border-zinc-200 rounded-2xl w-full max-w-lg flex flex-col overflow-hidden shadow-2xl"
             >
-              <div className="px-6 py-4 border-b border-zinc-800 flex items-center justify-between">
-                <h3 className="text-base font-bold text-white">
+              <div className="px-6 py-4 border-b border-zinc-200 flex items-center justify-between">
+                <h3 className="text-base font-bold text-zinc-900">
                   {editingUnresolved ? "Editează Întrebare" : "Adaugă Întrebare / Subiect Neclarificat"}
                 </h3>
                 <button onClick={() => setIsUnresolvedModalOpen(false)} className="text-zinc-500 hover:text-white">
@@ -1390,7 +1390,7 @@ export function RenewalDecisionBrief() {
               </div>
               <form onSubmit={handleSaveUnresolved} className="p-6 space-y-4 text-xs">
                 <div>
-                  <label className="block text-zinc-300 font-semibold mb-1">
+                  <label className="block text-zinc-600 font-semibold mb-1">
                     Întrebare / Subiect de Lămurit <span className="text-red-400">*</span>
                   </label>
                   <Input
@@ -1398,25 +1398,25 @@ export function RenewalDecisionBrief() {
                     value={unresolvedFormData.topicOrQuestion || ""}
                     onChange={(e) => setUnresolvedFormData({ ...unresolvedFormData, topicOrQuestion: e.target.value })}
                     placeholder="Ex: Este inclusă decontarea directă cu reprezentanța?"
-                    className="bg-zinc-950 border-zinc-800 text-xs text-white"
+                    className="bg-zinc-50 border-zinc-200 text-xs text-white"
                   />
                 </div>
                 <div className="grid grid-cols-2 gap-3">
                   <div>
-                    <label className="block text-zinc-300 font-medium mb-1">Responsabil</label>
+                    <label className="block text-zinc-600 font-medium mb-1">Responsabil</label>
                     <Input
                       value={unresolvedFormData.responsibleParty || ""}
                       onChange={(e) => setUnresolvedFormData({ ...unresolvedFormData, responsibleParty: e.target.value })}
                       placeholder="Ex: Broker, Asigurator..."
-                      className="bg-zinc-950 border-zinc-800 text-xs text-white"
+                      className="bg-zinc-50 border-zinc-200 text-xs text-white"
                     />
                   </div>
                   <div>
-                    <label className="block text-zinc-300 font-medium mb-1">Status</label>
+                    <label className="block text-zinc-600 font-medium mb-1">Status</label>
                     <select
                       value={unresolvedFormData.status || "pending"}
                       onChange={(e) => setUnresolvedFormData({ ...unresolvedFormData, status: e.target.value as "pending" | "in_progress" | "resolved" })}
-                      className="w-full bg-zinc-950 border border-zinc-800 rounded px-2.5 py-1.5 text-xs text-zinc-200"
+                      className="w-full bg-zinc-50 border border-zinc-200 rounded px-2.5 py-1.5 text-xs text-zinc-800"
                     >
                       <option value="pending">În așteptare</option>
                       <option value="in_progress">În curs</option>
@@ -1425,17 +1425,17 @@ export function RenewalDecisionBrief() {
                   </div>
                 </div>
                 <div>
-                  <label className="block text-zinc-300 font-medium mb-1">Răspuns Notat</label>
+                  <label className="block text-zinc-600 font-medium mb-1">Răspuns Notat</label>
                   <textarea
                     value={unresolvedFormData.recordedAnswer || ""}
                     onChange={(e) => setUnresolvedFormData({ ...unresolvedFormData, recordedAnswer: e.target.value })}
                     placeholder="Notează răspunsul primit..."
                     rows={2}
-                    className="w-full bg-zinc-950 border border-zinc-800 rounded-lg p-2.5 text-xs text-zinc-200"
+                    className="w-full bg-zinc-50 border border-zinc-200 rounded-lg p-2.5 text-xs text-zinc-800"
                   />
                 </div>
-                <div className="pt-4 border-t border-zinc-800 flex justify-end gap-2">
-                  <Button type="button" variant="outline" onClick={() => setIsUnresolvedModalOpen(false)} className="border-zinc-700 text-xs">Anulează</Button>
+                <div className="pt-4 border-t border-zinc-200 flex justify-end gap-2">
+                  <Button type="button" variant="outline" onClick={() => setIsUnresolvedModalOpen(false)} className="border-zinc-300 text-xs">Anulează</Button>
                   <Button type="submit" className="bg-blue-600 hover:bg-blue-500 text-white text-xs">Salvează</Button>
                 </div>
               </form>
@@ -1452,10 +1452,10 @@ export function RenewalDecisionBrief() {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.95 }}
-              className="bg-zinc-900 border border-zinc-800 rounded-2xl w-full max-w-lg flex flex-col overflow-hidden shadow-2xl"
+              className="bg-white border border-zinc-200 rounded-2xl w-full max-w-lg flex flex-col overflow-hidden shadow-2xl"
             >
-              <div className="px-6 py-4 border-b border-zinc-800 flex items-center justify-between">
-                <h3 className="text-base font-bold text-white">
+              <div className="px-6 py-4 border-b border-zinc-200 flex items-center justify-between">
+                <h3 className="text-base font-bold text-zinc-900">
                   {editingOption ? "Editează Opțiune" : "Adaugă Opțiune de Reînnoire"}
                 </h3>
                 <button onClick={() => setIsOptionModalOpen(false)} className="text-zinc-500 hover:text-white">
@@ -1464,7 +1464,7 @@ export function RenewalDecisionBrief() {
               </div>
               <form onSubmit={handleSaveOption} className="p-6 space-y-4 text-xs">
                 <div>
-                  <label className="block text-zinc-300 font-semibold mb-1">
+                  <label className="block text-zinc-600 font-semibold mb-1">
                     Denumire Opțiune <span className="text-red-400">*</span>
                   </label>
                   <Input
@@ -1472,12 +1472,12 @@ export function RenewalDecisionBrief() {
                     value={optionFormData.label || ""}
                     onChange={(e) => setOptionFormData({ ...optionFormData, label: e.target.value })}
                     placeholder="Ex: Oferta Generali, Varianta Allianz..."
-                    className="bg-zinc-950 border-zinc-800 text-xs text-white"
+                    className="bg-zinc-50 border-zinc-200 text-xs text-white"
                   />
                 </div>
                 <div className="grid grid-cols-2 gap-3">
                   <div>
-                    <label className="block text-zinc-300 font-medium mb-1">Primă Cotată</label>
+                    <label className="block text-zinc-600 font-medium mb-1">Primă Cotată</label>
                     <Input
                       type="number"
                       step="any"
@@ -1489,15 +1489,15 @@ export function RenewalDecisionBrief() {
                           premiumAmount: e.target.value === "" ? undefined : parseFloat(e.target.value),
                         })
                       }
-                      className="bg-zinc-950 border-zinc-800 text-xs text-white"
+                      className="bg-zinc-50 border-zinc-200 text-xs text-white"
                     />
                   </div>
                   <div>
-                    <label className="block text-zinc-300 font-medium mb-1">Frecvență Plată</label>
+                    <label className="block text-zinc-600 font-medium mb-1">Frecvență Plată</label>
                     <select
                       value={optionFormData.paymentFrequency || "annual"}
                       onChange={(e) => setOptionFormData({ ...optionFormData, paymentFrequency: e.target.value as PaymentFrequency })}
-                      className="w-full bg-zinc-950 border border-zinc-800 rounded px-2.5 py-1.5 text-xs text-zinc-200"
+                      className="w-full bg-zinc-50 border border-zinc-200 rounded px-2.5 py-1.5 text-xs text-zinc-800"
                     >
                       {Object.keys(FREQUENCY_LABELS).map((k) => (
                         <option key={k} value={k}>
@@ -1509,35 +1509,35 @@ export function RenewalDecisionBrief() {
                 </div>
                 <div className="grid grid-cols-2 gap-3">
                   <div>
-                    <label className="block text-zinc-300 font-medium mb-1">Franșiză Notată</label>
+                    <label className="block text-zinc-600 font-medium mb-1">Franșiză Notată</label>
                     <Input
                       value={optionFormData.statedDeductible || ""}
                       onChange={(e) => setOptionFormData({ ...optionFormData, statedDeductible: e.target.value })}
                       placeholder="Ex: 100 EUR"
-                      className="bg-zinc-950 border-zinc-800 text-xs text-white"
+                      className="bg-zinc-50 border-zinc-200 text-xs text-white"
                     />
                   </div>
                   <div>
-                    <label className="block text-zinc-300 font-medium mb-1">Limite Asigurate</label>
+                    <label className="block text-zinc-600 font-medium mb-1">Limite Asigurate</label>
                     <Input
                       value={optionFormData.coverageLimits || ""}
                       onChange={(e) => setOptionFormData({ ...optionFormData, coverageLimits: e.target.value })}
                       placeholder="Ex: 40.000 EUR"
-                      className="bg-zinc-950 border-zinc-800 text-xs text-white"
+                      className="bg-zinc-50 border-zinc-200 text-xs text-white"
                     />
                   </div>
                 </div>
                 <div>
-                  <label className="block text-zinc-300 font-medium mb-1">Excluderi sau Condiții Notate</label>
+                  <label className="block text-zinc-600 font-medium mb-1">Excluderi sau Condiții Notate</label>
                   <Input
                     value={optionFormData.importantExclusions || ""}
                     onChange={(e) => setOptionFormData({ ...optionFormData, importantExclusions: e.target.value })}
                     placeholder="Ex: Fără asistență rutieră externă..."
-                    className="bg-zinc-950 border-zinc-800 text-xs text-white"
+                    className="bg-zinc-50 border-zinc-200 text-xs text-white"
                   />
                 </div>
-                <div className="pt-4 border-t border-zinc-800 flex justify-end gap-2">
-                  <Button type="button" variant="outline" onClick={() => setIsOptionModalOpen(false)} className="border-zinc-700 text-xs">Anulează</Button>
+                <div className="pt-4 border-t border-zinc-200 flex justify-end gap-2">
+                  <Button type="button" variant="outline" onClick={() => setIsOptionModalOpen(false)} className="border-zinc-300 text-xs">Anulează</Button>
                   <Button type="submit" className="bg-blue-600 hover:bg-blue-500 text-white text-xs">Salvează</Button>
                 </div>
               </form>
@@ -1554,10 +1554,10 @@ export function RenewalDecisionBrief() {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.95 }}
-              className="bg-zinc-900 border border-zinc-800 rounded-2xl w-full max-w-lg flex flex-col overflow-hidden shadow-2xl"
+              className="bg-white border border-zinc-200 rounded-2xl w-full max-w-lg flex flex-col overflow-hidden shadow-2xl"
             >
-              <div className="px-6 py-4 border-b border-zinc-800 flex items-center justify-between">
-                <h3 className="text-base font-bold text-white">
+              <div className="px-6 py-4 border-b border-zinc-200 flex items-center justify-between">
+                <h3 className="text-base font-bold text-zinc-900">
                   {editingAgenda ? "Editează Subiect Agendă" : "Adaugă Subiect Agendă"}
                 </h3>
                 <button onClick={() => setIsAgendaModalOpen(false)} className="text-zinc-500 hover:text-white">
@@ -1566,7 +1566,7 @@ export function RenewalDecisionBrief() {
               </div>
               <form onSubmit={handleSaveAgenda} className="p-6 space-y-4 text-xs">
                 <div>
-                  <label className="block text-zinc-300 font-semibold mb-1">
+                  <label className="block text-zinc-600 font-semibold mb-1">
                     Subiect / Întrebare Discuție <span className="text-red-400">*</span>
                   </label>
                   <Input
@@ -1574,15 +1574,15 @@ export function RenewalDecisionBrief() {
                     value={agendaFormData.topic || ""}
                     onChange={(e) => setAgendaFormData({ ...agendaFormData, topic: e.target.value })}
                     placeholder="Ex: Confirmare valoare asigurată agreată..."
-                    className="bg-zinc-950 border-zinc-800 text-xs text-white"
+                    className="bg-zinc-50 border-zinc-200 text-xs text-white"
                   />
                 </div>
                 <div>
-                  <label className="block text-zinc-300 font-medium mb-1">Capitol Agendă</label>
+                  <label className="block text-zinc-600 font-medium mb-1">Capitol Agendă</label>
                   <select
                     value={agendaFormData.category || "coverage_exclusions"}
                     onChange={(e) => setAgendaFormData({ ...agendaFormData, category: e.target.value as AgendaCategory })}
-                    className="w-full bg-zinc-950 border border-zinc-800 rounded px-2.5 py-1.5 text-xs text-zinc-200"
+                    className="w-full bg-zinc-50 border border-zinc-200 rounded px-2.5 py-1.5 text-xs text-zinc-800"
                   >
                     {Object.keys(AGENDA_CATEGORY_INFO).map((k) => (
                       <option key={k} value={k}>
@@ -1591,8 +1591,8 @@ export function RenewalDecisionBrief() {
                     ))}
                   </select>
                 </div>
-                <div className="pt-4 border-t border-zinc-800 flex justify-end gap-2">
-                  <Button type="button" variant="outline" onClick={() => setIsAgendaModalOpen(false)} className="border-zinc-700 text-xs">Anulează</Button>
+                <div className="pt-4 border-t border-zinc-200 flex justify-end gap-2">
+                  <Button type="button" variant="outline" onClick={() => setIsAgendaModalOpen(false)} className="border-zinc-300 text-xs">Anulează</Button>
                   <Button type="submit" className="bg-blue-600 hover:bg-blue-500 text-white text-xs">Salvează</Button>
                 </div>
               </form>
@@ -1609,10 +1609,10 @@ export function RenewalDecisionBrief() {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.95 }}
-              className="bg-zinc-900 border border-zinc-800 rounded-2xl w-full max-w-lg flex flex-col overflow-hidden shadow-2xl"
+              className="bg-white border border-zinc-200 rounded-2xl w-full max-w-lg flex flex-col overflow-hidden shadow-2xl"
             >
-              <div className="px-6 py-4 border-b border-zinc-800 flex items-center justify-between">
-                <h3 className="text-base font-bold text-white">
+              <div className="px-6 py-4 border-b border-zinc-200 flex items-center justify-between">
+                <h3 className="text-base font-bold text-zinc-900">
                   {editingAction ? "Editează Acțiune" : "Adaugă Acțiune în Plan"}
                 </h3>
                 <button onClick={() => setIsActionModalOpen(false)} className="text-zinc-500 hover:text-white">
@@ -1621,7 +1621,7 @@ export function RenewalDecisionBrief() {
               </div>
               <form onSubmit={handleSaveAction} className="p-6 space-y-4 text-xs">
                 <div>
-                  <label className="block text-zinc-300 font-semibold mb-1">
+                  <label className="block text-zinc-600 font-semibold mb-1">
                     Titlu Acțiune / Sarcină <span className="text-red-400">*</span>
                   </label>
                   <Input
@@ -1629,31 +1629,31 @@ export function RenewalDecisionBrief() {
                     value={actionFormData.actionTitle || ""}
                     onChange={(e) => setActionFormData({ ...actionFormData, actionTitle: e.target.value })}
                     placeholder="Ex: Transmitere cerere semnată, Verificare poliță emisă..."
-                    className="bg-zinc-950 border-zinc-800 text-xs text-white"
+                    className="bg-zinc-50 border-zinc-200 text-xs text-white"
                   />
                 </div>
                 <div className="grid grid-cols-2 gap-3">
                   <div>
-                    <label className="block text-zinc-300 font-medium mb-1">Responsabil</label>
+                    <label className="block text-zinc-600 font-medium mb-1">Responsabil</label>
                     <Input
                       value={actionFormData.responsiblePerson || ""}
                       onChange={(e) => setActionFormData({ ...actionFormData, responsiblePerson: e.target.value })}
                       placeholder="Ex: Utilizator, Broker..."
-                      className="bg-zinc-950 border-zinc-800 text-xs text-white"
+                      className="bg-zinc-50 border-zinc-200 text-xs text-white"
                     />
                   </div>
                   <div>
-                    <label className="block text-zinc-300 font-medium mb-1">Termen Țintă</label>
+                    <label className="block text-zinc-600 font-medium mb-1">Termen Țintă</label>
                     <Input
                       type="date"
                       value={actionFormData.targetDate || ""}
                       onChange={(e) => setActionFormData({ ...actionFormData, targetDate: e.target.value })}
-                      className="bg-zinc-950 border-zinc-800 text-xs text-white"
+                      className="bg-zinc-50 border-zinc-200 text-xs text-white"
                     />
                   </div>
                 </div>
-                <div className="pt-4 border-t border-zinc-800 flex justify-end gap-2">
-                  <Button type="button" variant="outline" onClick={() => setIsActionModalOpen(false)} className="border-zinc-700 text-xs">Anulează</Button>
+                <div className="pt-4 border-t border-zinc-200 flex justify-end gap-2">
+                  <Button type="button" variant="outline" onClick={() => setIsActionModalOpen(false)} className="border-zinc-300 text-xs">Anulează</Button>
                   <Button type="submit" className="bg-blue-600 hover:bg-blue-500 text-white text-xs">Salvează</Button>
                 </div>
               </form>
@@ -1670,17 +1670,17 @@ export function RenewalDecisionBrief() {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.95 }}
-              className="bg-zinc-900 border border-zinc-800 rounded-2xl w-full max-w-md p-6 text-xs shadow-2xl"
+              className="bg-white border border-zinc-200 rounded-2xl w-full max-w-md p-6 text-xs shadow-2xl"
             >
               <div className="flex items-center gap-3 text-red-400 mb-3">
                 <Trash2 className="w-5 h-5" />
-                <h3 className="text-sm font-bold text-white">Confirmă Ștergerea</h3>
+                <h3 className="text-sm font-bold text-zinc-900">Confirmă Ștergerea</h3>
               </div>
-              <p className="text-zinc-300 mb-4">
+              <p className="text-zinc-600 mb-4">
                 Sigur dorești să ștergi <strong className="text-white">&ldquo;{itemToDelete.title}&rdquo;</strong>?
               </p>
               <div className="flex items-center justify-end gap-2">
-                <Button variant="outline" size="sm" onClick={() => setItemToDelete(null)} className="border-zinc-700 text-xs">Anulează</Button>
+                <Button variant="outline" size="sm" onClick={() => setItemToDelete(null)} className="border-zinc-300 text-xs">Anulează</Button>
                 <Button variant="destructive" size="sm" onClick={handleDeleteItem} className="bg-red-600 hover:bg-red-500 text-xs">Șterge Definitiv</Button>
               </div>
             </motion.div>
@@ -1696,17 +1696,17 @@ export function RenewalDecisionBrief() {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.95 }}
-              className="bg-zinc-900 border border-zinc-800 rounded-2xl w-full max-w-md p-6 text-xs shadow-2xl"
+              className="bg-white border border-zinc-200 rounded-2xl w-full max-w-md p-6 text-xs shadow-2xl"
             >
               <div className="flex items-center gap-3 text-red-400 mb-3">
                 <AlertTriangle className="w-5 h-5" />
-                <h3 className="text-sm font-bold text-white">Resetare Fișă Decizie</h3>
+                <h3 className="text-sm font-bold text-zinc-900">Resetare Fișă Decizie</h3>
               </div>
-              <p className="text-zinc-300 mb-4 leading-relaxed">
+              <p className="text-zinc-600 mb-4 leading-relaxed">
                 Această acțiune va șterge toate datele introduse în această sesiune de navigare. Asigură-te că ai descărcat un raport PDF sau un export JSON înainte de resetare.
               </p>
               <div className="flex items-center justify-end gap-2">
-                <Button variant="outline" size="sm" onClick={() => setIsResetConfirmOpen(false)} className="border-zinc-700 text-xs">Anulează</Button>
+                <Button variant="outline" size="sm" onClick={() => setIsResetConfirmOpen(false)} className="border-zinc-300 text-xs">Anulează</Button>
                 <Button variant="destructive" size="sm" onClick={handleResetWorkspace} className="bg-red-600 hover:bg-red-500 text-xs">Resetează Tot</Button>
               </div>
             </motion.div>

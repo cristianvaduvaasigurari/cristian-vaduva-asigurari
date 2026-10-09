@@ -180,7 +180,7 @@ export function InsuranceReviewDossier() {
   return (
     <div className="w-full space-y-8 max-w-5xl mx-auto">
       {/* 1. TOP TOOLBAR & STEP SELECTOR */}
-      <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4 p-4 sm:p-5 rounded-3xl bg-zinc-900/80 border border-zinc-800">
+      <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4 p-4 sm:p-5 rounded-3xl bg-white border border-zinc-200">
         <div className="flex items-center gap-2 overflow-x-auto pb-1 sm:pb-0 text-xs">
           {[
             { num: 1, labelRo: "1. Obiective Dosar", labelEn: "1. Review Scope" },
@@ -195,7 +195,7 @@ export function InsuranceReviewDossier() {
               className={`px-3.5 py-1.5 rounded-xl font-medium transition-all shrink-0 ${
                 currentStep === s.num
                   ? "bg-blue-600 text-white shadow-md font-bold"
-                  : "bg-zinc-950 text-zinc-400 hover:text-white border border-zinc-800"
+                  : "bg-zinc-50 text-zinc-500 hover:text-white border border-zinc-200"
               }`}
             >
               {isRo ? s.labelRo : s.labelEn}
@@ -203,12 +203,12 @@ export function InsuranceReviewDossier() {
           ))}
         </div>
 
-        <div className="flex items-center justify-between sm:justify-end gap-2 text-xs border-t sm:border-t-0 pt-3 sm:pt-0 border-zinc-800">
+        <div className="flex items-center justify-between sm:justify-end gap-2 text-xs border-t sm:border-t-0 pt-3 sm:pt-0 border-zinc-200">
           <Button
             type="button"
             variant="outline"
             onClick={handleDownloadPdf}
-            className="rounded-full border-zinc-800 hover:bg-zinc-800 text-zinc-300 h-9 px-3.5 flex items-center gap-1.5"
+            className="rounded-full border-zinc-200 hover:bg-zinc-800 text-zinc-600 h-9 px-3.5 flex items-center gap-1.5"
           >
             <Download className="w-3.5 h-3.5 text-blue-400" />
             <span>PDF</span>
@@ -218,14 +218,14 @@ export function InsuranceReviewDossier() {
             type="button"
             variant="outline"
             onClick={handleExportJson}
-            className="rounded-full border-zinc-800 hover:bg-zinc-800 text-zinc-300 h-9 px-3"
+            className="rounded-full border-zinc-200 hover:bg-zinc-800 text-zinc-600 h-9 px-3"
             title="Backup JSON"
           >
             <Download className="w-3.5 h-3.5 text-amber-400" />
             <span className="hidden md:inline">JSON</span>
           </Button>
 
-          <label className="cursor-pointer rounded-full border border-zinc-800 hover:bg-zinc-800 text-zinc-300 h-9 px-3 inline-flex items-center gap-1.5 transition-colors">
+          <label className="cursor-pointer rounded-full border border-zinc-200 hover:bg-zinc-800 text-zinc-600 h-9 px-3 inline-flex items-center gap-1.5 transition-colors">
             <Upload className="w-3.5 h-3.5 text-emerald-400" />
             <span className="hidden md:inline">Import</span>
             <input type="file" accept=".json" onChange={handleImportJson} className="hidden" />
@@ -234,24 +234,24 @@ export function InsuranceReviewDossier() {
           <button
             type="button"
             onClick={handleReset}
-            className="text-zinc-500 hover:text-zinc-300 transition-colors p-2"
+            className="text-zinc-500 hover:text-zinc-600 transition-colors p-2"
             title={isRo ? "Resetează" : "Reset"}
           >
             <RotateCcw className="w-3.5 h-3.5" />
           </button>
 
-          <div className="flex items-center gap-1 p-1 rounded-full bg-zinc-950 border border-zinc-800">
+          <div className="flex items-center gap-1 p-1 rounded-full bg-zinc-50 border border-zinc-200">
             <button
               type="button"
               onClick={() => setLang("ro")}
-              className={`px-2.5 py-0.5 rounded-full font-medium ${lang === "ro" ? "bg-blue-600 text-white" : "text-zinc-400 hover:text-white"}`}
+              className={`px-2.5 py-0.5 rounded-full font-medium ${lang === "ro" ? "bg-blue-600 text-white" : "text-zinc-500 hover:text-white"}`}
             >
               RO
             </button>
             <button
               type="button"
               onClick={() => setLang("en")}
-              className={`px-2.5 py-0.5 rounded-full font-medium ${lang === "en" ? "bg-blue-600 text-white" : "text-zinc-400 hover:text-white"}`}
+              className={`px-2.5 py-0.5 rounded-full font-medium ${lang === "en" ? "bg-blue-600 text-white" : "text-zinc-500 hover:text-white"}`}
             >
               EN
             </button>
@@ -260,7 +260,7 @@ export function InsuranceReviewDossier() {
       </div>
 
       {importStatus && (
-        <div className="p-4 rounded-2xl bg-blue-500/10 border border-blue-500/30 text-blue-300 text-xs flex items-center gap-2">
+        <div className="p-4 rounded-2xl bg-blue-50 border border-blue-200 text-blue-800 text-xs flex items-center gap-2">
           <Info className="w-4 h-4 text-blue-400" />
           <span>{importStatus}</span>
         </div>
@@ -270,15 +270,15 @@ export function InsuranceReviewDossier() {
       {/* STEP 1: PURPOSE SELECTION */}
       {/* ======================================================== */}
       {currentStep === 1 && (
-        <div className="p-6 sm:p-8 rounded-[2.5rem] bg-zinc-950 border border-zinc-800 shadow-xl space-y-6">
-          <div className="space-y-1 pb-4 border-b border-zinc-800">
+        <div className="p-6 sm:p-8 rounded-[2.5rem] bg-zinc-50 border border-zinc-200 shadow-xl space-y-6">
+          <div className="space-y-1 pb-4 border-b border-zinc-200">
             <span className="text-[10px] uppercase font-bold text-blue-400 tracking-wider">
               {isRo ? "PASUL 1 DIN 4: OBIECTIVUL DOSARULUI" : "STEP 1 OF 4: REVIEW SCOPE"}
             </span>
-            <h3 className="text-xl font-heading font-bold text-white">
+            <h3 className="text-xl font-heading font-bold text-zinc-900">
               {isRo ? "Pentru ce situație dorești să pregătești dosarul?" : "What is the primary purpose of your review dossier?"}
             </h3>
-            <p className="text-xs text-zinc-400">
+            <p className="text-xs text-zinc-500">
               {isRo
                 ? "Selectează unul sau mai multe motive pentru a genera automat checklist-ul relevant de documente."
                 : "Select one or more reasons to dynamically assemble a targeted document checklist."}
@@ -287,11 +287,11 @@ export function InsuranceReviewDossier() {
 
           <div className="space-y-4">
             <div className="space-y-1.5 text-xs max-w-md">
-              <label className="text-zinc-300 font-medium">{isRo ? "Denumire Dosar (Opțional)" : "Dossier Title (Optional)"}</label>
+              <label className="text-zinc-600 font-medium">{isRo ? "Denumire Dosar (Opțional)" : "Dossier Title (Optional)"}</label>
               <Input
                 value={dossierTitle}
                 onChange={(e) => setDossierTitle(e.target.value)}
-                className="h-10 bg-zinc-900 border-zinc-800 text-white rounded-xl text-xs"
+                className="h-10 bg-white border-zinc-200 text-white rounded-xl text-xs"
               />
             </div>
 
@@ -305,7 +305,7 @@ export function InsuranceReviewDossier() {
                     className={`cursor-pointer p-4 rounded-2xl border transition-all space-y-2 ${
                       isSelected
                         ? "bg-blue-600/10 border-blue-500 shadow-lg"
-                        : "bg-zinc-900/40 border-zinc-800/80 hover:border-zinc-700"
+                        : "bg-zinc-50 border-zinc-200/80 hover:border-zinc-300"
                     }`}
                   >
                     <div className="flex items-center justify-between">
@@ -316,13 +316,13 @@ export function InsuranceReviewDossier() {
                         className={`w-4 h-4 rounded-full flex items-center justify-center border text-[10px] ${
                           isSelected
                             ? "bg-blue-600 border-blue-600 text-white"
-                            : "border-zinc-700 bg-zinc-800 text-transparent"
+                            : "border-zinc-300 bg-zinc-800 text-transparent"
                         }`}
                       >
                         ✓
                       </div>
                     </div>
-                    <p className="text-[11px] text-zinc-400 leading-relaxed">
+                    <p className="text-[11px] text-zinc-500 leading-relaxed">
                       {isRo ? p.descRo : p.descEn}
                     </p>
                   </div>
@@ -331,7 +331,7 @@ export function InsuranceReviewDossier() {
             </div>
           </div>
 
-          <div className="flex justify-end pt-4 border-t border-zinc-800">
+          <div className="flex justify-end pt-4 border-t border-zinc-200">
             <Button
               type="button"
               onClick={() => setCurrentStep(2)}
@@ -348,13 +348,13 @@ export function InsuranceReviewDossier() {
       {/* STEP 2: DOCUMENT CHECKLIST */}
       {/* ======================================================== */}
       {currentStep === 2 && (
-        <div className="p-6 sm:p-8 rounded-[2.5rem] bg-zinc-950 border border-zinc-800 shadow-xl space-y-6">
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-zinc-800">
+        <div className="p-6 sm:p-8 rounded-[2.5rem] bg-zinc-50 border border-zinc-200 shadow-xl space-y-6">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-zinc-200">
             <div className="space-y-1">
               <span className="text-[10px] uppercase font-bold text-blue-400 tracking-wider">
                 {isRo ? "PASUL 2 DIN 4: CHECKLIST DOCUMENTAR" : "STEP 2 OF 4: DOCUMENT CHECKLIST"}
               </span>
-              <h3 className="text-xl font-heading font-bold text-white">
+              <h3 className="text-xl font-heading font-bold text-zinc-900">
                 {isRo ? "Bifează starea fiecărui document necesar" : "Mark the availability of each required document"}
               </h3>
             </div>
@@ -373,14 +373,14 @@ export function InsuranceReviewDossier() {
             {items.map((it) => (
               <div
                 key={it.id}
-                className="p-4 sm:p-5 rounded-2xl bg-zinc-900/50 border border-zinc-800/80 space-y-3"
+                className="p-4 sm:p-5 rounded-2xl bg-white border border-zinc-200/80 space-y-3"
               >
                 <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-3">
                   <div className="space-y-1 flex-1">
-                    <h4 className="text-sm font-heading font-bold text-white">
+                    <h4 className="text-sm font-heading font-bold text-zinc-900">
                       {isRo ? it.titleRo : it.titleEn}
                     </h4>
-                    <p className="text-xs text-zinc-400 leading-relaxed">
+                    <p className="text-xs text-zinc-500 leading-relaxed">
                       {isRo ? it.descriptionRo : it.descriptionEn}
                     </p>
                   </div>
@@ -392,7 +392,7 @@ export function InsuranceReviewDossier() {
                       className={`px-3 py-1.5 rounded-xl border font-medium transition-all ${
                         it.status === "available"
                           ? "bg-emerald-600 text-white border-emerald-600 shadow-sm"
-                          : "bg-zinc-900 text-zinc-400 border-zinc-800 hover:text-white"
+                          : "bg-white text-zinc-500 border-zinc-200 hover:text-white"
                       }`}
                     >
                       {isRo ? "✓ Am Documentul" : "✓ Available"}
@@ -404,7 +404,7 @@ export function InsuranceReviewDossier() {
                       className={`px-3 py-1.5 rounded-xl border font-medium transition-all ${
                         it.status === "to_obtain"
                           ? "bg-amber-600 text-white border-amber-600 shadow-sm"
-                          : "bg-zinc-900 text-zinc-400 border-zinc-800 hover:text-white"
+                          : "bg-white text-zinc-500 border-zinc-200 hover:text-white"
                       }`}
                     >
                       {isRo ? "⏳ De Obținut" : "⏳ To Obtain"}
@@ -416,7 +416,7 @@ export function InsuranceReviewDossier() {
                       className={`px-3 py-1.5 rounded-xl border font-medium transition-all ${
                         it.status === "needs_clarification"
                           ? "bg-blue-600 text-white border-blue-600 shadow-sm"
-                          : "bg-zinc-900 text-zinc-400 border-zinc-800 hover:text-white"
+                          : "bg-white text-zinc-500 border-zinc-200 hover:text-white"
                       }`}
                     >
                       {isRo ? "❓ Clarificare" : "❓ Clarify"}
@@ -427,8 +427,8 @@ export function InsuranceReviewDossier() {
                       onClick={() => setItemStatus(it.id, "not_applicable")}
                       className={`px-3 py-1.5 rounded-xl border font-medium transition-all ${
                         it.status === "not_applicable"
-                          ? "bg-zinc-800 text-zinc-200 border-zinc-700 shadow-sm"
-                          : "bg-zinc-900 text-zinc-500 border-zinc-800 hover:text-zinc-400"
+                          ? "bg-zinc-800 text-zinc-800 border-zinc-300 shadow-sm"
+                          : "bg-white text-zinc-500 border-zinc-200 hover:text-zinc-500"
                       }`}
                     >
                       {isRo ? "— N/A" : "— N/A"}
@@ -439,12 +439,12 @@ export function InsuranceReviewDossier() {
             ))}
           </div>
 
-          <div className="flex justify-between pt-4 border-t border-zinc-800">
+          <div className="flex justify-between pt-4 border-t border-zinc-200">
             <Button
               type="button"
               variant="outline"
               onClick={() => setCurrentStep(1)}
-              className="rounded-full border-zinc-800 text-zinc-300 text-xs h-11 px-5 flex items-center gap-2"
+              className="rounded-full border-zinc-200 text-zinc-600 text-xs h-11 px-5 flex items-center gap-2"
             >
               <ArrowLeft className="w-4 h-4" />
               <span>{isRo ? "Înapoi la Obiective" : "Back to Scope"}</span>
@@ -466,15 +466,15 @@ export function InsuranceReviewDossier() {
       {/* STEP 3: ADVISOR QUESTION BUILDER */}
       {/* ======================================================== */}
       {currentStep === 3 && (
-        <div className="p-6 sm:p-8 rounded-[2.5rem] bg-zinc-950 border border-zinc-800 shadow-xl space-y-6">
-          <div className="space-y-1 pb-4 border-b border-zinc-800">
+        <div className="p-6 sm:p-8 rounded-[2.5rem] bg-zinc-50 border border-zinc-200 shadow-xl space-y-6">
+          <div className="space-y-1 pb-4 border-b border-zinc-200">
             <span className="text-[10px] uppercase font-bold text-blue-400 tracking-wider">
               {isRo ? "PASUL 3 DIN 4: ÎNTREBĂRI PENTRU BROKER" : "STEP 3 OF 4: ADVISOR QUESTIONS"}
             </span>
-            <h3 className="text-xl font-heading font-bold text-white">
+            <h3 className="text-xl font-heading font-bold text-zinc-900">
               {isRo ? "Ce dorești să clarifici la întâlnirea de consultanță?" : "What do you want to clarify during the advisory review?"}
             </h3>
-            <p className="text-xs text-zinc-400">
+            <p className="text-xs text-zinc-500">
               {isRo
                 ? "Întrebările de mai jos au fost generate pe baza obiectivelor tale. Poți adăuga propriile întrebări sau șterge ce nu se aplică."
                 : "Questions below are tailored to your dossier. You can add custom questions or remove items."}
@@ -485,7 +485,7 @@ export function InsuranceReviewDossier() {
             {advisorQuestions.map((q, idx) => (
               <div
                 key={idx}
-                className="p-4 rounded-2xl bg-zinc-900/60 border border-zinc-800 flex items-start justify-between gap-3 text-zinc-200"
+                className="p-4 rounded-2xl bg-white border border-zinc-200 flex items-start justify-between gap-3 text-zinc-800"
               >
                 <div className="flex items-start gap-3 flex-1">
                   <div className="w-5 h-5 rounded-full bg-blue-500/10 text-blue-400 flex items-center justify-center font-bold text-[11px] shrink-0 mt-0.5">
@@ -498,7 +498,7 @@ export function InsuranceReviewDossier() {
                   <button
                     type="button"
                     onClick={() => handleCopyQuestion(q, idx)}
-                    className="p-1.5 rounded-lg bg-zinc-800 text-zinc-400 hover:text-white"
+                    className="p-1.5 rounded-lg bg-zinc-800 text-zinc-500 hover:text-white"
                     title={isRo ? "Copiază" : "Copy"}
                   >
                     {copiedQuestionIdx === idx ? <Check className="w-3.5 h-3.5 text-emerald-400" /> : <Copy className="w-3.5 h-3.5" />}
@@ -506,7 +506,7 @@ export function InsuranceReviewDossier() {
                   <button
                     type="button"
                     onClick={() => handleRemoveQuestion(idx)}
-                    className="p-1.5 rounded-lg bg-zinc-800 text-zinc-400 hover:text-rose-400"
+                    className="p-1.5 rounded-lg bg-zinc-800 text-zinc-500 hover:text-rose-400"
                     title={isRo ? "Șterge" : "Delete"}
                   >
                     <Trash2 className="w-3.5 h-3.5" />
@@ -521,7 +521,7 @@ export function InsuranceReviewDossier() {
                 placeholder={isRo ? "Scrie o întrebare personalizată..." : "Type your custom question..."}
                 value={newQuestionText}
                 onChange={(e) => setNewQuestionText(e.target.value)}
-                className="h-10 bg-zinc-900 border-zinc-800 text-white rounded-xl text-xs flex-1"
+                className="h-10 bg-white border-zinc-200 text-white rounded-xl text-xs flex-1"
               />
               <Button type="submit" className="rounded-xl bg-zinc-800 hover:bg-zinc-700 text-white text-xs h-10 px-4">
                 <Plus className="w-3.5 h-3.5 mr-1" />
@@ -530,12 +530,12 @@ export function InsuranceReviewDossier() {
             </form>
           </div>
 
-          <div className="flex justify-between pt-4 border-t border-zinc-800">
+          <div className="flex justify-between pt-4 border-t border-zinc-200">
             <Button
               type="button"
               variant="outline"
               onClick={() => setCurrentStep(2)}
-              className="rounded-full border-zinc-800 text-zinc-300 text-xs h-11 px-5 flex items-center gap-2"
+              className="rounded-full border-zinc-200 text-zinc-600 text-xs h-11 px-5 flex items-center gap-2"
             >
               <ArrowLeft className="w-4 h-4" />
               <span>{isRo ? "Înapoi la Checklist" : "Back to Checklist"}</span>
@@ -558,13 +558,13 @@ export function InsuranceReviewDossier() {
       {/* ======================================================== */}
       {currentStep === 4 && (
         <div className="space-y-6">
-          <div className="p-6 sm:p-8 rounded-[2.5rem] bg-zinc-950 border border-zinc-800 shadow-xl space-y-6">
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-zinc-800">
+          <div className="p-6 sm:p-8 rounded-[2.5rem] bg-zinc-50 border border-zinc-200 shadow-xl space-y-6">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-zinc-200">
               <div className="space-y-1">
                 <span className="text-[10px] uppercase font-bold text-blue-400 tracking-wider">
                   {isRo ? "PASUL 4 DIN 4: PREVIZUALIZARE DOSAR" : "STEP 4 OF 4: DOSSIER PREVIEW"}
                 </span>
-                <h3 className="text-xl font-heading font-bold text-white">
+                <h3 className="text-xl font-heading font-bold text-zinc-900">
                   {currentDossier.title}
                 </h3>
               </div>
@@ -583,9 +583,9 @@ export function InsuranceReviewDossier() {
 
             {/* SUMMARY CARDS */}
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 text-xs">
-              <div className="p-4 rounded-2xl bg-zinc-900/60 border border-zinc-800 space-y-1">
+              <div className="p-4 rounded-2xl bg-white border border-zinc-200 space-y-1">
                 <span className="text-zinc-500 font-semibold">{isRo ? "Documente Totale" : "Total Documents"}</span>
-                <div className="text-2xl font-bold text-white">{items.length}</div>
+                <div className="text-2xl font-bold text-zinc-900">{items.length}</div>
               </div>
               <div className="p-4 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 space-y-1">
                 <span className="font-semibold">{isRo ? "Disponibile" : "Available"}</span>
@@ -603,7 +603,7 @@ export function InsuranceReviewDossier() {
 
             {/* OPTIONAL NOTES */}
             <div className="space-y-2 text-xs">
-              <label className="text-zinc-300 font-medium">
+              <label className="text-zinc-600 font-medium">
                 {isRo ? "Notițe Speciale pentru Raportul PDF (Opțional)" : "Special Notes for PDF Dossier (Optional)"}
               </label>
               <textarea
@@ -611,17 +611,17 @@ export function InsuranceReviewDossier() {
                 placeholder={isRo ? "Adaugă detalii non-sensibile despre proprietate, termene limită sau preferințe..." : "Add non-sensitive context regarding deadlines, asset details, or preferences..."}
                 value={userNotes}
                 onChange={(e) => setUserNotes(e.target.value)}
-                className="w-full p-3 rounded-2xl bg-zinc-900 border border-zinc-800 text-white text-xs focus:outline-none focus:border-blue-500"
+                className="w-full p-3 rounded-2xl bg-white border border-zinc-200 text-white text-xs focus:outline-none focus:border-blue-500"
               />
             </div>
 
             {/* ADVISORY CTA */}
             <div className="p-6 rounded-3xl bg-blue-600/10 border border-blue-500/30 flex flex-col sm:flex-row items-center justify-between gap-4">
               <div className="space-y-1 text-center sm:text-left">
-                <h4 className="text-sm font-bold text-white">
+                <h4 className="text-sm font-bold text-zinc-900">
                   {isRo ? "Pregătit pentru auditul independent?" : "Ready for an independent policy review?"}
                 </h4>
-                <p className="text-xs text-zinc-400">
+                <p className="text-xs text-zinc-500">
                   {isRo ? "Trimite polițele pentru o analiză detaliată a termenilor și negociere cu asiguratorii." : "Submit your contracts for a thorough terms analysis and market negotiation."}
                 </p>
               </div>
@@ -636,8 +636,8 @@ export function InsuranceReviewDossier() {
       )}
 
       {/* 2. PRIVACY SAFEGUARD NOTICE */}
-      <div className="p-6 rounded-3xl bg-zinc-900/40 border border-zinc-800 space-y-2 text-xs text-zinc-400">
-        <div className="flex items-center gap-2 text-zinc-300 font-bold">
+      <div className="p-6 rounded-3xl bg-zinc-50 border border-zinc-200 space-y-2 text-xs text-zinc-500">
+        <div className="flex items-center gap-2 text-zinc-600 font-bold">
           <Lock className="w-4 h-4 text-emerald-400" />
           <span>{isRo ? "Confidențialitate Totală & Stocare Volatilă" : "Total Privacy & In-Memory Execution"}</span>
         </div>

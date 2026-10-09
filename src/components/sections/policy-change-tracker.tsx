@@ -424,53 +424,53 @@ export function PolicyChangeTracker() {
     <div className="space-y-8">
       {/* Top KPI Metrics Overview */}
       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
-        <div className="bg-zinc-900/90 border border-zinc-800/80 rounded-xl p-4 flex flex-col justify-between">
-          <div className="text-zinc-400 text-xs font-medium uppercase tracking-wider">Total Cereri</div>
-          <div className="text-2xl sm:text-3xl font-bold text-white mt-1">{stats.totalRequests}</div>
+        <div className="bg-white border border-zinc-200/80 rounded-xl p-4 flex flex-col justify-between">
+          <div className="text-zinc-500 text-xs font-medium uppercase tracking-wider">Total Cereri</div>
+          <div className="text-2xl sm:text-3xl font-bold text-zinc-900 mt-1">{stats.totalRequests}</div>
           <div className="text-[11px] text-zinc-500 mt-1">Înregistrate manual</div>
         </div>
 
-        <div className="bg-zinc-900/90 border border-zinc-800/80 rounded-xl p-4 flex flex-col justify-between">
-          <div className="text-zinc-400 text-xs font-medium uppercase tracking-wider">În Așteptare</div>
+        <div className="bg-white border border-zinc-200/80 rounded-xl p-4 flex flex-col justify-between">
+          <div className="text-zinc-500 text-xs font-medium uppercase tracking-wider">În Așteptare</div>
           <div className="text-2xl sm:text-3xl font-bold text-amber-400 mt-1">{stats.awaitingResponseCount}</div>
           <div className="text-[11px] text-zinc-500 mt-1">Răspuns asigurator</div>
         </div>
 
-        <div className="bg-zinc-900/90 border border-zinc-800/80 rounded-xl p-4 flex flex-col justify-between">
-          <div className="text-zinc-400 text-xs font-medium uppercase tracking-wider">Info Suplimentare</div>
+        <div className="bg-white border border-zinc-200/80 rounded-xl p-4 flex flex-col justify-between">
+          <div className="text-zinc-500 text-xs font-medium uppercase tracking-wider">Info Suplimentare</div>
           <div className="text-2xl sm:text-3xl font-bold text-purple-400 mt-1">{stats.infoRequestedCount}</div>
           <div className="text-[11px] text-zinc-500 mt-1">Cerute de companie</div>
         </div>
 
-        <div className="bg-zinc-900/90 border border-zinc-800/80 rounded-xl p-4 flex flex-col justify-between">
-          <div className="text-zinc-400 text-xs font-medium uppercase tracking-wider">Confirmat Scris</div>
+        <div className="bg-white border border-zinc-200/80 rounded-xl p-4 flex flex-col justify-between">
+          <div className="text-zinc-500 text-xs font-medium uppercase tracking-wider">Confirmat Scris</div>
           <div className="text-2xl sm:text-3xl font-bold text-teal-400 mt-1">{stats.writtenConfirmationCount}</div>
           <div className="text-[11px] text-zinc-500 mt-1">Acord documentat</div>
         </div>
 
-        <div className="bg-zinc-900/90 border border-zinc-800/80 rounded-xl p-4 flex flex-col justify-between">
-          <div className="text-zinc-400 text-xs font-medium uppercase tracking-wider">Document Primit</div>
+        <div className="bg-white border border-zinc-200/80 rounded-xl p-4 flex flex-col justify-between">
+          <div className="text-zinc-500 text-xs font-medium uppercase tracking-wider">Document Primit</div>
           <div className="text-2xl sm:text-3xl font-bold text-emerald-400 mt-1">{stats.updatedDocumentCount}</div>
           <div className="text-[11px] text-zinc-500 mt-1">Act adițional arhivat</div>
         </div>
 
-        <div className="bg-zinc-900/90 border border-zinc-800/80 rounded-xl p-4 flex flex-col justify-between">
-          <div className="text-zinc-400 text-xs font-medium uppercase tracking-wider">Follow-Up Depășit</div>
+        <div className="bg-white border border-zinc-200/80 rounded-xl p-4 flex flex-col justify-between">
+          <div className="text-zinc-500 text-xs font-medium uppercase tracking-wider">Follow-Up Depășit</div>
           <div className="text-2xl sm:text-3xl font-bold text-red-400 mt-1">{stats.overdueFollowUpsCount}</div>
           <div className="text-[11px] text-zinc-500 mt-1">Scadențe trecute</div>
         </div>
       </div>
 
       {/* Main Tab Bar & Actions */}
-      <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4 border-b border-zinc-800 pb-4">
+      <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4 border-b border-zinc-200 pb-4">
         {/* Navigation Tabs */}
-        <div className="flex items-center gap-1.5 p-1 bg-zinc-900/90 border border-zinc-800 rounded-xl overflow-x-auto">
+        <div className="flex items-center gap-1.5 p-1 bg-white border border-zinc-200 rounded-xl overflow-x-auto">
           <button
             onClick={() => setActiveTab("register")}
             className={`flex items-center gap-2 px-3.5 py-2 rounded-lg text-xs font-medium transition-all whitespace-nowrap ${
               activeTab === "register"
                 ? "bg-blue-600 text-white shadow-lg shadow-blue-500/20"
-                : "text-zinc-400 hover:text-white hover:bg-zinc-800/60"
+                : "text-zinc-500 hover:text-white hover:bg-zinc-800/60"
             }`}
           >
             <FileEdit className="w-3.5 h-3.5" />
@@ -482,7 +482,7 @@ export function PolicyChangeTracker() {
             className={`flex items-center gap-2 px-3.5 py-2 rounded-lg text-xs font-medium transition-all whitespace-nowrap ${
               activeTab === "timeline"
                 ? "bg-blue-600 text-white shadow-lg shadow-blue-500/20"
-                : "text-zinc-400 hover:text-white hover:bg-zinc-800/60"
+                : "text-zinc-500 hover:text-white hover:bg-zinc-800/60"
             }`}
           >
             <Clock className="w-3.5 h-3.5" />
@@ -494,7 +494,7 @@ export function PolicyChangeTracker() {
             className={`flex items-center gap-2 px-3.5 py-2 rounded-lg text-xs font-medium transition-all whitespace-nowrap ${
               activeTab === "warnings"
                 ? "bg-blue-600 text-white shadow-lg shadow-blue-500/20"
-                : "text-zinc-400 hover:text-white hover:bg-zinc-800/60"
+                : "text-zinc-500 hover:text-white hover:bg-zinc-800/60"
             }`}
           >
             <AlertTriangle className="w-3.5 h-3.5" />
@@ -506,7 +506,7 @@ export function PolicyChangeTracker() {
             className={`flex items-center gap-2 px-3.5 py-2 rounded-lg text-xs font-medium transition-all whitespace-nowrap ${
               activeTab === "report"
                 ? "bg-blue-600 text-white shadow-lg shadow-blue-500/20"
-                : "text-zinc-400 hover:text-white hover:bg-zinc-800/60"
+                : "text-zinc-500 hover:text-white hover:bg-zinc-800/60"
             }`}
           >
             <FileCheck className="w-3.5 h-3.5" />
@@ -528,7 +528,7 @@ export function PolicyChangeTracker() {
             variant="outline"
             size="sm"
             onClick={handleExportPdf}
-            className="border-zinc-700 bg-zinc-800/60 text-zinc-300 hover:text-white hover:bg-zinc-800 text-xs"
+            className="border-zinc-300 bg-zinc-800/60 text-zinc-600 hover:text-white hover:bg-zinc-800 text-xs"
           >
             <Download className="w-3.5 h-3.5 mr-1.5" />
             PDF
@@ -538,7 +538,7 @@ export function PolicyChangeTracker() {
 
       {/* Notifications */}
       {importSuccess && (
-        <div className="p-3 bg-emerald-500/10 border border-emerald-500/30 rounded-xl text-emerald-400 text-xs flex items-center gap-2">
+        <div className="p-3 bg-emerald-50 border border-emerald-200 rounded-xl text-emerald-400 text-xs flex items-center gap-2">
           <CheckCircle2 className="w-4 h-4 shrink-0" />
           <span>{importSuccess}</span>
         </div>
@@ -554,19 +554,19 @@ export function PolicyChangeTracker() {
       {activeTab === "register" && (
         <div className="space-y-6">
           {/* Filters Bar */}
-          <div className="bg-zinc-900/80 border border-zinc-800 rounded-2xl p-4 flex flex-col md:flex-row items-stretch md:items-center gap-3">
+          <div className="bg-white border border-zinc-200 rounded-2xl p-4 flex flex-col md:flex-row items-stretch md:items-center gap-3">
             <div className="relative flex-1">
-              <Search className="w-4 h-4 text-zinc-400 absolute left-3 top-1/2 -translate-y-1/2" />
+              <Search className="w-4 h-4 text-zinc-500 absolute left-3 top-1/2 -translate-y-1/2" />
               <Input
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="Caută în cereri, poliță, descriere, motiv..."
-                className="pl-9 bg-zinc-950 border-zinc-800 text-xs text-white placeholder:text-zinc-500"
+                className="pl-9 bg-zinc-50 border-zinc-200 text-xs text-white placeholder:text-zinc-500"
               />
               {searchQuery && (
                 <button
                   onClick={() => setSearchQuery("")}
-                  className="absolute right-3 top-1/2 -translate-y-1/2 text-zinc-500 hover:text-zinc-300"
+                  className="absolute right-3 top-1/2 -translate-y-1/2 text-zinc-500 hover:text-zinc-600"
                 >
                   <X className="w-3.5 h-3.5" />
                 </button>
@@ -576,7 +576,7 @@ export function PolicyChangeTracker() {
             <select
               value={filterChangeType}
               onChange={(e) => setFilterChangeType(e.target.value)}
-              className="bg-zinc-950 border border-zinc-800 rounded-lg px-2.5 py-1.5 text-xs text-zinc-300 focus:outline-none focus:border-blue-500"
+              className="bg-zinc-50 border border-zinc-200 rounded-lg px-2.5 py-1.5 text-xs text-zinc-600 focus:outline-none focus:border-blue-500"
             >
               <option value="all">Toate Tipurile de Modificări</option>
               {Object.keys(CHANGE_TYPE_INFO).map((k) => (
@@ -589,7 +589,7 @@ export function PolicyChangeTracker() {
             <select
               value={filterStatus}
               onChange={(e) => setFilterStatus(e.target.value)}
-              className="bg-zinc-950 border border-zinc-800 rounded-lg px-2.5 py-1.5 text-xs text-zinc-300 focus:outline-none focus:border-blue-500"
+              className="bg-zinc-50 border border-zinc-200 rounded-lg px-2.5 py-1.5 text-xs text-zinc-600 focus:outline-none focus:border-blue-500"
             >
               <option value="all">Toate Statusurile</option>
               {Object.keys(STATUS_INFO).map((k) => (
@@ -612,23 +612,23 @@ export function PolicyChangeTracker() {
                 return (
                   <div
                     key={r.id}
-                    className="bg-zinc-900/90 border border-zinc-800 hover:border-zinc-700 rounded-2xl p-5 transition-all space-y-4 shadow-lg shadow-black/10"
+                    className="bg-white border border-zinc-200 hover:border-zinc-300 rounded-2xl p-5 transition-all space-y-4 shadow-lg shadow-black/10"
                   >
                     {/* Header */}
                     <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-3">
                       <div>
                         <div className="flex flex-wrap items-center gap-2 mb-1">
-                          <span className="px-2 py-0.5 rounded text-[10px] font-semibold bg-zinc-800 text-blue-400 border border-zinc-700">
+                          <span className="px-2 py-0.5 rounded text-[10px] font-semibold bg-zinc-800 text-blue-400 border border-zinc-300">
                             {changeTypeInfo.labelRo}
                           </span>
-                          <span className="text-xs text-zinc-400 font-medium">
-                            Poliță: <strong className="text-zinc-200">{r.relatedPolicyNickname}</strong>
+                          <span className="text-xs text-zinc-500 font-medium">
+                            Poliță: <strong className="text-zinc-800">{r.relatedPolicyNickname}</strong>
                           </span>
                           {r.insurer && (
                             <span className="text-xs text-zinc-500">({r.insurer})</span>
                           )}
                         </div>
-                        <h4 className="text-base font-bold text-white">{r.title}</h4>
+                        <h4 className="text-base font-bold text-zinc-900">{r.title}</h4>
                       </div>
 
                       <span
@@ -651,7 +651,7 @@ export function PolicyChangeTracker() {
                     </div>
 
                     {/* Description & Reason */}
-                    <div className="p-3 bg-zinc-950/60 rounded-xl border border-zinc-800/60 text-xs text-zinc-300 space-y-1.5">
+                    <div className="p-3 bg-zinc-50 rounded-xl border border-zinc-200/60 text-xs text-zinc-600 space-y-1.5">
                       <div>
                         <span className="text-zinc-500 font-semibold">Descriere solicitare: </span>
                         <span>{r.description}</span>
@@ -659,24 +659,24 @@ export function PolicyChangeTracker() {
                       {r.reason && (
                         <div>
                           <span className="text-zinc-500 font-semibold">Motivație / context: </span>
-                          <span className="text-zinc-400">{r.reason}</span>
+                          <span className="text-zinc-500">{r.reason}</span>
                         </div>
                       )}
                     </div>
 
                     {/* Dates & Submission info */}
-                    <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 text-[11px] text-zinc-400 p-2.5 bg-zinc-950/30 rounded-lg border border-zinc-800/40">
+                    <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 text-[11px] text-zinc-500 p-2.5 bg-zinc-50/30 rounded-lg border border-zinc-200/50">
                       <div>
                         <span className="text-zinc-500 block">Identificată la:</span>
-                        <span className="text-zinc-200 font-medium">{r.dateIdentified || "Nespecificată"}</span>
+                        <span className="text-zinc-800 font-medium">{r.dateIdentified || "Nespecificată"}</span>
                       </div>
                       <div>
                         <span className="text-zinc-500 block">Data dorită:</span>
-                        <span className="text-zinc-200 font-medium">{r.desiredEffectiveDate || "Nespecificată"}</span>
+                        <span className="text-zinc-800 font-medium">{r.desiredEffectiveDate || "Nespecificată"}</span>
                       </div>
                       <div>
                         <span className="text-zinc-500 block">Transmisă prin:</span>
-                        <span className="text-zinc-200 font-medium">
+                        <span className="text-zinc-800 font-medium">
                           {r.submissionChannel ? CHANNEL_LABELS[r.submissionChannel] : "Nespecificat"}
                         </span>
                       </div>
@@ -688,7 +688,7 @@ export function PolicyChangeTracker() {
                               ? "text-red-400"
                               : followUp.status === "due_today" || followUp.status === "upcoming_7_days"
                               ? "text-amber-400"
-                              : "text-zinc-200"
+                              : "text-zinc-800"
                           }`}
                         >
                           {r.nextFollowUpDate || "Fără scadență"}
@@ -706,8 +706,8 @@ export function PolicyChangeTracker() {
                               w.severity === "alert"
                                 ? "bg-red-500/10 border-red-500/20 text-red-300"
                                 : w.severity === "warning"
-                                ? "bg-amber-500/10 border-amber-500/20 text-amber-300"
-                                : "bg-blue-500/10 border-blue-500/20 text-blue-300"
+                                ? "bg-amber-500/10 border-amber-500/20 text-amber-800"
+                                : "bg-blue-500/10 border-blue-500/20 text-blue-800"
                             }`}
                           >
                             <AlertCircle className="w-3.5 h-3.5 shrink-0 mt-0.5" />
@@ -719,16 +719,16 @@ export function PolicyChangeTracker() {
 
                     {/* Confirmation details if any */}
                     {r.confirmationDetails && (
-                      <div className="p-3 rounded-xl bg-teal-500/10 border border-teal-500/20 text-xs text-zinc-200 space-y-1">
+                      <div className="p-3 rounded-xl bg-teal-500/10 border border-teal-500/20 text-xs text-zinc-800 space-y-1">
                         <div className="font-semibold text-teal-300 flex items-center gap-1.5">
                           <CheckSquare className="w-4 h-4" />
                           <span>Detalii Confirmare Înregistrată</span>
                         </div>
-                        <div className="text-[11px] text-zinc-300">
+                        <div className="text-[11px] text-zinc-600">
                           Confirmat la: <strong>{r.confirmationDetails.confirmationDate || "Dată nespecificată"}</strong> via {r.confirmationDetails.confirmationChannel || "canal n/a"}
                         </div>
                         {r.confirmationDetails.sourceReferenceTitle && (
-                          <div className="text-[11px] text-zinc-400">
+                          <div className="text-[11px] text-zinc-500">
                             Document referință: {r.confirmationDetails.sourceReferenceTitle}
                           </div>
                         )}
@@ -744,8 +744,8 @@ export function PolicyChangeTracker() {
                     )}
 
                     {/* Event Snippet & Action Bar */}
-                    <div className="pt-3 border-t border-zinc-800/80 flex flex-wrap items-center justify-between gap-3">
-                      <div className="text-xs text-zinc-400">
+                    <div className="pt-3 border-t border-zinc-200/80 flex flex-wrap items-center justify-between gap-3">
+                      <div className="text-xs text-zinc-500">
                         {r.events.length} evenimente înregistrate în istoric
                       </div>
 
@@ -754,7 +754,7 @@ export function PolicyChangeTracker() {
                           size="sm"
                           variant="outline"
                           onClick={() => handleOpenAddEvent(r)}
-                          className="border-zinc-700 bg-zinc-800/60 text-xs text-zinc-200 hover:text-white"
+                          className="border-zinc-300 bg-zinc-800/60 text-xs text-zinc-800 hover:text-white"
                         >
                           <Plus className="w-3.5 h-3.5 mr-1" />
                           Adaugă Eveniment
@@ -762,7 +762,7 @@ export function PolicyChangeTracker() {
 
                         <button
                           onClick={() => handleOpenEditRecord(r)}
-                          className="p-1.5 rounded-lg bg-zinc-800 text-zinc-300 hover:text-white hover:bg-zinc-700 transition-colors"
+                          className="p-1.5 rounded-lg bg-zinc-800 text-zinc-600 hover:text-white hover:bg-zinc-700 transition-colors"
                           title="Editează cererea"
                         >
                           <Edit3 className="w-3.5 h-3.5" />
@@ -770,7 +770,7 @@ export function PolicyChangeTracker() {
 
                         <button
                           onClick={() => setRecordToDelete(r)}
-                          className="p-1.5 rounded-lg bg-zinc-800 text-zinc-400 hover:text-red-400 hover:bg-red-500/10 transition-colors"
+                          className="p-1.5 rounded-lg bg-zinc-800 text-zinc-500 hover:text-red-400 hover:bg-red-500/10 transition-colors"
                           title="Șterge cererea"
                         >
                           <Trash2 className="w-3.5 h-3.5" />
@@ -782,9 +782,9 @@ export function PolicyChangeTracker() {
               })}
             </div>
           ) : (
-            <div className="p-12 text-center bg-zinc-900/40 border border-zinc-800/60 rounded-2xl">
+            <div className="p-12 text-center bg-zinc-50 border border-zinc-200/60 rounded-2xl">
               <FileEdit className="w-8 h-8 text-zinc-600 mx-auto mb-3" />
-              <h3 className="text-base font-semibold text-zinc-300">Nicio cerere de modificare înregistrată</h3>
+              <h3 className="text-base font-semibold text-zinc-600">Nicio cerere de modificare înregistrată</h3>
               <p className="text-xs text-zinc-500 mt-1 max-w-sm mx-auto">
                 Adaugă prima solicitare de modificare a contractului tău (schimbare adresă, adăugare echipamente, modificare sumă asigurată).
               </p>
@@ -800,26 +800,26 @@ export function PolicyChangeTracker() {
       {/* TAB 2: EVENT TIMELINE LOG */}
       {activeTab === "timeline" && (
         <div className="space-y-6">
-          <div className="bg-zinc-900/40 border border-zinc-800/60 rounded-xl p-4 text-xs text-zinc-400 flex items-start gap-3">
+          <div className="bg-zinc-50 border border-zinc-200/60 rounded-xl p-4 text-xs text-zinc-500 flex items-start gap-3">
             <Info className="w-4 h-4 text-blue-400 shrink-0 mt-0.5" />
             <div>
-              <span className="font-semibold text-zinc-200">Cronologie evenimente:</span> Fiecare etapă de comunicare (solicitare transmisă, documente cerute, confirmare primită) este logată cronologic pentru a avea o evidență clară în cazul unor neînțelegeri cu asiguratorul.
+              <span className="font-semibold text-zinc-800">Cronologie evenimente:</span> Fiecare etapă de comunicare (solicitare transmisă, documente cerute, confirmare primită) este logată cronologic pentru a avea o evidență clară în cazul unor neînțelegeri cu asiguratorul.
             </div>
           </div>
 
           <div className="space-y-6">
             {records.map((r) => (
-              <div key={r.id} className="bg-zinc-900/80 border border-zinc-800 rounded-2xl p-5 space-y-4">
+              <div key={r.id} className="bg-white border border-zinc-200 rounded-2xl p-5 space-y-4">
                 <div className="flex items-center justify-between">
                   <div>
-                    <h3 className="text-sm font-bold text-white">{r.title}</h3>
-                    <div className="text-xs text-zinc-400">Poliță: {r.relatedPolicyNickname}</div>
+                    <h3 className="text-sm font-bold text-zinc-900">{r.title}</h3>
+                    <div className="text-xs text-zinc-500">Poliță: {r.relatedPolicyNickname}</div>
                   </div>
                   <Button
                     size="sm"
                     variant="outline"
                     onClick={() => handleOpenAddEvent(r)}
-                    className="border-zinc-700 bg-zinc-800 text-xs text-zinc-200"
+                    className="border-zinc-300 bg-zinc-800 text-xs text-zinc-800"
                   >
                     <Plus className="w-3.5 h-3.5 mr-1" />
                     Adaugă Eveniment
@@ -827,20 +827,20 @@ export function PolicyChangeTracker() {
                 </div>
 
                 {r.events.length > 0 ? (
-                  <div className="relative pl-6 border-l border-zinc-800 space-y-4 pt-1">
+                  <div className="relative pl-6 border-l border-zinc-200 space-y-4 pt-1">
                     {r.events.map((ev) => {
                       const evInfo = EVENT_TYPE_INFO[ev.eventType];
 
                       return (
                         <div key={ev.id} className="relative">
                           <div className="absolute -left-[31px] top-1 w-3 h-3 rounded-full bg-blue-500 border-2 border-zinc-900" />
-                          <div className="p-3 bg-zinc-950 rounded-xl border border-zinc-800/80 text-xs space-y-1">
+                          <div className="p-3 bg-zinc-50 rounded-xl border border-zinc-200/80 text-xs space-y-1">
                             <div className="flex items-center justify-between gap-2">
-                              <span className="font-semibold text-zinc-200">{ev.title}</span>
+                              <span className="font-semibold text-zinc-800">{ev.title}</span>
                               <span className="text-[10px] text-zinc-500">{ev.date} {ev.time || ""}</span>
                             </div>
                             <div className="text-[11px] text-blue-400">{evInfo?.labelRo || ev.eventType}</div>
-                            {ev.notes && <div className="text-zinc-400 text-xs mt-1">{ev.notes}</div>}
+                            {ev.notes && <div className="text-zinc-500 text-xs mt-1">{ev.notes}</div>}
                             {ev.followUpAction && (
                               <div className="text-amber-400 text-[11px] pt-1">
                                 Acțiune necesară: {ev.followUpAction} {ev.followUpDate ? `(până la ${ev.followUpDate})` : ""}
@@ -852,7 +852,7 @@ export function PolicyChangeTracker() {
                     })}
                   </div>
                 ) : (
-                  <div className="p-4 bg-zinc-950 rounded-xl border border-zinc-800 text-xs text-zinc-500 italic">
+                  <div className="p-4 bg-zinc-50 rounded-xl border border-zinc-200 text-xs text-zinc-500 italic">
                     Niciun eveniment notat încă.
                   </div>
                 )}
@@ -865,13 +865,13 @@ export function PolicyChangeTracker() {
       {/* TAB 3: WARNINGS & DEADLINES */}
       {activeTab === "warnings" && (
         <div className="space-y-6">
-          <div className="bg-zinc-900/80 border border-zinc-800 rounded-2xl p-5 space-y-4">
+          <div className="bg-white border border-zinc-200 rounded-2xl p-5 space-y-4">
             <div className="flex items-center gap-2">
               <AlertTriangle className="w-5 h-5 text-amber-400" />
-              <h3 className="text-base font-bold text-white">Alerte de Procedură & Urmărire Scadențe</h3>
+              <h3 className="text-base font-bold text-zinc-900">Alerte de Procedură & Urmărire Scadențe</h3>
             </div>
 
-            <p className="text-xs text-zinc-400">
+            <p className="text-xs text-zinc-500">
               Verifică situațiile în care data dorită de intrare în vigoare a trecut fără confirmare scrisă sau în care a fost notată o aprobare verbală neînsoțită de documente oficiale.
             </p>
 
@@ -886,7 +886,7 @@ export function PolicyChangeTracker() {
                   .map((r) => (
                     <div
                       key={r.id}
-                      className="p-3 bg-red-500/10 border border-red-500/20 rounded-xl text-xs text-zinc-200 flex items-center justify-between gap-3"
+                      className="p-3 bg-red-500/10 border border-red-500/20 rounded-xl text-xs text-zinc-800 flex items-center justify-between gap-3"
                     >
                       <div>
                         <span className="font-semibold text-white">{r.title}</span> — Scadență contact: {r.nextFollowUpDate}
@@ -914,7 +914,7 @@ export function PolicyChangeTracker() {
                   .map((r) => (
                     <div
                       key={r.id}
-                      className="p-3 bg-amber-500/10 border border-amber-500/20 rounded-xl text-xs text-zinc-200 flex items-center justify-between gap-3"
+                      className="p-3 bg-amber-500/10 border border-amber-500/20 rounded-xl text-xs text-zinc-800 flex items-center justify-between gap-3"
                     >
                       <div>
                         <span className="font-semibold text-white">{r.title}</span> — Atenție: Asigurarea nu produce efecte fără document oficial emis.
@@ -942,7 +942,7 @@ export function PolicyChangeTracker() {
                   .map((r) => (
                     <div
                       key={r.id}
-                      className="p-3 bg-orange-500/10 border border-orange-500/20 rounded-xl text-xs text-zinc-200 flex items-center justify-between gap-3"
+                      className="p-3 bg-orange-500/10 border border-orange-500/20 rounded-xl text-xs text-zinc-800 flex items-center justify-between gap-3"
                     >
                       <div>
                         <span className="font-semibold text-white">{r.title}</span> — Data dorită: {r.desiredEffectiveDate}
@@ -972,17 +972,17 @@ export function PolicyChangeTracker() {
       {/* TAB 4: REPORT & BACKUP */}
       {activeTab === "report" && (
         <div className="space-y-6">
-          <div className="bg-zinc-900/80 border border-zinc-800 rounded-2xl p-6 space-y-6">
+          <div className="bg-white border border-zinc-200 rounded-2xl p-6 space-y-6">
             <div>
-              <h3 className="text-lg font-bold text-white">Export & Backup Registru Modificări</h3>
-              <p className="text-xs text-zinc-400 mt-1">
+              <h3 className="text-lg font-bold text-zinc-900">Export & Backup Registru Modificări</h3>
+              <p className="text-xs text-zinc-500 mt-1">
                 Descarcă un dosar PDF structurat sau salvează un backup JSON securizat local în memoria browserului.
               </p>
             </div>
 
             {/* User notes */}
             <div>
-              <label className="block text-xs font-semibold text-zinc-300 uppercase tracking-wider mb-2">
+              <label className="block text-xs font-semibold text-zinc-600 uppercase tracking-wider mb-2">
                 Notițe Generale / Urmărire Acte Adiționale
               </label>
               <textarea
@@ -990,17 +990,17 @@ export function PolicyChangeTracker() {
                 onChange={(e) => setUserNotes(e.target.value)}
                 placeholder="Ex: Am transmis cererea pentru panourile solare, urmează să primesc actul adițional în 3 zile lucrătoare..."
                 rows={3}
-                className="w-full bg-zinc-950 border border-zinc-800 rounded-xl p-3 text-xs text-zinc-200 placeholder:text-zinc-600 focus:outline-none focus:border-blue-500"
+                className="w-full bg-zinc-50 border border-zinc-200 rounded-xl p-3 text-xs text-zinc-800 placeholder:text-zinc-600 focus:outline-none focus:border-blue-500"
               />
             </div>
 
             {/* Actions Grid */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
-              <div className="p-4 rounded-xl bg-zinc-950/60 border border-zinc-800/80 flex flex-col justify-between">
+              <div className="p-4 rounded-xl bg-zinc-50 border border-zinc-200/80 flex flex-col justify-between">
                 <div>
                   <FileText className="w-6 h-6 text-blue-400 mb-2" />
                   <h4 className="text-sm font-semibold text-white">Raport PDF Structurat</h4>
-                  <p className="text-[11px] text-zinc-400 mt-1">
+                  <p className="text-[11px] text-zinc-500 mt-1">
                     Document PDF cu inventarul cererilor, cronologia evenimentelor și stadiul actelor adiționale.
                   </p>
                 </div>
@@ -1010,29 +1010,29 @@ export function PolicyChangeTracker() {
                 </Button>
               </div>
 
-              <div className="p-4 rounded-xl bg-zinc-950/60 border border-zinc-800/80 flex flex-col justify-between">
+              <div className="p-4 rounded-xl bg-zinc-50 border border-zinc-200/80 flex flex-col justify-between">
                 <div>
                   <Download className="w-6 h-6 text-emerald-400 mb-2" />
                   <h4 className="text-sm font-semibold text-white">Export JSON Backup</h4>
-                  <p className="text-[11px] text-zinc-400 mt-1">
+                  <p className="text-[11px] text-zinc-500 mt-1">
                     Fișier securizat local pentru transfer între calculatoare sau sesiuni viitoare.
                   </p>
                 </div>
-                <Button onClick={handleExportJson} variant="outline" className="mt-4 border-zinc-700 text-xs">
+                <Button onClick={handleExportJson} variant="outline" className="mt-4 border-zinc-300 text-xs">
                   <Download className="w-3.5 h-3.5 mr-1.5" />
                   Export JSON
                 </Button>
               </div>
 
-              <div className="p-4 rounded-xl bg-zinc-950/60 border border-zinc-800/80 flex flex-col justify-between">
+              <div className="p-4 rounded-xl bg-zinc-50 border border-zinc-200/80 flex flex-col justify-between">
                 <div>
                   <Upload className="w-6 h-6 text-purple-400 mb-2" />
                   <h4 className="text-sm font-semibold text-white">Import Fișier JSON</h4>
-                  <p className="text-[11px] text-zinc-400 mt-1">
+                  <p className="text-[11px] text-zinc-500 mt-1">
                     Încarcă un backup JSON salvat anterior pentru a continua urmărirea.
                   </p>
                 </div>
-                <label className="mt-4 inline-flex items-center justify-center rounded-md text-xs font-medium border border-zinc-700 bg-zinc-800 px-4 py-2 text-zinc-200 hover:bg-zinc-700 cursor-pointer">
+                <label className="mt-4 inline-flex items-center justify-center rounded-md text-xs font-medium border border-zinc-300 bg-zinc-800 px-4 py-2 text-zinc-800 hover:bg-zinc-700 cursor-pointer">
                   <Upload className="w-3.5 h-3.5 mr-1.5" />
                   <span>Încarcă Fișier</span>
                   <input type="file" accept=".json" onChange={handleImportJson} className="hidden" />
@@ -1043,8 +1043,8 @@ export function PolicyChangeTracker() {
             {/* Contextual Link to Evidence Register */}
             <div className="p-4 rounded-xl bg-blue-500/10 border border-blue-500/20 text-xs flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
               <div>
-                <span className="font-semibold text-blue-300">Dorești să înregistrezi documentul oficial primit?</span>
-                <p className="text-zinc-400 text-[11px] mt-0.5">
+                <span className="font-semibold text-blue-800">Dorești să înregistrezi documentul oficial primit?</span>
+                <p className="text-zinc-500 text-[11px] mt-0.5">
                   Poți nota specificațiile și clauzele actului adițional în Registrul de Documentare & Surse.
                 </p>
               </div>
@@ -1058,7 +1058,7 @@ export function PolicyChangeTracker() {
             </div>
 
             {/* Privacy note & Reset button */}
-            <div className="pt-6 border-t border-zinc-800/80 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div className="pt-6 border-t border-zinc-200/80 flex flex-col sm:flex-row items-center justify-between gap-4">
               <div className="flex items-center gap-2 text-xs text-zinc-500">
                 <Lock className="w-4 h-4 text-emerald-400 shrink-0" />
                 <span>Toate informațiile rămân strict în memoria browserului tău și nu sunt trimise către servere.</span>
@@ -1086,14 +1086,14 @@ export function PolicyChangeTracker() {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.95 }}
-              className="bg-zinc-900 border border-zinc-800 rounded-2xl w-full max-w-2xl max-h-[90vh] flex flex-col overflow-hidden shadow-2xl"
+              className="bg-white border border-zinc-200 rounded-2xl w-full max-w-2xl max-h-[90vh] flex flex-col overflow-hidden shadow-2xl"
             >
-              <div className="px-6 py-4 border-b border-zinc-800 flex items-center justify-between">
+              <div className="px-6 py-4 border-b border-zinc-200 flex items-center justify-between">
                 <div className="flex items-center gap-2">
                   <div className="p-1.5 rounded-lg bg-blue-500/10 text-blue-400">
                     <FileEdit className="w-4 h-4" />
                   </div>
-                  <h3 className="text-base font-bold text-white">
+                  <h3 className="text-base font-bold text-zinc-900">
                     {editingRecord ? "Editează Cerere de Modificare" : "Adaugă Cerere de Modificare"}
                   </h3>
                 </div>
@@ -1107,7 +1107,7 @@ export function PolicyChangeTracker() {
 
               <form onSubmit={handleSaveRecord} className="p-6 overflow-y-auto space-y-4 text-xs">
                 <div>
-                  <label className="block text-zinc-300 font-semibold mb-1">
+                  <label className="block text-zinc-600 font-semibold mb-1">
                     Titlu Scurt Solicitare <span className="text-red-400">*</span>
                   </label>
                   <Input
@@ -1115,13 +1115,13 @@ export function PolicyChangeTracker() {
                     value={recordFormData.title || ""}
                     onChange={(e) => setRecordFormData({ ...recordFormData, title: e.target.value })}
                     placeholder="Ex: Adăugare panouri fotovoltaice, Schimbare adresă CASCO..."
-                    className="bg-zinc-950 border-zinc-800 text-xs text-white"
+                    className="bg-zinc-50 border-zinc-200 text-xs text-white"
                   />
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                   <div>
-                    <label className="block text-zinc-300 font-semibold mb-1">
+                    <label className="block text-zinc-600 font-semibold mb-1">
                       Poliță Asociată <span className="text-red-400">*</span>
                     </label>
                     <Input
@@ -1129,38 +1129,38 @@ export function PolicyChangeTracker() {
                       value={recordFormData.relatedPolicyNickname || ""}
                       onChange={(e) => setRecordFormData({ ...recordFormData, relatedPolicyNickname: e.target.value })}
                       placeholder="Ex: CASCO BMW, Locuință..."
-                      className="bg-zinc-950 border-zinc-800 text-xs text-white"
+                      className="bg-zinc-50 border-zinc-200 text-xs text-white"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-zinc-300 font-medium mb-1">Categorie Asigurare</label>
+                    <label className="block text-zinc-600 font-medium mb-1">Categorie Asigurare</label>
                     <Input
                       value={recordFormData.category || ""}
                       onChange={(e) => setRecordFormData({ ...recordFormData, category: e.target.value })}
                       placeholder="Ex: CASCO, Locuință, RCA..."
-                      className="bg-zinc-950 border-zinc-800 text-xs text-white"
+                      className="bg-zinc-50 border-zinc-200 text-xs text-white"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-zinc-300 font-medium mb-1">Companie Asigurare</label>
+                    <label className="block text-zinc-600 font-medium mb-1">Companie Asigurare</label>
                     <Input
                       value={recordFormData.insurer || ""}
                       onChange={(e) => setRecordFormData({ ...recordFormData, insurer: e.target.value })}
                       placeholder="Ex: Allianz, Omniasig, Generali..."
-                      className="bg-zinc-950 border-zinc-800 text-xs text-white"
+                      className="bg-zinc-50 border-zinc-200 text-xs text-white"
                     />
                   </div>
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-zinc-300 font-medium mb-1">Tip Modificare</label>
+                    <label className="block text-zinc-600 font-medium mb-1">Tip Modificare</label>
                     <select
                       value={recordFormData.changeType || "address_property"}
                       onChange={(e) => setRecordFormData({ ...recordFormData, changeType: e.target.value as PolicyChangeType })}
-                      className="w-full bg-zinc-950 border border-zinc-800 rounded-lg px-3 py-2 text-xs text-zinc-200 focus:outline-none focus:border-blue-500"
+                      className="w-full bg-zinc-50 border border-zinc-200 rounded-lg px-3 py-2 text-xs text-zinc-800 focus:outline-none focus:border-blue-500"
                     >
                       {Object.keys(CHANGE_TYPE_INFO).map((k) => (
                         <option key={k} value={k}>
@@ -1171,11 +1171,11 @@ export function PolicyChangeTracker() {
                   </div>
 
                   <div>
-                    <label className="block text-zinc-300 font-medium mb-1">Status Solicitare</label>
+                    <label className="block text-zinc-600 font-medium mb-1">Status Solicitare</label>
                     <select
                       value={recordFormData.status || "draft"}
                       onChange={(e) => setRecordFormData({ ...recordFormData, status: e.target.value as PolicyChangeStatus })}
-                      className="w-full bg-zinc-950 border border-zinc-800 rounded-lg px-3 py-2 text-xs text-zinc-200 focus:outline-none focus:border-blue-500"
+                      className="w-full bg-zinc-50 border border-zinc-200 rounded-lg px-3 py-2 text-xs text-zinc-800 focus:outline-none focus:border-blue-500"
                     >
                       {Object.keys(STATUS_INFO).map((k) => (
                         <option key={k} value={k}>
@@ -1187,7 +1187,7 @@ export function PolicyChangeTracker() {
                 </div>
 
                 <div>
-                  <label className="block text-zinc-300 font-semibold mb-1">
+                  <label className="block text-zinc-600 font-semibold mb-1">
                     Descriere Solicitare / Detalii exacte <span className="text-red-400">*</span>
                   </label>
                   <textarea
@@ -1196,59 +1196,59 @@ export function PolicyChangeTracker() {
                     onChange={(e) => setRecordFormData({ ...recordFormData, description: e.target.value })}
                     placeholder="Descrie exact ce dorești să fie modificat în contractul de asigurare..."
                     rows={3}
-                    className="w-full bg-zinc-950 border border-zinc-800 rounded-lg p-2.5 text-xs text-zinc-200 placeholder:text-zinc-600 focus:outline-none focus:border-blue-500"
+                    className="w-full bg-zinc-50 border border-zinc-200 rounded-lg p-2.5 text-xs text-zinc-800 placeholder:text-zinc-600 focus:outline-none focus:border-blue-500"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-zinc-300 font-medium mb-1">Motiv / Context (Opțional)</label>
+                  <label className="block text-zinc-600 font-medium mb-1">Motiv / Context (Opțional)</label>
                   <Input
                     value={recordFormData.reason || ""}
                     onChange={(e) => setRecordFormData({ ...recordFormData, reason: e.target.value })}
                     placeholder="Ex: Achiziție recentă, schimbare buletin, extindere clădire..."
-                    className="bg-zinc-950 border-zinc-800 text-xs text-white"
+                    className="bg-zinc-50 border-zinc-200 text-xs text-white"
                   />
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                   <div>
-                    <label className="block text-zinc-300 font-medium mb-1">Data Identificării</label>
+                    <label className="block text-zinc-600 font-medium mb-1">Data Identificării</label>
                     <Input
                       type="date"
                       value={recordFormData.dateIdentified || ""}
                       onChange={(e) => setRecordFormData({ ...recordFormData, dateIdentified: e.target.value })}
-                      className="bg-zinc-950 border-zinc-800 text-xs text-white"
+                      className="bg-zinc-50 border-zinc-200 text-xs text-white"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-zinc-300 font-medium mb-1">Data Dorită Intrare în Vigoare</label>
+                    <label className="block text-zinc-600 font-medium mb-1">Data Dorită Intrare în Vigoare</label>
                     <Input
                       type="date"
                       value={recordFormData.desiredEffectiveDate || ""}
                       onChange={(e) => setRecordFormData({ ...recordFormData, desiredEffectiveDate: e.target.value })}
-                      className="bg-zinc-950 border-zinc-800 text-xs text-white"
+                      className="bg-zinc-50 border-zinc-200 text-xs text-white"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-zinc-300 font-medium mb-1">Data Transmiterii Cererii</label>
+                    <label className="block text-zinc-600 font-medium mb-1">Data Transmiterii Cererii</label>
                     <Input
                       type="date"
                       value={recordFormData.dateSubmitted || ""}
                       onChange={(e) => setRecordFormData({ ...recordFormData, dateSubmitted: e.target.value })}
-                      className="bg-zinc-950 border-zinc-800 text-xs text-white"
+                      className="bg-zinc-50 border-zinc-200 text-xs text-white"
                     />
                   </div>
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-zinc-300 font-medium mb-1">Canal de Transmitere</label>
+                    <label className="block text-zinc-600 font-medium mb-1">Canal de Transmitere</label>
                     <select
                       value={recordFormData.submissionChannel || "email"}
                       onChange={(e) => setRecordFormData({ ...recordFormData, submissionChannel: e.target.value as SubmissionChannel })}
-                      className="w-full bg-zinc-950 border border-zinc-800 rounded-lg px-3 py-2 text-xs text-zinc-200 focus:outline-none focus:border-blue-500"
+                      className="w-full bg-zinc-50 border border-zinc-200 rounded-lg px-3 py-2 text-xs text-zinc-800 focus:outline-none focus:border-blue-500"
                     >
                       {Object.keys(CHANNEL_LABELS).map((k) => (
                         <option key={k} value={k}>
@@ -1259,19 +1259,19 @@ export function PolicyChangeTracker() {
                   </div>
 
                   <div>
-                    <label className="block text-zinc-300 font-medium mb-1">Următorul Termen de Contact (Follow-up)</label>
+                    <label className="block text-zinc-600 font-medium mb-1">Următorul Termen de Contact (Follow-up)</label>
                     <Input
                       type="date"
                       value={recordFormData.nextFollowUpDate || ""}
                       onChange={(e) => setRecordFormData({ ...recordFormData, nextFollowUpDate: e.target.value })}
-                      className="bg-zinc-950 border-zinc-800 text-xs text-white"
+                      className="bg-zinc-50 border-zinc-200 text-xs text-white"
                     />
                   </div>
                 </div>
 
                 {/* Optional confirmation section */}
-                <div className="p-3 bg-zinc-950 rounded-xl border border-zinc-800 space-y-3">
-                  <div className="font-semibold text-zinc-200 text-xs">
+                <div className="p-3 bg-zinc-50 rounded-xl border border-zinc-200 space-y-3">
+                  <div className="font-semibold text-zinc-800 text-xs">
                     Detalii Confirmare Scrisă (Dacă este aplicabil)
                   </div>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -1288,7 +1288,7 @@ export function PolicyChangeTracker() {
                           },
                         })
                       }
-                      className="bg-zinc-900 border-zinc-700 text-xs text-white"
+                      className="bg-white border-zinc-300 text-xs text-white"
                     />
                     <Input
                       placeholder="Canal confirmare (ex: Email broker)"
@@ -1302,10 +1302,10 @@ export function PolicyChangeTracker() {
                           },
                         })
                       }
-                      className="bg-zinc-900 border-zinc-700 text-xs text-white"
+                      className="bg-white border-zinc-300 text-xs text-white"
                     />
                   </div>
-                  <label className="flex items-center gap-2 cursor-pointer text-zinc-300 text-xs">
+                  <label className="flex items-center gap-2 cursor-pointer text-zinc-600 text-xs">
                     <input
                       type="checkbox"
                       checked={recordFormData.confirmationDetails?.hasUpdatedDocumentReceived || false}
@@ -1318,18 +1318,18 @@ export function PolicyChangeTracker() {
                           },
                         })
                       }
-                      className="rounded bg-zinc-900 border-zinc-700 text-blue-600 focus:ring-0"
+                      className="rounded bg-white border-zinc-300 text-blue-600 focus:ring-0"
                     />
                     <span>Actul adițional / polița modificată a fost primită oficial</span>
                   </label>
                 </div>
 
-                <div className="pt-4 border-t border-zinc-800 flex items-center justify-end gap-2">
+                <div className="pt-4 border-t border-zinc-200 flex items-center justify-end gap-2">
                   <Button
                     type="button"
                     variant="outline"
                     onClick={() => setIsRecordModalOpen(false)}
-                    className="border-zinc-700 text-xs"
+                    className="border-zinc-300 text-xs"
                   >
                     Anulează
                   </Button>
@@ -1351,14 +1351,14 @@ export function PolicyChangeTracker() {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.95 }}
-              className="bg-zinc-900 border border-zinc-800 rounded-2xl w-full max-w-lg flex flex-col overflow-hidden shadow-2xl"
+              className="bg-white border border-zinc-200 rounded-2xl w-full max-w-lg flex flex-col overflow-hidden shadow-2xl"
             >
-              <div className="px-6 py-4 border-b border-zinc-800 flex items-center justify-between">
+              <div className="px-6 py-4 border-b border-zinc-200 flex items-center justify-between">
                 <div className="flex items-center gap-2">
                   <div className="p-1.5 rounded-lg bg-blue-500/10 text-blue-400">
                     <Clock className="w-4 h-4" />
                   </div>
-                  <h3 className="text-base font-bold text-white">Adaugă Eveniment în Cronologie</h3>
+                  <h3 className="text-base font-bold text-zinc-900">Adaugă Eveniment în Cronologie</h3>
                 </div>
                 <button
                   onClick={() => setIsEventModalOpen(false)}
@@ -1370,29 +1370,29 @@ export function PolicyChangeTracker() {
 
               <form onSubmit={handleSaveEvent} className="p-6 space-y-4 text-xs">
                 <div>
-                  <div className="text-zinc-400 mb-2">
+                  <div className="text-zinc-500 mb-2">
                     Cerere: <strong className="text-white">{targetRecordForEvent.title}</strong>
                   </div>
                 </div>
 
                 <div className="grid grid-cols-2 gap-3">
                   <div>
-                    <label className="block text-zinc-300 font-medium mb-1">Dată Eveniment</label>
+                    <label className="block text-zinc-600 font-medium mb-1">Dată Eveniment</label>
                     <Input
                       type="date"
                       required
                       value={eventFormData.date || ""}
                       onChange={(e) => setEventFormData({ ...eventFormData, date: e.target.value })}
-                      className="bg-zinc-950 border-zinc-800 text-xs text-white"
+                      className="bg-zinc-50 border-zinc-200 text-xs text-white"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-zinc-300 font-medium mb-1">Tip Eveniment</label>
+                    <label className="block text-zinc-600 font-medium mb-1">Tip Eveniment</label>
                     <select
                       value={eventFormData.eventType || "contact_made"}
                       onChange={(e) => setEventFormData({ ...eventFormData, eventType: e.target.value as EventType })}
-                      className="w-full bg-zinc-950 border border-zinc-800 rounded-lg px-3 py-2 text-xs text-zinc-200 focus:outline-none focus:border-blue-500"
+                      className="w-full bg-zinc-50 border border-zinc-200 rounded-lg px-3 py-2 text-xs text-zinc-800 focus:outline-none focus:border-blue-500"
                     >
                       {Object.keys(EVENT_TYPE_INFO).map((k) => (
                         <option key={k} value={k}>
@@ -1404,7 +1404,7 @@ export function PolicyChangeTracker() {
                 </div>
 
                 <div>
-                  <label className="block text-zinc-300 font-semibold mb-1">
+                  <label className="block text-zinc-600 font-semibold mb-1">
                     Titlu Eveniment <span className="text-red-400">*</span>
                   </label>
                   <Input
@@ -1412,49 +1412,49 @@ export function PolicyChangeTracker() {
                     value={eventFormData.title || ""}
                     onChange={(e) => setEventFormData({ ...eventFormData, title: e.target.value })}
                     placeholder="Ex: Email primit de la asigurator, Transmis dosar tehnic..."
-                    className="bg-zinc-950 border-zinc-800 text-xs text-white"
+                    className="bg-zinc-50 border-zinc-200 text-xs text-white"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-zinc-300 font-medium mb-1">Observații / Notițe</label>
+                  <label className="block text-zinc-600 font-medium mb-1">Observații / Notițe</label>
                   <textarea
                     value={eventFormData.notes || ""}
                     onChange={(e) => setEventFormData({ ...eventFormData, notes: e.target.value })}
                     placeholder="Detalii despre ce s-a discutat sau convenit..."
                     rows={2}
-                    className="w-full bg-zinc-950 border border-zinc-800 rounded-lg p-2.5 text-xs text-zinc-200 placeholder:text-zinc-600 focus:outline-none focus:border-blue-500"
+                    className="w-full bg-zinc-50 border border-zinc-200 rounded-lg p-2.5 text-xs text-zinc-800 placeholder:text-zinc-600 focus:outline-none focus:border-blue-500"
                   />
                 </div>
 
                 <div className="grid grid-cols-2 gap-3">
                   <div>
-                    <label className="block text-zinc-300 font-medium mb-1">Acțiune de Follow-up (Opțional)</label>
+                    <label className="block text-zinc-600 font-medium mb-1">Acțiune de Follow-up (Opțional)</label>
                     <Input
                       value={eventFormData.followUpAction || ""}
                       onChange={(e) => setEventFormData({ ...eventFormData, followUpAction: e.target.value })}
                       placeholder="Ex: Revenire cu apel dacă nu primesc răspuns..."
-                      className="bg-zinc-950 border-zinc-800 text-xs text-white"
+                      className="bg-zinc-50 border-zinc-200 text-xs text-white"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-zinc-300 font-medium mb-1">Dată Scadență Follow-up</label>
+                    <label className="block text-zinc-600 font-medium mb-1">Dată Scadență Follow-up</label>
                     <Input
                       type="date"
                       value={eventFormData.followUpDate || ""}
                       onChange={(e) => setEventFormData({ ...eventFormData, followUpDate: e.target.value })}
-                      className="bg-zinc-950 border-zinc-800 text-xs text-white"
+                      className="bg-zinc-50 border-zinc-200 text-xs text-white"
                     />
                   </div>
                 </div>
 
-                <div className="pt-4 border-t border-zinc-800 flex items-center justify-end gap-2">
+                <div className="pt-4 border-t border-zinc-200 flex items-center justify-end gap-2">
                   <Button
                     type="button"
                     variant="outline"
                     onClick={() => setIsEventModalOpen(false)}
-                    className="border-zinc-700 text-xs"
+                    className="border-zinc-300 text-xs"
                   >
                     Anulează
                   </Button>
@@ -1476,13 +1476,13 @@ export function PolicyChangeTracker() {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.95 }}
-              className="bg-zinc-900 border border-zinc-800 rounded-2xl w-full max-w-md p-6 text-xs shadow-2xl"
+              className="bg-white border border-zinc-200 rounded-2xl w-full max-w-md p-6 text-xs shadow-2xl"
             >
               <div className="flex items-center gap-3 text-red-400 mb-3">
                 <Trash2 className="w-5 h-5" />
-                <h3 className="text-sm font-bold text-white">Confirmă Ștergerea Solicitării</h3>
+                <h3 className="text-sm font-bold text-zinc-900">Confirmă Ștergerea Solicitării</h3>
               </div>
-              <p className="text-zinc-300 mb-4">
+              <p className="text-zinc-600 mb-4">
                 Sigur dorești să ștergi solicitarea <strong className="text-white">&ldquo;{recordToDelete.title}&rdquo;</strong> și întreg istoricul său?
               </p>
               <div className="flex items-center justify-end gap-2">
@@ -1490,7 +1490,7 @@ export function PolicyChangeTracker() {
                   variant="outline"
                   size="sm"
                   onClick={() => setRecordToDelete(null)}
-                  className="border-zinc-700 text-xs"
+                  className="border-zinc-300 text-xs"
                 >
                   Anulează
                 </Button>
@@ -1516,13 +1516,13 @@ export function PolicyChangeTracker() {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.95 }}
-              className="bg-zinc-900 border border-zinc-800 rounded-2xl w-full max-w-md p-6 text-xs shadow-2xl"
+              className="bg-white border border-zinc-200 rounded-2xl w-full max-w-md p-6 text-xs shadow-2xl"
             >
               <div className="flex items-center gap-3 text-red-400 mb-3">
                 <AlertTriangle className="w-5 h-5" />
-                <h3 className="text-sm font-bold text-white">Resetare Completă Tracker</h3>
+                <h3 className="text-sm font-bold text-zinc-900">Resetare Completă Tracker</h3>
               </div>
-              <p className="text-zinc-300 mb-4 leading-relaxed">
+              <p className="text-zinc-600 mb-4 leading-relaxed">
                 Această acțiune va șterge toate solicitările și evenimentele înregistrate în această sesiune de navigare. Asigură-te că ai descărcat un raport PDF sau un export JSON înainte de resetare.
               </p>
               <div className="flex items-center justify-end gap-2">
@@ -1530,7 +1530,7 @@ export function PolicyChangeTracker() {
                   variant="outline"
                   size="sm"
                   onClick={() => setIsResetConfirmOpen(false)}
-                  className="border-zinc-700 text-xs"
+                  className="border-zinc-300 text-xs"
                 >
                   Anulează
                 </Button>

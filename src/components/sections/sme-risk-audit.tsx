@@ -239,7 +239,7 @@ export function SmeRiskAudit() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-900 via-slate-900 to-slate-950 text-slate-100 py-12 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-gradient-to-b from-slate-900 via-slate-900 to-slate-950 text-zinc-900 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-4xl mx-auto space-y-10">
         
         {/* Header Hero */}
@@ -249,11 +249,11 @@ export function SmeRiskAudit() {
               <Clock className="w-3.5 h-3.5" />
               {isEn ? '30-Minute SME Risk Audit' : 'Audit Riscuri Companii în 30 de Minute'}
             </div>
-            <div className="inline-flex rounded-lg bg-slate-800 p-0.5 border border-slate-700">
+            <div className="inline-flex rounded-lg bg-white p-0.5 border border-zinc-200">
               <button
                 onClick={() => setLanguage('ro')}
                 className={`px-2.5 py-1 text-xs font-semibold rounded-md transition-all ${
-                  language === 'ro' ? 'bg-blue-600 text-white' : 'text-slate-400 hover:text-white'
+                  language === 'ro' ? 'bg-blue-600 text-white' : 'text-zinc-500 hover:text-white'
                 }`}
               >
                 RO
@@ -261,7 +261,7 @@ export function SmeRiskAudit() {
               <button
                 onClick={() => setLanguage('en')}
                 className={`px-2.5 py-1 text-xs font-semibold rounded-md transition-all ${
-                  language === 'en' ? 'bg-blue-600 text-white' : 'text-slate-400 hover:text-white'
+                  language === 'en' ? 'bg-blue-600 text-white' : 'text-zinc-500 hover:text-white'
                 }`}
               >
                 EN
@@ -271,7 +271,7 @@ export function SmeRiskAudit() {
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white">
             {isEn ? 'Audit de Riscuri pentru Firma Ta în 30 de Minute' : 'Audit de Riscuri pentru Firma Ta în 30 de Minute'}
           </h1>
-          <p className="text-slate-300 text-base sm:text-lg leading-relaxed">
+          <p className="text-zinc-600 text-base sm:text-lg leading-relaxed">
             {isEn
               ? 'A structured preliminary assessment to identify corporate insurance exposures, unconfirmed clauses, and priorities for professional review.'
               : 'O discuție structurată preliminară pentru identificarea expunerilor de asigurare, a informațiilor lipsă și a priorităților de revizuire pentru afacerea ta.'}
@@ -279,7 +279,7 @@ export function SmeRiskAudit() {
         </div>
 
         {/* Legal Disclaimer Pill */}
-        <div className="p-4 bg-slate-800/60 border border-slate-700/60 rounded-xl text-xs text-slate-400 flex items-start gap-3">
+        <div className="p-4 bg-white/60 border border-zinc-200/60 rounded-xl text-xs text-zinc-500 flex items-start gap-3">
           <Info className="w-4 h-4 text-blue-400 shrink-0 mt-0.5" />
           <span>
             {isEn
@@ -290,7 +290,7 @@ export function SmeRiskAudit() {
 
         {/* Progress Stepper Bar */}
         <div className="space-y-2">
-          <div className="flex items-center justify-between text-xs font-semibold text-slate-400 uppercase tracking-wider">
+          <div className="flex items-center justify-between text-xs font-semibold text-zinc-500 uppercase tracking-wider">
             <span>
               {isEn ? `Step ${step} of ${totalSteps}` : `Pasul ${step} din ${totalSteps}`}
             </span>
@@ -304,7 +304,7 @@ export function SmeRiskAudit() {
               {step === 7 && (isEn ? 'Summary & Consultation' : 'Sinteză & Solicitare Audit')}
             </span>
           </div>
-          <div className="w-full h-2 bg-slate-800 rounded-full overflow-hidden">
+          <div className="w-full h-2 bg-white rounded-full overflow-hidden">
             <div
               className="h-full bg-gradient-to-r from-blue-500 to-indigo-500 transition-all duration-300"
               style={{ width: `${(step / totalSteps) * 100}%` }}
@@ -313,24 +313,24 @@ export function SmeRiskAudit() {
         </div>
 
         {/* Wizard Card Form */}
-        <div className="bg-slate-800/80 border border-slate-700/80 rounded-2xl p-6 sm:p-10 shadow-2xl backdrop-blur-md">
+        <div className="bg-white border border-zinc-200/80 rounded-2xl p-6 sm:p-10 shadow-2xl backdrop-blur-md">
           
           {/* STEP 1: Company Profile */}
           {step === 1 && (
             <div className="space-y-6">
-              <div className="border-b border-slate-700/60 pb-4">
-                <h2 className="text-xl sm:text-2xl font-bold text-white flex items-center gap-2">
+              <div className="border-b border-zinc-200/60 pb-4">
+                <h2 className="text-xl sm:text-2xl font-bold text-zinc-900 flex items-center gap-2">
                   <Building2 className="w-6 h-6 text-blue-400" />
                   {isEn ? 'Step 1: Company Profile & Contact' : 'Pasul 1: Date de Identificare și Contact'}
                 </h2>
-                <p className="text-slate-400 text-sm mt-1">
+                <p className="text-zinc-500 text-sm mt-1">
                   {isEn ? 'Tell us about your business profile and location.' : 'Informații de bază despre tipul companiei și persoana de legătură.'}
                 </p>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                 <div>
-                  <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">
+                  <label className="block text-xs font-semibold text-zinc-600 uppercase tracking-wider mb-2">
                     {isEn ? 'Company Name *' : 'Denumire Companie (SRL / SA) *'}
                   </label>
                   <input
@@ -339,12 +339,12 @@ export function SmeRiskAudit() {
                     value={data.companyName}
                     onChange={(e) => updateField('companyName', e.target.value)}
                     placeholder="ex. SC Global Logistics SRL"
-                    className="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-white text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                    className="w-full bg-zinc-50 border border-zinc-200 rounded-xl px-4 py-3 text-white text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">
+                  <label className="block text-xs font-semibold text-zinc-600 uppercase tracking-wider mb-2">
                     {isEn ? 'Main Industry / Activity *' : 'Domeniu Principal de Activitate *'}
                   </label>
                   <input
@@ -353,18 +353,18 @@ export function SmeRiskAudit() {
                     value={data.industry}
                     onChange={(e) => updateField('industry', e.target.value)}
                     placeholder="ex. IT / Producție / Comerț / Logistică / Construcții"
-                    className="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-white text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                    className="w-full bg-zinc-50 border border-zinc-200 rounded-xl px-4 py-3 text-white text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">
+                  <label className="block text-xs font-semibold text-zinc-600 uppercase tracking-wider mb-2">
                     {isEn ? 'Approximate Employee Count' : 'Număr Aproximativ Angajați'}
                   </label>
                   <select
                     value={data.employeeCount}
                     onChange={(e) => updateField('employeeCount', e.target.value)}
-                    className="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-white text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                    className="w-full bg-zinc-50 border border-zinc-200 rounded-xl px-4 py-3 text-white text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none"
                   >
                     <option value="1-5">1 - 5 angajați</option>
                     <option value="6-20">6 - 20 angajați</option>
@@ -375,13 +375,13 @@ export function SmeRiskAudit() {
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">
+                  <label className="block text-xs font-semibold text-zinc-600 uppercase tracking-wider mb-2">
                     {isEn ? 'Operating Locations Count' : 'Număr Locații Operaționale'}
                   </label>
                   <select
                     value={data.locationsCount}
                     onChange={(e) => updateField('locationsCount', e.target.value)}
-                    className="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-white text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                    className="w-full bg-zinc-50 border border-zinc-200 rounded-xl px-4 py-3 text-white text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none"
                   >
                     <option value="1">1 singură locație (sediu)</option>
                     <option value="2-3">2 - 3 locații</option>
@@ -391,7 +391,7 @@ export function SmeRiskAudit() {
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">
+                  <label className="block text-xs font-semibold text-zinc-600 uppercase tracking-wider mb-2">
                     {isEn ? 'Contact Person Name *' : 'Nume Persoană de Contact *'}
                   </label>
                   <input
@@ -400,12 +400,12 @@ export function SmeRiskAudit() {
                     value={data.contactName}
                     onChange={(e) => updateField('contactName', e.target.value)}
                     placeholder="ex. Mihai Popescu"
-                    className="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-white text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                    className="w-full bg-zinc-50 border border-zinc-200 rounded-xl px-4 py-3 text-white text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">
+                  <label className="block text-xs font-semibold text-zinc-600 uppercase tracking-wider mb-2">
                     {isEn ? 'Role in Company' : 'Rol în Companie'}
                   </label>
                   <input
@@ -413,12 +413,12 @@ export function SmeRiskAudit() {
                     value={data.contactRole}
                     onChange={(e) => updateField('contactRole', e.target.value)}
                     placeholder="ex. Administrator / Director Financiar / HR Manager"
-                    className="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-white text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                    className="w-full bg-zinc-50 border border-zinc-200 rounded-xl px-4 py-3 text-white text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">
+                  <label className="block text-xs font-semibold text-zinc-600 uppercase tracking-wider mb-2">
                     {isEn ? 'Business Phone Number *' : 'Telefon de Contact *'}
                   </label>
                   <input
@@ -427,12 +427,12 @@ export function SmeRiskAudit() {
                     value={data.phone}
                     onChange={(e) => updateField('phone', e.target.value)}
                     placeholder="ex. 0722 000 000"
-                    className="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-white text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                    className="w-full bg-zinc-50 border border-zinc-200 rounded-xl px-4 py-3 text-white text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">
+                  <label className="block text-xs font-semibold text-zinc-600 uppercase tracking-wider mb-2">
                     {isEn ? 'Business Email' : 'Email Profesional'}
                   </label>
                   <input
@@ -440,7 +440,7 @@ export function SmeRiskAudit() {
                     value={data.email}
                     onChange={(e) => updateField('email', e.target.value)}
                     placeholder="ex. contact@companie.ro"
-                    className="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-white text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                    className="w-full bg-zinc-50 border border-zinc-200 rounded-xl px-4 py-3 text-white text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none"
                   />
                 </div>
               </div>
@@ -450,19 +450,19 @@ export function SmeRiskAudit() {
           {/* STEP 2: Property & Physical Assets */}
           {step === 2 && (
             <div className="space-y-6">
-              <div className="border-b border-slate-700/60 pb-4">
-                <h2 className="text-xl sm:text-2xl font-bold text-white flex items-center gap-2">
+              <div className="border-b border-zinc-200/60 pb-4">
+                <h2 className="text-xl sm:text-2xl font-bold text-zinc-900 flex items-center gap-2">
                   <Layers className="w-6 h-6 text-blue-400" />
                   {isEn ? 'Step 2: Property & Physical Assets' : 'Pasul 2: Patrimoniu, Clădiri și Bunuri'}
                 </h2>
-                <p className="text-slate-400 text-sm mt-1">
+                <p className="text-zinc-500 text-sm mt-1">
                   {isEn ? 'Evaluate property exposures, lease conditions and equipment.' : 'Identifică riscurile legate de spații, stocuri și echipamente tehnologice.'}
                 </p>
               </div>
 
               <div className="space-y-5">
                 <div>
-                  <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">
+                  <label className="block text-xs font-semibold text-zinc-600 uppercase tracking-wider mb-2">
                     {isEn ? 'Premises Regime' : 'Regimul Imobilelor și Spațiilor Utilizate'}
                   </label>
                   <div className="grid grid-cols-3 gap-3">
@@ -478,7 +478,7 @@ export function SmeRiskAudit() {
                         className={`p-3 rounded-xl text-xs sm:text-sm font-semibold border transition-all ${
                           data.propertyOwnership === opt.id
                             ? 'bg-blue-600/30 border-blue-500 text-white'
-                            : 'bg-slate-900/60 border-slate-700 text-slate-400 hover:text-slate-200'
+                            : 'bg-zinc-100 border-zinc-200 text-zinc-500 hover:text-zinc-800'
                         }`}
                       >
                         {isEn ? opt.labelEn : opt.labelRo}
@@ -488,35 +488,35 @@ export function SmeRiskAudit() {
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
-                  <label className="flex items-start gap-3 p-4 bg-slate-900/60 border border-slate-700/70 rounded-xl cursor-pointer hover:border-slate-600">
+                  <label className="flex items-start gap-3 p-4 bg-zinc-100 border border-zinc-200/80 rounded-xl cursor-pointer hover:border-slate-600">
                     <input
                       type="checkbox"
                       checked={data.hasHighValueEquipment}
                       onChange={(e) => updateField('hasHighValueEquipment', e.target.checked)}
-                      className="mt-1 rounded bg-slate-800 border-slate-600 text-blue-600 focus:ring-blue-500"
+                      className="mt-1 rounded bg-white border-slate-600 text-blue-600 focus:ring-blue-500"
                     />
                     <div className="text-sm">
                       <span className="font-semibold text-white block">
                         {isEn ? 'High-Value Machinery & Tech Assets' : 'Utilaje, Echipamente și Linii de Producție'}
                       </span>
-                      <span className="text-slate-400 text-xs">
+                      <span className="text-zinc-500 text-xs">
                         {isEn ? 'Specialized equipment critical to operation' : 'Bunuri de valoare ridicată sau în leasing financiar'}
                       </span>
                     </div>
                   </label>
 
-                  <label className="flex items-start gap-3 p-4 bg-slate-900/60 border border-slate-700/70 rounded-xl cursor-pointer hover:border-slate-600">
+                  <label className="flex items-start gap-3 p-4 bg-zinc-100 border border-zinc-200/80 rounded-xl cursor-pointer hover:border-slate-600">
                     <input
                       type="checkbox"
                       checked={data.hasSignificantStock}
                       onChange={(e) => updateField('hasSignificantStock', e.target.checked)}
-                      className="mt-1 rounded bg-slate-800 border-slate-600 text-blue-600 focus:ring-blue-500"
+                      className="mt-1 rounded bg-white border-slate-600 text-blue-600 focus:ring-blue-500"
                     />
                     <div className="text-sm">
                       <span className="font-semibold text-white block">
                         {isEn ? 'Significant Inventory & Warehouse Stock' : 'Stocuri Semnificative de Mărfuri & Materii Prime'}
                       </span>
-                      <span className="text-slate-400 text-xs">
+                      <span className="text-zinc-500 text-xs">
                         {isEn ? 'Goods stored in warehouses or retail spaces' : 'Mărfuri cu fluctuații sezoniere de valoare'}
                       </span>
                     </div>
@@ -524,7 +524,7 @@ export function SmeRiskAudit() {
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">
+                  <label className="block text-xs font-semibold text-zinc-600 uppercase tracking-wider mb-2">
                     {isEn ? 'Existing Property Insurance Status' : 'Statusul Asigurării de Bunuri Declarat de Utilizator'}
                   </label>
                   <div className="grid grid-cols-3 gap-3">
@@ -540,7 +540,7 @@ export function SmeRiskAudit() {
                         className={`p-3 rounded-xl text-xs sm:text-sm font-semibold border transition-all ${
                           data.hasExistingPropertyInsurance === opt.id
                             ? 'bg-blue-600/30 border-blue-500 text-white'
-                            : 'bg-slate-900/60 border-slate-700 text-slate-400 hover:text-slate-200'
+                            : 'bg-zinc-100 border-zinc-200 text-zinc-500 hover:text-zinc-800'
                         }`}
                       >
                         {isEn ? opt.labelEn : opt.labelRo}
@@ -555,80 +555,80 @@ export function SmeRiskAudit() {
           {/* STEP 3: Liability & Contracts */}
           {step === 3 && (
             <div className="space-y-6">
-              <div className="border-b border-slate-700/60 pb-4">
-                <h2 className="text-xl sm:text-2xl font-bold text-white flex items-center gap-2">
+              <div className="border-b border-zinc-200/60 pb-4">
+                <h2 className="text-xl sm:text-2xl font-bold text-zinc-900 flex items-center gap-2">
                   <ShieldCheck className="w-6 h-6 text-blue-400" />
                   {isEn ? 'Step 3: Liability & Contractual Mandates' : 'Pasul 3: Răspundere Civilă și Cerințe Contractuale'}
                 </h2>
-                <p className="text-slate-400 text-sm mt-1">
+                <p className="text-zinc-500 text-sm mt-1">
                   {isEn ? 'Identify potential claims from third parties, clients, or business partners.' : 'Analizează expunerile față de terți, răspunderea profesională și cerințele clienților.'}
                 </p>
               </div>
 
               <div className="space-y-4">
-                <label className="flex items-start gap-3 p-4 bg-slate-900/60 border border-slate-700/70 rounded-xl cursor-pointer hover:border-slate-600">
+                <label className="flex items-start gap-3 p-4 bg-zinc-100 border border-zinc-200/80 rounded-xl cursor-pointer hover:border-slate-600">
                   <input
                     type="checkbox"
                     checked={data.hasPublicLiabilityExposure}
                     onChange={(e) => updateField('hasPublicLiabilityExposure', e.target.checked)}
-                    className="mt-1 rounded bg-slate-800 border-slate-600 text-blue-600 focus:ring-blue-500"
+                    className="mt-1 rounded bg-white border-slate-600 text-blue-600 focus:ring-blue-500"
                   />
                   <div className="text-sm">
                     <span className="font-semibold text-white block">
                       {isEn ? 'Premises & Public Liability' : 'Răspundere Civilă Față de Terți la Sediu / Puncte de Lucru'}
                     </span>
-                    <span className="text-slate-400 text-xs">
+                    <span className="text-zinc-500 text-xs">
                       {isEn ? 'Visitors, clients or suppliers present on company premises' : 'Clienți, curieri sau vizitatori care intră în contact cu spațiul de lucru'}
                     </span>
                   </div>
                 </label>
 
-                <label className="flex items-start gap-3 p-4 bg-slate-900/60 border border-slate-700/70 rounded-xl cursor-pointer hover:border-slate-600">
+                <label className="flex items-start gap-3 p-4 bg-zinc-100 border border-zinc-200/80 rounded-xl cursor-pointer hover:border-slate-600">
                   <input
                     type="checkbox"
                     checked={data.hasProfessionalLiabilityNeed}
                     onChange={(e) => updateField('hasProfessionalLiabilityNeed', e.target.checked)}
-                    className="mt-1 rounded bg-slate-800 border-slate-600 text-blue-600 focus:ring-blue-500"
+                    className="mt-1 rounded bg-white border-slate-600 text-blue-600 focus:ring-blue-500"
                   />
                   <div className="text-sm">
                     <span className="font-semibold text-white block">
                       {isEn ? 'Professional Indemnity / Advisory / Errors & Omissions' : 'Răspundere Profesională / Servicii Intelectuale / IT / Consultanță'}
                     </span>
-                    <span className="text-slate-400 text-xs">
+                    <span className="text-zinc-500 text-xs">
                       {isEn ? 'Losses caused to clients through advisory, coding or project errors' : 'Pretenții ale clienților pentru erori, omisiuni sau întârzieri contractuale'}
                     </span>
                   </div>
                 </label>
 
-                <label className="flex items-start gap-3 p-4 bg-slate-900/60 border border-slate-700/70 rounded-xl cursor-pointer hover:border-slate-600">
+                <label className="flex items-start gap-3 p-4 bg-zinc-100 border border-zinc-200/80 rounded-xl cursor-pointer hover:border-slate-600">
                   <input
                     type="checkbox"
                     checked={data.hasContractualLiabilityClauses}
                     onChange={(e) => updateField('hasContractualLiabilityClauses', e.target.checked)}
-                    className="mt-1 rounded bg-slate-800 border-slate-600 text-blue-600 focus:ring-blue-500"
+                    className="mt-1 rounded bg-white border-slate-600 text-blue-600 focus:ring-blue-500"
                   />
                   <div className="text-sm">
                     <span className="font-semibold text-white block">
                       {isEn ? 'Mandatory Insurance Clauses in Commercial Contracts' : 'Clauze Obligatorii de Asigurare în Contractele cu Clienții'}
                     </span>
-                    <span className="text-slate-400 text-xs">
+                    <span className="text-zinc-500 text-xs">
                       {isEn ? 'Partners requiring certificate of insurance with specific limits' : 'Cerințe de a prezenta polițe cu limite specifice de răspundere (ex. 500k EUR)'}
                     </span>
                   </div>
                 </label>
 
-                <label className="flex items-start gap-3 p-4 bg-slate-900/60 border border-slate-700/70 rounded-xl cursor-pointer hover:border-slate-600">
+                <label className="flex items-start gap-3 p-4 bg-zinc-100 border border-zinc-200/80 rounded-xl cursor-pointer hover:border-slate-600">
                   <input
                     type="checkbox"
                     checked={data.hasProductLiabilityExposure}
                     onChange={(e) => updateField('hasProductLiabilityExposure', e.target.checked)}
-                    className="mt-1 rounded bg-slate-800 border-slate-600 text-blue-600 focus:ring-blue-500"
+                    className="mt-1 rounded bg-white border-slate-600 text-blue-600 focus:ring-blue-500"
                   />
                   <div className="text-sm">
                     <span className="font-semibold text-white block">
                       {isEn ? 'Product Liability / Food / Manufacturing' : 'Răspunderea Producătorului (Bunuri Fabricate / Distribuite)'}
                     </span>
-                    <span className="text-slate-400 text-xs">
+                    <span className="text-zinc-500 text-xs">
                       {isEn ? 'Defects in manufactured or imported goods causing third-party loss' : 'Produse ce pot genera daune utilizatorilor finali'}
                     </span>
                   </div>
@@ -640,19 +640,19 @@ export function SmeRiskAudit() {
           {/* STEP 4: Cyber & Business Interruption */}
           {step === 4 && (
             <div className="space-y-6">
-              <div className="border-b border-slate-700/60 pb-4">
-                <h2 className="text-xl sm:text-2xl font-bold text-white flex items-center gap-2">
+              <div className="border-b border-zinc-200/60 pb-4">
+                <h2 className="text-xl sm:text-2xl font-bold text-zinc-900 flex items-center gap-2">
                   <Laptop className="w-6 h-6 text-blue-400" />
                   {isEn ? 'Step 4: Cyber Risk & Business Interruption' : 'Pasul 4: Riscuri Cibernetice și Continuitatea Afacerii'}
                 </h2>
-                <p className="text-slate-400 text-sm mt-1">
+                <p className="text-zinc-500 text-sm mt-1">
                   {isEn ? 'Evaluate digital dependence, data protection, and operational downtime risks.' : 'Măsoară dependența digitală, expunerea GDPR și riscul opririi operațiunilor.'}
                 </p>
               </div>
 
               <div className="space-y-5">
                 <div>
-                  <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">
+                  <label className="block text-xs font-semibold text-zinc-600 uppercase tracking-wider mb-2">
                     {isEn ? 'Business Dependence on IT Systems & Cloud' : 'Dependența Activității de Sisteme IT și Servicii Cloud'}
                   </label>
                   <div className="grid grid-cols-3 gap-3">
@@ -668,7 +668,7 @@ export function SmeRiskAudit() {
                         className={`p-3 rounded-xl text-xs sm:text-sm font-semibold border transition-all ${
                           data.itDependence === opt.id
                             ? 'bg-blue-600/30 border-blue-500 text-white'
-                            : 'bg-slate-900/60 border-slate-700 text-slate-400 hover:text-slate-200'
+                            : 'bg-zinc-100 border-zinc-200 text-zinc-500 hover:text-zinc-800'
                         }`}
                       >
                         {isEn ? opt.labelEn : opt.labelRo}
@@ -678,35 +678,35 @@ export function SmeRiskAudit() {
                 </div>
 
                 <div className="space-y-3 pt-2">
-                  <label className="flex items-start gap-3 p-4 bg-slate-900/60 border border-slate-700/70 rounded-xl cursor-pointer hover:border-slate-600">
+                  <label className="flex items-start gap-3 p-4 bg-zinc-100 border border-zinc-200/80 rounded-xl cursor-pointer hover:border-slate-600">
                     <input
                       type="checkbox"
                       checked={data.processesSensitiveData}
                       onChange={(e) => updateField('processesSensitiveData', e.target.checked)}
-                      className="mt-1 rounded bg-slate-800 border-slate-600 text-blue-600 focus:ring-blue-500"
+                      className="mt-1 rounded bg-white border-slate-600 text-blue-600 focus:ring-blue-500"
                     />
                     <div className="text-sm">
                       <span className="font-semibold text-white block">
                         {isEn ? 'Handling Confidential Customer / Employee Data (GDPR)' : 'Procesare de Date Confidențiale, Plăți sau Date Personale (GDPR)'}
                       </span>
-                      <span className="text-slate-400 text-xs">
+                      <span className="text-zinc-500 text-xs">
                         {isEn ? 'Databases that could trigger breach notifications if compromised' : 'Baze de date clienți, carduri sau informații financiare'}
                       </span>
                     </div>
                   </label>
 
-                  <label className="flex items-start gap-3 p-4 bg-slate-900/60 border border-slate-700/70 rounded-xl cursor-pointer hover:border-slate-600">
+                  <label className="flex items-start gap-3 p-4 bg-zinc-100 border border-zinc-200/80 rounded-xl cursor-pointer hover:border-slate-600">
                     <input
                       type="checkbox"
                       checked={data.operationalBottleneck}
                       onChange={(e) => updateField('operationalBottleneck', e.target.checked)}
-                      className="mt-1 rounded bg-slate-800 border-slate-600 text-blue-600 focus:ring-blue-500"
+                      className="mt-1 rounded bg-white border-slate-600 text-blue-600 focus:ring-blue-500"
                     />
                     <div className="text-sm">
                       <span className="font-semibold text-white block">
                         {isEn ? 'Single Critical Asset / Supplier Bottleneck' : 'Punct Unic de Întrerupere (Utilaj Esențial sau Furnizor Cheie)'}
                       </span>
-                      <span className="text-slate-400 text-xs">
+                      <span className="text-zinc-500 text-xs">
                         {isEn ? 'An equipment breakdown directly halting business revenues' : 'Defectarea unui singur echipament blochează complet livrările către clienți'}
                       </span>
                     </div>
@@ -719,63 +719,63 @@ export function SmeRiskAudit() {
           {/* STEP 5: Employees & Management */}
           {step === 5 && (
             <div className="space-y-6">
-              <div className="border-b border-slate-700/60 pb-4">
-                <h2 className="text-xl sm:text-2xl font-bold text-white flex items-center gap-2">
+              <div className="border-b border-zinc-200/60 pb-4">
+                <h2 className="text-xl sm:text-2xl font-bold text-zinc-900 flex items-center gap-2">
                   <Users className="w-6 h-6 text-blue-400" />
                   {isEn ? 'Step 5: Employees, Benefits & Management' : 'Pasul 5: Angajați, Beneficii și Conducere'}
                 </h2>
-                <p className="text-slate-400 text-sm mt-1">
+                <p className="text-zinc-500 text-sm mt-1">
                   {isEn ? 'Review employee benefits, key person dependencies, and executive liability.' : 'Analizează beneficiile echipei, persoanele cheie și răspunderea administratorilor.'}
                 </p>
               </div>
 
               <div className="space-y-4">
-                <label className="flex items-start gap-3 p-4 bg-slate-900/60 border border-slate-700/70 rounded-xl cursor-pointer hover:border-slate-600">
+                <label className="flex items-start gap-3 p-4 bg-zinc-100 border border-zinc-200/80 rounded-xl cursor-pointer hover:border-slate-600">
                   <input
                     type="checkbox"
                     checked={data.providesHealthBenefits}
                     onChange={(e) => updateField('providesHealthBenefits', e.target.checked)}
-                    className="mt-1 rounded bg-slate-800 border-slate-600 text-blue-600 focus:ring-blue-500"
+                    className="mt-1 rounded bg-white border-slate-600 text-blue-600 focus:ring-blue-500"
                   />
                   <div className="text-sm">
                     <span className="font-semibold text-white block">
                       {isEn ? 'Existing Employee Health Insurance / Benefits' : 'Pachet Existent de Asigurare de Sănătate sau Abonamente Angajați'}
                     </span>
-                    <span className="text-slate-400 text-xs">
+                    <span className="text-zinc-500 text-xs">
                       {isEn ? 'Programs currently offered to staff' : 'Pachete acordate echipei sau interes pentru optimizare fiscală'}
                     </span>
                   </div>
                 </label>
 
-                <label className="flex items-start gap-3 p-4 bg-slate-900/60 border border-slate-700/70 rounded-xl cursor-pointer hover:border-slate-600">
+                <label className="flex items-start gap-3 p-4 bg-zinc-100 border border-zinc-200/80 rounded-xl cursor-pointer hover:border-slate-600">
                   <input
                     type="checkbox"
                     checked={data.hasKeyPersonExposure}
                     onChange={(e) => updateField('hasKeyPersonExposure', e.target.checked)}
-                    className="mt-1 rounded bg-slate-800 border-slate-600 text-blue-600 focus:ring-blue-500"
+                    className="mt-1 rounded bg-white border-slate-600 text-blue-600 focus:ring-blue-500"
                   />
                   <div className="text-sm">
                     <span className="font-semibold text-white block">
                       {isEn ? 'Key Person / Crucial Founder Exposure' : 'Expunere Persoană Cheie (Fondator / Specialist Vital)'}
                     </span>
-                    <span className="text-slate-400 text-xs">
+                    <span className="text-zinc-500 text-xs">
                       {isEn ? 'Individuals whose sudden absence would create serious financial impact' : 'Risc financiar major pentru firmă în caz de deces sau invaliditate a persoanei cheie'}
                     </span>
                   </div>
                 </label>
 
-                <label className="flex items-start gap-3 p-4 bg-slate-900/60 border border-slate-700/70 rounded-xl cursor-pointer hover:border-slate-600">
+                <label className="flex items-start gap-3 p-4 bg-zinc-100 border border-zinc-200/80 rounded-xl cursor-pointer hover:border-slate-600">
                   <input
                     type="checkbox"
                     checked={data.interestedInDO}
                     onChange={(e) => updateField('interestedInDO', e.target.checked)}
-                    className="mt-1 rounded bg-slate-800 border-slate-600 text-blue-600 focus:ring-blue-500"
+                    className="mt-1 rounded bg-white border-slate-600 text-blue-600 focus:ring-blue-500"
                   />
                   <div className="text-sm">
                     <span className="font-semibold text-white block">
                       {isEn ? 'Directors & Officers (D&O) Liability Interest' : 'Protecție Răspundere Administratori și Directori (D&O)'}
                     </span>
-                    <span className="text-slate-400 text-xs">
+                    <span className="text-zinc-500 text-xs">
                       {isEn ? 'Shielding personal assets against managerial decision claims' : 'Protecția patrimoniului personal al managementului împotriva pretențiilor asociaților sau creditorilor'}
                     </span>
                   </div>
@@ -787,25 +787,25 @@ export function SmeRiskAudit() {
           {/* STEP 6: Existing Cover & Deadlines */}
           {step === 6 && (
             <div className="space-y-6">
-              <div className="border-b border-slate-700/60 pb-4">
-                <h2 className="text-xl sm:text-2xl font-bold text-white flex items-center gap-2">
+              <div className="border-b border-zinc-200/60 pb-4">
+                <h2 className="text-xl sm:text-2xl font-bold text-zinc-900 flex items-center gap-2">
                   <Briefcase className="w-6 h-6 text-blue-400" />
                   {isEn ? 'Step 6: Existing Cover & Main Priorities' : 'Pasul 6: Polițe Curente și Priorități de Revizuire'}
                 </h2>
-                <p className="text-slate-400 text-sm mt-1">
+                <p className="text-zinc-500 text-sm mt-1">
                   {isEn ? 'Tell us about your upcoming renewal timeline and primary concerns.' : 'Specifică termenele de reînnoire cunoscute și ce dorești să optimizezi cu prioritate.'}
                 </p>
               </div>
 
               <div className="space-y-5">
                 <div>
-                  <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">
+                  <label className="block text-xs font-semibold text-zinc-600 uppercase tracking-wider mb-2">
                     {isEn ? 'Upcoming Policy Renewal Window' : 'Orizont de Reînnoire a Polițelor Existente'}
                   </label>
                   <select
                     value={data.upcomingRenewalWindow}
                     onChange={(e) => updateField('upcomingRenewalWindow', e.target.value)}
-                    className="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-white text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                    className="w-full bg-zinc-50 border border-zinc-200 rounded-xl px-4 py-3 text-white text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none"
                   >
                     <option value="urgent">Urgent (sub 30 de zile)</option>
                     <option value="1-3-luni">În următoarele 1 - 3 luni</option>
@@ -815,7 +815,7 @@ export function SmeRiskAudit() {
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">
+                  <label className="block text-xs font-semibold text-zinc-600 uppercase tracking-wider mb-2">
                     {isEn ? 'Primary Insurance Concern or Question' : 'Principala Întrebare sau Preocupare legată de Asigurări'}
                   </label>
                   <textarea
@@ -827,7 +827,7 @@ export function SmeRiskAudit() {
                         ? 'e.g. We want to reduce deductible costs, verify cyber limits, or add comprehensive health benefits...'
                         : 'ex. Dorim să optimizăm costurile la reînnoire, să verificăm limitele de răspundere cerute de un client sau să introducem asigurare de sănătate...'
                     }
-                    className="w-full bg-slate-900 border border-slate-700 rounded-xl p-4 text-white text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                    className="w-full bg-zinc-50 border border-zinc-200 rounded-xl p-4 text-white text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none"
                   />
                 </div>
               </div>
@@ -837,12 +837,12 @@ export function SmeRiskAudit() {
           {/* STEP 7: Deterministic Summary & Consultation Request */}
           {step === 7 && (
             <div className="space-y-6">
-              <div className="border-b border-slate-700/60 pb-4">
-                <h2 className="text-xl sm:text-2xl font-bold text-white flex items-center gap-2">
+              <div className="border-b border-zinc-200/60 pb-4">
+                <h2 className="text-xl sm:text-2xl font-bold text-zinc-900 flex items-center gap-2">
                   <CheckCircle2 className="w-6 h-6 text-emerald-400" />
                   {isEn ? 'Step 7: Audit Summary & Consultation Request' : 'Pasul 7: Sinteză Audit și Programare Consultanță'}
                 </h2>
-                <p className="text-slate-400 text-sm mt-1">
+                <p className="text-zinc-500 text-sm mt-1">
                   {isEn ? 'Review your reported risk profile synthesis below and submit your request.' : 'Verifică sinteza structurată generată pe baza răspunsurilor tale.'}
                 </p>
               </div>
@@ -850,10 +850,10 @@ export function SmeRiskAudit() {
               {submissionSuccess ? (
                 <div className="p-8 bg-emerald-950/40 border border-emerald-500/50 rounded-2xl text-center space-y-4">
                   <CheckCircle2 className="w-12 h-12 text-emerald-400 mx-auto" />
-                  <h3 className="text-2xl font-bold text-white">
+                  <h3 className="text-2xl font-bold text-zinc-900">
                     {isEn ? 'Audit Request Registered Successfully' : 'Solicitarea de Audit a Fost Înregistrată'}
                   </h3>
-                  <p className="text-emerald-200 text-sm max-w-lg mx-auto">
+                  <p className="text-emerald-950 text-sm max-w-lg mx-auto">
                     {isEn
                       ? `Thank you! Reference code: ${referenceId}. We will prepare the structured 30-minute review and contact you via your preferred channel.`
                       : `Mulțumim! Număr referință: ${referenceId}. Vom pregăti sinteza preliminară și te vom contacta în intervalul orar specificat.`}
@@ -861,7 +861,7 @@ export function SmeRiskAudit() {
                   <div className="pt-4">
                     <Link
                       href="/"
-                      className="px-6 py-2.5 bg-slate-800 hover:bg-slate-700 text-white rounded-xl text-sm font-semibold transition-all inline-block"
+                      className="px-6 py-2.5 bg-white hover:bg-slate-700 text-white rounded-xl text-sm font-semibold transition-all inline-block"
                     >
                       {isEn ? 'Return to Homepage' : 'Înapoi la pagina principală'}
                     </Link>
@@ -874,12 +874,12 @@ export function SmeRiskAudit() {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     
                     {/* Reported exposures */}
-                    <div className="p-5 bg-slate-900/80 border border-slate-700/80 rounded-xl space-y-2">
+                    <div className="p-5 bg-zinc-100 border border-zinc-200/80 rounded-xl space-y-2">
                       <div className="text-xs font-bold text-amber-400 uppercase tracking-wider flex items-center gap-1.5">
                         <AlertTriangle className="w-3.5 h-3.5" />
                         {isEn ? 'Reported Exposures' : 'Expuneri Semnalate de Companie'}
                       </div>
-                      <ul className="text-xs text-slate-300 space-y-1.5">
+                      <ul className="text-xs text-zinc-600 space-y-1.5">
                         {reportedExposures.length > 0 ? (
                           reportedExposures.map((item, idx) => (
                             <li key={idx} className="flex items-center gap-2">
@@ -896,12 +896,12 @@ export function SmeRiskAudit() {
                     </div>
 
                     {/* Reported covers */}
-                    <div className="p-5 bg-slate-900/80 border border-slate-700/80 rounded-xl space-y-2">
+                    <div className="p-5 bg-zinc-100 border border-zinc-200/80 rounded-xl space-y-2">
                       <div className="text-xs font-bold text-emerald-400 uppercase tracking-wider flex items-center gap-1.5">
                         <ShieldCheck className="w-3.5 h-3.5" />
                         {isEn ? 'Existing Cover Reported' : 'Polițe sau Beneficii Declarate Active'}
                       </div>
-                      <ul className="text-xs text-slate-300 space-y-1.5">
+                      <ul className="text-xs text-zinc-600 space-y-1.5">
                         {existingPoliciesReported.length > 0 ? (
                           existingPoliciesReported.map((item, idx) => (
                             <li key={idx} className="flex items-center gap-2">
@@ -924,7 +924,7 @@ export function SmeRiskAudit() {
                       <FileText className="w-3.5 h-3.5" />
                       {isEn ? 'Recommended Topics for 30-Minute Consultation' : 'Teme Recomandate pentru Discuția de 30 de Minute'}
                     </div>
-                    <ul className="text-xs text-slate-200 space-y-2">
+                    <ul className="text-xs text-zinc-800 space-y-2">
                       {topicsForReview.map((item, idx) => (
                         <li key={idx} className="flex items-start gap-2">
                           <span className="text-blue-400 font-bold">•</span>
@@ -935,13 +935,13 @@ export function SmeRiskAudit() {
                   </div>
 
                   {/* Contact Preferences Review */}
-                  <div className="p-4 bg-slate-900/90 border border-slate-700/80 rounded-xl text-xs text-slate-300 grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  <div className="p-4 bg-zinc-50 border border-zinc-200/80 rounded-xl text-xs text-zinc-600 grid grid-cols-1 sm:grid-cols-2 gap-3">
                     <div>
-                      <span className="text-slate-400 block">{isEn ? 'Company / Contact:' : 'Companie & Contact:'}</span>
+                      <span className="text-zinc-500 block">{isEn ? 'Company / Contact:' : 'Companie & Contact:'}</span>
                       <strong>{data.companyName}</strong> — {data.contactName} ({data.contactRole || 'Reprezentant'})
                     </div>
                     <div>
-                      <span className="text-slate-400 block">{isEn ? 'Contact Method & Time:' : 'Metodă & Interval:'}</span>
+                      <span className="text-zinc-500 block">{isEn ? 'Contact Method & Time:' : 'Metodă & Interval:'}</span>
                       {data.phone} ({data.preferredMethod}) • {data.preferredTime}
                     </div>
                   </div>
@@ -954,9 +954,9 @@ export function SmeRiskAudit() {
                         required
                         checked={data.privacyConsent}
                         onChange={(e) => updateField('privacyConsent', e.target.checked)}
-                        className="mt-1 rounded bg-slate-800 border-slate-600 text-blue-600 focus:ring-blue-500"
+                        className="mt-1 rounded bg-white border-slate-600 text-blue-600 focus:ring-blue-500"
                       />
-                      <span className="text-xs text-slate-400 leading-relaxed">
+                      <span className="text-xs text-zinc-500 leading-relaxed">
                         {isEn
                           ? 'I agree to the processing of business contact information strictly for scheduling and conducting the 30-minute SME risk consultation. Data is handled under privacy safeguards and not shared with third parties.'
                           : 'Sunt de acord cu prelucrarea datelor de contact furnizate exclusiv în scopul organizării și desfășurării sesiunii consultative de audit de 30 de minute, conform Politicii de Confidențialitate.'}
@@ -995,12 +995,12 @@ export function SmeRiskAudit() {
 
           {/* Navigation Prev / Next Buttons */}
           {!submissionSuccess && (
-            <div className="flex items-center justify-between pt-6 mt-6 border-t border-slate-700/60">
+            <div className="flex items-center justify-between pt-6 mt-6 border-t border-zinc-200/60">
               {step > 1 ? (
                 <button
                   type="button"
                   onClick={() => setStep((s) => s - 1)}
-                  className="px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold bg-slate-900 hover:bg-slate-700 text-slate-300 transition-colors flex items-center gap-2"
+                  className="px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold bg-zinc-50 hover:bg-slate-700 text-zinc-600 transition-colors flex items-center gap-2"
                 >
                   <ArrowLeft className="w-4 h-4" />
                   {isEn ? 'Previous Step' : 'Pasul Anterior'}

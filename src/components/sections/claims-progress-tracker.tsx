@@ -376,7 +376,7 @@ export function ClaimsProgressTracker() {
   return (
     <div className="w-full space-y-8 max-w-5xl mx-auto">
       {/* 1. TOP TOOLBAR */}
-      <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4 p-4 sm:p-5 rounded-3xl bg-zinc-900/80 border border-zinc-800">
+      <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4 p-4 sm:p-5 rounded-3xl bg-white border border-zinc-200">
         <div className="flex items-center gap-1.5 overflow-x-auto pb-1 sm:pb-0 text-xs">
           {[
             { id: "overview", labelRo: "1. Prezentare & Stadiu", labelEn: "1. Overview & Stage" },
@@ -391,7 +391,7 @@ export function ClaimsProgressTracker() {
               className={`px-3.5 py-2 rounded-xl font-medium transition-all shrink-0 ${
                 activeTab === tab.id
                   ? "bg-blue-600 text-white shadow-md font-bold"
-                  : "bg-zinc-950 text-zinc-400 hover:text-white border border-zinc-800"
+                  : "bg-zinc-50 text-zinc-500 hover:text-white border border-zinc-200"
               }`}
             >
               {isRo ? tab.labelRo : tab.labelEn}
@@ -399,12 +399,12 @@ export function ClaimsProgressTracker() {
           ))}
         </div>
 
-        <div className="flex items-center justify-between sm:justify-end gap-2 text-xs border-t sm:border-t-0 pt-3 sm:pt-0 border-zinc-800">
+        <div className="flex items-center justify-between sm:justify-end gap-2 text-xs border-t sm:border-t-0 pt-3 sm:pt-0 border-zinc-200">
           <Button
             type="button"
             variant="outline"
             onClick={handleDownloadPdf}
-            className="rounded-full border-zinc-800 hover:bg-zinc-800 text-zinc-300 h-9 px-3.5 flex items-center gap-1.5"
+            className="rounded-full border-zinc-200 hover:bg-zinc-800 text-zinc-600 h-9 px-3.5 flex items-center gap-1.5"
           >
             <Download className="w-3.5 h-3.5 text-blue-400" />
             <span>PDF</span>
@@ -414,14 +414,14 @@ export function ClaimsProgressTracker() {
             type="button"
             variant="outline"
             onClick={handleExportJson}
-            className="rounded-full border-zinc-800 hover:bg-zinc-800 text-zinc-300 h-9 px-3"
+            className="rounded-full border-zinc-200 hover:bg-zinc-800 text-zinc-600 h-9 px-3"
             title="Export JSON"
           >
             <Download className="w-3.5 h-3.5 text-amber-400" />
             <span className="hidden md:inline">JSON</span>
           </Button>
 
-          <label className="cursor-pointer rounded-full border border-zinc-800 hover:bg-zinc-800 text-zinc-300 h-9 px-3 inline-flex items-center gap-1.5 transition-colors">
+          <label className="cursor-pointer rounded-full border border-zinc-200 hover:bg-zinc-800 text-zinc-600 h-9 px-3 inline-flex items-center gap-1.5 transition-colors">
             <Upload className="w-3.5 h-3.5 text-emerald-400" />
             <span className="hidden md:inline">Import</span>
             <input type="file" accept=".json" onChange={handleImportJson} className="hidden" />
@@ -436,18 +436,18 @@ export function ClaimsProgressTracker() {
             <Trash2 className="w-3.5 h-3.5" />
           </button>
 
-          <div className="flex items-center gap-1 p-1 rounded-full bg-zinc-950 border border-zinc-800">
+          <div className="flex items-center gap-1 p-1 rounded-full bg-zinc-50 border border-zinc-200">
             <button
               type="button"
               onClick={() => setLang("ro")}
-              className={`px-2.5 py-0.5 rounded-full font-medium ${lang === "ro" ? "bg-blue-600 text-white" : "text-zinc-400 hover:text-white"}`}
+              className={`px-2.5 py-0.5 rounded-full font-medium ${lang === "ro" ? "bg-blue-600 text-white" : "text-zinc-500 hover:text-white"}`}
             >
               RO
             </button>
             <button
               type="button"
               onClick={() => setLang("en")}
-              className={`px-2.5 py-0.5 rounded-full font-medium ${lang === "en" ? "bg-blue-600 text-white" : "text-zinc-400 hover:text-white"}`}
+              className={`px-2.5 py-0.5 rounded-full font-medium ${lang === "en" ? "bg-blue-600 text-white" : "text-zinc-500 hover:text-white"}`}
             >
               EN
             </button>
@@ -456,7 +456,7 @@ export function ClaimsProgressTracker() {
       </div>
 
       {importStatus && (
-        <div className="p-4 rounded-2xl bg-blue-500/10 border border-blue-500/30 text-blue-300 text-xs flex items-center gap-2">
+        <div className="p-4 rounded-2xl bg-blue-50 border border-blue-200 text-blue-800 text-xs flex items-center gap-2">
           <Info className="w-4 h-4 text-blue-400" />
           <span>{importStatus}</span>
         </div>
@@ -466,37 +466,37 @@ export function ClaimsProgressTracker() {
       {/* TAB 1: OVERVIEW & STAGE */}
       {/* ======================================================== */}
       {activeTab === "overview" && (
-        <div className="p-6 sm:p-8 rounded-[2.5rem] bg-zinc-950 border border-zinc-800 shadow-xl space-y-6">
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-zinc-800">
+        <div className="p-6 sm:p-8 rounded-[2.5rem] bg-zinc-50 border border-zinc-200 shadow-xl space-y-6">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-zinc-200">
             <div className="space-y-1">
               <span className="text-[10px] uppercase font-bold text-blue-400 tracking-wider">
                 {isRo ? "IDENTIFICARE DOSAR & STADIU OPERAȚIONAL" : "CLAIM IDENTIFICATION & CURRENT STAGE"}
               </span>
-              <h3 className="text-xl font-heading font-bold text-white">
+              <h3 className="text-xl font-heading font-bold text-zinc-900">
                 {claim.nickname}
               </h3>
             </div>
-            <div className="text-xs text-zinc-400">
-              <span className="font-semibold text-zinc-300">{claim.activities.length}</span> {isRo ? "activități consemnate" : "recorded events"}
+            <div className="text-xs text-zinc-500">
+              <span className="font-semibold text-zinc-600">{claim.activities.length}</span> {isRo ? "activități consemnate" : "recorded events"}
             </div>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
             <div className="space-y-1.5 sm:col-span-2">
-              <label className="text-zinc-300 font-medium">{isRo ? "Denumire / Nickname Dosar *" : "Claim Nickname *"}</label>
+              <label className="text-zinc-600 font-medium">{isRo ? "Denumire / Nickname Dosar *" : "Claim Nickname *"}</label>
               <Input
                 value={claim.nickname}
                 onChange={(e) => setClaim({ ...claim, nickname: e.target.value })}
-                className="h-11 bg-zinc-900 border-zinc-800 text-white rounded-xl text-xs"
+                className="h-11 bg-white border-zinc-200 text-white rounded-xl text-xs"
               />
             </div>
 
             <div className="space-y-1.5">
-              <label className="text-zinc-300 font-medium">{isRo ? "Categorie Asigurare" : "Insurance Category"}</label>
+              <label className="text-zinc-600 font-medium">{isRo ? "Categorie Asigurare" : "Insurance Category"}</label>
               <select
                 value={claim.category}
                 onChange={(e) => setClaim({ ...claim, category: e.target.value as PolicyCategory })}
-                className="w-full h-11 px-3 rounded-xl bg-zinc-900 border border-zinc-800 text-white text-xs focus:outline-none"
+                className="w-full h-11 px-3 rounded-xl bg-white border border-zinc-200 text-white text-xs focus:outline-none"
               >
                 {Object.entries(isRo ? CATEGORY_LABELS_RO : CATEGORY_LABELS_EN).map(([cat, lbl]) => (
                   <option key={cat} value={cat}>
@@ -507,11 +507,11 @@ export function ClaimsProgressTracker() {
             </div>
 
             <div className="space-y-1.5">
-              <label className="text-zinc-300 font-medium">{isRo ? "Stadiu Procesare Daună" : "Current Processing Stage"}</label>
+              <label className="text-zinc-600 font-medium">{isRo ? "Stadiu Procesare Daună" : "Current Processing Stage"}</label>
               <select
                 value={claim.stage}
                 onChange={(e) => setClaim({ ...claim, stage: e.target.value as ClaimStage })}
-                className="w-full h-11 px-3 rounded-xl bg-zinc-900 border border-blue-500/50 text-blue-300 text-xs focus:outline-none font-semibold"
+                className="w-full h-11 px-3 rounded-xl bg-white border border-blue-500/50 text-blue-800 text-xs focus:outline-none font-semibold"
               >
                 {Object.entries(isRo ? CLAIM_STAGE_LABELS_RO : CLAIM_STAGE_LABELS_EN).map(([stg, lbl]) => (
                   <option key={stg} value={stg}>
@@ -522,58 +522,58 @@ export function ClaimsProgressTracker() {
             </div>
 
             <div className="space-y-1.5">
-              <label className="text-zinc-300 font-medium">{isRo ? "Companie Asigurare / Administrator Daune" : "Insurer / Claims Handler"}</label>
+              <label className="text-zinc-600 font-medium">{isRo ? "Companie Asigurare / Administrator Daune" : "Insurer / Claims Handler"}</label>
               <Input
                 placeholder="Ex: Generali, Allianz, Groupama..."
                 value={claim.insurer || ""}
                 onChange={(e) => setClaim({ ...claim, insurer: e.target.value })}
-                className="h-11 bg-zinc-900 border-zinc-800 text-white rounded-xl text-xs"
+                className="h-11 bg-white border-zinc-200 text-white rounded-xl text-xs"
               />
             </div>
 
             <div className="space-y-1.5">
-              <label className="text-zinc-300 font-medium">{isRo ? "Dată Eveniment (Sinistru)" : "Incident Date"}</label>
+              <label className="text-zinc-600 font-medium">{isRo ? "Dată Eveniment (Sinistru)" : "Incident Date"}</label>
               <Input
                 type="date"
                 value={claim.incidentDate || ""}
                 onChange={(e) => setClaim({ ...claim, incidentDate: e.target.value })}
-                className="h-11 bg-zinc-900 border-zinc-800 text-white rounded-xl text-xs"
+                className="h-11 bg-white border-zinc-200 text-white rounded-xl text-xs"
               />
             </div>
 
             <div className="space-y-1.5">
-              <label className="text-zinc-300 font-medium">{isRo ? "Dată Avizare la Asigurator" : "Date Reported to Insurer"}</label>
+              <label className="text-zinc-600 font-medium">{isRo ? "Dată Avizare la Asigurator" : "Date Reported to Insurer"}</label>
               <Input
                 type="date"
                 value={claim.reportedDate || ""}
                 onChange={(e) => setClaim({ ...claim, reportedDate: e.target.value })}
-                className="h-11 bg-zinc-900 border-zinc-800 text-white rounded-xl text-xs"
+                className="h-11 bg-white border-zinc-200 text-white rounded-xl text-xs"
               />
             </div>
 
             <div className="space-y-1.5">
-              <label className="text-zinc-300 font-medium">{isRo ? "Următorul Follow-up Planificat" : "Next Planned Follow-up"}</label>
+              <label className="text-zinc-600 font-medium">{isRo ? "Următorul Follow-up Planificat" : "Next Planned Follow-up"}</label>
               <Input
                 type="date"
                 value={claim.nextFollowUpDate || ""}
                 onChange={(e) => setClaim({ ...claim, nextFollowUpDate: e.target.value })}
-                className="h-11 bg-zinc-900 border-zinc-800 text-white rounded-xl text-xs font-semibold"
+                className="h-11 bg-white border-zinc-200 text-white rounded-xl text-xs font-semibold"
               />
             </div>
 
             <div className="space-y-1.5 sm:col-span-2">
-              <label className="text-zinc-300 font-medium">{isRo ? "Notițe Generale Dosar (Context, Martori, Nr. Dosar Intern)" : "General Claim Notes"}</label>
+              <label className="text-zinc-600 font-medium">{isRo ? "Notițe Generale Dosar (Context, Martori, Nr. Dosar Intern)" : "General Claim Notes"}</label>
               <textarea
                 rows={3}
                 placeholder={isRo ? "Adaugă detalii relevante despre desfășurarea evenimentului..." : "Add relevant details..."}
                 value={claim.generalNotes || ""}
                 onChange={(e) => setClaim({ ...claim, generalNotes: e.target.value })}
-                className="w-full p-3 rounded-2xl bg-zinc-900 border border-zinc-800 text-white text-xs focus:outline-none focus:border-blue-500"
+                className="w-full p-3 rounded-2xl bg-white border border-zinc-200 text-white text-xs focus:outline-none focus:border-blue-500"
               />
             </div>
           </div>
 
-          <div className="flex justify-end pt-4 border-t border-zinc-800">
+          <div className="flex justify-end pt-4 border-t border-zinc-200">
             <Button
               type="button"
               onClick={() => setActiveTab("timeline")}
@@ -590,13 +590,13 @@ export function ClaimsProgressTracker() {
       {/* TAB 2: CHRONOLOGICAL ACTIVITY LOG */}
       {/* ======================================================== */}
       {activeTab === "timeline" && (
-        <div className="p-6 sm:p-8 rounded-[2.5rem] bg-zinc-950 border border-zinc-800 shadow-xl space-y-6">
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-zinc-800">
+        <div className="p-6 sm:p-8 rounded-[2.5rem] bg-zinc-50 border border-zinc-200 shadow-xl space-y-6">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-zinc-200">
             <div className="space-y-1">
               <span className="text-[10px] uppercase font-bold text-blue-400 tracking-wider">
                 {isRo ? "JURNAL CRONOLOGIC & ISTORIC COMUNICĂRI" : "CHRONOLOGICAL ACTIVITY TIMELINE"}
               </span>
-              <h3 className="text-xl font-heading font-bold text-white">
+              <h3 className="text-xl font-heading font-bold text-zinc-900">
                 {isRo ? "Toate interacțiunile și etapele înregistrate" : "All interactions and recorded steps"}
               </h3>
             </div>
@@ -605,7 +605,7 @@ export function ClaimsProgressTracker() {
               <select
                 value={timelineSort}
                 onChange={(e) => setTimelineSort(e.target.value as "newest" | "oldest")}
-                className="h-10 px-3 rounded-xl bg-zinc-900 border border-zinc-800 text-white text-xs focus:outline-none"
+                className="h-10 px-3 rounded-xl bg-white border border-zinc-200 text-white text-xs focus:outline-none"
               >
                 <option value="newest">{isRo ? "Cele mai recente primele" : "Newest first"}</option>
                 <option value="oldest">{isRo ? "Cele mai vechi primele" : "Oldest first"}</option>
@@ -623,12 +623,12 @@ export function ClaimsProgressTracker() {
           </div>
 
           {sortedActivities.length === 0 ? (
-            <div className="p-12 text-center space-y-3 rounded-3xl bg-zinc-900/40 border border-zinc-800/80">
+            <div className="p-12 text-center space-y-3 rounded-3xl bg-zinc-50 border border-zinc-200/80">
               <Clock className="w-10 h-10 text-zinc-600 mx-auto" />
-              <h4 className="text-sm font-bold text-white">
+              <h4 className="text-sm font-bold text-zinc-900">
                 {isRo ? "Nu există activități înregistrate" : "No activities recorded yet"}
               </h4>
-              <p className="text-xs text-zinc-400 max-w-sm mx-auto">
+              <p className="text-xs text-zinc-500 max-w-sm mx-auto">
                 {isRo
                   ? "Adaugă primul apel telefonic, email primit sau notă de inspecție pentru a păstra evidența exactă a comunicării."
                   : "Add your first phone call, email, or survey note to maintain a detailed communication trail."}
@@ -653,20 +653,20 @@ export function ClaimsProgressTracker() {
                     key={act.id}
                     className={`p-5 rounded-2xl border transition-all space-y-3 ${
                       act.isCompleted
-                        ? "bg-zinc-950/60 border-zinc-800/60 opacity-75"
-                        : "bg-zinc-900/50 border-zinc-800 hover:border-zinc-700"
+                        ? "bg-zinc-50 border-zinc-200/60 opacity-75"
+                        : "bg-white border-zinc-200 hover:border-zinc-300"
                     }`}
                   >
                     <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
                       <div className="flex flex-wrap items-center gap-2">
-                        <span className="text-[10px] uppercase font-bold tracking-wider px-2.5 py-0.5 rounded-full bg-zinc-900 text-blue-400 border border-zinc-800">
+                        <span className="text-[10px] uppercase font-bold tracking-wider px-2.5 py-0.5 rounded-full bg-white text-blue-400 border border-zinc-200">
                           {typeLabel}
                         </span>
-                        <span className="text-xs text-zinc-400 font-mono">
+                        <span className="text-xs text-zinc-500 font-mono">
                           {act.date} {act.time && `• ${act.time}`}
                         </span>
                         {act.contactName && (
-                          <span className="text-xs text-zinc-300">
+                          <span className="text-xs text-zinc-600">
                             • <strong>{act.contactName}</strong>
                           </span>
                         )}
@@ -679,7 +679,7 @@ export function ClaimsProgressTracker() {
                           className={`text-xs px-2.5 py-1 rounded-lg border flex items-center gap-1 ${
                             act.isCompleted
                               ? "bg-emerald-500/10 text-emerald-400 border-emerald-500/20"
-                              : "bg-zinc-900 text-zinc-400 border-zinc-800 hover:text-white"
+                              : "bg-white text-zinc-500 border-zinc-200 hover:text-white"
                           }`}
                         >
                           <CheckCircle2 className="w-3.5 h-3.5" />
@@ -689,7 +689,7 @@ export function ClaimsProgressTracker() {
                         <button
                           type="button"
                           onClick={() => openEditActivity(act)}
-                          className="p-1.5 rounded-lg bg-zinc-900 text-zinc-400 hover:text-white border border-zinc-800"
+                          className="p-1.5 rounded-lg bg-white text-zinc-500 hover:text-white border border-zinc-200"
                         >
                           <Edit3 className="w-3.5 h-3.5" />
                         </button>
@@ -697,27 +697,27 @@ export function ClaimsProgressTracker() {
                         <button
                           type="button"
                           onClick={() => handleDeleteActivity(act.id)}
-                          className="p-1.5 rounded-lg bg-zinc-900 text-zinc-500 hover:text-rose-400 border border-zinc-800"
+                          className="p-1.5 rounded-lg bg-white text-zinc-500 hover:text-rose-400 border border-zinc-200"
                         >
                           <Trash2 className="w-3.5 h-3.5" />
                         </button>
                       </div>
                     </div>
 
-                    <h4 className={`text-sm font-heading font-bold ${act.isCompleted ? "line-through text-zinc-400" : "text-white"}`}>
+                    <h4 className={`text-sm font-heading font-bold ${act.isCompleted ? "line-through text-zinc-500" : "text-white"}`}>
                       {act.title}
                     </h4>
 
                     {act.notes && (
-                      <p className="text-xs text-zinc-300 leading-relaxed">
+                      <p className="text-xs text-zinc-600 leading-relaxed">
                         {act.notes}
                       </p>
                     )}
 
                     {(act.nextAction || act.followUpDate) && (
-                      <div className="p-3 rounded-xl bg-zinc-950 border border-zinc-800/80 flex flex-wrap items-center justify-between gap-2 text-xs">
+                      <div className="p-3 rounded-xl bg-zinc-50 border border-zinc-200/80 flex flex-wrap items-center justify-between gap-2 text-xs">
                         {act.nextAction && (
-                          <span className="text-zinc-300">
+                          <span className="text-zinc-600">
                             <strong className="text-blue-400">{isRo ? "Următorul Pas:" : "Next Action:"}</strong> {act.nextAction}
                           </span>
                         )}
@@ -728,7 +728,7 @@ export function ClaimsProgressTracker() {
                                 ? "bg-rose-500/10 text-rose-400 border border-rose-500/20"
                                 : followUpStatus === "today"
                                 ? "bg-amber-500/10 text-amber-400 border border-amber-500/20"
-                                : "text-zinc-400"
+                                : "text-zinc-500"
                             }`}
                           >
                             {isRo ? "Scadență:" : "Due:"} {act.followUpDate}
@@ -748,13 +748,13 @@ export function ClaimsProgressTracker() {
       {/* TAB 3: DOCUMENT REGISTER */}
       {/* ======================================================== */}
       {activeTab === "documents" && (
-        <div className="p-6 sm:p-8 rounded-[2.5rem] bg-zinc-950 border border-zinc-800 shadow-xl space-y-6">
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-zinc-800">
+        <div className="p-6 sm:p-8 rounded-[2.5rem] bg-zinc-50 border border-zinc-200 shadow-xl space-y-6">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-zinc-200">
             <div className="space-y-1">
               <span className="text-[10px] uppercase font-bold text-blue-400 tracking-wider">
                 {isRo ? "REGISTRU EVIDENȚĂ ACTE TRANSMISE" : "CLAIM DOCUMENT REGISTER"}
               </span>
-              <h3 className="text-xl font-heading font-bold text-white">
+              <h3 className="text-xl font-heading font-bold text-zinc-900">
                 {isRo ? "Evidența documentelor solicitate și transmise" : "Record of requested and submitted claim documents"}
               </h3>
             </div>
@@ -770,12 +770,12 @@ export function ClaimsProgressTracker() {
           </div>
 
           {claim.documents.length === 0 ? (
-            <div className="p-12 text-center space-y-3 rounded-3xl bg-zinc-900/40 border border-zinc-800/80">
+            <div className="p-12 text-center space-y-3 rounded-3xl bg-zinc-50 border border-zinc-200/80">
               <FileText className="w-10 h-10 text-zinc-600 mx-auto" />
-              <h4 className="text-sm font-bold text-white">
+              <h4 className="text-sm font-bold text-zinc-900">
                 {isRo ? "Niciun document înregistrat" : "No documents recorded yet"}
               </h4>
-              <p className="text-xs text-zinc-400 max-w-sm mx-auto">
+              <p className="text-xs text-zinc-500 max-w-sm mx-auto">
                 {isRo
                   ? "Monitorizează certificatele, devizele sau fotografiile solicitate de asigurator."
                   : "Track certificates, estimates, or photos requested by the claims adjuster."}
@@ -794,16 +794,16 @@ export function ClaimsProgressTracker() {
               {claim.documents.map((d) => (
                 <div
                   key={d.id}
-                  className="p-4 sm:p-5 rounded-2xl bg-zinc-900/50 border border-zinc-800 hover:border-zinc-700 transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs"
+                  className="p-4 sm:p-5 rounded-2xl bg-white border border-zinc-200 hover:border-zinc-300 transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs"
                 >
                   <div className="space-y-1 flex-1">
-                    <h4 className="text-sm font-heading font-bold text-white">
+                    <h4 className="text-sm font-heading font-bold text-zinc-900">
                       {d.name}
                     </h4>
-                    <div className="flex flex-wrap items-center gap-3 text-zinc-400 text-[11px]">
+                    <div className="flex flex-wrap items-center gap-3 text-zinc-500 text-[11px]">
                       {d.dateRequested && (
                         <span>
-                          {isRo ? "Solicitat la:" : "Requested:"} <strong className="text-zinc-300">{d.dateRequested}</strong>
+                          {isRo ? "Solicitat la:" : "Requested:"} <strong className="text-zinc-600">{d.dateRequested}</strong>
                         </span>
                       )}
                       {d.dateSubmitted && (
@@ -824,7 +824,7 @@ export function ClaimsProgressTracker() {
                           ? "bg-amber-500/10 text-amber-400 border-amber-500/20"
                           : d.status === "ready"
                           ? "bg-blue-500/10 text-blue-400 border-blue-500/20"
-                          : "bg-zinc-800 text-zinc-400 border-zinc-700"
+                          : "bg-zinc-800 text-zinc-500 border-zinc-300"
                       }`}
                     >
                       {isRo ? DOC_REGISTER_STATUS_RO[d.status] : DOC_REGISTER_STATUS_EN[d.status]}
@@ -833,7 +833,7 @@ export function ClaimsProgressTracker() {
                     <button
                       type="button"
                       onClick={() => openEditDoc(d)}
-                      className="p-1.5 rounded-lg bg-zinc-900 text-zinc-400 hover:text-white border border-zinc-800"
+                      className="p-1.5 rounded-lg bg-white text-zinc-500 hover:text-white border border-zinc-200"
                     >
                       <Edit3 className="w-3.5 h-3.5" />
                     </button>
@@ -841,7 +841,7 @@ export function ClaimsProgressTracker() {
                     <button
                       type="button"
                       onClick={() => handleDeleteDoc(d.id)}
-                      className="p-1.5 rounded-lg bg-zinc-900 text-zinc-500 hover:text-rose-400 border border-zinc-800"
+                      className="p-1.5 rounded-lg bg-white text-zinc-500 hover:text-rose-400 border border-zinc-200"
                     >
                       <Trash2 className="w-3.5 h-3.5" />
                     </button>
@@ -857,15 +857,15 @@ export function ClaimsProgressTracker() {
       {/* TAB 4: FOLLOW-UPS & DEADLINES */}
       {/* ======================================================== */}
       {activeTab === "followups" && (
-        <div className="p-6 sm:p-8 rounded-[2.5rem] bg-zinc-950 border border-zinc-800 shadow-xl space-y-6">
-          <div className="pb-4 border-b border-zinc-800 space-y-1">
+        <div className="p-6 sm:p-8 rounded-[2.5rem] bg-zinc-50 border border-zinc-200 shadow-xl space-y-6">
+          <div className="pb-4 border-b border-zinc-200 space-y-1">
             <span className="text-[10px] uppercase font-bold text-blue-400 tracking-wider">
               {isRo ? "SCADENȚE & ACȚIUNI PLANIFICATE" : "FOLLOW-UP MANAGEMENT"}
             </span>
-            <h3 className="text-xl font-heading font-bold text-white">
+            <h3 className="text-xl font-heading font-bold text-zinc-900">
               {isRo ? "Situația termenelor limită și reamintirilor personale" : "Overview of planned follow-ups and user reminders"}
             </h3>
-            <p className="text-xs text-zinc-400">
+            <p className="text-xs text-zinc-500">
               {isRo
                 ? "Scadențele sunt stabilite exclusiv de tine pentru urmărirea eficientă a dosarului și nu reprezintă termene legale obligatorii pentru asigurator."
                 : "Reminders are set by you for personal tracking and do not represent statutory insurer deadlines."}
@@ -873,19 +873,19 @@ export function ClaimsProgressTracker() {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs">
-            <div className={`p-4 rounded-2xl border space-y-1 ${overdueActivities.length > 0 ? "bg-rose-500/10 border-rose-500/30 text-rose-400" : "bg-zinc-900/60 border-zinc-800 text-zinc-400"}`}>
+            <div className={`p-4 rounded-2xl border space-y-1 ${overdueActivities.length > 0 ? "bg-rose-500/10 border-rose-500/30 text-rose-400" : "bg-white border-zinc-200 text-zinc-500"}`}>
               <span className="font-semibold uppercase tracking-wider text-[11px]">{isRo ? "Scadențe Depășite" : "Overdue Follow-ups"}</span>
               <div className="text-3xl font-bold font-heading">{overdueActivities.length}</div>
               <span className="text-[10px] opacity-80">{isRo ? "Necesită revenire" : "Action required"}</span>
             </div>
 
-            <div className={`p-4 rounded-2xl border space-y-1 ${todayActivities.length > 0 ? "bg-amber-500/10 border-amber-500/30 text-amber-400" : "bg-zinc-900/60 border-zinc-800 text-zinc-400"}`}>
+            <div className={`p-4 rounded-2xl border space-y-1 ${todayActivities.length > 0 ? "bg-amber-500/10 border-amber-500/30 text-amber-400" : "bg-white border-zinc-200 text-zinc-500"}`}>
               <span className="font-semibold uppercase tracking-wider text-[11px]">{isRo ? "Scadențe Astăzi" : "Due Today"}</span>
               <div className="text-3xl font-bold font-heading">{todayActivities.length}</div>
               <span className="text-[10px] opacity-80">{isRo ? "Programate azi" : "Scheduled today"}</span>
             </div>
 
-            <div className="p-4 rounded-2xl bg-zinc-900/60 border border-zinc-800 text-blue-400 space-y-1">
+            <div className="p-4 rounded-2xl bg-white border border-zinc-200 text-blue-400 space-y-1">
               <span className="font-semibold uppercase tracking-wider text-[11px]">{isRo ? "Viitoare" : "Upcoming"}</span>
               <div className="text-3xl font-bold font-heading">{upcomingActivities.length}</div>
               <span className="text-[10px] text-zinc-500">{isRo ? "În zilele următoare" : "In future days"}</span>
@@ -897,20 +897,20 @@ export function ClaimsProgressTracker() {
             {[...overdueActivities, ...todayActivities, ...upcomingActivities].map((act) => (
               <div
                 key={act.id}
-                className="p-4 rounded-2xl bg-zinc-900/60 border border-zinc-800 flex items-center justify-between gap-3 text-xs"
+                className="p-4 rounded-2xl bg-white border border-zinc-200 flex items-center justify-between gap-3 text-xs"
               >
                 <div className="space-y-0.5 flex-1">
-                  <span className="font-bold text-white block">{act.title}</span>
-                  {act.nextAction && <span className="text-zinc-400 text-[11px]">Pas: {act.nextAction}</span>}
+                  <span className="font-bold text-zinc-900 block">{act.title}</span>
+                  {act.nextAction && <span className="text-zinc-500 text-[11px]">Pas: {act.nextAction}</span>}
                 </div>
                 <div className="flex items-center gap-3">
-                  <span className="font-mono text-zinc-300 font-semibold">{act.followUpDate}</span>
+                  <span className="font-mono text-zinc-600 font-semibold">{act.followUpDate}</span>
                   <Button
                     type="button"
                     size="sm"
                     variant="outline"
                     onClick={() => toggleActivityCompleted(act.id)}
-                    className="rounded-xl border-zinc-800 text-xs h-8"
+                    className="rounded-xl border-zinc-200 text-xs h-8"
                   >
                     <Check className="w-3 h-3 mr-1 text-emerald-400" />
                     {isRo ? "Marchează Rezolvat" : "Mark Done"}
@@ -923,8 +923,8 @@ export function ClaimsProgressTracker() {
       )}
 
       {/* 2. PRIVACY & LOCAL MEMORY GUARANTEE */}
-      <div className="p-6 rounded-3xl bg-zinc-900/40 border border-zinc-800 space-y-2 text-xs text-zinc-400">
-        <div className="flex items-center gap-2 text-zinc-300 font-bold">
+      <div className="p-6 rounded-3xl bg-zinc-50 border border-zinc-200 space-y-2 text-xs text-zinc-500">
+        <div className="flex items-center gap-2 text-zinc-600 font-bold">
           <Lock className="w-4 h-4 text-emerald-400" />
           <span>{isRo ? "Confidențialitate Totală & Stocare Volatilă" : "Total Privacy & Active Session Memory"}</span>
         </div>
@@ -945,10 +945,10 @@ export function ClaimsProgressTracker() {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.95 }}
-              className="w-full max-w-lg p-6 sm:p-8 rounded-[2.5rem] bg-zinc-950 border border-zinc-800 shadow-2xl relative space-y-5"
+              className="w-full max-w-lg p-6 sm:p-8 rounded-[2.5rem] bg-zinc-50 border border-zinc-200 shadow-2xl relative space-y-5"
             >
-              <div className="flex items-center justify-between pb-3 border-b border-zinc-800">
-                <h3 className="text-base font-heading font-bold text-white">
+              <div className="flex items-center justify-between pb-3 border-b border-zinc-200">
+                <h3 className="text-base font-heading font-bold text-zinc-900">
                   {editingActivity
                     ? isRo ? "Editează Eveniment" : "Edit Event"
                     : isRo ? "Adaugă Eveniment / Interacțiune" : "Add Event / Interaction"}
@@ -956,7 +956,7 @@ export function ClaimsProgressTracker() {
                 <button
                   type="button"
                   onClick={() => setIsActivityModalOpen(false)}
-                  className="p-2 text-zinc-400 hover:text-white rounded-full bg-zinc-900 border border-zinc-800"
+                  className="p-2 text-zinc-500 hover:text-white rounded-full bg-white border border-zinc-200"
                 >
                   <X className="w-4 h-4" />
                 </button>
@@ -964,23 +964,23 @@ export function ClaimsProgressTracker() {
 
               <form onSubmit={handleSaveActivity} className="space-y-4 text-xs">
                 <div className="space-y-1.5">
-                  <label className="text-zinc-300 font-medium">{isRo ? "Titlu Activitate *" : "Event Title *"}</label>
+                  <label className="text-zinc-600 font-medium">{isRo ? "Titlu Activitate *" : "Event Title *"}</label>
                   <Input
                     placeholder={isRo ? "Ex: Apel inspector daune, Trimitere factură service..." : "Ex: Call adjuster, Sent invoice..."}
                     value={actTitle}
                     onChange={(e) => setActTitle(e.target.value)}
                     required
-                    className="h-10 bg-zinc-900 border-zinc-800 text-white rounded-xl text-xs"
+                    className="h-10 bg-white border-zinc-200 text-white rounded-xl text-xs"
                   />
                 </div>
 
                 <div className="grid grid-cols-2 gap-3">
                   <div className="space-y-1.5">
-                    <label className="text-zinc-300 font-medium">{isRo ? "Tip Interacțiune" : "Interaction Type"}</label>
+                    <label className="text-zinc-600 font-medium">{isRo ? "Tip Interacțiune" : "Interaction Type"}</label>
                     <select
                       value={actType}
                       onChange={(e) => setActType(e.target.value as ActivityType)}
-                      className="w-full h-10 px-2.5 rounded-xl bg-zinc-900 border border-zinc-800 text-white text-xs focus:outline-none"
+                      className="w-full h-10 px-2.5 rounded-xl bg-white border border-zinc-200 text-white text-xs focus:outline-none"
                     >
                       {Object.entries(isRo ? ACTIVITY_TYPE_LABELS_RO : ACTIVITY_TYPE_LABELS_EN).map(([t, lbl]) => (
                         <option key={t} value={t}>
@@ -991,78 +991,78 @@ export function ClaimsProgressTracker() {
                   </div>
 
                   <div className="space-y-1.5">
-                    <label className="text-zinc-300 font-medium">{isRo ? "Persoană / Departament Contact" : "Contact / Department"}</label>
+                    <label className="text-zinc-600 font-medium">{isRo ? "Persoană / Departament Contact" : "Contact / Department"}</label>
                     <Input
                       placeholder={isRo ? "Ex: Inspector Popescu, Call Center..." : "Ex: Adjuster..."}
                       value={actContact}
                       onChange={(e) => setActContact(e.target.value)}
-                      className="h-10 bg-zinc-900 border-zinc-800 text-white rounded-xl text-xs"
+                      className="h-10 bg-white border-zinc-200 text-white rounded-xl text-xs"
                     />
                   </div>
                 </div>
 
                 <div className="grid grid-cols-2 gap-3">
                   <div className="space-y-1.5">
-                    <label className="text-zinc-300 font-medium">{isRo ? "Dată Eveniment *" : "Event Date *"}</label>
+                    <label className="text-zinc-600 font-medium">{isRo ? "Dată Eveniment *" : "Event Date *"}</label>
                     <Input
                       type="date"
                       value={actDate}
                       onChange={(e) => setActDate(e.target.value)}
                       required
-                      className="h-10 bg-zinc-900 border-zinc-800 text-white rounded-xl text-xs"
+                      className="h-10 bg-white border-zinc-200 text-white rounded-xl text-xs"
                     />
                   </div>
 
                   <div className="space-y-1.5">
-                    <label className="text-zinc-300 font-medium">{isRo ? "Oră (Opțional)" : "Time (Optional)"}</label>
+                    <label className="text-zinc-600 font-medium">{isRo ? "Oră (Opțional)" : "Time (Optional)"}</label>
                     <Input
                       placeholder="HH:MM (Ex: 14:30)"
                       value={actTime}
                       onChange={(e) => setActTime(e.target.value)}
-                      className="h-10 bg-zinc-900 border-zinc-800 text-white rounded-xl text-xs"
+                      className="h-10 bg-white border-zinc-200 text-white rounded-xl text-xs"
                     />
                   </div>
                 </div>
 
                 <div className="space-y-1.5">
-                  <label className="text-zinc-300 font-medium">{isRo ? "Detalii & Conținut Discuție" : "Details & Notes"}</label>
+                  <label className="text-zinc-600 font-medium">{isRo ? "Detalii & Conținut Discuție" : "Details & Notes"}</label>
                   <textarea
                     rows={2}
                     placeholder={isRo ? "Consemnează ce s-a stabilit, solicitările primite..." : "Record discussion details..."}
                     value={actNotes}
                     onChange={(e) => setActNotes(e.target.value)}
-                    className="w-full p-2.5 rounded-xl bg-zinc-900 border border-zinc-800 text-white text-xs focus:outline-none"
+                    className="w-full p-2.5 rounded-xl bg-white border border-zinc-200 text-white text-xs focus:outline-none"
                   />
                 </div>
 
                 <div className="grid grid-cols-2 gap-3">
                   <div className="space-y-1.5">
-                    <label className="text-zinc-300 font-medium">{isRo ? "Următorul Pas (Next Action)" : "Next Action"}</label>
+                    <label className="text-zinc-600 font-medium">{isRo ? "Următorul Pas (Next Action)" : "Next Action"}</label>
                     <Input
                       placeholder={isRo ? "Ex: Trimitere deviz rectificat..." : "Ex: Send adjusted quote..."}
                       value={actNextAction}
                       onChange={(e) => setActNextAction(e.target.value)}
-                      className="h-10 bg-zinc-900 border-zinc-800 text-white rounded-xl text-xs"
+                      className="h-10 bg-white border-zinc-200 text-white rounded-xl text-xs"
                     />
                   </div>
 
                   <div className="space-y-1.5">
-                    <label className="text-zinc-300 font-medium">{isRo ? "Dată Scadență Follow-up" : "Follow-up Due Date"}</label>
+                    <label className="text-zinc-600 font-medium">{isRo ? "Dată Scadență Follow-up" : "Follow-up Due Date"}</label>
                     <Input
                       type="date"
                       value={actFollowUpDate}
                       onChange={(e) => setActFollowUpDate(e.target.value)}
-                      className="h-10 bg-zinc-900 border-zinc-800 text-white rounded-xl text-xs"
+                      className="h-10 bg-white border-zinc-200 text-white rounded-xl text-xs"
                     />
                   </div>
                 </div>
 
-                <div className="pt-3 border-t border-zinc-800 flex gap-2">
+                <div className="pt-3 border-t border-zinc-200 flex gap-2">
                   <Button
                     type="button"
                     variant="outline"
                     onClick={() => setIsActivityModalOpen(false)}
-                    className="flex-1 rounded-xl border-zinc-800 text-zinc-300 text-xs h-10"
+                    className="flex-1 rounded-xl border-zinc-200 text-zinc-600 text-xs h-10"
                   >
                     {isRo ? "Anulează" : "Cancel"}
                   </Button>
@@ -1089,10 +1089,10 @@ export function ClaimsProgressTracker() {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.95 }}
-              className="w-full max-w-lg p-6 sm:p-8 rounded-[2.5rem] bg-zinc-950 border border-zinc-800 shadow-2xl relative space-y-5"
+              className="w-full max-w-lg p-6 sm:p-8 rounded-[2.5rem] bg-zinc-50 border border-zinc-200 shadow-2xl relative space-y-5"
             >
-              <div className="flex items-center justify-between pb-3 border-b border-zinc-800">
-                <h3 className="text-base font-heading font-bold text-white">
+              <div className="flex items-center justify-between pb-3 border-b border-zinc-200">
+                <h3 className="text-base font-heading font-bold text-zinc-900">
                   {editingDoc
                     ? isRo ? "Editează Înregistrare Document" : "Edit Document Record"
                     : isRo ? "Adaugă Document în Registru" : "Add Document to Register"}
@@ -1100,7 +1100,7 @@ export function ClaimsProgressTracker() {
                 <button
                   type="button"
                   onClick={() => setIsDocModalOpen(false)}
-                  className="p-2 text-zinc-400 hover:text-white rounded-full bg-zinc-900 border border-zinc-800"
+                  className="p-2 text-zinc-500 hover:text-white rounded-full bg-white border border-zinc-200"
                 >
                   <X className="w-4 h-4" />
                 </button>
@@ -1108,22 +1108,22 @@ export function ClaimsProgressTracker() {
 
               <form onSubmit={handleSaveDoc} className="space-y-4 text-xs">
                 <div className="space-y-1.5">
-                  <label className="text-zinc-300 font-medium">{isRo ? "Denumire Document *" : "Document Name *"}</label>
+                  <label className="text-zinc-600 font-medium">{isRo ? "Denumire Document *" : "Document Name *"}</label>
                   <Input
                     placeholder={isRo ? "Ex: Proces-Verbal Poliție, Deviz Reparație..." : "Ex: Police Report, Repair Estimate..."}
                     value={docName}
                     onChange={(e) => setDocName(e.target.value)}
                     required
-                    className="h-10 bg-zinc-900 border-zinc-800 text-white rounded-xl text-xs"
+                    className="h-10 bg-white border-zinc-200 text-white rounded-xl text-xs"
                   />
                 </div>
 
                 <div className="space-y-1.5">
-                  <label className="text-zinc-300 font-medium">{isRo ? "Status Transmitere" : "Submission Status"}</label>
+                  <label className="text-zinc-600 font-medium">{isRo ? "Status Transmitere" : "Submission Status"}</label>
                   <select
                     value={docStatus}
                     onChange={(e) => setDocStatus(e.target.value as DocRegisterStatus)}
-                    className="w-full h-10 px-2.5 rounded-xl bg-zinc-900 border border-zinc-800 text-white text-xs focus:outline-none"
+                    className="w-full h-10 px-2.5 rounded-xl bg-white border border-zinc-200 text-white text-xs focus:outline-none"
                   >
                     {Object.entries(isRo ? DOC_REGISTER_STATUS_RO : DOC_REGISTER_STATUS_EN).map(([s, lbl]) => (
                       <option key={s} value={s}>
@@ -1135,42 +1135,42 @@ export function ClaimsProgressTracker() {
 
                 <div className="grid grid-cols-2 gap-3">
                   <div className="space-y-1.5">
-                    <label className="text-zinc-300 font-medium">{isRo ? "Dată Solicitare" : "Date Requested"}</label>
+                    <label className="text-zinc-600 font-medium">{isRo ? "Dată Solicitare" : "Date Requested"}</label>
                     <Input
                       type="date"
                       value={docDateRequested}
                       onChange={(e) => setDocDateRequested(e.target.value)}
-                      className="h-10 bg-zinc-900 border-zinc-800 text-white rounded-xl text-xs"
+                      className="h-10 bg-white border-zinc-200 text-white rounded-xl text-xs"
                     />
                   </div>
 
                   <div className="space-y-1.5">
-                    <label className="text-zinc-300 font-medium">{isRo ? "Dată Transmitere" : "Date Submitted"}</label>
+                    <label className="text-zinc-600 font-medium">{isRo ? "Dată Transmitere" : "Date Submitted"}</label>
                     <Input
                       type="date"
                       value={docDateSubmitted}
                       onChange={(e) => setDocDateSubmitted(e.target.value)}
-                      className="h-10 bg-zinc-900 border-zinc-800 text-white rounded-xl text-xs"
+                      className="h-10 bg-white border-zinc-200 text-white rounded-xl text-xs"
                     />
                   </div>
                 </div>
 
                 <div className="space-y-1.5">
-                  <label className="text-zinc-300 font-medium">{isRo ? "Notițe (Opțional)" : "Notes (Optional)"}</label>
+                  <label className="text-zinc-600 font-medium">{isRo ? "Notițe (Opțional)" : "Notes (Optional)"}</label>
                   <Input
                     placeholder={isRo ? "Ex: Trimis în original / electronic..." : "Ex: Sent electronically..."}
                     value={docNotes}
                     onChange={(e) => setDocNotes(e.target.value)}
-                    className="h-10 bg-zinc-900 border-zinc-800 text-white rounded-xl text-xs"
+                    className="h-10 bg-white border-zinc-200 text-white rounded-xl text-xs"
                   />
                 </div>
 
-                <div className="pt-3 border-t border-zinc-800 flex gap-2">
+                <div className="pt-3 border-t border-zinc-200 flex gap-2">
                   <Button
                     type="button"
                     variant="outline"
                     onClick={() => setIsDocModalOpen(false)}
-                    className="flex-1 rounded-xl border-zinc-800 text-zinc-300 text-xs h-10"
+                    className="flex-1 rounded-xl border-zinc-200 text-zinc-600 text-xs h-10"
                   >
                     {isRo ? "Anulează" : "Cancel"}
                   </Button>
@@ -1197,15 +1197,15 @@ export function ClaimsProgressTracker() {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.95 }}
-              className="w-full max-w-md p-6 rounded-3xl bg-zinc-950 border border-rose-500/30 shadow-2xl space-y-4 text-center"
+              className="w-full max-w-md p-6 rounded-3xl bg-zinc-50 border border-rose-500/30 shadow-2xl space-y-4 text-center"
             >
               <div className="w-12 h-12 rounded-full bg-rose-500/10 text-rose-400 flex items-center justify-center mx-auto">
                 <AlertTriangle className="w-6 h-6" />
               </div>
-              <h3 className="text-base font-bold text-white">
+              <h3 className="text-base font-bold text-zinc-900">
                 {isRo ? "Golești jurnalul de daună curent?" : "Clear active claims dossier?"}
               </h3>
-              <p className="text-xs text-zinc-400 leading-relaxed">
+              <p className="text-xs text-zinc-500 leading-relaxed">
                 {isRo
                   ? "Această acțiune va reseta toate evenimentele și documentele din memoria activă. Asigură-te că ai descărcat un raport PDF sau backup JSON."
                   : "This will clear all in-memory events and document records. Download a PDF or JSON backup first if needed."}
@@ -1215,7 +1215,7 @@ export function ClaimsProgressTracker() {
                   type="button"
                   variant="outline"
                   onClick={() => setIsClearConfirmOpen(false)}
-                  className="flex-1 rounded-xl border-zinc-800 text-zinc-300 text-xs h-10"
+                  className="flex-1 rounded-xl border-zinc-200 text-zinc-600 text-xs h-10"
                 >
                   {isRo ? "Anulează" : "Cancel"}
                 </Button>

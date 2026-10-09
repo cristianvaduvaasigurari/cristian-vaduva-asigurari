@@ -109,84 +109,84 @@ export function RentalProtectionJourney() {
       {/* 1. SIX EDUCATIONAL PILLARS */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {/* 1. Rented Property Status */}
-        <div className="p-6 rounded-3xl bg-zinc-900/60 border border-zinc-800 space-y-3">
+        <div className="p-6 rounded-3xl bg-white border border-zinc-200 space-y-3">
           <div className="w-10 h-10 rounded-2xl bg-blue-500/10 border border-blue-500/20 text-blue-400 flex items-center justify-center font-bold text-xs">
             01
           </div>
-          <h3 className="text-lg font-heading font-bold text-white">Declararea Destinației Reale</h3>
-          <p className="text-xs text-zinc-400 leading-relaxed">
+          <h3 className="text-lg font-heading font-bold text-zinc-900">Declararea Destinației Reale</h3>
+          <p className="text-xs text-zinc-500 leading-relaxed">
             Asiguratorul trebuie să fie notificat că imobilul este închiriat. O poliță standard de uz rezidențial personal poate fi refuzată la plată dacă dauna are loc într-un imobil închiriat nedeclarat.
           </p>
         </div>
 
         {/* 2. Building vs Contents */}
-        <div className="p-6 rounded-3xl bg-zinc-900/60 border border-zinc-800 space-y-3">
+        <div className="p-6 rounded-3xl bg-white border border-zinc-200 space-y-3">
           <div className="w-10 h-10 rounded-2xl bg-amber-500/10 border border-amber-500/20 text-amber-400 flex items-center justify-center font-bold text-xs">
             02
           </div>
-          <h3 className="text-lg font-heading font-bold text-white">Clădire vs. Bunuri Proprietar</h3>
-          <p className="text-xs text-zinc-400 leading-relaxed">
+          <h3 className="text-lg font-heading font-bold text-zinc-900">Clădire vs. Bunuri Proprietar</h3>
+          <p className="text-xs text-zinc-500 leading-relaxed">
             Polița trebuie să diferențieze structura clădirii de mobilierul/electrocasnicele proprietarului și de bunurile personale ale chiriașului (care necesită asigurare proprie a chiriașului).
           </p>
         </div>
 
         {/* 3. Third-Party Liability */}
-        <div className="p-6 rounded-3xl bg-zinc-900/60 border border-zinc-800 space-y-3">
+        <div className="p-6 rounded-3xl bg-white border border-zinc-200 space-y-3">
           <div className="w-10 h-10 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold text-xs">
             03
           </div>
-          <h3 className="text-lg font-heading font-bold text-white">Răspunderea față de Vecini</h3>
-          <p className="text-xs text-zinc-400 leading-relaxed">
+          <h3 className="text-lg font-heading font-bold text-zinc-900">Răspunderea față de Vecini</h3>
+          <p className="text-xs text-zinc-500 leading-relaxed">
             O țeavă spartă sau un scurtcircuit produs în apartamentul închiriat poate inunda mai multe etaje inferioare. Clauza de răspundere civilă preia despăgubirea pagubelor cauzate vecinilor.
           </p>
         </div>
 
         {/* 4. Responsibilities */}
-        <div className="p-6 rounded-3xl bg-zinc-900/60 border border-zinc-800 space-y-3">
+        <div className="p-6 rounded-3xl bg-white border border-zinc-200 space-y-3">
           <div className="w-10 h-10 rounded-2xl bg-purple-500/10 border border-purple-500/20 text-purple-400 flex items-center justify-center font-bold text-xs">
             04
           </div>
-          <h3 className="text-lg font-heading font-bold text-white">Contractul & Inventarul</h3>
-          <p className="text-xs text-zinc-400 leading-relaxed">
+          <h3 className="text-lg font-heading font-bold text-zinc-900">Contractul & Inventarul</h3>
+          <p className="text-xs text-zinc-500 leading-relaxed">
             Asigurarea nu înlocuiește procesul-verbal de predare-primire, inventarul foto semnat și mentenanța periodică a instalațiilor sanitare și termice conform legii.
           </p>
         </div>
 
         {/* 5. Rent Default Caveats */}
-        <div className="p-6 rounded-3xl bg-zinc-900/60 border border-zinc-800 space-y-3">
+        <div className="p-6 rounded-3xl bg-white border border-zinc-200 space-y-3">
           <div className="w-10 h-10 rounded-2xl bg-rose-500/10 border border-rose-500/20 text-rose-400 flex items-center justify-center font-bold text-xs">
             05
           </div>
-          <h3 className="text-lg font-heading font-bold text-white">Garantarea Chiriei (Opțional)</h3>
-          <p className="text-xs text-zinc-400 leading-relaxed">
+          <h3 className="text-lg font-heading font-bold text-zinc-900">Garantarea Chiriei (Opțional)</h3>
+          <p className="text-xs text-zinc-500 leading-relaxed">
             Protecția împotriva neplății chiriei este un produs specializat distinct, disponibil doar în condiții stricte de eligibilitate și verificare a bonității chiriașului (nu este inclus în polițe standard).
           </p>
         </div>
 
         {/* 6. Portfolio Management */}
-        <div className="p-6 rounded-3xl bg-zinc-900/60 border border-zinc-800 space-y-3">
+        <div className="p-6 rounded-3xl bg-white border border-zinc-200 space-y-3">
           <div className="w-10 h-10 rounded-2xl bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 flex items-center justify-center font-bold text-xs">
             06
           </div>
-          <h3 className="text-lg font-heading font-bold text-white">Portofolii Imobiliare</h3>
-          <p className="text-xs text-zinc-400 leading-relaxed">
+          <h3 className="text-lg font-heading font-bold text-zinc-900">Portofolii Imobiliare</h3>
+          <p className="text-xs text-zinc-500 leading-relaxed">
             Pentru investitorii cu multiple unități (mix de închiriere pe termen lung și regim hotelier), analizăm fiecare imobil în parte pentru optimizarea primelor și evitarea suprapunerilor.
           </p>
         </div>
       </div>
 
       {/* 2. RENTAL RISK ESTIMATOR (DETERMINISTIC LIGHTWEIGHT MVP) */}
-      <div className="p-8 sm:p-10 rounded-[2.5rem] bg-zinc-950 border border-zinc-800 relative overflow-hidden shadow-xl">
+      <div className="p-8 sm:p-10 rounded-[2.5rem] bg-zinc-50 border border-zinc-200 relative overflow-hidden shadow-xl">
         <div className="max-w-3xl mx-auto space-y-8">
           <div className="text-center space-y-2">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/30 text-blue-400 text-xs font-semibold uppercase tracking-widest">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200 text-blue-400 text-xs font-semibold uppercase tracking-widest">
               <Calculator className="w-3.5 h-3.5" />
               Simulator Profil & Checklist Risc Închiriere
             </div>
-            <h3 className="text-2xl sm:text-3xl font-heading font-bold text-white">
+            <h3 className="text-2xl sm:text-3xl font-heading font-bold text-zinc-900">
               Identifică punctele critice pentru proprietatea ta
             </h3>
-            <p className="text-xs sm:text-sm text-zinc-400 max-w-xl mx-auto">
+            <p className="text-xs sm:text-sm text-zinc-500 max-w-xl mx-auto">
               Instrument educațional de calibrare a discuției cu un consultant. Nu generează cotații automate de preț și nu reprezintă o ofertă fermă.
             </p>
           </div>
@@ -194,11 +194,11 @@ export function RentalProtectionJourney() {
           <form onSubmit={handleCalculate} className="space-y-6">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
               <div className="space-y-1.5">
-                <label className="text-xs text-zinc-400">Număr Proprietăți</label>
+                <label className="text-xs text-zinc-500">Număr Proprietăți</label>
                 <select
                   value={calcUnits}
                   onChange={(e) => setCalcUnits(Number(e.target.value))}
-                  className="w-full h-11 px-3 rounded-xl bg-zinc-900 border border-zinc-800 text-white text-xs focus:outline-none focus:border-blue-500"
+                  className="w-full h-11 px-3 rounded-xl bg-white border border-zinc-200 text-white text-xs focus:outline-none focus:border-blue-500"
                 >
                   <option value={1}>1 Proprietate</option>
                   <option value={2}>2 Proprietăți</option>
@@ -208,11 +208,11 @@ export function RentalProtectionJourney() {
               </div>
 
               <div className="space-y-1.5">
-                <label className="text-xs text-zinc-400">Model de Închiriere</label>
+                <label className="text-xs text-zinc-500">Model de Închiriere</label>
                 <select
                   value={calcModel}
                   onChange={(e) => setCalcModel(e.target.value as "long" | "short" | "mixed")}
-                  className="w-full h-11 px-3 rounded-xl bg-zinc-900 border border-zinc-800 text-white text-xs focus:outline-none focus:border-blue-500"
+                  className="w-full h-11 px-3 rounded-xl bg-white border border-zinc-200 text-white text-xs focus:outline-none focus:border-blue-500"
                 >
                   <option value="long">Termen Lung (Rezidențial)</option>
                   <option value="short">Regim Hotelier (Airbnb/Booking)</option>
@@ -221,21 +221,21 @@ export function RentalProtectionJourney() {
               </div>
 
               <div className="space-y-1.5">
-                <label className="text-xs text-zinc-400">Suprafață Medie (mp)</label>
+                <label className="text-xs text-zinc-500">Suprafață Medie (mp)</label>
                 <Input
                   value={calcArea}
                   onChange={(e) => setCalcArea(e.target.value)}
                   placeholder="Ex: 60"
-                  className="h-11 bg-zinc-900 border-zinc-800 text-white text-xs rounded-xl"
+                  className="h-11 bg-white border-zinc-200 text-white text-xs rounded-xl"
                 />
               </div>
 
               <div className="space-y-1.5">
-                <label className="text-xs text-zinc-400">Prioritate Evaluare</label>
+                <label className="text-xs text-zinc-500">Prioritate Evaluare</label>
                 <select
                   value={calcFocus}
                   onChange={(e) => setCalcFocus(e.target.value as "all" | "building" | "liability" | "contents")}
-                  className="w-full h-11 px-3 rounded-xl bg-zinc-900 border border-zinc-800 text-white text-xs focus:outline-none focus:border-blue-500"
+                  className="w-full h-11 px-3 rounded-xl bg-white border border-zinc-200 text-white text-xs focus:outline-none focus:border-blue-500"
                 >
                   <option value="all">Pachet Complet (Recomandat)</option>
                   <option value="liability">Răspundere Civilă & Vecini</option>
@@ -258,10 +258,10 @@ export function RentalProtectionJourney() {
             <motion.div
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
-              className="p-6 rounded-2xl bg-zinc-900/80 border border-blue-500/30 space-y-4 text-xs"
+              className="p-6 rounded-2xl bg-white border border-blue-500/30 space-y-4 text-xs"
             >
-              <div className="flex items-center justify-between pb-3 border-b border-zinc-800">
-                <span className="font-bold text-white uppercase tracking-wider text-[11px] flex items-center gap-1.5">
+              <div className="flex items-center justify-between pb-3 border-b border-zinc-200">
+                <span className="font-bold text-zinc-900 uppercase tracking-wider text-[11px] flex items-center gap-1.5">
                   <CheckCircle2 className="w-4 h-4 text-blue-400" />
                   Rezumat Profil: {calcUnits} {calcUnits === 1 ? "unitate" : "unități"} • {calcModel === "long" ? "Termen Lung" : calcModel === "short" ? "Regim Hotelier" : "Mixt"}
                 </span>
@@ -269,8 +269,8 @@ export function RentalProtectionJourney() {
               </div>
 
               <div className="space-y-2">
-                <p className="font-bold text-zinc-200">Recomandări esențiale de discutat cu asiguratorul:</p>
-                <ul className="space-y-1.5 text-zinc-300">
+                <p className="font-bold text-zinc-800">Recomandări esențiale de discutat cu asiguratorul:</p>
+                <ul className="space-y-1.5 text-zinc-600">
                   <li className="flex items-start gap-2">
                     <span className="text-blue-400 font-bold">•</span>
                     <span>
@@ -284,7 +284,7 @@ export function RentalProtectionJourney() {
                     </span>
                   </li>
                   {calcModel === "short" && (
-                    <li className="flex items-start gap-2 text-amber-300">
+                    <li className="flex items-start gap-2 text-amber-800">
                       <span className="text-amber-400 font-bold">•</span>
                       <span>
                         <strong>Specific Regim Hotelier:</strong> Verificarea dacă vandalismul oaspeților sau furtul fără efracție sunt incluse sau excluse.
@@ -302,11 +302,11 @@ export function RentalProtectionJourney() {
                 </ul>
               </div>
 
-              <div className="pt-3 border-t border-zinc-800/80 flex items-center justify-between">
-                <span className="text-[11px] text-zinc-400">Datele au fost transferate în formularul de mai jos.</span>
+              <div className="pt-3 border-t border-zinc-200/80 flex items-center justify-between">
+                <span className="text-[11px] text-zinc-500">Datele au fost transferate în formularul de mai jos.</span>
                 <a
                   href="#formular-proprietar"
-                  className="text-blue-400 hover:text-blue-300 font-semibold underline underline-offset-4"
+                  className="text-blue-400 hover:text-blue-800 font-semibold underline underline-offset-4"
                 >
                   Completează cererea de ofertă &darr;
                 </a>
@@ -317,7 +317,7 @@ export function RentalProtectionJourney() {
       </div>
 
       {/* 3. ADVISORY LEAD FORM */}
-      <div id="formular-proprietar" className="p-8 sm:p-12 rounded-[2.5rem] bg-zinc-950/90 border border-zinc-800 shadow-2xl relative">
+      <div id="formular-proprietar" className="p-8 sm:p-12 rounded-[2.5rem] bg-zinc-50/90 border border-zinc-200 shadow-2xl relative">
         <AnimatePresence mode="wait">
           {submittedReference ? (
             <motion.div
@@ -326,14 +326,14 @@ export function RentalProtectionJourney() {
               animate={{ opacity: 1, scale: 1 }}
               className="text-center py-12 space-y-6 max-w-xl mx-auto"
             >
-              <div className="w-16 h-16 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 flex items-center justify-center mx-auto">
+              <div className="w-16 h-16 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-400 flex items-center justify-center mx-auto">
                 <CheckCircle2 className="w-8 h-8" />
               </div>
               <div className="space-y-2">
-                <h3 className="text-3xl font-heading font-bold text-white">
+                <h3 className="text-3xl font-heading font-bold text-zinc-900">
                   Cererea a fost transmisă cu succes!
                 </h3>
-                <p className="text-sm text-zinc-400 leading-relaxed">
+                <p className="text-sm text-zinc-500 leading-relaxed">
                   Număr de înregistrare solicitare: <strong className="text-white font-mono">{submittedReference}</strong>.
                   Consultantul Cristian Văduva va analiza profilul de risc și vă va transmite soluțiile optime pentru portofoliul dumneavoastră.
                 </p>
@@ -342,7 +342,7 @@ export function RentalProtectionJourney() {
                 type="button"
                 variant="outline"
                 onClick={() => setSubmittedReference(null)}
-                className="rounded-full border-zinc-800 text-zinc-300 text-xs"
+                className="rounded-full border-zinc-200 text-zinc-600 text-xs"
               >
                 Trimite o altă solicitare
               </Button>
@@ -355,17 +355,17 @@ export function RentalProtectionJourney() {
               onSubmit={handleSubmit}
               className="space-y-8 max-w-3xl mx-auto"
             >
-              <div className="text-center space-y-2 pb-6 border-b border-zinc-800/80">
-                <h3 className="text-2xl sm:text-3xl font-heading font-bold text-white">
+              <div className="text-center space-y-2 pb-6 border-b border-zinc-200/80">
+                <h3 className="text-2xl sm:text-3xl font-heading font-bold text-zinc-900">
                   Consultanță Specializată pentru Proprietăți Închiriate
                 </h3>
-                <p className="text-xs sm:text-sm text-zinc-400">
+                <p className="text-xs sm:text-sm text-zinc-500">
                   Transmite detaliile imobilului sau portofoliului tău pentru a primi o ofertă calibrată pe riscurile reale ale activității de închiriere.
                 </p>
               </div>
 
               {errorMessage && (
-                <div className="p-4 rounded-2xl bg-rose-500/10 border border-rose-500/30 text-rose-300 text-xs flex items-start gap-2">
+                <div className="p-4 rounded-2xl bg-rose-500/10 border border-rose-500/30 text-rose-800 text-xs flex items-start gap-2">
                   <AlertTriangle className="w-4 h-4 shrink-0 mt-0.5" />
                   <span>{errorMessage}</span>
                 </div>
@@ -373,18 +373,18 @@ export function RentalProtectionJourney() {
 
               {/* Step 1: Portfolio & Property Details */}
               <div className="space-y-4">
-                <h4 className="text-sm uppercase tracking-wider font-bold text-zinc-300 flex items-center gap-2">
+                <h4 className="text-sm uppercase tracking-wider font-bold text-zinc-600 flex items-center gap-2">
                   <Building2 className="w-4 h-4 text-blue-400" />
                   1. Detalii despre Proprietate & Închiriere
                 </h4>
 
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                   <div className="space-y-1.5">
-                    <label className="text-xs text-zinc-400">Număr Proprietăți</label>
+                    <label className="text-xs text-zinc-500">Număr Proprietăți</label>
                     <select
                       value={unitsCount}
                       onChange={(e) => setUnitsCount(e.target.value)}
-                      className="w-full h-11 px-4 rounded-xl bg-zinc-900 border border-zinc-800 text-white text-xs focus:outline-none focus:border-blue-500"
+                      className="w-full h-11 px-4 rounded-xl bg-white border border-zinc-200 text-white text-xs focus:outline-none focus:border-blue-500"
                     >
                       <option value="1 proprietate">1 proprietate</option>
                       <option value="2-3 proprietăți">2-3 proprietăți</option>
@@ -393,11 +393,11 @@ export function RentalProtectionJourney() {
                   </div>
 
                   <div className="space-y-1.5">
-                    <label className="text-xs text-zinc-400">Model Închiriere</label>
+                    <label className="text-xs text-zinc-500">Model Închiriere</label>
                     <select
                       value={rentalModel}
                       onChange={(e) => setRentalModel(e.target.value)}
-                      className="w-full h-11 px-4 rounded-xl bg-zinc-900 border border-zinc-800 text-white text-xs focus:outline-none focus:border-blue-500"
+                      className="w-full h-11 px-4 rounded-xl bg-white border border-zinc-200 text-white text-xs focus:outline-none focus:border-blue-500"
                     >
                       <option value="Termen lung">Termen lung (Rezidențial)</option>
                       <option value="Regim hotelier / Airbnb">Regim hotelier (Airbnb / Booking)</option>
@@ -407,11 +407,11 @@ export function RentalProtectionJourney() {
                   </div>
 
                   <div className="space-y-1.5">
-                    <label className="text-xs text-zinc-400">Status Ocupare</label>
+                    <label className="text-xs text-zinc-500">Status Ocupare</label>
                     <select
                       value={occupancyStatus}
                       onChange={(e) => setOccupancyStatus(e.target.value)}
-                      className="w-full h-11 px-4 rounded-xl bg-zinc-900 border border-zinc-800 text-white text-xs focus:outline-none focus:border-blue-500"
+                      className="w-full h-11 px-4 rounded-xl bg-white border border-zinc-200 text-white text-xs focus:outline-none focus:border-blue-500"
                     >
                       <option value="Ocupată de chiriaș">Ocupată de chiriaș</option>
                       <option value="Liberă / Căutare chiriaș">Liberă / În căutare chiriaș</option>
@@ -422,30 +422,30 @@ export function RentalProtectionJourney() {
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div className="space-y-1.5">
-                    <label className="text-xs text-zinc-400">Localitate / Zonă</label>
+                    <label className="text-xs text-zinc-500">Localitate / Zonă</label>
                     <Input
                       placeholder="Ex: București (Sector 2), Cluj-Napoca, Timișoara..."
                       value={propertyLocation}
                       onChange={(e) => setPropertyLocation(e.target.value)}
-                      className="h-11 bg-zinc-900 border-zinc-800 text-white text-xs rounded-xl"
+                      className="h-11 bg-white border-zinc-200 text-white text-xs rounded-xl"
                     />
                   </div>
 
                   <div className="space-y-1.5">
-                    <label className="text-xs text-zinc-400">Valoare Estimată a Imobilului (Opțional)</label>
+                    <label className="text-xs text-zinc-500">Valoare Estimată a Imobilului (Opțional)</label>
                     <Input
                       placeholder="Ex: 120.000 EUR"
                       value={estimatedValue}
                       onChange={(e) => setEstimatedValue(e.target.value)}
-                      className="h-11 bg-zinc-900 border-zinc-800 text-white text-xs rounded-xl"
+                      className="h-11 bg-white border-zinc-200 text-white text-xs rounded-xl"
                     />
                   </div>
                 </div>
               </div>
 
               {/* Step 2: Desired Protection Layers */}
-              <div className="space-y-3 pt-4 border-t border-zinc-800/60">
-                <label className="text-xs uppercase tracking-wider font-bold text-zinc-300 block">
+              <div className="space-y-3 pt-4 border-t border-zinc-200/60">
+                <label className="text-xs uppercase tracking-wider font-bold text-zinc-600 block">
                   Ce riscuri dorești să fie acoperite prioritar?
                 </label>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
@@ -464,7 +464,7 @@ export function RentalProtectionJourney() {
                       className={`p-3 rounded-xl border text-left text-xs transition-all flex items-center justify-between ${
                         requestedAssistance.includes(ast)
                           ? "bg-blue-500/10 border-blue-500/40 text-white font-medium"
-                          : "bg-zinc-900/40 border-zinc-800 text-zinc-400 hover:text-zinc-200"
+                          : "bg-zinc-50 border-zinc-200 text-zinc-500 hover:text-zinc-800"
                       }`}
                     >
                       <span>{ast}</span>
@@ -477,43 +477,43 @@ export function RentalProtectionJourney() {
               </div>
 
               {/* Step 3: Contact */}
-              <div className="space-y-4 pt-4 border-t border-zinc-800/60">
-                <h4 className="text-sm uppercase tracking-wider font-bold text-zinc-300 flex items-center gap-2">
+              <div className="space-y-4 pt-4 border-t border-zinc-200/60">
+                <h4 className="text-sm uppercase tracking-wider font-bold text-zinc-600 flex items-center gap-2">
                   <Users className="w-4 h-4 text-blue-400" />
                   2. Date de Contact Proprietar / Administrator
                 </h4>
 
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                   <div className="space-y-1.5">
-                    <label className="text-xs text-zinc-400">Nume & Prenume *</label>
+                    <label className="text-xs text-zinc-500">Nume & Prenume *</label>
                     <Input
                       placeholder="Ex: Mihai Ionescu"
                       value={name}
                       onChange={(e) => setName(e.target.value)}
                       required
-                      className="h-11 bg-zinc-900 border-zinc-800 text-white text-xs rounded-xl"
+                      className="h-11 bg-white border-zinc-200 text-white text-xs rounded-xl"
                     />
                   </div>
 
                   <div className="space-y-1.5">
-                    <label className="text-xs text-zinc-400">Număr Telefon *</label>
+                    <label className="text-xs text-zinc-500">Număr Telefon *</label>
                     <Input
                       placeholder="Ex: 0733 000 000"
                       value={phone}
                       onChange={(e) => setPhone(e.target.value)}
                       required
-                      className="h-11 bg-zinc-900 border-zinc-800 text-white text-xs rounded-xl"
+                      className="h-11 bg-white border-zinc-200 text-white text-xs rounded-xl"
                     />
                   </div>
 
                   <div className="space-y-1.5">
-                    <label className="text-xs text-zinc-400">Adresă Email (Opțional)</label>
+                    <label className="text-xs text-zinc-500">Adresă Email (Opțional)</label>
                     <Input
                       type="email"
                       placeholder="Ex: mihai@exemplu.ro"
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
-                      className="h-11 bg-zinc-900 border-zinc-800 text-white text-xs rounded-xl"
+                      className="h-11 bg-white border-zinc-200 text-white text-xs rounded-xl"
                     />
                   </div>
                 </div>
@@ -526,11 +526,11 @@ export function RentalProtectionJourney() {
                   id="consent-rental"
                   checked={consent}
                   onChange={(e) => setConsent(e.target.checked)}
-                  className="mt-1 w-4 h-4 rounded border-zinc-800 bg-zinc-900 text-blue-600 focus:ring-0"
+                  className="mt-1 w-4 h-4 rounded border-zinc-200 bg-white text-blue-600 focus:ring-0"
                 />
-                <label htmlFor="consent-rental" className="text-xs text-zinc-400 leading-relaxed cursor-pointer">
+                <label htmlFor="consent-rental" className="text-xs text-zinc-500 leading-relaxed cursor-pointer">
                   Sunt de acord cu prelucrarea datelor de contact pentru primirea analizei de asigurare, conform{" "}
-                  <a href="/politica-de-confidentialitate" target="_blank" className="text-zinc-300 underline underline-offset-2">
+                  <a href="/politica-de-confidentialitate" target="_blank" className="text-zinc-600 underline underline-offset-2">
                     Politicii de Confidențialitate
                   </a>
                   . Înțeleg că emiterea este condiționată de normele tehnice de subscriere ale asiguratorului.
