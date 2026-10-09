@@ -102,3 +102,75 @@ export async function sendTelegramAlert(lead: TelegramLeadData): Promise<boolean
   }
   return false;
 }
+
+export interface OperationalTelegramAlertData {
+  referenceId: string;
+  category: string;
+  reviewGoal?: string;
+  preferredContact?: string;
+  language?: string;
+  timestamp?: string;
+  pageUrl?: string;
+}
+
+/**
+ * Dispatches an operational alert containing ONLY reference metadata.
+ * Strictly avoids transmitting personal contact details, policy text, or sensitive client files.
+ */
+export async function sendOperationalTelegramAlert(alert: OperationalTelegramAlertData): Promise<boolean> {
+  const token = process.env.TELEGRAM_BOT_TOKEN || "8879456913:AAEQtberMOikmLjLkq7Okrjw47znlBzhokM";
+  const chatId = process.env.TELEGRAM_CHAT_ID || "-1003998698561";
+
+  if (!token || !chatId) {
+    console.warn("[Telegram Operational Alert] BOT_TOKEN or CHAT_ID is not configured. Skipping alert.");
+    return false;
+  }
+
+  const url = `https://api.telegram.org/bot${token}/sendMessage`;
+
+  const text = [
+    `🛡️ <b>Nouă Solicitare: Verificare Poliță</b>`,
+    `─────────────────────`,
+    `🔖 <b>Referință:</b> <code>${alert.referenceId}</code>`,
+    `📂 <b>Categorie:</b> ${alert.category}`,
+    `🎯 <b>Obiectiv:</b> ${alert.reviewGoal || "Verificare Termeni & Condiții"}`,
+    `💬 <b>Canal preferat:</b> ${(alert.preferredContact || "Telefon").toUpperCase()}`,
+    `🌐 <b>Limbă:</b> ${(alert.language || "RO").toUpperCase()}`,
+    `📍 <b>Sursă:</b> ${alert.pageUrl || "/verifica-polita"}`,
+    `🕒 <b>Data/Oră:</b> ${alert.timestamp || new Date().toISOString()}`,
+    `─────────────────────`,
+    `🔒 <i>Notă de securitate: Conform procedurii de confidențialitate, detaliile de contact și datele poliței sunt stocate securizat în platforma CRM internă.</i>`,
+  ].join("\n");
+
+  const payload = {
+    chat_id: chatId,
+    text,
+    parse_mode: "HTML",
+  };
+
+  const body = JSON.stringify(payload);
+
+  for (let attempt = 0; attempt <= MAX_RETRIES; attempt++) {
+    try {
+      const response = await fetchWithTimeout(
+        url,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body,
+        },
+        TIMEOUT_MS
+      );
+      if (response.ok) {
+        return true;
+      }
+    } catch {
+      // Retry silently
+    }
+    if (attempt < MAX_RETRIES) {
+      await sleep(INITIAL_BACKOFF_MS * (attempt + 1));
+    }
+  }
+  return false;
+}
+

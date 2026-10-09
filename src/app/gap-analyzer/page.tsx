@@ -24,6 +24,15 @@ export default function GapAnalyzerPage() {
         </div>
 
         <GapAnalyzer />
+
+        <div className="mt-16 text-center">
+          <p className="text-sm text-muted-foreground">
+            Vrei o verificare specifică a contractului tău curent (Auto, Casă, Sănătate sau Business)?{" "}
+            <a href="/verifica-polita" className="text-blue-600 font-medium hover:underline inline-flex items-center gap-1">
+              Trimite polița pentru verificare &rarr;
+            </a>
+          </p>
+        </div>
       </div>
     </main>
   );

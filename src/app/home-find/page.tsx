@@ -36,7 +36,7 @@ export default function HomeFindPage() {
                 </a>
               </Button>
               <Button asChild size="lg" variant="outline" className="rounded-full border-slate-200 hover:bg-slate-50 h-14 px-8 text-base">
-                <Link href="/contact">
+                <Link href="/cumpar-casa?source=homefind">
                   Request Insurance Consultation
                 </Link>
               </Button>
@@ -221,7 +221,7 @@ export default function HomeFindPage() {
               </a>
             </Button>
             <Button asChild size="lg" variant="outline" className="rounded-full border-slate-200 hover:bg-slate-50 h-14 px-8 text-base">
-              <Link href="/contact">
+              <Link href="/cumpar-casa?source=homefind">
                 Request Insurance Consultation
               </Link>
             </Button>

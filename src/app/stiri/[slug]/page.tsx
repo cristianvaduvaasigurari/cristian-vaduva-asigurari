@@ -376,7 +376,7 @@ export default async function NewsArticlePage({ params }: Props) {
                 </p>
               </div>
               <Link
-                href={`/servicii/${article.relatedServiceSlug}`}
+                href={article.relatedServiceSlug.startsWith("/") ? article.relatedServiceSlug : `/servicii/${article.relatedServiceSlug}`}
                 className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg text-xs font-semibold bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold transition-colors shrink-0 group"
               >
                 <span>Vezi Detalii Serviciu</span>

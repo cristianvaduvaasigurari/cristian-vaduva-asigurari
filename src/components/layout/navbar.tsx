@@ -46,6 +46,7 @@ const megaMenuData = [
       { name: "Răspundere Profesională", href: "/servicii/business-professional-liability" },
       { name: "Răspunderea Managerilor (D&O)", href: "/servicii/business-directors-liability" },
       { name: "Malpraxis Medical", href: "/servicii/business-malpractice-insurance" },
+      { name: "Audit Riscuri IMM (30 Min)", href: "/audit-riscuri-companii" },
     ]
   },
   {
@@ -58,42 +59,56 @@ const megaMenuData = [
       { name: "Asigurare Echipamente", href: "/servicii/business-equipment-insurance" },
       { name: "Business Interruption", href: "/servicii/business-interruption-insurance" },
       { name: "Sănătate Corporate", href: "/servicii/health-insurance-corporate" },
+      { name: "Sănătate Angajați (HR)", href: "/asigurare-sanatate-angajati" },
     ]
   }
 ];
 
 const ecosystemMenuData = [
   {
-    title: "Platformă & Core",
+    title: "Daune & Urgențe",
     items: [
-      { name: "Centru Urgențe", href: "/urgente" },
+      { name: "Centru Urgențe 24/7", href: "/urgente" },
+      { name: "Generator Notificare Daună", href: "/generator-dosar-dauna" },
+      { name: "Verificare Documente Daună", href: "/verificare-documente-dauna" },
+      { name: "Urmărire Progres Daună", href: "/urmarire-dauna" },
+      { name: "Analiză Ofertă Despăgubire", href: "/analiza-despagubire" },
     ],
   },
   {
-    title: "AiX Intelligence",
+    title: "Audit & Analiză Polițe",
     items: [
-      { name: "Mission Control", href: "/mission-control" },
-      { name: "Risk Simulator", href: "/risk-simulator" },
-      { name: "Life Simulator", href: "/simulator" },
-      { name: "Financial Twin", href: "/financial-twin" },
+      { name: "Verifică Polița (Audit Gratuit)", href: "/verifica-polita" },
+      { name: "Calculator Asigurare & Reconstrucție", href: "/calculator-asigurare" },
+      { name: "Comparație Polițe & Clauze", href: "/compara-polite" },
+      { name: "Profil de Risc & Audit Nevoi", href: "/profil-risc" },
+      { name: "Coverage Gap Analyzer", href: "/gap-analyzer" },
+      { name: "Recomandă-mi Asigurarea", href: "/advisor" },
     ],
   },
   {
-    title: "AiX Tools",
+    title: "Portofoliu & Reînnoiri",
     items: [
-      { name: "Luxury Garage", href: "/luxury-garage" },
-      { name: "Client Journey", href: "/client-journey" },
-      { name: "Smart Forms", href: "/smart-forms" },
-      { name: "Wealth Passport", href: "/wealth-passport" },
-      { name: "RE Analyzer", href: "/investitii-imobiliare/analyzer" },
+      { name: "Harta Portofoliu Asigurări", href: "/harta-asigurarilor" },
+      { name: "Calendar Expirări & Reînnoiri", href: "/calendar-asigurari" },
+      { name: "Fișă Decizie Reînnoire", href: "/decizie-reinnoire" },
+      { name: "Analiză Oferte Reînnoire", href: "/analiza-reinnoire" },
+      { name: "Cronologie & Termene Polițe", href: "/termene-polite" },
+      { name: "Urmărire Modificări & Addendum", href: "/modificari-polite" },
     ],
   },
   {
-    title: "Resurse & Consultanță",
+    title: "Ghiduri, Cercetare & Glosar",
     items: [
-      { name: "AiX Academy", href: "/academy" },
-      { name: "Recomandă-mi Asigurarea Potrivită", href: "/advisor" },
-      { name: "Coverage Gap", href: "/gap-analyzer" },
+      { name: "Hartă Risc Seismic București", href: "/harta-risc-seismic-bucuresti" },
+      { name: "Raportul Anual al Pieței", href: "/raport-piata-asigurarilor" },
+      { name: "Glosar Tehnic Asigurări", href: "/glosar-asigurari" },
+      { name: "Dosar Pregătire Asigurare", href: "/dosar-asigurare" },
+      { name: "Planificare Revizuire Broker", href: "/planificare-revizuire" },
+      { name: "Registru Documentare & Dovezi", href: "/registru-documentare" },
+      { name: "Ghid Cumpărători Locuință", href: "/cumpar-casa" },
+      { name: "Pachet Proprietari Închirieri", href: "/proprietari-inchirieri" },
+      { name: "International Clients (EN)", href: "/international-clients" },
     ],
   },
 ];

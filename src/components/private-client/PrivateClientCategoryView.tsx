@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import { useState } from "react";
 import Link from "next/link";
 import { 
   ShieldCheck, 
@@ -12,7 +13,11 @@ import {
   Compass, 
   PhoneCall, 
   Sparkles, 
-  Layers
+  Layers,
+  HelpCircle,
+  AlertTriangle,
+  FolderCheck,
+  Check
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { CONTACT } from "@/config/contact";
@@ -24,45 +29,81 @@ interface PrivateClientCategoryViewProps {
 }
 
 export function PrivateClientCategoryView({ category }: PrivateClientCategoryViewProps) {
+  const [lang, setLang] = useState<"ro" | "en">("ro");
+
   const otherCategories = Object.values(privateClientCategories).filter(
     (c) => c.slug !== category.slug
   );
+
+  const title = lang === "ro" ? category.titleRo || category.title : category.title;
+  const badge = lang === "ro" ? category.badgeRo || category.badge : category.badge;
+  const tagline = lang === "ro" ? category.taglineRo || category.tagline : category.tagline;
+  const heroIntro = lang === "ro" ? category.heroIntroRo || category.heroIntro : category.heroIntro;
+  const longDescription = lang === "ro" ? category.longDescriptionRo || category.longDescription : category.longDescription;
+  const coverageCategories = lang === "ro" ? category.coverageCategoriesRo || category.coverageCategories : category.coverageCategories;
+  const keyConsiderations = lang === "ro" ? category.keyConsiderationsRo || category.keyConsiderations : category.keyConsiderations;
+  const requestedDocs = lang === "ro" ? category.requestedDocumentationRo || category.requestedDocumentation : category.requestedDocumentation;
+  const commonExclusions = lang === "ro" ? category.commonExclusionsRo || category.commonExclusions : category.commonExclusions;
+  const assetOptions = lang === "ro" ? category.assetOptionsRo || category.assetOptions : category.assetOptions;
 
   return (
     <div className="bg-[#0b0d10] text-zinc-100 min-h-screen">
       {/* 1. EDITORIAL BREADCRUMB & HERO */}
       <section className="relative pt-36 pb-20 border-b border-zinc-800/60 overflow-hidden">
-        {/* Subtle architectural background grid & radial light */}
+        {/* Subtle background ambient light */}
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#1f242d0a_1px,transparent_1px),linear-gradient(to_bottom,#1f242d0a_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] pointer-events-none" />
         <div className="absolute top-0 right-1/4 w-[600px] h-[400px] bg-zinc-800/10 rounded-full blur-[140px] pointer-events-none" />
 
         <div className="container mx-auto px-4 md:px-6 relative z-10 max-w-6xl">
-          {/* Breadcrumbs */}
-          <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-xs text-zinc-500 uppercase tracking-wider mb-8">
-            <Link href="/" className="hover:text-zinc-300 transition-colors">Insurance</Link>
-            <ChevronRight className="w-3.5 h-3.5 text-zinc-600" />
-            <Link href="/private-client" className="hover:text-zinc-300 transition-colors">Private Client</Link>
-            <ChevronRight className="w-3.5 h-3.5 text-zinc-600" />
-            <span className="text-zinc-300 font-semibold">{category.title}</span>
-          </nav>
+          {/* Breadcrumbs & Language Switcher */}
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
+            <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-xs text-zinc-500 uppercase tracking-wider">
+              <Link href="/" className="hover:text-zinc-300 transition-colors">Insurance</Link>
+              <ChevronRight className="w-3.5 h-3.5 text-zinc-600" />
+              <Link href="/private-client" className="hover:text-zinc-300 transition-colors">Private Client</Link>
+              <ChevronRight className="w-3.5 h-3.5 text-zinc-600" />
+              <span className="text-zinc-300 font-semibold">{title}</span>
+            </nav>
+
+            <div className="flex items-center gap-1 p-1 rounded-full bg-zinc-900 border border-zinc-800 text-xs w-fit">
+              <button
+                type="button"
+                onClick={() => setLang("ro")}
+                className={`px-3 py-1 rounded-full font-medium transition-all ${
+                  lang === "ro" ? "bg-zinc-800 text-white shadow-sm" : "text-zinc-400 hover:text-zinc-200"
+                }`}
+              >
+                Română
+              </button>
+              <button
+                type="button"
+                onClick={() => setLang("en")}
+                className={`px-3 py-1 rounded-full font-medium transition-all ${
+                  lang === "en" ? "bg-zinc-800 text-white shadow-sm" : "text-zinc-400 hover:text-zinc-200"
+                }`}
+              >
+                English
+              </button>
+            </div>
+          </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
             <div className="lg:col-span-8">
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-zinc-900 border border-zinc-800 text-zinc-300 text-xs font-semibold tracking-widest uppercase mb-6">
                 <Lock className="w-3.5 h-3.5 text-zinc-400" />
-                {category.badge}
+                {badge}
               </div>
 
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-heading font-bold text-white tracking-tight leading-[1.1] mb-6">
-                {category.title}
+                {title}
               </h1>
 
               <p className="text-xl sm:text-2xl text-zinc-300 font-light tracking-tight mb-6">
-                {category.tagline}
+                {tagline}
               </p>
 
               <p className="text-base sm:text-lg text-zinc-400 leading-relaxed max-w-3xl mb-10">
-                {category.heroIntro}
+                {heroIntro}
               </p>
 
               <div className="flex flex-wrap items-center gap-4">
@@ -72,7 +113,7 @@ export function PrivateClientCategoryView({ category }: PrivateClientCategoryVie
                   asChild
                 >
                   <a href="#confidential-enquiry">
-                    REQUEST A PRIVATE CLIENT REVIEW
+                    {lang === "ro" ? "SOLICITĂ CONSULTANȚĂ PRIVATĂ" : "REQUEST A PRIVATE CLIENT REVIEW"}
                   </a>
                 </Button>
 
@@ -84,7 +125,7 @@ export function PrivateClientCategoryView({ category }: PrivateClientCategoryVie
                 >
                   <a href={CONTACT.phone.href}>
                     <PhoneCall className="w-4 h-4 mr-2 text-zinc-400" />
-                    DISCREET CALL: {CONTACT.phone.display}
+                    {lang === "ro" ? `APEL DISCRET: ${CONTACT.phone.display}` : `DISCREET CALL: ${CONTACT.phone.display}`}
                   </a>
                 </Button>
               </div>
@@ -94,10 +135,10 @@ export function PrivateClientCategoryView({ category }: PrivateClientCategoryVie
             <div className="lg:col-span-4 bg-zinc-900/50 border border-zinc-800/80 rounded-3xl p-6 lg:p-8 backdrop-blur-sm">
               <h3 className="text-xs uppercase tracking-widest text-zinc-400 font-bold mb-4 flex items-center gap-2">
                 <Layers className="w-4 h-4 text-zinc-400" />
-                Coverage Spectrum
+                {lang === "ro" ? "Spectru de Acoperire" : "Coverage Spectrum"}
               </h3>
               <ul className="space-y-2.5">
-                {category.coverageCategories.map((item, idx) => (
+                {coverageCategories.map((item, idx) => (
                   <li key={idx} className="text-xs sm:text-sm text-zinc-300 flex items-start gap-2.5">
                     <span className="w-1.5 h-1.5 rounded-full bg-zinc-500 mt-2 flex-shrink-0" />
                     <span>{item}</span>
@@ -105,7 +146,9 @@ export function PrivateClientCategoryView({ category }: PrivateClientCategoryVie
                 ))}
               </ul>
               <div className="mt-6 pt-6 border-t border-zinc-800/80 text-[11px] text-zinc-500 leading-normal">
-                Subject to specialist underwriting, territorial scope and policy terms.
+                {lang === "ro"
+                  ? "Sub rezerva analizei tehnice de risc, limitelor teritoriale și condițiilor specifice de poliță."
+                  : "Subject to specialist underwriting, territorial scope, and individual policy wording."}
               </div>
             </div>
           </div>
@@ -117,127 +160,239 @@ export function PrivateClientCategoryView({ category }: PrivateClientCategoryVie
         <div className="container mx-auto px-4 md:px-6 max-w-5xl">
           <div className="max-w-3xl">
             <span className="text-xs uppercase tracking-[0.2em] text-zinc-500 font-bold block mb-3">
-              THE UNDERWRITING PERSPECTIVE
+              {lang === "ro" ? "PERSPECTIVA DE RISC & SUBSGRIERE" : "THE UNDERWRITING PERSPECTIVE"}
             </span>
             <h2 className="text-2xl sm:text-3xl font-heading font-bold text-white mb-6">
-              Why high-value assets require specialized insurance architecture.
+              {lang === "ro" 
+                ? "De ce activele de mare valoare necesită o arhitectură de asigurare dedicată."
+                : "Why high-value assets require specialized insurance architecture."}
             </h2>
             <p className="text-zinc-300 text-base sm:text-lg leading-relaxed mb-6 font-light">
-              {category.longDescription}
+              {longDescription}
             </p>
             <div className="p-5 rounded-2xl bg-zinc-900/80 border border-zinc-800 text-zinc-300 text-xs sm:text-sm leading-relaxed flex items-start gap-3">
               <ShieldCheck className="w-5 h-5 text-zinc-400 flex-shrink-0 mt-0.5" />
               <span>
-                Standard consumer policies operate on standardized depreciated schedules and rigid exclusions. Our Private Client advisory structures bespoke wordings, agreed valuation protocols, and worldwide risk protection tailored to high-profile individual and corporate holdings.
+                {lang === "ro"
+                  ? "Polițele de masă folosesc grile rigide de depreciere și excluderi stricte. Divizia Private Client structurează clauze personalizate, protocoale de valoare agreată și protecție adaptată patrimoniilor complexe."
+                  : "Standard consumer policies operate on depreciated schedules and rigid exclusions. Our Private Client advisory structures bespoke wordings, agreed valuation protocols, and risk protection tailored to high-value holdings."}
               </span>
             </div>
           </div>
         </div>
       </section>
 
-      {/* 3. WHAT CAN BE ASSESSED / UNDERWRITING FACTORS */}
+      {/* 3. TECHNICAL ASSESSMENT CRITERIA */}
       <section className="py-24 border-b border-zinc-800/60 bg-[#0b0d10]">
         <div className="container mx-auto px-4 md:px-6 max-w-6xl">
           <div className="mb-14">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-zinc-900 border border-zinc-800 text-zinc-400 text-xs font-semibold tracking-wider uppercase mb-3">
               <FileText className="w-3.5 h-3.5" />
-              TECHNICAL ASSESSMENT CRITERIA
+              {lang === "ro" ? "CRITERII DE EVALUARE TEHNICĂ" : "TECHNICAL ASSESSMENT CRITERIA"}
             </div>
             <h2 className="text-3xl sm:text-4xl font-heading font-bold text-white tracking-tight mb-4">
-              What Can Be Assessed
+              {lang === "ro" ? "Factori de Risc & Structurare" : "What Can Be Assessed"}
             </h2>
             <p className="text-zinc-400 text-base max-w-2xl">
-              Factors that may be relevant to underwriting and placement include:
+              {lang === "ro"
+                ? "Factori tehnici relevanți în procesul de calibrare și negociere a poliței:"
+                : "Factors that may be relevant to underwriting and risk placement include:"}
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {category.underwritingFactors.map((factor, i) => (
-              <div 
-                key={i} 
-                className="p-8 rounded-3xl bg-zinc-900/40 border border-zinc-800/80 hover:border-zinc-700 transition-all group"
-              >
-                <div className="w-10 h-10 rounded-2xl bg-zinc-800/60 border border-zinc-700/50 flex items-center justify-center text-zinc-300 text-sm font-mono font-bold mb-6 group-hover:bg-zinc-700/60 transition-colors">
-                  0{i + 1}
+            {category.underwritingFactors.map((factor, i) => {
+              const factorTitle = lang === "ro" ? factor.titleRo || factor.title : factor.title;
+              const factorDesc = lang === "ro" ? factor.descriptionRo || factor.description : factor.description;
+              return (
+                <div 
+                  key={i} 
+                  className="p-8 rounded-3xl bg-zinc-900/40 border border-zinc-800/80 hover:border-zinc-700 transition-all group"
+                >
+                  <div className="w-10 h-10 rounded-2xl bg-zinc-800/60 border border-zinc-700/50 flex items-center justify-center text-zinc-300 text-sm font-mono font-bold mb-6 group-hover:bg-zinc-700/60 transition-colors">
+                    0{i + 1}
+                  </div>
+                  <h3 className="text-lg font-heading font-bold text-white mb-3 tracking-tight">
+                    {factorTitle}
+                  </h3>
+                  <p className="text-zinc-400 text-sm leading-relaxed">
+                    {factorDesc}
+                  </p>
                 </div>
-                <h3 className="text-lg font-heading font-bold text-white mb-3 tracking-tight">
-                  {factor.title}
-                </h3>
-                <p className="text-zinc-400 text-sm leading-relaxed">
-                  {factor.description}
-                </p>
-              </div>
-            ))}
+              );
+            })}
           </div>
 
           <div className="mt-8 text-center">
             <p className="text-xs text-zinc-500">
-              * The factors above illustrate typical underwriter review points. Not all factors apply to every risk profile.
+              {lang === "ro"
+                ? "* Criteriile de mai sus ilustrează punctele de evaluare uzuale. Nu toate se aplică fiecărui profil de risc."
+                : "* The factors above illustrate typical underwriter review points. Not all factors apply to every risk profile."}
             </p>
           </div>
         </div>
       </section>
 
-      {/* 4. PRIVATE CLIENT APPROACH & METHODOLOGY */}
-      <section className="py-24 border-b border-zinc-800/60 bg-[#0e1014]">
+      {/* 4. ADVISOR QUESTIONS & CLARIFICATIONS */}
+      {category.advisorQuestions && category.advisorQuestions.length > 0 && (
+        <section className="py-20 border-b border-zinc-800/60 bg-[#0e1014]">
+          <div className="container mx-auto px-4 md:px-6 max-w-5xl">
+            <div className="mb-10">
+              <span className="text-xs uppercase tracking-[0.2em] text-zinc-500 font-bold block mb-2">
+                {lang === "ro" ? "CLAUZE DE CLARIFICAT" : "KEY QUESTIONS TO CLARIFY"}
+              </span>
+              <h2 className="text-2xl sm:text-3xl font-heading font-bold text-white">
+                {lang === "ro" 
+                  ? "Întrebări esențiale înainte de semnarea contractului"
+                  : "Critical points to clarify with your advisor or underwriter"}
+              </h2>
+            </div>
+
+            <div className="space-y-4">
+              {category.advisorQuestions.map((q, idx) => {
+                const qText = lang === "ro" ? q.questionRo || q.question : q.question;
+                const qContext = lang === "ro" ? q.contextRo || q.context : q.context;
+                return (
+                  <div key={idx} className="p-6 rounded-2xl bg-zinc-900/60 border border-zinc-800/80 space-y-2">
+                    <h3 className="text-base font-semibold text-white flex items-start gap-2.5">
+                      <HelpCircle className="w-5 h-5 text-blue-400 shrink-0 mt-0.5" />
+                      <span>{qText}</span>
+                    </h3>
+                    <p className="text-xs sm:text-sm text-zinc-400 pl-7 leading-relaxed">
+                      {qContext}
+                    </p>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* 5. PROCESS & METHODOLOGY */}
+      <section className="py-24 border-b border-zinc-800/60 bg-[#0b0d10]">
         <div className="container mx-auto px-4 md:px-6 max-w-6xl">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-5">
               <span className="text-xs uppercase tracking-[0.2em] text-zinc-500 font-bold block mb-3">
-                ADVISORY METHODOLOGY
+                {lang === "ro" ? "METODOLOGIE DE LUCRU" : "ADVISORY METHODOLOGY"}
               </span>
               <h2 className="text-3xl sm:text-4xl font-heading font-bold text-white tracking-tight mb-6">
-                The Private Client Approach
+                {lang === "ro" ? "Abordarea Private Client" : "The Private Client Approach"}
               </h2>
               <p className="text-zinc-400 text-sm leading-relaxed mb-8">
-                High-value assets often require an individual assessment rather than a standard online quote. We act as your private client advisor, assessing complex multi-jurisdictional risks and placing them directly with specialist syndicates.
+                {lang === "ro"
+                  ? "Activele complexe necesită o analiză individuală discretă. Acționăm ca partener consultativ, negociind clauze speciale direct cu asiguratori specializați."
+                  : "High-value assets require individual evaluation rather than standardized online quoting. We act as your private advisor, negotiating terms directly with specialist syndicates."}
               </p>
 
               <div className="space-y-4">
-                {category.approachPoints.map((pt, i) => (
-                  <div key={i} className="flex gap-4 items-start">
-                    <div className="w-6 h-6 rounded-full bg-zinc-800 text-zinc-300 flex items-center justify-center text-xs font-bold flex-shrink-0 mt-1">
-                      ✓
+                {category.approachPoints.map((pt, i) => {
+                  const ptTitle = lang === "ro" ? pt.titleRo || pt.title : pt.title;
+                  const ptDesc = lang === "ro" ? pt.descriptionRo || pt.description : pt.description;
+                  return (
+                    <div key={i} className="flex gap-4 items-start">
+                      <div className="w-6 h-6 rounded-full bg-zinc-800 text-zinc-300 flex items-center justify-center text-xs font-bold flex-shrink-0 mt-1">
+                        ✓
+                      </div>
+                      <div>
+                        <h4 className="text-white text-sm font-semibold mb-1">{ptTitle}</h4>
+                        <p className="text-zinc-400 text-xs leading-relaxed">{ptDesc}</p>
+                      </div>
                     </div>
-                    <div>
-                      <h4 className="text-white text-sm font-semibold mb-1">{pt.title}</h4>
-                      <p className="text-zinc-400 text-xs leading-relaxed">{pt.description}</p>
-                    </div>
-                  </div>
-                ))}
+                  );
+                })}
               </div>
             </div>
 
             <div className="lg:col-span-7 bg-zinc-900/60 border border-zinc-800 rounded-3xl p-8 lg:p-10">
               <h3 className="text-lg font-heading font-bold text-white mb-6 flex items-center gap-2">
                 <Compass className="w-5 h-5 text-zinc-400" />
-                Advisory & Placement Sequence
+                {lang === "ro" ? "Etapele de Consultanță & Plasare" : "Advisory & Placement Sequence"}
               </h3>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                {privateClientProcess.map((step, idx) => (
-                  <div key={idx} className="p-5 rounded-2xl bg-zinc-950/60 border border-zinc-800/80">
-                    <div className="text-xs font-mono text-zinc-500 font-bold mb-1">STAGE {step.step}</div>
-                    <div className="text-xs font-bold tracking-wider text-zinc-200 uppercase mb-2">{step.name} — {step.title}</div>
-                    <div className="text-xs text-zinc-400 leading-relaxed">{step.desc}</div>
-                  </div>
-                ))}
+                {privateClientProcess.map((step, idx) => {
+                  const stepName = lang === "ro" ? step.nameRo || step.name : step.name;
+                  const stepTitle = lang === "ro" ? step.titleRo || step.title : step.title;
+                  const stepDesc = lang === "ro" ? step.descRo || step.desc : step.desc;
+                  return (
+                    <div key={idx} className="p-5 rounded-2xl bg-zinc-950/60 border border-zinc-800/80">
+                      <div className="text-xs font-mono text-zinc-500 font-bold mb-1">
+                        {lang === "ro" ? `ETAPA ${step.step}` : `STAGE ${step.step}`}
+                      </div>
+                      <div className="text-xs font-bold tracking-wider text-zinc-200 uppercase mb-2">
+                        {stepName} — {stepTitle}
+                      </div>
+                      <div className="text-xs text-zinc-400 leading-relaxed">{stepDesc}</div>
+                    </div>
+                  );
+                })}
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* 5. KEY CONSIDERATIONS */}
+      {/* 6. DOCUMENTATION & COMMON EXCLUSIONS */}
+      <section className="py-20 border-b border-zinc-800/60 bg-[#0e1014]">
+        <div className="container mx-auto px-4 md:px-6 max-w-6xl">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* Documentation */}
+            <div className="p-8 rounded-3xl bg-zinc-900/40 border border-zinc-800 space-y-4">
+              <h3 className="text-lg font-heading font-bold text-white flex items-center gap-2">
+                <FolderCheck className="w-5 h-5 text-blue-400" />
+                {lang === "ro" ? "Documente Uzuale Solicitate" : "Documents Typically Requested"}
+              </h3>
+              <p className="text-xs text-zinc-400">
+                {lang === "ro"
+                  ? "În funcție de activ și compania de asigurare, pot fi solicitate următoarele documente suport:"
+                  : "Depending on the asset and underwriter, the following documentation may be requested:"}
+              </p>
+              <ul className="space-y-2.5 pt-2">
+                {requestedDocs.map((doc, idx) => (
+                  <li key={idx} className="text-xs sm:text-sm text-zinc-300 flex items-start gap-2.5">
+                    <Check className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                    <span>{doc}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Exclusions to check */}
+            <div className="p-8 rounded-3xl bg-zinc-900/40 border border-zinc-800 space-y-4">
+              <h3 className="text-lg font-heading font-bold text-white flex items-center gap-2">
+                <AlertTriangle className="w-5 h-5 text-amber-400" />
+                {lang === "ro" ? "Excluderi Comune de Verificat în Poliță" : "Common Policy Exclusions to Check"}
+              </h3>
+              <p className="text-xs text-zinc-400">
+                {lang === "ro"
+                  ? "Clauze frecvente care necesită verificare atentă în formularea exactă a contractului:"
+                  : "Standard conditions that should be verified in the actual policy wording:"}
+              </p>
+              <ul className="space-y-2.5 pt-2">
+                {commonExclusions.map((ex, idx) => (
+                  <li key={idx} className="text-xs sm:text-sm text-zinc-300 flex items-start gap-2.5">
+                    <span className="w-1.5 h-1.5 rounded-full bg-amber-400 mt-2 shrink-0" />
+                    <span>{ex}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 7. KEY STRUCTURAL CONSIDERATIONS */}
       <section className="py-20 border-b border-zinc-800/60 bg-[#0b0d10]">
         <div className="container mx-auto px-4 md:px-6 max-w-5xl">
           <div className="bg-zinc-900/30 border border-zinc-800 rounded-3xl p-8 md:p-12">
             <h3 className="text-xl md:text-2xl font-heading font-bold text-white mb-6 flex items-center gap-2">
               <Sparkles className="w-5 h-5 text-zinc-300" />
-              Key Structural Considerations
+              {lang === "ro" ? "Considerente Structurale Cheie" : "Key Structural Considerations"}
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {category.keyConsiderations.map((item, idx) => (
+              {keyConsiderations.map((item, idx) => (
                 <div key={idx} className="flex items-start gap-3 p-3.5 rounded-xl bg-zinc-950/40 border border-zinc-800/60">
                   <CheckCircle2 className="w-4 h-4 text-emerald-400 flex-shrink-0 mt-0.5" />
                   <span className="text-xs sm:text-sm text-zinc-300">{item}</span>
@@ -248,80 +403,89 @@ export function PrivateClientCategoryView({ category }: PrivateClientCategoryVie
         </div>
       </section>
 
-      {/* 6. CONFIDENTIAL ENQUIRY SECTION */}
+      {/* 8. CONFIDENTIAL ENQUIRY SECTION */}
       <section id="confidential-enquiry" className="py-24 bg-[#08090b] border-b border-zinc-800/60 relative">
         <div className="container mx-auto px-4 md:px-6 max-w-4xl relative z-10">
           <div className="text-center max-w-2xl mx-auto mb-12">
             <span className="text-xs uppercase tracking-[0.2em] text-zinc-400 font-semibold block mb-2">
-              CONFIDENTIAL RISK REVIEW
+              {lang === "ro" ? "EVALUARE DE RISC CONFIDENȚIALĂ" : "CONFIDENTIAL RISK REVIEW"}
             </span>
             <h2 className="text-3xl sm:text-4xl font-heading font-bold text-white tracking-tight mb-4">
-              Request a Private Client Review
+              {lang === "ro" ? "Solicită o Evaluare Private Client" : "Request a Private Client Review"}
             </h2>
             <p className="text-zinc-400 text-sm leading-relaxed">
-              Discreet, direct advisory consultation for {category.title.toLowerCase()}. Provide details below to initiate assessment.
+              {lang === "ro"
+                ? `Consultanță directă și discretă pentru ${title.toLowerCase()}. Completează detaliile pentru inițierea evaluării.`
+                : `Discreet, direct advisory consultation for ${title.toLowerCase()}. Provide details below to initiate assessment.`}
             </p>
           </div>
 
           <PrivateClientEnquiryForm
-            defaultAssetCategory={category.assetOptions[0]}
-            sourceContext={`Category: ${category.title}`}
+            defaultAssetCategory={assetOptions[0]}
+            sourceContext={`Category: ${title}`}
           />
         </div>
       </section>
 
-      {/* 7. OTHER PRIVATE CLIENT DIVISIONS */}
+      {/* 9. OTHER DIVISIONS */}
       <section className="py-24 bg-[#0b0d10]">
         <div className="container mx-auto px-4 md:px-6 max-w-6xl">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-12">
             <div>
               <span className="text-xs uppercase tracking-[0.2em] text-zinc-500 font-bold block mb-2">
-                PRIVATE CLIENT ECOSYSTEM
+                {lang === "ro" ? "ECOSISTEMUL PRIVATE CLIENT" : "PRIVATE CLIENT ECOSYSTEM"}
               </span>
               <h2 className="text-2xl sm:text-3xl font-heading font-bold text-white tracking-tight">
-                Explore Additional Divisions
+                {lang === "ro" ? "Explorează Celelalte Divizii" : "Explore Additional Divisions"}
               </h2>
             </div>
             <Link 
               href="/private-client" 
               className="mt-4 sm:mt-0 text-xs font-semibold text-zinc-300 hover:text-white uppercase tracking-wider inline-flex items-center gap-1.5"
             >
-              All Divisions <ArrowRight className="w-3.5 h-3.5" />
+              {lang === "ro" ? "Toate Diviziile" : "All Divisions"} <ArrowRight className="w-3.5 h-3.5" />
             </Link>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {otherCategories.slice(0, 4).map((c) => (
-              <Link
-                key={c.slug}
-                href={`/private-client/${c.slug}`}
-                className="p-6 rounded-2xl bg-zinc-900/50 border border-zinc-800/80 hover:border-zinc-700 hover:bg-zinc-900 transition-all flex flex-col justify-between group"
-              >
-                <div>
-                  <span className="text-[10px] uppercase tracking-widest text-zinc-500 font-semibold block mb-2">
-                    {c.badge}
-                  </span>
-                  <h3 className="text-base font-heading font-bold text-white group-hover:text-zinc-200 transition-colors mb-2">
-                    {c.title}
-                  </h3>
-                  <p className="text-xs text-zinc-400 line-clamp-2 leading-relaxed">
-                    {c.heroIntro}
-                  </p>
-                </div>
-                <div className="mt-6 pt-4 border-t border-zinc-800/60 flex items-center justify-between text-xs text-zinc-400 group-hover:text-white transition-colors">
-                  <span>Explore division</span>
-                  <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
-                </div>
-              </Link>
-            ))}
+            {otherCategories.slice(0, 4).map((c) => {
+              const cTitle = lang === "ro" ? c.titleRo || c.title : c.title;
+              const cBadge = lang === "ro" ? c.badgeRo || c.badge : c.badge;
+              const cIntro = lang === "ro" ? c.heroIntroRo || c.heroIntro : c.heroIntro;
+              return (
+                <Link
+                  key={c.slug}
+                  href={`/private-client/${c.slug}`}
+                  className="p-6 rounded-2xl bg-zinc-900/50 border border-zinc-800/80 hover:border-zinc-700 hover:bg-zinc-900 transition-all flex flex-col justify-between group"
+                >
+                  <div>
+                    <span className="text-[10px] uppercase tracking-widest text-zinc-500 font-semibold block mb-2">
+                      {cBadge}
+                    </span>
+                    <h3 className="text-base font-heading font-bold text-white group-hover:text-zinc-200 transition-colors mb-2">
+                      {cTitle}
+                    </h3>
+                    <p className="text-xs text-zinc-400 line-clamp-2 leading-relaxed">
+                      {cIntro}
+                    </p>
+                  </div>
+                  <div className="mt-6 pt-4 border-t border-zinc-800/60 flex items-center justify-between text-xs text-zinc-400 group-hover:text-white transition-colors">
+                    <span>{lang === "ro" ? "Vezi divizia" : "Explore division"}</span>
+                    <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
+                  </div>
+                </Link>
+              );
+            })}
           </div>
         </div>
       </section>
 
-      {/* 8. LEGAL & COMPLIANCE FOOTNOTE */}
+      {/* 10. LEGAL & COMPLIANCE FOOTNOTE */}
       <div className="py-8 bg-black border-t border-zinc-900 text-center text-[11px] text-zinc-600 px-4">
         <div className="max-w-4xl mx-auto leading-relaxed">
-          Coverage, eligibility, limits, exclusions and availability are subject to underwriting, policy terms and applicable requirements. Private Client is an advisory and placement division of Cristian Văduva Insurance Advisory (insurance.cristianvaduva.com). We do not provide self-underwritten binding authority; all quotations and risk acceptances are subject to authorized underwriting market review.
+          {lang === "ro"
+            ? "Acoperirea, eligibilitatea, limitele, excluderile și disponibilitatea fac obiectul analizei tehnice de subscriere, termenilor de poliță și cerințelor aplicabile. Private Client este o divizie consultativă a Cristian Văduva Asigurări (insurance.cristianvaduva.com). Cotațiile finale și acceptarea riscurilor sunt supuse aprobării asiguratorilor autorizați parteneri."
+            : "Coverage, eligibility, limits, exclusions, and availability are subject to underwriting, policy terms, and applicable requirements. Private Client is an advisory division of Cristian Văduva Insurance Advisory (insurance.cristianvaduva.com). Final quotations and risk acceptances are subject to authorized underwriting market review."}
         </div>
       </div>
     </div>

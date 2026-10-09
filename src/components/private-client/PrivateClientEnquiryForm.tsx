@@ -106,8 +106,8 @@ export function PrivateClientEnquiryForm({
 
       if (response.ok && data.success) {
         setStatus("success");
-        if (typeof window !== "undefined" && (window as unknown as { gtag?: Function }).gtag) {
-          (window as unknown as { gtag: Function }).gtag("event", "private_client_enquiry_success", {
+        if (typeof window !== "undefined" && (window as unknown as { gtag?: (...args: unknown[]) => void }).gtag) {
+          (window as unknown as { gtag: (...args: unknown[]) => void }).gtag("event", "private_client_enquiry_success", {
             category: assetCategory,
             source: sourceContext
           });

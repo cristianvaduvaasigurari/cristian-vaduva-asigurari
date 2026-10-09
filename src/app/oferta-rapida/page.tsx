@@ -21,6 +21,15 @@ export default function ExpressOfferPage() {
         </div>
 
         <ExpressOffer />
+
+        <div className="mt-16 text-center">
+          <p className="text-sm text-muted-foreground">
+            Ai deja o poliță în vigoare și dorești un audit independent al termenilor și franșizelor?{" "}
+            <a href="/verifica-polita" className="text-blue-600 font-medium hover:underline inline-flex items-center gap-1">
+              Verifică polița existentă &rarr;
+            </a>
+          </p>
+        </div>
       </div>
     </main>
   );
