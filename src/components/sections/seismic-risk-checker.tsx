@@ -162,7 +162,7 @@ export function SeismicRiskChecker() {
       
       {/* HEADER HERO BANNER */}
       <div className="relative rounded-3xl overflow-hidden border border-zinc-800/80 bg-zinc-900/60 p-6 sm:p-10 backdrop-blur-md">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute top-0 right-0 w-96 h-96 bg-[radial-gradient(circle_at_top_right,_rgba(245,158,11,0.12)_0%,_transparent_70%)] pointer-events-none" />
 
         <div className="relative z-10 space-y-6">
           <div className="flex flex-wrap items-center justify-between gap-4">

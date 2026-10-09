@@ -77,3 +77,33 @@ body {
   background: #0071e3;
   color: #ffffff;
 }
+
+/* ─── Mobile Navigation Drawer Isolation ─── */
+#mobile-nav-menu {
+  background-color: #ffffff !important;
+  color: #09090b !important;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+}
+
+#mobile-nav-menu button,
+#mobile-nav-menu .drawer-accordion-btn,
+#mobile-nav-menu .drawer-nav-link {
+  color: #09090b !important;
+}
+
+#mobile-nav-menu .drawer-nav-sublink {
+  color: #27272a !important;
+}
+
+#mobile-nav-menu .drawer-nav-sublink:hover,
+#mobile-nav-menu .drawer-nav-sublink:active {
+  color: #2563eb !important;
+  background-color: #f4f4f5 !important;
+}
+
+#mobile-nav-menu .drawer-sub-group {
+  background-color: #f8fafc !important;
+  border-color: #e2e8f0 !important;
+}
+

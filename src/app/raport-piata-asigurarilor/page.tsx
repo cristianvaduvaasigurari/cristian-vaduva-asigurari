@@ -57,8 +57,8 @@ export default function RaportPiataAsigurarilorPage() {
       <Navbar />
 
       <main className="flex-1 pt-32 pb-24 relative overflow-hidden">
-        {/* Ambient Subtle Glow matching Insurance design */}
-        <div className="absolute top-20 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-blue-600/10 rounded-full blur-[160px] pointer-events-none" />
+        {/* Ambient Subtle Glow - Hardware accelerated radial gradient */}
+        <div className="absolute top-20 left-1/2 -translate-x-1/2 w-[600px] sm:w-[800px] h-[400px] sm:h-[500px] bg-[radial-gradient(ellipse_at_center,_rgba(37,99,235,0.12)_0%,_transparent_70%)] pointer-events-none" />
 
         <div className="container mx-auto px-4 sm:px-6 relative z-10 max-w-6xl">
           <script

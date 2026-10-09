@@ -43,8 +43,8 @@ export default function HartaRiscSeismicBucurestiPage() {
       <Navbar />
 
       <main className="flex-1 pt-32 pb-24 relative overflow-hidden">
-        {/* Subtle Ambient Glow */}
-        <div className="absolute top-20 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-amber-500/10 rounded-full blur-[160px] pointer-events-none" />
+        {/* Subtle Ambient Glow - Hardware accelerated radial gradient */}
+        <div className="absolute top-20 left-1/2 -translate-x-1/2 w-[600px] sm:w-[800px] h-[400px] sm:h-[500px] bg-[radial-gradient(ellipse_at_center,_rgba(245,158,11,0.12)_0%,_transparent_70%)] pointer-events-none" />
 
         <div className="container mx-auto px-4 sm:px-6 relative z-10 max-w-6xl">
           <script
