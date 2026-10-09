@@ -185,16 +185,16 @@ export function Navbar() {
       <div
         className={cn(
           "transition-all duration-300 border-b",
-          isScrolled
-            ? "bg-white/95 backdrop-blur-xl border-border/50 shadow-sm py-3"
-            : "bg-transparent border-transparent py-4"
+          isScrolled || isMobileMenuOpen
+            ? "bg-white/95 backdrop-blur-xl border-zinc-200/80 shadow-sm py-3"
+            : "bg-white/90 md:bg-white/80 backdrop-blur-md border-zinc-200/60 shadow-xs py-3 md:py-3.5"
         )}
       >
         <div className="container mx-auto px-4 md:px-6">
           <div className="flex items-center justify-between">
             <div className="flex flex-col items-start justify-center gap-0.5 relative z-50">
-              <Link href="/" className="font-heading font-bold text-xl tracking-tight leading-none text-foreground flex items-center hover:text-foreground transition-colors">
-                <Home className="w-5 h-5 mr-1" />
+              <Link href="/" className="font-heading font-bold text-xl tracking-tight leading-none text-zinc-900 flex items-center hover:text-blue-600 transition-colors">
+                <Home className="w-5 h-5 mr-1 text-blue-600" />
                 Insurance
               </Link>
             </div>
@@ -246,23 +246,23 @@ export function Navbar() {
 
             {/* Mega Menu Trigger: Asigurări */}
             <div className="group relative">
-              <button type="button" aria-expanded="false" aria-haspopup="true" className="flex items-center gap-1 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors py-4">
+              <button type="button" aria-expanded="false" aria-haspopup="true" className="flex items-center gap-1 text-sm font-medium text-zinc-700 hover:text-zinc-950 transition-colors py-4">
                 Asigurări
                 <ChevronDown className="w-4 h-4 transition-transform group-hover:rotate-180" />
               </button>
               {/* Mega Menu Dropdown */}
-              <div className="absolute top-full left-1/2 -translate-x-1/2 w-[900px] bg-white border border-border/50 shadow-2xl rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform origin-top translate-y-4 group-hover:translate-y-0 p-8">
+              <div className="absolute top-full left-1/2 -translate-x-1/2 w-[900px] bg-white border border-zinc-200/80 shadow-2xl rounded-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform origin-top translate-y-4 group-hover:translate-y-0 p-8">
                 <div className="grid grid-cols-4 gap-8">
                   {megaMenuData.map((col, i) => (
                     <div key={i} className="flex flex-col">
-                      <div className="flex flex-col items-start mb-4 pb-4 border-b border-border/50">
+                      <div className="flex flex-col items-start mb-4 pb-4 border-b border-zinc-100">
                         {col.icon}
-                        <h4 className="font-bold text-foreground text-sm tracking-tight">{col.title}</h4>
+                        <h4 className="font-bold text-zinc-900 text-sm tracking-tight">{col.title}</h4>
                       </div>
                       <ul className="space-y-3">
                         {col.items.map((item, j) => (
                           <li key={j}>
-                            <Link href={item.href} className="text-sm text-muted-foreground hover:text-blue-600 transition-colors block">
+                            <Link href={item.href} className="text-sm text-zinc-600 hover:text-blue-600 transition-colors block">
                               {item.name}
                             </Link>
                           </li>
@@ -271,9 +271,9 @@ export function Navbar() {
                     </div>
                   ))}
                 </div>
-                <div className="mt-8 pt-6 border-t border-border/50 flex justify-between items-center bg-muted/30 -mx-8 -mb-8 p-6 rounded-b-3xl">
-                  <div className="text-sm text-muted-foreground">
-                    <span className="font-bold text-foreground">Nu ești sigur ce să alegi?</span> Încearcă noul Recomandă-mi Asigurarea Potrivită.
+                <div className="mt-8 pt-6 border-t border-zinc-100 flex justify-between items-center bg-zinc-50/80 -mx-8 -mb-8 p-6 rounded-b-2xl">
+                  <div className="text-sm text-zinc-600">
+                    <span className="font-bold text-zinc-900">Nu ești sigur ce să alegi?</span> Încearcă noul Recomandă-mi Asigurarea Potrivită.
                   </div>
                   <Button className="bg-blue-600 hover:bg-blue-700 rounded-full" asChild>
                     <Link href="/advisor">Deschide Recomandă-mi Asigurarea Potrivită</Link>
@@ -284,15 +284,15 @@ export function Navbar() {
 
             {/* Credits Dropdown */}
             <div className="group relative">
-              <button type="button" aria-expanded="false" aria-haspopup="true" className="flex items-center gap-1 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors py-4">
+              <button type="button" aria-expanded="false" aria-haspopup="true" className="flex items-center gap-1 text-sm font-medium text-zinc-700 hover:text-zinc-950 transition-colors py-4">
                 Credite
                 <ChevronDown className="w-4 h-4 transition-transform group-hover:rotate-180" />
               </button>
-              <div className="absolute top-full left-1/2 -translate-x-1/2 w-[600px] bg-white border border-border/50 shadow-2xl rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform origin-top translate-y-4 group-hover:translate-y-0 p-6">
+              <div className="absolute top-full left-1/2 -translate-x-1/2 w-[600px] bg-white border border-zinc-200/80 shadow-2xl rounded-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform origin-top translate-y-4 group-hover:translate-y-0 p-6">
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                   {/* 🏠 Locuință */}
                   <div>
-                    <h4 className="font-semibold text-foreground mb-2">🏠 Locuință</h4>
+                    <h4 className="font-semibold text-zinc-900 mb-2">🏠 Locuință</h4>
                     <ul className="space-y-1">
                       {creditsMenuLinks.filter(i => [
                         "Credit Ipotecar",
@@ -302,7 +302,7 @@ export function Navbar() {
                         "Credit Verde"
                       ].includes(i.name)).map((item, i) => (
                         <li key={i}>
-                          <Link href={item.href} className="block text-sm text-muted-foreground hover:text-foreground transition-colors">
+                          <Link href={item.href} className="block text-sm text-zinc-600 hover:text-blue-600 transition-colors">
                             {item.name}
                           </Link>
                         </li>
@@ -311,7 +311,7 @@ export function Navbar() {
                   </div>
                   {/* 💼 Investiții & Business */}
                   <div>
-                    <h4 className="font-semibold text-foreground mb-2">💼 Investiții & Business</h4>
+                    <h4 className="font-semibold text-zinc-900 mb-2">💼 Investiții & Business</h4>
                     <ul className="space-y-1">
                       {creditsMenuLinks.filter(i => [
                         "Credit pentru Investiții Imobiliare",
@@ -319,7 +319,7 @@ export function Navbar() {
                         "Consolidare Credite"
                       ].includes(i.name)).map((item, i) => (
                         <li key={i}>
-                          <Link href={item.href} className="block text-sm text-muted-foreground hover:text-foreground transition-colors">
+                          <Link href={item.href} className="block text-sm text-zinc-600 hover:text-blue-600 transition-colors">
                             {item.name}
                           </Link>
                         </li>
@@ -328,14 +328,14 @@ export function Navbar() {
                   </div>
                   {/* 📊 Informații utile */}
                   <div>
-                    <h4 className="font-semibold text-foreground mb-2">📊 Informații utile</h4>
+                    <h4 className="font-semibold text-zinc-900 mb-2">📊 Informații utile</h4>
                     <ul className="space-y-1">
                       {creditsMenuLinks.filter(i => [
                         "Compară Bănci",
                         "De ce să lucrezi cu un Broker de Credite"
                       ].includes(i.name)).map((item, i) => (
                         <li key={i}>
-                          <Link href={item.href} className="block text-sm text-muted-foreground hover:text-foreground transition-colors">
+                          <Link href={item.href} className="block text-sm text-zinc-600 hover:text-blue-600 transition-colors">
                             {item.name}
                           </Link>
                         </li>
@@ -344,14 +344,14 @@ export function Navbar() {
                   </div>
                   {/* ❓ Suport */}
                   <div>
-                    <h4 className="font-semibold text-foreground mb-2">❓ Suport</h4>
+                    <h4 className="font-semibold text-zinc-900 mb-2">❓ Suport</h4>
                     <ul className="space-y-1">
                       {creditsMenuLinks.filter(i => [
                         "Întrebări Frecvente",
                         "Contact Broker Credite"
                       ].includes(i.name)).map((item, i) => (
                         <li key={i}>
-                          <Link href={item.href} className="block text-sm text-muted-foreground hover:text-foreground transition-colors">
+                          <Link href={item.href} className="block text-sm text-zinc-600 hover:text-blue-600 transition-colors">
                             {item.name}
                           </Link>
                         </li>
@@ -363,21 +363,21 @@ export function Navbar() {
             </div>
 
             <div className="group relative">
-              <button type="button" aria-expanded="false" aria-haspopup="true" className="flex items-center gap-1 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors py-4">
+              <button type="button" aria-expanded="false" aria-haspopup="true" className="flex items-center gap-1 text-sm font-medium text-zinc-700 hover:text-zinc-950 transition-colors py-4">
                 Ecosistem AiX
                 <ChevronDown className="w-4 h-4 transition-transform group-hover:rotate-180" />
               </button>
-              <div className="absolute top-full left-1/2 -translate-x-1/2 w-[900px] bg-white border border-border/50 shadow-2xl rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform origin-top translate-y-4 group-hover:translate-y-0 p-8 z-50">
+              <div className="absolute top-full left-1/2 -translate-x-1/2 w-[900px] bg-white border border-zinc-200/80 shadow-2xl rounded-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform origin-top translate-y-4 group-hover:translate-y-0 p-8 z-50">
                 <div className="grid grid-cols-4 gap-8">
                   {ecosystemMenuData.map((col, i) => (
                     <div key={i} className="flex flex-col">
-                      <div className="flex flex-col items-start mb-4 pb-4 border-b border-border/50">
-                        <h4 className="font-bold text-foreground text-sm tracking-tight">{col.title}</h4>
+                      <div className="flex flex-col items-start mb-4 pb-4 border-b border-zinc-100">
+                        <h4 className="font-bold text-zinc-900 text-sm tracking-tight">{col.title}</h4>
                       </div>
                       <ul className="space-y-3">
                         {col.items.map((item, j) => (
                           <li key={j}>
-                            <Link href={item.href} className="text-sm text-muted-foreground hover:text-blue-600 transition-colors block">
+                            <Link href={item.href} className="text-sm text-zinc-600 hover:text-blue-600 transition-colors block">
                               {item.name}
                             </Link>
                           </li>
@@ -391,23 +391,23 @@ export function Navbar() {
 
             <Link
               href="/stiri"
-              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors py-4 inline-flex items-center gap-1.5"
+              className="text-sm font-medium text-zinc-700 hover:text-zinc-950 transition-colors py-4 inline-flex items-center gap-1.5"
             >
               <span>Intelligence</span>
-              <span className="text-[10px] font-bold px-1.5 py-0.2 rounded bg-amber-500/10 text-amber-600 border border-amber-500/20">
+              <span className="text-[10px] font-bold px-1.5 py-0.2 rounded bg-amber-500/10 text-amber-700 border border-amber-500/20">
                 Știri
               </span>
             </Link>
           </nav>
 
           <div className="hidden md:flex items-center gap-3">
-            <Button variant="outline" className="rounded-full border-border hover:bg-muted" asChild>
+            <Button variant="outline" className="rounded-full border-zinc-300 text-zinc-800 hover:bg-zinc-100" asChild>
               <Link href="/gap-analyzer">Gap Analyzer</Link>
             </Button>
-            <Button variant="outline" className="rounded-full border-border hover:bg-muted" asChild>
+            <Button variant="outline" className="rounded-full border-zinc-300 text-zinc-800 hover:bg-zinc-100" asChild>
               <Link href="/calculatoare">Calculatoare</Link>
             </Button>
-            <Button className="rounded-full bg-foreground text-background hover:bg-foreground/90 font-semibold shadow-xl" asChild>
+            <Button className="rounded-full bg-zinc-900 text-white hover:bg-black font-semibold shadow-md" asChild>
               <Link href="/oferta-rapida">Ofertă Rapidă</Link>
             </Button>
           </div>
@@ -418,11 +418,11 @@ export function Navbar() {
             aria-label="Toggle mobile navigation menu"
             aria-expanded={isMobileMenuOpen}
             aria-controls="mobile-nav-menu"
-            className="md:hidden flex items-center justify-center w-12 h-12 p-2 text-foreground bg-transparent relative z-60 cursor-pointer"
+            className="md:hidden flex items-center justify-center w-11 h-11 p-2 text-zinc-900 hover:text-blue-600 bg-zinc-100 hover:bg-zinc-200/80 rounded-xl relative z-60 cursor-pointer transition-colors border border-zinc-200/80"
             ref={buttonRef}
             onClick={(e) => { e.stopPropagation(); setIsMobileMenuOpen(prev => !prev); }}
           >
-            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            {isMobileMenuOpen ? <X size={24} className="text-zinc-900" /> : <Menu size={24} className="text-zinc-900" />}
           </button>
           
         </div>
@@ -438,58 +438,91 @@ export function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "100vh" }}
             exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0 }}
-            className="fixed top-0 left-0 right-0 bottom-0 bg-white z-40 overflow-y-auto pt-24 pb-24 px-4"
+            transition={{ duration: 0.15 }}
+            className="fixed inset-0 bg-white text-zinc-900 z-40 overflow-y-auto pt-24 pb-28 px-4 sm:px-6 overscroll-contain shadow-2xl"
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-3 max-w-lg mx-auto">
               {/* Private Client Mobile Accordion */}
-              <div className="flex flex-col border-b border-border/50">
+              <div className="flex flex-col border-b border-zinc-200/80 pb-1">
                 <button
                   type="button"
                   aria-expanded={activeMobileMegaMenu === 4}
-                  className="text-2xl font-bold p-2 text-left flex justify-between items-center text-zinc-900"
+                  className="text-lg sm:text-xl font-bold p-2 text-left flex justify-between items-center text-zinc-900 hover:text-blue-600 transition-colors"
                   onClick={() => setActiveMobileMegaMenu(activeMobileMegaMenu === 4 ? null : 4)}
                 >
-                  <span className="flex items-center gap-2">
+                  <span className="flex items-center gap-2 text-zinc-900">
                     Private Client
                     <span className="text-[10px] font-mono uppercase px-2 py-0.5 rounded bg-zinc-900 text-white font-semibold">Division</span>
                   </span>
-                  <ChevronDown className={cn("w-6 h-6 transition-transform", activeMobileMegaMenu === 4 ? "rotate-180" : "")} />
+                  <ChevronDown className={cn("w-5 h-5 text-zinc-500 transition-transform", activeMobileMegaMenu === 4 ? "rotate-180 text-zinc-900" : "")} />
                 </button>
                 {activeMobileMegaMenu === 4 && (
-                  <div className="pl-4 pb-4 flex flex-col gap-2 bg-[#0c0e12] text-white p-4 rounded-2xl my-2">
-                    <Link href="/private-client" onClick={() => setIsMobileMenuOpen(false)} className="text-sm font-bold text-zinc-200 py-1.5 border-b border-zinc-800 flex justify-between items-center">
+                  <div className="pl-3 pb-3 flex flex-col gap-2 bg-[#0c0e12] text-white p-4 rounded-2xl my-2 border border-zinc-800">
+                    <Link href="/private-client" onClick={() => setIsMobileMenuOpen(false)} className="text-sm font-bold text-zinc-200 py-1.5 border-b border-zinc-800 flex justify-between items-center hover:text-white">
                       <span>Division Overview</span>
                       <span>→</span>
                     </Link>
                     {privateClientMenuLinks.map((item, i) => (
-                      <Link key={i} href={item.href} onClick={() => setIsMobileMenuOpen(false)} className="text-sm text-zinc-300 py-1 pl-2 hover:text-white flex justify-between items-center">
+                      <Link key={i} href={item.href} onClick={() => setIsMobileMenuOpen(false)} className="text-sm text-zinc-300 py-1.5 pl-2 hover:text-white flex justify-between items-center rounded-lg hover:bg-zinc-900">
                         <span>{item.name}</span>
-                        <span className="text-[10px] text-zinc-500">{item.badge}</span>
+                        <span className="text-[10px] text-zinc-400 bg-zinc-800/80 px-2 py-0.5 rounded">{item.badge}</span>
                       </Link>
                     ))}
-                    <Link href="/private-client/enquiry" onClick={() => setIsMobileMenuOpen(false)} className="mt-2 text-xs font-bold text-center py-2.5 rounded-xl bg-white text-zinc-950">
+                    <Link href="/private-client/enquiry" onClick={() => setIsMobileMenuOpen(false)} className="mt-2 text-xs font-bold text-center py-2.5 rounded-xl bg-white text-zinc-950 hover:bg-zinc-200 transition-colors">
                       Start Confidential Enquiry
                     </Link>
                   </div>
                 )}
               </div>
-              {/* Credits Mobile Accordion */}
-              <div className="flex flex-col border-b border-border/50">
+
+              {/* Asigurări Mobile Accordion */}
+              <div className="flex flex-col border-b border-zinc-200/80 pb-1">
+                <button
+                  type="button"
+                  aria-expanded={activeMobileMegaMenu === 1}
+                  className="text-lg sm:text-xl font-bold p-2 text-left flex justify-between items-center text-zinc-900 hover:text-blue-600 transition-colors"
+                  onClick={() => setActiveMobileMegaMenu(activeMobileMegaMenu === 1 ? null : 1)}
+                >
+                  <span className="text-zinc-900">Asigurări</span>
+                  <ChevronDown className={cn("w-5 h-5 text-zinc-500 transition-transform", activeMobileMegaMenu === 1 ? "rotate-180 text-zinc-900" : "")} />
+                </button>
+                {activeMobileMegaMenu === 1 && (
+                  <div className="pl-2 pb-3 flex flex-col gap-4 bg-zinc-50/80 border border-zinc-200/80 p-4 rounded-2xl my-2">
+                    {megaMenuData.map((col, i) => (
+                      <div key={i} className="flex flex-col gap-1.5">
+                        <h4 className="font-bold text-xs uppercase tracking-wider text-blue-700 flex items-center gap-1.5 mt-1">
+                          {col.icon}
+                          {col.title}
+                        </h4>
+                        <div className="flex flex-col gap-1 pl-2">
+                          {col.items.map((item, j) => (
+                            <Link key={j} href={item.href} onClick={() => setIsMobileMenuOpen(false)} className="text-sm font-medium text-zinc-700 hover:text-blue-600 hover:bg-white py-1.5 px-2.5 rounded-lg transition-colors block">
+                              {item.name}
+                            </Link>
+                          ))}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+
+              {/* Credite Mobile Accordion */}
+              <div className="flex flex-col border-b border-zinc-200/80 pb-1">
                 <button
                   type="button"
                   aria-expanded={activeMobileMegaMenu === 3}
-                  className="text-2xl font-bold p-2 text-left flex justify-between items-center"
+                  className="text-lg sm:text-xl font-bold p-2 text-left flex justify-between items-center text-zinc-900 hover:text-blue-600 transition-colors"
                   onClick={() => setActiveMobileMegaMenu(activeMobileMegaMenu === 3 ? null : 3)}
                 >
-                  Credite
-                  <ChevronDown className={cn("w-6 h-6 transition-transform", activeMobileMegaMenu === 3 ? "rotate-180" : "")} />
+                  <span className="text-zinc-900">Credite</span>
+                  <ChevronDown className={cn("w-5 h-5 text-zinc-500 transition-transform", activeMobileMegaMenu === 3 ? "rotate-180 text-zinc-900" : "")} />
                 </button>
                 {activeMobileMegaMenu === 3 && (
-                  <div className="pl-4 pb-4 flex flex-col gap-3">
+                  <div className="pl-2 pb-3 flex flex-col gap-1.5 bg-zinc-50/80 border border-zinc-200/80 p-4 rounded-2xl my-2">
                     {creditsMenuLinks.map((item, i) => (
-                      <Link key={i} href={item.href} onClick={() => setIsMobileMenuOpen(false)} className="text-base text-muted-foreground py-1 pl-7">
+                      <Link key={i} href={item.href} onClick={() => setIsMobileMenuOpen(false)} className="text-sm font-medium text-zinc-700 hover:text-blue-600 hover:bg-white py-1.5 px-2.5 rounded-lg transition-colors block">
                         {item.name}
                       </Link>
                     ))}
@@ -497,87 +530,59 @@ export function Navbar() {
                 )}
               </div>
 
-              {/* Asigurări Mobile Accordion */}
-              <div className="flex flex-col border-b border-border/50">
-                <button
-                  type="button"
-                  aria-expanded={activeMobileMegaMenu === 1}
-                  className="text-2xl font-bold p-2 text-left flex justify-between items-center"
-                  onClick={() => setActiveMobileMegaMenu(activeMobileMegaMenu === 1 ? null : 1)}
-                >
-                  Asigurări
-                  <ChevronDown className={cn("w-6 h-6 transition-transform", activeMobileMegaMenu === 1 ? "rotate-180" : "")} />
-                </button>
-                {activeMobileMegaMenu === 1 && (
-                  <div className="pl-4 pb-4 flex flex-col gap-6">
-                    {megaMenuData.map((col, i) => (
-                      <div key={i} className="flex flex-col gap-2">
-                        <h4 className="font-bold text-blue-600 flex items-center gap-2 mt-2">{col.icon} {col.title}</h4>
-                        {col.items.map((item, j) => (
-                          <Link key={j} href={item.href} onClick={() => setIsMobileMenuOpen(false)} className="text-base text-muted-foreground py-1 pl-7">
-                            {item.name}
-                          </Link>
-                        ))}
-                      </div>
-                    ))}
-                  </div>
-                )}
-              </div>
-
               {/* Ecosistem AiX Mobile Accordion */}
-              <div className="flex flex-col border-b border-border/50">
+              <div className="flex flex-col border-b border-zinc-200/80 pb-1">
                 <button
                   type="button"
                   aria-expanded={activeMobileMegaMenu === 2}
-                  className="text-2xl font-bold p-2 text-left flex justify-between items-center"
+                  className="text-lg sm:text-xl font-bold p-2 text-left flex justify-between items-center text-zinc-900 hover:text-blue-600 transition-colors"
                   onClick={() => setActiveMobileMegaMenu(activeMobileMegaMenu === 2 ? null : 2)}
                 >
-                  Ecosistem AiX
-                  <ChevronDown className={cn("w-6 h-6 transition-transform", activeMobileMegaMenu === 2 ? "rotate-180" : "")} />
+                  <span className="text-zinc-900">Ecosistem AiX</span>
+                  <ChevronDown className={cn("w-5 h-5 text-zinc-500 transition-transform", activeMobileMegaMenu === 2 ? "rotate-180 text-zinc-900" : "")} />
                 </button>
                 {activeMobileMegaMenu === 2 && (
-                  <div className="pl-4 pb-4 flex flex-col gap-6 bg-slate-50/50 p-4 rounded-2xl">
+                  <div className="pl-2 pb-3 flex flex-col gap-4 bg-zinc-50/80 border border-zinc-200/80 p-4 rounded-2xl my-2">
                     {ecosystemMenuData.map((col, i) => (
-                      <div key={i} className="flex flex-col gap-2">
-                        <h4 className="font-bold text-xs text-slate-400 uppercase tracking-widest mt-2">{col.title}</h4>
-                        {col.items.map((item, j) => (
-                          <Link key={j} href={item.href} onClick={() => setIsMobileMenuOpen(false)} className="text-base text-slate-800 py-1 font-semibold">
-                            {item.name}
-                          </Link>
-                        ))}
+                      <div key={i} className="flex flex-col gap-1.5">
+                        <h4 className="font-bold text-xs text-zinc-500 uppercase tracking-widest mt-1">{col.title}</h4>
+                        <div className="flex flex-col gap-1 pl-2">
+                          {col.items.map((item, j) => (
+                            <Link key={j} href={item.href} onClick={() => setIsMobileMenuOpen(false)} className="text-sm font-semibold text-zinc-800 hover:text-blue-600 hover:bg-white py-1.5 px-2.5 rounded-lg transition-colors block">
+                              {item.name}
+                            </Link>
+                          ))}
+                        </div>
                       </div>
                     ))}
                   </div>
                 )}
               </div>
 
-              {/* De Ce Asigurări Link */}
-              <Link href="/de-ce-asigurari" onClick={() => setIsMobileMenuOpen(false)} className="text-2xl font-bold p-2 border-b border-border/50">
+              {/* Standalone Links */}
+              <Link href="/de-ce-asigurari" onClick={() => setIsMobileMenuOpen(false)} className="text-lg sm:text-xl font-bold p-2 border-b border-zinc-200/80 text-zinc-900 hover:text-blue-600 transition-colors block">
                 De Ce Asigurări
               </Link>
 
-              {/* Real Estate Link */}
-              <Link href="/real-estate" onClick={() => setIsMobileMenuOpen(false)} className="text-2xl font-bold p-2 border-b border-border/50">
+              <Link href="/real-estate" onClick={() => setIsMobileMenuOpen(false)} className="text-lg sm:text-xl font-bold p-2 border-b border-zinc-200/80 text-zinc-900 hover:text-blue-600 transition-colors block">
                 Real Estate
               </Link>
 
-              {/* Despre Mine Link */}
-              <Link href="/despre-mine" onClick={() => setIsMobileMenuOpen(false)} className="text-2xl font-bold p-2 border-b border-border/50">
+              <Link href="/despre-mine" onClick={() => setIsMobileMenuOpen(false)} className="text-lg sm:text-xl font-bold p-2 border-b border-zinc-200/80 text-zinc-900 hover:text-blue-600 transition-colors block">
                 Despre Mine
               </Link>
 
-              {/* Insurance Intelligence Link */}
-              <Link href="/stiri" onClick={() => setIsMobileMenuOpen(false)} className="text-2xl font-bold p-2 border-b border-border/50 flex items-center justify-between text-amber-600">
+              <Link href="/stiri" onClick={() => setIsMobileMenuOpen(false)} className="text-lg sm:text-xl font-bold p-2 border-b border-zinc-200/80 flex items-center justify-between text-amber-700 hover:text-amber-800 transition-colors">
                 <span>Insurance Intelligence</span>
-                <span className="text-xs font-semibold px-2 py-0.5 rounded-full bg-amber-500/10 text-amber-600 border border-amber-500/20">Știri</span>
+                <span className="text-xs font-semibold px-2 py-0.5 rounded-full bg-amber-500/10 text-amber-700 border border-amber-500/20">Știri</span>
               </Link>
 
               {/* Action Buttons */}
-              <div className="flex flex-col gap-3 mt-8">
-                <Button variant="outline" className="w-full h-14 text-lg justify-center rounded-full border-blue-500 text-blue-600 font-medium" asChild>
+              <div className="flex flex-col gap-3 mt-6 pt-2">
+                <Button variant="outline" className="w-full h-12 text-base justify-center rounded-xl border-2 border-blue-600 text-blue-600 hover:bg-blue-50 font-bold shadow-xs" asChild>
                   <Link href="/oferta-rapida" onClick={() => setIsMobileMenuOpen(false)}>Ofertă Rapidă</Link>
                 </Button>
-                <Button className="w-full h-14 text-lg justify-center rounded-full bg-blue-600 hover:bg-blue-700 text-white font-semibold shadow-lg" asChild>
+                <Button className="w-full h-12 text-base justify-center rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold shadow-md" asChild>
                   <Link href="/contact" onClick={() => setIsMobileMenuOpen(false)}>Solicită Consultanță</Link>
                 </Button>
               </div>

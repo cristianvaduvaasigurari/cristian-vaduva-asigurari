@@ -137,51 +137,52 @@ export function InsuranceMarketReport() {
           </div>
 
           {/* Quick Key Metrics Grid */}
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 pt-4 border-t border-zinc-800/80 text-xs">
-            <div className="bg-zinc-950/60 p-4 rounded-xl border border-zinc-800/60 space-y-1">
+          {/* Quick Key Metrics Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 pt-4 border-t border-zinc-800/80 text-xs">
+            <div className="bg-zinc-950/60 p-3.5 sm:p-4 rounded-xl border border-zinc-800/60 space-y-1">
               <span className="text-zinc-400 block">{isRo ? 'Volum Total Piață (PBS):' : 'Total Market (GWP):'}</span>
-              <span className="text-white font-bold text-lg block">23,40 mld. RON</span>
+              <span className="text-white font-bold text-base sm:text-lg block">23,40 mld. RON</span>
               <span className="text-[11px] text-zinc-400 block">{isRo ? '(19,8 mld. ASF + 3,6 mld. Sucursale)' : '(19.8B ASF + 3.6B Branches)'}</span>
             </div>
 
-            <div className="bg-zinc-950/60 p-4 rounded-xl border border-zinc-800/60 space-y-1">
+            <div className="bg-zinc-950/60 p-3.5 sm:p-4 rounded-xl border border-zinc-800/60 space-y-1">
               <span className="text-zinc-400 block">{isRo ? 'Pondre Asigurări Generale:' : 'Non-Life Market Share:'}</span>
-              <span className="text-white font-bold text-lg block">81,5% (19,09 mld.)</span>
+              <span className="text-white font-bold text-base sm:text-lg block">81,5% (19,09 mld.)</span>
               <span className="text-[11px] text-zinc-400 block">{isRo ? 'Viață: 18,5% (4,34 mld. RON)' : 'Life: 18.5% (4.34B RON)'}</span>
             </div>
 
-            <div className="bg-zinc-950/60 p-4 rounded-xl border border-zinc-800/60 space-y-1">
+            <div className="bg-zinc-950/60 p-3.5 sm:p-4 rounded-xl border border-zinc-800/60 space-y-1">
               <span className="text-zinc-400 block">{isRo ? 'Total Despăgubiri Plătite:' : 'Total Claims Paid:'}</span>
-              <span className="text-emerald-400 font-bold text-lg block">10,60 mld. RON</span>
+              <span className="text-emerald-400 font-bold text-base sm:text-lg block">10,60 mld. RON</span>
               <span className="text-[11px] text-zinc-400 block">{isRo ? '(Asigurători + Sucursale UE)' : '(Insurers + EU Branches)'}</span>
             </div>
 
-            <div className="bg-zinc-950/60 p-4 rounded-xl border border-zinc-800/60 space-y-1">
+            <div className="bg-zinc-950/60 p-3.5 sm:p-4 rounded-xl border border-zinc-800/60 space-y-1">
               <span className="text-zinc-400 block">{isRo ? 'Penetrare Asigurări în PIB:' : 'GDP Penetration:'}</span>
-              <span className="text-amber-400 font-bold text-lg block">1,42%</span>
+              <span className="text-amber-400 font-bold text-base sm:text-lg block">1,42%</span>
               <span className="text-[11px] text-zinc-400 block">{isRo ? 'vs 6,8% media UE' : 'vs 6.8% EU average'}</span>
             </div>
           </div>
 
           {/* Report Actions */}
-          <div className="flex flex-wrap items-center gap-3 pt-2">
+          <div className="flex flex-wrap items-center gap-2.5 sm:gap-3 pt-2">
             <button
               onClick={handleDownloadJson}
-              className="px-4 py-2 rounded-xl text-xs font-semibold bg-zinc-900 hover:bg-zinc-800 text-zinc-200 border border-zinc-700/80 transition-all flex items-center gap-2"
+              className="px-3.5 sm:px-4 py-2.5 rounded-xl text-xs font-semibold bg-zinc-900 hover:bg-zinc-800 text-zinc-200 border border-zinc-700/80 transition-all flex items-center gap-2 shrink-0"
             >
               <Download className="w-3.5 h-3.5 text-blue-400" />
-              {isRo ? 'Descarcă Datele în Format JSON' : 'Download Dataset (JSON)'}
+              {isRo ? 'Descarcă Datele (JSON)' : 'Download Dataset (JSON)'}
             </button>
             <button
               onClick={() => copyToClipboard(citationMarkdown, 'markdown')}
-              className="px-4 py-2 rounded-xl text-xs font-semibold bg-zinc-900 hover:bg-zinc-800 text-zinc-200 border border-zinc-700/80 transition-all flex items-center gap-2"
+              className="px-3.5 sm:px-4 py-2.5 rounded-xl text-xs font-semibold bg-zinc-900 hover:bg-zinc-800 text-zinc-200 border border-zinc-700/80 transition-all flex items-center gap-2 shrink-0"
             >
               {copiedCitation === 'markdown' ? <Check className="w-3.5 h-3.5 text-emerald-400" /> : <Copy className="w-3.5 h-3.5 text-blue-400" />}
-              {copiedCitation === 'markdown' ? (isRo ? 'Citat Copiat!' : 'Citation Copied!') : (isRo ? 'Copiază Citat (Markdown)' : 'Copy Citation (Markdown)')}
+              {copiedCitation === 'markdown' ? (isRo ? 'Citat Copiat!' : 'Citation Copied!') : (isRo ? 'Copiază Citat' : 'Copy Citation')}
             </button>
             <button
               onClick={() => copyToClipboard(citationBibtex, 'bibtex')}
-              className="px-4 py-2 rounded-xl text-xs font-semibold bg-zinc-900 hover:bg-zinc-800 text-zinc-200 border border-zinc-700/80 transition-all flex items-center gap-2"
+              className="px-3.5 sm:px-4 py-2.5 rounded-xl text-xs font-semibold bg-zinc-900 hover:bg-zinc-800 text-zinc-200 border border-zinc-700/80 transition-all flex items-center gap-2 shrink-0"
             >
               {copiedCitation === 'bibtex' ? <Check className="w-3.5 h-3.5 text-emerald-400" /> : <Copy className="w-3.5 h-3.5 text-blue-400" />}
               {copiedCitation === 'bibtex' ? 'BibTeX Copiat!' : 'Citează BibTeX'}
@@ -191,7 +192,7 @@ export function InsuranceMarketReport() {
       </div>
 
       {/* NAVIGATION TABS */}
-      <div className="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-thin border-b border-zinc-800/80">
+      <div className="-mx-4 px-4 sm:mx-0 sm:px-0 flex items-center gap-2 overflow-x-auto pb-2.5 scrollbar-thin border-b border-zinc-800/80 overscroll-x-contain">
         {[
           { id: 'executive', labelRo: '1. Sinteză Executivă', labelEn: '1. Executive Summary', icon: Activity },
           { id: 'segments', labelRo: '2. Structura Segmentelor', labelEn: '2. Market Segments', icon: PieChart },
@@ -207,7 +208,7 @@ export function InsuranceMarketReport() {
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id as 'executive' | 'segments' | 'auto_rca' | 'property_pad' | 'health_life' | 'trends' | 'sources')}
-              className={`px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold whitespace-nowrap transition-all flex items-center gap-2 border ${
+              className={`px-3.5 sm:px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold whitespace-nowrap transition-all flex items-center gap-2 border shrink-0 ${
                 isActive
                   ? 'bg-blue-600 text-white border-blue-500 shadow-md shadow-blue-600/30'
                   : 'bg-zinc-900/70 text-zinc-400 hover:text-zinc-200 border-zinc-800/80 hover:bg-zinc-800/60'
