@@ -79,6 +79,9 @@ const ecosystemMenuData = [
     title: "Audit & Analiză Polițe",
     items: [
       { name: "Verificare Riscuri (Casă, Auto, Familie, Firmă)", href: "/verificare-riscuri" },
+      { name: "AiX Risk Simulator", href: "/risk-simulator" },
+      { name: "AiX Financial Twin", href: "/financial-twin" },
+      { name: "Planificatorul Familiei (Family Planner)", href: "/family-planner" },
       { name: "Verifică Polița (Audit Gratuit)", href: "/verifica-polita" },
       { name: "Calculator Asigurare & Reconstrucție", href: "/calculator-asigurare" },
       { name: "Comparație Polițe & Clauze", href: "/compara-polite" },
@@ -90,6 +93,8 @@ const ecosystemMenuData = [
   {
     title: "Portofoliu & Reînnoiri",
     items: [
+      { name: "AiX Wealth Passport", href: "/wealth-passport" },
+      { name: "AiX Luxury Garage", href: "/luxury-garage" },
       { name: "Harta Portofoliu Asigurări", href: "/harta-asigurarilor" },
       { name: "Calendar Expirări & Reînnoiri", href: "/calendar-asigurari" },
       { name: "Fișă Decizie Reînnoire", href: "/decizie-reinnoire" },
@@ -101,6 +106,7 @@ const ecosystemMenuData = [
   {
     title: "Ghiduri, Cercetare & Glosar",
     items: [
+      { name: "AiX Academy (Hub Educațional)", href: "/academy" },
       { name: "Hartă Risc Seismic București", href: "/harta-risc-seismic-bucuresti" },
       { name: "Raportul Anual al Pieței", href: "/raport-piata-asigurarilor" },
       { name: "Glosar Tehnic Asigurări", href: "/glosar-asigurari" },
@@ -139,6 +145,8 @@ const privateClientMenuLinks = [
   { name: "Luxury Homes & Estates", href: "/private-client/luxury-homes", badge: "Estates" },
   { name: "Personal Collections", href: "/private-client/collections", badge: "Collections" },
   { name: "Private Client Liability", href: "/private-client/private-client-liability", badge: "Liability" },
+  { name: "AiX Luxury Garage", href: "/luxury-garage", badge: "HNW Assets" },
+  { name: "AiX Wealth Passport", href: "/wealth-passport", badge: "Credential" },
 ];
 
 export function Navbar() {

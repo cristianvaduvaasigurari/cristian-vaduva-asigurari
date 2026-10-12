@@ -32,6 +32,11 @@ const footerLinks = {
     { key: "smeRiskAudit", href: "/audit-riscuri-companii" },
   ],
   tools: [
+    { key: "riskSimulator", href: "/risk-simulator" },
+    { key: "financialTwin", href: "/financial-twin" },
+    { key: "familyPlanner", href: "/family-planner" },
+    { key: "wealthPassport", href: "/wealth-passport" },
+    { key: "luxuryGarage", href: "/luxury-garage" },
     { key: "emergencyCenter", href: "/urgente" },
     { key: "claimEvidenceChecklist", href: "/verificare-documente-dauna" },
     { key: "claimsProgress", href: "/urmarire-dauna" },
