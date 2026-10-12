@@ -1,5 +1,7 @@
 import * as React from "react";
 import type { Metadata } from "next";
+import { Navbar } from "@/components/layout/navbar";
+import { Footer } from "@/components/layout/footer";
 import { GapAnalyzer } from "@/components/sections/gap-analyzer";
 
 export const metadata: Metadata = {
@@ -9,31 +11,35 @@ export const metadata: Metadata = {
 
 export default function GapAnalyzerPage() {
   return (
-    <main className="min-h-screen bg-[#fafafa] pt-32 pb-24">
-      <div className="container mx-auto px-4 md:px-6">
-        <div className="max-w-3xl mx-auto text-center mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-50 text-amber-600 font-medium text-xs mb-6 uppercase tracking-widest border border-amber-100">
-            Audit Financiar
+    <div className="min-h-screen bg-background flex flex-col">
+      <Navbar />
+      <main className="flex-1 min-h-screen bg-[#fafafa] pt-32 pb-24">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="max-w-3xl mx-auto text-center mb-16">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-50 text-amber-600 font-medium text-xs mb-6 uppercase tracking-widest border border-amber-100">
+              Audit Financiar
+            </div>
+            <h1 className="text-4xl md:text-5xl font-heading font-bold mb-6 text-foreground tracking-tight">
+              Coverage Gap Analyzer
+            </h1>
+            <p className="text-xl text-muted-foreground leading-relaxed">
+              Majoritatea oamenilor cred că sunt asigurați, până când au cu adevărat o daună. Răspunde onest la următoarele 4 scenarii dure pentru a-ți descoperi vulnerabilitățile.
+            </p>
           </div>
-          <h1 className="text-4xl md:text-5xl font-heading font-bold mb-6 text-foreground tracking-tight">
-            Coverage Gap Analyzer
-          </h1>
-          <p className="text-xl text-muted-foreground leading-relaxed">
-            Majoritatea oamenilor cred că sunt asigurați, până când au cu adevărat o daună. Răspunde onest la următoarele 4 scenarii dure pentru a-ți descoperi vulnerabilitățile.
-          </p>
-        </div>
 
-        <GapAnalyzer />
+          <GapAnalyzer />
 
-        <div className="mt-16 text-center">
-          <p className="text-sm text-muted-foreground">
-            Vrei o verificare specifică a contractului tău curent (Auto, Casă, Sănătate sau Business)?{" "}
-            <a href="/verifica-polita" className="text-blue-600 font-medium hover:underline inline-flex items-center gap-1">
-              Trimite polița pentru verificare &rarr;
-            </a>
-          </p>
+          <div className="mt-16 text-center">
+            <p className="text-sm text-muted-foreground">
+              Vrei o verificare specifică a contractului tău curent (Auto, Casă, Sănătate sau Business)?{" "}
+              <a href="/verifica-polita" className="text-blue-600 font-medium hover:underline inline-flex items-center gap-1">
+                Trimite polița pentru verificare &rarr;
+              </a>
+            </p>
+          </div>
         </div>
-      </div>
-    </main>
+      </main>
+      <Footer />
+    </div>
   );
 }

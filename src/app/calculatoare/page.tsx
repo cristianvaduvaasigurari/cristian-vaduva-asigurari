@@ -1,5 +1,7 @@
 import * as React from "react";
 import type { Metadata } from "next";
+import { Navbar } from "@/components/layout/navbar";
+import { Footer } from "@/components/layout/footer";
 import { ImpactCalculators } from "@/components/sections/impact-calculators";
 
 export const metadata: Metadata = {
@@ -9,7 +11,9 @@ export const metadata: Metadata = {
 
 export default function CalculatoarePage() {
   return (
-    <main className="min-h-screen bg-[#fafafa] pt-32 pb-24">
+    <div className="min-h-screen bg-background flex flex-col">
+      <Navbar />
+      <main className="flex-1 min-h-screen bg-[#fafafa] pt-32 pb-24">
       <div className="container mx-auto px-4 md:px-6">
         <div className="max-w-3xl mx-auto text-center mb-16">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 text-blue-600 font-medium text-xs mb-6 uppercase tracking-widest border border-blue-100">
@@ -185,6 +189,8 @@ export default function CalculatoarePage() {
           </div>
         </div>
       </div>
-    </main>
+      </main>
+      <Footer />
+    </div>
   );
 }

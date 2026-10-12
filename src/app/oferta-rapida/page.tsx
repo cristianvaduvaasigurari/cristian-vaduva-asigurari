@@ -1,5 +1,7 @@
 import * as React from "react";
 import type { Metadata } from "next";
+import { Navbar } from "@/components/layout/navbar";
+import { Footer } from "@/components/layout/footer";
 import { ExpressOffer } from "@/components/sections/express-offer";
 
 export const metadata: Metadata = {
@@ -9,28 +11,32 @@ export const metadata: Metadata = {
 
 export default function ExpressOfferPage() {
   return (
-    <main className="min-h-screen bg-[#fafafa] flex items-center justify-center pt-24 pb-24">
-      <div className="container mx-auto px-4 md:px-6">
-        <div className="max-w-2xl mx-auto text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-heading font-bold mb-4 text-foreground tracking-tight">
-            Timpul tău e prețios.
-          </h1>
-          <p className="text-xl text-muted-foreground">
-            Sari peste formularele interminabile. Spune-ne ce vrei să asiguri și te sunăm noi cu soluția gata pregătită. Maxim 30 de secunde.
-          </p>
-        </div>
+    <div className="min-h-screen bg-background flex flex-col">
+      <Navbar />
+      <main className="flex-1 min-h-screen bg-[#fafafa] flex items-center justify-center pt-24 pb-24">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="max-w-2xl mx-auto text-center mb-16">
+            <h1 className="text-4xl md:text-5xl font-heading font-bold mb-4 text-foreground tracking-tight">
+              Timpul tău e prețios.
+            </h1>
+            <p className="text-xl text-muted-foreground">
+              Sari peste formularele interminabile. Spune-ne ce vrei să asiguri și te sunăm noi cu soluția gata pregătită. Maxim 30 de secunde.
+            </p>
+          </div>
 
-        <ExpressOffer />
+          <ExpressOffer />
 
-        <div className="mt-16 text-center">
-          <p className="text-sm text-muted-foreground">
-            Ai deja o poliță în vigoare și dorești un audit independent al termenilor și franșizelor?{" "}
-            <a href="/verifica-polita" className="text-blue-600 font-medium hover:underline inline-flex items-center gap-1">
-              Verifică polița existentă &rarr;
-            </a>
-          </p>
+          <div className="mt-16 text-center">
+            <p className="text-sm text-muted-foreground">
+              Ai deja o poliță în vigoare și dorești un audit independent al termenilor și franșizelor?{" "}
+              <a href="/verifica-polita" className="text-blue-600 font-medium hover:underline inline-flex items-center gap-1">
+                Verifică polița existentă &rarr;
+              </a>
+            </p>
+          </div>
         </div>
-      </div>
-    </main>
+      </main>
+      <Footer />
+    </div>
   );
 }

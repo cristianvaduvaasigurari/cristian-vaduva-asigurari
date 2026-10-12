@@ -1,5 +1,7 @@
 import * as React from "react";
 import type { Metadata } from "next";
+import { Navbar } from "@/components/layout/navbar";
+import { Footer } from "@/components/layout/footer";
 import { InsightsList } from "@/components/sections/insights-list";
 
 export const metadata: Metadata = {
@@ -9,22 +11,26 @@ export const metadata: Metadata = {
 
 export default function InsightsPage() {
   return (
-    <main className="min-h-screen bg-[#fafafa] pt-32 pb-24">
-      <div className="container mx-auto px-4 md:px-6">
-        <div className="max-w-3xl mx-auto text-center mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 text-slate-600 font-medium text-xs mb-6 uppercase tracking-widest border border-slate-200">
-            Arhitectură Pregătită pentru AI service / RSS
+    <div className="min-h-screen bg-background flex flex-col">
+      <Navbar />
+      <main className="flex-1 min-h-screen bg-[#fafafa] pt-32 pb-24">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="max-w-3xl mx-auto text-center mb-16">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 text-slate-600 font-medium text-xs mb-6 uppercase tracking-widest border border-slate-200">
+              Arhitectură Pregătită pentru AI service / RSS
+            </div>
+            <h1 className="text-4xl md:text-5xl font-heading font-bold mb-6 text-foreground tracking-tight">
+              AiX <span className="text-blue-600">Insights</span>
+            </h1>
+            <p className="text-xl text-muted-foreground leading-relaxed">
+              Informația înseamnă protecție. Rămâi la curent cu analizele pieței financiare, evoluțiile legislative și noutățile din tehnologia asigurărilor.
+            </p>
           </div>
-          <h1 className="text-4xl md:text-5xl font-heading font-bold mb-6 text-foreground tracking-tight">
-            AiX <span className="text-blue-600">Insights</span>
-          </h1>
-          <p className="text-xl text-muted-foreground leading-relaxed">
-            Informația înseamnă protecție. Rămâi la curent cu analizele pieței financiare, evoluțiile legislative și noutățile din tehnologia asigurărilor.
-          </p>
-        </div>
 
-        <InsightsList />
-      </div>
-    </main>
+          <InsightsList />
+        </div>
+      </main>
+      <Footer />
+    </div>
   );
 }
