@@ -20,9 +20,12 @@ import {
   Users,
   Briefcase,
   AlertCircle,
-  Globe
+  Globe,
+  FileDown
 } from 'lucide-react';
 import { submitSmeRiskAuditLead } from '@/lib/actions';
+import { generateSmeAuditPdf } from '@/lib/pdf-sme-audit';
+import { WhatsAppCta } from '@/components/ui/whatsapp-cta';
 
 interface AuditState {
   // Step 1: Company Profile
@@ -181,6 +184,24 @@ export function SmeRiskAudit() {
     topicsForReview.push(isEn ? 'Employee health benefit structuring & fiscal deductibility' : 'Structurare pachet sănătate angajați cu facilități fiscale');
   }
 
+  const handleDownloadPdf = () => {
+    const doc = generateSmeAuditPdf({
+      companyName: data.companyName || (isEn ? 'Evaluated SME' : 'Companie Evaluată'),
+      sectorName: data.industry || (isEn ? 'General Industry' : 'Sector General'),
+      employeeCount: data.employeeCount,
+      auditDate: new Date().toLocaleDateString('ro-RO'),
+      reportedExposures,
+      existingProtections: existingPoliciesReported,
+      recommendedTopics: topicsForReview,
+      missingInformation: [
+        isEn ? 'Asset registry and equipment replacement invoices' : 'Registrul mijloacelor fixe și facturi utilaje',
+        isEn ? 'Customer contracts and liability clauses' : 'Contracte comerciale cu clienții și plafoane de răspundere',
+        isEn ? 'Existing insurance policies and deductible schedules' : 'Polițe de asigurare curente cu anexe de franșize'
+      ]
+    });
+    doc.save(`Audit_Riscuri_IMM_${(data.companyName || 'Companie').replace(/\s+/g, '_')}.pdf`);
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!data.phone) {
@@ -239,42 +260,44 @@ export function SmeRiskAudit() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-900 via-slate-900 to-slate-950 text-zinc-900 py-12 px-4 sm:px-6 lg:px-8">
+    <div className="bg-white text-zinc-900 py-6 px-4 sm:px-6 lg:px-8">
       <div className="max-w-4xl mx-auto space-y-10">
         
         {/* Header Hero */}
         <div className="text-center space-y-4 max-w-2xl mx-auto">
           <div className="flex items-center justify-center gap-3">
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-semibold tracking-wide uppercase">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-50 border border-blue-200 text-blue-700 text-xs font-semibold tracking-wide uppercase">
               <Clock className="w-3.5 h-3.5" />
-              {isEn ? '30-Minute SME Risk Audit' : 'Audit Riscuri Companii în 30 de Minute'}
+              {isEn ? '5-Minute SME Risk Audit' : 'Audit Riscuri IMM în 5 Minute'}
             </div>
-            <div className="inline-flex rounded-lg bg-white p-0.5 border border-zinc-200">
+            <div className="inline-flex rounded-lg bg-zinc-100 p-0.5 border border-zinc-200">
               <button
+                type="button"
                 onClick={() => setLanguage('ro')}
                 className={`px-2.5 py-1 text-xs font-semibold rounded-md transition-all ${
-                  language === 'ro' ? 'bg-blue-600 text-white' : 'text-zinc-500 hover:text-white'
+                  language === 'ro' ? 'bg-blue-600 text-white' : 'text-zinc-600 hover:text-zinc-900'
                 }`}
               >
                 RO
               </button>
               <button
+                type="button"
                 onClick={() => setLanguage('en')}
                 className={`px-2.5 py-1 text-xs font-semibold rounded-md transition-all ${
-                  language === 'en' ? 'bg-blue-600 text-white' : 'text-zinc-500 hover:text-white'
+                  language === 'en' ? 'bg-blue-600 text-white' : 'text-zinc-600 hover:text-zinc-900'
                 }`}
               >
                 EN
               </button>
             </div>
           </div>
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white">
-            {isEn ? 'Audit de Riscuri pentru Firma Ta în 30 de Minute' : 'Audit de Riscuri pentru Firma Ta în 30 de Minute'}
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-zinc-900">
+            {isEn ? 'Audit de Riscuri pentru Firma Ta' : 'Audit de Riscuri pentru Firma Ta'}
           </h1>
           <p className="text-zinc-600 text-base sm:text-lg leading-relaxed">
             {isEn
               ? 'A structured preliminary assessment to identify corporate insurance exposures, unconfirmed clauses, and priorities for professional review.'
-              : 'O discuție structurată preliminară pentru identificarea expunerilor de asigurare, a informațiilor lipsă și a priorităților de revizuire pentru afacerea ta.'}
+              : 'O evaluare structurată a expunerilor operaționale, a patrimoniului și a clauzelor de continuitate pentru compania ta.'}
           </p>
         </div>
 
@@ -328,9 +351,37 @@ export function SmeRiskAudit() {
                 </p>
               </div>
 
+              <div className="space-y-3">
+                <label className="block text-xs font-semibold text-zinc-700 uppercase tracking-wider">
+                  {isEn ? 'Select Business Sector *' : 'Alege Sectorul de Activitate *'}
+                </label>
+                <div className="grid grid-cols-2 sm:grid-cols-5 gap-2 text-xs">
+                  {[
+                    { id: 'HoReCa', label: 'HoReCa' },
+                    { id: 'Retail', label: isEn ? 'Retail' : 'Retail / Comerț' },
+                    { id: 'Productie', label: isEn ? 'Production' : 'Producție' },
+                    { id: 'IT', label: isEn ? 'IT & Services' : 'IT & Servicii' },
+                    { id: 'Transport', label: isEn ? 'Transport' : 'Transport & Cargo' },
+                  ].map((sec) => (
+                    <button
+                      key={sec.id}
+                      type="button"
+                      onClick={() => updateField('industry', sec.id)}
+                      className={`p-2.5 rounded-xl border text-center font-semibold transition-all ${
+                        data.industry.toLowerCase().includes(sec.id.toLowerCase())
+                          ? 'bg-blue-600 text-white border-blue-600 shadow-xs'
+                          : 'bg-zinc-50 border-zinc-200 text-zinc-700 hover:bg-zinc-100'
+                      }`}
+                    >
+                      {sec.label}
+                    </button>
+                  ))}
+                </div>
+              </div>
+
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                 <div>
-                  <label className="block text-xs font-semibold text-zinc-600 uppercase tracking-wider mb-2">
+                  <label className="block text-xs font-semibold text-zinc-700 uppercase tracking-wider mb-2">
                     {isEn ? 'Company Name *' : 'Denumire Companie (SRL / SA) *'}
                   </label>
                   <input
@@ -339,21 +390,21 @@ export function SmeRiskAudit() {
                     value={data.companyName}
                     onChange={(e) => updateField('companyName', e.target.value)}
                     placeholder="ex. SC Global Logistics SRL"
-                    className="w-full bg-zinc-50 border border-zinc-200 rounded-xl px-4 py-3 text-white text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                    className="w-full bg-white border border-zinc-300 rounded-xl px-4 py-3 text-zinc-900 text-sm focus:ring-2 focus:ring-blue-600 focus:outline-none"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold text-zinc-600 uppercase tracking-wider mb-2">
-                    {isEn ? 'Main Industry / Activity *' : 'Domeniu Principal de Activitate *'}
+                  <label className="block text-xs font-semibold text-zinc-700 uppercase tracking-wider mb-2">
+                    {isEn ? 'Main Industry / Specific Activity *' : 'Domeniu / Activitate Specifică *'}
                   </label>
                   <input
                     type="text"
                     required
                     value={data.industry}
                     onChange={(e) => updateField('industry', e.target.value)}
-                    placeholder="ex. IT / Producție / Comerț / Logistică / Construcții"
-                    className="w-full bg-zinc-50 border border-zinc-200 rounded-xl px-4 py-3 text-white text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                    placeholder="ex. Restaurant / Fabrică mobilă / Software development"
+                    className="w-full bg-white border border-zinc-300 rounded-xl px-4 py-3 text-zinc-900 text-sm focus:ring-2 focus:ring-blue-600 focus:outline-none"
                   />
                 </div>
 
@@ -970,10 +1021,32 @@ export function SmeRiskAudit() {
                       </div>
                     )}
 
+                    {/* PDF Instant Download Box */}
+                    <div className="flex flex-col sm:flex-row items-center justify-between gap-3 p-4 bg-zinc-50 border border-zinc-200 rounded-xl text-xs">
+                      <div>
+                        <strong className="text-zinc-900 block font-semibold">
+                          {isEn ? 'Instant PDF Audit Summary' : 'Raport Sintetic PDF Instant'}
+                        </strong>
+                        <span className="text-zinc-600">
+                          {isEn
+                            ? 'Download your customized 5-minute audit summary for internal management.'
+                            : 'Descarcă sinteza de risc a companiei cu data de azi pentru dosarul tău intern.'}
+                        </span>
+                      </div>
+                      <button
+                        type="button"
+                        onClick={handleDownloadPdf}
+                        className="px-4 py-2.5 bg-zinc-900 hover:bg-black text-white text-xs font-semibold rounded-xl inline-flex items-center gap-2 shadow-xs shrink-0 cursor-pointer"
+                      >
+                        <FileDown className="w-4 h-4 text-emerald-400" />
+                        <span>{isEn ? 'Download PDF Summary' : 'Descarcă Raport PDF'}</span>
+                      </button>
+                    </div>
+
                     <button
                       type="submit"
                       disabled={isSubmitting}
-                      className="w-full py-4 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-bold rounded-xl shadow-lg transition-all flex items-center justify-center gap-2 text-base"
+                      className="w-full py-4 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-bold rounded-xl shadow-lg transition-all flex items-center justify-center gap-2 text-base cursor-pointer"
                     >
                       {isSubmitting ? (
                         <>
@@ -987,6 +1060,16 @@ export function SmeRiskAudit() {
                         </>
                       )}
                     </button>
+
+                    <div className="pt-2">
+                      <WhatsAppCta
+                        toolName="Audit Riscuri IMM"
+                        contextSummary={`Companie: ${data.companyName || 'IMM'} (${data.industry || 'General'}), ${reportedExposures.length} expuneri`}
+                        label={isEn ? 'Chat on WhatsApp with Consultant' : 'Scrie-mi pe WhatsApp pentru Discuția de Audit'}
+                        size="lg"
+                        className="w-full"
+                      />
+                    </div>
                   </div>
                 </form>
               )}

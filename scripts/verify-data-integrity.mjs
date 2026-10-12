@@ -195,5 +195,79 @@ if (
   });
 }
 
+// Test 8: Risk Verification Mathematical Engines (Reconstruction, CASCO, Life, Mortgage, CMR)
+import {
+  calculateReconstructionCost,
+  calculateCascoDeductible,
+  calculateLifeCoverageNeeds,
+  calculateMortgageProtection,
+  calculateKeyPersonExposure,
+  calculateBusinessInterruption,
+  calculateCmrVsCargo
+} from "../src/lib/risk-verification.ts";
+
+// 8A: Reconstruction Cost Math
+const reconMath = calculateReconstructionCost({
+  builtAreaSqM: 120,
+  costPerSqM: 1100,
+  finishesAllowance: 13200,
+  additionalCosts: 14520,
+  existingInsuredSum: 100000
+});
+// 120 * 1100 = 132000 base. 132000 + 13200 + 14520 = 159720 total. Gap = 159720 - 100000 = 59720
+const isReconCorrect = reconMath.totalEstimatedReconstruction === 159720 && reconMath.coverageGap === 59720;
+
+// 8B: CASCO Deductible Simulation (€20k damage scenario)
+const cascoFixed = calculateCascoDeductible({
+  damageAmount: 20000,
+  deductibleType: "fixed",
+  deductibleValue: 100,
+  insuredSum: 30000
+});
+const cascoPercent = calculateCascoDeductible({
+  damageAmount: 20000,
+  deductibleType: "percentage_damage",
+  deductibleValue: 10,
+  insuredSum: 30000
+});
+const isCascoCorrect =
+  cascoFixed.policyholderShare === 100 &&
+  cascoFixed.insurerShare === 19900 &&
+  cascoPercent.policyholderShare === 2000 &&
+  cascoPercent.insurerShare === 18000 &&
+  !cascoFixed.isTotalLoss;
+
+// 8C: Life Coverage Needs Formula
+const lifeMath = calculateLifeCoverageNeeds({
+  annualIncome: 30000,
+  yearsToReplace: 5,
+  mortgageDebt: 100000,
+  otherDebts: 10000,
+  familyObligations: 0,
+  liquidSavings: 20000,
+  existingLifeInsurance: 0
+});
+// Gross = 150000 + 110000 = 260000. Gap = 260000 - 20000 = 240000.
+const isLifeCorrect = lifeMath.grossCapitalNeed === 260000 && lifeMath.protectionGap === 240000;
+
+// 8D: CMR vs Cargo (8.33 SDR / ~10.41 €/kg cap)
+const cmrMath = calculateCmrVsCargo({
+  cargoInvoiceValueEur: 50000,
+  cargoGrossWeightKg: 500,
+  sdrToEurRate: 1.25
+});
+// 500 * 8.33 = 4165 DST. 4165 * 1.25 = 5206.25 -> 5206 EUR. Uncovered = 50000 - 5206 = 44794 EUR.
+const isCmrCorrect = 
+  cmrMath.cmrStatutoryCapSdr === 4165 && 
+  cmrMath.cmrStatutoryCapEur === 5206 && 
+  cmrMath.cargoPolicyIndemnityEur === 50000 && 
+  cmrMath.uncompensatedLossEur === 44794;
+
+if (isReconCorrect && isCascoCorrect && isLifeCorrect && isCmrCorrect) {
+  console.log("✓ Test 8 Passed: Risk Verification Mathematical Models verified (Reconstruction 159,720 EUR with 59,720 EUR gap, CASCO fixed €100 vs 10% deductible, Life capital gap 240k EUR, CMR 8.33 SDR/kg cap [4,165 DST / 5,206 EUR] vs Cargo [50,000 EUR])");
+} else {
+  console.error("✗ Test 8 Failed:", { isReconCorrect, isCascoCorrect, isLifeCorrect, isCmrCorrect, reconMath, cascoFixed, cascoPercent, lifeMath, cmrMath });
+}
+
 console.log("\n=== ALL UNIT/REGRESSION DATA INTEGRITY CHECKS PASSED ===");
 

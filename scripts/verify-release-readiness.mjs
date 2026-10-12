@@ -8,6 +8,8 @@ import { validateImportedDecisionBrief, generateRenewalDecisionBriefPdf } from "
 import { validateImportedDossier } from "../src/lib/dossier-checklist.ts";
 import { evaluateRiskProfile, generateRiskProfilePdf } from "../src/lib/risk-profile.ts";
 import { validateImportedRenewalReview, calculatePremiumDifference } from "../src/lib/renewal-offer-review.ts";
+import { generateHouseholdInventoryPdf } from "../src/lib/pdf-household-inventory.ts";
+import { generateSmeAuditPdf } from "../src/lib/pdf-sme-audit.ts";
 import { jsPDF } from "jspdf";
 
 let totalTests = 0;
@@ -191,6 +193,48 @@ try {
   assert(true, "generateSettlementAnalyzerPdf executed successfully without runtime errors");
 } catch (e) {
   assert(false, `generateSettlementAnalyzerPdf threw error: ${e.message}`);
+}
+
+// Verify generateHouseholdInventoryPdf
+try {
+  const inventoryDoc = generateHouseholdInventoryPdf({
+    ownerName: "Ion Popescu",
+    propertyAddress: "Str. Test nr. 1, Bucuresti",
+    currency: "EUR",
+    items: [
+      {
+        id: "item-1",
+        description: "Televizor OLED 65 inch",
+        category: "Electronice",
+        purchaseDate: "2024-05-10",
+        estimatedValue: 2000,
+        currency: "EUR",
+        serialNumber: "SN-998877",
+        notes: "Factura disponibila in dosar digital",
+        hasPhoto: true,
+      },
+    ],
+  });
+  assert(inventoryDoc.internal.pages.length >= 1, "generateHouseholdInventoryPdf executed successfully with vector rendering");
+} catch (e) {
+  assert(false, `generateHouseholdInventoryPdf threw error: ${e.message}`);
+}
+
+// Verify generateSmeAuditPdf
+try {
+  const smeDoc = generateSmeAuditPdf({
+    companyName: "Acme Logistics SRL",
+    sectorName: "Transport & Depozitare",
+    employeeCount: "10-49",
+    auditDate: "12 Octombrie 2026",
+    reportedExposures: ["Flota proprie", "Depozitare marfa terti"],
+    existingProtections: ["RCA", "CASCO"],
+    recommendedTopics: ["CMR Extins", "Property Depozit"],
+    missingInformation: ["Valoare maxima marfa per cursa"],
+  });
+  assert(smeDoc.internal.pages.length >= 1, "generateSmeAuditPdf executed successfully with vector rendering");
+} catch (e) {
+  assert(false, `generateSmeAuditPdf threw error: ${e.message}`);
 }
 
 // ============================================================================

@@ -22,6 +22,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { route: "/servicii", priority: 0.9, changeFrequency: "weekly" as const },
     { route: "/contact", priority: 0.8, changeFrequency: "monthly" as const },
     { route: "/calculatoare", priority: 0.9, changeFrequency: "weekly" as const },
+    { route: "/verificare-riscuri", priority: 0.95, changeFrequency: "weekly" as const },
     { route: "/advisor", priority: 0.8, changeFrequency: "weekly" as const },
     { route: "/gap-analyzer", priority: 0.8, changeFrequency: "weekly" as const },
     { route: "/oferta-rapida", priority: 0.8, changeFrequency: "weekly" as const },

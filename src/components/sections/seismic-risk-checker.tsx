@@ -24,6 +24,8 @@ import {
   SeismicBuildingRecord 
 } from '@/data/seismicRiskData';
 import { submitSeismicPropertyReviewLead } from '@/lib/actions';
+import Link from 'next/link';
+import { WhatsAppCta } from '@/components/ui/whatsapp-cta';
 
 export function SeismicRiskChecker() {
   const [lang, setLang] = useState<'ro' | 'en'>('ro');
@@ -164,9 +166,17 @@ export function SeismicRiskChecker() {
       <div className="relative rounded-3xl overflow-hidden border border-zinc-200/80 bg-gradient-to-b from-amber-50/30 via-slate-50/20 to-white p-6 sm:p-10 shadow-sm">
         <div className="relative z-10 space-y-6">
           <div className="flex flex-wrap items-center justify-between gap-4">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-50 border border-amber-200/80 text-amber-800 text-xs font-semibold uppercase tracking-wider">
-              <Building2 className="w-3.5 h-3.5 text-amber-700" />
-              {isRo ? 'Due Diligence Imobiliar & Asigurări' : 'Real Estate Due Diligence & Insurance'}
+            <div className="flex items-center gap-3">
+              <Link
+                href="/verificare-riscuri"
+                className="text-xs font-semibold text-blue-600 hover:text-blue-800 flex items-center gap-1 bg-white px-3 py-1.5 rounded-full border border-zinc-200 shadow-2xs"
+              >
+                ← Înapoi la Verificare Riscuri
+              </Link>
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-50 border border-amber-200/80 text-amber-800 text-xs font-semibold uppercase tracking-wider">
+                <Building2 className="w-3.5 h-3.5 text-amber-700" />
+                {isRo ? 'Due Diligence Imobiliar & Asigurări' : 'Real Estate Due Diligence & Insurance'}
+              </div>
             </div>
 
             {/* Language Switch */}
@@ -205,20 +215,53 @@ export function SeismicRiskChecker() {
             </p>
           </div>
 
-          {/* Key Principle Disclaimers */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-2 text-xs">
-            <div className="p-3.5 bg-white border border-zinc-200/80 rounded-xl space-y-1 shadow-xs">
-              <span className="font-semibold text-zinc-900 block">1. Evidență Publică Oficială</span>
-              <span className="text-zinc-600">Eșantion verificat din registrul public AMCCRS / PMB cu trimitere la lista completă.</span>
+          {/* Key Principle Disclaimers & Prominent Warnings */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2 text-xs">
+            <div className="p-4 bg-amber-50/80 border border-amber-300 rounded-xl space-y-1.5 shadow-xs">
+              <span className="font-bold text-amber-900 flex items-center gap-1.5">
+                <AlertTriangle className="w-4 h-4 text-amber-700 shrink-0" />
+                {isRo ? 'Avertisment 1: Inventarul AMCCRS este reprezentativ, dar incomplet' : 'Warning 1: PMB inventory is representative but incomplete'}
+              </span>
+              <p className="text-amber-950/90 leading-relaxed text-[11px]">
+                {isRo
+                  ? 'O clădire care lipsește din lista clădirilor expertizate NU trebuie niciodată descrisă sau considerată sigură pe această bază. Peste 80% din clădirile vechi ale Bucureștiului nu au fost încă expertizate tehnic oficial.'
+                  : 'A building missing from the available list must never be described as safe on that basis. Over 80% of old Bucharest buildings have not yet undergone official technical expertise.'}
+              </p>
             </div>
-            <div className="p-3.5 bg-white border border-zinc-200/80 rounded-xl space-y-1 shadow-xs">
-              <span className="font-semibold text-amber-800 block">2. Absența nu confirmă siguranța</span>
-              <span className="text-zinc-600">Neidentificarea unei potriviri în eșantion nu atestă siguranța seismică a clădirii.</span>
+
+            <div className="p-4 bg-zinc-50 border border-zinc-300 rounded-xl space-y-1.5 shadow-xs">
+              <span className="font-bold text-zinc-900 flex items-center gap-1.5">
+                <MapPin className="w-4 h-4 text-zinc-700 shrink-0" />
+                {isRo ? 'Avertisment 2: Geocodarea și marcajele sunt indicative' : 'Warning 2: Geocoded coordinates are approximate'}
+              </span>
+              <p className="text-zinc-600 leading-relaxed text-[11px]">
+                {isRo
+                  ? 'Marcajele de hartă și coordonatele geocodate automat pot fi aproximative. Punctul afișat nu constituie dovadă a amplasamentului cadastral exact. Consultați cartea funciară și numărul poștal oficial.'
+                  : 'Map markers and automatically geocoded addresses may be approximate. The displayed point is not proof of an exact cadastral building location.'}
+              </p>
             </div>
-            <div className="p-3.5 bg-white border border-zinc-200/80 rounded-xl space-y-1 shadow-xs">
-              <span className="font-semibold text-blue-700 block">3. Impact pe Asigurare & Credit</span>
-              <span className="text-zinc-600">Încadrarea influențează direct acceptarea la subscriere facultativă și cerințele băncii.</span>
-            </div>
+          </div>
+
+          {/* Additional Mapping References */}
+          <div className="flex flex-wrap items-center gap-4 pt-1 text-[11px] text-zinc-500">
+            <span className="font-semibold text-zinc-700">Resurse cartografice independente de context:</span>
+            <a
+              href="https://mariuscomper.uk/cladiri-cu-risc-seismic/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-600 hover:underline inline-flex items-center gap-1 font-medium"
+            >
+              Harta Marius Comper <ExternalLink className="w-3 h-3" />
+            </a>
+            <span>•</span>
+            <a
+              href="https://expertizare.ro/harta-risc-seismic"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-600 hover:underline inline-flex items-center gap-1 font-medium"
+            >
+              Harta Expertizare.ro <ExternalLink className="w-3 h-3" />
+            </a>
           </div>
         </div>
       </div>
@@ -632,6 +675,114 @@ export function SeismicRiskChecker() {
               </div>
             </div>
           ))}
+        </div>
+      </div>
+
+      {/* DETAILED PAD VS FACULTATIV EDUCATIONAL COMPARISON */}
+      <div className="bg-white border border-zinc-200/80 rounded-2xl p-6 sm:p-10 shadow-sm space-y-6">
+        <div className="space-y-2 border-b border-zinc-200 pb-4">
+          <div className="inline-flex items-center gap-2 text-xs font-semibold text-emerald-700 uppercase tracking-wider">
+            <Scale className="w-3.5 h-3.5" />
+            {isRo ? 'Comparație Tehnică & Juridică: PAD vs Asigurare Facultativă' : 'Technical Comparison: Statutory PAD vs Voluntary Cover'}
+          </div>
+          <h2 className="text-2xl sm:text-3xl font-heading font-bold text-zinc-900">
+            {isRo
+              ? 'Ce Acoperă PAD-ul Obligatoriu vs Ce Oferă Asigurarea Facultativă?'
+              : 'Statutory PAD vs Voluntary Comprehensive Home Insurance'}
+          </h2>
+          <p className="text-xs sm:text-sm text-zinc-600 max-w-3xl leading-relaxed">
+            {isRo
+              ? 'Polița PAD este obligatorie prin lege, dar oferă doar un plafon minim de supraviețuire. Înțelege de ce diferențele de încadrare seismică influențează direct dacă poți sau nu să cumperi o poliță facultativă completă.'
+              : 'Mandatory PAD provides statutory baseline disaster relief, while comprehensive voluntary insurance protects your full property value and contents under specific underwriting rules.'}
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {/* Card 1: PAD */}
+          <div className="p-6 rounded-2xl bg-slate-50 border border-slate-200 space-y-4">
+            <div className="flex items-center justify-between border-b border-slate-200 pb-3">
+              <span className="font-bold text-zinc-900 text-base">Polița Obligatorie PAD</span>
+              <span className="text-[11px] font-bold px-2.5 py-0.5 rounded-full bg-slate-200 text-slate-800">
+                Legea nr. 260/2008
+              </span>
+            </div>
+
+            <div className="space-y-2 text-xs text-zinc-700">
+              <div className="font-semibold text-zinc-900">Riscuri acoperite (strict 3):</div>
+              <ul className="space-y-1 pl-4 list-disc text-zinc-600">
+                <li>Cutremure de pământ (daune structurale directe)</li>
+                <li>Inundații din cauze naturale (revărsări râuri, ploi torențiale)</li>
+                <li>Alunecări de teren active</li>
+              </ul>
+            </div>
+
+            <div className="space-y-2 text-xs text-zinc-700 pt-2 border-t border-slate-200">
+              <div className="font-semibold text-zinc-900">Plafoane de despăgubire & prime (Legea 260/2008 act. Legea 115/2023):</div>
+              <ul className="space-y-1 text-zinc-600">
+                <li>• <strong>Tip A (beton, cărămidă, lemn tratat):</strong> Maxim <strong>100.000 LEI</strong> sumă asigurată legală (~20.000 EUR la curs orientativ), primă fixă <strong>130 LEI/an</strong>.</li>
+                <li>• <strong>Tip B (chirpici, paiantă):</strong> Maxim <strong>50.000 LEI</strong> sumă asigurată legală (~10.000 EUR la curs orientativ), primă fixă <strong>50 LEI/an</strong>.</li>
+              </ul>
+            </div>
+
+            <div className="p-3 bg-amber-50 border border-amber-200 rounded-xl text-[11px] text-amber-900 space-y-1">
+              <strong className="block text-amber-800">Excluderi esențiale:</strong>
+              <p>
+                NU acoperă incendiul, explozia, avariile de instalații interioare, furtul, bunurile din locuință și daunele provocate vecinilor.
+              </p>
+            </div>
+          </div>
+
+          {/* Card 2: Facultativă */}
+          <div className="p-6 rounded-2xl bg-blue-50/40 border border-blue-200 space-y-4">
+            <div className="flex items-center justify-between border-b border-blue-200 pb-3">
+              <span className="font-bold text-blue-950 text-base">Asigurare Facultativă (ex. Generali)</span>
+              <span className="text-[11px] font-bold px-2.5 py-0.5 rounded-full bg-blue-600 text-white">
+                Acoperire Completă
+              </span>
+            </div>
+
+            <div className="space-y-2 text-xs text-zinc-700">
+              <div className="font-semibold text-zinc-900">Riscuri acoperite în plus:</div>
+              <ul className="space-y-1 pl-4 list-disc text-zinc-600">
+                <li>Incendiu, trăsnet, explozie și căderi de corpuri</li>
+                <li>Avarii accidentale la conducte de apă, canalizare, infiltrații</li>
+                <li>Furt prin efracție, vandalism, geamuri sparte</li>
+                <li>Răspundere civilă legală față de vecini (ex. inundație)</li>
+                <li>Conținut complet (electrocasnice, mobilier, electronice)</li>
+                <li>Cutremur facultativ pentru valoarea ce depășește limita PAD</li>
+              </ul>
+            </div>
+
+            <div className="space-y-2 text-xs text-zinc-700 pt-2 border-t border-blue-200">
+              <div className="font-semibold text-zinc-900">Reguli de subscriere & acceptare:</div>
+              <ul className="space-y-1 text-zinc-600 leading-relaxed">
+                <li>• <strong>Clădiri RsI:</strong> Excluse de toți asigurătorii pentru cutremur facultativ.</li>
+                <li>• <strong>Clădiri RsII:</strong> Acceptare condiționată, frecvent cu franșize de 5-10%.</li>
+                <li>• <strong>Clădiri RsIII / RsIV / post-1977:</strong> Eligibile standard fără restricții majore.</li>
+              </ul>
+            </div>
+
+            <div className="p-3 bg-blue-100/70 border border-blue-300 rounded-xl text-[11px] text-blue-950 space-y-1">
+              <strong className="block text-blue-900">Condiție legală:</strong>
+              <p>
+                Emiterea oricărei polițe facultative este condiționată legal de deținerea unei polițe PAD valabile.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* WhatsApp Conversion CTA inside comparison */}
+        <div className="pt-2 flex flex-col sm:flex-row items-center justify-between gap-4 bg-zinc-50 p-5 rounded-xl border border-zinc-200">
+          <div className="text-xs text-zinc-600">
+            <strong className="text-zinc-900 block text-sm">Ai întrebări despre încadrarea unui bloc sau emiterea PAD + Facultativ?</strong>
+            Scrie-mi direct pe WhatsApp adresa exactă și anul construcției pentru o verificare confidențială a eligibilității de asigurare.
+          </div>
+          <WhatsAppCta
+            toolName="Verificare Risc Seismic & PAD"
+            contextSummary="Consultanță verificare imobil, clauze PAD și asigurare facultativă locuință"
+            label="Scrie-mi pe WhatsApp pentru Asigurare Casă"
+            size="md"
+          />
         </div>
       </div>
 

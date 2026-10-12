@@ -57,6 +57,7 @@ const footerLinks = {
     { key: "pcLiability", href: "/private-client/private-client-liability" },
   ],
   company: [
+    { key: "riskVerification", href: "/verificare-riscuri" },
     { key: "seismicMap", href: "/harta-risc-seismic-bucuresti" },
     { key: "marketReport", href: "/raport-piata-asigurarilor" },
     { key: "insuranceGlossary", href: "/glosar-asigurari" },

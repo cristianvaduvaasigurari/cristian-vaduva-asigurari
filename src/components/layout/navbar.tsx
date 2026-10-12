@@ -78,6 +78,7 @@ const ecosystemMenuData = [
   {
     title: "Audit & Analiză Polițe",
     items: [
+      { name: "Verificare Riscuri (Casă, Auto, Familie, Firmă)", href: "/verificare-riscuri" },
       { name: "Verifică Polița (Audit Gratuit)", href: "/verifica-polita" },
       { name: "Calculator Asigurare & Reconstrucție", href: "/calculator-asigurare" },
       { name: "Comparație Polițe & Clauze", href: "/compara-polite" },
