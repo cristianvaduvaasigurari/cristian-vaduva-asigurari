@@ -122,7 +122,7 @@ export default function WhyInsurancePage() {
           </div>
 
           {/* CTA Section */}
-          <div className="glass p-16 rounded-[4rem] border border-blue-500/20 text-center max-w-5xl mx-auto mb-24 relative overflow-hidden">
+          <div className="glass p-6 sm:p-10 md:p-16 rounded-3xl md:rounded-[4rem] border border-blue-500/20 text-center max-w-5xl mx-auto mb-24 relative overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-br from-blue-600/10 to-purple-600/10" />
             <div className="relative z-10">
               <h2 className="text-4xl font-heading font-bold mb-6">Pregătit să-ți securizezi patrimoniul?</h2>
@@ -130,7 +130,11 @@ export default function WhyInsurancePage() {
                 Nu lăsa siguranța afacerii și a familiei tale pe mâna norocului. Programează o discuție și hai să creăm o strategie de risk management de lux.
               </p>
               <div className="flex flex-col sm:flex-row justify-center gap-4">
-                <Button size="lg" className="h-14 px-8 text-lg rounded-full bg-blue-600 hover:bg-blue-700 text-white" asChild>
+                <Button
+                  size="lg"
+                  className="w-full sm:w-auto max-w-full box-border h-auto min-h-[48px] sm:h-14 py-3 px-4 sm:px-8 text-sm sm:text-base md:text-lg whitespace-normal sm:whitespace-nowrap text-center leading-snug rounded-full bg-blue-600 hover:bg-blue-700 text-white font-semibold shadow-md transition-all"
+                  asChild
+                >
                   <Link href="/contact">Cere o strategie personalizată</Link>
                 </Button>
                 <Button size="lg" variant="outline" className="h-14 px-8 text-lg rounded-full bg-background border-border hover:bg-muted text-foreground" asChild>
