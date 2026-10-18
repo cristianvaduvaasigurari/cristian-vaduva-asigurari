@@ -4,6 +4,7 @@
 
 import * as React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { Menu, X, ChevronDown, Shield, Car, Briefcase, Building2, Home } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -223,6 +224,20 @@ export function Navbar() {
                 <span className="text-[8.5px] sm:text-[9.5px] font-bold tracking-wider text-zinc-500 group-hover:text-zinc-700 transition-colors uppercase mt-0.5 select-none">
                   POWERED BY CRISTIANVADUVA.COM
                 </span>
+                <div className="flex items-center gap-1.5 mt-1 select-none">
+                  <Image
+                    src="/images/generali-logo.svg"
+                    alt="Generali"
+                    width={18}
+                    height={14}
+                    className="h-3 sm:h-3.5 w-auto object-contain shrink-0"
+                    priority
+                    unoptimized
+                  />
+                  <span className="text-[8.5px] sm:text-[9.5px] font-bold tracking-wider text-zinc-600 uppercase">
+                    PARTENER GENERALI
+                  </span>
+                </div>
               </Link>
             </div>
 
