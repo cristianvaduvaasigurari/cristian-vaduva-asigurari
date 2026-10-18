@@ -166,6 +166,18 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Prevent background scrolling when mobile menu is open
+  React.useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isMobileMenuOpen]);
+
   // Handle clicks outside the mobile menu and Escape key to close menu
   React.useEffect(() => {
     const handleOutsideClick = (e: MouseEvent) => {
@@ -286,11 +298,14 @@ export function Navbar() {
                     </div>
                   ))}
                 </div>
-                <div className="mt-8 pt-6 border-t border-zinc-100 flex justify-between items-center bg-zinc-50/80 -mx-8 -mb-8 p-6 rounded-b-2xl">
-                  <div className="text-sm text-zinc-600">
+                <div className="mt-8 pt-6 border-t border-zinc-100 flex flex-col md:flex-row justify-between items-start md:items-center bg-zinc-50/80 -mx-8 -mb-8 p-6 rounded-b-2xl gap-4">
+                  <div className="text-sm text-zinc-600 max-w-md">
                     <span className="font-bold text-zinc-900">Nu ești sigur ce să alegi?</span> Încearcă noul Recomandă-mi Asigurarea Potrivită.
                   </div>
-                  <Button className="bg-blue-600 hover:bg-blue-700 rounded-full" asChild>
+                  <Button
+                    className="h-auto min-h-[40px] py-2.5 px-5 text-xs sm:text-sm font-semibold bg-blue-600 hover:bg-blue-700 text-white rounded-full whitespace-normal text-center leading-snug shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2 transition-all shadow-xs"
+                    asChild
+                  >
                     <Link href="/advisor">Deschide Recomandă-mi Asigurarea Potrivită</Link>
                   </Button>
                 </div>
@@ -440,7 +455,7 @@ export function Navbar() {
           {/* Mobile Menu Toggle */}
           <button
             type="button"
-            aria-label="Toggle mobile navigation menu"
+            aria-label={isMobileMenuOpen ? "Închide meniul" : "Deschide meniul"}
             aria-expanded={isMobileMenuOpen}
             aria-controls="mobile-nav-menu"
             className="md:hidden flex items-center justify-center w-11 h-11 p-2 text-zinc-900 hover:text-blue-600 bg-zinc-100 hover:bg-zinc-200/80 rounded-xl relative z-60 cursor-pointer transition-colors border border-zinc-200/80"
@@ -465,10 +480,26 @@ export function Navbar() {
             exit={{ opacity: 0 }}
             transition={{ duration: 0.15 }}
             style={{ backgroundColor: '#ffffff', color: '#09090b' }}
-            className="fixed inset-0 bg-white text-zinc-900 z-40 overflow-y-auto pt-24 pb-28 px-4 sm:px-6 overscroll-contain shadow-2xl"
+            className="fixed inset-0 bg-white text-zinc-900 z-55 overflow-y-auto pt-20 pb-28 px-4 sm:px-6 overscroll-contain shadow-2xl"
             onClick={(e) => e.stopPropagation()}
           >
             <div className="flex flex-col gap-3 max-w-lg mx-auto" style={{ color: '#09090b' }}>
+              {/* Mobile Menu Header Bar with explicit close button */}
+              <div className="flex items-center justify-between pb-3 mb-1 border-b border-zinc-200/80">
+                <div className="flex items-center gap-2">
+                  <Home className="w-4 h-4 text-blue-600" />
+                  <span className="text-sm font-bold text-zinc-900 uppercase tracking-tight">Meniu Navigare</span>
+                </div>
+                <button
+                  type="button"
+                  aria-label="Închide meniul"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-zinc-100 hover:bg-zinc-200 text-zinc-800 text-xs font-semibold transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600"
+                >
+                  <X size={16} className="text-zinc-900" />
+                  <span>Închide</span>
+                </button>
+              </div>
               {/* Private Client Mobile Accordion */}
               <div className="flex flex-col border-b border-zinc-200/80 pb-1">
                 <button
@@ -532,6 +563,17 @@ export function Navbar() {
                         </div>
                       </div>
                     ))}
+                    {/* Promotional CTA card for Mobile Asigurări */}
+                    <div className="mt-2 pt-3 border-t border-zinc-200 flex flex-col gap-2.5 bg-white p-3.5 rounded-xl border border-zinc-200/60 shadow-xs">
+                      <div className="text-xs text-zinc-600 leading-snug">
+                        <span className="font-bold text-zinc-900">Nu ești sigur ce să alegi?</span> Încearcă noul Recomandă-mi Asigurarea Potrivită.
+                      </div>
+                      <Button size="sm" className="h-auto min-h-[36px] py-2 px-3.5 bg-blue-600 hover:bg-blue-700 text-white rounded-full text-xs font-semibold w-full whitespace-normal text-center leading-snug focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600" asChild>
+                        <Link href="/advisor" onClick={() => setIsMobileMenuOpen(false)}>
+                          Deschide Recomandă-mi Asigurarea Potrivită
+                        </Link>
+                      </Button>
+                    </div>
                   </div>
                 )}
               </div>
@@ -599,7 +641,27 @@ export function Navbar() {
                 )}
               </div>
 
-              {/* Standalone Links */}
+              {/* Standalone Links & Key Financial Tools */}
+              <Link
+                href="/gap-analyzer"
+                onClick={() => setIsMobileMenuOpen(false)}
+                style={{ color: '#09090b' }}
+                className="drawer-nav-link text-lg sm:text-xl font-bold p-2 border-b border-zinc-200/80 flex items-center justify-between text-zinc-900 hover:text-blue-600 active:text-blue-700 transition-colors"
+              >
+                <span className="text-zinc-900" style={{ color: '#09090b' }}>GAP Analyzer</span>
+                <span className="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-blue-500/10 text-blue-700 border border-blue-500/20">Audit</span>
+              </Link>
+
+              <Link
+                href="/calculatoare"
+                onClick={() => setIsMobileMenuOpen(false)}
+                style={{ color: '#09090b' }}
+                className="drawer-nav-link text-lg sm:text-xl font-bold p-2 border-b border-zinc-200/80 flex items-center justify-between text-zinc-900 hover:text-blue-600 active:text-blue-700 transition-colors"
+              >
+                <span className="text-zinc-900" style={{ color: '#09090b' }}>Calculatoare</span>
+                <span className="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-emerald-500/10 text-emerald-700 border border-emerald-500/20">Instrumente</span>
+              </Link>
+
               <Link href="/de-ce-asigurari" onClick={() => setIsMobileMenuOpen(false)} style={{ color: '#09090b' }} className="drawer-nav-link text-lg sm:text-xl font-bold p-2 border-b border-zinc-200/80 text-zinc-900 hover:text-blue-600 transition-colors block">
                 De Ce Asigurări
               </Link>

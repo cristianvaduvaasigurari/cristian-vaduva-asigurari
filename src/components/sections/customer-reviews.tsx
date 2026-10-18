@@ -9,8 +9,10 @@ import {
   FilterGroup,
   ReviewCategory
 } from "@/data/customerReviewsData";
+import { cn } from "@/lib/utils";
 import {
   ChevronRight,
+  ChevronDown,
   X,
   ArrowRight,
   Sparkles,
@@ -62,6 +64,7 @@ function StoryCategoryIcon({ category, className = "w-4 h-4" }: { category: Revi
 export function CustomerReviews() {
   const [activeFilterId, setActiveFilterId] = useState<string>("all");
   const [activeStory, setActiveStory] = useState<CustomerStory | null>(null);
+  const [isExpanded, setIsExpanded] = useState<boolean>(false);
   const modalRef = useRef<HTMLDivElement>(null);
 
   // Lock body scroll when modal is open
@@ -94,6 +97,14 @@ export function CustomerReviews() {
     if (!group || group.categories.length === 0) return customerReviewsData;
     return customerReviewsData.filter((story) => group.categories.includes(story.category));
   }, [activeFilterId]);
+
+  // Initial display is limited to 3 stories unless expanded
+  const displayedStories = useMemo(() => {
+    if (isExpanded || filteredStories.length <= 3) {
+      return filteredStories;
+    }
+    return filteredStories.slice(0, 3);
+  }, [filteredStories, isExpanded]);
 
   // Count helper for filter group pills
   const getFilterCount = (group: FilterGroup) => {
@@ -233,7 +244,10 @@ export function CustomerReviews() {
                 <button
                   key={group.id}
                   type="button"
-                  onClick={() => setActiveFilterId(group.id)}
+                  onClick={() => {
+                    setActiveFilterId(group.id);
+                    setIsExpanded(false);
+                  }}
                   aria-pressed={isActive}
                   className={`inline-flex items-center gap-2 px-3.5 py-2 rounded-full text-xs font-semibold whitespace-nowrap transition-all duration-200 cursor-pointer ${
                     isActive
@@ -255,13 +269,13 @@ export function CustomerReviews() {
           </div>
 
           <div className="text-xs text-slate-500 font-medium hidden md:block">
-            {filteredStories.length} din {customerReviewsData.length} situații
+            {displayedStories.length} din {filteredStories.length} {filteredStories.length === 1 ? "situație" : "situații"} afișate
           </div>
         </div>
 
         {/* STORIES GRID */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
-          {filteredStories.map((story, index) => {
+          {displayedStories.map((story, index) => {
             const formattedIndex = (index + 1).toString().padStart(2, "0");
 
             return (
@@ -320,6 +334,26 @@ export function CustomerReviews() {
             );
           })}
         </div>
+
+        {/* EXPAND / COLLAPSE BUTTON */}
+        {filteredStories.length > 3 && (
+          <div className="flex justify-center -mt-8 mb-16">
+            <button
+              type="button"
+              onClick={() => setIsExpanded((prev) => !prev)}
+              aria-expanded={isExpanded}
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white hover:bg-slate-50 border border-slate-300 text-slate-800 text-xs sm:text-sm font-semibold shadow-xs hover:shadow-sm transition-all duration-200 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900 focus-visible:ring-offset-2"
+            >
+              <span>{isExpanded ? "Restrânge mărturiile" : `Vezi toate mărturiile (${filteredStories.length})`}</span>
+              <ChevronDown
+                className={cn(
+                  "w-4 h-4 text-slate-500 transition-transform duration-200",
+                  isExpanded ? "rotate-180" : ""
+                )}
+              />
+            </button>
+          </div>
+        )}
 
         {/* BOTTOM SECTION CTA (Subtle & Direct) */}
         <div className="glass max-w-4xl mx-auto rounded-3xl bg-white/90 p-8 sm:p-10 md:p-12 text-center relative overflow-hidden shadow-sm border border-slate-200/90">
