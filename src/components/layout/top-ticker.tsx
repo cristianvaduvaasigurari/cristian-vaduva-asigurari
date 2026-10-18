@@ -52,7 +52,7 @@ export function TopTicker() {
               display: inline-flex;
               white-space: nowrap;
               width: max-content;
-              animation: topTickerSlide 55s linear infinite;
+              animation: topTickerSlide 360s linear infinite;
               will-change: transform;
             }
             .top-ticker-track:hover {

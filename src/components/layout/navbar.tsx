@@ -9,6 +9,7 @@ import { Menu, X, ChevronDown, Shield, Car, Briefcase, Building2, Home } from "l
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
 import { TopTicker } from "@/components/layout/top-ticker";
+import { CONTACT } from "@/config/contact";
 
 const megaMenuData = [
   {
@@ -201,10 +202,15 @@ export function Navbar() {
       >
         <div className="container mx-auto px-4 md:px-6">
           <div className="flex items-center justify-between">
-            <div className="flex flex-col items-start justify-center gap-0.5 relative z-50">
-              <Link href="/" className="font-heading font-bold text-xl tracking-tight leading-none text-zinc-900 flex items-center hover:text-blue-600 transition-colors">
-                <Home className="w-5 h-5 mr-1 text-blue-600" />
-                Insurance
+            <div className="flex flex-col items-start justify-center relative z-50">
+              <Link href="/" className="group flex flex-col items-start transition-colors">
+                <span className="font-heading font-bold text-xl tracking-tight leading-none text-zinc-900 flex items-center group-hover:text-blue-600 transition-colors">
+                  <Home className="w-5 h-5 mr-1 text-blue-600" />
+                  Insurance
+                </span>
+                <span className="text-[8.5px] sm:text-[9.5px] font-bold tracking-wider text-zinc-500 group-hover:text-zinc-700 transition-colors uppercase mt-0.5 select-none">
+                  POWERED BY CRISTIANVADUVA.COM
+                </span>
               </Link>
             </div>
 
@@ -367,6 +373,16 @@ export function Navbar() {
                       ))}
                     </ul>
                   </div>
+                </div>
+                <div className="mt-6 pt-5 border-t border-zinc-100 flex flex-col sm:flex-row justify-between items-center bg-zinc-50/80 -mx-6 -mb-6 p-5 sm:p-6 rounded-b-2xl gap-4">
+                  <div className="text-sm text-zinc-600">
+                    <span className="font-bold text-zinc-900">Nu ești sigur ce soluție de finanțare ți se potrivește?</span> Descoperă CV Finance.
+                  </div>
+                  <Button className="bg-blue-600 hover:bg-blue-700 rounded-full text-xs font-semibold px-4 shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2" asChild>
+                    <a href={CONTACT.ecosystem.credite} target="_blank" rel="noopener noreferrer">
+                      Descoperă CV Finance
+                    </a>
+                  </Button>
                 </div>
               </div>
             </div>
@@ -539,6 +555,16 @@ export function Navbar() {
                         {item.name}
                       </Link>
                     ))}
+                    <div className="mt-2 pt-3 border-t border-zinc-200 flex flex-col gap-2 bg-white p-3.5 rounded-xl border border-zinc-200/60 shadow-xs">
+                      <div className="text-xs text-zinc-600 leading-snug">
+                        <span className="font-bold text-zinc-900">Nu ești sigur ce soluție de finanțare ți se potrivește?</span> Descoperă CV Finance.
+                      </div>
+                      <Button size="sm" className="bg-blue-600 hover:bg-blue-700 text-white rounded-full text-xs font-semibold w-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600" asChild>
+                        <a href={CONTACT.ecosystem.credite} target="_blank" rel="noopener noreferrer" onClick={() => setIsMobileMenuOpen(false)}>
+                          Descoperă CV Finance
+                        </a>
+                      </Button>
+                    </div>
                   </div>
                 )}
               </div>

@@ -48,7 +48,7 @@ export default function GeneratorDosarDaunaPage() {
 
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-heading font-bold text-zinc-900 tracking-tight leading-[1.1] mb-6">
               Generator Dosar de Daună <br className="hidden sm:inline" />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-zinc-200 to-rose-400">
+              <span className="text-zinc-700 block sm:inline">
                 Checklist operațional & PDF descărcabil.
               </span>
             </h1>

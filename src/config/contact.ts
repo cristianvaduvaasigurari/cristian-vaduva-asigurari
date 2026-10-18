@@ -43,5 +43,8 @@ export const CONTACT = {
     marketPulse: "https://cristianvaduva.com/market-pulse",
     fly: "https://fly.cristianvaduva.com",
     constructions: "https://constructions.cristianvaduva.com",
+    aether: "https://aether.cristianvaduva.com",
+    executive: "https://executive.cristianvaduva.com",
+    dubai: "https://dubai.cristianvaduva.com",
   },
 } as const;

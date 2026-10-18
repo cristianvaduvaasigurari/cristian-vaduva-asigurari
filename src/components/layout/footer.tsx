@@ -6,13 +6,17 @@ import { CONTACT } from "@/config/contact";
 const footerLinks = {
   ecosystem: [
     { key: "generali", href: CONTACT.ecosystem.generali },
+    { key: "cvFinance", href: CONTACT.ecosystem.credite, title: "Credite și soluții de finanțare" },
     { key: "aixLuxury", href: CONTACT.ecosystem.aixluxury },
     { key: "aixOs", href: CONTACT.ecosystem.os },
     { key: "homeFind", href: CONTACT.ecosystem.homefind },
     { key: "constructions", href: CONTACT.ecosystem.constructions },
     { key: "fly", href: CONTACT.ecosystem.fly },
+    { key: "aether", href: CONTACT.ecosystem.aether },
+    { key: "executive", href: CONTACT.ecosystem.executive },
+    { key: "dubai", href: CONTACT.ecosystem.dubai },
     { key: "ecosystemAix", href: CONTACT.ecosystem.website },
-  ],
+  ] satisfies Array<{ key: string; href: string; title?: string }>,
   servicesPersonal: [
     { key: "lifeInsurance", href: "/servicii/life-insurance" },
     { key: "individualHealth", href: "/servicii/health-insurance-individual" },
@@ -149,7 +153,11 @@ export function Footer() {
             <ul className="space-y-4">
               {footerLinks.ecosystem.map((link) => (
                 <li key={link.key}>
-                  <Link href={link.href} className="text-white/50 hover:text-white transition-colors text-sm font-medium">
+                  <Link
+                    href={link.href}
+                    title={link.title}
+                    className="text-white/50 hover:text-white transition-colors text-sm font-medium"
+                  >
                     {t(`footer.links.${link.key}`)}
                   </Link>
                 </li>

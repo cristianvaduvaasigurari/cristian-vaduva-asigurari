@@ -241,28 +241,6 @@ export function SeismicRiskChecker() {
               </p>
             </div>
           </div>
-
-          {/* Additional Mapping References */}
-          <div className="flex flex-wrap items-center gap-4 pt-1 text-[11px] text-zinc-500">
-            <span className="font-semibold text-zinc-700">Resurse cartografice independente de context:</span>
-            <a
-              href="https://mariuscomper.uk/cladiri-cu-risc-seismic/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-blue-600 hover:underline inline-flex items-center gap-1 font-medium"
-            >
-              Harta Marius Comper <ExternalLink className="w-3 h-3" />
-            </a>
-            <span>•</span>
-            <a
-              href="https://expertizare.ro/harta-risc-seismic"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-blue-600 hover:underline inline-flex items-center gap-1 font-medium"
-            >
-              Harta Expertizare.ro <ExternalLink className="w-3 h-3" />
-            </a>
-          </div>
         </div>
       </div>
 

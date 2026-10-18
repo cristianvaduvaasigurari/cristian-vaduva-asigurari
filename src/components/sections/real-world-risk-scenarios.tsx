@@ -519,7 +519,7 @@ export interface ProtectionFilterOption {
 }
 
 export const PROTECTION_FILTERS: ProtectionFilterOption[] = [
-  { id: "all", label: "Toate Scenariile", sublabel: `${riskScenarios.length} scenarii complete`, icon: "ShieldCheck", href: "/servicii", isPrimary: true, categories: [] },
+  { id: "all", label: "Toate Scenariile", sublabel: "Scenarii Complete", icon: "ShieldCheck", href: "/servicii", isPrimary: true, categories: [] },
   { id: "auto", label: "Auto & Flotă", sublabel: "CASCO & RCA", icon: "Car", href: "/servicii/casco-insurance", isPrimary: true, categories: ["casco", "rca"], personas: ["car"] },
   { id: "home", label: "Proprietate & Casă", sublabel: "Clădiri & Imobile", icon: "Home", href: "/servicii/home-insurance", isPrimary: true, categories: ["home"], personas: ["home"] },
   { id: "life", label: "Asigurări de Viață", sublabel: "Venit & Capital", icon: "Heart", href: "/servicii/life-insurance", isPrimary: true, categories: ["life"] },
@@ -1017,11 +1017,8 @@ export function RealWorldRiskScenarios({ isHomePagePreview = false }: RealWorldR
             <span className="w-2.5 h-2.5 rounded-full bg-blue-600" aria-hidden="true" />
             <div>
               <h3 className="text-lg md:text-xl font-bold font-heading text-foreground uppercase tracking-tight">
-                {activeFilter === "all" ? `${riskScenarios.length} Scenarii de Risc` : selectedFilterOption.label}
+                {activeFilter === "all" ? "Scenarii de Risc" : selectedFilterOption.label}
               </h3>
-              <span className="text-xs text-muted-foreground font-medium">
-                {filteredScenarios.length} {filteredScenarios.length === 1 ? "scenariu afișat" : "scenarii afișate"} din {riskScenarios.length}
-              </span>
             </div>
           </div>
 
@@ -1031,7 +1028,7 @@ export function RealWorldRiskScenarios({ isHomePagePreview = false }: RealWorldR
               onClick={() => setActiveFilter("all")}
               className="text-xs font-semibold text-blue-600 hover:text-blue-700 uppercase tracking-wider transition-colors cursor-pointer"
             >
-              Vezi toate cele {riskScenarios.length} de scenarii →
+              Vezi toate scenariile →
             </button>
           )}
         </div>
@@ -1130,7 +1127,7 @@ export function RealWorldRiskScenarios({ isHomePagePreview = false }: RealWorldR
               href="/scenarii-risc"
               className="inline-flex items-center justify-center gap-2 h-12 px-8 text-sm font-semibold rounded-full bg-slate-900 text-white hover:bg-slate-800 transition-all shadow-md"
             >
-              <span>Explorează Toate cele {riskScenarios.length} de Scenarii de Risc</span>
+              <span>Explorează Toate Scenariile de Risc</span>
               <SvgIcon name="ArrowRight" className="w-4 h-4" />
             </Link>
           </div>

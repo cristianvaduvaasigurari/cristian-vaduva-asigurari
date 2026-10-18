@@ -269,5 +269,75 @@ if (isReconCorrect && isCascoCorrect && isLifeCorrect && isCmrCorrect) {
   console.error("✗ Test 8 Failed:", { isReconCorrect, isCascoCorrect, isLifeCorrect, isCmrCorrect, reconMath, cascoFixed, cascoPercent, lifeMath, cmrMath });
 }
 
+// Test 9: Insurance Intelligence News Library & ASF Official Sources Integrity
+import { insuranceNewsData, getPublishedNewsArticles } from "../src/data/insuranceNewsData.ts";
+
+const published = getPublishedNewsArticles();
+const seenIds = new Set();
+const seenSlugs = new Set();
+let newsInvalidCount = 0;
+let asfOfficialCount = 0;
+let pdfDocumentCount = 0;
+
+for (const article of published) {
+  // Check unique IDs and Slugs
+  if (seenIds.has(article.id)) {
+    console.error(`✗ Duplicate article ID: ${article.id}`);
+    newsInvalidCount++;
+  }
+  seenIds.add(article.id);
+
+  if (seenSlugs.has(article.slug)) {
+    console.error(`✗ Duplicate article slug: ${article.slug}`);
+    newsInvalidCount++;
+  }
+  seenSlugs.add(article.slug);
+
+  // Check required text fields
+  if (!article.title || !article.subtitle || !article.excerpt || !article.categoryLabel) {
+    newsInvalidCount++;
+  }
+
+  // Check structured content completeness (all 6 sections required)
+  const sc = article.structuredContent;
+  if (!sc || !sc.whatHappened || !sc.importantData || !sc.context || !sc.whatItMeans || !sc.whatClientMustKnow || !sc.conclusion) {
+    console.error(`✗ Incomplete structuredContent in article: ${article.id}`);
+    newsInvalidCount++;
+  }
+
+  // Check takeaways and tags
+  if (!Array.isArray(article.keyTakeaways) || article.keyTakeaways.length < 3) {
+    console.error(`✗ Insufficient keyTakeaways in article: ${article.id}`);
+    newsInvalidCount++;
+  }
+  if (!Array.isArray(article.tags) || article.tags.length < 2) {
+    console.error(`✗ Insufficient tags in article: ${article.id}`);
+    newsInvalidCount++;
+  }
+
+  // Check date format (YYYY-MM-DD)
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(article.publishedAt)) {
+    console.error(`✗ Invalid publishedAt date in article: ${article.id} (${article.publishedAt})`);
+    newsInvalidCount++;
+  }
+
+  // Count official ASF articles
+  if (article.sourceUrl.includes("asfromania.ro")) {
+    asfOfficialCount++;
+  }
+
+  // Count articles with official documents (PDFs)
+  if (article.officialDocumentUrl && article.officialDocumentUrl.startsWith("https://")) {
+    pdfDocumentCount++;
+  }
+}
+
+if (newsInvalidCount === 0 && published.length >= 25 && asfOfficialCount >= 12 && pdfDocumentCount >= 5) {
+  console.log(`✓ Test 9 Passed: Insurance Intelligence Library verified (${published.length} published articles, ${asfOfficialCount} official ASF sources, ${pdfDocumentCount} official PDFs linked, 0 duplicates, all 6 structured analysis fields complete)`);
+} else {
+  console.error("✗ Test 9 Failed:", { newsInvalidCount, totalArticles: published.length, asfOfficialCount, pdfDocumentCount });
+}
+
 console.log("\n=== ALL UNIT/REGRESSION DATA INTEGRITY CHECKS PASSED ===");
+
 

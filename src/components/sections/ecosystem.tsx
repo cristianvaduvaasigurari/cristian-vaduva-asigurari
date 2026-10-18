@@ -86,6 +86,27 @@ const ecosystems = [
     description: "Dezvoltări imobiliare, construcții premium și management de proiect.",
     href: CONTACT.ecosystem.constructions,
     gradient: "from-amber-600 to-orange-500"
+  },
+  {
+    icon: <Globe className="w-8 h-8" />,
+    title: "AETHER",
+    description: "",
+    href: CONTACT.ecosystem.aether,
+    gradient: "from-blue-600 to-indigo-600"
+  },
+  {
+    icon: <Globe className="w-8 h-8" />,
+    title: "EXECUTIVE",
+    description: "",
+    href: CONTACT.ecosystem.executive,
+    gradient: "from-slate-700 to-zinc-900"
+  },
+  {
+    icon: <Globe className="w-8 h-8" />,
+    title: "DUBAI",
+    description: "",
+    href: CONTACT.ecosystem.dubai,
+    gradient: "from-amber-500 to-yellow-600"
   }
 ];
 
@@ -115,9 +136,11 @@ export function Ecosystem() {
                   {eco.icon}
                 </div>
                 <h3 className="text-2xl font-bold mb-4">{eco.title}</h3>
-                <p className="text-muted-foreground text-lg leading-relaxed">
-                  {eco.description}
-                </p>
+                {eco.description ? (
+                  <p className="text-muted-foreground text-lg leading-relaxed">
+                    {eco.description}
+                  </p>
+                ) : null}
               </div>
 
               <div className="mt-auto pt-8">

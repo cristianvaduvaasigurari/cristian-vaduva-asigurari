@@ -167,7 +167,7 @@ export function ClaimFileGenerator() {
           112
         </div>
         <div className="space-y-1 text-rose-800">
-          <strong className="block text-white font-bold">
+          <strong className="block text-rose-950 font-bold">
             {isRo ? "Măsură de Urgență Vitală:" : "Critical Emergency Precaution:"}
           </strong>
           <p className="leading-relaxed text-xs text-rose-800/90">
@@ -238,7 +238,7 @@ export function ClaimFileGenerator() {
                 },
               ].map((step, idx) => (
                 <div key={idx} className="p-4 rounded-2xl bg-white border border-zinc-200 space-y-1">
-                  <strong className="text-white text-xs sm:text-sm block">{step.title}</strong>
+                  <strong className="text-zinc-900 text-xs sm:text-sm block">{step.title}</strong>
                   <p className="text-xs text-zinc-500 leading-relaxed">{step.desc}</p>
                 </div>
               ))}
@@ -266,7 +266,7 @@ export function ClaimFileGenerator() {
                 },
               ].map((step, idx) => (
                 <div key={idx} className="p-4 rounded-2xl bg-white border border-zinc-200 space-y-1">
-                  <strong className="text-white text-xs sm:text-sm block">{step.title}</strong>
+                  <strong className="text-zinc-900 text-xs sm:text-sm block">{step.title}</strong>
                   <p className="text-xs text-zinc-500 leading-relaxed">{step.desc}</p>
                 </div>
               ))}
@@ -294,7 +294,7 @@ export function ClaimFileGenerator() {
                 },
               ].map((step, idx) => (
                 <div key={idx} className="p-4 rounded-2xl bg-white border border-zinc-200 space-y-1">
-                  <strong className="text-white text-xs sm:text-sm block">{step.title}</strong>
+                  <strong className="text-zinc-900 text-xs sm:text-sm block">{step.title}</strong>
                   <p className="text-xs text-zinc-500 leading-relaxed">{step.desc}</p>
                 </div>
               ))}
