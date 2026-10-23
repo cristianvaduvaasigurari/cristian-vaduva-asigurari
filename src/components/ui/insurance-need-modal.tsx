@@ -282,7 +282,7 @@ export function InsuranceNeedModal() {
       */}
       <aside
         aria-label="Puncte permanente de consultanță și recomandare"
-        className="fixed z-40 bottom-[calc(16vh+54px)] right-4 sm:bottom-[calc(16vh+54px)] sm:right-6 md:bottom-[36px] md:right-28 pb-[env(safe-area-inset-bottom)] pointer-events-auto flex flex-col items-end gap-2 sm:gap-2.5"
+        className="fixed z-40 bottom-[150px] right-4 sm:bottom-[150px] sm:right-6 md:bottom-[36px] md:right-28 pb-[env(safe-area-inset-bottom)] pointer-events-auto flex flex-col items-end gap-2 sm:gap-2.5"
       >
         {/* Buton 1: Recomandă & Beneficiați */}
         <button

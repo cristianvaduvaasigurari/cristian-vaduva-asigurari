@@ -175,8 +175,8 @@ export function QuickOfferModal() {
 
   return (
     <>
-      {/* ALWAYS-ON FLOATING CTA BUTTON (Positioned at ~16% from bottom of viewport / ~84% screen height) */}
-      <div className="fixed bottom-[16vh] right-4 sm:right-6 z-40 pb-[env(safe-area-inset-bottom)] pointer-events-auto">
+      {/* ALWAYS-ON FLOATING CTA BUTTON (Mobile: bottom-[96px] to align with contact button; Desktop: bottom-[16vh]) */}
+      <div className="fixed bottom-[96px] md:bottom-[16vh] right-4 sm:right-6 z-40 pb-[env(safe-area-inset-bottom)] pointer-events-auto">
         <button
           type="button"
           onClick={handleOpen}
