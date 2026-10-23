@@ -11,9 +11,11 @@ import {
   HelpCircle,
   Check,
   Sparkles,
+  Gift,
 } from "lucide-react";
 import Link from "next/link";
 import { trackConversion } from "@/lib/analytics";
+import { ReferralModal } from "./referral-modal";
 
 export const INSURANCE_NEEDS = [
   {
@@ -96,6 +98,10 @@ export function InsuranceNeedModal() {
 
   const modalRef = useRef<HTMLDivElement>(null);
   const triggerRef = useRef<HTMLButtonElement>(null);
+
+  // Referral Modal Independent State & Ref
+  const [isReferralOpen, setIsReferralOpen] = useState(false);
+  const referralTriggerRef = useRef<HTMLButtonElement>(null);
 
   const resetForm = React.useCallback(() => {
     setSelectedCategory("");
@@ -266,10 +272,33 @@ export function InsuranceNeedModal() {
         - Mobile: compact, visible, thumb-accessible pill at the bottom-right above other controls.
         - Style: Premium minimalist white, dark slate text, subtle border, luxury shadow.
       */}
+      {/* 
+        PERMANENT FLOATING CTA BUTTONS:
+        1. „Recomandă & Beneficiați” (Top)
+        2. „Ce nevoie ai?” (Bottom)
+        - Desktop: bottom-right area, positioned cleanly beside other controls without overlap.
+        - Mobile: compact, thumb-accessible stack at bottom-right above other controls.
+        - Style: Premium minimalist white, dark slate text, subtle border, luxury shadow.
+      */}
       <aside
-        aria-label="Punct permanent de contact: Ce nevoie ai?"
-        className="fixed z-40 bottom-[calc(23vh+12px)] right-4 sm:bottom-[calc(23vh+12px)] sm:right-6 md:bottom-[36px] md:right-28 pb-[env(safe-area-inset-bottom)] pointer-events-auto"
+        aria-label="Puncte permanente de consultanță și recomandare"
+        className="fixed z-40 bottom-[calc(23vh+12px)] right-4 sm:right-6 md:bottom-[36px] md:right-28 pb-[env(safe-area-inset-bottom)] pointer-events-auto flex flex-col items-end gap-2 sm:gap-2.5"
       >
+        {/* Buton 1: Recomandă & Beneficiați */}
+        <button
+          ref={referralTriggerRef}
+          type="button"
+          onClick={() => setIsReferralOpen(true)}
+          aria-label="Deschide programul: Recomandă & Beneficiați"
+          aria-expanded={isReferralOpen}
+          aria-haspopup="dialog"
+          className="group relative inline-flex items-center gap-2 px-3.5 py-2 sm:px-4 sm:py-2.5 rounded-full bg-white text-slate-900 hover:bg-slate-50 active:bg-slate-100 border border-slate-200/90 shadow-[0_8px_30px_rgb(0,0,0,0.12)] hover:shadow-[0_12px_40px_rgb(0,0,0,0.18)] hover:scale-[1.03] active:scale-[0.98] transition-all duration-300 font-bold text-xs sm:text-sm tracking-tight cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-900 focus-visible:ring-offset-2 max-w-[calc(100vw-2rem)] md:fixed md:left-6 md:right-auto md:bottom-[92px] md:mr-0"
+        >
+          <Gift className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-slate-700 group-hover:text-slate-900 transition-colors shrink-0" />
+          <span className="text-slate-900 select-none truncate">Recomandă &amp; Beneficiați</span>
+        </button>
+
+        {/* Buton 2: Ce nevoie ai? */}
         <button
           ref={triggerRef}
           type="button"
@@ -277,7 +306,7 @@ export function InsuranceNeedModal() {
           aria-label="Deschide formularul: Ce nevoie ai?"
           aria-expanded={isOpen}
           aria-haspopup="dialog"
-          className="group relative inline-flex items-center gap-2.5 px-4 py-2.5 sm:px-5 sm:py-3 rounded-full bg-white text-slate-900 hover:bg-slate-50 active:bg-slate-100 border border-slate-200/90 shadow-[0_8px_30px_rgb(0,0,0,0.12)] hover:shadow-[0_12px_40px_rgb(0,0,0,0.18)] hover:scale-[1.03] active:scale-[0.98] transition-all duration-300 font-bold text-xs sm:text-sm tracking-tight cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-900 focus-visible:ring-offset-2"
+          className="group relative inline-flex items-center gap-2.5 px-4 py-2.5 sm:px-5 sm:py-3 rounded-full bg-white text-slate-900 hover:bg-slate-50 active:bg-slate-100 border border-slate-200/90 shadow-[0_8px_30px_rgb(0,0,0,0.12)] hover:shadow-[0_12px_40px_rgb(0,0,0,0.18)] hover:scale-[1.03] active:scale-[0.98] transition-all duration-300 font-bold text-xs sm:text-sm tracking-tight cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-900 focus-visible:ring-offset-2 max-w-[calc(100vw-2rem)]"
         >
           {/* Subtle pulse indicator */}
           <span className="relative flex h-2 w-2">
@@ -285,16 +314,23 @@ export function InsuranceNeedModal() {
             <span className="relative inline-flex rounded-full h-2 w-2 bg-slate-900" />
           </span>
 
-          <HelpCircle className="w-4 h-4 text-slate-700 group-hover:text-slate-900 transition-colors" />
+          <HelpCircle className="w-4 h-4 text-slate-700 group-hover:text-slate-900 transition-colors shrink-0" />
 
-          <span className="text-slate-900 select-none">Ce nevoie ai?</span>
+          <span className="text-slate-900 select-none truncate">Ce nevoie ai?</span>
         </button>
       </aside>
+
+      {/* REFERRAL & SECOND OPINION MODAL */}
+      <ReferralModal
+        isOpen={isReferralOpen}
+        onClose={() => setIsReferralOpen(false)}
+        triggerRef={referralTriggerRef}
+      />
 
       {/* MODAL DIALOG */}
       {isOpen && (
         <div
-          className="fixed inset-0 z-50 flex items-end sm:items-center justify-center p-0 sm:p-4 md:p-6 bg-black/60 backdrop-blur-sm animate-in fade-in duration-200"
+          className="fixed inset-0 z-[110] flex items-end sm:items-center justify-center p-0 sm:p-4 md:p-6 bg-black/60 backdrop-blur-sm animate-in fade-in duration-200"
           role="dialog"
           aria-modal="true"
           aria-labelledby="need-modal-title"
