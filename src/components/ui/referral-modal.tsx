@@ -30,7 +30,7 @@ export interface ReferralModalProps {
 }
 
 export const WHATSAPP_REFERRAL_MESSAGE =
-  "Salut! Îți recomand să discuți cu Insurance Advisory despre nevoile tale de asigurare. Poți cere o a doua opinie gratuită și poți verifica dacă sunt disponibile beneficii pentru tine. Detalii: https://insurance.cristianvaduva.com";
+  "Salut! Îți recomand să discuți cu CRISTIAN VADUVA despre nevoile tale de asigurare. Poți cere o a doua opinie gratuită și poți verifica dacă sunt disponibile beneficii pentru tine. Detalii: https://insurance.cristianvaduva.com";
 
 const RELATIONSHIP_OPTIONS = [
   "Prieten",
@@ -337,8 +337,8 @@ export function ReferralModal({
           </button>
         </div>
 
-        {/* Tab Navigation */}
-        <div className="px-5 pt-3 border-b border-slate-100 bg-white shrink-0">
+        {/* Desktop Tab Navigation */}
+        <div className="hidden sm:block px-5 pt-3 border-b border-slate-100 bg-white shrink-0">
           <div className="flex gap-2 overflow-x-auto pb-2 scrollbar-none" role="tablist">
             <button
               type="button"
@@ -472,6 +472,232 @@ export function ReferralModal({
           ) : (
             /* FORM STATE */
             <div className="space-y-5">
+              {/* MOBILE: 3 Opțiuni Verticale (sm:hidden) */}
+              <div className="sm:hidden space-y-2.5" role="tablist" aria-label="Alege tipul de solicitare">
+                <div className="flex items-center justify-between pb-0.5">
+                  <span className="text-[11px] font-bold uppercase tracking-wider text-slate-500">
+                    Alege una dintre cele 3 opțiuni:
+                  </span>
+                </div>
+
+                {/* 1. Recomand pe cineva */}
+                <div
+                  role="tab"
+                  tabIndex={0}
+                  aria-selected={activeTab === "referral"}
+                  onClick={() => {
+                    setActiveTab("referral");
+                    setErrorMessage("");
+                  }}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter" || e.key === " ") {
+                      setActiveTab("referral");
+                      setErrorMessage("");
+                    }
+                  }}
+                  className={`p-3.5 rounded-2xl border transition-all cursor-pointer text-left ${
+                    activeTab === "referral"
+                      ? "border-slate-900 bg-slate-900 text-white shadow-md ring-2 ring-slate-900/10"
+                      : "border-slate-200 bg-white hover:bg-slate-50/80 text-slate-900 shadow-xs"
+                  }`}
+                >
+                  <div className="flex items-start gap-2.5 mb-1.5">
+                    <div
+                      className={`w-7 h-7 rounded-lg flex items-center justify-center shrink-0 ${
+                        activeTab === "referral"
+                          ? "bg-white/15 text-white"
+                          : "bg-slate-100 text-slate-800"
+                      }`}
+                    >
+                      <Users className="w-4 h-4" />
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <h4 className="text-xs font-bold leading-tight">1. Recomand pe cineva</h4>
+                      <p
+                        className={`text-[11px] mt-1 leading-relaxed ${
+                          activeTab === "referral" ? "text-slate-200" : "text-slate-600"
+                        }`}
+                      >
+                        Recomandă un prieten sau partener și aflați ce beneficii reciproce sunt disponibile. Distribuie pe WhatsApp sau lasă-ne datele.
+                      </p>
+                    </div>
+                  </div>
+                  <div className="pt-2 flex items-center justify-between border-t border-current/10 mt-2">
+                    <span className="text-[10px] font-medium opacity-80">
+                      {activeTab === "referral" ? "Formularul este deschis mai jos" : "Apasă pentru selectare"}
+                    </span>
+                    <button
+                      type="button"
+                      tabIndex={-1}
+                      className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-bold transition-colors cursor-pointer ${
+                        activeTab === "referral"
+                          ? "bg-white text-slate-900 shadow-xs"
+                          : "bg-slate-900 text-white hover:bg-slate-800"
+                      }`}
+                    >
+                      {activeTab === "referral" ? (
+                        <>
+                          <Check className="w-3.5 h-3.5" />
+                          <span>Opțiune selectată</span>
+                        </>
+                      ) : (
+                        <>
+                          <span>Recomandă pe cineva</span>
+                          <ArrowRight className="w-3.5 h-3.5" />
+                        </>
+                      )}
+                    </button>
+                  </div>
+                </div>
+
+                {/* 2. Sunt deja client Generali */}
+                <div
+                  role="tab"
+                  tabIndex={0}
+                  aria-selected={activeTab === "existing_client"}
+                  onClick={() => {
+                    setActiveTab("existing_client");
+                    setErrorMessage("");
+                  }}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter" || e.key === " ") {
+                      setActiveTab("existing_client");
+                      setErrorMessage("");
+                    }
+                  }}
+                  className={`p-3.5 rounded-2xl border transition-all cursor-pointer text-left ${
+                    activeTab === "existing_client"
+                      ? "border-slate-900 bg-slate-900 text-white shadow-md ring-2 ring-slate-900/10"
+                      : "border-slate-200 bg-white hover:bg-slate-50/80 text-slate-900 shadow-xs"
+                  }`}
+                >
+                  <div className="flex items-start gap-2.5 mb-1.5">
+                    <div
+                      className={`w-7 h-7 rounded-lg flex items-center justify-center shrink-0 ${
+                        activeTab === "existing_client"
+                          ? "bg-white/15 text-white"
+                          : "bg-slate-100 text-slate-800"
+                      }`}
+                    >
+                      <ShieldCheck className="w-4 h-4" />
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <h4 className="text-xs font-bold leading-tight">2. Sunt deja client Generali</h4>
+                      <p
+                        className={`text-[11px] mt-1 leading-relaxed ${
+                          activeTab === "existing_client" ? "text-slate-200" : "text-slate-600"
+                        }`}
+                      >
+                        Ai deja o poliță Generali? Întreabă dacă ai un discount sau un beneficiu disponibil pentru o nouă asigurare sau recomandare.
+                      </p>
+                    </div>
+                  </div>
+                  <div className="pt-2 flex items-center justify-between border-t border-current/10 mt-2">
+                    <span className="text-[10px] font-medium opacity-80">
+                      {activeTab === "existing_client" ? "Formularul este deschis mai jos" : "Apasă pentru selectare"}
+                    </span>
+                    <button
+                      type="button"
+                      tabIndex={-1}
+                      className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-bold transition-colors cursor-pointer ${
+                        activeTab === "existing_client"
+                          ? "bg-white text-slate-900 shadow-xs"
+                          : "bg-slate-900 text-white hover:bg-slate-800"
+                      }`}
+                    >
+                      {activeTab === "existing_client" ? (
+                        <>
+                          <Check className="w-3.5 h-3.5" />
+                          <span>Opțiune selectată</span>
+                        </>
+                      ) : (
+                        <>
+                          <span>Verifică dacă ai beneficiu</span>
+                          <ArrowRight className="w-3.5 h-3.5" />
+                        </>
+                      )}
+                    </button>
+                  </div>
+                </div>
+
+                {/* 3. Vreau o a doua opinie */}
+                <div
+                  role="tab"
+                  tabIndex={0}
+                  aria-selected={activeTab === "second_opinion"}
+                  onClick={() => {
+                    setActiveTab("second_opinion");
+                    setErrorMessage("");
+                  }}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter" || e.key === " ") {
+                      setActiveTab("second_opinion");
+                      setErrorMessage("");
+                    }
+                  }}
+                  className={`p-3.5 rounded-2xl border transition-all cursor-pointer text-left ${
+                    activeTab === "second_opinion"
+                      ? "border-slate-900 bg-slate-900 text-white shadow-md ring-2 ring-slate-900/10"
+                      : "border-slate-200 bg-white hover:bg-slate-50/80 text-slate-900 shadow-xs"
+                  }`}
+                >
+                  <div className="flex items-start gap-2.5 mb-1.5">
+                    <div
+                      className={`w-7 h-7 rounded-lg flex items-center justify-center shrink-0 ${
+                        activeTab === "second_opinion"
+                          ? "bg-white/15 text-white"
+                          : "bg-slate-100 text-slate-800"
+                      }`}
+                    >
+                      <FileSearch className="w-4 h-4" />
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <h4 className="text-xs font-bold leading-tight">3. Vreau o a doua opinie</h4>
+                      <p
+                        className={`text-[11px] mt-1 leading-relaxed ${
+                          activeTab === "second_opinion" ? "text-slate-200" : "text-slate-600"
+                        }`}
+                      >
+                        Ai deja o poliță și vrei să știi dacă acoperirile sunt potrivite? Analiza inițială este gratuită și fără obligații.
+                      </p>
+                    </div>
+                  </div>
+                  <div className="pt-2 flex items-center justify-between border-t border-current/10 mt-2">
+                    <span className="text-[10px] font-medium opacity-80">
+                      {activeTab === "second_opinion" ? "Formularul este deschis mai jos" : "Apasă pentru selectare"}
+                    </span>
+                    <button
+                      type="button"
+                      tabIndex={-1}
+                      className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-bold transition-colors cursor-pointer ${
+                        activeTab === "second_opinion"
+                          ? "bg-white text-slate-900 shadow-xs"
+                          : "bg-slate-900 text-white hover:bg-slate-800"
+                      }`}
+                    >
+                      {activeTab === "second_opinion" ? (
+                        <>
+                          <Check className="w-3.5 h-3.5" />
+                          <span>Opțiune selectată</span>
+                        </>
+                      ) : (
+                        <>
+                          <span>Solicită a doua opinie gratuită</span>
+                          <ArrowRight className="w-3.5 h-3.5" />
+                        </>
+                      )}
+                    </button>
+                  </div>
+                </div>
+
+                <div className="pt-1.5 pb-1 flex items-center gap-2">
+                  <div className="flex-1 h-px bg-slate-200" />
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400">
+                    Formular de completat
+                  </span>
+                  <div className="flex-1 h-px bg-slate-200" />
+                </div>
+              </div>
               {/* Mutual Benefits Banner (Section 3) */}
               <div className="p-4 rounded-2xl bg-gradient-to-br from-slate-50 to-slate-100/60 border border-slate-200/90 text-left space-y-2">
                 <div className="flex items-center gap-2">
