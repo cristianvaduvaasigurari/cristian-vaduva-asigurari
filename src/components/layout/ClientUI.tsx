@@ -28,6 +28,11 @@ const QuickOfferModal = dynamic(
   { ssr: false }
 );
 
+const InsuranceNeedModal = dynamic(
+  () => import("@/components/ui/insurance-need-modal").then((m) => m.InsuranceNeedModal),
+  { ssr: false }
+);
+
 const emptySubscribe = () => () => {};
 
 export default function ClientUI() {
@@ -46,6 +51,7 @@ export default function ClientUI() {
       <AiChatbot />
       <CookieBanner />
       <QuickOfferModal />
+      <InsuranceNeedModal />
     </>
   );
 }
