@@ -231,7 +231,6 @@ export function Navbar() {
                     width={18}
                     height={14}
                     className="h-3 sm:h-3.5 w-auto object-contain shrink-0"
-                    priority
                     unoptimized
                   />
                   <span className="text-[8.5px] sm:text-[9.5px] font-bold tracking-wider text-zinc-600 uppercase">

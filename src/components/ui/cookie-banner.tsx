@@ -12,8 +12,8 @@ export function CookieBanner() {
   useEffect(() => {
     const consent = localStorage.getItem("cookie_consent");
     if (!consent) {
-      // Delay for a smoother experience
-      const timer = setTimeout(() => setIsVisible(true), 1500);
+      // Delay for a smoother experience without interfering with initial viewport paint
+      const timer = setTimeout(() => setIsVisible(true), 4000);
       return () => clearTimeout(timer);
     }
   }, []);
