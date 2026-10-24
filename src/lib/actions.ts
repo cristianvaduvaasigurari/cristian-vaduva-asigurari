@@ -8,24 +8,142 @@ export type ActionResponse = {
   error?: string;
 };
 
-const DEFAULT_SUPABASE_URL = "https://fcpsafjgjnecdlyqfcid.supabase.co";
-const DEFAULT_SUPABASE_ANON_KEY =
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZjcHNhZmpnam5lY2RseXFmY2lkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODI3MzAyMTksImV4cCI6MjA5ODMwNjIxOX0.n-Obp-2j284umEvkKHBiTmmTfYARKvGrx3dUDhvcGPY";
+function getSupabaseConfig(): { supabaseUrl: string; supabaseKey: string } | null {
+  const supabaseUrl = (process.env.SUPABASE_URL || process.env.NEXT_PUBLIC_SUPABASE_URL)?.trim();
+  const supabaseKey = (
+    process.env.SUPABASE_SERVICE_ROLE_KEY ||
+    process.env.SUPABASE_KEY ||
+    process.env.SUPABASE_ANON_KEY ||
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
+  )?.trim();
+
+  if (!supabaseUrl || !supabaseKey) {
+    return null;
+  }
+  return { supabaseUrl, supabaseKey };
+}
+
+async function insertLeadRecord(payload: {
+  name: string;
+  phone: string;
+  email?: string;
+  service_type: string;
+  message: string;
+}): Promise<boolean> {
+  const config = getSupabaseConfig();
+  if (!config) {
+    logger.error("Supabase environment configuration missing in Server Action");
+    return false;
+  }
+  try {
+    const restRes = await fetch(`${config.supabaseUrl}/rest/v1/leads`, {
+      method: "POST",
+      headers: {
+        apikey: config.supabaseKey,
+        Authorization: `Bearer ${config.supabaseKey}`,
+        "Content-Type": "application/json",
+        Prefer: "return=minimal",
+      },
+      body: JSON.stringify(payload),
+      cache: "no-store",
+    });
+    return restRes.ok || restRes.status === 201 || restRes.status === 200 || restRes.status === 204;
+  } catch (err) {
+    logger.error("Supabase lead insertion error in Server Action", err);
+    return false;
+  }
+}
+
+function sanitizeText(input: unknown): string {
+  if (typeof input !== "string") return "";
+  return input.replace(/[\u0000-\u0008\u000B\u000C\u000E-\u001F\u007F]/g, "").trim();
+}
+
+function isHoneypotTriggered(val: string): boolean {
+  return Boolean(val && val.trim().length > 0);
+}
+
+function validatePhone(phone: string): { isValid: boolean; sanitizedValue?: string; error?: string } {
+  const sanitized = phone.replace(/[^\d+]/g, "").trim();
+  const digitsOnly = sanitized.replace(/\D/g, "");
+  if (!digitsOnly || digitsOnly.length < 9) {
+    return { isValid: false, error: "Te rugăm să introduci un număr de telefon valid." };
+  }
+  return { isValid: true, sanitizedValue: sanitized };
+}
+
+function validateEmail(email: string, isRequired = false): { isValid: boolean; sanitizedValue?: string; error?: string } {
+  const sanitized = email.trim().toLowerCase();
+  if (!sanitized) {
+    if (isRequired) return { isValid: false, error: "Adresa de email este obligatorie." };
+    return { isValid: true, sanitizedValue: "" };
+  }
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(sanitized)) {
+    return { isValid: false, error: "Te rugăm să introduci o adresă de email validă." };
+  }
+  return { isValid: true, sanitizedValue: sanitized };
+}
+
+function validateName(name: string, isRequired = false): { isValid: boolean; sanitizedValue?: string; error?: string } {
+  const sanitized = sanitizeText(name);
+  if (!sanitized || sanitized === "Anonim") {
+    if (isRequired) return { isValid: false, error: "Numele este obligatoriu." };
+    return { isValid: true, sanitizedValue: "Anonim" };
+  }
+  return { isValid: true, sanitizedValue: sanitized };
+}
+
+function validateMessage(message: string, maxLen = 2000): { isValid: boolean; sanitizedValue?: string; error?: string } {
+  const sanitized = sanitizeText(message).slice(0, maxLen);
+  return { isValid: true, sanitizedValue: sanitized };
+}
+
+const logger = {
+  info: (msg: string, ctx?: Record<string, unknown>) => console.log(`[INFO] ${msg}`, ctx || ""),
+  warn: (msg: string, ctx?: Record<string, unknown>) => console.warn(`[WARN] ${msg}`, ctx || ""),
+  error: (msg: string, err?: unknown, ctx?: Record<string, unknown>) => console.error(`[ERROR] ${msg}`, err || "", ctx || ""),
+};
 
 /**
  * Saves a generic lead into the `leads` table in our platform.
  */
 export async function submitLead(formData: FormData): Promise<ActionResponse> {
-  try {
-    const name = (formData.get("name") as string) || "Anonim";
-    const email = (formData.get("email") as string) || "";
-    const phone = (formData.get("phone") as string) || "";
-    const service = (formData.get("service") as string) || "Website Lead";
-    const message = (formData.get("message") as string) || "";
-    const source = (formData.get("source") as string) || "Website Lead";
+  const correlationId = crypto.randomUUID();
 
-    if (!phone) {
-      return { success: false, error: "Numărul de telefon este obligatoriu." };
+  try {
+    // 1. Anti-spam Honeypot Check
+    const hp = (formData.get("website_hp") as string) || (formData.get("hp") as string) || "";
+    if (isHoneypotTriggered(hp)) {
+      logger.info("Spam bot trapped by honeypot in submitLead", { correlationId });
+      return { success: true, message: "Cererea ta a fost trimisă cu succes!" };
+    }
+
+    const nameRaw = (formData.get("name") as string) || "Anonim";
+    const emailRaw = (formData.get("email") as string) || "";
+    const phoneRaw = (formData.get("phone") as string) || "";
+    const serviceRaw = (formData.get("service") as string) || "Website Lead";
+    const messageRaw = (formData.get("message") as string) || "";
+    const sourceRaw = (formData.get("source") as string) || "Website Lead";
+
+    // 2. Strict Input Validation
+    const phoneVal = validatePhone(phoneRaw);
+    if (!phoneVal.isValid) {
+      return { success: false, error: phoneVal.error };
+    }
+
+    const emailVal = validateEmail(emailRaw, false);
+    if (!emailVal.isValid) {
+      return { success: false, error: emailVal.error };
+    }
+
+    const nameVal = validateName(nameRaw, false);
+    if (!nameVal.isValid) {
+      return { success: false, error: nameVal.error };
+    }
+
+    const messageVal = validateMessage(messageRaw, 2000);
+    if (!messageVal.isValid) {
+      return { success: false, error: messageVal.error };
     }
 
     const metadataStr = formData.get("metadata") as string;
@@ -34,70 +152,56 @@ export async function submitLead(formData: FormData): Promise<ActionResponse> {
       try {
         metadata = JSON.parse(metadataStr);
       } catch {
-        metadata = { raw: metadataStr };
+        metadata = { raw: sanitizeText(metadataStr) };
       }
     }
 
+    const cleanName = nameVal.sanitizedValue || "Anonim";
+    const cleanPhone = phoneVal.sanitizedValue!;
+    const cleanEmail = emailVal.sanitizedValue || "";
+    const cleanService = sanitizeText(serviceRaw) || "Website Lead";
+    const cleanMessage = messageVal.sanitizedValue || "";
+    const cleanSource = sanitizeText(sourceRaw) || "insurance.cristianvaduva.com";
+
     const formattedMessage = [
-      message,
-      source ? `Sursă: ${source}` : null,
-      metadata ? `Detalii: ${JSON.stringify(metadata, null, 2)}` : null,
+      cleanMessage,
+      cleanSource ? `Sursă: ${cleanSource}` : null,
+      metadata ? `Context: ${JSON.stringify(metadata)}` : null,
+      `ID Corelare: ${correlationId}`,
     ]
       .filter(Boolean)
       .join("\n\n");
 
     const leadData = {
-      name,
-      email,
-      phone,
-      service_type: service,
+      name: cleanName,
+      email: cleanEmail,
+      phone: cleanPhone,
+      service_type: cleanService,
       message: formattedMessage,
     };
 
-    const supabaseUrl = (
-      process.env.SUPABASE_URL ||
-      process.env.NEXT_PUBLIC_SUPABASE_URL ||
-      DEFAULT_SUPABASE_URL
-    ).trim();
-
-    const supabaseKey = (
-      process.env.SUPABASE_SERVICE_ROLE_KEY ||
-      process.env.SUPABASE_ANON_KEY ||
-      process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY ||
-      DEFAULT_SUPABASE_ANON_KEY
-    ).trim();
-
-    const restRes = await fetch(`${supabaseUrl}/rest/v1/leads`, {
-      method: "POST",
-      headers: {
-        "apikey": supabaseKey,
-        "Authorization": `Bearer ${supabaseKey}`,
-        "Content-Type": "application/json",
-        "Prefer": "return=minimal",
-      },
-      body: JSON.stringify(leadData),
-      cache: "no-store",
-    });
-
-    if (!restRes.ok && restRes.status !== 201 && restRes.status !== 200 && restRes.status !== 204) {
-      const errText = await restRes.text().catch(() => "");
-      console.error("[submitLead] Supabase REST error:", restRes.status, errText);
+    const isSaved = await insertLeadRecord(leadData);
+    if (!isSaved) {
+      logger.error(`[submitLead] Supabase REST insert failed`, undefined, {
+        correlationId,
+      });
       return { success: false, error: "Eroare la salvarea datelor. Te rugăm să încerci din nou." };
     }
 
     await sendTelegramAlert({
-      name,
-      phone,
-      email,
-      service,
+      name: cleanName,
+      phone: cleanPhone,
+      email: cleanEmail,
+      service: cleanService,
       message: formattedMessage,
       pageUrl: "Website Lead Action",
       timestamp: new Date().toISOString(),
     });
 
+    logger.info("submitLead completed successfully", { correlationId, service: cleanService });
     return { success: true, message: "Cererea ta a fost trimisă cu succes!" };
   } catch (err) {
-    console.error("Server Action Error:", err);
+    logger.error("submitLead exception", err, { correlationId });
     return { success: false, error: "A apărut o eroare neașteptată." };
   }
 }
@@ -127,33 +231,9 @@ export async function saveAssessment(
       message: formattedMessage,
     };
 
-    const supabaseUrl = (
-      process.env.SUPABASE_URL ||
-      process.env.NEXT_PUBLIC_SUPABASE_URL ||
-      DEFAULT_SUPABASE_URL
-    ).trim();
-
-    const supabaseKey = (
-      process.env.SUPABASE_SERVICE_ROLE_KEY ||
-      process.env.SUPABASE_ANON_KEY ||
-      process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY ||
-      DEFAULT_SUPABASE_ANON_KEY
-    ).trim();
-
-    const restRes = await fetch(`${supabaseUrl}/rest/v1/leads`, {
-      method: "POST",
-      headers: {
-        "apikey": supabaseKey,
-        "Authorization": `Bearer ${supabaseKey}`,
-        "Content-Type": "application/json",
-        "Prefer": "return=minimal",
-      },
-      body: JSON.stringify(leadData),
-      cache: "no-store",
-    });
-
-    if (!restRes.ok && restRes.status !== 201 && restRes.status !== 200 && restRes.status !== 204) {
-      console.error("[saveAssessment] Supabase error:", restRes.status);
+    const isSaved = await insertLeadRecord(leadData);
+    if (!isSaved) {
+      console.error("[saveAssessment] Supabase insert failed");
       return { success: false, error: "Eroare la salvarea evaluării." };
     }
 
@@ -248,33 +328,9 @@ export async function submitPolicyReview(formData: FormData): Promise<{
       message: formattedMessage,
     };
 
-    const supabaseUrl = (
-      process.env.SUPABASE_URL ||
-      process.env.NEXT_PUBLIC_SUPABASE_URL ||
-      DEFAULT_SUPABASE_URL
-    ).trim();
-
-    const supabaseKey = (
-      process.env.SUPABASE_SERVICE_ROLE_KEY ||
-      process.env.SUPABASE_ANON_KEY ||
-      process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY ||
-      DEFAULT_SUPABASE_ANON_KEY
-    ).trim();
-
-    const restRes = await fetch(`${supabaseUrl}/rest/v1/leads`, {
-      method: "POST",
-      headers: {
-        "apikey": supabaseKey,
-        "Authorization": `Bearer ${supabaseKey}`,
-        "Content-Type": "application/json",
-        "Prefer": "return=minimal",
-      },
-      body: JSON.stringify(leadData),
-      cache: "no-store",
-    });
-
-    if (!restRes.ok && restRes.status !== 201 && restRes.status !== 200 && restRes.status !== 204) {
-      console.error("[submitPolicyReview] Supabase insert status:", restRes.status);
+    const isSaved = await insertLeadRecord(leadData);
+    if (!isSaved) {
+      console.error("[submitPolicyReview] Supabase insert failed");
       return { success: false, error: "A apărut o problemă la salvarea solicitării. Te rugăm să încerci din nou." };
     }
 
@@ -363,33 +419,9 @@ export async function submitHomePurchaseLead(formData: FormData): Promise<{
       message: formattedMessage,
     };
 
-    const supabaseUrl = (
-      process.env.SUPABASE_URL ||
-      process.env.NEXT_PUBLIC_SUPABASE_URL ||
-      DEFAULT_SUPABASE_URL
-    ).trim();
-
-    const supabaseKey = (
-      process.env.SUPABASE_SERVICE_ROLE_KEY ||
-      process.env.SUPABASE_ANON_KEY ||
-      process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY ||
-      DEFAULT_SUPABASE_ANON_KEY
-    ).trim();
-
-    const restRes = await fetch(`${supabaseUrl}/rest/v1/leads`, {
-      method: "POST",
-      headers: {
-        "apikey": supabaseKey,
-        "Authorization": `Bearer ${supabaseKey}`,
-        "Content-Type": "application/json",
-        "Prefer": "return=minimal",
-      },
-      body: JSON.stringify(leadData),
-      cache: "no-store",
-    });
-
-    if (!restRes.ok && restRes.status !== 201 && restRes.status !== 200 && restRes.status !== 204) {
-      console.error("[submitHomePurchaseLead] Supabase error status:", restRes.status);
+    const isSaved = await insertLeadRecord(leadData);
+    if (!isSaved) {
+      console.error("[submitHomePurchaseLead] Supabase insert failed");
       return { success: false, error: "A apărut o problemă la salvarea solicitării. Te rugăm să încerci din nou." };
     }
 
@@ -474,33 +506,9 @@ export async function submitRentalProtectionLead(formData: FormData): Promise<{
       message: formattedMessage,
     };
 
-    const supabaseUrl = (
-      process.env.SUPABASE_URL ||
-      process.env.NEXT_PUBLIC_SUPABASE_URL ||
-      DEFAULT_SUPABASE_URL
-    ).trim();
-
-    const supabaseKey = (
-      process.env.SUPABASE_SERVICE_ROLE_KEY ||
-      process.env.SUPABASE_ANON_KEY ||
-      process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY ||
-      DEFAULT_SUPABASE_ANON_KEY
-    ).trim();
-
-    const restRes = await fetch(`${supabaseUrl}/rest/v1/leads`, {
-      method: "POST",
-      headers: {
-        "apikey": supabaseKey,
-        "Authorization": `Bearer ${supabaseKey}`,
-        "Content-Type": "application/json",
-        "Prefer": "return=minimal",
-      },
-      body: JSON.stringify(leadData),
-      cache: "no-store",
-    });
-
-    if (!restRes.ok && restRes.status !== 201 && restRes.status !== 200 && restRes.status !== 204) {
-      console.error("[submitRentalProtectionLead] Supabase error status:", restRes.status);
+    const isSaved = await insertLeadRecord(leadData);
+    if (!isSaved) {
+      console.error("[submitRentalProtectionLead] Supabase insert failed");
       return { success: false, error: "A apărut o problemă la salvarea solicitării. Te rugăm să încerci din nou." };
     }
 
@@ -581,33 +589,9 @@ export async function submitSmeRiskAuditLead(formData: FormData): Promise<{ succ
       message: formattedMessage,
     };
 
-    const supabaseUrl = (
-      process.env.SUPABASE_URL ||
-      process.env.NEXT_PUBLIC_SUPABASE_URL ||
-      DEFAULT_SUPABASE_URL
-    ).trim();
-
-    const supabaseKey = (
-      process.env.SUPABASE_SERVICE_ROLE_KEY ||
-      process.env.SUPABASE_ANON_KEY ||
-      process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY ||
-      DEFAULT_SUPABASE_ANON_KEY
-    ).trim();
-
-    const restRes = await fetch(`${supabaseUrl}/rest/v1/leads`, {
-      method: "POST",
-      headers: {
-        "apikey": supabaseKey,
-        "Authorization": `Bearer ${supabaseKey}`,
-        "Content-Type": "application/json",
-        "Prefer": "return=minimal",
-      },
-      body: JSON.stringify(leadData),
-      cache: "no-store",
-    });
-
-    if (!restRes.ok && restRes.status !== 201 && restRes.status !== 200 && restRes.status !== 204) {
-      console.error("[submitSmeRiskAuditLead] Supabase error status:", restRes.status);
+    const isSaved = await insertLeadRecord(leadData);
+    if (!isSaved) {
+      console.error("[submitSmeRiskAuditLead] Supabase insert failed");
       return { success: false, error: "A apărut o problemă la salvarea solicitării de audit. Te rugăm să încerci din nou." };
     }
 
@@ -687,33 +671,9 @@ export async function submitCorporateHealthLead(formData: FormData): Promise<{ s
       message: formattedMessage,
     };
 
-    const supabaseUrl = (
-      process.env.SUPABASE_URL ||
-      process.env.NEXT_PUBLIC_SUPABASE_URL ||
-      DEFAULT_SUPABASE_URL
-    ).trim();
-
-    const supabaseKey = (
-      process.env.SUPABASE_SERVICE_ROLE_KEY ||
-      process.env.SUPABASE_ANON_KEY ||
-      process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY ||
-      DEFAULT_SUPABASE_ANON_KEY
-    ).trim();
-
-    const restRes = await fetch(`${supabaseUrl}/rest/v1/leads`, {
-      method: "POST",
-      headers: {
-        "apikey": supabaseKey,
-        "Authorization": `Bearer ${supabaseKey}`,
-        "Content-Type": "application/json",
-        "Prefer": "return=minimal",
-      },
-      body: JSON.stringify(leadData),
-      cache: "no-store",
-    });
-
-    if (!restRes.ok && restRes.status !== 201 && restRes.status !== 200 && restRes.status !== 204) {
-      console.error("[submitCorporateHealthLead] Supabase error status:", restRes.status);
+    const isSaved = await insertLeadRecord(leadData);
+    if (!isSaved) {
+      console.error("[submitCorporateHealthLead] Supabase insert failed");
       return { success: false, error: "A apărut o problemă la salvarea solicitării. Te rugăm să încerci din nou." };
     }
 
@@ -796,33 +756,9 @@ export async function submitSeismicPropertyReviewLead(formData: FormData): Promi
       message: formattedMessage,
     };
 
-    const supabaseUrl = (
-      process.env.SUPABASE_URL ||
-      process.env.NEXT_PUBLIC_SUPABASE_URL ||
-      DEFAULT_SUPABASE_URL
-    ).trim();
-
-    const supabaseKey = (
-      process.env.SUPABASE_SERVICE_ROLE_KEY ||
-      process.env.SUPABASE_ANON_KEY ||
-      process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY ||
-      DEFAULT_SUPABASE_ANON_KEY
-    ).trim();
-
-    const restRes = await fetch(`${supabaseUrl}/rest/v1/leads`, {
-      method: "POST",
-      headers: {
-        "apikey": supabaseKey,
-        "Authorization": `Bearer ${supabaseKey}`,
-        "Content-Type": "application/json",
-        "Prefer": "return=minimal",
-      },
-      body: JSON.stringify(leadData),
-      cache: "no-store",
-    });
-
-    if (!restRes.ok && restRes.status !== 201 && restRes.status !== 200 && restRes.status !== 204) {
-      console.error("[submitSeismicPropertyReviewLead] Supabase error status:", restRes.status);
+    const isSaved = await insertLeadRecord(leadData);
+    if (!isSaved) {
+      console.error("[submitSeismicPropertyReviewLead] Supabase insert failed");
       return { success: false, error: "A apărut o problemă la salvarea solicitării. Te rugăm să încerci din nou." };
     }
 

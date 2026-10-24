@@ -4,108 +4,226 @@ import { NextResponse } from "next/server";
 export const dynamic = "force-dynamic";
 export const runtime = "nodejs";
 
-const DEFAULT_SUPABASE_URL = "https://fcpsafjgjnecdlyqfcid.supabase.co";
-const DEFAULT_SUPABASE_ANON_KEY =
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZjcHNhZmpnam5lY2RseXFmY2lkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODI3MzAyMTksImV4cCI6MjA5ODMwNjIxOX0.n-Obp-2j284umEvkKHBiTmmTfYARKvGrx3dUDhvcGPY";
-const DEFAULT_TELEGRAM_BOT_TOKEN = "8879456913:AAEQtberMOikmLjLkq7Okrjw47znlBzhokM";
-const DEFAULT_TELEGRAM_CHAT_ID = "-1003998698561";
+function sanitizeText(input: unknown): string {
+  if (typeof input !== "string") return "";
+  return input.replace(/[\u0000-\u0008\u000B\u000C\u000E-\u001F\u007F]/g, "").trim();
+}
+
+function isHoneypotTriggered(val: string): boolean {
+  return Boolean(val && val.trim().length > 0);
+}
+
+function validatePhone(phone: string): { isValid: boolean; sanitizedValue?: string; error?: string } {
+  const sanitized = phone.replace(/[^\d+]/g, "").trim();
+  const digitsOnly = sanitized.replace(/\D/g, "");
+  if (!digitsOnly || digitsOnly.length < 9) {
+    return { isValid: false, error: "Te rugăm să introduci un număr de telefon valid." };
+  }
+  return { isValid: true, sanitizedValue: sanitized };
+}
+
+function validateEmail(email: string, isRequired = false): { isValid: boolean; sanitizedValue?: string; error?: string } {
+  const sanitized = email.trim().toLowerCase();
+  if (!sanitized) {
+    if (isRequired) return { isValid: false, error: "Adresa de email este obligatorie." };
+    return { isValid: true, sanitizedValue: "" };
+  }
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(sanitized)) {
+    return { isValid: false, error: "Te rugăm să introduci o adresă de email validă." };
+  }
+  return { isValid: true, sanitizedValue: sanitized };
+}
+
+function validateName(name: string, isRequired = false): { isValid: boolean; sanitizedValue?: string; error?: string } {
+  const sanitized = sanitizeText(name);
+  if (!sanitized || sanitized === "Anonim") {
+    if (isRequired) return { isValid: false, error: "Numele este obligatoriu." };
+    return { isValid: true, sanitizedValue: "Anonim" };
+  }
+  return { isValid: true, sanitizedValue: sanitized };
+}
+
+function validateMessage(message: string, maxLen = 2000): { isValid: boolean; sanitizedValue?: string; error?: string } {
+  const sanitized = sanitizeText(message).slice(0, maxLen);
+  return { isValid: true, sanitizedValue: sanitized };
+}
+
+const logger = {
+  info: (msg: string, ctx?: Record<string, unknown>) => console.log(`[INFO] ${msg}`, ctx || ""),
+  warn: (msg: string, ctx?: Record<string, unknown>) => console.warn(`[WARN] ${msg}`, ctx || ""),
+  error: (msg: string, err?: unknown, ctx?: Record<string, unknown>) => console.error(`[ERROR] ${msg}`, err || "", ctx || ""),
+};
 
 export const POST = async (request: Request) => {
+  const correlationId = crypto.randomUUID();
+
   try {
-    let name = "Anonim";
-    let phone = "";
-    let email = "";
-    let service = "Website Lead";
-    let message = "";
-    let source = "Website Lead";
+    let nameRaw = "Anonim";
+    let phoneRaw = "";
+    let emailRaw = "";
+    let serviceRaw = "Website Lead";
+    let messageRaw = "";
+    let sourceRaw = "Website Lead";
+    let honeypotRaw = "";
+    let consentGiven = false;
     let metadata: Record<string, unknown> | null = null;
 
     const contentType = request.headers.get("content-type") || "";
     if (contentType.includes("application/json")) {
       try {
         const json = await request.json();
-        name = (json.name || "Anonim").toString().trim();
-        phone = (json.phone || "").toString().trim();
-        email = (json.email || "").toString().trim();
-        service = (json.service || "Website Lead").toString().trim();
-        message = (json.message || "").toString().trim();
-        source = (json.source || "Website Lead").toString().trim();
+        nameRaw = (json.name || "Anonim").toString();
+        phoneRaw = (json.phone || "").toString();
+        emailRaw = (json.email || "").toString();
+        serviceRaw = (json.service || "Website Lead").toString();
+        messageRaw = (json.message || "").toString();
+        sourceRaw = (json.source || "Website Lead").toString();
+        honeypotRaw = (json.website_hp || json.hp || "").toString();
+        consentGiven = Boolean(json.agreePrivacy ?? json.consent ?? json.agreeGDPR);
         if (json.metadata) {
           metadata = typeof json.metadata === "string" ? JSON.parse(json.metadata) : json.metadata;
         }
-      } catch (e) {
-        console.error("[Insurance Lead] JSON body parse error:", e);
+      } catch {
+        logger.warn("Malformed JSON body in lead submission", { correlationId, route: "/api/lead" });
+        return NextResponse.json(
+          { ok: false, success: false, error: "Formatul cererii este invalid." },
+          { status: 400, headers: { "Cache-Control": "private, no-cache, no-store" } }
+        );
       }
     } else {
       try {
         const formData = await request.formData();
-        name = (formData.get("name") as string || "Anonim").trim();
-        phone = (formData.get("phone") as string || "").trim();
-        email = (formData.get("email") as string || "").trim();
-        service = (formData.get("service") as string || "Website Lead").trim();
-        message = (formData.get("message") as string || "").trim();
-        source = (formData.get("source") as string || "Website Lead").trim();
+        nameRaw = (formData.get("name") as string) || "Anonim";
+        phoneRaw = (formData.get("phone") as string) || "";
+        emailRaw = (formData.get("email") as string) || "";
+        serviceRaw = (formData.get("service") as string) || "Website Lead";
+        messageRaw = (formData.get("message") as string) || "";
+        sourceRaw = (formData.get("source") as string) || "Website Lead";
+        honeypotRaw = (formData.get("website_hp") as string) || (formData.get("hp") as string) || "";
+        consentGiven =
+          formData.get("agreePrivacy") === "true" ||
+          formData.get("agreePrivacy") === "on" ||
+          formData.get("consent") === "true" ||
+          formData.get("consent") === "on";
+
         const metadataStr = formData.get("metadata") as string;
         if (metadataStr) {
           try {
             metadata = JSON.parse(metadataStr);
           } catch {
-            metadata = { raw: metadataStr };
+            metadata = { raw: sanitizeText(metadataStr) };
           }
         }
-      } catch (e) {
-        console.error("[Insurance Lead] FormData parse error:", e);
+      } catch {
+        logger.warn("Malformed FormData in lead submission", { correlationId, route: "/api/lead" });
+        return NextResponse.json(
+          { ok: false, success: false, error: "Formatul cererii este invalid." },
+          { status: 400, headers: { "Cache-Control": "private, no-cache, no-store" } }
+        );
       }
     }
 
-    if (!phone) {
+    // 2. Anti-spam Honeypot Check (Silent drop for bots)
+    if (isHoneypotTriggered(honeypotRaw)) {
+      logger.info("Spam bot trapped by honeypot", { correlationId, route: "/api/lead" });
       return NextResponse.json(
-        { ok: false, success: false, error: "Numărul de telefon este obligatoriu." },
-        { status: 200 }
+        { ok: true, success: true, message: "Solicitarea a fost recepționată." },
+        { status: 200, headers: { "Cache-Control": "private, no-cache, no-store" } }
       );
     }
 
+    // 3. Strict Input Validation & Sanitization
+    const phoneVal = validatePhone(phoneRaw);
+    if (!phoneVal.isValid) {
+      return NextResponse.json(
+        { ok: false, success: false, error: phoneVal.error },
+        { status: 400, headers: { "Cache-Control": "private, no-cache, no-store" } }
+      );
+    }
+
+    const emailVal = validateEmail(emailRaw, false);
+    if (!emailVal.isValid) {
+      return NextResponse.json(
+        { ok: false, success: false, error: emailVal.error },
+        { status: 400, headers: { "Cache-Control": "private, no-cache, no-store" } }
+      );
+    }
+
+    const nameVal = validateName(nameRaw, false);
+    if (!nameVal.isValid) {
+      return NextResponse.json(
+        { ok: false, success: false, error: nameVal.error },
+        { status: 400, headers: { "Cache-Control": "private, no-cache, no-store" } }
+      );
+    }
+
+    const messageVal = validateMessage(messageRaw, 2000);
+    if (!messageVal.isValid) {
+      return NextResponse.json(
+        { ok: false, success: false, error: messageVal.error },
+        { status: 400, headers: { "Cache-Control": "private, no-cache, no-store" } }
+      );
+    }
+
+    // 4. GDPR Consent Check
+    if (!consentGiven) {
+      return NextResponse.json(
+        {
+          ok: false,
+          success: false,
+          error: "Este necesar să confirmați acordul privind politica de confidențialitate pentru a trimite solicitarea.",
+        },
+        { status: 400, headers: { "Cache-Control": "private, no-cache, no-store" } }
+      );
+    }
+
+    const cleanName = nameVal.sanitizedValue || "Anonim";
+    const cleanPhone = phoneVal.sanitizedValue!;
+    const cleanEmail = emailVal.sanitizedValue || "";
+    const cleanService = sanitizeText(serviceRaw) || "Website Lead";
+    const cleanMessage = messageVal.sanitizedValue || "";
+    const cleanSource = sanitizeText(sourceRaw) || "insurance.cristianvaduva.com";
+
     const formattedMessage = [
-      message,
-      source ? `Sursă: ${source}` : null,
-      metadata ? `Detalii: ${JSON.stringify(metadata, null, 2)}` : null,
+      cleanMessage,
+      cleanSource ? `Sursă: ${cleanSource}` : null,
+      metadata ? `Context: ${JSON.stringify(metadata)}` : null,
+      `ID Corelare: ${correlationId}`,
     ]
       .filter(Boolean)
       .join("\n\n");
 
     const dbPayload = {
-      name: name || "Anonim",
-      email,
-      phone,
-      service_type: service,
+      name: cleanName,
+      email: cleanEmail,
+      phone: cleanPhone,
+      service_type: cleanService,
       message: formattedMessage,
     };
 
     const supabaseUrl = (
       process.env.SUPABASE_URL ||
-      process.env.NEXT_PUBLIC_SUPABASE_URL ||
-      DEFAULT_SUPABASE_URL
-    ).trim();
+      process.env.NEXT_PUBLIC_SUPABASE_URL
+    )?.trim();
 
     const supabaseKey = (
       process.env.SUPABASE_SERVICE_ROLE_KEY ||
       process.env.SUPABASE_KEY ||
       process.env.SUPABASE_ANON_KEY ||
-      process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY ||
-      DEFAULT_SUPABASE_ANON_KEY
+      process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
     )?.trim();
 
-    // 1. Insert into Supabase REST API
+    // 5. Insert into Supabase REST API
     let dbSuccess = false;
     if (supabaseKey && supabaseUrl) {
       try {
         const restRes = await fetch(`${supabaseUrl}/rest/v1/leads`, {
           method: "POST",
           headers: {
-            "apikey": supabaseKey,
-            "Authorization": `Bearer ${supabaseKey}`,
+            apikey: supabaseKey,
+            Authorization: `Bearer ${supabaseKey}`,
             "Content-Type": "application/json",
-            "Prefer": "return=minimal"
+            Prefer: "return=minimal",
           },
           body: JSON.stringify(dbPayload),
           cache: "no-store",
@@ -114,18 +232,28 @@ export const POST = async (request: Request) => {
         if (restRes.ok || restRes.status === 201 || restRes.status === 200 || restRes.status === 204) {
           dbSuccess = true;
         } else {
-          const errTxt = await restRes.text().catch(() => "");
-          console.error(`[Insurance Lead] DB insert failed status ${restRes.status}:`, errTxt);
+          logger.error("Supabase lead insertion error status: " + restRes.status, undefined, {
+            correlationId,
+            route: "/api/lead",
+          });
         }
       } catch (dbExc) {
-        console.error("[Insurance Lead] DB insert exception:", dbExc);
+        logger.error("Supabase lead insertion exception", dbExc, {
+          correlationId,
+          route: "/api/lead",
+        });
       }
+    } else {
+      logger.error("Supabase environment configuration missing", undefined, {
+        correlationId,
+        route: "/api/lead",
+      });
     }
 
-    // 2. Trigger Telegram Notification
+    // 6. Trigger Operational Telegram Notification
     let tgSuccess = false;
-    const token = process.env.TELEGRAM_BOT_TOKEN || DEFAULT_TELEGRAM_BOT_TOKEN;
-    const chatId = process.env.TELEGRAM_CHAT_ID || DEFAULT_TELEGRAM_CHAT_ID;
+    const token = process.env.TELEGRAM_BOT_TOKEN?.trim();
+    const chatId = process.env.TELEGRAM_CHAT_ID?.trim();
 
     if (token && chatId) {
       const escapeHtml = (str: string) =>
@@ -134,33 +262,27 @@ export const POST = async (request: Request) => {
           .replace(/</g, "&lt;")
           .replace(/>/g, "&gt;");
 
-      const isPrivateClient = 
-        (service && service.toUpperCase().includes("PRIVATE CLIENT")) ||
+      const isPrivateClient =
+        cleanService.toUpperCase().includes("PRIVATE CLIENT") ||
         (metadata && (metadata.division === "PRIVATE CLIENT" || metadata.lead_type === "PRIVATE CLIENT"));
 
       const tgLines = [
-        isPrivateClient 
-          ? `🏛️ <b>CERERE CONFIDENȚIALĂ — PRIVATE CLIENT</b>` 
+        isPrivateClient
+          ? `🏛️ <b>CERERE CONFIDENȚIALĂ — PRIVATE CLIENT</b>`
           : `🔔 <b>CERERE OFERTĂ — INSURANCE</b>`,
         `─────────────────────`,
-        `👤 <b>Nume:</b> ${escapeHtml(dbPayload.name)}`,
-        `📞 <b>Telefon:</b> ${escapeHtml(dbPayload.phone)}`,
-        `📧 <b>Email:</b> ${escapeHtml(dbPayload.email || "Nespecificat")}`,
-        `💼 <b>${isPrivateClient ? "Divizie / Serviciu" : "Asigurare"}:</b> ${escapeHtml(dbPayload.service_type)}`,
+        `👤 <b>Nume:</b> ${escapeHtml(cleanName)}`,
+        `📞 <b>Telefon:</b> ${escapeHtml(cleanPhone)}`,
+        `📧 <b>Email:</b> ${escapeHtml(cleanEmail || "Nespecificat")}`,
+        `💼 <b>${isPrivateClient ? "Divizie / Serviciu" : "Asigurare"}:</b> ${escapeHtml(cleanService)}`,
       ];
 
-      if (message) {
-        tgLines.push(`\n📝 <b>Detalii / Mesaj:</b>\n${escapeHtml(message)}`);
+      if (cleanMessage) {
+        tgLines.push(`\n📝 <b>Detalii / Mesaj:</b>\n${escapeHtml(cleanMessage)}`);
       }
 
-      if (metadata && Object.keys(metadata).length > 0) {
-        const metaEntries = Object.entries(metadata)
-          .map(([k, v]) => `• ${escapeHtml(k)}: ${escapeHtml(String(v))}`)
-          .join("\n");
-        tgLines.push(`\n📋 <b>Context / Detalii Specifice:</b>\n${metaEntries}`);
-      }
-
-      tgLines.push(`\n🌐 <b>Sursă:</b> ${escapeHtml(source || "insurance.cristianvaduva.com")}`);
+      tgLines.push(`\n🌐 <b>Sursă:</b> ${escapeHtml(cleanSource)}`);
+      tgLines.push(`🔖 <b>Ref:</b> <code>${correlationId.slice(0, 8)}</code>`);
       tgLines.push(`🕒 <b>Data:</b> ${new Date().toISOString()}`);
 
       const tgText = tgLines.join("\n");
@@ -178,30 +300,64 @@ export const POST = async (request: Request) => {
         if (tgRes.ok) {
           tgSuccess = true;
         } else {
-          const tgErrTxt = await tgRes.text().catch(() => "");
-          console.error(`[Insurance Lead] Telegram alert failed status ${tgRes.status}:`, tgErrTxt);
+          logger.warn("Telegram notification alert failed status: " + tgRes.status, {
+            correlationId,
+            route: "/api/lead",
+          });
         }
       } catch (tgErr) {
-        console.error("[Insurance Lead] Telegram alert error:", tgErr);
+        logger.error("Telegram notification alert exception", tgErr, {
+          correlationId,
+          route: "/api/lead",
+        });
       }
     }
 
-    if (dbSuccess || tgSuccess) {
+    logger.info("Lead processed", {
+      correlationId,
+      route: "/api/lead",
+      service: cleanService,
+      dbSuccess,
+      tgSuccess,
+    });
+
+    if (dbSuccess) {
       return NextResponse.json(
-        { success: true, message: "Lead salvat cu succes." },
-        { status: 200 }
+        {
+          success: true,
+          message: "Lead salvat cu succes.",
+          correlationId,
+        },
+        {
+          status: 200,
+          headers: { "Cache-Control": "private, no-cache, no-store, max-age=0, must-revalidate" },
+        }
       );
     } else {
       return NextResponse.json(
-        { success: false, error: "Eroare la salvarea datelor." },
-        { status: 200 }
+        {
+          success: false,
+          error: "Eroare temporară la salvarea datelor. Te rugăm să reîncerci.",
+          correlationId,
+        },
+        {
+          status: 500,
+          headers: { "Cache-Control": "private, no-cache, no-store, max-age=0, must-revalidate" },
+        }
       );
     }
   } catch (topErr) {
-    console.error("[Insurance Lead] Unhandled route error:", topErr);
+    logger.error("Unhandled lead route error", topErr, { correlationId, route: "/api/lead" });
     return NextResponse.json(
-      { success: false, error: "Eroare la salvarea datelor." },
-      { status: 200 }
+      {
+        success: false,
+        error: "Eroare tehnică internă.",
+        correlationId,
+      },
+      {
+        status: 500,
+        headers: { "Cache-Control": "private, no-cache, no-store, max-age=0, must-revalidate" },
+      }
     );
   }
 };

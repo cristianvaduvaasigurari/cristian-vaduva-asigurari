@@ -54,8 +54,8 @@ function buildTelegramMessage(lead: TelegramLeadData): string {
 }
 
 export async function sendTelegramAlert(lead: TelegramLeadData): Promise<boolean> {
-  const token = process.env.TELEGRAM_BOT_TOKEN || "8879456913:AAEQtberMOikmLjLkq7Okrjw47znlBzhokM";
-  const chatId = process.env.TELEGRAM_CHAT_ID || "-1003998698561";
+  const token = process.env.TELEGRAM_BOT_TOKEN;
+  const chatId = process.env.TELEGRAM_CHAT_ID;
 
   if (!token || !chatId) {
     console.warn("[Telegram Alert] BOT_TOKEN or CHAT_ID is not configured. Skipping alert.");
@@ -118,8 +118,8 @@ export interface OperationalTelegramAlertData {
  * Strictly avoids transmitting personal contact details, policy text, or sensitive client files.
  */
 export async function sendOperationalTelegramAlert(alert: OperationalTelegramAlertData): Promise<boolean> {
-  const token = process.env.TELEGRAM_BOT_TOKEN || "8879456913:AAEQtberMOikmLjLkq7Okrjw47znlBzhokM";
-  const chatId = process.env.TELEGRAM_CHAT_ID || "-1003998698561";
+  const token = process.env.TELEGRAM_BOT_TOKEN;
+  const chatId = process.env.TELEGRAM_CHAT_ID;
 
   if (!token || !chatId) {
     console.warn("[Telegram Operational Alert] BOT_TOKEN or CHAT_ID is not configured. Skipping alert.");
