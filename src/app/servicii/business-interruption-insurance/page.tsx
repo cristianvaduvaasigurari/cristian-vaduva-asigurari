@@ -27,20 +27,24 @@ export default function BusinessInterruptionInsurancePage() {
             <div className="inline-flex p-5 rounded-lg glass text-indigo-600 mb-8 border border-border bg-indigo-50">
               <ActivitySquare className="w-12 h-12" />
             </div>
-            <h1 className="text-5xl md:text-6xl font-heading font-bold mb-6 leading-tight">
-              Întreruperea Activității (Business Interruption)
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-amber-500/10 text-amber-800 text-xs font-semibold uppercase tracking-wider mb-4 border border-amber-500/20">
+              Înțelege ce ai de pierdut înainte să afli cât te costă
+            </div>
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-heading font-extrabold mb-6 leading-tight text-foreground">
+              Ce se întâmplă dacă un incident <br className="hidden sm:block" />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-600 via-rose-600 to-amber-600">
+                îți oprește activitatea?
+              </span>
             </h1>
-            <p className="text-xl text-muted-foreground leading-relaxed mb-10 max-w-3xl">
-              Focul îți distruge clădirea, iar polița de "Bunuri" îți dă milioanele de euro să o reconstruiești. Dar reconstrucția va dura 12 luni! În aceste 12 luni tu nu produci, nu vinzi absolut nimic. Cine îți va plăti ratele la bancă, chiriile obligatorii și salariile inginerilor tăi ca să nu plece la concurență? Această poliță o face.
+            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-10 max-w-3xl">
+              Polița de bunuri compensează distrugerile materiale, însă reconstrucția sau reechiparea pot dura luni de zile. În tot acest timp, veniturile scad la zero, dar cheltuielile fixe continuă să curgă. Analizăm dacă afacerea ta are acoperită pierderea de profit și ce perioadă de indemnizare este adecvată.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Button size="lg" className="h-14 px-8 text-lg rounded-full bg-blue-600 hover:bg-blue-700 text-white shadow-xl" asChild>
-                <Link href="#oferta">Auditează Fluxul de Profit</Link>
+              <Button size="lg" className="h-14 px-8 text-base font-semibold rounded-full bg-zinc-900 hover:bg-black text-white shadow-xl" asChild>
+                <Link href="/contact">Solicită o analiză confidențială</Link>
               </Button>
-              <Button size="lg" variant="outline" className="h-14 px-8 text-lg rounded-full border-border hover:bg-muted" asChild>
-                <a href={CONTACT.whatsapp.href} target="_blank" rel="noopener noreferrer">
-                  Contact Consultant Financiar
-                </a>
+              <Button size="lg" variant="outline" className="h-14 px-8 text-base rounded-full border-zinc-300 bg-white text-zinc-800 hover:bg-zinc-100 font-semibold" asChild>
+                <Link href="/verifica-polita">Nu știu dacă sunt protejat</Link>
               </Button>
             </div>
           </div>

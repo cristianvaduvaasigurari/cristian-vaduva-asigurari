@@ -42,11 +42,14 @@ export default function ContactPage() {
       <main className="flex-1 pt-28 md:pt-36 pb-16">
         <div className="container mx-auto px-4">
           <div className="mb-12 text-center max-w-4xl mx-auto">
-            <h1 className="text-5xl md:text-6xl font-heading font-bold mb-6 tracking-tight">
-              Suntem aici pentru tine
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-50 border border-amber-200 text-amber-900 text-xs font-semibold uppercase tracking-widest mb-4">
+              Înțelege ce ai de pierdut înainte să afli cât te costă
+            </div>
+            <h1 className="text-4xl md:text-6xl font-heading font-extrabold mb-6 tracking-tight text-foreground">
+              Discută confidențial despre riscurile tale
             </h1>
-            <p className="text-xl text-muted-foreground leading-relaxed max-w-2xl mx-auto">
-              Alege modul prin care dorești să colaborăm. Fie că e o simplă întrebare sau o strategie complexă, experții noștri îți stau la dispoziție.
+            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-2xl mx-auto">
+              Analizăm ce deții, verificăm dacă există lacune în contractele actuale și îți explicăm opțiunile înainte să apară un eveniment neprevăzut.
             </p>
           </div>
 
@@ -63,14 +66,14 @@ export default function ContactPage() {
               />
             </div>
             <div className="text-center sm:text-left space-y-1.5 flex-1">
-              <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-blue-500/10 text-blue-600 text-xs font-semibold uppercase tracking-wider">
-                Consultanță Directă
+              <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-zinc-100 text-zinc-800 text-xs font-semibold uppercase tracking-wider">
+                Consultanță Directă &amp; Confidențială
               </div>
               <h2 className="text-xl sm:text-2xl font-heading font-bold text-foreground">
-                Cristian Văduva — Insurance Advisory
+                Cristian Văduva — Risk &amp; Insurance Advisory
               </h2>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                Fiecare cerere de ofertă sau solicitare de consultanță este analizată personal, pentru a garanta condiții optime de acoperire și claritate contractuală deplină.
+                Fiecare solicitare este analizată personal, pentru a identifica punctele oarbe din contracte și pentru a formula opțiuni obiective de protecție.
               </p>
             </div>
           </div>

@@ -36,17 +36,18 @@ export default function VerificaPolitaPage() {
         <div className="container mx-auto px-4 sm:px-6 relative z-10 max-w-5xl">
           {/* HEADER INTRO */}
           <div className="text-center max-w-3xl mx-auto mb-14">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200 text-blue-700 text-xs font-semibold uppercase tracking-widest mb-6 shadow-sm">
-              <FileSearch className="w-3.5 h-3.5 text-blue-600" />
-              Second Opinion & Audit de Clauze
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-50 border border-amber-200 text-amber-900 text-xs font-semibold uppercase tracking-widest mb-6 shadow-sm">
+              <FileSearch className="w-3.5 h-3.5 text-amber-700" />
+              Înțelege ce ai de pierdut înainte să afli cât te costă
             </div>
 
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-heading font-bold text-zinc-900 tracking-tight leading-[1.1] mb-6">
-              Verifică Polița de Asigurare
+              Nu știu dacă sunt protejat. <br className="hidden sm:block" />
+              <span className="text-zinc-600 font-normal text-3xl sm:text-4xl lg:text-5xl">Verifică dacă există lacune.</span>
             </h1>
 
             <p className="text-lg sm:text-xl text-zinc-600 font-normal leading-relaxed max-w-2xl mx-auto">
-              Majoritatea asiguraților află despre excluderile din contract abia în momentul daunei. Transmite-ne ce dorești să verificăm pentru a primi o evaluare independentă și obiectivă.
+              Majoritatea asiguraților află despre excluderile și franșizele din contract abia în momentul producerii daunei. Transmite-ne documentele sau datele esențiale pentru a primi o verificare independentă a riscurilor reale.
             </p>
           </div>
 

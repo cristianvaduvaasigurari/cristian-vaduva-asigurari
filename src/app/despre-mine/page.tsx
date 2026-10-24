@@ -94,23 +94,23 @@ export default function AboutPage() {
               </h1>
 
               <p className="text-lg md:text-xl text-zinc-600 leading-relaxed font-light">
-                Consultanță strategică în evaluarea riscurilor, optimizarea polițelor de asigurare și structurarea protecției financiare pentru patrimonii private și companii.
+                Consultanță strategică în evaluarea riscurilor, identificarea lacunelor din polițe și structurarea protecției financiare pentru patrimonii private și companii.
               </p>
 
               <p className="text-sm md:text-base text-zinc-600 leading-relaxed">
-                Abordarea mea pornește de la o convingere simplă: protecția financiară autentică nu se rezumă la achiziția unei polițe standardizate, ci la înțelegerea profundă a expunerii fiecărui client, eliminarea punctelor oarbe din contracte și conservarea a ceea ce a fost construit cu efort.
+                Rolul meu nu este să vând agresiv polițe standardizate, ci să te ajut să înțelegi ce ai de pierdut înainte să afli cât te costă o daună. Verific documentele și condițiile contractuale disponibile, identific întrebările esențiale și lacunele care merită investigate, și îți prezint opțiunile clare — fără promisiuni nerealiste că orice risc poate fi transferat automat unui asigurător.
               </p>
 
               <div className="pt-2 flex flex-wrap gap-3">
                 <Button size="lg" className="rounded-full bg-zinc-900 text-white hover:bg-black font-semibold shadow-md" asChild>
                   <Link href="/contact" prefetch={false}>
-                    Solicită o analiză gratuită
+                    Solicită o analiză confidențială
                     <ArrowRight className="w-4 h-4 ml-2" aria-hidden="true" />
                   </Link>
                 </Button>
                 <Button size="lg" variant="outline" className="rounded-full border-zinc-300 text-zinc-800 hover:bg-zinc-100" asChild>
                   <Link href="/verifica-polita" prefetch={false}>
-                    Cere o a doua opinie
+                    Nu știu dacă sunt protejat
                   </Link>
                 </Button>
               </div>
@@ -243,13 +243,13 @@ export default function AboutPage() {
         <section className="container mx-auto px-4 max-w-6xl mb-20 md:mb-28" aria-labelledby="philosophy-heading">
           <div className="max-w-3xl mb-12">
             <span className="text-xs font-bold tracking-widest uppercase text-blue-600 block mb-2">
-              Filosofie &amp; Metodă
+              Filosofie &amp; Rol Consultativ
             </span>
             <h2 id="philosophy-heading" className="text-3xl md:text-4xl font-heading font-bold text-zinc-900 tracking-tight mb-4">
-              Abordare de tip Private Banking aplicată asigurărilor
+              Înțelege ce ai de pierdut înainte să afli cât te costă
             </h2>
             <p className="text-zinc-600 leading-relaxed">
-              Pe o piață dominată de formulare automate și vânzări tranzacționale, diferențiatorul esențial este consultanța personalizată. Nu ofer soluții predefinite din catalog, ci analizez fiecare situație patrimonială ca pe un ansamblu integrat.
+              Pe o piață dominată de formulare automate și vânzări tranzacționale, diferențiatorul esențial este consultanța de fond. Nu ofer soluții predefinite din catalog, ci investighez riscurile reale pentru ca decizia ta să fie fundamentată pe fapte.
             </p>
           </div>
 
@@ -259,10 +259,10 @@ export default function AboutPage() {
                 <Scale className="w-6 h-6" aria-hidden="true" />
               </div>
               <h3 className="text-xl font-heading font-bold text-zinc-900">
-                Audit fără presupuneri
+                Înțelegerea Expunerilor Reale
               </h3>
               <p className="text-sm text-zinc-600 leading-relaxed">
-                Fiecare analiză începe cu inventarierea exactă a riscurilor reale: clauze ascunse, franșize neclare, sub-asigurare sau riscuri critice lăsate neacoperite în contractele vechi.
+                Mapăm activele tangibile și intangibile — de la reședințe și bunuri de colecție până la continuitatea operațională a companiei. Analiza pornește de la consecințele financiare ale unei daune posibile, nu de la costul primei de asigurare.
               </p>
             </div>
 
@@ -271,10 +271,10 @@ export default function AboutPage() {
                 <ShieldCheck className="w-6 h-6" aria-hidden="true" />
               </div>
               <h3 className="text-xl font-heading font-bold text-zinc-900">
-                Eficiența capitalului
+                Audit Riguros al Contractelor
               </h3>
               <p className="text-sm text-zinc-600 leading-relaxed">
-                Blocarea riscurilor mari prin instrumente corecte de asigurare eliberează lichiditatea familiei sau a companiei, eliminând nevoia de a ține fonduri de rezervă supradimensionate și neproductive.
+                Citim dincolo de pagina de sumar. Verificăm clauzele de subasigurare, franșizele aplicabile per eveniment, plafoanele pentru bunuri de valoare și excluderile care pot invalida o cerere legitimă de despăgubire.
               </p>
             </div>
 
@@ -283,10 +283,10 @@ export default function AboutPage() {
                 <HeartHandshake className="w-6 h-6" aria-hidden="true" />
               </div>
               <h3 className="text-xl font-heading font-bold text-zinc-900">
-                Parteneriat continuu
+                Identificarea Lacunelor &amp; Opțiuni Clare
               </h3>
               <p className="text-sm text-zinc-600 leading-relaxed">
-                Relația nu se încheie odată cu emiterea poliței. La orice schimbare de active, extindere a afacerii sau eveniment asigurat, ofer asistență directă și suport documentat.
+                Prezentăm un diagnostic obiectiv al punctelor vulnerabile și soluțiile tehnice disponibile pe piață. Explicăm deschis ce riscuri pot fi transferate eficient și ce măsuri interne de securitate sunt necesare.
               </p>
             </div>
           </div>

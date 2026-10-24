@@ -98,11 +98,11 @@ export function ContactForm({ customTitle, target, brokerName }: { customTitle?:
                 viewport={{ once: true }}
                 className="text-4xl font-heading font-bold mb-6"
               >
-                {customTitle || "Contactează-ne"}
+                {customTitle || "Solicită o analiză confidențială a riscurilor"}
               </motion.h2>
             )}
-            <p className="text-lg text-muted-foreground">
-              Completează datele de mai jos și Cristian Văduva te va contacta în cel mai scurt timp pentru a-ți oferi soluții personalizate.
+            <p className="text-base sm:text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto">
+              Nu promitem soluții universale. Analizăm ce deții, identificăm eventualele lacune din contractele existente și îți explicăm transparent opțiunile înainte să apară o daună.
             </p>
           </div>
 
@@ -117,7 +117,7 @@ export function ContactForm({ customTitle, target, brokerName }: { customTitle?:
                 <CheckCircle2 className="w-16 h-16 text-green-500 mb-4" />
                 <h3 className="text-2xl font-bold mb-2">Solicitare Transmisă cu Succes!</h3>
                 <p className="text-muted-foreground text-center max-w-md px-6 leading-relaxed">
-                  Datele tale au fost trimise securizat. Cristian Văduva te va contacta telefonic sau prin email în cel mai scurt timp.
+                  Datele tale au fost trimise în regim de strictă confidențialitate. Cristian Văduva te va contacta personal pentru a stabili detaliile analizei.
                 </p>
                 <Button 
                   variant="outline" 
@@ -159,7 +159,7 @@ export function ContactForm({ customTitle, target, brokerName }: { customTitle?:
                   <Input id="email" name="email" required type="email" placeholder="ion@exemplu.ro" className="rounded-xl" />
                 </div>
                 <div className="space-y-2">
-                  <label htmlFor="service_type" className="text-sm font-medium ml-1">Interesat de *</label>
+                  <label htmlFor="service_type" className="text-sm font-medium ml-1">Domeniu de Interes *</label>
                   <div className="relative">
                     <select 
                       id="service_type" 
@@ -169,12 +169,17 @@ export function ContactForm({ customTitle, target, brokerName }: { customTitle?:
                       onChange={(e) => setSelectedService(e.target.value)}
                       className="flex h-12 w-full rounded-xl border border-border bg-background px-4 py-2 text-sm shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-primary appearance-none pr-10"
                     >
-                      <option value="" disabled className="text-foreground bg-background">Alege un serviciu</option>
-                      <option value="Credite" className="text-foreground bg-background">Credite</option>
-                      <option value="Generali Asigurări" className="text-foreground bg-background">Asigurări (Generali)</option>
-                      <option value="Real Estate" className="text-foreground bg-background">Real Estate</option>
-                      <option value="AiX OS" className="text-foreground bg-background">Ecosistem AiX OS</option>
-                      <option value="Altele" className="text-foreground bg-background">Altele</option>
+                      <option value="" disabled className="text-foreground bg-background">Alege domeniul de interes</option>
+                      <option value="Nu stiu inca / Verificare lacune" className="text-foreground bg-background">Nu știu încă — Vreau o verificare generală a riscurilor</option>
+                      <option value="Locuinte & Proprietati Premium" className="text-foreground bg-background">Locuință &amp; Patrimoniu (reconstrucție, daune mari)</option>
+                      <option value="Automobile de Valoare & Colectie" className="text-foreground bg-background">Automobile de lux &amp; colecție (daune totale, evaluare)</option>
+                      <option value="Ceasuri, Bijuterii & Colectii" className="text-foreground bg-background">Ceasuri, bijuterii &amp; artă (furt, sub-limite)</option>
+                      <option value="Cyber & Securitate Digitala" className="text-foreground bg-background">Cyber &amp; Securitate digitală (fraude, ransomware)</option>
+                      <option value="Afaceri & Continuitate Operationala" className="text-foreground bg-background">Afaceri &amp; Continuitate (întrerupere activitate)</option>
+                      <option value="Raspundere Civila & D&O" className="text-foreground bg-background">Răspundere civilă &amp; management (litigii)</option>
+                      <option value="Patrimoniu International" className="text-foreground bg-background">Patrimoniu internațional &amp; proprietăți externe</option>
+                      <option value="Generali Asigurari" className="text-foreground bg-background">Asigurări Generale (Generali)</option>
+                      <option value="Altele" className="text-foreground bg-background">Altă solicitare</option>
                     </select>
                     <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-muted-foreground">
                       <svg className="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
@@ -255,16 +260,20 @@ export function ContactForm({ customTitle, target, brokerName }: { customTitle?:
                 </div>
               )}
 
-              <Button type="submit" size="lg" className="w-full text-lg h-14 bg-blue-600 hover:bg-blue-700 text-white rounded-xl shadow-lg transition-transform hover:-translate-y-0.5 focus-visible:ring-2 focus-visible:ring-blue-400 focus-visible:ring-offset-2" disabled={isSubmitting}>
+              <Button type="submit" size="lg" className="w-full text-base sm:text-lg h-14 bg-zinc-900 hover:bg-black text-white rounded-xl shadow-lg transition-transform hover:-translate-y-0.5 focus-visible:ring-2 focus-visible:ring-zinc-400 focus-visible:ring-offset-2 font-semibold" disabled={isSubmitting}>
                 {isSubmitting ? (
                   <>
                     <Loader2 className="mr-2 h-5 w-5 animate-spin" />
-                    Se trimite...
+                    Se trimite solicitarea...
                   </>
                 ) : (
-                  "Solicită Consultanță Acum"
+                  "Solicită o Analiză Confidențială"
                 )}
               </Button>
+
+              <p className="text-center text-xs text-muted-foreground pt-2">
+                Ai întrebări sau nu ești sigur de acoperirile existente? Răspundem prompt, fără nicio obligație contractuală.
+              </p>
             </form>
           </motion.div>
         </div>

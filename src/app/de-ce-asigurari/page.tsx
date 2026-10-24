@@ -7,8 +7,8 @@ import Image from "next/image";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Why Insurance | De ce Asigurări? | Cristian Văduva",
-  description: "Asigurarea potrivită nu este o cheltuială. Este strategie financiară. Află de ce oamenii bogați folosesc asigurări pentru protecția patrimoniului.",
+  title: "De ce Asigurări? Înțelege ce ai de pierdut | Cristian Văduva",
+  description: "Asigurarea corectă nu este o cheltuială, ci conservarea patrimoniului. Află de ce prevenția și identificarea lacunelor din contracte previn pierderi financiare masive.",
 };
 
 export default function WhyInsurancePage() {
@@ -21,43 +21,46 @@ export default function WhyInsurancePage() {
           
           {/* Hero Section */}
           <div className="mb-24 text-center max-w-5xl mx-auto">
-            <span className="inline-block px-4 py-2 rounded-full bg-red-500/10 text-red-400 font-heading text-sm font-bold tracking-widest uppercase mb-6 border border-red-500/20">
-              Risk Management
+            <span className="inline-block px-4 py-2 rounded-full bg-amber-500/10 text-amber-800 font-heading text-xs font-bold tracking-widest uppercase mb-6 border border-amber-500/20">
+              Înțelege ce ai de pierdut înainte să afli cât te costă
             </span>
-            <h1 className="text-5xl md:text-7xl font-heading font-bold mb-8 leading-tight tracking-tight">
-              Your assets deserve <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-orange-500">protection</span>, not assumptions.
+            <h1 className="text-4xl md:text-6xl font-heading font-extrabold mb-8 leading-tight tracking-tight text-foreground">
+              Activele tale merită protecție verificată,{" "}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-600 via-rose-600 to-amber-600">
+                nu presupuneri.
+              </span>
             </h1>
-            <p className="text-2xl font-light text-muted-foreground mb-10">
-              Un singur eveniment neprevăzut poate șterge zeci de ani de muncă. Ce construiești astăzi, trebuie protejat mâine.
+            <p className="text-xl font-normal text-muted-foreground mb-10 max-w-3xl mx-auto leading-relaxed">
+              Un singur eveniment neprevăzut poate compromite ani întregi de efort. Analizăm riscurile reale, identificăm clauzele restrictive și verificăm dacă ești cu adevărat protejat.
             </p>
           </div>
 
-          {/* Marketing Philosophy: Fear, Ego, Utility */}
+          {/* Analiză de risc: Consecințe, Puncte Oarbe, Transfer Eficient */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto mb-32">
             <div className="glass premium-card p-10 rounded-[3rem] relative overflow-hidden border border-red-500/10">
               <div className="absolute top-0 right-0 w-32 h-32 bg-red-500/10 rounded-full blur-[50px] -z-10 group-hover:bg-red-500/20 transition-all" />
               <ShieldAlert className="w-12 h-12 text-red-500 mb-6" />
-              <h3 className="text-2xl font-bold mb-4 font-heading">Frica Reală</h3>
-              <p className="text-muted-foreground leading-relaxed">
-                Piața, economia și accidentele nu țin cont de efortul tău. O secundă de neatenție sau un factor extern pot distruge un business profitabil sau o casă de vis. De ce oamenii pierd bani fără protecție? Pentru că se bazează pe noroc.
+              <h3 className="text-2xl font-bold mb-4 font-heading">Consecințele Financiare</h3>
+              <p className="text-muted-foreground leading-relaxed text-sm">
+                O daună majoră neasigurată sau subasigurată forțează lichidarea rapidă a altor active sau vânzarea investițiilor în pierdere pentru a acoperi costurile urgente de reconstrucție sau despăgubire.
               </p>
             </div>
             
-            <div className="glass premium-card p-10 rounded-[3rem] relative overflow-hidden border border-purple-500/10 md:-translate-y-8">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500/10 rounded-full blur-[50px] -z-10 group-hover:bg-blue-500/20 transition-all" />
-              <Target className="w-12 h-12 text-blue-500 mb-6" />
-              <h3 className="text-2xl font-bold mb-4 font-heading">Ego-ul Justificat</h3>
-              <p className="text-muted-foreground leading-relaxed">
-                Ai muncit enorm pentru standardul tău de viață. Nu lăsa hazardul să dicteze dacă familia ta își va menține sau nu același nivel de confort financiar. Asigurarea validează statutul tău de om prevăzător.
+            <div className="glass premium-card p-10 rounded-[3rem] relative overflow-hidden border border-amber-500/10 md:-translate-y-8">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-amber-500/10 rounded-full blur-[50px] -z-10 group-hover:bg-amber-500/20 transition-all" />
+              <Target className="w-12 h-12 text-amber-600 mb-6" />
+              <h3 className="text-2xl font-bold mb-4 font-heading">Punctele Oarbe din Contracte</h3>
+              <p className="text-muted-foreground leading-relaxed text-sm">
+                Multe contracte conțin excluderi de forță majoră, sub-limite pentru bunuri de valoare sau franșize ascunse. Verificarea preventivă a textului poliței elimină surprizele neplăcute în caz de daună.
               </p>
             </div>
             
             <div className="glass premium-card p-10 rounded-[3rem] relative overflow-hidden border border-emerald-500/10">
               <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-500/10 rounded-full blur-[50px] -z-10 group-hover:bg-emerald-500/20 transition-all" />
-              <ShieldCheck className="w-12 h-12 text-emerald-500 mb-6" />
-              <h3 className="text-2xl font-bold mb-4 font-heading">Utilitatea Supremă</h3>
-              <p className="text-muted-foreground leading-relaxed">
-                Asigurarea nu este o cheltuială, este strategie financiară. Este un contract prin care transferi un risc financiar masiv către o corporație cu miliarde în spate, pentru o fracțiune din cost. 
+              <ShieldCheck className="w-12 h-12 text-emerald-600 mb-6" />
+              <h3 className="text-2xl font-bold mb-4 font-heading">Eficiența Transferului de Risc</h3>
+              <p className="text-muted-foreground leading-relaxed text-sm">
+                Asigurarea bine structurată eliberează lichiditatea, permițându-ți să transferi riscurile catastrofale către un asigurător solid, păstrând capitalul productiv pentru dezvoltare și investiții.
               </p>
             </div>
           </div>

@@ -27,20 +27,24 @@ export default function CascoInsurancePage() {
             <div className="inline-flex p-5 rounded-lg glass text-blue-600 mb-8 border border-border bg-blue-50">
               <CarFront className="w-12 h-12" />
             </div>
-            <h1 className="text-5xl md:text-6xl font-heading font-bold mb-6 leading-tight">
-              Asigurarea CASCO Premium
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-amber-500/10 text-amber-800 text-xs font-semibold uppercase tracking-wider mb-4 border border-amber-500/20">
+              Înțelege ce ai de pierdut înainte să afli cât te costă
+            </div>
+            <h1 className="text-4xl md:text-6xl font-heading font-extrabold mb-6 leading-tight text-foreground">
+              Ce se întâmplă dacă automobilul <br className="hidden sm:block" />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-600 via-rose-600 to-amber-600">
+                nu mai poate fi reparat?
+              </span>
             </h1>
-            <p className="text-xl text-muted-foreground leading-relaxed mb-10 max-w-3xl">
-              În timp ce RCA te acoperă atunci când îi lovești pe alții, CASCO acoperă greșelile tale. Elimină emoțiile zgârieturilor din parcare, gheții cazute pe parbriz sau a accidentelor din culpa ta exclusivă prin reparații la reprezentanțe autorizate.
+            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-10 max-w-3xl">
+              În caz de daună totală sau furt, o poliță standard aplică depreciere forfetară de catalog. Verificăm dacă automobilul tău beneficiază de Valoare Agreată, dacă decontarea se face în rețeaua oficială și ce excluderi conține contractul tău.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Button size="lg" className="h-14 px-8 text-lg rounded-full bg-blue-600 hover:bg-blue-700 text-white shadow-xl" asChild>
-                <Link href="#oferta">Evaluează Mașina pentru CASCO</Link>
+              <Button size="lg" className="h-14 px-8 text-base sm:text-lg rounded-full bg-zinc-900 hover:bg-black text-white shadow-xl font-semibold" asChild>
+                <Link href="/contact">Solicită o analiză confidențială</Link>
               </Button>
-              <Button size="lg" variant="outline" className="h-14 px-8 text-lg rounded-full border-border hover:bg-muted" asChild>
-                <a href={CONTACT.whatsapp.href} target="_blank" rel="noopener noreferrer">
-                  Cere Cotație Personalizată
-                </a>
+              <Button size="lg" variant="outline" className="h-14 px-8 text-base sm:text-lg rounded-full border-zinc-300 bg-white text-zinc-800 hover:bg-zinc-100 font-semibold" asChild>
+                <Link href="/verifica-polita">Nu știu dacă sunt protejat</Link>
               </Button>
             </div>
           </div>

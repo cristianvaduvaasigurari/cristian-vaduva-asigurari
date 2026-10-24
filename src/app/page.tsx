@@ -6,6 +6,9 @@ import { CustomerReviews } from "@/components/sections/customer-reviews";
 import { InsuranceIntelligencePreview } from "@/components/sections/insurance-intelligence-preview";
 import { Ecosystem } from "@/components/sections/ecosystem";
 import { AboutAdvisorPreview } from "@/components/sections/about-advisor-preview";
+import { RiskConsequences } from "@/components/sections/risk-consequences";
+import { ProtectionGaps } from "@/components/sections/protection-gaps";
+import { RiskAnalysisProcess } from "@/components/sections/risk-analysis-process";
 import dynamic from 'next/dynamic';
 import type { Metadata } from "next";
 
@@ -19,23 +22,23 @@ const ContactForm = dynamic(() => import('@/components/sections/contact-form').t
 });
 
 export const metadata: Metadata = {
-  title: "Cristian Văduva | Consultant Asigurări Premium & Partener Generali",
-  description: "Consultanță strategică în asigurări Generali România, protecție financiară personală și optimizarea patrimoniului de afaceri. Consultant autorizat București.",
-  keywords: ["consultant asigurări București", "asigurări Generali", "asigurare de viață", "asigurare de sănătate", "CASCO", "RCA", "protecție financiară", "AiX OS"],
+  title: "Înțelege ce ai de pierdut înainte să afli cât te costă | Cristian Văduva",
+  description: "Consultanță strategică în analiza riscurilor, identificarea lacunelor din polițele existente și protecția patrimoniului pentru locuințe, colecții, mașini și companii.",
+  keywords: ["analiza riscuri asigurare", "consultant asigurari Bucuresti", "audit polite asigurare", "asigurare locuinte premium", "asigurare colectii ceasuri", "asigurare cyber companii", "Generali Romania"],
   alternates: {
     canonical: "https://insurance.cristianvaduva.com",
   },
   openGraph: {
-    title: "Cristian Văduva | Consultant Asigurări Premium & Partener Generali",
-    description: "Consultanță strategică în asigurări Generali România, protecție financiară și optimizarea riscurilor de patrimoniu.",
+    title: "Înțelege ce ai de pierdut înainte să afli cât te costă | Cristian Văduva",
+    description: "Consultanță strategică în analiza riscurilor, identificarea lacunelor din polițe și structurarea protecției financiare.",
     url: "https://insurance.cristianvaduva.com",
     locale: "ro_RO",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Cristian Văduva | Consultant Asigurări Premium & Partener Generali",
-    description: "Consultanță strategică în asigurări Generali România, protecție financiară și optimizarea riscurilor de patrimoniu.",
+    title: "Înțelege ce ai de pierdut înainte să afli cât te costă | Cristian Văduva",
+    description: "Consultanță strategică în analiza riscurilor, identificarea lacunelor din polițe și structurarea protecției financiare.",
   },
 };
 
@@ -45,6 +48,9 @@ export default function Home() {
       <Navbar />
       <main className="flex-1">
         <Hero />
+        <RiskConsequences />
+        <ProtectionGaps />
+        <RiskAnalysisProcess />
         <section id="servicii"><Services /></section>
         <RealWorldRiskScenarios isHomePagePreview={true} />
         <InsuranceIntelligencePreview />
