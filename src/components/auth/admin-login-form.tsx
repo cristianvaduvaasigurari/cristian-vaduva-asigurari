@@ -88,8 +88,8 @@ export function AdminLoginForm({ redirectTo = "/dashboard" }: AdminLoginFormProp
         </div>
 
         <div className="text-center mb-6">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 border border-blue-200/80 text-blue-800 dark:bg-blue-950/50 dark:border-blue-800 dark:text-blue-200 text-xs font-semibold uppercase tracking-wider mb-2">
-            <ShieldCheck className="w-3.5 h-3.5" />
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-zinc-100 border border-zinc-300 text-zinc-900 dark:bg-zinc-800 dark:border-zinc-700 dark:text-zinc-100 text-xs font-semibold uppercase tracking-wider mb-2">
+            <ShieldCheck className="w-3.5 h-3.5 text-zinc-700 dark:text-zinc-300" />
             Acces Restrâns
           </div>
           <h1 className="text-2xl font-heading font-bold text-foreground">Portal Administrare</h1>
