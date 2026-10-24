@@ -48,14 +48,30 @@ function validateMessage(message: string, maxLen = 2000): { isValid: boolean; sa
   return { isValid: true, sanitizedValue: sanitized };
 }
 
-const logger = {
-  info: (msg: string, ctx?: Record<string, unknown>) => console.log(`[INFO] ${msg}`, ctx || ""),
-  warn: (msg: string, ctx?: Record<string, unknown>) => console.warn(`[WARN] ${msg}`, ctx || ""),
-  error: (msg: string, err?: unknown, ctx?: Record<string, unknown>) => console.error(`[ERROR] ${msg}`, err || "", ctx || ""),
-};
+import { checkRateLimit, createRateLimitResponse, getClientIp } from "@/lib/rateLimit";
+import { logger, redactSensitiveData, sanitizeObject } from "@/lib/logger";
+import { captureException } from "@/lib/sentry";
 
 export const POST = async (request: Request) => {
   const correlationId = crypto.randomUUID();
+  const clientIp = getClientIp(request);
+
+  // 1. Rate Limiting: 5 lead submissions per minute per IP
+  const rateLimitResult = await checkRateLimit(`lead:${clientIp}`, 5, 60000);
+  if (!rateLimitResult.success) {
+    logger.warn("Rate limit exceeded for lead submission", { correlationId, clientIp });
+    return createRateLimitResponse(rateLimitResult.reset);
+  }
+
+  // 2. Reject excessive payload sizes (> 50KB)
+  const contentLength = Number(request.headers.get("content-length") || "0");
+  if (contentLength > 51200) {
+    logger.warn("Payload size exceeds maximum allowed limit", { correlationId, contentLength });
+    return NextResponse.json(
+      { ok: false, success: false, error: "Dimensiunea cererii depășește limita permisă." },
+      { status: 413, headers: { "Cache-Control": "private, no-cache, no-store" } }
+    );
+  }
 
   try {
     let nameRaw = "Anonim";
@@ -194,7 +210,7 @@ export const POST = async (request: Request) => {
     const formattedMessage = [
       cleanMessage,
       cleanSource ? `Sursă: ${cleanSource}` : null,
-      metadata ? `Context: ${JSON.stringify(metadata)}` : null,
+      metadata ? `Context: ${JSON.stringify(sanitizeObject(metadata))}` : null,
       `ID Corelare: ${correlationId}`,
     ]
       .filter(Boolean)
@@ -278,14 +294,14 @@ export const POST = async (request: Request) => {
           ? `🏛️ <b>CERERE CONFIDENȚIALĂ — PRIVATE CLIENT</b>`
           : `🔔 <b>CERERE OFERTĂ — INSURANCE</b>`,
         `─────────────────────`,
-        `👤 <b>Nume:</b> ${escapeHtml(cleanName)}`,
+        `👤 <b>Nume:</b> ${escapeHtml(redactSensitiveData(cleanName))}`,
         `📞 <b>Telefon:</b> ${escapeHtml(cleanPhone)}`,
         `📧 <b>Email:</b> ${escapeHtml(cleanEmail || "Nespecificat")}`,
-        `💼 <b>${isPrivateClient ? "Divizie / Serviciu" : "Asigurare"}:</b> ${escapeHtml(cleanService)}`,
+        `💼 <b>${isPrivateClient ? "Divizie / Serviciu" : "Asigurare"}:</b> ${escapeHtml(redactSensitiveData(cleanService))}`,
       ];
 
       if (cleanMessage) {
-        tgLines.push(`\n📝 <b>Detalii / Mesaj:</b>\n${escapeHtml(cleanMessage)}`);
+        tgLines.push(`\n📝 <b>Detalii / Mesaj:</b>\n${escapeHtml(redactSensitiveData(cleanMessage))}`);
       }
 
       tgLines.push(`\n🌐 <b>Sursă:</b> ${escapeHtml(cleanSource)}`);
@@ -354,6 +370,7 @@ export const POST = async (request: Request) => {
       );
     }
   } catch (topErr) {
+    captureException(topErr, { correlationId, route: "/api/lead" });
     logger.error("Unhandled lead route error", topErr, { correlationId, route: "/api/lead" });
     return NextResponse.json(
       {

@@ -24,7 +24,7 @@
   --primary: #1d1d1f;
   --primary-foreground: #ffffff;
   --muted: #f5f5f7;
-  --muted-foreground: #6e6e73;
+  --muted-foreground: #52525b; /* High-contrast zinc-600 (>= 6.5:1 on white, >= 5.8:1 on light gray, exceeding WCAG AA) */
   --accent: #f5f5f7;
   --accent-foreground: #1d1d1f;
   --border: #d2d2d7;
@@ -106,4 +106,53 @@ body {
   background-color: #f8fafc !important;
   border-color: #e2e8f0 !important;
 }
+
+/* ─── WCAG 2.2 AA Focus Visibility ─── */
+:focus-visible {
+  outline: 2px solid #2563eb !important;
+  outline-offset: 2px !important;
+}
+
+/* ─── WCAG 2.2 AA Prefers Reduced Motion ─── */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ─── Utility Classes (Extracted from Component Styles for CSP Hardening) ─── */
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+@keyframes topTickerSlide {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.top-ticker-track {
+  display: inline-flex;
+  white-space: nowrap;
+  width: max-content;
+  animation: topTickerSlide 360s linear infinite;
+  will-change: transform;
+}
+
+.top-ticker-track:hover {
+  animation-play-state: paused;
+}
+
 

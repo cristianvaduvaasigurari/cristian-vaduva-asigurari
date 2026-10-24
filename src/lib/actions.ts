@@ -1,6 +1,8 @@
 "use server";
 
 import { sendTelegramAlert } from "@/lib/telegram";
+import { logger, sanitizeObject } from "@/lib/logger";
+import { captureException } from "@/lib/sentry";
 
 export type ActionResponse = {
   success: boolean;
@@ -98,12 +100,6 @@ function validateMessage(message: string, maxLen = 2000): { isValid: boolean; sa
   return { isValid: true, sanitizedValue: sanitized };
 }
 
-const logger = {
-  info: (msg: string, ctx?: Record<string, unknown>) => console.log(`[INFO] ${msg}`, ctx || ""),
-  warn: (msg: string, ctx?: Record<string, unknown>) => console.warn(`[WARN] ${msg}`, ctx || ""),
-  error: (msg: string, err?: unknown, ctx?: Record<string, unknown>) => console.error(`[ERROR] ${msg}`, err || "", ctx || ""),
-};
-
 /**
  * Saves a generic lead into the `leads` table in our platform.
  */
@@ -185,7 +181,7 @@ export async function submitLead(formData: FormData): Promise<ActionResponse> {
     const formattedMessage = [
       cleanMessage,
       cleanSource ? `Sursă: ${cleanSource}` : null,
-      metadata ? `Context: ${JSON.stringify(metadata)}` : null,
+      metadata ? `Context: ${JSON.stringify(sanitizeObject(metadata))}` : null,
       `ID Corelare: ${correlationId}`,
     ]
       .filter(Boolean)
@@ -220,6 +216,7 @@ export async function submitLead(formData: FormData): Promise<ActionResponse> {
     logger.info("submitLead completed successfully", { correlationId, service: cleanService });
     return { success: true, message: "Cererea ta a fost trimisă cu succes!" };
   } catch (err) {
+    captureException(err, { correlationId, action: "submitLead" });
     logger.error("submitLead exception", err, { correlationId });
     return { success: false, error: "A apărut o eroare neașteptată." };
   }

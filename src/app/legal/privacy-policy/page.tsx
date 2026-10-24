@@ -65,8 +65,9 @@ export default function PrivacyPolicyPage() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
                 <div className="bg-white/5 border border-white/10 p-5 rounded-xl">
                   <h3 className="text-lg font-bold text-white mb-2">Asigurări (RCA, CASCO, Viață, Sănătate, etc.)</h3>
-                  <p className="text-xs">
-                    Colectăm date de identificare (nume, prenume, CNP, serie/număr buletin), date de contact (telefon, e-mail), date despre bunurile de asigurat (număr înmatriculare, serie șasiu auto, detalii locuință) și date medicale sau financiare, exclusiv pentru obținerea de cotații de la partenerul nostru licențiat Generali România și emiterea polițelor de asigurare solicitate.
+                  <p className="text-xs leading-relaxed">
+                    <strong>Pe platforma web (insurance.cristianvaduva.com):</strong> formularele colectează strict date de contact inițiale (nume, număr de telefon, adresă de e-mail, tipul de asigurare dorit și mesajul sau contextul solicitării).<br /><br />
+                    <strong>La ofertarea fermă și emiterea poliței:</strong> datele extinse de identificare (CNP, serie/număr buletin, adresă de domiciliu, serie șasiu) sau datele din categorii speciale (precum chestionarele medicale pentru asigurările de viață sau sănătate) <em>nu sunt colectate prin formularele publice ale site-ului</em>. Acestea sunt prelucrate ulterior, direct și securizat, prin platformele oficiale autorizate ale asigurătorului partener Generali România, în baza consimțământului explicit separat și a temeiului precontractual/contractual (Art. 6(1)(b) și Art. 9(2)(a) GDPR).
                   </p>
                 </div>
                 <div className="bg-white/5 border border-white/10 p-5 rounded-xl">

@@ -453,6 +453,13 @@ export function Navbar() {
                 Știri
               </span>
             </Link>
+
+            <Link
+              href="/despre-mine"
+              className="text-sm font-medium text-zinc-700 hover:text-zinc-950 transition-colors py-4"
+            >
+              Despre Mine
+            </Link>
           </nav>
 
           <div className="hidden md:flex items-center gap-3">

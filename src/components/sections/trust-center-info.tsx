@@ -1,9 +1,11 @@
 "use client";
 
 import * as React from "react";
-import { Lock, Award, Heart, CheckCircle2, ArrowRight } from "lucide-react";
+import { Lock, Award, Heart, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+
+import Image from "next/image";
 
 const pillars = [
   {
@@ -34,36 +36,37 @@ export function TrustCenterInfo() {
     <div className="w-full max-w-5xl mx-auto flex flex-col gap-16">
       
       {/* Introduction Narrative */}
-      <div className="glass p-8 md:p-12 rounded-[3rem] border border-border bg-white shadow-sm grid grid-cols-1 md:grid-cols-2 gap-10">
-        <div>
-          <span className="text-[10px] font-bold uppercase tracking-widest text-slate-400 block mb-3">Fondator &amp; Filozofie</span>
-          <h3 className="font-heading font-black text-2xl md:text-3xl text-slate-900 mb-6 tracking-tight">Despre Cristian Văduva</h3>
-          <p className="text-sm text-slate-600 leading-relaxed mb-4">
-            Cu o experiență acumulată în managementul riscurilor și planificarea patrimonială privată, am fondat această platformă pentru a elimina birocrația și opacitatea din industria asigurărilor și imobiliarelor din România.
-          </p>
-          <p className="text-sm text-slate-600 leading-relaxed">
-            Misiunea mea este de a structura un ecosistem integrat în care activele tale rezidențiale, afacerile și protecția familiei sunt asigurate sub un singur acoperiș tehnologic.
-          </p>
-        </div>
-        <div className="bg-slate-50/50 border border-slate-100 rounded-[2.5rem] p-8 flex flex-col justify-between">
-          <div>
-            <h4 className="font-bold text-slate-800 text-sm uppercase tracking-wider mb-4">Principiile Protecției Clientului</h4>
-            <ul className="space-y-3.5">
-              {[
-                "Auditare gratuită a tuturor contractelor existente.",
-                "Zero comisioane ascunse în oferte.",
-                "Asistență personală rapidă în caz de daune majoră.",
-                "Actualizare periodică a valorilor asigurate."
-              ].map((text, i) => (
-                <li key={i} className="text-xs font-semibold text-slate-800 flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" /> {text}
-                </li>
-              ))}
-            </ul>
+      <div className="glass p-8 md:p-12 rounded-[3rem] border border-border bg-white shadow-sm grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+        <div className="md:col-span-4">
+          <div className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-md border border-slate-200 bg-slate-100">
+            <Image
+              src="/images/cristian-vaduva/cristian-vaduva-portrait-1.jpg"
+              alt="Cristian Văduva - Fondator & Consultant Asigurări"
+              fill
+              sizes="(max-width: 768px) 100vw, 320px"
+              className="object-cover"
+            />
           </div>
-          <div className="border-t border-slate-100 pt-6 mt-6">
-            <span className="text-[9px] font-bold text-slate-400 uppercase tracking-widest">Parteneriat Oficial</span>
-            <p className="text-xs text-slate-950 font-bold mt-1">Generali România • Partener Brokerage Autorizat</p>
+        </div>
+        <div className="md:col-span-8 flex flex-col justify-between">
+          <div>
+            <span className="text-[10px] font-bold uppercase tracking-widest text-slate-400 block mb-2">Fondator &amp; Filozofie</span>
+            <h3 className="font-heading font-black text-2xl md:text-3xl text-slate-900 mb-4 tracking-tight">Despre Cristian Văduva</h3>
+            <p className="text-sm text-slate-600 leading-relaxed mb-4">
+              Cu o pregătire interdisciplinară în Economie, Drept și Mediu, și studii internaționale la Madrid și Amiens, am structurat această platformă pentru a elimina birocrația și opacitatea din industria asigurărilor și protecției patrimoniului din România.
+            </p>
+            <p className="text-sm text-slate-600 leading-relaxed">
+              Misiunea mea este de a structura un ecosistem integrat în care activele tale rezidențiale, afacerile și protecția familiei sunt asigurate sub un singur acoperiș tehnologic, cu audit riguros și transparență totală.
+            </p>
+          </div>
+          <div className="border-t border-slate-100 pt-4 mt-6 flex flex-wrap items-center justify-between gap-2">
+            <div>
+              <span className="text-[9px] font-bold text-slate-400 uppercase tracking-widest">Colaborare &amp; Distribuție</span>
+              <p className="text-xs text-slate-950 font-bold mt-0.5">Produse Generali România &bull; Consultanță Dedicată</p>
+            </div>
+            <Button size="sm" variant="outline" className="rounded-full text-xs font-semibold" asChild>
+              <Link href="/despre-mine">Vezi profilul complet &rarr;</Link>
+            </Button>
           </div>
         </div>
       </div>

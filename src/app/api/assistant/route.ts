@@ -43,18 +43,46 @@ RULES:
 6. STYLE: Human-like, natural. DO NOT repeat identical greetings or CTAs. Adapt personality to match the user's style.
 `;
 
+import { checkRateLimit, createRateLimitResponse, getClientIp } from "@/lib/rateLimit";
+import { sanitizeText } from "@/lib/validation";
+import { logger } from "@/lib/logger";
+
 export async function POST(req: Request) {
+  const correlationId = crypto.randomUUID();
+  const clientIp = getClientIp(req);
+
+  // Rate Limiting: 10 AI assistant requests per minute per IP
+  const rateLimitResult = await checkRateLimit(`assistant:${clientIp}`, 10, 60000);
+  if (!rateLimitResult.success) {
+    return createRateLimitResponse(rateLimitResult.reset);
+  }
+
   try {
-    const { message, history, context } = await req.json();
+    const body = await req.json();
+    const rawMessage = typeof body?.message === "string" ? body.message : "";
+    const history = Array.isArray(body?.history) ? body.history : [];
+    const context = body?.context || {};
+
+    const message = sanitizeText(rawMessage);
+    if (!message || message.length > 1000) {
+      return NextResponse.json(
+        { response: "Mesajul este invalid sau depășește lungimea maximă de 1000 caractere." },
+        { status: 400, headers: { "Cache-Control": "private, no-cache, no-store" } }
+      );
+    }
 
     const apiKey = process.env.OPENAI_API_KEY;
     if (!apiKey) {
       // Graceful fallback if API key is not configured in production yet
-      return NextResponse.json({
-        response: "Conexiunea la modulul AI avansat necesită configurarea cheii API. Te rog să mă contactezi direct pe WhatsApp pentru asistență imediată.",
-        updatedContext: context,
-        confidence: 0
-      });
+      return NextResponse.json(
+        {
+          response:
+            "Conexiunea la modulul AI avansat necesită configurarea cheii API. Te rog să mă contactezi direct pe WhatsApp pentru asistență imediată.",
+          updatedContext: context,
+          confidence: 0,
+        },
+        { headers: { "Cache-Control": "private, no-cache, no-store" } }
+      );
     }
 
     const messages = [

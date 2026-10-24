@@ -8,12 +8,12 @@ export const metadata: Metadata = {
   title: "Securitatea Platformei - Cristian Văduva",
   description: "Cum îți protejăm datele pe platforma Cristian Văduva. Detalii despre criptare, certificate SSL, securitatea găzduirii și backup-uri.",
   alternates: {
-    canonical: "https://cristianvaduva.com/legal/security",
+    canonical: "https://insurance.cristianvaduva.com/legal/security",
   },
   openGraph: {
     title: "Securitatea Platformei - Cristian Văduva",
     description: "Cum îți protejăm datele pe platforma Cristian Văduva. Detalii despre criptare, certificate SSL, securitatea găzduirii și backup-uri.",
-    url: "https://cristianvaduva.com/legal/security",
+    url: "https://insurance.cristianvaduva.com/legal/security",
     type: "website",
   },
   twitter: {
@@ -100,7 +100,7 @@ export default function SecurityPage() {
             <section>
               <h2 className="text-2xl font-bold font-heading text-white">Raportarea Vulnerabilităților</h2>
               <p className="mt-4">
-                Dacă ești cercetător în securitate și ai descoperit o potențială vulnerabilitate pe platforma noastră, te rugăm să o raportezi în mod responsabil trimițându-ne un e-mail direct la <a href="mailto:contact@cristianvaduva.com" className="text-blue-400 hover:underline">contact@cristianvaduva.com</a>. Ne angajăm să analizăm și să rezolvăm orice breșă semnalată în cel mai scurt timp posibil.
+                Dacă ești cercetător în securitate și ai descoperit o potențială vulnerabilitate pe platforma noastră, te rugăm să o raportezi în mod responsabil trimițându-ne un e-mail direct către adresa noastră dedicată de securitate conform RFC 9116: <a href="mailto:cristianvaduva@duck.com" className="text-blue-400 hover:underline">cristianvaduva@duck.com</a> (sau la <a href="mailto:contact@cristianvaduva.com" className="text-blue-400 hover:underline">contact@cristianvaduva.com</a>). Ne angajăm să analizăm și să rezolvăm orice breșă semnalată în cel mai scurt timp posibil.
               </p>
               <p className="mt-2">
                 Pentru informații detaliate despre cum gestionăm confidențialitatea datelor conform legii, citește <Link href="/legal/privacy-policy" className="text-blue-400 hover:underline">Politica de Confidențialitate & GDPR Notice</Link>.

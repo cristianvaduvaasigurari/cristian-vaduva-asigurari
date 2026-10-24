@@ -1,3 +1,5 @@
+import { redactSensitiveData } from "@/lib/logger";
+
 export interface TelegramLeadData {
   name: string;
   phone: string;
@@ -32,12 +34,12 @@ async function fetchWithTimeout(
 }
 
 function buildTelegramMessage(lead: TelegramLeadData): string {
-  const name = lead.name || "N/A";
+  const name = lead.name ? redactSensitiveData(lead.name) : "N/A";
   const phone = lead.phone || "N/A";
   const email = lead.email || "N/A";
-  const service = lead.service || "N/A";
-  const message = lead.message || "—";
-  const pageUrl = lead.pageUrl || "N/A";
+  const service = lead.service ? redactSensitiveData(lead.service) : "N/A";
+  const message = lead.message ? redactSensitiveData(lead.message) : "—";
+  const pageUrl = lead.pageUrl ? redactSensitiveData(lead.pageUrl) : "N/A";
   const time = lead.timestamp || new Date().toISOString();
 
   return [

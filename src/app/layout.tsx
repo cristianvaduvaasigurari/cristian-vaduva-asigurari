@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import { headers } from "next/headers";
 import { StructuredData, organizationSchema, localBusinessSchema, personSchema } from "@/lib/structuredData";
 import { Inter, Manrope } from "next/font/google";
 import "./globals.css";
@@ -108,6 +109,8 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const headerList = await headers();
+  const nonce = headerList.get("x-nonce") ?? undefined;
   const locale = await getLocale();
   const messages = await getMessages({ locale });
   return (

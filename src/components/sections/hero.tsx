@@ -12,16 +12,7 @@ export function Hero() {
 
             <div 
               className="flex items-center gap-2 overflow-x-auto scroll-smooth max-w-full px-3 py-2 rounded-full glass no-scrollbar shadow-sm"
-              style={{
-                scrollbarWidth: 'none',
-                msOverflowStyle: 'none',
-              }}
             >
-              <style dangerouslySetInnerHTML={{__html: `
-                .no-scrollbar::-webkit-scrollbar {
-                  display: none;
-                }
-              `}} />
               <a
                 href="https://cristianvaduva.com"
                 title="Cristian Văduva"

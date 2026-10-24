@@ -16,7 +16,7 @@ export function proxy(request: NextRequest) {
     img-src 'self' blob: data: https://images.unsplash.com https://insurance.cristianvaduva.com https://cristianvaduva.com https://aixluxury.com;
     font-src 'self' data:;
     connect-src 'self' https://iovzvnntcftcxagdjlyg.supabase.co https://*.supabase.co wss://*.supabase.co https://api.telegram.org https://api.openai.com;
-    frame-src 'self';
+    frame-src 'self' https://www.google.com https://*.google.com;
     frame-ancestors 'self';
     form-action 'self';
     base-uri 'self';
