@@ -293,7 +293,7 @@ export function Navbar() {
                 <ChevronDown className="w-4 h-4 transition-transform group-hover:rotate-180" />
               </button>
               {/* Mega Menu Dropdown */}
-              <div className="absolute top-full left-1/2 -translate-x-1/2 w-[900px] bg-white border border-zinc-200/80 shadow-2xl rounded-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform origin-top translate-y-4 group-hover:translate-y-0 p-8">
+              <div className="absolute top-full left-0 w-[min(900px,calc(100vw-22rem))] xl:w-[900px] bg-white border border-zinc-200/80 shadow-2xl rounded-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform origin-top-left translate-y-4 group-hover:translate-y-0 p-8 z-50">
                 <div className="grid grid-cols-4 gap-8">
                   {megaMenuData.map((col, i) => (
                     <div key={i} className="flex flex-col">

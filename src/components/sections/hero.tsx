@@ -8,7 +8,7 @@ export function Hero() {
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-[118px] md:pt-[128px] pb-20 bg-white" aria-labelledby="hero-heading">
       <div className="container mx-auto px-4 relative z-10 text-center">
         <div className="max-w-4xl mx-auto">
-          <div className="flex justify-center mb-8 max-w-full">
+          <div className="flex justify-center md:mt-3 md:mb-5 mb-8 max-w-full">
 
             <div 
               className="flex items-center gap-2 overflow-x-auto scroll-smooth max-w-full px-3 py-2 rounded-full glass no-scrollbar shadow-sm"
