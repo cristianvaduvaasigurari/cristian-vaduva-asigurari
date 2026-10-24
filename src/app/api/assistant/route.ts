@@ -51,8 +51,12 @@ export async function POST(req: Request) {
   const correlationId = crypto.randomUUID();
   const clientIp = getClientIp(req);
 
-  // Rate Limiting: 10 AI assistant requests per minute per IP
-  const rateLimitResult = await checkRateLimit(`assistant:${clientIp}`, 10, 60000);
+  // Rate Limiting: 10 AI assistant requests per minute per IP (fail-closed for resource protection)
+  const rateLimitResult = await checkRateLimit(`assistant:${clientIp}`, {
+    limit: 10,
+    windowMs: 60000,
+    failClosed: true,
+  });
   if (!rateLimitResult.success) {
     return createRateLimitResponse(rateLimitResult.reset);
   }

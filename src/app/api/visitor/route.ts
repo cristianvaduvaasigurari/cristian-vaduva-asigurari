@@ -1,6 +1,4 @@
 import { NextResponse } from "next/server";
-import { sendTelegramAlert } from "@/lib/telegram";
-import type { TelegramLeadData } from "@/lib/telegram";
 import { checkRateLimit, createRateLimitResponse, getClientIp } from "@/lib/rateLimit";
 import { logger } from "@/lib/logger";
 
@@ -8,9 +6,8 @@ export const dynamic = "force-dynamic";
 export const runtime = "nodejs";
 
 /**
- * API endpoint for high‑intent visitor events.
- * It receives minimal data and forwards a Telegram alert.
- * The response is returned immediately; Telegram sending is fire‑and‑forget.
+ * API endpoint for high‑intent visitor telemetry events.
+ * It receives sanitized telemetry and logs it securely without exposing an open Telegram relay.
  */
 export async function POST(request: Request) {
   const correlationId = crypto.randomUUID();
@@ -23,25 +20,29 @@ export async function POST(request: Request) {
   }
 
   try {
-    const data: TelegramLeadData = await request.json();
+    const body = await request.json();
 
-    logger.info("High-intent visitor event received", {
-      correlationId,
-      service: data.service,
-      pageUrl: data.pageUrl,
-    });
-
-    if (!process.env.TELEGRAM_BOT_TOKEN || !process.env.TELEGRAM_CHAT_ID) {
-      logger.warn("Missing TELEGRAM_BOT_TOKEN or TELEGRAM_CHAT_ID", { correlationId });
+    // Strict validation: /api/visitor is exclusively for page_view telemetry.
+    // Arbitrary message or contact injection is strictly forbidden to prevent Telegram spam relay.
+    if (!body || typeof body !== "object" || body.type !== "page_view") {
+      return NextResponse.json(
+        { success: false, error: "Invalid telemetry event" },
+        {
+          status: 400,
+          headers: { "Cache-Control": "private, no-cache, no-store, max-age=0, must-revalidate" },
+        }
+      );
     }
 
-    sendTelegramAlert(data)
-      .then((sent) => {
-        logger.info("Telegram visitor alert sent", { correlationId, success: sent });
-      })
-      .catch((e) => {
-        logger.error("Telegram visitor notification failed", e, { correlationId });
-      });
+    const rawUrl = typeof body.url === "string" ? body.url : typeof body.pageUrl === "string" ? body.pageUrl : "";
+    const pathname = typeof body.pathname === "string" ? body.pathname.slice(0, 100) : "";
+    const referrer = typeof body.referrer === "string" ? body.referrer.slice(0, 200) : "";
+
+    logger.info("High-intent visitor telemetry recorded", {
+      correlationId,
+      pathname,
+      hasReferrer: Boolean(referrer),
+    });
 
     return NextResponse.json(
       { success: true, correlationId },

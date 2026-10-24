@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { ContactForm } from "@/components/sections/contact-form";
@@ -18,13 +19,37 @@ export default function ContactPage() {
       
       <main className="flex-1 pt-28 md:pt-36 pb-16">
         <div className="container mx-auto px-4">
-          <div className="mb-16 text-center max-w-4xl mx-auto">
+          <div className="mb-12 text-center max-w-4xl mx-auto">
             <h1 className="text-5xl md:text-6xl font-heading font-bold mb-6 tracking-tight">
               Suntem aici pentru tine
             </h1>
             <p className="text-xl text-muted-foreground leading-relaxed max-w-2xl mx-auto">
               Alege modul prin care dorești să colaborăm. Fie că e o simplă întrebare sau o strategie complexă, experții noștri îți stau la dispoziție.
             </p>
+          </div>
+
+          {/* Advisor Identity Banner */}
+          <div className="max-w-3xl mx-auto mb-12 p-6 md:p-7 rounded-3xl glass border border-border/80 flex flex-col sm:flex-row items-center gap-6 shadow-sm">
+            <div className="relative w-24 h-24 sm:w-28 sm:h-28 rounded-2xl overflow-hidden shrink-0 border border-border/80 shadow-md">
+              <Image
+                src="/images/cristian-vaduva/cristian-vaduva-portrait-1.jpg"
+                alt="Cristian Văduva — Consultant Asigurări & Advisory"
+                fill
+                sizes="(max-width: 640px) 96px, 112px"
+                className="object-cover object-top"
+              />
+            </div>
+            <div className="text-center sm:text-left space-y-1.5 flex-1">
+              <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-blue-500/10 text-blue-600 text-xs font-semibold uppercase tracking-wider">
+                Consultanță Directă
+              </div>
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-foreground">
+                Cristian Văduva — Insurance Advisory
+              </h2>
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                Fiecare cerere de ofertă sau solicitare de consultanță este analizată personal, pentru a garanta condiții optime de acoperire și claritate contractuală deplină.
+              </p>
+            </div>
           </div>
 
           <div className="flex flex-wrap justify-center gap-4 mb-16">

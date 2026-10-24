@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { Button } from "@/components/ui/button";
@@ -301,34 +302,73 @@ export default function PrivateClientHubPage() {
 
         {/* 6. DIRECT CONTACT PANEL */}
         <section className="py-20 bg-zinc-50/70 border-b border-zinc-200/80">
-          <div className="container mx-auto px-4 md:px-6 max-w-4xl text-center">
-            <h3 className="text-2xl font-heading font-bold text-zinc-900 mb-4">
-              Prefer a direct consultation?
-            </h3>
-            <p className="text-zinc-600 text-sm mb-8 max-w-lg mx-auto leading-relaxed">
-              You can connect directly with Cristian Văduva for confidential discussions regarding single high-value assets or multi-category collections.
-            </p>
-            <div className="flex flex-wrap items-center justify-center gap-4">
-              <Button 
-                variant="outline"
-                className="rounded-full border-zinc-300 bg-white text-zinc-900 hover:bg-zinc-100 px-6 h-12 text-xs font-semibold shadow-sm"
-                asChild
-              >
-                <a href={CONTACT.phone.href}>
-                  <PhoneCall className="w-3.5 h-3.5 mr-2 text-zinc-600" />
-                  Direct: {CONTACT.phone.display}
-                </a>
-              </Button>
+          <div className="container mx-auto px-4 md:px-6 max-w-5xl">
+            <div className="bg-white rounded-3xl border border-zinc-200/80 p-8 md:p-12 shadow-sm grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-center">
+              <div className="md:col-span-5">
+                <div className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-lg border border-zinc-200 bg-zinc-100">
+                  <Image
+                    src="/images/cristian-vaduva/cristian-vaduva-portrait-4.jpg"
+                    alt="Cristian Văduva — Private Client Insurance Advisory"
+                    fill
+                    sizes="(max-width: 768px) 100vw, 380px"
+                    className="object-cover object-center"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/60 via-transparent to-transparent" />
+                  <div className="absolute bottom-4 left-4 right-4 text-white">
+                    <p className="text-[10px] uppercase tracking-widest text-zinc-300 font-semibold mb-0.5">
+                      Private Client Principal
+                    </p>
+                    <p className="text-base font-bold font-heading">
+                      Cristian Văduva
+                    </p>
+                  </div>
+                </div>
+              </div>
 
-              <Button 
-                variant="outline"
-                className="rounded-full border-emerald-300 bg-emerald-50 text-emerald-800 hover:bg-emerald-100 px-6 h-12 text-xs font-semibold shadow-sm"
-                asChild
-              >
-                <a href={CONTACT.whatsapp.href} target="_blank" rel="noopener noreferrer">
-                  WhatsApp Priority Line
-                </a>
-              </Button>
+              <div className="md:col-span-7 space-y-5">
+                <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-50 text-amber-900 text-xs font-semibold uppercase tracking-wider border border-amber-200/80">
+                  <ShieldCheck className="w-3.5 h-3.5 text-amber-700" />
+                  Consultanță Confidențială
+                </div>
+                <h3 className="text-2xl sm:text-3xl font-heading font-bold text-zinc-900 tracking-tight leading-snug">
+                  Prefer a direct, confidential consultation?
+                </h3>
+                <p className="text-zinc-600 text-sm leading-relaxed font-normal">
+                  You can connect directly with Cristian Văduva for discrete discussions regarding single high-value assets, luxury real estate, or complex multi-category family collections.
+                </p>
+                <div className="flex flex-wrap items-center gap-3 pt-2">
+                  <Button 
+                    variant="outline"
+                    className="rounded-full border-zinc-300 bg-white text-zinc-900 hover:bg-zinc-100 px-6 h-12 text-xs font-semibold shadow-sm"
+                    asChild
+                  >
+                    <a href={CONTACT.phone.href}>
+                      <PhoneCall className="w-3.5 h-3.5 mr-2 text-zinc-600" />
+                      Direct: {CONTACT.phone.display}
+                    </a>
+                  </Button>
+
+                  <Button 
+                    variant="outline"
+                    className="rounded-full border-emerald-300 bg-emerald-50 text-emerald-800 hover:bg-emerald-100 px-6 h-12 text-xs font-semibold shadow-sm"
+                    asChild
+                  >
+                    <a href={CONTACT.whatsapp.href} target="_blank" rel="noopener noreferrer">
+                      WhatsApp Priority Line
+                    </a>
+                  </Button>
+
+                  <Button
+                    variant="ghost"
+                    className="rounded-full text-zinc-600 hover:text-zinc-900 text-xs font-semibold"
+                    asChild
+                  >
+                    <Link href="/despre-mine">
+                      Despre Consultant &rarr;
+                    </Link>
+                  </Button>
+                </div>
+              </div>
             </div>
           </div>
         </section>

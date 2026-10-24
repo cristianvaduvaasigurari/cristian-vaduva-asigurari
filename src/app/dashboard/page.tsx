@@ -7,6 +7,9 @@ import { AdminLoginForm } from "@/components/auth/admin-login-form";
 import { SignOutButton } from "@/components/auth/sign-out-button";
 import { ShieldAlert, Inbox, Phone, Mail, Clock } from "lucide-react";
 
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
+
 export const metadata = {
   title: "Portal Lead-uri | Cristian Văduva Asigurări",
   robots: {

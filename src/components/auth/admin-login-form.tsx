@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { createClient } from "@/lib/supabase/client";
+import { verifyLoginAttempt } from "@/lib/actions";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Lock, Mail, Eye, EyeOff, ShieldCheck, AlertCircle, ArrowLeft } from "lucide-react";
@@ -30,6 +31,15 @@ export function AdminLoginForm({ redirectTo = "/dashboard" }: AdminLoginFormProp
 
     try {
       setIsLoading(true);
+
+      // Server-side brute-force throttling check (fail-closed)
+      const guard = await verifyLoginAttempt();
+      if (!guard.allowed) {
+        setIsLoading(false);
+        setErrorMessage(guard.error || "Prea multe încercări de autentificare. Reîncearcă mai târziu.");
+        return;
+      }
+
       const supabase = createClient();
 
       const { data, error } = await supabase.auth.signInWithPassword({

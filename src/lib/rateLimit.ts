@@ -13,6 +13,7 @@
  */
 
 import { NextResponse } from "next/server";
+import { logger } from "@/lib/logger";
 
 interface RateLimitRecord {
   count: number;
@@ -44,36 +45,63 @@ export interface RateLimitResult {
   reset: number;
 }
 
+export interface RateLimitOptions {
+  limit?: number;
+  windowMs?: number;
+  /**
+   * If true, failures in Upstash Redis will fail-closed (return success: false).
+   * Recommended for sensitive endpoints like login and AI assistant.
+   * Default: false (falls back to memory store for public lead submissions).
+   */
+  failClosed?: boolean;
+}
+
 /**
- * Extracts the real client IP address from request headers.
+ * Extracts the real client IP address from a Headers instance or object with get().
+ * Strips port numbers if present from proxy headers.
  */
-export function getClientIp(req: Request): string {
-  const cfIp = req.headers.get("cf-connecting-ip");
-  if (cfIp) return cfIp.trim();
+export function getClientIpFromHeaders(headersList: { get(name: string): string | null }): string {
+  const cfIp = headersList.get("cf-connecting-ip");
+  if (cfIp) return cfIp.trim().replace(/:[0-9]+$/, "");
 
-  const xRealIp = req.headers.get("x-real-ip");
-  if (xRealIp) return xRealIp.trim();
+  const xRealIp = headersList.get("x-real-ip");
+  if (xRealIp) return xRealIp.trim().replace(/:[0-9]+$/, "");
 
-  const forwardedFor = req.headers.get("x-forwarded-for");
+  const forwardedFor = headersList.get("x-forwarded-for");
   if (forwardedFor) {
     const firstIp = forwardedFor.split(",")[0]?.trim();
-    if (firstIp) return firstIp;
+    if (firstIp) return firstIp.replace(/:[0-9]+$/, "");
   }
 
   return "127.0.0.1";
 }
 
 /**
+ * Extracts the real client IP address from request headers.
+ */
+export function getClientIp(req: Request): string {
+  return getClientIpFromHeaders(req.headers);
+}
+
+/**
  * Rate limiter checking against distributed KV if configured, else in-memory store.
  * @param identifier Unique key (e.g., ip or route:ip)
- * @param limit Max allowed requests within window
+ * @param limitOrOptions Max allowed requests or RateLimitOptions configuration
  * @param windowMs Time window in milliseconds (default: 60,000 = 1 minute)
  */
 export async function checkRateLimit(
   identifier: string,
-  limit = 5,
-  windowMs = 60000
+  limitOrOptions: number | RateLimitOptions = 5,
+  windowMsParam = 60000
 ): Promise<RateLimitResult> {
+  const options: RateLimitOptions =
+    typeof limitOrOptions === "number"
+      ? { limit: limitOrOptions, windowMs: windowMsParam, failClosed: false }
+      : { limit: 5, windowMs: 60000, failClosed: false, ...limitOrOptions };
+
+  const limit = options.limit ?? 5;
+  const windowMs = options.windowMs ?? 60000;
+  const failClosed = options.failClosed ?? false;
   const now = Date.now();
 
   // 1. Try distributed Upstash / Redis if available
@@ -119,9 +147,27 @@ export async function checkRateLimit(
           remaining,
           reset: Math.ceil(pttl / 1000),
         };
+      } else {
+        logger.error(`[RateLimit] Upstash Redis returned HTTP ${res.status}`);
+        if (failClosed) {
+          return {
+            success: false,
+            limit,
+            remaining: 0,
+            reset: Math.ceil(windowMs / 1000),
+          };
+        }
       }
-    } catch {
-      // Fallback to memory on distributed failure
+    } catch (redisErr) {
+      logger.error("[RateLimit] Upstash Redis network error", redisErr);
+      if (failClosed) {
+        return {
+          success: false,
+          limit,
+          remaining: 0,
+          reset: Math.ceil(windowMs / 1000),
+        };
+      }
     }
   }
 

@@ -6,16 +6,20 @@ export function proxy(request: NextRequest) {
   const isDev = process.env.NODE_ENV === "development";
 
   // Content Security Policy
-  // In production, script-src uses 'nonce-${nonce}' and 'strict-dynamic' to eliminate unsafe-inline.
-  // In development, 'unsafe-eval' is permitted by Next.js/React error overlay.
-  // style-src permits 'unsafe-inline' for Framer Motion / React dynamic inline styles.
+  // 1. script-src: In production, strictly secured with per-request 'nonce-${nonce}' and 'strict-dynamic'
+  //    (zero 'unsafe-inline' scripts). In development, 'unsafe-eval' is permitted for Next.js error overlays.
+  // 2. style-src: 'unsafe-inline' is required due to React/Next.js dynamic inline style attributes
+  //    (e.g., style={{ width: `${percent}%` }} across 70+ UI components) and Framer Motion runtime spring/transform
+  //    calculations. W3C CSP Level 2/3 nonces only apply to <style> tags, not HTML style attributes.
+  // 3. connect-src: Limited strictly to 'self' and authorized Supabase endpoints. External APIs (Telegram Bot API,
+  //    OpenAI API) are strictly server-side operations and must NEVER be exposed in client CSP.
   const cspHeader = `
     default-src 'self';
     script-src 'self' 'nonce-${nonce}' 'strict-dynamic' https://iovzvnntcftcxagdjlyg.supabase.co https://*.supabase.co${isDev ? " 'unsafe-eval'" : ""};
     style-src 'self' 'unsafe-inline';
     img-src 'self' blob: data: https://images.unsplash.com https://insurance.cristianvaduva.com https://cristianvaduva.com https://aixluxury.com;
     font-src 'self' data:;
-    connect-src 'self' https://iovzvnntcftcxagdjlyg.supabase.co https://*.supabase.co wss://*.supabase.co https://api.telegram.org https://api.openai.com;
+    connect-src 'self' https://iovzvnntcftcxagdjlyg.supabase.co https://*.supabase.co wss://*.supabase.co;
     frame-src 'self' https://www.google.com https://*.google.com;
     frame-ancestors 'self';
     form-action 'self';

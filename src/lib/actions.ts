@@ -3,12 +3,67 @@
 import { sendTelegramAlert } from "@/lib/telegram";
 import { logger, sanitizeObject } from "@/lib/logger";
 import { captureException } from "@/lib/sentry";
+import { headers } from "next/headers";
+import { checkRateLimit, getClientIpFromHeaders } from "@/lib/rateLimit";
 
 export type ActionResponse = {
   success: boolean;
   message?: string;
   error?: string;
 };
+
+/**
+ * Enforces rate limiting on Server Actions using client IP extracted from request headers.
+ */
+async function enforceActionRateLimit(
+  actionName: string,
+  limit = 8,
+  windowMs = 60000
+): Promise<{ allowed: boolean; error?: string }> {
+  try {
+    const headerStore = await headers();
+    const clientIp = getClientIpFromHeaders(headerStore);
+    const result = await checkRateLimit(`sa:${actionName}:${clientIp}`, limit, windowMs);
+    if (!result.success) {
+      return {
+        allowed: false,
+        error: "Prea multe solicitări. Te rugăm să aștepți un minut înainte de a reîncerca.",
+      };
+    }
+  } catch (err) {
+    logger.warn(`Rate limit header check error in [${actionName}]`, {
+      error: err instanceof Error ? err.message : String(err),
+    });
+  }
+  return { allowed: true };
+}
+
+/**
+ * Server Action to throttle login attempts per IP with fail-closed protection.
+ */
+export async function verifyLoginAttempt(): Promise<{ allowed: boolean; reset?: number; error?: string }> {
+  try {
+    const headerStore = await headers();
+    const clientIp = getClientIpFromHeaders(headerStore);
+    const result = await checkRateLimit(`login:${clientIp}`, {
+      limit: 5,
+      windowMs: 60000,
+      failClosed: true,
+    });
+    if (!result.success) {
+      return {
+        allowed: false,
+        reset: result.reset,
+        error: "Prea multe încercări de autentificare. Te rugăm să aștepți 1 minut înainte de a reîncerca.",
+      };
+    }
+  } catch (err) {
+    logger.warn("Login attempt rate limit error", {
+      error: err instanceof Error ? err.message : String(err),
+    });
+  }
+  return { allowed: true };
+}
 
 function getSupabaseConfig(): { supabaseUrl: string; supabaseKey: string } | null {
   const supabaseUrl = (process.env.SUPABASE_URL || process.env.NEXT_PUBLIC_SUPABASE_URL)?.trim();
@@ -105,6 +160,12 @@ function validateMessage(message: string, maxLen = 2000): { isValid: boolean; sa
  */
 export async function submitLead(formData: FormData): Promise<ActionResponse> {
   const correlationId = crypto.randomUUID();
+
+  // Rate Limiting: 6 lead submissions per minute per IP
+  const rateCheck = await enforceActionRateLimit("submitLead", 6, 60000);
+  if (!rateCheck.allowed) {
+    return { success: false, error: rateCheck.error };
+  }
 
   try {
     // 1. Anti-spam Honeypot Check
@@ -229,6 +290,11 @@ export async function saveAssessment(
   assessmentType: string,
   data: Record<string, unknown>
 ): Promise<{ success: boolean; id?: string; error?: string }> {
+  const rateCheck = await enforceActionRateLimit("saveAssessment", 6, 60000);
+  if (!rateCheck.allowed) {
+    return { success: false, error: rateCheck.error };
+  }
+
   try {
     const uniqueId = `aix_${assessmentType.toLowerCase().replace(/[^a-z0-9]/g, "")}_${Math.random().toString(36).substr(2, 9)}`;
 
@@ -280,6 +346,11 @@ export async function submitPolicyReview(formData: FormData): Promise<{
   error?: string;
   validationErrors?: Record<string, string>;
 }> {
+  const rateCheck = await enforceActionRateLimit("submitPolicyReview", 6, 60000);
+  if (!rateCheck.allowed) {
+    return { success: false, error: rateCheck.error };
+  }
+
   try {
     const rawData = {
       category: formData.get("category"),
@@ -385,6 +456,11 @@ export async function submitHomePurchaseLead(formData: FormData): Promise<{
   referenceId?: string;
   error?: string;
 }> {
+  const rateCheck = await enforceActionRateLimit("submitHomePurchaseLead", 6, 60000);
+  if (!rateCheck.allowed) {
+    return { success: false, error: rateCheck.error };
+  }
+
   try {
     const name = (formData.get("name") as string)?.trim();
     const phone = (formData.get("phone") as string)?.trim();
@@ -482,6 +558,11 @@ export async function submitRentalProtectionLead(formData: FormData): Promise<{
   referenceId?: string;
   error?: string;
 }> {
+  const rateCheck = await enforceActionRateLimit("submitRentalProtectionLead", 6, 60000);
+  if (!rateCheck.allowed) {
+    return { success: false, error: rateCheck.error };
+  }
+
   try {
     const name = (formData.get("name") as string)?.trim();
     const phone = (formData.get("phone") as string)?.trim();
@@ -575,6 +656,11 @@ export async function submitRentalProtectionLead(formData: FormData): Promise<{
  * Stores full deterministic summary in database, sends minimal operational notification to Telegram
  */
 export async function submitSmeRiskAuditLead(formData: FormData): Promise<{ success: boolean; referenceId?: string; error?: string }> {
+  const rateCheck = await enforceActionRateLimit("submitSmeRiskAuditLead", 6, 60000);
+  if (!rateCheck.allowed) {
+    return { success: false, error: rateCheck.error };
+  }
+
   try {
     const companyName = (formData.get("companyName") as string)?.trim() || "Companie Nespecificată";
     const industry = (formData.get("industry") as string)?.trim() || "Nespecificat";
@@ -677,6 +763,11 @@ export async function submitSmeRiskAuditLead(formData: FormData): Promise<{ succ
  * Saves an Employee Corporate Health quotation & advisory request (Initiative D)
  */
 export async function submitCorporateHealthLead(formData: FormData): Promise<{ success: boolean; referenceId?: string; error?: string }> {
+  const rateCheck = await enforceActionRateLimit("submitCorporateHealthLead", 6, 60000);
+  if (!rateCheck.allowed) {
+    return { success: false, error: rateCheck.error };
+  }
+
   try {
     const companyName = (formData.get("companyName") as string)?.trim() || "Companie Nespecificată";
     const industry = (formData.get("industry") as string)?.trim() || "Nespecificat";
@@ -778,6 +869,11 @@ export async function submitCorporateHealthLead(formData: FormData): Promise<{ s
  * Saves a Bucharest Seismic Risk Property & Insurance Review Request
  */
 export async function submitSeismicPropertyReviewLead(formData: FormData): Promise<{ success: boolean; referenceId?: string; error?: string }> {
+  const rateCheck = await enforceActionRateLimit("submitSeismicPropertyReviewLead", 6, 60000);
+  if (!rateCheck.allowed) {
+    return { success: false, error: rateCheck.error };
+  }
+
   try {
     const propertyAddress = (formData.get("propertyAddress") as string)?.trim() || "";
     const sector = (formData.get("sector") as string)?.trim() || "București";

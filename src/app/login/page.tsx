@@ -2,6 +2,9 @@ import { verifyAdminAuthorization } from "@/lib/auth";
 import { redirect } from "next/navigation";
 import { AdminLoginForm } from "@/components/auth/admin-login-form";
 
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
+
 export const metadata = {
   title: "Autentificare Administrator | Cristian Văduva Asigurări",
   description: "Portal securizat de administrare pentru Cristian Văduva Asigurări.",
