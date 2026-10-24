@@ -44,6 +44,7 @@ export function TopTicker() {
             <span key={`t1-${item.id}-${idx}`} className="inline-flex items-center text-[10px] sm:text-[11px] font-medium tracking-wide text-slate-300">
               <Link
                 href={item.href}
+                prefetch={false}
                 className="inline-flex items-center gap-1.5 hover:text-white transition-colors group cursor-pointer"
               >
                 <span className="font-bold text-slate-400 group-hover:text-slate-200 transition-colors uppercase text-[9px] sm:text-[10px] tracking-wider px-1.5 py-0.5 rounded bg-slate-900 border border-slate-800">
@@ -66,6 +67,7 @@ export function TopTicker() {
               <Link
                 href={item.href}
                 tabIndex={-1}
+                prefetch={false}
                 className="inline-flex items-center gap-1.5 hover:text-white transition-colors group cursor-pointer"
               >
                 <span className="font-bold text-slate-400 group-hover:text-slate-200 transition-colors uppercase text-[9px] sm:text-[10px] tracking-wider px-1.5 py-0.5 rounded bg-slate-900 border border-slate-800">
