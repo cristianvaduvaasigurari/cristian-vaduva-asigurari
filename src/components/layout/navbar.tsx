@@ -501,11 +501,10 @@ export function Navbar() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.15 }}
-            style={{ backgroundColor: '#ffffff', color: '#09090b' }}
             className="fixed inset-0 bg-white text-zinc-900 z-55 overflow-y-auto pt-20 pb-28 px-4 sm:px-6 overscroll-contain shadow-2xl"
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="flex flex-col gap-3 max-w-lg mx-auto" style={{ color: '#09090b' }}>
+            <div className="flex flex-col gap-3 max-w-lg mx-auto text-zinc-900">
               {/* Mobile Menu Header Bar with explicit close button */}
               <div className="flex items-center justify-between pb-3 mb-1 border-b border-zinc-200/80">
                 <div className="flex items-center gap-2">
@@ -527,11 +526,10 @@ export function Navbar() {
                 <button
                   type="button"
                   aria-expanded={activeMobileMegaMenu === 4}
-                  style={{ color: '#09090b' }}
                   className="drawer-accordion-btn text-lg sm:text-xl font-bold p-2 text-left flex justify-between items-center text-zinc-900 hover:text-blue-600 transition-colors"
                   onClick={() => setActiveMobileMegaMenu(activeMobileMegaMenu === 4 ? null : 4)}
                 >
-                  <span className="flex items-center gap-2 text-zinc-900" style={{ color: '#09090b' }}>
+                  <span className="flex items-center gap-2 text-zinc-900">
                     Private Client
                     <span className="text-[10px] font-mono uppercase px-2 py-0.5 rounded bg-zinc-900 text-white font-semibold">Division</span>
                   </span>
@@ -561,24 +559,23 @@ export function Navbar() {
                 <button
                   type="button"
                   aria-expanded={activeMobileMegaMenu === 1}
-                  style={{ color: '#09090b' }}
                   className="drawer-accordion-btn text-lg sm:text-xl font-bold p-2 text-left flex justify-between items-center text-zinc-900 hover:text-blue-600 transition-colors"
                   onClick={() => setActiveMobileMegaMenu(activeMobileMegaMenu === 1 ? null : 1)}
                 >
-                  <span className="text-zinc-900" style={{ color: '#09090b' }}>Asigurări</span>
+                  <span className="text-zinc-900">Asigurări</span>
                   <ChevronDown className={cn("w-5 h-5 text-zinc-600 transition-transform", activeMobileMegaMenu === 1 ? "rotate-180 text-zinc-900" : "")} />
                 </button>
                 {activeMobileMegaMenu === 1 && (
                   <div className="drawer-sub-group pl-2 pb-3 flex flex-col gap-4 bg-zinc-50 border border-zinc-200 p-4 rounded-2xl my-2">
                     {megaMenuData.map((col, i) => (
                       <div key={i} className="flex flex-col gap-1.5">
-                        <h4 className="font-bold text-xs uppercase tracking-wider text-blue-700 flex items-center gap-1.5 mt-1" style={{ color: '#1d4ed8' }}>
+                        <h4 className="font-bold text-xs uppercase tracking-wider text-blue-700 flex items-center gap-1.5 mt-1">
                           {col.icon}
                           {col.title}
                         </h4>
                         <div className="flex flex-col gap-1 pl-2">
                           {col.items.map((item, j) => (
-                            <Link key={j} href={item.href} onClick={() => setIsMobileMenuOpen(false)} style={{ color: '#27272a' }} className="drawer-nav-sublink text-sm font-medium text-zinc-800 hover:text-blue-600 hover:bg-white py-1.5 px-2.5 rounded-lg transition-colors block">
+                            <Link key={j} href={item.href} onClick={() => setIsMobileMenuOpen(false)} className="drawer-nav-sublink text-sm font-medium text-zinc-800 hover:text-blue-600 hover:bg-white py-1.5 px-2.5 rounded-lg transition-colors block">
                               {item.name}
                             </Link>
                           ))}
@@ -605,17 +602,16 @@ export function Navbar() {
                 <button
                   type="button"
                   aria-expanded={activeMobileMegaMenu === 3}
-                  style={{ color: '#09090b' }}
                   className="drawer-accordion-btn text-lg sm:text-xl font-bold p-2 text-left flex justify-between items-center text-zinc-900 hover:text-blue-600 transition-colors"
                   onClick={() => setActiveMobileMegaMenu(activeMobileMegaMenu === 3 ? null : 3)}
                 >
-                  <span className="text-zinc-900" style={{ color: '#09090b' }}>Credite</span>
+                  <span className="text-zinc-900">Credite</span>
                   <ChevronDown className={cn("w-5 h-5 text-zinc-600 transition-transform", activeMobileMegaMenu === 3 ? "rotate-180 text-zinc-900" : "")} />
                 </button>
                 {activeMobileMegaMenu === 3 && (
                   <div className="drawer-sub-group pl-2 pb-3 flex flex-col gap-1.5 bg-zinc-50 border border-zinc-200 p-4 rounded-2xl my-2">
                     {creditsMenuLinks.map((item, i) => (
-                      <Link key={i} href={item.href} onClick={() => setIsMobileMenuOpen(false)} style={{ color: '#27272a' }} className="drawer-nav-sublink text-sm font-medium text-zinc-800 hover:text-blue-600 hover:bg-white py-1.5 px-2.5 rounded-lg transition-colors block">
+                      <Link key={i} href={item.href} onClick={() => setIsMobileMenuOpen(false)} className="drawer-nav-sublink text-sm font-medium text-zinc-800 hover:text-blue-600 hover:bg-white py-1.5 px-2.5 rounded-lg transition-colors block">
                         {item.name}
                       </Link>
                     ))}
@@ -638,21 +634,20 @@ export function Navbar() {
                 <button
                   type="button"
                   aria-expanded={activeMobileMegaMenu === 2}
-                  style={{ color: '#09090b' }}
                   className="drawer-accordion-btn text-lg sm:text-xl font-bold p-2 text-left flex justify-between items-center text-zinc-900 hover:text-blue-600 transition-colors"
                   onClick={() => setActiveMobileMegaMenu(activeMobileMegaMenu === 2 ? null : 2)}
                 >
-                  <span className="text-zinc-900" style={{ color: '#09090b' }}>Ecosistem AiX</span>
+                  <span className="text-zinc-900">Ecosistem AiX</span>
                   <ChevronDown className={cn("w-5 h-5 text-zinc-600 transition-transform", activeMobileMegaMenu === 2 ? "rotate-180 text-zinc-900" : "")} />
                 </button>
                 {activeMobileMegaMenu === 2 && (
                   <div className="drawer-sub-group pl-2 pb-3 flex flex-col gap-4 bg-zinc-50 border border-zinc-200 p-4 rounded-2xl my-2">
                     {ecosystemMenuData.map((col, i) => (
                       <div key={i} className="flex flex-col gap-1.5">
-                        <h4 className="font-bold text-xs text-zinc-600 uppercase tracking-widest mt-1" style={{ color: '#52525b' }}>{col.title}</h4>
+                        <h4 className="font-bold text-xs text-zinc-600 uppercase tracking-widest mt-1">{col.title}</h4>
                         <div className="flex flex-col gap-1 pl-2">
                           {col.items.map((item, j) => (
-                            <Link key={j} href={item.href} onClick={() => setIsMobileMenuOpen(false)} style={{ color: '#27272a' }} className="drawer-nav-sublink text-sm font-medium text-zinc-800 hover:text-blue-600 hover:bg-white py-1.5 px-2.5 rounded-lg transition-colors block">
+                            <Link key={j} href={item.href} onClick={() => setIsMobileMenuOpen(false)} className="drawer-nav-sublink text-sm font-medium text-zinc-800 hover:text-blue-600 hover:bg-white py-1.5 px-2.5 rounded-lg transition-colors block">
                               {item.name}
                             </Link>
                           ))}
@@ -667,37 +662,35 @@ export function Navbar() {
               <Link
                 href="/gap-analyzer"
                 onClick={() => setIsMobileMenuOpen(false)}
-                style={{ color: '#09090b' }}
                 className="drawer-nav-link text-lg sm:text-xl font-bold p-2 border-b border-zinc-200/80 flex items-center justify-between text-zinc-900 hover:text-blue-600 active:text-blue-700 transition-colors"
               >
-                <span className="text-zinc-900" style={{ color: '#09090b' }}>GAP Analyzer</span>
+                <span className="text-zinc-900">GAP Analyzer</span>
                 <span className="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-blue-500/10 text-blue-700 border border-blue-500/20">Audit</span>
               </Link>
 
               <Link
                 href="/calculatoare"
                 onClick={() => setIsMobileMenuOpen(false)}
-                style={{ color: '#09090b' }}
                 className="drawer-nav-link text-lg sm:text-xl font-bold p-2 border-b border-zinc-200/80 flex items-center justify-between text-zinc-900 hover:text-blue-600 active:text-blue-700 transition-colors"
               >
-                <span className="text-zinc-900" style={{ color: '#09090b' }}>Calculatoare</span>
+                <span className="text-zinc-900">Calculatoare</span>
                 <span className="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-emerald-500/10 text-emerald-700 border border-emerald-500/20">Instrumente</span>
               </Link>
 
-              <Link href="/de-ce-asigurari" onClick={() => setIsMobileMenuOpen(false)} style={{ color: '#09090b' }} className="drawer-nav-link text-lg sm:text-xl font-bold p-2 border-b border-zinc-200/80 text-zinc-900 hover:text-blue-600 transition-colors block">
+              <Link href="/de-ce-asigurari" onClick={() => setIsMobileMenuOpen(false)} className="drawer-nav-link text-lg sm:text-xl font-bold p-2 border-b border-zinc-200/80 text-zinc-900 hover:text-blue-600 transition-colors block">
                 De Ce Asigurări
               </Link>
 
-              <Link href="/real-estate" onClick={() => setIsMobileMenuOpen(false)} style={{ color: '#09090b' }} className="drawer-nav-link text-lg sm:text-xl font-bold p-2 border-b border-zinc-200/80 text-zinc-900 hover:text-blue-600 transition-colors block">
+              <Link href="/real-estate" onClick={() => setIsMobileMenuOpen(false)} className="drawer-nav-link text-lg sm:text-xl font-bold p-2 border-b border-zinc-200/80 text-zinc-900 hover:text-blue-600 transition-colors block">
                 Real Estate
               </Link>
 
-              <Link href="/despre-mine" onClick={() => setIsMobileMenuOpen(false)} style={{ color: '#09090b' }} className="drawer-nav-link text-lg sm:text-xl font-bold p-2 border-b border-zinc-200/80 text-zinc-900 hover:text-blue-600 transition-colors block">
+              <Link href="/despre-mine" onClick={() => setIsMobileMenuOpen(false)} className="drawer-nav-link text-lg sm:text-xl font-bold p-2 border-b border-zinc-200/80 text-zinc-900 hover:text-blue-600 transition-colors block">
                 Despre Mine
               </Link>
 
               <Link href="/stiri" onClick={() => setIsMobileMenuOpen(false)} className="text-lg sm:text-xl font-bold p-2 border-b border-zinc-200/80 flex items-center justify-between text-amber-700 hover:text-amber-800 transition-colors">
-                <span style={{ color: '#b45309' }}>Insurance Intelligence</span>
+                <span className="text-amber-700">Insurance Intelligence</span>
                 <span className="text-xs font-semibold px-2 py-0.5 rounded-full bg-amber-500/10 text-amber-700 border border-amber-500/20">Știri</span>
               </Link>
 

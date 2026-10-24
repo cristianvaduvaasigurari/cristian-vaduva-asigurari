@@ -3,6 +3,7 @@ import { Footer } from "@/components/layout/footer";
 import { ShieldAlert, Target, ShieldCheck, AlertTriangle, Building, Briefcase, Heart, Flame } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import Image from "next/image";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -120,6 +121,57 @@ export default function WhyInsurancePage() {
             </section>
 
           </div>
+
+          {/* Advisor Philosophy Card */}
+          <section className="max-w-4xl mx-auto mb-24">
+            <div className="bg-white rounded-3xl border border-zinc-200/80 p-8 md:p-10 shadow-sm grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+              <div className="md:col-span-4">
+                <div className="relative aspect-[3/4] rounded-2xl overflow-hidden shadow-md border border-zinc-200 bg-zinc-100">
+                  <Image
+                    src="/images/cristian-vaduva/cristian-vaduva-portrait-3.jpg"
+                    alt="Cristian Văduva — Strategie și Management de Risc"
+                    fill
+                    sizes="(max-width: 768px) 100vw, 280px"
+                    className="object-cover object-top"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/60 via-transparent to-transparent" />
+                  <div className="absolute bottom-3 left-3 right-3 text-white">
+                    <p className="text-[10px] uppercase tracking-widest text-zinc-300 font-semibold mb-0.5">
+                      Consultant Partener Generali
+                    </p>
+                    <p className="text-sm font-bold font-heading">
+                      Cristian Văduva
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="md:col-span-8 space-y-4">
+                <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 text-blue-800 text-xs font-semibold uppercase tracking-wider border border-blue-200/80">
+                  <ShieldCheck className="w-3.5 h-3.5 text-blue-700" />
+                  Filosofie de Consultanță
+                </div>
+                <h3 className="text-2xl font-heading font-bold text-zinc-900 tracking-tight leading-snug">
+                  „O poliță bună nu este o simplă hârtie, ci un scut patrimonial activ.”
+                </h3>
+                <p className="text-zinc-600 text-sm leading-relaxed">
+                  Obiectivul meu nu este să vând un contract standardizat, ci să construim împreună o arhitectură de siguranță financiară: clauze verificate linie cu linie, evaluări corecte de active și sprijin dedicat la daună.
+                </p>
+                <div className="pt-2 flex flex-wrap items-center gap-3">
+                  <Button variant="outline" className="rounded-full border-zinc-300 text-zinc-800 hover:bg-zinc-100 text-xs font-semibold h-10 px-5" asChild>
+                    <Link href="/despre-mine">
+                      Profilul Consultantului &rarr;
+                    </Link>
+                  </Button>
+                  <Button className="rounded-full bg-blue-600 hover:bg-blue-700 text-white text-xs font-semibold h-10 px-5" asChild>
+                    <Link href="/contact">
+                      Discută cu Cristian
+                    </Link>
+                  </Button>
+                </div>
+              </div>
+            </div>
+          </section>
 
           {/* CTA Section */}
           <div className="glass p-6 sm:p-10 md:p-16 rounded-3xl md:rounded-[4rem] border border-blue-500/20 text-center max-w-5xl mx-auto mb-24 relative overflow-hidden">

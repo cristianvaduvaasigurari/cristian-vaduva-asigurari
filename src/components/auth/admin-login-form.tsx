@@ -82,13 +82,13 @@ export function AdminLoginForm({ redirectTo = "/dashboard" }: AdminLoginFormProp
 
       <div className="relative z-10">
         <div className="flex items-center justify-center mb-6">
-          <div className="w-14 h-14 rounded-2xl bg-blue-500/10 border border-blue-500/20 text-blue-500 flex items-center justify-center shadow-inner">
+          <div className="w-14 h-14 rounded-2xl bg-blue-50 border border-blue-200 text-blue-700 dark:bg-blue-950/50 dark:border-blue-800 dark:text-blue-300 flex items-center justify-center shadow-inner">
             <Lock className="w-7 h-7" />
           </div>
         </div>
 
         <div className="text-center mb-6">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-500/10 text-blue-500 text-xs font-semibold uppercase tracking-wider mb-2">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 border border-blue-200/80 text-blue-800 dark:bg-blue-950/50 dark:border-blue-800 dark:text-blue-200 text-xs font-semibold uppercase tracking-wider mb-2">
             <ShieldCheck className="w-3.5 h-3.5" />
             Acces Restrâns
           </div>
@@ -101,7 +101,7 @@ export function AdminLoginForm({ redirectTo = "/dashboard" }: AdminLoginFormProp
         {errorMessage && (
           <div
             role="alert"
-            className="mb-5 p-3.5 rounded-xl bg-red-500/10 border border-red-500/30 text-red-400 text-sm flex items-start gap-2.5 animate-in fade-in duration-200"
+            className="mb-5 p-3.5 rounded-xl bg-red-50 border border-red-200 text-red-800 dark:bg-red-950/50 dark:border-red-800 dark:text-red-200 text-sm flex items-start gap-2.5 animate-in fade-in duration-200"
           >
             <AlertCircle className="w-4 h-4 mt-0.5 shrink-0" />
             <span className="leading-snug">{errorMessage}</span>

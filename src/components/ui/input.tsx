@@ -13,7 +13,6 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
         className
       )}
       ref={ref}
-      style={{ borderRadius: "var(--radius-md)", transition: "var(--transition-default)" }}
       {...props}
     />
   );

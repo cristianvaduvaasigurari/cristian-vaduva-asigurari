@@ -3,7 +3,7 @@ import { verifyAdminAuthorization } from "@/lib/auth";
 import { formatDistanceToNow } from "date-fns";
 import { ro } from "date-fns/locale";
 import Link from "next/link";
-import { AdminLoginForm } from "@/components/auth/admin-login-form";
+import { redirect } from "next/navigation";
 import { SignOutButton } from "@/components/auth/sign-out-button";
 import { ShieldAlert, Inbox, Phone, Mail, Clock } from "lucide-react";
 
@@ -50,12 +50,8 @@ export default async function DashboardPage() {
       );
     }
 
-    // Unauthenticated -> display Admin Login Form directly on /dashboard
-    return (
-      <div className="min-h-screen bg-background flex items-center justify-center p-6">
-        <AdminLoginForm redirectTo="/dashboard" />
-      </div>
-    );
+    // Unauthenticated visitor -> strictly redirect to /login
+    redirect("/login");
   }
 
   const supabase = await createClient();
