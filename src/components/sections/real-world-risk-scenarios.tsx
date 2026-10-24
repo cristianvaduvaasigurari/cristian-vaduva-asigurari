@@ -20,11 +20,11 @@ export type ScenarioVisual = {
 export const SCENARIO_VISUALS: Record<string, ScenarioVisual> = {
   // ─── 01. CASCO (4 Scenarios) ───
   "casco-headlight-sensor": {
-    image: "https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=1200&q=80",
+    image: "https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=1200&q=80",
     alt: "Avariere far Matrix LED și senzor frontal de distanță pe vehicul premium"
   },
   "casco-parking-hit-run": {
-    image: "https://images.unsplash.com/photo-1590362891991-f776e747a588?auto=format&fit=crop&w=1200&q=80",
+    image: "https://images.unsplash.com/photo-1599819811279-d5ad9cccf838?auto=format&fit=crop&w=1200&q=80",
     alt: "Acroșaj uși laterale și caroserie în parcare rezidențială fără autor"
   },
   "casco-severe-hail": {
@@ -33,7 +33,7 @@ export const SCENARIO_VISUALS: Record<string, ScenarioVisual> = {
   },
   "casco-total-theft": {
     image: "https://images.unsplash.com/photo-1508974239320-0a029497e820?auto=format&fit=crop&w=1200&q=80",
-    alt: "Loc de parcare gol noaptea în fața locuinței după furtul total al vehiculului"
+    alt: "Geam spart și efracție nocturnă în vehicul premium parcat"
   },
 
   // ─── 02. RCA (3 Scenarios) ───
@@ -52,16 +52,16 @@ export const SCENARIO_VISUALS: Record<string, ScenarioVisual> = {
 
   // ─── 03. HOME INSURANCE (3 Scenarios) ───
   "home-water-pipe-leak": {
-    image: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1200&q=80",
-    alt: "Conductă spartă și inundație gravă în apartament cu daune la vecini"
+    image: "https://images.unsplash.com/photo-1584467735871-8e85353a8413?auto=format&fit=crop&w=1200&q=80",
+    alt: "Conductă spartă și inundație gravă în locuință cu distrugerea parchetului și finisajelor"
   },
   "home-kitchen-electrical-fire": {
-    image: "https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=1200&q=80",
-    alt: "Incendiu izbucnit în bucătărie din scurtcircuit cu fum toxic pe interior"
+    image: "https://images.unsplash.com/photo-1542385151-efd9000785a0?auto=format&fit=crop&w=1200&q=80",
+    alt: "Incendiu izbucnit în locuință cu fum dens și avarierea severă a finisajelor interioare"
   },
   "home-roof-storm-damage": {
-    image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80",
-    alt: "Acoperiș distrus de furtună extremă și panouri fotovoltaice smulse"
+    image: "https://images.unsplash.com/photo-1547683905-f686c993aae5?auto=format&fit=crop&w=1200&q=80",
+    alt: "Acoperiș distrus de furtună extremă și grindină masivă"
   },
 
   // ─── 04. TRAVEL INSURANCE (3 Scenarios) ───
@@ -118,11 +118,11 @@ export const SCENARIO_VISUALS: Record<string, ScenarioVisual> = {
 
   // ─── 08. IMM & BUSINESS (4 Scenarios) ───
   "imm-business-interruption": {
-    image: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80",
-    alt: "Spațiu comercial închis și activitate sistată timp de 6 săptămâni"
+    image: "https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=1200&q=80",
+    alt: "Sediu comercial avariat de incendiu cu activitatea sistată complet"
   },
   "imm-stock-equipment-water-damage": {
-    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1200&q=80",
+    image: "https://images.unsplash.com/photo-1584467735871-8e85353a8413?auto=format&fit=crop&w=1200&q=80",
     alt: "Servere IT și stocuri de marfă distruse de inundația depozitului"
   },
   "imm-premises-liability-customer": {
@@ -130,13 +130,13 @@ export const SCENARIO_VISUALS: Record<string, ScenarioVisual> = {
     alt: "Scări și podea alunecoasă în showroom unde un client s-a accidentat"
   },
   "imm-machinery-breakdown": {
-    image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1200&q=80",
+    image: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1200&q=80",
     alt: "Modul electronic al unui utilaj industrial CNC avariat de supratensiune"
   },
 
   // ─── 09. CORPORATE & RĂSPUNDERI (3 Scenarios) ───
   "corporate-professional-indemnity": {
-    image: "https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&fit=crop&w=1200&q=80",
+    image: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=1200&q=80",
     alt: "Notificare legală de daune corporate pentru eroare de calcul tehnic"
   },
   "corporate-visitor-injury-industrial": {
@@ -150,11 +150,11 @@ export const SCENARIO_VISUALS: Record<string, ScenarioVisual> = {
 
   // ─── 10. CYBER RISK (3 Scenarios) ───
   "cyber-ransomware-monday": {
-    image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1200&q=80",
-    alt: "Terminal de server blocate de un atac de criptare ransomware"
+    image: "https://images.unsplash.com/photo-1614064641938-3bbee52942c7?auto=format&fit=crop&w=1200&q=80",
+    alt: "Terminal de server blocat de un atac de criptare ransomware"
   },
   "cyber-data-breach-gdpr": {
-    image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1200&q=80",
+    image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
     alt: "Echipă de securitate cibernetică investigând o scurgere de date GDPR"
   },
   "cyber-ceo-fraud-social-engineering": {
@@ -169,7 +169,7 @@ export const SCENARIO_VISUALS: Record<string, ScenarioVisual> = {
   },
   "dno-regulatory-investigation-anpc": {
     image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1200&q=80",
-    alt: "Inspecție a autorităților de reglementare viziând deciziile manageriale"
+    alt: "Inspecție a autorităților de reglementare vizând deciziile manageriale"
   },
 
   // ─── 12. CARGO & GOODS IN TRANSIT (2 Scenarios) ───
@@ -184,7 +184,7 @@ export const SCENARIO_VISUALS: Record<string, ScenarioVisual> = {
 
   // ─── 13. CONSTRUCTION & PROJECTS — CAR (2 Scenarios) ───
   "construction-formwork-collapse": {
-    image: "https://images.unsplash.com/photo-1541888946425-d0fbb186a5b7?auto=format&fit=crop&w=1200&q=80",
+    image: "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&w=1200&q=80",
     alt: "Eșafodaj de betonare prăbușit pe șantier peste utilaje de construcții"
   },
   "construction-utility-damage-neighbors": {
@@ -544,76 +544,76 @@ export const PROTECTION_FILTERS: ProtectionFilterOption[] = [
 // Explicit Category Portfolio Visual Asset Mapping (18 Unique High-Resolution Directions)
 export const CATEGORY_PORTFOLIO_VISUALS: Record<ProtectionFilterId, { image: string; alt: string }> = {
   all: {
-    image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80",
-    alt: "Portofoliu complet de protecție financiară și patrimoniu"
+    image: "https://images.unsplash.com/photo-1542385151-efd9000785a0?auto=format&fit=crop&w=1200&q=80",
+    alt: "Active și patrimoniu privat expuse la riscuri de incendiu și fenomene extreme"
   },
   auto: {
-    image: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=80",
-    alt: "Flotă auto și vehicule premium"
+    image: "https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=1200&q=80",
+    alt: "Automobil premium avariat în accident cu daune severe la nivelul caroseriei"
   },
   home: {
-    image: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1200&q=80",
-    alt: "Proprietate rezidențială și clădiri"
+    image: "https://images.unsplash.com/photo-1584467735871-8e85353a8413?auto=format&fit=crop&w=1200&q=80",
+    alt: "Proprietate rezidențială inundată și finisaje interioare deteriorate"
   },
   life: {
     image: "https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=1200&q=80",
-    alt: "Protecția vieții și capitalului familial"
+    alt: "Protecția capitalului familiei și continuitatea veniturilor în situații neprevăzute"
   },
   health: {
     image: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1200&q=80",
-    alt: "Servicii medicale și sănătate privată"
+    alt: "Intervenție medicală chirurgicală de urgență și spitalizare"
   },
   travel: {
     image: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=1200&q=80",
-    alt: "Călatorii de afaceri și vacanțe"
+    alt: "Călătorii întrerupte și zboruri anulate din urgențe medicale"
   },
   imm: {
-    image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80",
-    alt: "Afaceri, IMM și active comerciale"
+    image: "https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=1200&q=80",
+    alt: "Sediu operațional afectat de incendiu comercial și întreruperea activității"
   },
   goods: {
-    image: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1200&q=80",
-    alt: "Bunuri personale și valori din interior"
+    image: "https://images.unsplash.com/photo-1577741314755-048d8525d31e?auto=format&fit=crop&w=1200&q=80",
+    alt: "Vitrină spartă și bunuri de valoare compromise după efracție"
   },
   family: {
     image: "https://images.unsplash.com/photo-1542037104857-ffbb0b9155fb?auto=format&fit=crop&w=1200&q=80",
-    alt: "Familia și continuitatea veniturilor"
+    alt: "Protecția stabilității financiare a familiei în fața evenimentelor majore"
   },
   accident: {
     image: "https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?auto=format&fit=crop&w=1200&q=80",
-    alt: "Accidente personale și spitalizare"
+    alt: "Accidente personale, traumatisme severe și incapacitate temporară de muncă"
   },
   malpractice: {
-    image: "https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&fit=crop&w=1200&q=80",
-    alt: "Malpraxis medical și erori profesionale"
+    image: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=1200&q=80",
+    alt: "Litigiu de malpraxis profesional și cereri de daune financiare"
   },
   liability: {
-    image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1200&q=80",
-    alt: "Răspundere civilă legală față de terți"
+    image: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=1200&q=80",
+    alt: "Răspundere civilă legală față de terți și litigii masive"
   },
   dno: {
     image: "https://images.unsplash.com/photo-1436450412740-6b988f486c6b?auto=format&fit=crop&w=1200&q=80",
-    alt: "Răspunderea managerială a directorilor (D&O)"
+    alt: "Litigiu al acționarilor și răspunderea managerială a directorilor (D&O)"
   },
   cyber: {
-    image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1200&q=80",
-    alt: "Protecție cyber risk și securitate IT"
+    image: "https://images.unsplash.com/photo-1614064641938-3bbee52942c7?auto=format&fit=crop&w=1200&q=80",
+    alt: "Atac ransomware și sistem informatic de companie blocat"
   },
   cargo: {
     image: "https://images.unsplash.com/photo-1586528116493-a029325540fa?auto=format&fit=crop&w=1200&q=80",
-    alt: "Cargo și transport internațional de marfă"
+    alt: "Camion de marfă vandalizat în tranzit nocturn cu marfă sustrasă"
   },
   construction: {
-    image: "https://images.unsplash.com/photo-1541888946425-d0fbb186a5b7?auto=format&fit=crop&w=1200&q=80",
-    alt: "Șantiere și proiecte de construcții imobiliare"
+    image: "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&w=1200&q=80",
+    alt: "Incident structural grav pe șantier de construcții cu utilaje avariate"
   },
   equipment: {
-    image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1200&q=80",
-    alt: "Utilaje industriale și echipamente de producție"
+    image: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1200&q=80",
+    alt: "Utilaje industriale și module CNC avariate ce blochează producția"
   },
   team: {
     image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1200&q=80",
-    alt: "Echipă corporate și beneficii angajați"
+    alt: "Protecția echipei și acoperirea accidentelor sau urgențelor medicale corporate"
   }
 };
 

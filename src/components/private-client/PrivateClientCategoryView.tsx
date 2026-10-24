@@ -3,6 +3,7 @@
 import * as React from "react";
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { 
   ShieldCheck, 
   ArrowRight, 
@@ -23,6 +24,182 @@ import { Button } from "@/components/ui/button";
 import { CONTACT } from "@/config/contact";
 import { PrivateClientCategory, privateClientCategories, privateClientProcess } from "@/data/privateClientData";
 import { PrivateClientEnquiryForm } from "@/components/private-client/PrivateClientEnquiryForm";
+
+interface CategoryRiskDetail {
+  image: string;
+  alt: string;
+  badgeRo: string;
+  badgeEn: string;
+  headlineRo: string;
+  headlineEn: string;
+  impactRo: string;
+  impactEn: string;
+  checkPointsRo: string[];
+  checkPointsEn: string[];
+}
+
+const CATEGORY_RISK_DETAILS: Record<string, CategoryRiskDetail> = {
+  supercars: {
+    image: "https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=1200&q=80",
+    alt: "Supercar de colecție avariat sever în urma unui impact rutier, cu faruri Matrix sparte și caroserie din fibră de carbon distrusă",
+    badgeRo: "Automobile de Colecție & Supercars",
+    badgeEn: "Supercars & Rare Vehicles",
+    headlineRo: "O avariere severă sau o daună totală pe un vehicul de performanță",
+    headlineEn: "Severe collision damage or constructive total loss on high-value vehicles",
+    impactRo: "La un automobil exotic, o coliziune aparent minoră poate costa peste 60.000–100.000 EUR din cauza elementelor din fibră de carbon, vopselei multistrat și senzorilor aerodinamici. Polițele de masă aplică depreciere forfetară sau refuză decontarea directă la reprezentanța oficială a mărcii.",
+    impactEn: "On an exotic supercar, a minor accident can generate repairs exceeding €60,000–€100,000 due to bespoke carbon components, multi-stage paint, and aerodynamic calibrations. Mass-market policies apply generic depreciation tables and refuse factory-authorized repairers.",
+    checkPointsRo: [
+      "Clauză strictă de Valoare Agreată (Agreed Value) fără aplicarea deprecierii forfetare de catalog.",
+      "Reparații garantate exclusiv în rețeaua oficială a constructorului (Ferrari, Lamborghini, McLaren, Porsche).",
+      "Acoperire pentru evenimente private de circuit, transport pe platformă închisă și parcare securizată."
+    ],
+    checkPointsEn: [
+      "Strict Agreed Value wording with zero depreciation schedules applied.",
+      "Guaranteed repairs exclusively via factory-authorized manufacturer facilities.",
+      "Bespoke coverage for track days, private enclosed transit, and secure storage."
+    ]
+  },
+  "luxury-homes": {
+    image: "https://images.unsplash.com/photo-1542385151-efd9000785a0?auto=format&fit=crop&w=1200&q=80",
+    alt: "Vilă rezidențială afectată grav de un incendiu violent, evidențiind costurile imense de demolare și reconstrucție structurală",
+    badgeRo: "Proprietăți Rezidențiale de Lux",
+    badgeEn: "Prime Residential Estates",
+    headlineRo: "Cât ar costa să reconstruiești proprietatea, nu cât ai putea să o vinzi?",
+    headlineEn: "The true cost to rebuild bespoke architectural estates versus market value",
+    impactRo: "Costul reconstrucției unei vile de autor depășește adesea cu 30–50% valoarea de piață. Materialele importate, marmura masivă, instalațiile smart home îngropate, autorizațiile complexe și demolarea structurii compromise pot genera pierderi de milioane de euro dacă polița a fost încheiată pe o sumă standard.",
+    impactEn: "Rebuilding a bespoke architectural home often exceeds market valuation by 30–50%. Imported materials, continuous stone slabs, custom millwork, smart systems, and debris removal can create millions in shortfall under generic policies.",
+    checkPointsRo: [
+      "Evaluare bazată pe costul real actualizat de reconstrucție (nu valoarea de achiziție sau impozabilă).",
+      "Acoperire nelimitată sau extinsă pentru cheltuieli de demolare, evacuare moloz și proiectare de arhitectură.",
+      "Cazare temporară pe durata reconstrucției (12–24 luni) la un standard echivalent vilei tale."
+    ],
+    checkPointsEn: [
+      "Valuation calibrated strictly to modern replacement reconstruction cost.",
+      "Extended coverage for debris removal, demolition, and architectural re-engineering.",
+      "Alternative luxury accommodation for 12–24 months matching your lifestyle."
+    ]
+  },
+  "jewellery-watches": {
+    image: "https://images.unsplash.com/photo-1577741314755-048d8525d31e?auto=format&fit=crop&w=1200&q=80",
+    alt: "Vitrină de valori cu sticlă securizată spartă și urme vizibile de efracție și furt de ceasuri",
+    badgeRo: "Ceasuri & Bijuterii de Valoare",
+    badgeEn: "Haute Horlogerie & High Jewellery",
+    headlineRo: "Vitrină spartă, efracție și furtul pieselor de colecție",
+    headlineEn: "Burglary, shattered display vitrines, and transit theft of timepieces",
+    impactRo: "Contractele standard de locuință conțin de regulă o sub-limită severă pentru obiecte valoroase (1.000–2.500 EUR per obiect), complet inutilă pentru o piesă Patek Philippe, Audemars Piguet sau bijuterii unicat. Furtul dintr-o cameră de hotel în vacanță sau din locuință lasă o gaură financiară masivă.",
+    impactEn: "Standard home policies contain severe sub-limits for valuables (€1,000–€2,500 per item), entirely useless for a Patek Philippe, Audemars Piguet, or bespoke diamond jewelry. A hotel room break-in or home burglary leaves a massive uncovered loss.",
+    checkPointsRo: [
+      "Declarare nominativă pe bază de certificate de autenticitate, numere de serie și evaluări recente.",
+      "Acoperire All-Risks la nivel mondial (Worldwide), inclusiv în timpul deplasărilor și călătoriilor de afaceri.",
+      "Condiții clare privind manipularea: fără clauze restrictive ascunse privind purtarea pieselor în public."
+    ],
+    checkPointsEn: [
+      "Scheduled asset registry backed by authenticity certificates and current appraisals.",
+      "Worldwide all-risks coverage including transit, international holidays, and business travel.",
+      "Clear warranty wording without oppressive wearable warranties or travel traps."
+    ]
+  },
+  "fine-art-collectibles": {
+    image: "https://images.unsplash.com/photo-1582139329536-e7284fece509?auto=format&fit=crop&w=1200&q=80",
+    alt: "Operă de artă și pânză de patrimoniu examinată pentru avarii de umiditate și restaurare critică",
+    badgeRo: "Artă & Piese de Patrimoniu",
+    badgeEn: "Fine Art & Heritage Assets",
+    headlineRo: "Opere de artă afectate de apă, fum sau deteriorare fizică",
+    headlineEn: "Artworks damaged by environmental leakage, smoke, or physical impact",
+    impactRo: "O pânză rară sau o sculptură avariată nu poate fi pur și simplu cumpărată din nou. Despăgubirea reală include costul restaurării de către un expert acreditat internațional și, esențial, compensarea deprecierii valorii de piață a operei post-restaurare.",
+    impactEn: "A rare canvas or sculpture cannot simply be replaced. Comprehensive recovery requires specialist museum-grade conservation plus compensation for residual market value loss after restoration.",
+    checkPointsRo: [
+      "Clauză de Depreciere Valorară (Depreciation Coverage) inclusă explicit în contract.",
+      "Protecție în tranzit internațional între reședințe, case de licitație, galerii și depozite securizate.",
+      "Libertatea asiguratului de a alege restauratorul acreditat independent."
+    ],
+    checkPointsEn: [
+      "Explicit Depreciation Clause compensating residual loss of provenance value.",
+      "Transit coverage between private residences, auction houses, and art storage vaults.",
+      "Policyholder right to appoint certified independent master conservators."
+    ]
+  },
+  "private-aviation": {
+    image: "https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&fit=crop&w=1200&q=80",
+    alt: "Aeronave private reținute la sol pe timp de furtună extremă și avarii la trenul de aterizare",
+    badgeRo: "Aviație Privată & Corporate",
+    badgeEn: "Private Aviation & Jets",
+    headlineRo: "Avarie la sol, incident pe pistă sau furtună extremă pe aerodrom",
+    headlineEn: "Ground operational damage, runway incidents, or severe storm exposure",
+    impactRo: "Orice incident la o aeronavă privată impune piese de schimb certificate EASA/FAA, timpi lungi de imobilizare în hangar și costuri operaționale fixe ce continuă să se acumuleze, pe lângă răspunderea civilă față de pasageri și terți.",
+    impactEn: "Any aviation incident demands certified aeronautical components, extended ground downtime, and continuous fixed operational costs alongside third-party and passenger legal liability.",
+    checkPointsRo: [
+      "Poliță Hull All-Risks cu Valoare Agreată la sol și în zbor.",
+      "Răspundere civilă combinată (Combined Single Limit) calibrată conform cerințelor internaționale.",
+      "Clauză pentru acoperirea echipajului și a costurilor de închiriere alternativă de aeronavă."
+    ],
+    checkPointsEn: [
+      "Comprehensive Hull All-Risks under Agreed Value on ground and in flight.",
+      "Combined Single Limit (CSL) liability exceeding international regulatory minimums.",
+      "Crew personal accident coverage and emergency aircraft charter replacement."
+    ]
+  },
+  yachts: {
+    image: "https://images.unsplash.com/photo-1506521781263-d8422e82f27a?auto=format&fit=crop&w=1200&q=80",
+    alt: "Iaht privat înfruntând valuri gigantice și furtună maritimă extremă cu risc de avariere a corpului navei",
+    badgeRo: "Iahturi & Ambarcațiuni Marine",
+    badgeEn: "Yachts & Marine Vessels",
+    headlineRo: "Furtună pe mare, avarie la carenă sau eșuare pe stânci",
+    headlineEn: "Severe sea storms, hull breach, grounding, and marine salvage liabilities",
+    impactRo: "Operațiunile de salvare pe mare (salvage & towage), avariile la motoarele marine de mare putere și poluarea accidentală pot produce cereri financiare uriașe din primele ore după un incident maritim.",
+    impactEn: "Marine salvage operations, high-output engine failures, and environmental clean-up liabilities can trigger devastating financial exposures within hours of an incident.",
+    checkPointsRo: [
+      "Acoperire completă Hull & Machinery pe baza Valorii Agreate contractuale.",
+      "Răspundere P&I (Protection & Indemnity) pentru echipaj, oaspeți și daune ecologice.",
+      "Limite de navigație și garanții de andocare în sezonul de iarnă sau furtuni fără capcane contractuale."
+    ],
+    checkPointsEn: [
+      "Full Hull & Machinery coverage structured on Agreed Value terms.",
+      "Comprehensive P&I (Protection & Indemnity) for crew, guests, and environmental liabilities.",
+      "Navigation limits and winter lay-up warranties tailored realistically to cruising habits."
+    ]
+  },
+  collections: {
+    image: "https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=1200&q=80",
+    alt: "Geam securizat spart prin forțare la o colecție privată de monede, vinuri și obiecte rare",
+    badgeRo: "Colecții Private & Valori",
+    badgeEn: "Private Collections & Rare Assets",
+    headlineRo: "Colecții compromise prin defectarea climatizării, efracție sau avarii fizice",
+    headlineEn: "Collections compromised by climate system failures, burglary, or transit accidents",
+    impactRo: "O pivniță de vinuri rare ale cărei unități de răcire cedează pe caniculă, sau o colecție de monede unicat afectată de un incendiu lasă proprietarul fără acoperire dacă polița a fost concepută ca una generică de locuință.",
+    impactEn: "A fine wine cellar whose cooling system fails in summer heat or rare numismatics damaged in a home incident leave owners stranded if insured via generic household forms.",
+    checkPointsRo: [
+      "Clauză specifică de alterare a vinurilor din cauza căderii alimentării sistemului de climatizare.",
+      "Clauză de Pereche și Set (Pair & Set): despăgubire integrală dacă pierderea unei piese anulează valoarea ansamblului.",
+      "Protocol de inventariere agreat cu actualizare automată la noi achiziții."
+    ],
+    checkPointsEn: [
+      "Specific wine spoilage wording covering climate control electrical/mechanical failure.",
+      "Pair & Set clause paying full set value if an essential component is lost or broken.",
+      "Continuous inventory protocol with automatic acquisition floater limits."
+    ]
+  },
+  "private-client-liability": {
+    image: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=1200&q=80",
+    alt: "Ciocan de judecată și dosare voluminoase de litigiu transfrontalier pentru cereri de daune financiare masive",
+    badgeRo: "Răspundere Civilă & Management",
+    badgeEn: "Private Client & Executive Liability",
+    headlineRo: "Litigiu civil transfrontalier sau cerere masivă de despăgubire",
+    headlineEn: "Cross-border civil claims, catastrophic liability, and personal defense costs",
+    impactRo: "Familiile cu patrimoniu extins devin frecvent ținta unor cereri agresive de daune în instanță: incidente pe proprietate, vătămări produse de personalul casnic sau decizii în consilii de administrație. Cheltuielile cu echipele de avocați pot depăși rapid sute de mii de euro.",
+    impactEn: "High-profile families frequently face disproportionate litigation: estate injuries, domestic staff disputes, or board decisions. Defense legal retainers alone can drain hundreds of thousands of euros.",
+    checkPointsRo: [
+      "Poliță de răspundere Umbrella de 5.000.000–20.000.000 EUR peste polițele primare.",
+      "Cheltuieli de judecată și apărare suportate în afara și peste limita principală de răspundere.",
+      "Acoperire extinsă pentru reședințe deținute prin vehicule juridice (SPV, trusturi, fundații)."
+    ],
+    checkPointsEn: [
+      "Umbrella liability limits of €5,000,000–€20,000,000 excess of primary covers.",
+      "Legal defense and litigation expenses paid in addition to policy indemnity limits.",
+      "Extended cover for properties held via trusts, family offices, and holding structures."
+    ]
+  }
+};
 
 interface PrivateClientCategoryViewProps {
   category: PrivateClientCategory;
@@ -154,7 +331,95 @@ export function PrivateClientCategoryView({ category }: PrivateClientCategoryVie
         </div>
       </section>
 
-      {/* 2. IN-DEPTH NARRATIVE */}
+      {/* 2. REAL RISK CONSEQUENCE & DAMAGE IMPACT VISUAL */}
+      {(() => {
+        const riskDetail = CATEGORY_RISK_DETAILS[category.slug];
+        if (!riskDetail) return null;
+
+        const badgeText = lang === "ro" ? riskDetail.badgeRo : riskDetail.badgeEn;
+        const headline = lang === "ro" ? riskDetail.headlineRo : riskDetail.headlineEn;
+        const impactText = lang === "ro" ? riskDetail.impactRo : riskDetail.impactEn;
+        const checkPoints = lang === "ro" ? riskDetail.checkPointsRo : riskDetail.checkPointsEn;
+
+        return (
+          <section className="py-24 bg-zinc-950 text-white relative overflow-hidden border-b border-zinc-800" aria-label="Risk Consequence Detail">
+            <div className="container mx-auto px-4 md:px-6 max-w-6xl relative z-10">
+              <div className="max-w-3xl mb-12">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-950/80 text-red-400 text-xs font-semibold tracking-wider uppercase border border-red-800/80 mb-4">
+                  <AlertTriangle className="w-3.5 h-3.5 text-red-400" />
+                  {lang === "ro" ? "Consecințele Reale Ale Riscurilor" : "Real Risk Consequences"}
+                </div>
+                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-extrabold tracking-tight leading-tight mb-4">
+                  Înțelege ce ai de pierdut{" "}
+                  <span className="text-zinc-400 font-light block sm:inline">înainte să afli cât te costă o daună.</span>
+                </h2>
+                <p className="text-zinc-400 text-base sm:text-lg">
+                  {lang === "ro" 
+                    ? "Activele de mare valoare impun o evaluare chirurgicală a daunelor posibile. Află ce se întâmplă când o daună nu este acoperită corespunzător:"
+                    : "High-value assets require rigorous underwriting analysis of potential losses. Here is what happens when damage is not properly insured:"}
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center bg-zinc-900/90 rounded-3xl p-6 sm:p-8 lg:p-10 border border-zinc-800/80 shadow-2xl">
+                <div className="lg:col-span-6 relative aspect-[16/11] rounded-2xl overflow-hidden border border-zinc-700/60 shadow-lg">
+                  <Image
+                    src={riskDetail.image}
+                    alt={riskDetail.alt}
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 550px"
+                    className="object-cover"
+                    loading="lazy"
+                  />
+                  <div className="absolute top-4 left-4">
+                    <span className="px-3 py-1 rounded-md bg-zinc-950/85 backdrop-blur-xs text-white text-xs font-semibold tracking-wide border border-zinc-700/60">
+                      {badgeText}
+                    </span>
+                  </div>
+                </div>
+
+                <div className="lg:col-span-6 space-y-6">
+                  <div>
+                    <h3 className="text-2xl sm:text-3xl font-heading font-bold text-white tracking-tight mb-4">
+                      {headline}
+                    </h3>
+                    <p className="text-zinc-300 text-sm sm:text-base leading-relaxed font-normal">
+                      {impactText}
+                    </p>
+                  </div>
+
+                  <div className="space-y-3 pt-2">
+                    <p className="text-xs font-bold uppercase tracking-wider text-amber-400">
+                      {lang === "ro" ? "Ce trebuie să verifici în contractul tău:" : "Critical points to audit in your policy:"}
+                    </p>
+                    <ul className="space-y-2.5">
+                      {checkPoints.map((pt, idx) => (
+                        <li key={idx} className="flex items-start gap-2.5 text-xs sm:text-sm text-zinc-300">
+                          <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                          <span>{pt}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <div className="pt-4 flex flex-col sm:flex-row gap-4">
+                    <Button 
+                      className="rounded-full bg-white text-zinc-950 hover:bg-zinc-200 font-semibold px-6 h-12 text-xs tracking-wider uppercase shadow-md"
+                      asChild
+                    >
+                      <a href="#confidential-enquiry">
+                        {lang === "ro" ? "Solicită o analiză confidențială" : "Request a confidential audit"}
+                        <ArrowRight className="ml-2 w-3.5 h-3.5" />
+                      </a>
+                    </Button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        );
+      })()}
+
+      {/* 3. IN-DEPTH NARRATIVE */}
       <section className="py-20 border-b border-zinc-200/80 bg-zinc-50/70">
         <div className="container mx-auto px-4 md:px-6 max-w-5xl">
           <div className="max-w-3xl">

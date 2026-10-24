@@ -1,10 +1,12 @@
 import * as React from "react";
 import type { Metadata } from "next";
+import Image from "next/image";
 import { PolicyReviewJourney } from "@/components/sections/policy-review-journey";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
-import { ShieldCheck, FileSearch, Lock, CheckCircle2 } from "lucide-react";
+import { ShieldCheck, FileSearch, Lock, CheckCircle2, AlertTriangle, ArrowRight } from "lucide-react";
 import Link from "next/link";
+import { Button } from "@/components/ui/button";
 
 export const metadata: Metadata = {
   title: "Verifică Polița | Review My Policy — Cristian Văduva Asigurări",
@@ -50,6 +52,47 @@ export default function VerificaPolitaPage() {
               Majoritatea asiguraților află despre excluderile și franșizele din contract abia în momentul producerii daunei. Transmite-ne documentele sau datele esențiale pentru a primi o verificare independentă a riscurilor reale.
             </p>
           </div>
+
+          {/* EDITORIAL RISK WARNING BANNER */}
+          <section className="mb-14 bg-zinc-950 text-white rounded-3xl p-6 sm:p-8 border border-zinc-800 shadow-xl overflow-hidden">
+            <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+              <div className="md:col-span-5 relative aspect-[16/11] rounded-2xl overflow-hidden border border-zinc-800 shadow-md">
+                <Image
+                  src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=1200&q=80"
+                  alt="Dosare de audit contractual și litigii pentru daune financiare neacoperite din clauze restrictive"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 400px"
+                  className="object-cover"
+                  loading="lazy"
+                />
+                <div className="absolute top-3 left-3">
+                  <span className="px-2.5 py-1 rounded-md bg-zinc-950/85 backdrop-blur-xs text-white text-[11px] font-semibold tracking-wide border border-zinc-800">
+                    Audit Independent
+                  </span>
+                </div>
+              </div>
+
+              <div className="md:col-span-7 space-y-4">
+                <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-red-950/80 text-red-400 text-xs font-semibold uppercase tracking-wider border border-red-800/80">
+                  <AlertTriangle className="w-3.5 h-3.5 text-red-400" />
+                  Consecința lipsei unui audit
+                </div>
+
+                <h3 className="text-xl sm:text-2xl font-heading font-bold text-white tracking-tight leading-snug">
+                  Cele mai costisitoare pierderi apar când ești convins că ești protejat
+                </h3>
+
+                <p className="text-zinc-300 text-xs sm:text-sm leading-relaxed">
+                  O clauză de subasigurare la o vilă, franșiza forfetară la un automobil de lux sau o excludere de inginerie socială la o poliță cyber pot transforma o daună de sute de mii de euro într-o pierdere suportată exclusiv din buzunarul tău.
+                </p>
+
+                <div className="flex items-center gap-2 text-xs text-emerald-400 font-semibold pt-1">
+                  <CheckCircle2 className="w-4 h-4 shrink-0" />
+                  <span>Audit preliminar confidențial — fără costuri și fără obligații comerciale.</span>
+                </div>
+              </div>
+            </div>
+          </section>
 
           {/* INTERACTIVE FORM COMPONENT */}
           <PolicyReviewJourney />

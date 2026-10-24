@@ -27,7 +27,7 @@ const DEMO_ARTICLES: Article[] = [
     excerpt: "Sistemele AiX OS pot acum evalua daunele pe baza fotografiilor într-un timp record de sub 3 minute, accelerând decontările către service-urile partenere.",
     category: "Inovație",
     date: "Azi, 10:45",
-    imageUrl: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=800&auto=format&fit=crop",
+    imageUrl: "https://images.unsplash.com/photo-1617814076367-b759c7d7e738?q=80&w=800&auto=format&fit=crop",
     source: "AiX",
     link: "#"
   },
@@ -47,7 +47,7 @@ const DEMO_ARTICLES: Article[] = [
     excerpt: "Peste 40% din companiile mici au fost ținta unui atac cibernetic anul trecut. Generali introduce acoperiri extinse pentru recuperarea datelor.",
     category: "Corporate",
     date: "Acum 2 zile",
-    imageUrl: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=800&auto=format&fit=crop",
+    imageUrl: "https://images.unsplash.com/photo-1614064641938-3bbee52942c7?q=80&w=800&auto=format&fit=crop",
     source: "AiX",
     link: "#"
   },
@@ -57,7 +57,7 @@ const DEMO_ARTICLES: Article[] = [
     excerpt: "Noul modul integrat în ecosistemul AiX analizează zilnic mii de oferte imobiliare pentru a detecta proprietățile subevaluate din București Nord.",
     category: "Real Estate",
     date: "Acum 3 zile",
-    imageUrl: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=800&auto=format&fit=crop",
+    imageUrl: "https://images.unsplash.com/photo-1542385151-efd9000785a0?q=80&w=800&auto=format&fit=crop",
     source: "AiX",
     link: "#"
   }
