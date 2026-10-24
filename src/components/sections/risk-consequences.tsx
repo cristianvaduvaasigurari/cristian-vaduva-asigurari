@@ -83,14 +83,14 @@ export function RiskConsequences() {
         <div className="max-w-3xl mb-16">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-50 text-red-700 text-xs font-semibold tracking-wider uppercase border border-red-200/80 mb-4">
             <AlertTriangle className="w-3.5 h-3.5 text-red-600" />
-            Consecințele Reale Ale Riscurilor
+            Conștientizarea Riscurilor & Protecția Patrimoniului
           </div>
           <h2 id="consequences-heading" className="text-3xl sm:text-4xl lg:text-5xl font-heading font-extrabold text-zinc-950 tracking-tight leading-tight mb-6">
-            Consecințele pe care merită să le înțelegi{" "}
-            <span className="text-zinc-500 font-normal">înainte de o daună</span>
+            Ce ai construit în ani de zile{" "}
+            <span className="text-zinc-500 font-normal">se poate pierde într-un singur eveniment.</span>
           </h2>
           <p className="text-base sm:text-lg text-zinc-600 leading-relaxed font-normal">
-            Cele mai costisitoare surprize nu apar din lipsa unei polițe, ci din convingerea că ești protejat când în realitate contractul conține excluderi, limite depășite sau condiții neîndeplinite.
+            Cele mai costisitoare pierderi nu apar din lipsa unei polițe, ci din convingerea că ești protejat când în realitate contractul conține excluderi, limite depășite sau clauze nerespectate. Înțelege ce ai de pierdut înainte să afli cât te costă.
           </p>
         </div>
 

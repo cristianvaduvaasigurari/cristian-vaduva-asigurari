@@ -22,23 +22,23 @@ const ContactForm = dynamic(() => import('@/components/sections/contact-form').t
 });
 
 export const metadata: Metadata = {
-  title: "Înțelege ce ai de pierdut înainte să afli cât te costă | Cristian Văduva",
-  description: "Consultanță strategică în analiza riscurilor, identificarea lacunelor din polițele existente și protecția patrimoniului pentru locuințe, colecții, mașini și companii.",
-  keywords: ["analiza riscuri asigurare", "consultant asigurari Bucuresti", "audit polite asigurare", "asigurare locuinte premium", "asigurare colectii ceasuri", "asigurare cyber companii", "Generali Romania"],
+  title: "Cristian Văduva | Consultant Asigurări Premium & Partener Generali",
+  description: "Consultanță strategică în asigurări Generali România, protecție financiară personală și optimizarea patrimoniului de afaceri. Consultant autorizat București.",
+  keywords: ["consultant asigurări București", "asigurări Generali", "asigurare de viață", "asigurare de sănătate", "CASCO", "RCA", "protecție financiară", "analiza riscuri", "AiX OS"],
   alternates: {
     canonical: "https://insurance.cristianvaduva.com",
   },
   openGraph: {
-    title: "Înțelege ce ai de pierdut înainte să afli cât te costă | Cristian Văduva",
-    description: "Consultanță strategică în analiza riscurilor, identificarea lacunelor din polițe și structurarea protecției financiare.",
+    title: "Cristian Văduva | Consultant Asigurări Premium & Partener Generali",
+    description: "Consultanță strategică în asigurări Generali România, protecție financiară și optimizarea riscurilor de patrimoniu.",
     url: "https://insurance.cristianvaduva.com",
     locale: "ro_RO",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Înțelege ce ai de pierdut înainte să afli cât te costă | Cristian Văduva",
-    description: "Consultanță strategică în analiza riscurilor, identificarea lacunelor din polițe și structurarea protecției financiare.",
+    title: "Cristian Văduva | Consultant Asigurări Premium & Partener Generali",
+    description: "Consultanță strategică în asigurări Generali România, protecție financiară și optimizarea riscurilor de patrimoniu.",
   },
 };
 
