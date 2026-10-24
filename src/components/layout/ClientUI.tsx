@@ -16,7 +16,11 @@ export default function ClientUI() {
   useEffect(() => {
     if (typeof window === "undefined") return;
 
+    let loaded = false;
     const loadIdleUI = () => {
+      if (loaded) return;
+      loaded = true;
+      cleanup();
       import("./IdleUI")
         .then((mod) => {
           setIdleUIComponent(() => mod.default);
@@ -24,18 +28,23 @@ export default function ClientUI() {
         .catch(() => {});
     };
 
-    if ("requestIdleCallback" in window) {
-      const id = (window as Window & { requestIdleCallback: (cb: () => void, opts?: { timeout: number }) => number })
-        .requestIdleCallback(loadIdleUI, { timeout: 3500 });
-      return () => {
-        if ("cancelIdleCallback" in window) {
-          (window as Window & { cancelIdleCallback: (id: number) => void }).cancelIdleCallback(id);
-        }
-      };
-    } else {
-      const timer = setTimeout(loadIdleUI, 2500);
-      return () => clearTimeout(timer);
-    }
+    const cleanup = () => {
+      window.removeEventListener("scroll", loadIdleUI);
+      window.removeEventListener("touchstart", loadIdleUI);
+      window.removeEventListener("click", loadIdleUI);
+      window.removeEventListener("keydown", loadIdleUI);
+    };
+
+    window.addEventListener("scroll", loadIdleUI, { passive: true, once: true });
+    window.addEventListener("touchstart", loadIdleUI, { passive: true, once: true });
+    window.addEventListener("click", loadIdleUI, { passive: true, once: true });
+    window.addEventListener("keydown", loadIdleUI, { passive: true, once: true });
+
+    const timer = setTimeout(loadIdleUI, 5000);
+    return () => {
+      clearTimeout(timer);
+      cleanup();
+    };
   }, []);
 
   if (!mounted) return null;

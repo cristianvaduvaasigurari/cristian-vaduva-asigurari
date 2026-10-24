@@ -488,7 +488,7 @@ export default function AboutPage() {
                 </p>
                 <div className="pt-2 flex flex-wrap gap-4">
                   <Button size="lg" className="rounded-full bg-white text-zinc-950 hover:bg-zinc-200 font-semibold shadow-md" asChild>
-                    <Link href="/private-client">
+                    <Link href="/private-client" prefetch={false}>
                       Explorează Private Client
                       <ArrowRight className="w-4 h-4 ml-2" aria-hidden="true" />
                     </Link>
@@ -647,7 +647,7 @@ export default function AboutPage() {
                 Companii care necesită asigurări de clădiri comerciale, echipamente, stocuri de marfă, răspundere profesională sau protecția managerilor (D&amp;O) și continuitatea afacerii.
               </p>
               <div className="pt-2">
-                <Link href="/servicii/imm-insurance" className="text-xs font-semibold text-blue-600 hover:text-blue-800 inline-flex items-center gap-1">
+                <Link href="/servicii/imm-insurance" prefetch={false} className="text-xs font-semibold text-blue-600 hover:text-blue-800 inline-flex items-center gap-1">
                   Vezi soluții business <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
                 </Link>
               </div>
@@ -662,7 +662,7 @@ export default function AboutPage() {
                 Familii care vor să securizeze locuința principală, proprietățile de vacanță, planurile de economisire sau sănătatea membrilor familiei printr-un portofoliu coerent de protecție.
               </p>
               <div className="pt-2">
-                <Link href="/servicii/home-insurance" className="text-xs font-semibold text-blue-600 hover:text-blue-800 inline-flex items-center gap-1">
+                <Link href="/servicii/home-insurance" prefetch={false} className="text-xs font-semibold text-blue-600 hover:text-blue-800 inline-flex items-center gap-1">
                   Vezi asigurare locuință <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
                 </Link>
               </div>
@@ -677,7 +677,7 @@ export default function AboutPage() {
                 Clienți cu vehicule premium sau de colecție, proprietăți imobiliare de valoare mare ori portofolii complexe ce solicită underwriting dedicat și confidențialitate absolută.
               </p>
               <div className="pt-2">
-                <Link href="/private-client" className="text-xs font-semibold text-blue-600 hover:text-blue-800 inline-flex items-center gap-1">
+                <Link href="/private-client" prefetch={false} className="text-xs font-semibold text-blue-600 hover:text-blue-800 inline-flex items-center gap-1">
                   Explorează Private Client <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
                 </Link>
               </div>
@@ -701,12 +701,12 @@ export default function AboutPage() {
 
               <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-3">
                 <Button size="lg" className="w-full sm:w-auto rounded-full bg-white text-zinc-950 hover:bg-zinc-200 font-semibold px-6 shadow-md" asChild>
-                  <Link href="/contact">
+                  <Link href="/contact" prefetch={false}>
                     Solicită o analiză gratuită
                   </Link>
                 </Button>
                 <Button size="lg" variant="outline" className="w-full sm:w-auto rounded-full border-zinc-700 bg-zinc-800 text-white hover:bg-zinc-700 font-semibold px-6" asChild>
-                  <Link href="/verifica-polita">
+                  <Link href="/verifica-polita" prefetch={false}>
                     Cere o a doua opinie
                   </Link>
                 </Button>
