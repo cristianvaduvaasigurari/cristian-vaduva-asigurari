@@ -103,13 +103,13 @@ export default function AboutPage() {
 
               <div className="pt-2 flex flex-wrap gap-3">
                 <Button size="lg" className="rounded-full bg-zinc-900 text-white hover:bg-black font-semibold shadow-md" asChild>
-                  <Link href="/contact">
+                  <Link href="/contact" prefetch={false}>
                     Solicită o analiză gratuită
                     <ArrowRight className="w-4 h-4 ml-2" aria-hidden="true" />
                   </Link>
                 </Button>
                 <Button size="lg" variant="outline" className="rounded-full border-zinc-300 text-zinc-800 hover:bg-zinc-100" asChild>
-                  <Link href="/verifica-polita">
+                  <Link href="/verifica-polita" prefetch={false}>
                     Cere o a doua opinie
                   </Link>
                 </Button>
@@ -124,7 +124,7 @@ export default function AboutPage() {
                     alt="Portret Cristian Văduva — Consultant Asigurări Generali și Management de Risc"
                     fill
                     priority
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 45vw, 480px"
+                    sizes="(max-width: 640px) 380px, (max-width: 1024px) 448px, (max-width: 1280px) 480px, 520px"
                     className="object-cover object-top"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/70 via-transparent to-transparent" />
@@ -167,7 +167,9 @@ export default function AboutPage() {
                     src="/images/cristian-vaduva/cristian-vaduva-portrait-5.jpg"
                     alt="Cristian Văduva — Consultanță în spații rezidențiale premium și analiză de patrimoniu"
                     fill
-                    sizes="(max-width: 768px) 100vw, 40vw"
+                    loading="lazy"
+                    decoding="async"
+                    sizes="(max-width: 640px) 380px, (max-width: 1024px) 420px, 460px"
                     className="object-cover object-center group-hover:scale-102 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/60 via-transparent to-transparent" />
@@ -189,7 +191,9 @@ export default function AboutPage() {
                     src="/images/cristian-vaduva/cristian-vaduva-portrait-6.jpg"
                     alt="Cristian Văduva — Perspective europene și colaborări transfrontaliere"
                     fill
-                    sizes="(max-width: 768px) 100vw, 35vw"
+                    loading="lazy"
+                    decoding="async"
+                    sizes="(max-width: 640px) 380px, (max-width: 1024px) 360px, 400px"
                     className="object-cover object-center group-hover:scale-102 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/60 via-transparent to-transparent" />
@@ -211,7 +215,9 @@ export default function AboutPage() {
                     src="/images/cristian-vaduva/cristian-vaduva-portrait-2.jpg"
                     alt="Cristian Văduva pe terasa panoramică — Viziune de ansamblu asupra pieței din București"
                     fill
-                    sizes="(max-width: 768px) 100vw, 25vw"
+                    loading="lazy"
+                    decoding="async"
+                    sizes="(max-width: 640px) 380px, (max-width: 1024px) 300px, 320px"
                     className="object-cover object-top group-hover:scale-102 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/60 via-transparent to-transparent" />
@@ -293,7 +299,9 @@ export default function AboutPage() {
                     src="/images/cristian-vaduva/cristian-vaduva-portrait-7.jpg"
                     alt="Cristian Văduva la Palatul Schönbrunn — Formare academică și experiență internațională europeană"
                     fill
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 40vw, 450px"
+                    loading="lazy"
+                    decoding="async"
+                    sizes="(max-width: 640px) 380px, (max-width: 1024px) 450px, 480px"
                     className="object-cover object-top group-hover:scale-102 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/70 via-transparent to-transparent" />
@@ -411,7 +419,9 @@ export default function AboutPage() {
                   src="/images/cristian-vaduva/cristian-vaduva-portrait-3.jpg"
                   alt="Cristian Văduva în fața unor proprietăți moderne — Expertiză în asigurarea proprietăților imobiliare premium"
                   fill
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 40vw, 450px"
+                  loading="lazy"
+                  decoding="async"
+                  sizes="(max-width: 640px) 380px, (max-width: 1024px) 450px, 480px"
                   className="object-cover object-center group-hover:scale-102 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/70 via-transparent to-transparent" />
@@ -439,7 +449,9 @@ export default function AboutPage() {
                     src="/images/cristian-vaduva/cristian-vaduva-portrait-4.jpg"
                     alt="Cristian Văduva — Private Client Advisory & Consultanță în spații exclusiviste"
                     fill
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 40vw, 450px"
+                    loading="lazy"
+                    decoding="async"
+                    sizes="(max-width: 640px) 380px, (max-width: 1024px) 450px, 480px"
                     className="object-cover object-center group-hover:scale-102 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/80 via-transparent to-transparent" />
@@ -502,7 +514,9 @@ export default function AboutPage() {
                   src="/images/cristian-vaduva/cristian-vaduva-portrait-8.jpg"
                   alt="Cristian Văduva la apus cu vedere panoramică — Viziune strategică și perspectivă clară de viitor"
                   fill
-                  sizes="(max-width: 768px) 100vw, 50vw"
+                  loading="lazy"
+                  decoding="async"
+                  sizes="(max-width: 640px) 380px, (max-width: 1024px) 500px, 560px"
                   className="object-cover object-top group-hover:scale-102 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/75 via-zinc-950/20 to-transparent" />
@@ -527,7 +541,9 @@ export default function AboutPage() {
                   src="/images/cristian-vaduva/cristian-vaduva-portrait-9.jpg"
                   alt="Cristian Văduva în Sky Lounge — Dialog relaxat, confidențialitate și parteneriat veritabil"
                   fill
-                  sizes="(max-width: 768px) 100vw, 50vw"
+                  loading="lazy"
+                  decoding="async"
+                  sizes="(max-width: 640px) 380px, (max-width: 1024px) 500px, 560px"
                   className="object-cover object-center group-hover:scale-102 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/75 via-zinc-950/20 to-transparent" />

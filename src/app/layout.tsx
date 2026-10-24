@@ -13,16 +13,17 @@ import { CONTACT } from "@/config/contact";
 
 const inter = Inter({
   variable: "--font-inter",
-  subsets: ["latin", "latin-ext"],
-  display: "optional",
+  subsets: ["latin"],
+  display: "swap",
   adjustFontFallback: true,
 });
 
 const manrope = Manrope({
   variable: "--font-manrope",
-  subsets: ["latin", "latin-ext"],
-  display: "optional",
+  subsets: ["latin"],
+  display: "swap",
   adjustFontFallback: true,
+  preload: false,
 });
 
 const siteTitle = "Cristian Văduva | Consultant Asigurări Premium & Partener Generali";

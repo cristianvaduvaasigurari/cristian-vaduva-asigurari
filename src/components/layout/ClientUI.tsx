@@ -1,8 +1,7 @@
 "use client";
 
-import { useSyncExternalStore } from "react";
+import { useState, useEffect, useSyncExternalStore } from "react";
 import dynamic from "next/dynamic";
-
 
 const SmartPopup = dynamic(
   () => import("@/components/ui/smart-popup").then((m) => m.SmartPopup),
@@ -37,16 +36,38 @@ export default function ClientUI() {
     () => true,
     () => false
   );
+  const [idleReady, setIdleReady] = useState(false);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      if ("requestIdleCallback" in window) {
+        const id = (window as Window & { requestIdleCallback: (cb: () => void, opts?: { timeout: number }) => number })
+          .requestIdleCallback(() => setIdleReady(true), { timeout: 2500 });
+        return () => {
+          if ("cancelIdleCallback" in window) {
+            (window as Window & { cancelIdleCallback: (id: number) => void }).cancelIdleCallback(id);
+          }
+        };
+      } else {
+        const timer = setTimeout(() => setIdleReady(true), 1500);
+        return () => clearTimeout(timer);
+      }
+    }
+  }, []);
 
   if (!mounted) return null;
 
   return (
     <>
-      <SmartPopup />
-      <AiChatbot />
       <CookieBanner />
-      <QuickOfferModal />
-      <InsuranceNeedModal />
+      {idleReady && (
+        <>
+          <SmartPopup />
+          <AiChatbot />
+          <QuickOfferModal />
+          <InsuranceNeedModal />
+        </>
+      )}
     </>
   );
 }

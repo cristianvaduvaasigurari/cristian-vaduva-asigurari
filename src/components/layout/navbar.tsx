@@ -8,7 +8,6 @@ import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { Menu, X, ChevronDown, Shield, Car, Briefcase, Building2, Home } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { motion, AnimatePresence } from "framer-motion";
 import { TopTicker } from "@/components/layout/top-ticker";
 import { CONTACT } from "@/config/contact";
 
@@ -491,18 +490,13 @@ export function Navbar() {
       </div>
 
       {/* Mobile Navigation */}
-      <AnimatePresence>
-        {isMobileMenuOpen && (
-          <motion.div
-            id="mobile-nav-menu"
-            ref={menuRef}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.15 }}
-            className="fixed inset-0 bg-white text-zinc-900 z-55 overflow-y-auto pt-20 pb-28 px-4 sm:px-6 overscroll-contain shadow-2xl"
-            onClick={(e) => e.stopPropagation()}
-          >
+      {isMobileMenuOpen && (
+        <div
+          id="mobile-nav-menu"
+          ref={menuRef}
+          className="fixed inset-0 bg-white text-zinc-900 z-55 overflow-y-auto pt-20 pb-28 px-4 sm:px-6 overscroll-contain shadow-2xl animate-in fade-in duration-150"
+          onClick={(e) => e.stopPropagation()}
+        >
             <div className="flex flex-col gap-3 max-w-lg mx-auto text-zinc-900">
               {/* Mobile Menu Header Bar with explicit close button */}
               <div className="flex items-center justify-between pb-3 mb-1 border-b border-zinc-200/80">
@@ -703,9 +697,8 @@ export function Navbar() {
                 </Button>
               </div>
             </div>
-          </motion.div>
+          </div>
         )}
-      </AnimatePresence>
     </header>
   );
 }
