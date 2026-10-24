@@ -124,6 +124,7 @@ export default function AboutPage() {
                     alt="Portret Cristian Văduva — Consultant Asigurări Generali și Management de Risc"
                     fill
                     priority
+                    quality={72}
                     sizes="(max-width: 640px) 380px, (max-width: 1024px) 448px, (max-width: 1280px) 480px, 520px"
                     className="object-cover object-top"
                   />
@@ -169,6 +170,7 @@ export default function AboutPage() {
                     fill
                     loading="lazy"
                     decoding="async"
+                    quality={70}
                     sizes="(max-width: 640px) 380px, (max-width: 1024px) 420px, 460px"
                     className="object-cover object-center group-hover:scale-102 transition-transform duration-500"
                   />
@@ -193,6 +195,7 @@ export default function AboutPage() {
                     fill
                     loading="lazy"
                     decoding="async"
+                    quality={70}
                     sizes="(max-width: 640px) 380px, (max-width: 1024px) 360px, 400px"
                     className="object-cover object-center group-hover:scale-102 transition-transform duration-500"
                   />
@@ -217,6 +220,7 @@ export default function AboutPage() {
                     fill
                     loading="lazy"
                     decoding="async"
+                    quality={70}
                     sizes="(max-width: 640px) 380px, (max-width: 1024px) 300px, 320px"
                     className="object-cover object-top group-hover:scale-102 transition-transform duration-500"
                   />
@@ -301,6 +305,7 @@ export default function AboutPage() {
                     fill
                     loading="lazy"
                     decoding="async"
+                    quality={70}
                     sizes="(max-width: 640px) 380px, (max-width: 1024px) 450px, 480px"
                     className="object-cover object-top group-hover:scale-102 transition-transform duration-500"
                   />
@@ -421,6 +426,7 @@ export default function AboutPage() {
                   fill
                   loading="lazy"
                   decoding="async"
+                  quality={70}
                   sizes="(max-width: 640px) 380px, (max-width: 1024px) 450px, 480px"
                   className="object-cover object-center group-hover:scale-102 transition-transform duration-500"
                 />
@@ -451,6 +457,7 @@ export default function AboutPage() {
                     fill
                     loading="lazy"
                     decoding="async"
+                    quality={70}
                     sizes="(max-width: 640px) 380px, (max-width: 1024px) 450px, 480px"
                     className="object-cover object-center group-hover:scale-102 transition-transform duration-500"
                   />
@@ -516,6 +523,7 @@ export default function AboutPage() {
                   fill
                   loading="lazy"
                   decoding="async"
+                  quality={70}
                   sizes="(max-width: 640px) 380px, (max-width: 1024px) 500px, 560px"
                   className="object-cover object-top group-hover:scale-102 transition-transform duration-500"
                 />
@@ -543,6 +551,7 @@ export default function AboutPage() {
                   fill
                   loading="lazy"
                   decoding="async"
+                  quality={70}
                   sizes="(max-width: 640px) 380px, (max-width: 1024px) 500px, 560px"
                   className="object-cover object-center group-hover:scale-102 transition-transform duration-500"
                 />

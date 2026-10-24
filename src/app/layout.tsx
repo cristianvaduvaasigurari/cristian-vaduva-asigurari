@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { headers } from "next/headers";
 import { StructuredData, organizationSchema, localBusinessSchema, personSchema } from "@/lib/structuredData";
-import { Inter, Manrope } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 import { NextIntlClientProvider } from "next-intl";
 import ClientUI from "@/components/layout/ClientUI";
@@ -18,13 +18,6 @@ const inter = Inter({
   adjustFontFallback: true,
 });
 
-const manrope = Manrope({
-  variable: "--font-manrope",
-  subsets: ["latin"],
-  display: "swap",
-  adjustFontFallback: true,
-  preload: false,
-});
 
 const siteTitle = "Cristian Văduva | Consultant Asigurări Premium & Partener Generali";
 const siteDescription = "Platformă premium dedicată consultanței în asigurări Generali România, protecției financiare a familiei și optimizării patrimoniului de afaceri. Consultant autorizat București.";
@@ -115,7 +108,7 @@ export default async function RootLayout({
   return (
     <html
       lang={locale}
-      className={`${inter.variable} ${manrope.variable} h-full antialiased`}
+      className={`${inter.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-background text-foreground font-sans">
         <NextIntlClientProvider locale={locale} messages={messages}>
