@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { X } from "lucide-react";
 import Link from "next/link";
-import { motion, AnimatePresence } from "framer-motion";
 
 export function CookieBanner() {
   const [isVisible, setIsVisible] = useState(false);
@@ -28,17 +27,11 @@ export function CookieBanner() {
     setIsVisible(false);
   };
 
+  if (!isVisible) return null;
+
   return (
-    <AnimatePresence>
-      {isVisible && (
-        <motion.div
-          initial={{ y: 100, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          exit={{ y: 100, opacity: 0 }}
-          transition={{ type: "spring", stiffness: 300, damping: 30 }}
-          className="fixed bottom-0 left-0 right-0 z-[100] p-4 md:p-6 pointer-events-none"
-        >
-          <div className="container mx-auto max-w-4xl">
+    <div className="fixed bottom-0 left-0 right-0 z-[100] p-4 md:p-6 pointer-events-none animate-in fade-in slide-in-from-bottom-6 duration-300">
+      <div className="container mx-auto max-w-4xl">
             <div className="glass p-6 rounded-2xl border border-white/10 shadow-2xl relative pointer-events-auto flex flex-col md:flex-row items-center gap-6">
               
               <button 
@@ -75,8 +68,6 @@ export function CookieBanner() {
               </div>
             </div>
           </div>
-        </motion.div>
-      )}
-    </AnimatePresence>
+        </div>
   );
 }
