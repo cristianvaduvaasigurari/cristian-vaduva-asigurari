@@ -69,7 +69,7 @@ export default function AccidentInsurancePage() {
                 Vulnerabilitatea activităților zilnice
               </h2>
               <p className="text-lg text-muted-foreground leading-relaxed mb-4">
-                Peste 70% din accidentele care duc la imobilizare temporară nu se întâmplă pe autostradă, ci în timpul activităților de weekend, pe pârtiile de schi, pe bicicletă, sau chiar prin alunecare în propria casă.
+                Marea majoritate a accidentelor care duc la imobilizare temporară nu se întâmplă pe autostradă, ci în timpul activităților de weekend, pe pârtiile de schi, pe bicicletă sau chiar prin incidente casnice obișnuite.
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed">
                 Recuperarea fizioterapeutică după o gleznă ruptă poate dura luni de zile, generând costuri suplimentare și un stres major dacă nu ai voie să calci. Polița de accidente îți cumpără liniștea de a-ți permite ghipsuri ușoare, orteze premium și transport specializat.

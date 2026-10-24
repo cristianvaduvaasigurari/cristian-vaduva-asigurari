@@ -227,8 +227,8 @@ export function SeismicRiskChecker() {
               </span>
               <p className="text-amber-950/90 leading-relaxed text-[11px]">
                 {isRo
-                  ? 'O clădire care lipsește din lista clădirilor expertizate NU trebuie niciodată descrisă sau considerată sigură pe această bază. Peste 80% din clădirile vechi ale Bucureștiului nu au fost încă expertizate tehnic oficial.'
-                  : 'A building missing from the available list must never be described as safe on that basis. Over 80% of old Bucharest buildings have not yet undergone official technical expertise.'}
+                  ? 'O clădire care lipsește din lista clădirilor expertizate NU trebuie niciodată descrisă sau considerată sigură pe această bază. Marea majoritate a clădirilor vechi construite înainte de 1977 nu au fost încă expertizate tehnic oficial.'
+                  : 'A building missing from the available list must never be described as safe on that basis. The vast majority of older buildings built before 1977 have not yet undergone official technical expertise.'}
               </p>
             </div>
 

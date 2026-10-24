@@ -13,22 +13,47 @@ CREATE TABLE public.leads (
 -- Enable Row Level Security
 ALTER TABLE public.leads ENABLE ROW LEVEL SECURITY;
 
--- Allow anonymous inserts (anyone can submit a contact form)
-CREATE POLICY "Allow public inserts" ON public.leads
-    FOR INSERT TO anon
+-- 1. Public insert: allow anyone (anon and authenticated) to submit a lead without read access
+CREATE POLICY "leads_insert_public" ON public.leads
+    FOR INSERT TO anon, authenticated
     WITH CHECK (true);
 
--- Only authenticated users (admins) can view leads
-CREATE POLICY "Allow authenticated users to view" ON public.leads
+-- 2. Restrict SELECT, UPDATE, DELETE strictly to authenticated administrators
+CREATE POLICY "leads_select_admin" ON public.leads
     FOR SELECT TO authenticated
-    USING (true);
+    USING (
+        lower(coalesce(auth.jwt() -> 'app_metadata' ->> 'role', '')) = 'admin'
+        OR (auth.jwt() -> 'app_metadata' -> 'is_admin') = 'true'::jsonb
+        OR (auth.jwt() -> 'app_metadata' -> 'is_admin') = '1'::jsonb
+        OR lower(coalesce(auth.jwt() -> 'app_metadata' ->> 'is_admin', '')) IN ('true', 't', '1')
+    );
 
--- Only authenticated users can update/delete
-CREATE POLICY "Allow authenticated users to update" ON public.leads
+CREATE POLICY "leads_update_admin" ON public.leads
     FOR UPDATE TO authenticated
-    USING (true)
-    WITH CHECK (true);
+    USING (
+        lower(coalesce(auth.jwt() -> 'app_metadata' ->> 'role', '')) = 'admin'
+        OR (auth.jwt() -> 'app_metadata' -> 'is_admin') = 'true'::jsonb
+        OR (auth.jwt() -> 'app_metadata' -> 'is_admin') = '1'::jsonb
+        OR lower(coalesce(auth.jwt() -> 'app_metadata' ->> 'is_admin', '')) IN ('true', 't', '1')
+    )
+    WITH CHECK (
+        lower(coalesce(auth.jwt() -> 'app_metadata' ->> 'role', '')) = 'admin'
+        OR (auth.jwt() -> 'app_metadata' -> 'is_admin') = 'true'::jsonb
+        OR (auth.jwt() -> 'app_metadata' -> 'is_admin') = '1'::jsonb
+        OR lower(coalesce(auth.jwt() -> 'app_metadata' ->> 'is_admin', '')) IN ('true', 't', '1')
+    );
 
-CREATE POLICY "Allow authenticated users to delete" ON public.leads
+CREATE POLICY "leads_delete_admin" ON public.leads
     FOR DELETE TO authenticated
-    USING (true);
+    USING (
+        lower(coalesce(auth.jwt() -> 'app_metadata' ->> 'role', '')) = 'admin'
+        OR (auth.jwt() -> 'app_metadata' -> 'is_admin') = 'true'::jsonb
+        OR (auth.jwt() -> 'app_metadata' -> 'is_admin') = '1'::jsonb
+        OR lower(coalesce(auth.jwt() -> 'app_metadata' ->> 'is_admin', '')) IN ('true', 't', '1')
+    );
+
+-- Defense in depth: Restrict table privileges
+REVOKE ALL ON public.leads FROM PUBLIC;
+REVOKE SELECT, UPDATE, DELETE ON public.leads FROM anon;
+GRANT INSERT ON public.leads TO anon;
+GRANT INSERT, SELECT, UPDATE, DELETE ON public.leads TO authenticated;

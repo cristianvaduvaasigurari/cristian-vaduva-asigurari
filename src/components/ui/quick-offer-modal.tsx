@@ -191,12 +191,12 @@ export function QuickOfferModal() {
   return (
     <>
       {/* ALWAYS-ON FLOATING CTA BUTTON (Mobile: bottom-[96px] to align with contact button; Desktop: bottom-[16vh]) */}
-      <div className="fixed bottom-[96px] md:bottom-[16vh] right-4 sm:right-6 z-40 pb-[env(safe-area-inset-bottom)] pointer-events-auto">
+      <div className="fixed bottom-[96px] md:bottom-[16vh] right-4 sm:right-6 z-40 pb-[env(safe-area-inset-bottom)] pointer-events-none">
         <button
           type="button"
           onClick={handleOpen}
           aria-label="Deschide formularul Cere Ofertă"
-          className="group inline-flex items-center gap-2.5 px-5 py-3.5 rounded-full bg-slate-900 text-white hover:bg-slate-800 shadow-xl hover:shadow-2xl hover:scale-105 active:scale-95 transition-all duration-300 font-bold text-xs uppercase tracking-wider cursor-pointer border border-slate-700/60 focus:outline-none focus:ring-2 focus:ring-slate-900/30"
+          className="group inline-flex items-center gap-2.5 px-5 py-3.5 rounded-full bg-slate-900 text-white hover:bg-slate-800 shadow-xl hover:shadow-2xl hover:scale-105 active:scale-95 transition-all duration-300 font-bold text-xs uppercase tracking-wider cursor-pointer pointer-events-auto border border-slate-700/60 focus:outline-none focus:ring-2 focus:ring-slate-900/30"
         >
           <div className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
           <FileText className="w-4 h-4 text-slate-300 group-hover:text-white transition-colors" />

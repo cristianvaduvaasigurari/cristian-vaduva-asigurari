@@ -112,7 +112,7 @@ export function WeatherHotspotMap() {
       <div className="pt-4 border-t border-zinc-200 flex flex-col sm:flex-row items-center justify-between gap-4 bg-zinc-50 p-5 rounded-xl">
         <div className="text-xs text-zinc-600">
           <strong className="text-zinc-900 block text-sm">Vrei să afli prețul real calculat de asigurători pentru mașina ta?</strong>
-          Trimite-mi seria de șasiu (VIN) și CNP-ul proprietarului pe WhatsApp pentru o cotație exactă din sistemul oficial de asigurări.
+          Trimite-mi seria de șasiu (VIN) și datele autovehiculului pe WhatsApp pentru o evaluare preliminară și pașii necesari emiterii cotației oficiale.
         </div>
         <WhatsAppCta
           toolName="Ghid Riscuri Auto & Hotspot"

@@ -32,7 +32,7 @@ const nextConfig: NextConfig = {
     const globalHeaders = [
       ...(!isDev ? [{
         key: 'Strict-Transport-Security',
-        value: 'max-age=31536000',
+        value: 'max-age=31536000; includeSubDomains; preload',
       }] : []),
       {
         key: 'X-DNS-Prefetch-Control',

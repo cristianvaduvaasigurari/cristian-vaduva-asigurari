@@ -283,7 +283,7 @@ export function InsuranceNeedModal() {
       */}
       <aside
         aria-label="Puncte permanente de consultanță și recomandare"
-        className="fixed z-40 bottom-[150px] right-4 sm:bottom-[150px] sm:right-6 md:bottom-[36px] md:right-28 pb-[env(safe-area-inset-bottom)] pointer-events-auto flex flex-col items-end gap-2 sm:gap-2.5"
+        className="fixed z-40 bottom-[150px] right-4 sm:bottom-[150px] sm:right-6 md:bottom-[36px] md:right-28 pb-[env(safe-area-inset-bottom)] pointer-events-none flex flex-col items-end gap-2 sm:gap-2.5"
       >
         {/* Buton 1: Recomandă & Beneficiați */}
         <button
@@ -293,7 +293,7 @@ export function InsuranceNeedModal() {
           aria-label="Deschide programul: Recomandă & Beneficiați"
           aria-expanded={isReferralOpen}
           aria-haspopup="dialog"
-          className="group relative inline-flex items-center gap-2 px-3.5 py-2 sm:px-4 sm:py-2.5 rounded-full bg-white text-slate-900 hover:bg-slate-50 active:bg-slate-100 border border-slate-200/90 shadow-[0_8px_30px_rgb(0,0,0,0.12)] hover:shadow-[0_12px_40px_rgb(0,0,0,0.18)] hover:scale-[1.03] active:scale-[0.98] transition-all duration-300 font-bold text-xs sm:text-sm tracking-tight cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-900 focus-visible:ring-offset-2 max-w-[calc(100vw-2rem)] md:fixed md:left-6 md:right-auto md:bottom-[92px] md:mr-0"
+          className="group relative inline-flex items-center gap-2 px-3.5 py-2 sm:px-4 sm:py-2.5 rounded-full bg-white text-slate-900 hover:bg-slate-50 active:bg-slate-100 border border-slate-200/90 shadow-[0_8px_30px_rgb(0,0,0,0.12)] hover:shadow-[0_12px_40px_rgb(0,0,0,0.18)] hover:scale-[1.03] active:scale-[0.98] transition-all duration-300 font-bold text-xs sm:text-sm tracking-tight cursor-pointer pointer-events-auto focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-900 focus-visible:ring-offset-2 max-w-[calc(100vw-2rem)] md:fixed md:left-6 md:right-auto md:bottom-[92px] md:mr-0"
         >
           <Gift className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-slate-700 group-hover:text-slate-900 transition-colors shrink-0" />
           <span className="text-slate-900 select-none truncate">Recomandă &amp; Beneficiați</span>
@@ -307,7 +307,7 @@ export function InsuranceNeedModal() {
           aria-label="Deschide formularul: Ce nevoie ai?"
           aria-expanded={isOpen}
           aria-haspopup="dialog"
-          className="group relative inline-flex items-center gap-2.5 px-4 py-2.5 sm:px-5 sm:py-3 rounded-full bg-white text-slate-900 hover:bg-slate-50 active:bg-slate-100 border border-slate-200/90 shadow-[0_8px_30px_rgb(0,0,0,0.12)] hover:shadow-[0_12px_40px_rgb(0,0,0,0.18)] hover:scale-[1.03] active:scale-[0.98] transition-all duration-300 font-bold text-xs sm:text-sm tracking-tight cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-900 focus-visible:ring-offset-2 max-w-[calc(100vw-2rem)]"
+          className="group relative inline-flex items-center gap-2.5 px-4 py-2.5 sm:px-5 sm:py-3 rounded-full bg-white text-slate-900 hover:bg-slate-50 active:bg-slate-100 border border-slate-200/90 shadow-[0_8px_30px_rgb(0,0,0,0.12)] hover:shadow-[0_12px_40px_rgb(0,0,0,0.18)] hover:scale-[1.03] active:scale-[0.98] transition-all duration-300 font-bold text-xs sm:text-sm tracking-tight cursor-pointer pointer-events-auto focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-900 focus-visible:ring-offset-2 max-w-[calc(100vw-2rem)]"
         >
           {/* Subtle pulse indicator */}
           <span className="relative flex h-2 w-2">

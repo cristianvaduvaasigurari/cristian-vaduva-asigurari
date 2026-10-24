@@ -117,7 +117,7 @@ const QUESTIONS: ChecklistQuestion[] = [
     id: "q8",
     number: 8,
     title: "Cum este acoperit riscul de furt parțial și tentativă de efracție?",
-    explanation: "Furtul de catalizatoare, oglinzi exterioare, radare distronic și jante reprezintă 80% din dosarele de furt.",
+    explanation: "Furtul de catalizatoare, oglinzi exterioare, radare distronic și jante reprezintă o proporție substanțială din dosarele de daune auto prin furt parțial.",
     clauseToVerify: "Capitolul «Furt și tâlhărie» — extindere pentru furt componente exterioare, roți, sistem multimedia și chei originale.",
     options: [
       { label: "Furt total + furt parțial (oglinzi, roți, navigație, radar) acoperit complet", score: 10, verdict: "safe" },

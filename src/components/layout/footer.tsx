@@ -101,7 +101,7 @@ const footerLinks = {
 export function Footer() {
   const t = useTranslations();
   return (
-    <footer className="bg-[#0a0a0a] text-white border-t border-white/10 pt-20 pb-10">
+    <footer className="bg-[#0a0a0a] text-white border-t border-white/10 pt-20 pb-72 sm:pb-72 md:pb-52 lg:pb-48">
       <div className="container mx-auto px-4 md:px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-7 gap-8 mb-16">
           <div className="lg:col-span-2">
@@ -240,7 +240,12 @@ export function Footer() {
           </p>
           <div className="flex flex-wrap items-center justify-center gap-6 text-sm text-white/70 font-medium">
             {footerLinks.legal.map((link) => (
-              <Link key={link.key} href={link.href} prefetch={false} className="hover:text-white transition-colors">
+              <Link
+                key={link.key}
+                href={link.href}
+                prefetch={false}
+                className="hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 rounded-xs"
+              >
                 {t(`footer.links.${link.key}`)}
               </Link>
             ))}
