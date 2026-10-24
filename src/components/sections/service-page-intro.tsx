@@ -22,7 +22,7 @@ export function ServicePageIntro({ slug }: Props) {
     "Primești o structură de protecție clară, adaptată situației tale, cu opțiuni comparate pe acoperiri, limite, excluderi și costuri.";
 
   return (
-    <div className="container mx-auto px-4 max-w-6xl pt-6">
+    <div className="container mx-auto px-4 max-w-6xl pt-28 md:pt-36">
       <ServiceDirectAnswer
         problemSolved={service?.problemSolved ?? `Rezolvă expunerea financiară specifică pentru ${serviceName}: costuri neprevăzute, întârzieri în despăgubire, lipsă de acoperire și decizii luate fără comparație reală între opțiuni.`}
         whoIsItFor={service?.whoItsFor ?? `Este pentru persoane, familii sau companii care au nevoie de ${serviceName} și vor o recomandare verificată înainte de a semna o poliță.`}

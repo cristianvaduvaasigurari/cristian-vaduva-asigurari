@@ -16,7 +16,7 @@ export default function ServicesPage() {
   return (
     <div className="min-h-screen bg-background flex flex-col">
       <Navbar />
-      <main className="flex-1 pt-32">
+      <main className="flex-1 pt-28 md:pt-36">
         <section className="container mx-auto px-4 md:px-6 mb-12 max-w-4xl text-center">
           <p className="text-sm font-bold uppercase tracking-[0.25em] text-blue-600 mb-4">Servicii</p>
           <h1 className="text-4xl md:text-6xl font-heading font-bold tracking-tight mb-6">

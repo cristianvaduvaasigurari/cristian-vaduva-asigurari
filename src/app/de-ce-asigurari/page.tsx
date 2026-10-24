@@ -15,7 +15,7 @@ export default function WhyInsurancePage() {
     <div className="min-h-screen bg-background flex flex-col">
       <Navbar />
       
-      <main className="flex-1 pt-32 pb-16">
+      <main className="flex-1 pt-28 md:pt-36 pb-16">
         <div className="container mx-auto px-4">
           
           {/* Hero Section */}
