@@ -232,6 +232,9 @@ export function SmeRiskAudit() {
     formData.append('preferredMethod', data.preferredMethod);
     formData.append('preferredTime', data.preferredTime);
     formData.append('language', language);
+    formData.append('consent', data.privacyConsent ? 'true' : 'false');
+    formData.append('agreePrivacy', data.privacyConsent ? 'true' : 'false');
+    formData.append('privacyConsent', data.privacyConsent ? 'true' : 'false');
 
     const auditSummary = {
       reportedExposures,
@@ -919,7 +922,7 @@ export function SmeRiskAudit() {
                   </div>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit} className="space-y-6">
+                <form onSubmit={handleSubmit} noValidate className="space-y-6">
                   
                   {/* Synthesis Dashboard */}
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -1004,7 +1007,13 @@ export function SmeRiskAudit() {
                         type="checkbox"
                         required
                         checked={data.privacyConsent}
-                        onChange={(e) => updateField('privacyConsent', e.target.checked)}
+                        onChange={(e) => {
+                          const isChecked = e.target.checked;
+                          updateField('privacyConsent', isChecked);
+                          if (isChecked) {
+                            setSubmitError(null);
+                          }
+                        }}
                         className="mt-1 rounded bg-white border-slate-600 text-blue-600 focus:ring-blue-500"
                       />
                       <span className="text-xs text-zinc-500 leading-relaxed">

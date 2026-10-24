@@ -47,7 +47,7 @@ export function HomePurchaseJourney() {
     "Poliță Facultativă Clădire + Bunuri",
     "Cerinte Bancă / Ipotecă",
   ]);
-  const [consent, setConsent] = useState(true);
+  const [consent, setConsent] = useState(false);
 
   // Status
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -62,6 +62,10 @@ export function HomePurchaseJourney() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (!consent) {
+      setErrorMessage("Este necesar acordul pentru prelucrarea datelor de contact conform Politicii de Confidențialitate.");
+      return;
+    }
     setErrorMessage(null);
     setIsSubmitting(true);
 
@@ -81,6 +85,7 @@ export function HomePurchaseJourney() {
       formData.append("source", source);
       formData.append("listingId", listingId);
       formData.append("consent", consent ? "true" : "false");
+      formData.append("agreePrivacy", consent ? "true" : "false");
 
       const res = await submitHomePurchaseLead(formData);
 
@@ -229,6 +234,7 @@ export function HomePurchaseJourney() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               onSubmit={handleSubmit}
+              noValidate
               className="space-y-8 max-w-3xl mx-auto"
             >
               <div className="text-center space-y-2 pb-6 border-b border-zinc-200/80">
@@ -439,12 +445,23 @@ export function HomePurchaseJourney() {
                   type="checkbox"
                   id="consent-purchase"
                   checked={consent}
-                  onChange={(e) => setConsent(e.target.checked)}
+                  onChange={(e) => {
+                    const isChecked = e.target.checked;
+                    setConsent(isChecked);
+                    if (isChecked) {
+                      setErrorMessage(null);
+                    }
+                  }}
                   className="mt-1 w-4 h-4 rounded border-zinc-200 bg-white text-blue-600 focus:ring-0"
                 />
                 <label htmlFor="consent-purchase" className="text-xs text-zinc-500 leading-relaxed cursor-pointer">
                   Sunt de acord cu prelucrarea datelor de contact în scopul pregătirii consultanței de asigurare, conform{" "}
-                  <a href="/politica-de-confidentialitate" target="_blank" className="text-zinc-600 underline underline-offset-2">
+                  <a
+                    href="/politica-de-confidentialitate"
+                    target="_blank"
+                    onClick={(e) => e.stopPropagation()}
+                    className="text-zinc-600 underline underline-offset-2"
+                  >
                     Politicii de Confidențialitate
                   </a>
                   . Emiterea oricărei polițe este condiționată de eligibilitate și termenii asiguratorului.

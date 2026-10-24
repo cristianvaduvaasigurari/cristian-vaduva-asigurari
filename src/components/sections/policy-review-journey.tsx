@@ -159,7 +159,7 @@ export function PolicyReviewJourney() {
   const [phone, setPhone] = useState<string>("");
   const [email, setEmail] = useState<string>("");
   const [preferredContact, setPreferredContact] = useState<"whatsapp" | "phone" | "email">("whatsapp");
-  const [consent, setConsent] = useState<boolean>(true);
+  const [consent, setConsent] = useState<boolean>(false);
 
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
@@ -228,6 +228,7 @@ export function PolicyReviewJourney() {
       formData.append("preferredContact", preferredContact);
       formData.append("language", lang);
       formData.append("consent", consent ? "true" : "false");
+      formData.append("agreePrivacy", consent ? "true" : "false");
 
       const result = await submitPolicyReview(formData);
 
@@ -809,8 +810,16 @@ export function PolicyReviewJourney() {
                     type="checkbox"
                     checked={consent}
                     onChange={(e) => {
-                      setConsent(e.target.checked);
-                      setValidationErrors((prev) => ({ ...prev, consent: "" }));
+                      const isChecked = e.target.checked;
+                      setConsent(isChecked);
+                      if (isChecked) {
+                        setErrorMessage(null);
+                        setValidationErrors((prev) => {
+                          const next = { ...prev };
+                          delete next.consent;
+                          return next;
+                        });
+                      }
                     }}
                     className="mt-0.5 rounded border-zinc-300 text-blue-600 focus:ring-blue-600 h-4 w-4"
                   />
@@ -818,7 +827,12 @@ export function PolicyReviewJourney() {
                     {lang === "ro" ? (
                       <>
                         Sunt de acord cu prelucrarea datelor pentru realizarea analizei comparative, conform{" "}
-                        <Link href="/politica-de-confidentialitate" className="text-blue-600 hover:underline" target="_blank">
+                        <Link
+                          href="/politica-de-confidentialitate"
+                          className="text-blue-600 hover:underline"
+                          target="_blank"
+                          onClick={(e) => e.stopPropagation()}
+                        >
                           Politicii de Confidențialitate
                         </Link>
                         . Fără apeluri spam sau transmitere către terți.
@@ -826,7 +840,12 @@ export function PolicyReviewJourney() {
                     ) : (
                       <>
                         I consent to processing my details for the policy review pursuant to the{" "}
-                        <Link href="/politica-de-confidentialitate" className="text-blue-600 hover:underline" target="_blank">
+                        <Link
+                          href="/politica-de-confidentialitate"
+                          className="text-blue-600 hover:underline"
+                          target="_blank"
+                          onClick={(e) => e.stopPropagation()}
+                        >
                           Privacy Policy
                         </Link>
                         . No spam, no third-party distribution.

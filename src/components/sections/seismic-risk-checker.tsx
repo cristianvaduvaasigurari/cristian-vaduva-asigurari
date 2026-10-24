@@ -143,6 +143,9 @@ export function SeismicRiskChecker() {
     formData.append('email', email);
     formData.append('notes', notes);
     formData.append('language', lang);
+    formData.append('consent', privacyConsent ? 'true' : 'false');
+    formData.append('agreePrivacy', privacyConsent ? 'true' : 'false');
+    formData.append('privacyConsent', privacyConsent ? 'true' : 'false');
 
     try {
       const res = await submitSeismicPropertyReviewLead(formData);
@@ -857,7 +860,7 @@ export function SeismicRiskChecker() {
             </div>
           </div>
         ) : (
-          <form onSubmit={handleLeadSubmit} className="space-y-6">
+          <form onSubmit={handleLeadSubmit} noValidate className="space-y-6">
             
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
               <div>
@@ -942,7 +945,13 @@ export function SeismicRiskChecker() {
                   type="checkbox"
                   required
                   checked={privacyConsent}
-                  onChange={(e) => setPrivacyConsent(e.target.checked)}
+                  onChange={(e) => {
+                    const isChecked = e.target.checked;
+                    setPrivacyConsent(isChecked);
+                    if (isChecked) {
+                      setSubmitError(null);
+                    }
+                  }}
                   className="mt-1 rounded border-zinc-300 text-blue-600 focus:ring-blue-500"
                 />
                 <span className="text-xs text-zinc-600 leading-relaxed">

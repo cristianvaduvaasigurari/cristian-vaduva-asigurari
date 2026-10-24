@@ -22,6 +22,7 @@ const resources = [
 export function ResourcesList() {
   const [selectedResource, setSelectedResource] = useState<string | null>(null);
   const [email, setEmail] = useState("");
+  const [consent, setConsent] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [downloaded, setDownloaded] = useState<Record<string, boolean>>({});
   const [error, setError] = useState<string | null>(null);
@@ -29,6 +30,11 @@ export function ResourcesList() {
   const handleDownloadRequest = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!email || !selectedResource) return;
+
+    if (!consent) {
+      setError("Vă rugăm să bifați acordul privind prelucrarea datelor cu caracter personal.");
+      return;
+    }
 
     setIsSubmitting(true);
     setError(null);
@@ -40,6 +46,7 @@ export function ResourcesList() {
     formData.append("email", email);
     formData.append("service", `Descărcare: ${res?.title}`);
     formData.append("source", "Premium Resources Page");
+    formData.append("agreePrivacy", consent ? "true" : "false");
     
     try {
       const response = await fetch('/api/lead', {
@@ -142,7 +149,7 @@ export function ResourcesList() {
                 Introdu adresa de email pentru a primi instant <strong>{resources.find(r => r.id === selectedResource)?.title}</strong> în format PDF.
               </p>
 
-              <form onSubmit={handleDownloadRequest} className="flex flex-col gap-4">
+              <form onSubmit={handleDownloadRequest} noValidate className="flex flex-col gap-4">
                 <Input 
                   type="email" 
                   placeholder="adresa@email.com" 
@@ -151,17 +158,35 @@ export function ResourcesList() {
                   onChange={(e) => setEmail(e.target.value)}
                   className="h-14 text-center rounded-2xl border-2 focus-visible:ring-0 focus:border-foreground"
                 />
-                <Button type="submit" disabled={isSubmitting} className="h-14 rounded-full bg-blue-600 hover:bg-blue-700 text-white font-bold w-full">
+                <label className="flex items-start gap-2 cursor-pointer text-xs text-muted-foreground text-left">
+                  <input
+                    type="checkbox"
+                    checked={consent}
+                    onChange={(e) => {
+                      const isChecked = e.target.checked;
+                      setConsent(isChecked);
+                      if (isChecked) {
+                        setError(null);
+                      }
+                    }}
+                    className="mt-0.5 rounded border-zinc-300 text-blue-600 focus:ring-blue-500 shrink-0"
+                  />
+                  <span>
+                    Sunt de acord cu prelucrarea adresei de email pentru transmiterea materialului conform{" "}
+                    <Link
+                      href="/politica-de-confidentialitate"
+                      onClick={(e) => e.stopPropagation()}
+                      className="text-blue-600 underline"
+                    >
+                      Politicii de Confidențialitate
+                    </Link>
+                    .
+                  </span>
+                </label>
+
+                <Button type="submit" disabled={isSubmitting || !consent} className="h-14 rounded-full bg-blue-600 hover:bg-blue-700 text-white font-bold w-full">
                   {isSubmitting ? "Se generează PDF-ul..." : "Deblochează Resursa"} <Download className="w-4 h-4 ml-2" />
                 </Button>
-                
-                <p className="text-[10px] text-muted-foreground leading-relaxed mt-1 text-left">
-                  Prin descărcarea acestui material, confirmi că ai citit și ești de acord cu{" "}
-                  <Link href="/legal/privacy-policy" className="text-blue-500 hover:underline">
-                    Politica de Confidențialitate & Notă GDPR
-                  </Link>{" "}
-                  și ești de acord să fii contactat pentru detalii privind serviciile selectate.
-                </p>
 
                 {error && (
                   <p className="text-sm font-bold text-red-500 mt-2">{error}</p>

@@ -90,6 +90,9 @@ export function CorporateHealthJourney() {
     formData.append('email', email);
     formData.append('notes', notes);
     formData.append('language', language);
+    formData.append('consent', privacyConsent ? 'true' : 'false');
+    formData.append('agreePrivacy', privacyConsent ? 'true' : 'false');
+    formData.append('privacyConsent', privacyConsent ? 'true' : 'false');
 
     try {
       const res = await submitCorporateHealthLead(formData);
@@ -455,7 +458,7 @@ export function CorporateHealthJourney() {
               </div>
             </div>
           ) : (
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form onSubmit={handleSubmit} noValidate className="space-y-6">
               
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                 <div>
@@ -666,7 +669,13 @@ export function CorporateHealthJourney() {
                     type="checkbox"
                     required
                     checked={privacyConsent}
-                    onChange={(e) => setPrivacyConsent(e.target.checked)}
+                    onChange={(e) => {
+                      const isChecked = e.target.checked;
+                      setPrivacyConsent(isChecked);
+                      if (isChecked) {
+                        setSubmitError(null);
+                      }
+                    }}
                     className="mt-1 rounded bg-white border-slate-600 text-blue-600 focus:ring-blue-500"
                   />
                   <span className="text-xs text-zinc-500 leading-relaxed">

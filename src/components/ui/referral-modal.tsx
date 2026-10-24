@@ -54,7 +54,7 @@ export function ReferralModal({
   const [email, setEmail] = useState<string>("");
   const [relationship, setRelationship] = useState<string>("Prieten");
   const [details, setDetails] = useState<string>("");
-  const [consent, setConsent] = useState<boolean>(true);
+  const [consent, setConsent] = useState<boolean>(false);
 
   // Clipboard & Submission Status
   const [copied, setCopied] = useState<boolean>(false);
@@ -71,7 +71,7 @@ export function ReferralModal({
     setEmail("");
     setRelationship("Prieten");
     setDetails("");
-    setConsent(true);
+    setConsent(false);
     setStatus("idle");
     setErrorMessage("");
     setFieldErrors({});
@@ -241,6 +241,7 @@ export function ReferralModal({
         service: serviceTitle,
         message: formattedMsg,
         source: source,
+        agreePrivacy: consent,
         metadata: {
           form_source: source,
           option_type: activeTab,
@@ -979,7 +980,11 @@ export function ReferralModal({
                           required
                           checked={consent}
                           onChange={(e) => {
-                            setConsent(e.target.checked);
+                            const isChecked = e.target.checked;
+                            setConsent(isChecked);
+                            if (isChecked) {
+                              setErrorMessage("");
+                            }
                             if (fieldErrors.consent) {
                               setFieldErrors((prev) => {
                                 const next = { ...prev };
@@ -999,6 +1004,7 @@ export function ReferralModal({
                           <Link
                             href="/politica-de-confidentialitate"
                             target="_blank"
+                            onClick={(e) => e.stopPropagation()}
                             className="text-slate-900 underline font-semibold hover:text-blue-600 transition-colors"
                           >
                             Politicii de Confidențialitate
@@ -1197,7 +1203,11 @@ export function ReferralModal({
                           required
                           checked={consent}
                           onChange={(e) => {
-                            setConsent(e.target.checked);
+                            const isChecked = e.target.checked;
+                            setConsent(isChecked);
+                            if (isChecked) {
+                              setErrorMessage("");
+                            }
                             if (fieldErrors.consent) {
                               setFieldErrors((prev) => {
                                 const next = { ...prev };
@@ -1217,6 +1227,7 @@ export function ReferralModal({
                           <Link
                             href="/politica-de-confidentialitate"
                             target="_blank"
+                            onClick={(e) => e.stopPropagation()}
                             className="text-slate-900 underline font-semibold hover:text-blue-600 transition-colors"
                           >
                             Politicii de Confidențialitate
@@ -1414,7 +1425,11 @@ export function ReferralModal({
                           required
                           checked={consent}
                           onChange={(e) => {
-                            setConsent(e.target.checked);
+                            const isChecked = e.target.checked;
+                            setConsent(isChecked);
+                            if (isChecked) {
+                              setErrorMessage("");
+                            }
                             if (fieldErrors.consent) {
                               setFieldErrors((prev) => {
                                 const next = { ...prev };
@@ -1434,6 +1449,7 @@ export function ReferralModal({
                           <Link
                             href="/politica-de-confidentialitate"
                             target="_blank"
+                            onClick={(e) => e.stopPropagation()}
                             className="text-slate-900 underline font-semibold hover:text-blue-600 transition-colors"
                           >
                             Politicii de Confidențialitate

@@ -48,6 +48,7 @@ export function PrivateClientEnquiryForm({
   const [estimatedValue, setEstimatedValue] = useState("");
   const [valueNotDetermined, setValueNotDetermined] = useState(false);
   const [message, setMessage] = useState("");
+  const [agreePrivacy, setAgreePrivacy] = useState(false);
   const [honeypot, setHoneypot] = useState(""); // anti-spam bot trap
   
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -59,6 +60,12 @@ export function PrivateClientEnquiryForm({
     if (honeypot) {
       // Silently discard spam bots
       setStatus("success");
+      return;
+    }
+
+    if (!agreePrivacy) {
+      setStatus("error");
+      setErrorMessage("Vă rugăm să bifați acordul privind prelucrarea datelor cu caracter personal pentru a putea transmite solicitarea.");
       return;
     }
 
@@ -79,6 +86,8 @@ export function PrivateClientEnquiryForm({
       service: `PRIVATE CLIENT — ${assetCategory}`,
       source: `Private Client (${sourceContext})`,
       message: message.trim() || "Solicitare evaluare confidențială Private Client.",
+      agreePrivacy: agreePrivacy,
+      website_hp: honeypot,
       metadata: {
         division: "PRIVATE CLIENT",
         lead_type: "PRIVATE CLIENT",
@@ -191,7 +200,7 @@ export function PrivateClientEnquiryForm({
           </p>
         </div>
 
-        <form onSubmit={handleSubmit} className="space-y-8">
+        <form onSubmit={handleSubmit} noValidate className="space-y-8">
           {/* Honeypot hidden input */}
           <input
             type="text"
@@ -405,6 +414,41 @@ export function PrivateClientEnquiryForm({
               <span>{errorMessage}</span>
             </div>
           )}
+
+          {/* GDPR Consent Checkbox */}
+          <div className="pt-2">
+            <label className="flex items-start gap-3 cursor-pointer group text-xs text-zinc-600">
+              <input
+                type="checkbox"
+                required
+                checked={agreePrivacy}
+                onChange={(e) => {
+                  const isChecked = e.target.checked;
+                  setAgreePrivacy(isChecked);
+                  if (isChecked) {
+                    setErrorMessage("");
+                    if (status === "error") {
+                      setStatus("idle");
+                    }
+                  }
+                }}
+                className="mt-0.5 w-4 h-4 rounded border-zinc-300 text-blue-600 focus:ring-blue-500 flex-shrink-0"
+              />
+              <span>
+                Sunt de acord cu prelucrarea datelor mele de contact în scopul analizei și transmiterii propunerii personalizate conform{" "}
+                <a
+                  href="/politica-de-confidentialitate"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={(e) => e.stopPropagation()}
+                  className="text-blue-600 underline font-medium hover:text-blue-800"
+                >
+                  Politicii de Confidențialitate
+                </a>
+                . Înțeleg că datele mele nu sunt înstrăinate și sunt protejate confidențial.
+              </span>
+            </label>
+          </div>
 
           {/* Compliance notice & CTA */}
           <div className="pt-4 flex flex-col md:flex-row items-center justify-between gap-6">

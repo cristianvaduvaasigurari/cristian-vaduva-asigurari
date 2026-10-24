@@ -146,6 +146,25 @@ export async function submitLead(formData: FormData): Promise<ActionResponse> {
       return { success: false, error: messageVal.error };
     }
 
+    const rawLeadConsent =
+      formData.get("agreePrivacy") ??
+      formData.get("consent") ??
+      formData.get("agreeGDPR") ??
+      formData.get("privacyConsent") ??
+      formData.get("privacy");
+    const leadConsentGiven =
+      rawLeadConsent === "true" ||
+      rawLeadConsent === "on" ||
+      rawLeadConsent === "1" ||
+      rawLeadConsent === "yes";
+
+    if (!leadConsentGiven) {
+      return {
+        success: false,
+        error: "Este necesar să confirmați acordul privind politica de confidențialitate pentru a trimite solicitarea.",
+      };
+    }
+
     const metadataStr = formData.get("metadata") as string;
     let metadata = null;
     if (metadataStr) {
@@ -276,7 +295,11 @@ export async function submitPolicyReview(formData: FormData): Promise<{
       email: formData.get("email"),
       preferredContact: formData.get("preferredContact"),
       language: formData.get("language"),
-      consent: formData.get("consent") === "true" || formData.get("consent") === "on",
+      consent:
+        formData.get("consent") === "true" ||
+        formData.get("consent") === "on" ||
+        formData.get("agreePrivacy") === "true" ||
+        formData.get("privacyConsent") === "true",
     };
 
     const { validatePolicyReviewInput, generatePolicyReviewReference } = await import("@/lib/policy-review");
@@ -379,7 +402,17 @@ export async function submitHomePurchaseLead(formData: FormData): Promise<{
     const requestedAssistance = (formData.getAll("requestedAssistance") as string[]) || [];
     const source = (formData.get("source") as string)?.trim() || "Direct";
     const listingId = (formData.get("listingId") as string)?.trim() || "";
-    const consent = formData.get("consent") === "true" || formData.get("consent") === "on";
+    const rawHpConsent =
+      formData.get("consent") ??
+      formData.get("agreePrivacy") ??
+      formData.get("agreeGDPR") ??
+      formData.get("privacyConsent") ??
+      formData.get("privacy");
+    const consent =
+      rawHpConsent === "true" ||
+      rawHpConsent === "on" ||
+      rawHpConsent === "1" ||
+      rawHpConsent === "yes";
 
     if (!name || name.length < 2) {
       return { success: false, error: "Te rugăm să introduci numele complet." };
@@ -465,7 +498,17 @@ export async function submitRentalProtectionLead(formData: FormData): Promise<{
     const estimatedValue = (formData.get("estimatedValue") as string)?.trim() || "";
     const requestedAssistance = (formData.getAll("requestedAssistance") as string[]) || [];
     const source = (formData.get("source") as string)?.trim() || "Direct";
-    const consent = formData.get("consent") === "true" || formData.get("consent") === "on";
+    const rawRpConsent =
+      formData.get("consent") ??
+      formData.get("agreePrivacy") ??
+      formData.get("agreeGDPR") ??
+      formData.get("privacyConsent") ??
+      formData.get("privacy");
+    const consent =
+      rawRpConsent === "true" ||
+      rawRpConsent === "on" ||
+      rawRpConsent === "1" ||
+      rawRpConsent === "yes";
 
     if (!name || name.length < 2) {
       return { success: false, error: "Te rugăm să introduci numele complet." };
@@ -556,6 +599,25 @@ export async function submitSmeRiskAuditLead(formData: FormData): Promise<{ succ
       return { success: false, error: "Numele companiei este obligatoriu." };
     }
 
+    const rawSmeConsent =
+      formData.get("agreePrivacy") ??
+      formData.get("consent") ??
+      formData.get("agreeGDPR") ??
+      formData.get("privacyConsent") ??
+      formData.get("privacy");
+    const smeConsentGiven =
+      rawSmeConsent === "true" ||
+      rawSmeConsent === "on" ||
+      rawSmeConsent === "1" ||
+      rawSmeConsent === "yes";
+
+    if (!smeConsentGiven) {
+      return {
+        success: false,
+        error: "Este necesar acordul privind politica de confidențialitate pentru a trimite solicitarea.",
+      };
+    }
+
     const referenceId = `SME-AUDIT-${new Date().getFullYear()}${String(new Date().getMonth() + 1).padStart(2, "0")}-${Math.random().toString(36).substring(2, 8).toUpperCase()}`;
     const timestamp = new Date().toISOString();
 
@@ -639,6 +701,25 @@ export async function submitCorporateHealthLead(formData: FormData): Promise<{ s
     }
     if (!companyName || companyName === "Companie Nespecificată") {
       return { success: false, error: "Numele companiei este obligatoriu." };
+    }
+
+    const rawCorpConsent =
+      formData.get("agreePrivacy") ??
+      formData.get("consent") ??
+      formData.get("agreeGDPR") ??
+      formData.get("privacyConsent") ??
+      formData.get("privacy");
+    const corpConsentGiven =
+      rawCorpConsent === "true" ||
+      rawCorpConsent === "on" ||
+      rawCorpConsent === "1" ||
+      rawCorpConsent === "yes";
+
+    if (!corpConsentGiven) {
+      return {
+        success: false,
+        error: "Este necesar acordul privind politica de confidențialitate pentru a trimite solicitarea.",
+      };
     }
 
     const referenceId = `CORP-HEALTH-${new Date().getFullYear()}${String(new Date().getMonth() + 1).padStart(2, "0")}-${Math.random().toString(36).substring(2, 8).toUpperCase()}`;
@@ -729,6 +810,25 @@ export async function submitSeismicPropertyReviewLead(formData: FormData): Promi
     }
     if (!propertyAddress) {
       return { success: false, error: "Adresa imobilului este obligatorie." };
+    }
+
+    const rawSeismicConsent =
+      formData.get("agreePrivacy") ??
+      formData.get("consent") ??
+      formData.get("agreeGDPR") ??
+      formData.get("privacyConsent") ??
+      formData.get("privacy");
+    const seismicConsentGiven =
+      rawSeismicConsent === "true" ||
+      rawSeismicConsent === "on" ||
+      rawSeismicConsent === "1" ||
+      rawSeismicConsent === "yes";
+
+    if (!seismicConsentGiven) {
+      return {
+        success: false,
+        error: "Este necesar acordul privind politica de confidențialitate pentru a trimite solicitarea.",
+      };
     }
 
     const referenceId = `SEISMIC-${new Date().getFullYear()}${String(new Date().getMonth() + 1).padStart(2, "0")}-${Math.random().toString(36).substring(2, 8).toUpperCase()}`;

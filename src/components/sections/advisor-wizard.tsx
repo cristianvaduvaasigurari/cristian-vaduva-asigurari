@@ -519,6 +519,8 @@ export function AdvisorWizard() {
       formData.append("phone", currentAnswers.phone || "");
       formData.append("service", "Recomandă-mi Asigurarea Potrivită Assessment");
       formData.append("source", "Recomandă-mi Asigurarea Potrivită");
+      formData.append("agreePrivacy", answers["consent"] === "true" ? "true" : "false");
+      formData.append("consent", answers["consent"] === "true" ? "true" : "false");
       formData.append("metadata", JSON.stringify(currentAnswers));
 
       await fetch("/api/lead", {
@@ -754,6 +756,28 @@ export function AdvisorWizard() {
                       />
                     </div>
                   ))}
+
+                  <label className="flex items-start gap-2 cursor-pointer text-xs text-slate-600 pt-2">
+                    <input
+                      type="checkbox"
+                      checked={Boolean(answers["consent"])}
+                      onChange={(e) => setAnswers({ ...answers, consent: e.target.checked ? "true" : "" })}
+                      className="mt-0.5 rounded border-slate-300 text-blue-600 focus:ring-blue-500 shrink-0"
+                    />
+                    <span>
+                      Sunt de acord cu prelucrarea datelor de contact pentru transmiterea analizei conform{" "}
+                      <a
+                        href="/politica-de-confidentialitate"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={(e) => e.stopPropagation()}
+                        className="text-blue-600 underline"
+                      >
+                        Politicii de Confidențialitate
+                      </a>
+                      .
+                    </span>
+                  </label>
                 </div>
               )}
             </motion.div>
@@ -776,7 +800,7 @@ export function AdvisorWizard() {
                 className="bg-slate-900 hover:bg-slate-800 text-white rounded-xl px-6 h-11 text-sm font-semibold"
                 disabled={
                   (currentQuestion.type === "input" && !answers[currentQuestion.id]) ||
-                  (currentQuestion.type === "input-multi" && currentQuestion.fields?.some(f => !answers[f.id]))
+                  (currentQuestion.type === "input-multi" && (currentQuestion.fields?.some(f => !answers[f.id]) || !answers["consent"]))
                 }
               >
                 Următorul Pas

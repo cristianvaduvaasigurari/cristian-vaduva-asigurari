@@ -16,6 +16,7 @@ const steps = [
 export function ExpressOffer() {
   const [step, setStep] = useState(0);
   const [formData, setFormData] = useState({ type: "", name: "", phone: "" });
+  const [agreePrivacy, setAgreePrivacy] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -38,6 +39,11 @@ export function ExpressOffer() {
   };
 
   const handleSubmit = async () => {
+    if (!agreePrivacy) {
+      setError("Este necesar acordul pentru prelucrarea datelor de contact conform Politicii de Confidențialitate.");
+      return;
+    }
+
     setIsSubmitting(true);
     setError(null);
     
@@ -47,6 +53,7 @@ export function ExpressOffer() {
     data.append("service", formData.type);
     data.append("source", "Express Offer Form");
     data.append("message", "Lead rapid generat în 30s.");
+    data.append("agreePrivacy", agreePrivacy ? "true" : "false");
     
     try {
       const response = await fetch('/api/lead', {
@@ -173,9 +180,36 @@ export function ExpressOffer() {
                   onKeyDown={handleKeyDown}
                   className="h-16 text-center text-xl font-bold rounded-2xl border-2 focus-visible:ring-0 focus:border-foreground mb-6"
                 />
+                <label className="flex items-start gap-2 cursor-pointer text-xs text-muted-foreground mb-4 text-left">
+                  <input
+                    type="checkbox"
+                    checked={agreePrivacy}
+                    onChange={(e) => {
+                      const isChecked = e.target.checked;
+                      setAgreePrivacy(isChecked);
+                      if (isChecked) {
+                        setError(null);
+                      }
+                    }}
+                    className="mt-0.5 rounded border-zinc-300 text-blue-600 focus:ring-blue-500 shrink-0"
+                  />
+                  <span>
+                    Sunt de acord cu prelucrarea datelor mele de contact conform{" "}
+                    <a
+                      href="/politica-de-confidentialitate"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={(e) => e.stopPropagation()}
+                      className="text-blue-600 underline"
+                    >
+                      Politicii de Confidențialitate
+                    </a>
+                    .
+                  </span>
+                </label>
                 <Button 
                   onClick={handleNext}
-                  disabled={formData.phone.length < 10 || isSubmitting}
+                  disabled={formData.phone.length < 10 || !agreePrivacy || isSubmitting}
                   className="w-full h-14 rounded-full bg-blue-600 hover:bg-blue-700 text-white text-lg font-bold"
                 >
                   {isSubmitting ? "Trimitem..." : "Cere Oferta Acum"} <ArrowRight className="w-5 h-5 ml-2" />
@@ -183,7 +217,7 @@ export function ExpressOffer() {
                 {error && (
                   <p className="text-sm font-bold text-red-500 mt-4 text-center">{error}</p>
                 )}
-                <p className="text-xs text-muted-foreground text-center mt-4">Nu trimitem SPAM. Te vom suna doar pentru oferta cerută.</p>
+                <p className="text-xs text-muted-foreground text-center mt-4">Nu trimitem SPAM. Te vom contacta doar pentru oferta cerută.</p>
               </div>
             )}
 

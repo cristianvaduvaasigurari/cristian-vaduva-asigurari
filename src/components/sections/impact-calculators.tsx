@@ -32,6 +32,7 @@ export function ImpactCalculators() {
   const [selectedService, setSelectedService] = useState<string>("Asigurare Locuință");
 
   // Form states
+  const [agreePrivacy, setAgreePrivacy] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -113,12 +114,18 @@ export function ImpactCalculators() {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    if (!agreePrivacy) {
+      setError("Vă rugăm să bifați acordul privind prelucrarea datelor de contact.");
+      return;
+    }
+
     setIsSubmitting(true);
     setError(null);
 
     try {
       const formData = new FormData(e.currentTarget);
       formData.append("source", "Financial Impact Calculator");
+      formData.append("agreePrivacy", agreePrivacy ? "true" : "false");
       formData.append(
         "metadata",
         JSON.stringify({
@@ -272,7 +279,7 @@ export function ImpactCalculators() {
           </div>
 
           {!isSuccess ? (
-            <form onSubmit={handleSubmit} className="space-y-4">
+            <form onSubmit={handleSubmit} noValidate className="space-y-4">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="space-y-1.5 text-left">
                   <label htmlFor="name" className="text-xs font-semibold ml-1 text-foreground/80">
@@ -364,19 +371,37 @@ export function ImpactCalculators() {
                 </div>
               )}
 
-              <p className="text-[11px] text-muted-foreground leading-relaxed text-left">
-                Prin trimiterea acestui formular, confirmi că ai citit și ești de acord cu{" "}
-                <Link href="/legal/privacy-policy" className="text-blue-500 hover:underline">
-                  Politica de Confidențialitate & Notă GDPR
-                </Link>{" "}
-                și îți exprimi consimțământul pentru a fi contactat în legătură cu solicitarea ta.
-              </p>
+              <label className="flex items-start gap-2 cursor-pointer text-xs text-muted-foreground text-left">
+                <input
+                  type="checkbox"
+                  checked={agreePrivacy}
+                  onChange={(e) => {
+                    const isChecked = e.target.checked;
+                    setAgreePrivacy(isChecked);
+                    if (isChecked) {
+                      setError(null);
+                    }
+                  }}
+                  className="mt-0.5 rounded border-zinc-300 text-blue-600 focus:ring-blue-500 shrink-0"
+                />
+                <span>
+                  Sunt de acord cu prelucrarea datelor de contact pentru primirea ofertei conform{" "}
+                  <Link
+                    href="/politica-de-confidentialitate"
+                    onClick={(e) => e.stopPropagation()}
+                    className="text-blue-600 underline"
+                  >
+                    Politicii de Confidențialitate
+                  </Link>
+                  .
+                </span>
+              </label>
 
               <Button
                 type="submit"
                 size="lg"
                 className="w-full text-base h-12 bg-blue-600 hover:bg-blue-700 text-white rounded-xl shadow-lg transition-transform hover:-translate-y-0.5 font-bold"
-                disabled={isSubmitting}
+                disabled={isSubmitting || !agreePrivacy}
               >
                 {isSubmitting ? (
                   <>

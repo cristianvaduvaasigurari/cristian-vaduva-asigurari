@@ -88,7 +88,7 @@ export function InsuranceNeedModal() {
   const [details, setDetails] = useState<string>("");
   const [phone, setPhone] = useState<string>("");
   const [email, setEmail] = useState<string>("");
-  const [consent, setConsent] = useState<boolean>(true);
+  const [consent, setConsent] = useState<boolean>(false);
 
   // Status & Validation
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -108,7 +108,7 @@ export function InsuranceNeedModal() {
     setDetails("");
     setPhone("");
     setEmail("");
-    setConsent(true);
+    setConsent(false);
     setStatus("idle");
     setErrorMessage("");
     setFieldErrors({});
@@ -219,6 +219,7 @@ export function InsuranceNeedModal() {
         service: `Ce nevoie ai: ${selectedCategory}`,
         message: details.trim() || `Solicitare nevoie: ${selectedCategory}`,
         source: "insurance_need_widget",
+        agreePrivacy: consent,
         metadata: {
           form_source: "insurance_need_widget",
           selected_category: selectedCategory,
@@ -605,7 +606,11 @@ export function InsuranceNeedModal() {
                         required
                         checked={consent}
                         onChange={(e) => {
-                          setConsent(e.target.checked);
+                          const isChecked = e.target.checked;
+                          setConsent(isChecked);
+                          if (isChecked) {
+                            setErrorMessage("");
+                          }
                           if (fieldErrors.consent) {
                             setFieldErrors((prev) => {
                               const next = { ...prev };
@@ -625,6 +630,7 @@ export function InsuranceNeedModal() {
                         <Link
                           href="/politica-de-confidentialitate"
                           target="_blank"
+                          onClick={(e) => e.stopPropagation()}
                           className="text-slate-900 underline font-semibold hover:text-blue-600 transition-colors"
                         >
                           Politicii de Confidențialitate

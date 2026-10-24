@@ -79,7 +79,8 @@ export const POST = async (request: Request) => {
         messageRaw = (json.message || "").toString();
         sourceRaw = (json.source || "Website Lead").toString();
         honeypotRaw = (json.website_hp || json.hp || "").toString();
-        consentGiven = Boolean(json.agreePrivacy ?? json.consent ?? json.agreeGDPR);
+        const rawJsonConsent = json.agreePrivacy ?? json.consent ?? json.agreeGDPR ?? json.privacyConsent ?? json.privacy;
+        consentGiven = rawJsonConsent === true || rawJsonConsent === "true" || rawJsonConsent === "on" || rawJsonConsent === 1 || rawJsonConsent === "1";
         if (json.metadata) {
           metadata = typeof json.metadata === "string" ? JSON.parse(json.metadata) : json.metadata;
         }
@@ -100,11 +101,17 @@ export const POST = async (request: Request) => {
         messageRaw = (formData.get("message") as string) || "";
         sourceRaw = (formData.get("source") as string) || "Website Lead";
         honeypotRaw = (formData.get("website_hp") as string) || (formData.get("hp") as string) || "";
+        const rawFdConsent =
+          formData.get("agreePrivacy") ??
+          formData.get("consent") ??
+          formData.get("agreeGDPR") ??
+          formData.get("privacyConsent") ??
+          formData.get("privacy");
         consentGiven =
-          formData.get("agreePrivacy") === "true" ||
-          formData.get("agreePrivacy") === "on" ||
-          formData.get("consent") === "true" ||
-          formData.get("consent") === "on";
+          rawFdConsent === "true" ||
+          rawFdConsent === "on" ||
+          rawFdConsent === "1" ||
+          rawFdConsent === "yes";
 
         const metadataStr = formData.get("metadata") as string;
         if (metadataStr) {

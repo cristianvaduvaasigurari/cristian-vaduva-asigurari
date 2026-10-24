@@ -38,34 +38,13 @@ export function QuickOfferModal() {
   const [businessActivity, setBusinessActivity] = useState("");
   
   const [message, setMessage] = useState("");
-  const [agreePrivacy, setAgreePrivacy] = useState(true);
+  const [agreePrivacy, setAgreePrivacy] = useState(false);
+  const [honeypot, setHoneypot] = useState("");
 
   const modalRef = useRef<HTMLDivElement>(null);
+  const triggerRef = useRef<HTMLElement | null>(null);
 
-  // Lock body scroll when modal is open
-  useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "";
-    }
-    return () => {
-      document.body.style.overflow = "";
-    };
-  }, [isOpen]);
-
-  // Handle ESC key
-  useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === "Escape" && isOpen) {
-        setIsOpen(false);
-      }
-    };
-    window.addEventListener("keydown", handleKeyDown);
-    return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [isOpen]);
-
-  const resetForm = () => {
+  const resetForm = React.useCallback(() => {
     setName("");
     setPhone("");
     setEmail("");
@@ -77,21 +56,50 @@ export function QuickOfferModal() {
     setPropertyValue("");
     setBusinessActivity("");
     setMessage("");
-    setAgreePrivacy(true);
+    setAgreePrivacy(false);
+    setHoneypot("");
     setStatus("idle");
     setErrorMessage("");
-  };
+  }, []);
 
-  const handleOpen = () => {
-    setIsOpen(true);
-    setStatus("idle");
-  };
-
-  const handleClose = () => {
+  const handleClose = React.useCallback(() => {
     setIsOpen(false);
     if (status === "success") {
       resetForm();
     }
+  }, [status, resetForm]);
+
+  // Lock body scroll and handle focus trap when modal is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+      modalRef.current?.focus();
+    } else {
+      document.body.style.overflow = "";
+      triggerRef.current?.focus();
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isOpen]);
+
+  // Handle ESC key
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape" && isOpen) {
+        handleClose();
+      }
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [isOpen, handleClose]);
+
+  const handleOpen = (e?: React.MouseEvent) => {
+    if (e?.currentTarget) {
+      triggerRef.current = e.currentTarget as HTMLElement;
+    }
+    setIsOpen(true);
+    setStatus("idle");
   };
 
   const isAutoService = service === "RCA" || service === "CASCO" || service === "RCA + CASCO";
@@ -101,6 +109,11 @@ export function QuickOfferModal() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setErrorMessage("");
+
+    if (honeypot) {
+      setStatus("success");
+      return;
+    }
 
     // Validation
     if (!name.trim()) {
@@ -144,6 +157,8 @@ export function QuickOfferModal() {
         service: `Cere Ofertă: ${service}`,
         message: message.trim(),
         source: "insurance-site-cere-oferta",
+        agreePrivacy,
+        website_hp: honeypot,
         metadata: Object.keys(metadata).length > 0 ? metadata : undefined
       };
 
@@ -256,9 +271,19 @@ export function QuickOfferModal() {
                   </button>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit} className="space-y-4">
+                <form onSubmit={handleSubmit} noValidate className="space-y-4">
+                  {/* Anti-spam Honeypot */}
+                  <input
+                    type="text"
+                    name="website_hp"
+                    tabIndex={-1}
+                    autoComplete="off"
+                    className="hidden pointer-events-none opacity-0 absolute -z-50"
+                    aria-hidden="true"
+                  />
+
                   {errorMessage && (
-                    <div className="p-3.5 rounded-xl bg-red-50 border border-red-200 text-red-700 text-xs font-medium flex items-center gap-2">
+                    <div role="alert" aria-live="assertive" className="p-3.5 rounded-xl bg-red-50 border border-red-200 text-red-700 text-xs font-medium flex items-center gap-2">
                       <AlertCircle className="w-4 h-4 shrink-0 text-red-600" />
                       <span>{errorMessage}</span>
                     </div>
@@ -433,14 +458,24 @@ export function QuickOfferModal() {
                     <input
                       id="offer-privacy"
                       type="checkbox"
-                      required
                       checked={agreePrivacy}
-                      onChange={(e) => setAgreePrivacy(e.target.checked)}
-                      className="mt-1 h-4 w-4 rounded border-slate-300 text-slate-900 focus:ring-slate-900 cursor-pointer"
+                      onChange={(e) => {
+                        const isChecked = e.target.checked;
+                        setAgreePrivacy(isChecked);
+                        if (isChecked) {
+                          setErrorMessage("");
+                        }
+                      }}
+                      className="mt-1 h-4 w-4 rounded border-slate-300 text-slate-900 focus:ring-slate-900 cursor-pointer shrink-0"
                     />
-                    <label htmlFor="offer-privacy" className="text-[11px] text-slate-600 leading-relaxed cursor-pointer">
+                    <label htmlFor="offer-privacy" className="text-[11px] text-slate-600 leading-relaxed cursor-pointer select-none">
                       Sunt de acord ca datele introduse să fie folosite pentru a fi contactat în legătură cu solicitarea mea conform{" "}
-                      <Link href="/politica-de-confidentialitate" target="_blank" className="text-slate-900 underline font-semibold">
+                      <Link
+                        href="/politica-de-confidentialitate"
+                        target="_blank"
+                        onClick={(e) => e.stopPropagation()}
+                        className="text-slate-900 underline font-semibold hover:text-blue-600 transition-colors"
+                      >
                         Politicii de Confidențialitate
                       </Link>.
                     </label>

@@ -79,6 +79,7 @@ export function AiChatbot() {
       fd.append("service", formData.insuranceType || chatState.flow);
       fd.append("message", formData.message || "Solicitare consultant prin AiX Assistant");
       fd.append("source", "AiX Assistant");
+      fd.append("agreePrivacy", "true");
       fd.append("metadata", JSON.stringify(chatState.data));
 
       const res = await fetch("/api/lead", { method: "POST", body: fd });
@@ -407,7 +408,7 @@ Pentru a identifica protecția potrivită, câți angajați are compania?`;
 }
 
 function ConsultantForm({ onSubmit }: { onSubmit: (data: Record<string, string>) => void }) {
-  const [formData, setFormData] = useState({ name: "", email: "", phone: "", insuranceType: "", message: "" });
+  const [formData, setFormData] = useState({ name: "", email: "", phone: "", insuranceType: "", message: "", agreePrivacy: false });
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -417,6 +418,7 @@ function ConsultantForm({ onSubmit }: { onSubmit: (data: Record<string, string>)
     if (!/^\+?[0-9\s\-]{8,15}$/.test(formData.phone)) newErrors.phone = "Număr de telefon invalid.";
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) newErrors.email = "Email invalid.";
     if (!formData.insuranceType) newErrors.insuranceType = "Alege un tip de asigurare.";
+    if (!formData.agreePrivacy) newErrors.agreePrivacy = "Este necesar acordul pentru prelucrarea datelor de contact.";
     
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
@@ -426,12 +428,12 @@ function ConsultantForm({ onSubmit }: { onSubmit: (data: Record<string, string>)
     e.preventDefault();
     if (!validate()) return;
     setIsSubmitting(true);
-    await onSubmit(formData);
+    await onSubmit({ ...formData, agreePrivacy: "true" });
     setIsSubmitting(false);
   };
 
   return (
-    <form onSubmit={handleSubmit} className="w-full bg-white border border-slate-200 rounded-2xl p-5 shadow-sm space-y-4">
+    <form onSubmit={handleSubmit} noValidate className="w-full bg-white border border-slate-200 rounded-2xl p-5 shadow-sm space-y-4">
       <div className="space-y-1">
         <label className="text-[10px] font-bold text-slate-500 uppercase tracking-wider">Nume Complet *</label>
         <input 
@@ -492,6 +494,42 @@ function ConsultantForm({ onSubmit }: { onSubmit: (data: Record<string, string>)
           onChange={e => setFormData({ ...formData, message: e.target.value })}
           className="w-full border border-slate-200 rounded-lg px-3 py-2 text-xs font-medium focus:outline-none focus:border-slate-800 resize-none"
         />
+      </div>
+
+      {/* GDPR Consent */}
+      <div className="space-y-1">
+        <label className="flex items-start gap-2 cursor-pointer text-[11px] text-slate-600">
+          <input 
+            type="checkbox"
+            checked={formData.agreePrivacy}
+            onChange={(e) => {
+              const isChecked = e.target.checked;
+              setFormData({ ...formData, agreePrivacy: isChecked });
+              if (isChecked && errors.agreePrivacy) {
+                setErrors((prev) => {
+                  const next = { ...prev };
+                  delete next.agreePrivacy;
+                  return next;
+                });
+              }
+            }}
+            className="mt-0.5 rounded border-slate-300 text-blue-600 focus:ring-blue-500"
+          />
+          <span>
+            Sunt de acord cu prelucrarea datelor mele conform{" "}
+            <a
+              href="/politica-de-confidentialitate"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={(e) => e.stopPropagation()}
+              className="text-blue-600 underline"
+            >
+              Politicii de Confidențialitate
+            </a>
+            .
+          </span>
+        </label>
+        {errors.agreePrivacy && <p className="text-[10px] text-red-500 font-medium flex items-center gap-1"><AlertCircle className="w-3 h-3"/> {errors.agreePrivacy}</p>}
       </div>
 
       <button 
