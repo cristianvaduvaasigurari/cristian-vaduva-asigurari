@@ -23,13 +23,39 @@ export interface ErrorContext {
 export function sanitizeEventPayload(event: Record<string, unknown>): Record<string, unknown> {
   const sanitized = sanitizeObject(event);
 
-  // Explicitly remove request headers that might contain tokens or cookies
+  // Explicitly remove request headers, cookies, query string, and form data
   if (sanitized.request && typeof sanitized.request === "object") {
     const req = { ...(sanitized.request as Record<string, unknown>) };
     delete req.cookies;
     delete req.headers;
-    delete req.data; // never send raw form body
+    delete req.data; // never send raw form body or lead data
+    delete req.query_string;
     sanitized.request = req;
+  }
+
+  // Redact user context to prevent transmitting PII (IP, email, username, phone)
+  if (sanitized.user && typeof sanitized.user === "object") {
+    const user = { ...(sanitized.user as Record<string, unknown>) };
+    delete user.email;
+    delete user.ip_address;
+    delete user.username;
+    delete user.phone;
+    sanitized.user = user;
+  }
+
+  // Scrub breadcrumbs
+  if (Array.isArray(sanitized.breadcrumbs)) {
+    sanitized.breadcrumbs = sanitized.breadcrumbs.map((crumb) => {
+      if (crumb && typeof crumb === "object") {
+        const c = { ...(crumb as Record<string, unknown>) };
+        delete c.data;
+        if (typeof c.message === "string") {
+          c.message = redactSensitiveData(c.message);
+        }
+        return c;
+      }
+      return crumb;
+    });
   }
 
   return sanitized;

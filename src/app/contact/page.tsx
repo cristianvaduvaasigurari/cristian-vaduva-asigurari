@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
@@ -12,6 +12,28 @@ import { CONTACT } from "@/config/contact";
 
 export default function ContactPage() {
   const [activeTab, setActiveTab] = useState<"general" | "oferta" | "consultanta">("general");
+  const [showMap, setShowMap] = useState(false);
+  const mapContainerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!("IntersectionObserver" in window)) {
+      const timer = setTimeout(() => setShowMap(true), 0);
+      return () => clearTimeout(timer);
+    }
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0]?.isIntersecting) {
+          setShowMap(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: "250px" }
+    );
+    if (mapContainerRef.current) {
+      observer.observe(mapContainerRef.current);
+    }
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <div className="min-h-screen bg-background flex flex-col">
@@ -157,15 +179,39 @@ export default function ContactPage() {
                 </div>
               )}
             </div>
-            <div id="harta" className="glass rounded-[3rem] overflow-hidden min-h-[400px] relative border border-border">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d91158.11209923704!2d26.02696375!3d44.43266455!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40b1f93abf3cad4f%3A0xac0632e37c9ca628!2sBucharest%2C%20Romania!5e0!3m2!1sen!2s!4v1720000000000!5m2!1sen!2s"
-                className="absolute inset-0 w-full h-full border-0"
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                title="Locație Cristian Văduva - București"
-              />
+            <div 
+              id="harta" 
+              ref={mapContainerRef} 
+              className="glass rounded-[3rem] overflow-hidden min-h-[400px] relative border border-border flex items-center justify-center bg-zinc-50/50"
+            >
+              {showMap ? (
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d91158.11209923704!2d26.02696375!3d44.43266455!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40b1f93abf3cad4f%3A0xac0632e37c9ca628!2sBucharest%2C%20Romania!5e0!3m2!1sen!2s!4v1720000000000!5m2!1sen!2s"
+                  className="absolute inset-0 w-full h-full border-0"
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Locație Cristian Văduva - București"
+                />
+              ) : (
+                <div className="flex flex-col items-center gap-3 p-6 text-center">
+                  <div className="w-12 h-12 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center shadow-sm">
+                    <MapPin className="w-6 h-6" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-foreground text-sm">Harta Sediului Cristian Văduva</h3>
+                    <p className="text-xs text-muted-foreground mt-1">București, România</p>
+                  </div>
+                  <Button 
+                    variant="outline" 
+                    size="sm" 
+                    className="rounded-full text-xs mt-1 border-border hover:bg-muted"
+                    onClick={() => setShowMap(true)}
+                  >
+                    Încarcă Harta Interactivă
+                  </Button>
+                </div>
+              )}
             </div>
           </div>
 

@@ -207,7 +207,7 @@ export function Footer() {
           <div>
             <h3 className="font-bold text-lg mb-6 text-white tracking-wide flex items-center gap-2">
               <span>Private Client</span>
-              <span className="text-[10px] uppercase font-mono px-1.5 py-0.5 rounded bg-white/10 text-zinc-300">Tier</span>
+              <span className="text-xs uppercase font-mono px-1.5 py-0.5 rounded bg-white/10 text-zinc-300">Tier</span>
             </h3>
             <ul className="space-y-3">
               {footerLinks.privateClient.map((link) => (

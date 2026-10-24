@@ -57,14 +57,22 @@ export function sanitizeObject<T>(obj: T): T {
   const sanitized: Record<string, unknown> = {};
   const sensitiveKeys = [
     "password",
+    "passwd",
     "token",
     "secret",
     "apikey",
+    "api_key",
     "authorization",
+    "auth",
     "cookie",
+    "cookies",
     "cnp",
     "card",
     "cvv",
+    "credentials",
+    "lead_data",
+    "pin",
+    "session",
   ];
 
   for (const [key, value] of Object.entries(obj)) {
