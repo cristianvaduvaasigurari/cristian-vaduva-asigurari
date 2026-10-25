@@ -1,7 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { headers } from "next/headers";
 import { StructuredData, organizationSchema, localBusinessSchema, personSchema } from "@/lib/structuredData";
-import { Inter } from "next/font/google";
 import "./globals.css";
 import { NextIntlClientProvider } from "next-intl";
 import ClientUI from "@/components/layout/ClientUI";
@@ -10,14 +9,6 @@ import { getLocale } from "@/lib/locale";
 import { getMessages } from "next-intl/server";
 import Telemetry from "@/components/providers/Telemetry";
 import { CONTACT } from "@/config/contact";
-
-const inter = Inter({
-  variable: "--font-inter",
-  subsets: ["latin"],
-  display: "optional",
-  preload: false,
-  adjustFontFallback: true,
-});
 
 
 const siteTitle = "Cristian Văduva | Consultant Asigurări Premium & Partener Generali";
@@ -109,7 +100,7 @@ export default async function RootLayout({
   return (
     <html
       lang={locale}
-      className={`${inter.variable} h-full antialiased`}
+      className="h-full antialiased"
     >
       <body className="min-h-full flex flex-col bg-background text-foreground font-sans">
         <NextIntlClientProvider locale={locale} messages={messages}>
