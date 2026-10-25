@@ -16,6 +16,8 @@ import {
 import Link from "next/link";
 import { trackConversion } from "@/lib/analytics";
 import { ReferralModal } from "./referral-modal";
+import { cn } from "@/lib/utils";
+import { useAutoScrollHide } from "@/hooks/useAutoScrollHide";
 
 export const INSURANCE_NEEDS = [
   {
@@ -84,6 +86,8 @@ export type InsuranceNeedId = (typeof INSURANCE_NEEDS)[number]["id"];
 
 export function InsuranceNeedModal() {
   const [isOpen, setIsOpen] = useState(false);
+  const { isVisible: scrollVisible, isContactOpen } = useAutoScrollHide();
+  const isContactVisible = isContactOpen || scrollVisible;
   const [selectedCategory, setSelectedCategory] = useState<string>("");
   const [details, setDetails] = useState<string>("");
   const [phone, setPhone] = useState<string>("");
@@ -283,7 +287,10 @@ export function InsuranceNeedModal() {
       */}
       <aside
         aria-label="Puncte permanente de consultanță și recomandare"
-        className="fixed z-40 bottom-[150px] right-4 sm:bottom-[150px] sm:right-6 md:bottom-[36px] md:right-28 pb-[env(safe-area-inset-bottom)] pointer-events-none flex flex-col items-end gap-2 sm:gap-2.5"
+        className={cn(
+          "fixed z-40 bottom-[150px] right-4 sm:bottom-[150px] sm:right-6 md:bottom-[36px] md:right-28 pb-[env(safe-area-inset-bottom)] pointer-events-none flex flex-col items-end gap-2 sm:gap-2.5 transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] motion-reduce:transition-none md:transform-none",
+          isContactVisible ? "translate-y-0" : "translate-y-[72px]"
+        )}
       >
         {/* Buton 1: Recomandă & Beneficiați */}
         <button

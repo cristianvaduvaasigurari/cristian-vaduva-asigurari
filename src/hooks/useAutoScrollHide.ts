@@ -5,11 +5,13 @@ import { useSyncExternalStore } from "react";
 interface ScrollVisibilityState {
   isVisible: boolean;
   isScrolled: boolean;
+  isContactOpen: boolean;
 }
 
 let scrollState: ScrollVisibilityState = {
   isVisible: true,
   isScrolled: false,
+  isContactOpen: false,
 };
 
 const listeners = new Set<() => void>();
@@ -21,6 +23,20 @@ let ticking = false;
 
 function notify() {
   listeners.forEach((listener) => listener());
+}
+
+/**
+ * Updates the global contact popup open state so related floating
+ * elements can dynamically adapt their vertical position.
+ */
+export function setContactPopupOpen(isOpen: boolean) {
+  if (scrollState.isContactOpen !== isOpen) {
+    scrollState = {
+      ...scrollState,
+      isContactOpen: isOpen,
+    };
+    notify();
+  }
 }
 
 function updateScrollState() {
@@ -75,7 +91,7 @@ function updateScrollState() {
     isVisible !== scrollState.isVisible ||
     isScrolled !== scrollState.isScrolled
   ) {
-    scrollState = { isVisible, isScrolled };
+    scrollState = { ...scrollState, isVisible, isScrolled };
     notify();
   }
 }
@@ -94,6 +110,7 @@ function subscribe(callback: () => void) {
     lastDirectionChangeY = lastScrollY;
     lastScrollDirection = "none";
     scrollState = {
+      ...scrollState,
       isVisible: true,
       isScrolled: lastScrollY > 20,
     };
@@ -114,11 +131,12 @@ function getSnapshot(): ScrollVisibilityState {
 }
 
 function getServerSnapshot(): ScrollVisibilityState {
-  return { isVisible: true, isScrolled: false };
+  return { isVisible: true, isScrolled: false, isContactOpen: false };
 }
 
 /**
- * Shared hook that provides synchronized scroll visibility and scrolled state.
+ * Shared hook that provides synchronized scroll visibility, scrolled state,
+ * and contact popup status.
  * Uses direction-accumulated delta thresholds with RAF throttling across all subscribers.
  */
 export function useAutoScrollHide(): ScrollVisibilityState {

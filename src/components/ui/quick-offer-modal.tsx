@@ -16,9 +16,13 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import { trackConversion } from "@/lib/analytics";
+import { cn } from "@/lib/utils";
+import { useAutoScrollHide } from "@/hooks/useAutoScrollHide";
 
 export function QuickOfferModal() {
   const [isOpen, setIsOpen] = useState(false);
+  const { isVisible: scrollVisible, isContactOpen } = useAutoScrollHide();
+  const isContactVisible = isContactOpen || scrollVisible;
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
   const [errorMessage, setErrorMessage] = useState("");
@@ -191,7 +195,12 @@ export function QuickOfferModal() {
   return (
     <>
       {/* ALWAYS-ON FLOATING CTA BUTTON (Mobile: bottom-[96px] to align with contact button; Desktop: bottom-[16vh]) */}
-      <div className="fixed bottom-[96px] md:bottom-[16vh] right-4 sm:right-6 z-40 pb-[env(safe-area-inset-bottom)] pointer-events-none">
+      <div
+        className={cn(
+          "fixed bottom-[96px] md:bottom-[16vh] right-4 sm:right-6 z-40 pb-[env(safe-area-inset-bottom)] pointer-events-none transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] motion-reduce:transition-none md:transform-none",
+          isContactVisible ? "translate-y-0" : "translate-y-[72px]"
+        )}
+      >
         <button
           type="button"
           onClick={handleOpen}

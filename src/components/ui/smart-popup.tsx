@@ -1,18 +1,28 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, MessageCircle, Calendar, Phone, Bot } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { CONTACT } from "@/config/contact";
 import { cn } from "@/lib/utils";
-import { useAutoScrollHide } from "@/hooks/useAutoScrollHide";
+import { useAutoScrollHide, setContactPopupOpen } from "@/hooks/useAutoScrollHide";
 
 export function SmartPopup() {
   const [isOpen, setIsOpen] = useState(false);
   const { isVisible: scrollVisible } = useAutoScrollHide();
   const isVisible = isOpen || scrollVisible;
+
+  useEffect(() => {
+    setContactPopupOpen(isOpen);
+  }, [isOpen]);
+
+  useEffect(() => {
+    return () => {
+      setContactPopupOpen(false);
+    };
+  }, []);
 
   return (
     <div
