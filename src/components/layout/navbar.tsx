@@ -181,6 +181,7 @@ export function Navbar() {
 
       // On mobile (< 768px), auto-hide is completely disabled - header is always visible
       if (window.innerWidth < 768) {
+        lastScrollYRef.current = currentScrollY;
         setIsVisible(true);
         return;
       }
@@ -276,7 +277,7 @@ export function Navbar() {
       className={cn(
         "fixed top-0 left-0 right-0 z-50",
         // Desktop-only auto-hide transitions, opacity and translateY
-        "md:transition-[transform,opacity] md:duration-300 md:ease-[cubic-bezier(0.16,1,0.3,1)] md:motion-reduce:transition-none",
+        "md:transition-[translate,opacity] md:duration-300 md:ease-[cubic-bezier(0.16,1,0.3,1)] md:motion-reduce:transition-none",
         isHeaderVisible
           ? "md:translate-y-0 md:opacity-100"
           : "md:-translate-y-full md:opacity-0 md:pointer-events-none"
