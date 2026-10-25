@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { servicesData } from "@/data/services";
 import { ServiceDirectAnswer } from "@/components/sections/service-direct-answer";
-import { AlertTriangle, ArrowRight, ShieldCheck, CheckCircle2 } from "lucide-react";
+import { AlertTriangle, ArrowRight, ShieldCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 type Props = {
@@ -31,11 +31,11 @@ const humanizeSlug = (slug: string) =>
 function getServiceRiskVisual(slug: string): ServiceRiskVisual {
   if (slug.includes("casco") || slug === "auto-insurance") {
     return {
-      image: "/images/risks/car-crash.jpg",
-      alt: "Automobil avariat grav în coliziune pe carosabil cu avarii structurale severe",
+      image: "/images/risks/supercar-crash-cinematic.jpg",
+      alt: "Supercar exotic avariat grav în coliziune pe carosabil umed cu avarii structurale severe",
       categoryBadge: "Automobile & CASCO",
-      headline: "Ce se întâmplă dacă automobilul tău este declarat daună totală sau avariat grav?",
-      consequenceLead: "Costul pieselor originale de fabrică, decontarea în rețeaua oficială a constructorului și absența deprecierii forfetare de catalog fac diferența între o reparație garantată și o pierdere directă de mii de euro.",
+      headline: "O mașină de lux poate deveni, într-o secundă, o daună majoră.",
+      consequenceLead: "Costul pieselor originale de fabrică, decontarea în rețeaua oficială a constructorului și absența deprecierii forfetare de catalog fac diferența între o reparație garantată și o pierdere directă de zeci de mii de euro.",
       whatToCheck: "Verifică dacă polița funcționează pe principiul Valorii Agreate și acoperă explicit reparațiile în service-ul de marcă."
     };
   }
@@ -51,8 +51,8 @@ function getServiceRiskVisual(slug: string): ServiceRiskVisual {
   }
   if (slug.includes("fleet")) {
     return {
-      image: "/images/risks/car-crash.jpg",
-      alt: "Vehicul comercial din flotă avariat cu blocarea livrărilor",
+      image: "/images/risks/tree-crushed-car.jpg",
+      alt: "Vehicul comercial din flotă avariat de căderea unui copac cu blocarea livrărilor",
       categoryBadge: "Flote Auto Comerciale",
       headline: "Imobilizarea flotei comerciale și penalități contractuale de întârziere",
       consequenceLead: "Fiecare autovehicul oprit din cauza unui incident rutier sau furt afectează direct fluxul operațional de livrări și veniturile companiei.",
@@ -61,7 +61,7 @@ function getServiceRiskVisual(slug: string): ServiceRiskVisual {
   }
   if (slug.includes("roadside")) {
     return {
-      image: "/images/risks/car-collision-rca.jpg",
+      image: "/images/risks/car-crash.jpg",
       alt: "Automobil avariat pe carosabil și asistență tehnică de urgență",
       categoryBadge: "Asistență Rutieră & Tractare",
       headline: "Avarie mecanică, pană sau accident pe timp de noapte sau în afara țării",
@@ -71,21 +71,21 @@ function getServiceRiskVisual(slug: string): ServiceRiskVisual {
   }
   if (slug.includes("home") || slug.includes("pad")) {
     return {
-      image: "/images/risks/house-fire.jpg",
-      alt: "Incendiu violent și daune structurale ce avariază grav o locuință",
+      image: "/images/risks/villa-fire-cinematic.jpg",
+      alt: "Vilă rezidențială cuprinsă de incendiu violent în timpul nopții impunând reconstrucție integrală",
       categoryBadge: "Locuințe & Proprietăți",
-      headline: "Cât ar costa reconstrucția completă a locuinței tale, nu prețul de vânzare?",
+      headline: "Cât te-ar costa să reconstruiești vila, nu cât ai putea să o vinzi?",
       consequenceLead: "Costurile reale de reconstrucție (demolare, evacuare moloz, materiale scumpe și manoperă) depășesc adesea suma asigurată a contractelor vechi, expunându-te riscului de subasigurare.",
       whatToCheck: "Verifică dacă suma asigurată reflectă prețurile actualizate din construcții și include cheltuielile de cazare temporară."
     };
   }
   if (slug.includes("personal-goods")) {
     return {
-      image: "/images/risks/flooded-interior.jpg",
-      alt: "Inundație în locuință cu distrugerea mobilierului și a parchetului",
+      image: "/images/risks/flooded-luxury-living.jpg",
+      alt: "Living modern de lux inundat cu mobilier de designer și finisaje compromise",
       categoryBadge: "Bunuri & Valori Personale",
-      headline: "Conductă spartă: mobilă, electronice și finisaje compromise",
-      consequenceLead: "O conductă spartă în timp ce proprietarii sunt plecați poate distruge finisaje de zeci de mii de euro și bunurile vecinilor de la etajele inferioare.",
+      headline: "Conductă spartă în timp ce ești plecat: mobilă și finisaje compromise",
+      consequenceLead: "O conductă spartă în timpul deplasărilor poate distruge finisaje de zeci de mii de euro și bunurile vecinilor de la etajele inferioare.",
       whatToCheck: "Verifică limita de răspundere civilă față de vecini și clauza de All-Risks pentru bunurile casnice."
     };
   }
@@ -94,7 +94,7 @@ function getServiceRiskVisual(slug: string): ServiceRiskVisual {
       image: "/images/risks/ransomware.jpg",
       alt: "Terminal de companie blocat prin atac de criptare ransomware și cerere de răscumpărare",
       categoryBadge: "Securitate Digitală & Cyber",
-      headline: "Atac ransomware și compromiterea datelor confidențiale ale clienților",
+      headline: "Un atac cibernetic poate opri o afacere înainte să observi amploarea pagubelor.",
       consequenceLead: "Companiile vizate de atacuri cyber suferă pierderi financiare directe prin transferuri frauduloase (CEO fraud), amenzi de conformitate GDPR și costuri mari de restaurare IT.",
       whatToCheck: "Verifică dacă polița include echipă de intervenție forensic 24/7 și acoperirea fraudelor prin inginerie socială."
     };
@@ -104,34 +104,34 @@ function getServiceRiskVisual(slug: string): ServiceRiskVisual {
       image: "/images/risks/commercial-fire.jpg",
       alt: "Depozit comercial avariat de incendiu industrial cu activitatea operațională sistată complet",
       categoryBadge: "Continuitatea Afacerii & IMM",
-      headline: "Veniturile încetează instantaneu, însă costurile fixe continuă lună de lună",
+      headline: "O afacere oprită brusc: veniturile încetează, dar costurile fixe continuă",
       consequenceLead: "O avarie electrică sau un incendiu în depozit pot opri activitatea timp de luni de zile. Salariile, chiriile și ratele bancare trebuie plătite chiar dacă producția este sistată.",
       whatToCheck: "Verifică dacă perioada maximă de indemnizare este de minimum 12–24 luni și ce franșiză temporală se aplică."
     };
   }
   if (slug.includes("building")) {
     return {
-      image: "/images/risks/commercial-fire.jpg",
-      alt: "Hală industrială și clădire comercială avariate grav de incendiu",
+      image: "/images/risks/storm-roof-destroyed.jpg",
+      alt: "Acoperiș și clădire comercială avariate grav de furtună extremă",
       categoryBadge: "Clădiri & Spații Comerciale",
-      headline: "Distrugerea parțială sau totală a patrimoniului imobiliar al companiei",
+      headline: "O singură furtună poate schimba totul: patrimoniul imobiliar compromis",
       consequenceLead: "Evaluarea la valoarea contabilă istorică lasă clădirile comerciale grav subasigurate în fața costurilor actuale de reconstrucție industrială.",
       whatToCheck: "Verifică dacă evaluarea este făcută la cost de înlocuire nou și include instalațiile HVAC și panourile fotovoltaice."
     };
   }
   if (slug.includes("goods") || slug.includes("cargo")) {
     return {
-      image: "https://images.unsplash.com/photo-1586528116493-a029325540fa?auto=format&fit=crop&w=1200&q=80",
-      alt: "Camion de marfă cu prelata tăiată în parcare pe timp de noapte și marfă furată",
+      image: "/images/risks/cargo-truck-overturned.jpg",
+      alt: "Camion de transport internațional răsturnat pe șosea cu marfă împrăștiată și distrusă",
       categoryBadge: "Marfă & Transport Cargo",
-      headline: "Furtul sau răsturnarea mărfii în tranzit internațional",
+      headline: "Răsturnarea sau furtul mărfii în tranzit internațional",
       consequenceLead: "Convenția CMR limitează despăgubirea la aproximativ 10–12 EUR/kg, sumă infimă pentru componente electronice sau produse de mare valoare.",
       whatToCheck: "Încheie întotdeauna o poliță Cargo All-Risks la valoarea reală a facturii mărfii transportate."
     };
   }
   if (slug.includes("equipment")) {
     return {
-      image: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1200&q=80",
+      image: "/images/risks/heavy-machinery-breakdown.jpg",
       alt: "Utilaj industrial CNC inspectat după avarie electronică severă și scurtcircuit",
       categoryBadge: "Utilaje & Echipamente",
       headline: "Defecțiune mecanică sau supratensiune ce blochează linia tehnologică",
@@ -141,8 +141,8 @@ function getServiceRiskVisual(slug: string): ServiceRiskVisual {
   }
   if (slug.includes("construction")) {
     return {
-      image: "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&w=1200&q=80",
-      alt: "Incident grav pe șantier de construcții cu utilaje avariate și oprirea lucrărilor",
+      image: "/images/risks/industrial-plant-incident.jpg",
+      alt: "Incident grav pe șantier de construcții industriale cu utilaje avariate și oprirea lucrărilor",
       categoryBadge: "Construcții & Șantiere (CAR)",
       headline: "Prăbușirea structurilor temporare, furturi de pe șantier sau fisurarea clădirilor vecine",
       consequenceLead: "Orice incident pe șantier atrage penalități de întârziere față de beneficiar și riscuri de daune aduse proprietăților adiacente.",
@@ -161,8 +161,8 @@ function getServiceRiskVisual(slug: string): ServiceRiskVisual {
   }
   if (slug.includes("travel")) {
     return {
-      image: "https://images.unsplash.com/photo-1551698618-1dfe5d97d256?auto=format&fit=crop&w=1200&q=80",
-      alt: "Evacuare medicală de urgență cu elicopterul în străinătate după accident",
+      image: "/images/risks/ocean-tempest-yacht.jpg",
+      alt: "Furtună violentă pe mare și urgențe medicale internaționale",
       categoryBadge: "Călătorii & Urgențe Medicale",
       headline: "Urgență medicală în străinătate și evacuare sanitară internațională",
       consequenceLead: "Facturile de spitalizare privată în străinătate și un zbor de repatriere medicală pot depăși cu ușurință 50.000–100.000 EUR.",
@@ -171,7 +171,7 @@ function getServiceRiskVisual(slug: string): ServiceRiskVisual {
   }
   if (slug.includes("health")) {
     return {
-      image: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1200&q=80",
+      image: "/images/risks/hospital-emergency-surgery.jpg",
       alt: "Bloc operator privat pentru intervenție chirurgicală complexă și investigații",
       categoryBadge: "Sănătate & Spitalizare Privată",
       headline: "Diagnostic critic, intervenție chirurgicală și acces rapid la spitale private",
@@ -181,7 +181,7 @@ function getServiceRiskVisual(slug: string): ServiceRiskVisual {
   }
   if (slug.includes("accident")) {
     return {
-      image: "https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?auto=format&fit=crop&w=1200&q=80",
+      image: "/images/risks/accident-orthopedic-trauma.jpg",
       alt: "Fractură severă și recuperare medicală prelungită după un accident neprevăzut",
       categoryBadge: "Accidente & Invaliditate",
       headline: "Incapacitate temporară de muncă și recuperare prelungită după accident",
@@ -190,12 +190,12 @@ function getServiceRiskVisual(slug: string): ServiceRiskVisual {
     };
   }
   return {
-    image: "https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=1200&q=80",
-    alt: "Protecția capitalului familiei și securitatea financiară pe termen lung",
-    categoryBadge: "Viață & Continuitate Financiară",
-    headline: "Protecția capitalului familiei în fața evenimentelor neprevăzute",
-    consequenceLead: "În lipsa unui capital garantat, familia se poate confrunta cu vânzarea precipitată a activelor sau imposibilitatea achitării creditelor ipotecare.",
-    whatToCheck: "Verifică dacă suma asigurată acoperă minimum 3–5 ani de cheltuieli ale familiei plus soldul creditelor bancare."
+    image: "/images/risks/villa-fire-cinematic.jpg",
+    alt: "Protecția patrimoniului și a capitalului în fața dezastrelor neprevăzute",
+    categoryBadge: "Protecția Patrimoniului",
+    headline: "Protecția patrimoniului și a continuității financiare",
+    consequenceLead: "În lipsa unui capital garantat, familia sau compania se pot confrunta cu vânzarea precipitată a activelor sau insolvență.",
+    whatToCheck: "Verifică dacă acoperirile sunt corelate cu valoarea reală a patrimoniului expus."
   };
 }
 
@@ -281,6 +281,10 @@ export function ServicePageIntro({ slug }: Props) {
                 <Link href="/verifica-polita">Verifică dacă ai lacune</Link>
               </Button>
             </div>
+
+            <p className="text-[11px] text-zinc-500 leading-relaxed pt-2 border-t border-zinc-850">
+              * Notă: Scenariile și valorile de risc menționate sunt exemple orientative pentru conștientizarea riscurilor. Condițiile efective de despăgubire depind exclusiv de termenii poliței contractate.
+            </p>
           </div>
         </div>
       </section>

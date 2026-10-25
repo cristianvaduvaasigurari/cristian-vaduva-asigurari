@@ -40,8 +40,8 @@ interface CategoryRiskDetail {
 
 const CATEGORY_RISK_DETAILS: Record<string, CategoryRiskDetail> = {
   supercars: {
-    image: "/images/risks/car-crash.jpg",
-    alt: "Supercar avariat sever în urma unui impact rutier, cu panouri de caroserie distruse și axă ruptă",
+    image: "/images/risks/supercar-crash-cinematic.jpg",
+    alt: "Supercar exotic avariat sever în urma unui impact rutier pe carosabil umed, cu panouri din carbon zdrobite și airbaguri declanșate",
     badgeRo: "Automobile de Colecție & Supercars",
     badgeEn: "Supercars & Rare Vehicles",
     headlineRo: "O avariere severă sau o daună totală pe un vehicul de performanță",
@@ -60,8 +60,8 @@ const CATEGORY_RISK_DETAILS: Record<string, CategoryRiskDetail> = {
     ]
   },
   "luxury-homes": {
-    image: "/images/risks/house-fire.jpg",
-    alt: "Proprietate rezidențială afectată grav de un incendiu violent, evidențiind costurile imense de demolare și reconstrucție structurală",
+    image: "/images/risks/villa-fire-cinematic.jpg",
+    alt: "Vilă rezidențială de lux afectată grav de un incendiu violent în timpul nopții, evidențiind costurile imense de demolare și reconstrucție structurală",
     badgeRo: "Proprietăți Rezidențiale de Lux",
     badgeEn: "Prime Residential Estates",
     headlineRo: "Cât ar costa să reconstruiești proprietatea, nu cât ai putea să o vinzi?",
@@ -140,8 +140,8 @@ const CATEGORY_RISK_DETAILS: Record<string, CategoryRiskDetail> = {
     ]
   },
   yachts: {
-    image: "/images/risks/yacht-storm.jpg",
-    alt: "Iaht de lux eșuat și avariat la mal în urma unei furtuni marine violente cu valuri uriașe",
+    image: "/images/risks/ocean-tempest-yacht.jpg",
+    alt: "Ambarcațiune marină surprinsă în furtună extremă cu valuri gigantice și vânt violent pe mare deschisă",
     badgeRo: "Iahturi & Ambarcațiuni Marine",
     badgeEn: "Yachts & Marine Vessels",
     headlineRo: "Furtună pe mare, avarie la carenă sau eșuare pe stânci",
@@ -412,6 +412,12 @@ export function PrivateClientCategoryView({ category }: PrivateClientCategoryVie
                       </a>
                     </Button>
                   </div>
+
+                  <p className="text-[11px] text-zinc-500 leading-relaxed pt-2 border-t border-zinc-800/80">
+                    {lang === "ro" 
+                      ? "* Valorile și costurile de remediere menționate sunt exemple ilustrative orientative bazate pe cazuri din piața de profil, fără valoare contractuală obligatorie." 
+                      : "* Quoted repair values and costs are illustrative estimates based on specialist market benchmarks, with no contractual guarantee implied."}
+                  </p>
                 </div>
               </div>
             </div>
