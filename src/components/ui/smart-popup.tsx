@@ -6,12 +6,24 @@ import { X, MessageCircle, Calendar, Phone, Bot } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { CONTACT } from "@/config/contact";
+import { cn } from "@/lib/utils";
+import { useAutoScrollHide } from "@/hooks/useAutoScrollHide";
 
 export function SmartPopup() {
   const [isOpen, setIsOpen] = useState(false);
+  const { isVisible: scrollVisible } = useAutoScrollHide();
+  const isVisible = isOpen || scrollVisible;
 
   return (
-    <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end">
+    <div
+      className={cn(
+        "fixed bottom-6 right-6 z-50 flex flex-col items-end transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] motion-reduce:transition-none",
+        isVisible
+          ? "translate-y-0 opacity-100 pointer-events-auto"
+          : "translate-y-24 opacity-0 pointer-events-none"
+      )}
+      aria-hidden={!isVisible}
+    >
       <AnimatePresence>
         {isOpen && (
           <motion.div

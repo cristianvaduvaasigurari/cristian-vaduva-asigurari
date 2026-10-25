@@ -3,6 +3,8 @@
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Sparkles, X, Send, UserCheck, AlertCircle, CheckCircle2 } from "lucide-react";
+import { cn } from "@/lib/utils";
+import { useAutoScrollHide } from "@/hooks/useAutoScrollHide";
 
 
 type Message = {
@@ -34,6 +36,8 @@ interface ChatState {
 
 export function AiChatbot() {
   const [isOpen, setIsOpen] = useState(false);
+  const { isVisible: scrollVisible } = useAutoScrollHide();
+  const isVisible = isOpen || scrollVisible;
   const [messages, setMessages] = useState<Message[]>([
     {
       id: "1",
@@ -291,7 +295,15 @@ Pentru a identifica protecția potrivită, câți angajați are compania?`;
   };
 
   return (
-    <div className="fixed bottom-6 left-6 z-50 flex flex-col items-start">
+    <div
+      className={cn(
+        "fixed bottom-6 left-6 z-50 flex flex-col items-start transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] motion-reduce:transition-none",
+        isVisible
+          ? "translate-y-0 opacity-100 pointer-events-auto"
+          : "translate-y-24 opacity-0 pointer-events-none"
+      )}
+      aria-hidden={!isVisible}
+    >
       <AnimatePresence>
         {isOpen && (
           <motion.div

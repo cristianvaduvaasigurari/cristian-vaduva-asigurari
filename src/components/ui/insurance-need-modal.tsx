@@ -16,6 +16,8 @@ import {
 import Link from "next/link";
 import { trackConversion } from "@/lib/analytics";
 import { ReferralModal } from "./referral-modal";
+import { cn } from "@/lib/utils";
+import { useAutoScrollHide } from "@/hooks/useAutoScrollHide";
 
 export const INSURANCE_NEEDS = [
   {
@@ -102,6 +104,8 @@ export function InsuranceNeedModal() {
   // Referral Modal Independent State & Ref
   const [isReferralOpen, setIsReferralOpen] = useState(false);
   const referralTriggerRef = useRef<HTMLButtonElement>(null);
+  const { isVisible: scrollVisible } = useAutoScrollHide();
+  const isFloatingVisible = isOpen || isReferralOpen || scrollVisible;
 
   const resetForm = React.useCallback(() => {
     setSelectedCategory("");
@@ -283,7 +287,10 @@ export function InsuranceNeedModal() {
       */}
       <aside
         aria-label="Puncte permanente de consultanță și recomandare"
-        className="fixed z-40 bottom-[150px] right-4 sm:bottom-[150px] sm:right-6 md:bottom-[36px] md:right-28 pb-[env(safe-area-inset-bottom)] pointer-events-none flex flex-col items-end gap-2 sm:gap-2.5"
+        className={cn(
+          "fixed z-40 bottom-[150px] right-4 sm:bottom-[150px] sm:right-6 md:bottom-[36px] md:right-28 pb-[env(safe-area-inset-bottom)] pointer-events-none flex flex-col items-end gap-2 sm:gap-2.5 transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] motion-reduce:transition-none",
+          isFloatingVisible ? "translate-y-0 opacity-100" : "translate-y-24 opacity-0"
+        )}
       >
         {/* Buton 1: Recomandă & Beneficiați */}
         <button

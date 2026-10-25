@@ -3,10 +3,12 @@
 
 
 import * as React from "react";
+import { createPortal } from "react-dom";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
+import { useAutoScrollHide } from "@/hooks/useAutoScrollHide";
 import { Menu, X, ChevronDown, Shield, Car, Briefcase, Building2, Home } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { TopTicker } from "@/components/layout/top-ticker";
@@ -151,79 +153,31 @@ const privateClientMenuLinks = [
   { name: "Private Client Liability", href: "/private-client/private-client-liability", badge: "Liability" },
 ];
 
+const emptySubscribe = () => () => {};
+
 export function Navbar() {
   const pathname = usePathname();
-  const [isVisible, setIsVisible] = React.useState(true);
-  const [isScrolled, setIsScrolled] = React.useState(false);
+  const { isVisible: scrollVisible, isScrolled } = useAutoScrollHide();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
   const [activeMobileMegaMenu, setActiveMobileMegaMenu] = React.useState<number | null>(null);
+  const [isHovered, setIsHovered] = React.useState(false);
+  const isMounted = React.useSyncExternalStore(
+    emptySubscribe,
+    () => true,
+    () => false
+  );
   const menuRef = React.useRef<HTMLDivElement>(null);
   const buttonRef = React.useRef<HTMLButtonElement>(null);
-  const isHoveredRef = React.useRef(false);
-  const lastScrollYRef = React.useRef(0);
-  const tickingRef = React.useRef(false);
 
   // Keep header visible on route change and ensure drawer is closed
   const [prevPathname, setPrevPathname] = React.useState(pathname);
   if (prevPathname !== pathname) {
     setPrevPathname(pathname);
-    setIsVisible(true);
     setIsMobileMenuOpen(false);
   }
 
-  // Smart Auto-Hide Scroll Logic (Mobile & Desktop)
-  React.useEffect(() => {
-    lastScrollYRef.current = Math.max(0, window.scrollY);
-
-    const handleScroll = () => {
-      const currentScrollY = Math.max(0, window.scrollY);
-      setIsScrolled(currentScrollY > 20);
-
-      // Keep header visible and lock scroll changes while mobile menu is open
-      if (isMobileMenuOpen) {
-        setIsVisible(true);
-        lastScrollYRef.current = currentScrollY;
-        return;
-      }
-
-      if (tickingRef.current) return;
-      tickingRef.current = true;
-
-      requestAnimationFrame(() => {
-        const lastScrollY = lastScrollYRef.current;
-        const delta = currentScrollY - lastScrollY;
-
-        // 1. Near the top of the page (within 60px), header is always visible
-        if (currentScrollY <= 60) {
-          setIsVisible(true);
-        }
-        // 2. Never auto-hide when desktop header is hovered/focused
-        else if (isHoveredRef.current) {
-          setIsVisible(true);
-        }
-        // 3. Prevent jitter when reaching bottom rubber-band on iOS/macOS
-        else if (window.innerHeight + currentScrollY >= document.documentElement.scrollHeight - 15) {
-          // Keep current visibility state
-        }
-        // 4. Intentional scroll down past 10px delta threshold
-        else if (delta > 10 && currentScrollY > 60) {
-          setIsVisible(false);
-        }
-        // 5. Intentional scroll up past 10px delta threshold
-        else if (delta < -10) {
-          setIsVisible(true);
-        }
-
-        lastScrollYRef.current = currentScrollY;
-        tickingRef.current = false;
-      });
-    };
-
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, [isMobileMenuOpen]);
+  // Header is visible when hovered, when mobile menu is open, or according to scroll
+  const isVisible = isHovered || isMobileMenuOpen || scrollVisible;
 
   // Prevent background scrolling when mobile menu is open
   React.useEffect(() => {
@@ -260,19 +214,19 @@ export function Navbar() {
   }, [isMobileMenuOpen]);
 
   return (
-    <header
-      onMouseEnter={() => { isHoveredRef.current = true; }}
-      onMouseLeave={() => { isHoveredRef.current = false; }}
-      onFocusCapture={() => setIsVisible(true)}
-      className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] motion-reduce:transition-none",
-        isMobileMenuOpen
-          ? "opacity-100"
-          : isVisible
-          ? "translate-y-0 opacity-100"
-          : "-translate-y-full opacity-0 pointer-events-none"
-      )}
-    >
+    <>
+      <header
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+        onFocusCapture={() => setIsHovered(true)}
+        onBlurCapture={() => setIsHovered(false)}
+        className={cn(
+          "fixed top-0 left-0 right-0 z-[80] transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] motion-reduce:transition-none",
+          isMobileMenuOpen || isVisible
+            ? "translate-y-0 opacity-100 pointer-events-auto"
+            : "-translate-y-full opacity-0 pointer-events-none"
+        )}
+      >
       <TopTicker />
       <div
         className={cn(
@@ -558,16 +512,25 @@ export function Navbar() {
         </div>
       </div>
       </div>
+    </header>
 
-      {/* Mobile Navigation */}
-      {isMobileMenuOpen && (
-        <div
-          id="mobile-nav-menu"
-          ref={menuRef}
-          className="fixed inset-0 bg-white text-zinc-900 z-55 overflow-y-auto pt-20 pb-28 px-4 sm:px-6 overscroll-contain shadow-2xl animate-in fade-in duration-150"
-          onClick={(e) => e.stopPropagation()}
-        >
-            <div className="flex flex-col gap-3 max-w-lg mx-auto text-zinc-900">
+    {/* Mobile Navigation Drawer rendered via Portal to document.body outside transforming header */}
+    {isMounted && createPortal(
+      <div
+        id="mobile-nav-menu"
+        ref={menuRef}
+        role="dialog"
+        aria-modal="true"
+        aria-label="Meniu Navigare"
+        className={cn(
+          "fixed inset-0 h-screen h-[100dvh] w-screen bg-white text-zinc-900 z-[70] overflow-y-auto overscroll-contain shadow-2xl transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] motion-reduce:transition-none",
+          isMobileMenuOpen
+            ? "opacity-100 translate-y-0 pointer-events-auto visible"
+            : "opacity-0 -translate-y-4 pointer-events-none invisible"
+        )}
+        onClick={(e) => e.stopPropagation()}
+      >
+        <div className="flex flex-col gap-3 max-w-lg mx-auto text-zinc-900 pt-24 pb-28 px-4 sm:px-6">
               {/* Mobile Menu Header Bar with explicit close button */}
               <div className="flex items-center justify-between pb-3 mb-1 border-b border-zinc-200/80">
                 <div className="flex items-center gap-2">
@@ -767,8 +730,9 @@ export function Navbar() {
                 </Button>
               </div>
             </div>
-          </div>
+          </div>,
+          document.body
         )}
-    </header>
+    </>
   );
 }
