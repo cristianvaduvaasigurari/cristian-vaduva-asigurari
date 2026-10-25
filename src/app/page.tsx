@@ -52,15 +52,15 @@ export default function Home() {
       <main className="flex-1">
         <Hero />
         <RiskConsequences />
-        <ProtectionGaps />
-        <RiskAnalysisProcess />
-        <section id="servicii"><Services /></section>
-        <RealWorldRiskScenarios isHomePagePreview={true} />
-        <InsuranceIntelligencePreview />
-        <AboutAdvisorPreview />
-        <CustomerReviews />
-        <Ecosystem />
-        <ContactForm />
+        <div className="section-lazy-render"><ProtectionGaps /></div>
+        <div className="section-lazy-render"><RiskAnalysisProcess /></div>
+        <section id="servicii" className="section-lazy-render"><Services /></section>
+        <div className="section-lazy-render"><RealWorldRiskScenarios isHomePagePreview={true} /></div>
+        <div className="section-lazy-render"><InsuranceIntelligencePreview /></div>
+        <div className="section-lazy-render"><AboutAdvisorPreview /></div>
+        <div className="section-lazy-render"><CustomerReviews /></div>
+        <div className="section-lazy-render"><Ecosystem /></div>
+        <div className="section-lazy-render"><ContactForm /></div>
       </main>
       <Footer />
     </>

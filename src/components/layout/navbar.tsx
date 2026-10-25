@@ -525,7 +525,8 @@ export function Navbar() {
         )}
         onClick={(e) => e.stopPropagation()}
       >
-        <div className="flex flex-col gap-3 max-w-lg mx-auto text-zinc-900 pt-[calc(env(safe-area-inset-top,0px)+8.25rem)] pb-28 px-4 sm:px-6">
+        {isMobileMenuOpen && (
+          <div className="flex flex-col gap-3 max-w-lg mx-auto text-zinc-900 pt-[calc(env(safe-area-inset-top,0px)+8.25rem)] pb-28 px-4 sm:px-6">
               {/* Mobile Menu Header Bar with explicit close button */}
               <div className="flex items-center justify-between pb-3 mb-1 border-b border-zinc-200/80">
                 <div className="flex items-center gap-2">
@@ -725,6 +726,7 @@ export function Navbar() {
                 </Button>
               </div>
             </div>
+          )}
           </div>,
           document.body
         )}

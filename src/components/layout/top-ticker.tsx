@@ -12,7 +12,7 @@ const FALLBACK_ITEMS = [
 ];
 
 export function TopTicker() {
-  const publishedNews = React.useMemo(() => getPublishedNewsArticles(), []);
+  const publishedNews = React.useMemo(() => getPublishedNewsArticles().slice(0, 6), []);
 
   const tickerItems = React.useMemo(() => {
     if (publishedNews.length > 0) {

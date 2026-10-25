@@ -155,4 +155,10 @@ body {
   animation-play-state: paused;
 }
 
+/* ─── Performance: Offscreen section rendering optimization ─── */
+.section-lazy-render {
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 700px;
+}
+
 
