@@ -51,7 +51,7 @@ export default function Home() {
       <Navbar />
       <main className="flex-1">
         <Hero />
-        <RiskConsequences />
+        <div className="section-lazy-render"><RiskConsequences /></div>
         <div className="section-lazy-render"><ProtectionGaps /></div>
         <div className="section-lazy-render"><RiskAnalysisProcess /></div>
         <section id="servicii" className="section-lazy-render"><Services /></section>
