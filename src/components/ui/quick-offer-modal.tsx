@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import { useState, useEffect, useRef } from "react";
+import { createPortal } from "react-dom";
 import {
   X,
   FileText,
@@ -19,8 +20,15 @@ import { trackConversion } from "@/lib/analytics";
 import { cn } from "@/lib/utils";
 import { useAutoScrollHide } from "@/hooks/useAutoScrollHide";
 
+const emptySubscribe = () => () => {};
+
 export function QuickOfferModal() {
   const [isOpen, setIsOpen] = useState(false);
+  const isMounted = React.useSyncExternalStore(
+    emptySubscribe,
+    () => true,
+    () => false
+  );
   const { isVisible: scrollVisible, isContactOpen } = useAutoScrollHide();
   const isContactVisible = isContactOpen || scrollVisible;
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -72,7 +80,6 @@ export function QuickOfferModal() {
       resetForm();
     }
   }, [status, resetForm]);
-
   // Lock body scroll and handle focus trap when modal is open
   useEffect(() => {
     if (isOpen) {
@@ -213,10 +220,10 @@ export function QuickOfferModal() {
         </button>
       </div>
 
-      {/* QUICK OFFER MODAL DIALOG */}
-      {isOpen && (
+      {/* QUICK OFFER MODAL DIALOG (PORTAL TO BODY WITH z-[120] STRICTLY ABOVE FIXED HEADER z-[80]) */}
+      {isMounted && isOpen && createPortal(
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 md:p-6 bg-black/75 backdrop-blur-sm animate-in fade-in duration-200"
+          className="fixed inset-0 z-[120] flex items-center justify-center p-2.5 sm:p-4 md:p-6 pt-[calc(env(safe-area-inset-top,0px)+0.75rem)] pb-[calc(env(safe-area-inset-bottom,0px)+0.75rem)] bg-black/80 backdrop-blur-md animate-in fade-in duration-200"
           role="dialog"
           aria-modal="true"
           aria-labelledby="quick-offer-title"
@@ -228,11 +235,11 @@ export function QuickOfferModal() {
         >
           <div
             ref={modalRef}
-            className="relative w-full max-w-lg max-h-[90vh] bg-white rounded-3xl shadow-2xl border border-slate-200 overflow-hidden flex flex-col animate-in zoom-in-95 duration-200"
+            className="relative w-full max-w-lg max-h-[calc(100dvh-env(safe-area-inset-top,0px)-env(safe-area-inset-bottom,0px)-1.5rem)] bg-white rounded-3xl shadow-2xl border border-slate-200 overflow-hidden flex flex-col animate-in zoom-in-95 duration-200"
           >
-            {/* Modal Header */}
-            <div className="p-5 sm:p-6 border-b border-slate-100 flex items-start justify-between gap-4 bg-slate-50/80 shrink-0">
-              <div className="space-y-1">
+            {/* Modal Header - Sticky and strictly above scrolling content */}
+            <div className="p-4 sm:p-6 border-b border-slate-100 flex items-start justify-between gap-3 bg-slate-50/95 backdrop-blur-xs shrink-0 sticky top-0 z-20">
+              <div className="space-y-1 pr-2">
                 <div className="inline-flex items-center gap-2 px-2.5 py-0.5 rounded-full bg-slate-200 text-slate-800 text-[10px] font-bold uppercase tracking-wider">
                   <ShieldCheck className="w-3 h-3 text-slate-700" />
                   <span>Consultanță &amp; Cotație Gratuită</span>
@@ -252,14 +259,14 @@ export function QuickOfferModal() {
                 type="button"
                 onClick={handleClose}
                 aria-label="Închide formularul"
-                className="p-2 rounded-full bg-white hover:bg-slate-100 border border-slate-200 text-slate-700 transition-colors cursor-pointer shrink-0 shadow-xs"
+                className="min-w-[40px] min-h-[40px] p-2 rounded-full bg-white hover:bg-slate-100 border border-slate-200 text-slate-700 hover:text-slate-900 transition-colors cursor-pointer shrink-0 shadow-xs flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-slate-900/30"
               >
-                <X className="w-4 h-4" />
+                <X className="w-5 h-5 sm:w-4 sm:h-4" />
               </button>
             </div>
 
             {/* Modal Body / Scrollable Content */}
-            <div className="p-5 sm:p-6 overflow-y-auto space-y-5">
+            <div className="p-4 sm:p-6 overflow-y-auto overscroll-contain flex-1 space-y-5">
               {status === "success" ? (
                 <div className="py-8 text-center space-y-4">
                   <div className="w-16 h-16 rounded-full bg-emerald-50 border border-emerald-200 flex items-center justify-center mx-auto text-emerald-600">
@@ -512,7 +519,8 @@ export function QuickOfferModal() {
               )}
             </div>
           </div>
-        </div>
+        </div>,
+        document.body
       )}
     </>
   );

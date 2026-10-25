@@ -38,8 +38,8 @@ const consequences: ConsequenceItem[] = [
     id: "furtuna-acoperis-structura",
     category: "Fenomene Extreme & Acoperișuri",
     title: "O singură furtună poate schimba totul.",
-    image: "/images/risks/storm-roof-destroyed.jpg",
-    alt: "Acoperiș rezidențial cu țigle și structură de rezistență smulse violent de rafale de vânt și grindină",
+    image: "/images/risks/storm-severe-damage.jpg",
+    alt: "Acoperiș rezidențial cu țigle și structură expuse la furtună extremă și descărcări electrice violente",
     whatHappens: "Rafalele de peste 100 km/h smulg învelitoarea acoperișului, grindina extremă sparge luminatoarele, iar apa torențială pătrunde nestingherită prin planșee și tavane până la parter.",
     financialImpact: "Dauna nu se oprește la refacerea acoperișului: apa distruge termoizolația, tavanele din gips-carton, instalația electrică îngropată și parchetul masiv de pe toate nivelurile clădirii.",
     whatToCheck: "Dacă polița acoperă fenomenele meteo extreme fără franșize ascunse și dacă include infiltrațiile de apă rezultate din deteriorarea acoperișului."
@@ -164,8 +164,8 @@ export function RiskConsequences() {
 
             <div className="relative rounded-3xl overflow-hidden bg-zinc-950 border border-zinc-800 shadow-lg min-h-[200px] flex flex-col justify-end p-6 group">
               <Image
-                src="/images/risks/storm-roof-destroyed.jpg"
-                alt="Acoperiș distrus de furtună violentă"
+                src="/images/risks/storm-severe-damage.jpg"
+                alt="Acoperiș rezidențial expus la furtună violentă și descărcări atmosferice"
                 fill
                 sizes="(max-width: 1024px) 100vw, 40vw"
                 className="object-cover opacity-55 group-hover:opacity-65 group-hover:scale-105 transition-all duration-700"

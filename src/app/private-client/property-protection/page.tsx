@@ -54,7 +54,7 @@ const propertyRisks = [
   {
     title: "Fenomene Meteo Extreme & Acoperișuri",
     icon: <Wind className="w-5 h-5 text-amber-600" />,
-    image: "/images/risks/storm-roof-destroyed.jpg",
+    image: "/images/risks/storm-severe-damage.jpg",
     alt: "Acoperiș rezidențial avariat sever de vijelie și grindină",
     description:
       "Vânt violent de peste 100 km/h, grindină de mari dimensiuni și precipitații abundente. Odată compromisă membrana sau țigla acoperișului, apa penetrează toate planșeele inferioare.",

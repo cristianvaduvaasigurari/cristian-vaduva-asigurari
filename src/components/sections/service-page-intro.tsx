@@ -111,7 +111,7 @@ function getServiceRiskVisual(slug: string): ServiceRiskVisual {
   }
   if (slug.includes("building")) {
     return {
-      image: "/images/risks/storm-roof-destroyed.jpg",
+      image: "/images/risks/storm-severe-damage.jpg",
       alt: "Acoperiș și clădire comercială avariate grav de furtună extremă",
       categoryBadge: "Clădiri & Spații Comerciale",
       headline: "O singură furtună poate schimba totul: patrimoniul imobiliar compromis",

@@ -60,7 +60,7 @@ export const SCENARIO_VISUALS: Record<string, ScenarioVisual> = {
     alt: "Incendiu violent izbucnit în locuință cu distrugerea completă a structurii interioare"
   },
   "home-roof-storm-damage": {
-    image: "/images/risks/storm-roof-destroyed.jpg",
+    image: "/images/risks/storm-severe-damage.jpg",
     alt: "Acoperiș rezidențial cu țigle și structură smulse violent de rafale de vânt"
   },
 
