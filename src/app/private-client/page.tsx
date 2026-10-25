@@ -16,29 +16,27 @@ import {
   Building2, 
   Archive, 
   Scale, 
-  CheckCircle2, 
   PhoneCall, 
-  Globe2,
-  AlertTriangle,
-  FileCheck2,
-  Sparkles,
-  Server
+  Sparkles, 
+  Key, 
+  Building, 
+  Search 
 } from "lucide-react";
-import { privateClientCategories, privateClientProcess } from "@/data/privateClientData";
+import { privateClientCategories } from "@/data/privateClientData";
 import { PrivateClientEnquiryForm } from "@/components/private-client/PrivateClientEnquiryForm";
 import { CONTACT } from "@/config/contact";
 
 export const metadata: Metadata = {
-  title: "Private Client — Analiză de Risc pentru Bunuri Excepționale | Cristian Văduva",
+  title: "Private Client — Insurance Advisory & Property Protection | Cristian Văduva",
   description:
-    "Consultanță confidențială în evaluarea riscurilor și optimizarea polițelor pentru proprietăți de lux, supercars, ceasuri de colecție, artă și companii cu expunere internațională.",
+    "Serviciu exclusiv de consultanță pentru identificarea riscurilor asociate proprietăților premium, bunurilor valoroase, familiei și activităților profesionale. Protect what you have built. Plan for what comes next.",
   alternates: {
     canonical: "https://insurance.cristianvaduva.com/private-client",
   },
   openGraph: {
-    title: "Private Client — Protecția Patrimoniului de Mare Valoare | Cristian Văduva",
+    title: "Private Client — Insurance Advisory | Cristian Văduva",
     description:
-      "Analiză strategică a riscurilor, identificarea lacunelor din contractele existente și structurarea protecției financiare pentru active excepționale.",
+      "Protect what you have built. Plan for what comes next. O abordare personalizată pentru protecția patrimoniului și a proprietăților de autor.",
     url: "https://insurance.cristianvaduva.com/private-client",
     siteName: "Cristian Văduva — Private Client",
     locale: "ro_RO",
@@ -47,15 +45,81 @@ export const metadata: Metadata = {
 };
 
 const categoryIcons: Record<string, React.ReactNode> = {
-  supercars: <Car className="w-6 h-6 text-zinc-700" />,
-  yachts: <Ship className="w-6 h-6 text-zinc-700" />,
-  "private-aviation": <Plane className="w-6 h-6 text-zinc-700" />,
-  "jewellery-watches": <Watch className="w-6 h-6 text-zinc-700" />,
-  "fine-art-collectibles": <Palette className="w-6 h-6 text-zinc-700" />,
-  "luxury-homes": <Building2 className="w-6 h-6 text-zinc-700" />,
-  collections: <Archive className="w-6 h-6 text-zinc-700" />,
-  "private-client-liability": <Scale className="w-6 h-6 text-zinc-700" />
+  supercars: <Car className="w-5 h-5 text-zinc-700" />,
+  yachts: <Ship className="w-5 h-5 text-zinc-700" />,
+  "private-aviation": <Plane className="w-5 h-5 text-zinc-700" />,
+  "jewellery-watches": <Watch className="w-5 h-5 text-zinc-700" />,
+  "fine-art-collectibles": <Palette className="w-5 h-5 text-zinc-700" />,
+  "luxury-homes": <Building2 className="w-5 h-5 text-zinc-700" />,
+  collections: <Archive className="w-5 h-5 text-zinc-700" />,
+  "private-client-liability": <Scale className="w-5 h-5 text-zinc-700" />
 };
+
+const advisorySpecializations = [
+  {
+    title: "Protecție Proprietăți Premium",
+    subtitle: "Vile Arhitecturale & Penthouse-uri",
+    href: "/private-client/property-protection",
+    icon: <Building2 className="w-6 h-6 text-zinc-800" />,
+    image: "/images/risks/villa-fire-cinematic.jpg",
+    alt: "Vilă modernă de lux cu finisaje de autor",
+    desc: "Analiza aprofundată a riscurilor pentru reședințe de mare valoare: diferența critică dintre valoarea de piață și costul real de reconstrucție, excluderi de demolare și finisaje de autor.",
+    cta: "Explorează Protecția Proprietăților"
+  },
+  {
+    title: "Proprietate Nou Achiziționată",
+    subtitle: "Checklist & Audit Post-Cumpărare",
+    href: "/private-client/new-property",
+    icon: <Key className="w-6 h-6 text-zinc-800" />,
+    image: "/images/private-client/new-luxury-villa.jpg",
+    alt: "Vilă contemporană recent finalizată",
+    desc: "Verificarea documentelor după semnarea tranzacției, riscurile instalațiilor și finisajelor, renovări planificate și distincția clară între protecția legală minimă (PAD) și cea facultativă.",
+    cta: "Vezi Ghidul După Achiziție"
+  },
+  {
+    title: "Proprietăți Închiriate de Lux",
+    subtitle: "Vile & Apartamente cedate în Folosință",
+    href: "/private-client/rental-property",
+    icon: <Building className="w-6 h-6 text-zinc-800" />,
+    image: "/images/private-client/luxury-rental-damage.jpg",
+    alt: "Penthouse de lux cu risc de daune accidentale",
+    desc: "Analiza modului de utilizare (termen lung vs. termen scurt), răspunderea civilă față de terți și vecini, daune produse de locatari și perioadele de neocupare dintre contracte.",
+    cta: "Analiză Proprietate Închiriată"
+  },
+  {
+    title: "Revizuire & Audit Poliță Existentă",
+    subtitle: "Examinare Independentă a Clauzelor",
+    href: "/private-client/policy-review",
+    icon: <Search className="w-6 h-6 text-zinc-800" />,
+    image: "/images/private-client/policy-audit-documents.jpg",
+    alt: "Dosare de audit de asigurare și contracte",
+    desc: "Examinarea contractelor actuale: sume asigurate perimate, sub-limite de conținut sau bijuterii, excluderi necomunicate și riscuri de subasigurare, fără promisiuni false.",
+    cta: "Solicită o Revizuire a Poliței"
+  }
+];
+
+const advisoryProcessSteps = [
+  {
+    number: "01",
+    title: "Discuție confidențială",
+    desc: "Înțelegerea detaliată a patrimoniului, priorităților, modului de utilizare a bunurilor și obiectivelor specifice ale clientului sau familiei."
+  },
+  {
+    number: "02",
+    title: "Inventarul riscurilor",
+    desc: "Analizarea metodică a proprietăților, autovehiculelor, pieselor de colecție, răspunderilor profesionale și a polițelor existente."
+  },
+  {
+    number: "03",
+    title: "Identificarea lacunelor",
+    desc: "Examinarea riguroasă a limitelor contractuale, excluderilor ascunse, condițiilor de despăgubire și eventualelor suprapuneri sau breșe de acoperire."
+  },
+  {
+    number: "04",
+    title: "Propuneri personalizate",
+    desc: "Identificarea soluțiilor optime disponibile prin asigurător și, când este necesar, prin parteneri specializați, în funcție de eligibilitate și condițiile contractuale."
+  }
+];
 
 export default function PrivateClientHubPage() {
   const categoriesList = Object.values(privateClientCategories);
@@ -65,25 +129,31 @@ export default function PrivateClientHubPage() {
       <Navbar />
       <main className="bg-white text-zinc-900 min-h-screen">
         
-        {/* 1. HERO EDITORIAL — CONSECVINȚE REALE ȘI RISCURI PATRIMONIALE */}
+        {/* 1. HERO — REPOZIȚIONARE ADVISORY & PROTECȚIA PATRIMONIULUI */}
         <section className="relative pt-36 pb-20 md:pt-44 md:pb-28 border-b border-zinc-200/80 bg-gradient-to-b from-zinc-50 via-white to-white overflow-hidden">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(0,0,0,0.02),transparent_60%)] pointer-events-none" />
 
           <div className="container mx-auto px-4 md:px-6 max-w-5xl text-center relative z-10">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-50 border border-amber-200/80 text-amber-900 text-xs font-semibold tracking-[0.2em] uppercase mb-8 shadow-xs">
-              <Lock className="w-3.5 h-3.5 text-amber-700" />
-              DIVIZIA PRIVATE CLIENT &amp; PATRIMONIU
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-zinc-100 border border-zinc-200 text-zinc-800 text-xs font-mono font-semibold tracking-wider uppercase mb-6 shadow-xs">
+              <Lock className="w-3.5 h-3.5 text-zinc-700" />
+              PRIVATE CLIENT — CRISTIAN VĂDUVA INSURANCE ADVISORY
+            </div>
+
+            <div className="mb-4">
+              <span className="text-xs sm:text-sm font-mono font-bold tracking-[0.25em] text-zinc-500 uppercase block">
+                Cristian Văduva — Insurance Advisory
+              </span>
             </div>
 
             <h1 className="text-3xl sm:text-5xl md:text-6xl font-heading font-extrabold text-zinc-950 tracking-tight leading-[1.12] mb-8">
-              Înțelege ce ai de pierdut <br className="hidden sm:block" />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-600 via-rose-600 to-amber-600">
-                înainte să afli cât te costă o daună.
+              Protect what you have built. <br className="hidden sm:block" />
+              <span className="text-zinc-500 font-normal">
+                Plan for what comes next.
               </span>
             </h1>
 
             <p className="text-base sm:text-lg text-zinc-600 font-normal max-w-3xl mx-auto leading-relaxed mb-10">
-              O vilă de autor, o colecție de ceasuri, un automobil de performanță sau activele internaționale ale familiei nu pot fi protejate eficient prin polițe standardizate din catalog. Analizăm expunerea reală, identificăm clauzele restrictive și verificăm dacă ești cu adevărat protejat.
+              O abordare personalizată pentru identificarea riscurilor asociate proprietăților, bunurilor valoroase, familiei și activităților profesionale. Consultanță discretă, audit de clauze și coordonarea structurilor de protecție fără promisiuni garantate fără fundament.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -93,7 +163,7 @@ export default function PrivateClientHubPage() {
                 asChild
               >
                 <a href="#confidential-enquiry">
-                  Solicită o Analiză Confidențială
+                  Solicită o evaluare Private Client
                   <ArrowRight className="ml-2 w-4 h-4" />
                 </a>
               </Button>
@@ -104,199 +174,138 @@ export default function PrivateClientHubPage() {
                 className="w-full sm:w-auto h-14 px-8 rounded-full border-zinc-300 bg-white text-zinc-800 hover:bg-zinc-100 hover:text-zinc-950 text-sm font-semibold shadow-xs"
                 asChild
               >
-                <a href="#teme-editoriale">
-                  Descoperă Teme Editoriale
+                <a href="#advisory-services">
+                  Servicii Specializate de Analiză
                 </a>
               </Button>
             </div>
 
             <div className="mt-14 pt-8 border-t border-zinc-200 max-w-2xl mx-auto flex flex-wrap items-center justify-center gap-6 text-xs text-zinc-500 uppercase tracking-widest font-mono">
+              <span>Analiză Individuală</span>
+              <span>•</span>
               <span>Valoare Agreată</span>
               <span>•</span>
               <span>Audit de Clauze</span>
               <span>•</span>
               <span>Confidențialitate Totală</span>
-              <span>•</span>
-              <span>Acoperire Worldwide</span>
             </div>
           </div>
         </section>
 
-        {/* 2. CELE 6 SUBIECTE EDITORIALE CHEIE PENTRU PATRIMONII DE MARE VALOARE */}
-        <section id="teme-editoriale" className="py-24 border-b border-zinc-200/80 bg-zinc-50/70">
+        {/* 2. CELE PATRU DIRECȚII SPECIALIZATE DE CONSULTANȚĂ (ADVISORY SERVICES) */}
+        <section id="advisory-services" className="py-24 border-b border-zinc-200/80 bg-zinc-50/70">
           <div className="container mx-auto px-4 md:px-6 max-w-6xl">
             <div className="max-w-3xl mb-16">
               <span className="text-xs uppercase tracking-[0.2em] text-zinc-500 font-bold block mb-3">
-                ANALIZE CRITICE DE RISC
+                SERVICII DEDICATE DE ANALIZĂ
               </span>
               <h2 className="text-3xl sm:text-4xl font-heading font-extrabold text-zinc-950 tracking-tight leading-tight mb-4">
-                Șase întrebări pe care proprietarii de bunuri de valoare le amână până la prima daună
+                Consultanță structurată pe nevoile exacte ale patrimoniului tău
               </h2>
               <p className="text-zinc-600 text-sm sm:text-base leading-relaxed">
-                Polițele de masă folosesc algoritmi generici și coeficienți de depreciere automată. În fața unei daune majore, aceste contracte lasă lacune financiare de proporții.
+                Fie că deții reședințe de autor, tocmai ai finalizat o achiziție, închiriezi active premium sau vrei un audit independent al polițelor în vigoare, abordăm fiecare situație metodic:
               </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {/* Tema 1: Proprietăți Premium */}
-              <div className="p-8 sm:p-10 rounded-3xl bg-white border border-zinc-200/80 shadow-xs flex flex-col justify-between space-y-6">
-                <div>
-                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-zinc-100 text-zinc-800 text-xs font-mono font-semibold mb-4">
-                    <Building2 className="w-4 h-4 text-zinc-700" />
-                    Proprietăți Premium &amp; Reședințe
+              {advisorySpecializations.map((item, idx) => (
+                <article 
+                  key={idx}
+                  className="rounded-3xl border border-zinc-200/90 bg-white overflow-hidden shadow-xs hover:border-zinc-300 hover:shadow-md transition-all flex flex-col justify-between group"
+                >
+                  <div className="relative aspect-[16/9] w-full bg-zinc-100 overflow-hidden">
+                    <Image
+                      src={item.image}
+                      alt={item.alt}
+                      fill
+                      sizes="(max-width: 768px) 100vw, 550px"
+                      className="object-cover transition-transform duration-500 group-hover:scale-105"
+                      loading="lazy"
+                    />
+                    <div className="absolute top-4 left-4 bg-zinc-950/85 backdrop-blur-xs text-white px-3 py-1.5 rounded-md text-xs font-semibold flex items-center gap-2 border border-zinc-800">
+                      {item.icon}
+                      <span>{item.subtitle}</span>
+                    </div>
                   </div>
-                  <h3 className="text-xl sm:text-2xl font-heading font-bold text-zinc-900 tracking-tight mb-3">
-                    Cât ar costa să reconstruiești vila, nu cât ai putea să o vinzi?
-                  </h3>
-                  <div className="space-y-3 text-sm text-zinc-600 leading-relaxed">
-                    <p>
-                      <strong>Diferența critică:</strong> Valoarea de piață a unei proprietăți include terenul și poziționarea geografică, factori care nu ard și nu se degradează. În schimb, costul de reconstrucție reflectă materialele speciale (marmură, tâmplărie custom, vitraje panoramice, finisaje de autor), proiectarea tehnică și forța de muncă la prețurile actuale.
-                    </p>
-                    <p>
-                      <strong>Riscul subasigurării:</strong> Dacă suma asigurată este plafonată la un cost istoric de achiziție, asigurătorul are dreptul legal de a aplica regula proporțională — despăgubind doar o fracțiune din valoarea reală a daunelor, chiar și în cazul unei pierderi parțiale.
-                    </p>
-                  </div>
-                </div>
-                <div className="pt-4 border-t border-zinc-100 text-xs text-zinc-500">
-                  <span className="font-semibold text-zinc-800">Ce verificăm:</span> Excluderile de demolare, cheltuielile de arhitectură, cazarea temporară și absența clauzei de proporționalitate.
-                </div>
-              </div>
 
-              {/* Tema 2: Automobile de Lux & Colecție */}
-              <div className="p-8 sm:p-10 rounded-3xl bg-white border border-zinc-200/80 shadow-xs flex flex-col justify-between space-y-6">
-                <div>
-                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-zinc-100 text-zinc-800 text-xs font-mono font-semibold mb-4">
-                    <Car className="w-4 h-4 text-zinc-700" />
-                    Automobile de Lux &amp; Colecție
-                  </div>
-                  <h3 className="text-xl sm:text-2xl font-heading font-bold text-zinc-900 tracking-tight mb-3">
-                    Ce se întâmplă dacă automobilul nu mai poate fi reparat?
-                  </h3>
-                  <div className="space-y-3 text-sm text-zinc-600 leading-relaxed">
-                    <p>
-                      <strong>Metoda de evaluare contează:</strong> În caz de daună totală sau furt, asigurătorii standard aplică grile generice de depreciere (Eurotax / DAT), ignorând pachetele opționale rare, starea impecabilă de conservare sau statutul de vehicul istoric/colecție.
-                    </p>
-                    <p>
-                      <strong>Consecința directă:</strong> Poți pierde între 30% și 50% din capitalul real investit dacă vehiculul nu a fost asigurat pe baza unei <em>Valori Agreate</em> upfront, stabilite prin expertiză tehnică neutră și documentată.
-                    </p>
-                  </div>
-                </div>
-                <div className="pt-4 border-t border-zinc-100 text-xs text-zinc-500">
-                  <span className="font-semibold text-zinc-800">Ce verificăm:</span> Valoarea agreată, reparațiile exclusiv în ateliere oficiale cu piese de origine, franșizele și extinderea teritorială.
-                </div>
-              </div>
+                  <div className="p-6 sm:p-8 flex-1 flex flex-col justify-between space-y-5">
+                    <div>
+                      <h3 className="text-xl sm:text-2xl font-heading font-bold text-zinc-950 mb-3 group-hover:text-blue-600 transition-colors">
+                        {item.title}
+                      </h3>
+                      <p className="text-xs sm:text-sm text-zinc-600 leading-relaxed font-normal">
+                        {item.desc}
+                      </p>
+                    </div>
 
-              {/* Tema 3: Ceasuri, Bijuterii & Colecții */}
-              <div className="p-8 sm:p-10 rounded-3xl bg-white border border-zinc-200/80 shadow-xs flex flex-col justify-between space-y-6">
-                <div>
-                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-zinc-100 text-zinc-800 text-xs font-mono font-semibold mb-4">
-                    <Watch className="w-4 h-4 text-zinc-700" />
-                    Ceasuri, Bijuterii &amp; Colecții
+                    <div className="pt-4 border-t border-zinc-100 flex items-center justify-between">
+                      <Link
+                        href={item.href}
+                        className="text-xs font-semibold uppercase tracking-wider text-zinc-900 inline-flex items-center gap-2 group-hover:gap-3 transition-all"
+                      >
+                        <span>{item.cta}</span>
+                        <ArrowRight className="w-4 h-4 text-zinc-500 group-hover:text-blue-600" />
+                      </Link>
+                    </div>
                   </div>
-                  <h3 className="text-xl sm:text-2xl font-heading font-bold text-zinc-900 tracking-tight mb-3">
-                    Un obiect poate valora mult mai mult decât limita prevăzută în poliță.
-                  </h3>
-                  <div className="space-y-3 text-sm text-zinc-600 leading-relaxed">
-                    <p>
-                      <strong>Plafoanele ascunse:</strong> Polițele standard de locuință menționează adesea o sumă generală pentru „conținut”, dar anexa ascunsă limitează bijuteriile și ceasurile la 1.000–2.500 EUR per piesă dacă nu au fost declarate individual pe o listă agreată.
-                    </p>
-                    <p>
-                      <strong>Furtul în deplasare:</strong> Multe contracte cer obligativitatea păstrării obiectelor exclusiv într-un seif omologat ancorat în podea, refuzând despăgubirea dacă piesa a fost sustrasă din camera de hotel sau din bagaj în timpul unei deplasări.
-                    </p>
-                  </div>
-                </div>
-                <div className="pt-4 border-t border-zinc-100 text-xs text-zinc-500">
-                  <span className="font-semibold text-zinc-800">Ce verificăm:</span> Declararea nominală item-by-item, acoperirea all-risks la nivel mondial și condițiile de securitate fizică.
-                </div>
-              </div>
-
-              {/* Tema 4: Cyber & Securitate Digitală */}
-              <div className="p-8 sm:p-10 rounded-3xl bg-white border border-zinc-200/80 shadow-xs flex flex-col justify-between space-y-6">
-                <div>
-                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-zinc-100 text-zinc-800 text-xs font-mono font-semibold mb-4">
-                    <Server className="w-4 h-4 text-zinc-700" />
-                    Cyber &amp; Identitate Digitală
-                  </div>
-                  <h3 className="text-xl sm:text-2xl font-heading font-bold text-zinc-900 tracking-tight mb-3">
-                    O fraudă online poate costa mult mai mult decât suma transferată.
-                  </h3>
-                  <div className="space-y-3 text-sm text-zinc-600 leading-relaxed">
-                    <p>
-                      <strong>Efectele în lanț ale unui atac:</strong> Pierderea directă a fondurilor transferate printr-o schemă de inginerie socială (Business Email Compromise) reprezintă doar începutul. Urmează costurile de investigație forensică IT, restaurarea sistemelor, blocarea activității și potențiale litigii sau sancțiuni GDPR.
-                    </p>
-                    <p>
-                      <strong>Realitatea asigurabilității:</strong> Nu orice fraudă este automat acoperită. Fără măsuri dovedite de autentificare în doi pași și protocoale clare de verificare a plăților, dosarele de daună sunt respinse conform condițiilor contractuale.
-                    </p>
-                  </div>
-                </div>
-                <div className="pt-4 border-t border-zinc-100 text-xs text-zinc-500">
-                  <span className="font-semibold text-zinc-800">Ce verificăm:</span> Clauzele de inginerie socială, echipele de intervenție de urgență IT și condițiile de securitate impuse asiguratului.
-                </div>
-              </div>
-
-              {/* Tema 5: Proprietăți Internaționale */}
-              <div className="p-8 sm:p-10 rounded-3xl bg-white border border-zinc-200/80 shadow-xs flex flex-col justify-between space-y-6">
-                <div>
-                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-zinc-100 text-zinc-800 text-xs font-mono font-semibold mb-4">
-                    <Globe2 className="w-4 h-4 text-zinc-700" />
-                    Patrimoniu Transfrontalier
-                  </div>
-                  <h3 className="text-xl sm:text-2xl font-heading font-bold text-zinc-900 tracking-tight mb-3">
-                    Ai proprietăți în mai multe țări. Polițele tale țin pasul cu ele?
-                  </h3>
-                  <div className="space-y-3 text-sm text-zinc-600 leading-relaxed">
-                    <p>
-                      <strong>Conflicte de jurisdicție:</strong> Deținerea unei reședințe de vacanță în sudul Europei, a unui apartament la munte în Austria sau a unei ambarcațiuni înmatriculate extern necesită coordonare atentă. O poliță românească nu acoperă automat cerințele legale locale din alte state.
-                    </p>
-                    <p>
-                      <strong>Perioadele de neocupare:</strong> Majoritatea asigurătorilor exclud daunele provocate de îngheț sau efracție dacă o proprietate secundară rămâne nelocuită mai mult de 30 sau 60 de zile consecutive fără inspecții periodice documentate.
-                    </p>
-                  </div>
-                </div>
-                <div className="pt-4 border-t border-zinc-100 text-xs text-zinc-500">
-                  <span className="font-semibold text-zinc-800">Ce verificăm:</span> Limitele teritoriale, clauzele de neocupare temporară și coordonarea cu subscriitorii locali specializați.
-                </div>
-              </div>
-
-              {/* Tema 6: Companii & Continuitate */}
-              <div className="p-8 sm:p-10 rounded-3xl bg-white border border-zinc-200/80 shadow-xs flex flex-col justify-between space-y-6">
-                <div>
-                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-zinc-100 text-zinc-800 text-xs font-mono font-semibold mb-4">
-                    <Scale className="w-4 h-4 text-zinc-700" />
-                    Companii &amp; Răspundere Profesională
-                  </div>
-                  <h3 className="text-xl sm:text-2xl font-heading font-bold text-zinc-900 tracking-tight mb-3">
-                    Ce se întâmplă dacă un incident îți oprește activitatea?
-                  </h3>
-                  <div className="space-y-3 text-sm text-zinc-600 leading-relaxed">
-                    <p>
-                      <strong>Pierderea de profit și cheltuielile fixe:</strong> O avarie într-o hală sau un incendiu de depozit distruge stocuri, dar cel mai mare pericol este oprirea livrărilor. Fără acoperirea <em>Business Interruption</em>, salariile, ratele și chiriile continuă să curgă chiar dacă încasările au scăzut la zero.
-                    </p>
-                    <p>
-                      <strong>Răspunderea administratorilor (D&amp;O):</strong> Deciziile strategice pot fi atacate în instanță de asociați, creditori sau autorități, punând în pericol patrimoniul personal al conducerii dacă nu există o poliță adecvată de răspundere managerială.
-                    </p>
-                  </div>
-                </div>
-                <div className="pt-4 border-t border-zinc-100 text-xs text-zinc-500">
-                  <span className="font-semibold text-zinc-800">Ce verificăm:</span> Perioada de indemnizare la întreruperea activității, limitele D&amp;O și acoperirea cheltuielilor de apărare în instanță.
-                </div>
-              </div>
+                </article>
+              ))}
             </div>
           </div>
         </section>
 
-        {/* 3. DIVIZIILE SPECIALIZATE PRIVATE CLIENT (8 CATEGORII) */}
-        <section id="divisions" className="py-24 border-b border-zinc-200/80 bg-white">
+        {/* 3. PROCESUL PROPUS ÎN PATRU PAȘI */}
+        <section className="py-24 border-b border-zinc-200/80 bg-white">
+          <div className="container mx-auto px-4 md:px-6 max-w-6xl">
+            <div className="text-center max-w-2xl mx-auto mb-16">
+              <span className="text-xs uppercase tracking-[0.2em] text-zinc-500 font-bold block mb-3">
+                PROCES METODIC
+              </span>
+              <h2 className="text-3xl sm:text-4xl font-heading font-extrabold text-zinc-950 tracking-tight mb-4">
+                Secvența de Consultanță Confidențială
+              </h2>
+              <p className="text-zinc-600 text-sm sm:text-base leading-relaxed">
+                Relația cu fiecare client este fundamentată pe discreție, rigoare tehnică și examinarea transparentă a eligibilității contractuale.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              {advisoryProcessSteps.map((step) => (
+                <div 
+                  key={step.number} 
+                  className="p-6 sm:p-8 rounded-3xl bg-zinc-50 border border-zinc-200/80 shadow-xs relative flex flex-col justify-between"
+                >
+                  <div>
+                    <div className="text-3xl font-mono font-bold text-zinc-300 mb-4">{step.number}</div>
+                    <h3 className="text-base font-heading font-bold text-zinc-900 mb-2">
+                      {step.title}
+                    </h3>
+                    <p className="text-xs sm:text-sm text-zinc-600 leading-relaxed font-normal">
+                      {step.desc}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-12 p-4 rounded-2xl bg-zinc-100 border border-zinc-200/80 text-center max-w-3xl mx-auto text-xs text-zinc-600 leading-relaxed">
+              * Notă de conformitate: În cadrul procesului de consultanță nu promitem acoperire garantată și nu sugerăm că fiecare risc poate fi asigurat. Orice propunere depinde de analiza tehnică de risc a asigurătorului, de eligibilitatea activelor și de termenii contractuali agreați.
+            </div>
+          </div>
+        </section>
+
+        {/* 4. DIVIZIILE DE ACTIVE DE VALOARE (SOLUȚII REZULTATE DIN CONSULTANȚĂ) */}
+        <section id="divisions" className="py-24 border-b border-zinc-200/80 bg-zinc-50/70">
           <div className="container mx-auto px-4 md:px-6 max-w-6xl">
             <div className="max-w-2xl mb-16">
               <span className="text-xs uppercase tracking-[0.2em] text-zinc-500 font-bold block mb-3">
-                DIVIZII SPECIALIZATE
+                CATEGORII DE ACTIVE ANALIZATE
               </span>
               <h2 className="text-3xl sm:text-4xl font-heading font-extrabold text-zinc-950 tracking-tight mb-4">
-                Structuri dedicate pentru active de mare valoare
+                Soluții rezultate pentru active de mare valoare
               </h2>
               <p className="text-zinc-600 text-sm sm:text-base leading-relaxed">
-                Fiecare clasă de active este analizată după caracteristicile sale particulare de evaluare, riscuri fizice și regim de utilizare.
+                Produsele de asigurare apar ca soluții derivate din consultanță, calibrate pe caracteristicile fiecărei clase de active:
               </p>
             </div>
 
@@ -309,18 +318,18 @@ export default function PrivateClientHubPage() {
                   <div className="relative z-10">
                     <div className="flex items-center justify-between mb-6">
                       <div className="w-12 h-12 rounded-2xl bg-zinc-50 border border-zinc-200 flex items-center justify-center group-hover:scale-105 transition-transform">
-                        {categoryIcons[cat.slug] || <Sparkles className="w-6 h-6 text-zinc-700" />}
+                        {categoryIcons[cat.slug] || <Sparkles className="w-5 h-5 text-zinc-700" />}
                       </div>
                       <span className="text-[10px] font-mono font-bold tracking-widest text-zinc-700 uppercase px-2.5 py-1 rounded-md bg-zinc-100 border border-zinc-200">
                         {cat.badgeRo || cat.badge}
                       </span>
                     </div>
 
-                    <h3 className="text-2xl font-heading font-bold text-zinc-900 tracking-tight mb-3 group-hover:text-blue-600 transition-colors">
+                    <h3 className="text-xl sm:text-2xl font-heading font-bold text-zinc-900 tracking-tight mb-3 group-hover:text-blue-600 transition-colors">
                       {cat.titleRo || cat.title}
                     </h3>
 
-                    <p className="text-zinc-600 text-sm leading-relaxed mb-6">
+                    <p className="text-zinc-600 text-xs sm:text-sm leading-relaxed mb-6 font-normal">
                       {cat.heroIntroRo || cat.heroIntro}
                     </p>
 
@@ -339,7 +348,7 @@ export default function PrivateClientHubPage() {
                       href={`/private-client/${cat.slug}`}
                       className="text-xs font-semibold uppercase tracking-wider text-zinc-900 inline-flex items-center gap-2 group-hover:gap-3 transition-all"
                     >
-                      <span>EXPLOREAZĂ DIVIZIA</span>
+                      <span>DETALII DIVIZIE</span>
                       <ArrowRight className="w-4 h-4 text-zinc-500 group-hover:text-blue-600" />
                     </Link>
                   </div>
@@ -349,44 +358,7 @@ export default function PrivateClientHubPage() {
           </div>
         </section>
 
-        {/* 4. METODOLOGIA DE CONSULTANȚĂ ÎN PATRU PAȘI */}
-        <section className="py-24 border-b border-zinc-200/80 bg-zinc-50/70">
-          <div className="container mx-auto px-4 md:px-6 max-w-6xl">
-            <div className="text-center max-w-2xl mx-auto mb-16">
-              <span className="text-xs uppercase tracking-[0.2em] text-zinc-500 font-bold block mb-3">
-                PROCES METODIC
-              </span>
-              <h2 className="text-3xl sm:text-4xl font-heading font-extrabold text-zinc-950 tracking-tight mb-4">
-                Secvența de Consultanță Confidențială
-              </h2>
-              <p className="text-zinc-600 text-sm sm:text-base leading-relaxed">
-                Relația cu fiecare client este structurată ca o analiză metodică: Inventariem, Analizăm, Identificăm și Prezentăm opțiunile disponibile.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              {privateClientProcess.map((step) => (
-                <div 
-                  key={step.step} 
-                  className="p-6 sm:p-8 rounded-3xl bg-white border border-zinc-200/80 shadow-xs relative"
-                >
-                  <div className="text-3xl font-mono font-bold text-zinc-300 mb-4">{step.step}</div>
-                  <span className="text-xs uppercase tracking-widest text-zinc-500 font-bold block mb-2">
-                    {step.nameRo || step.name}
-                  </span>
-                  <h3 className="text-base font-heading font-bold text-zinc-900 mb-2">
-                    {step.titleRo || step.title}
-                  </h3>
-                  <p className="text-xs text-zinc-600 leading-relaxed">
-                    {step.descRo || step.desc}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* 5. FORMULAR CONFIDENȚIAL PENTRU PRIVATE CLIENT */}
+        {/* 5. FORMULAR REAL PENTRU EVALUARE PRIVATE CLIENT */}
         <section id="confidential-enquiry" className="py-24 bg-white border-b border-zinc-200/80 relative">
           <div className="container mx-auto px-4 md:px-6 max-w-4xl relative z-10">
             <div className="text-center max-w-2xl mx-auto mb-12">
@@ -394,7 +366,7 @@ export default function PrivateClientHubPage() {
                 SOLICITARE CONFIDENȚIALĂ
               </span>
               <h2 className="text-3xl sm:text-4xl font-heading font-extrabold text-zinc-950 tracking-tight mb-4">
-                Solicită o Analiză Private Client
+                Solicită o evaluare Private Client
               </h2>
               <p className="text-zinc-600 text-sm leading-relaxed">
                 Completează datele de bază pentru deschiderea dosarului de analiză. Cristian Văduva va examina profilul activelor și va programa o discuție confidențială.

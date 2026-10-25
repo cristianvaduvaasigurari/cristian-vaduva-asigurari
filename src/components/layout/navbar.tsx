@@ -139,16 +139,16 @@ const creditsMenuLinks = [
 ];
 
 const privateClientMenuLinks = [
+  { name: "Protecție Proprietăți Premium", href: "/private-client/property-protection", badge: "Vile & Estates" },
+  { name: "Proprietate Nou Achiziționată", href: "/private-client/new-property", badge: "Post-Achiziție" },
+  { name: "Proprietăți Închiriate de Lux", href: "/private-client/rental-property", badge: "Închirieri" },
+  { name: "Revizuire & Audit Poliță", href: "/private-client/policy-review", badge: "Audit Clauze" },
   { name: "Supercars & Exotics", href: "/private-client/supercars", badge: "Automotive" },
+  { name: "Luxury Homes & Estates", href: "/private-client/luxury-homes", badge: "Reședințe" },
   { name: "Yachts & Superyachts", href: "/private-client/yachts", badge: "Maritime" },
-  { name: "Private Aviation", href: "/private-client/private-aviation", badge: "Aviation" },
-  { name: "Jewellery & Watches", href: "/private-client/jewellery-watches", badge: "Horology" },
   { name: "Fine Art & Collectibles", href: "/private-client/fine-art-collectibles", badge: "Fine Art" },
-  { name: "Luxury Homes & Estates", href: "/private-client/luxury-homes", badge: "Estates" },
-  { name: "Personal Collections", href: "/private-client/collections", badge: "Collections" },
+  { name: "Private Aviation", href: "/private-client/private-aviation", badge: "Aviation" },
   { name: "Private Client Liability", href: "/private-client/private-client-liability", badge: "Liability" },
-  { name: "AiX Luxury Garage", href: "/luxury-garage", badge: "HNW Assets" },
-  { name: "AiX Wealth Passport", href: "/wealth-passport", badge: "Credential" },
 ];
 
 export function Navbar() {
@@ -171,7 +171,7 @@ export function Navbar() {
     setIsMobileMenuOpen(false);
   }
 
-  // Smart Auto-Hide Scroll Logic (Desktop only)
+  // Smart Auto-Hide Scroll Logic (Mobile & Desktop)
   React.useEffect(() => {
     lastScrollYRef.current = Math.max(0, window.scrollY);
 
@@ -179,10 +179,10 @@ export function Navbar() {
       const currentScrollY = Math.max(0, window.scrollY);
       setIsScrolled(currentScrollY > 20);
 
-      // On mobile (< 768px), auto-hide is completely disabled - header is always visible
-      if (window.innerWidth < 768) {
-        lastScrollYRef.current = currentScrollY;
+      // Keep header visible and lock scroll changes while mobile menu is open
+      if (isMobileMenuOpen) {
         setIsVisible(true);
+        lastScrollYRef.current = currentScrollY;
         return;
       }
 
@@ -202,15 +202,15 @@ export function Navbar() {
           setIsVisible(true);
         }
         // 3. Prevent jitter when reaching bottom rubber-band on iOS/macOS
-        else if (window.innerHeight + currentScrollY >= document.documentElement.scrollHeight - 10) {
+        else if (window.innerHeight + currentScrollY >= document.documentElement.scrollHeight - 15) {
           // Keep current visibility state
         }
-        // 4. Intentional scroll down past 8px delta threshold
-        else if (delta > 8 && currentScrollY > 60) {
+        // 4. Intentional scroll down past 10px delta threshold
+        else if (delta > 10 && currentScrollY > 60) {
           setIsVisible(false);
         }
-        // 5. Intentional scroll up past 8px delta threshold
-        else if (delta < -8) {
+        // 5. Intentional scroll up past 10px delta threshold
+        else if (delta < -10) {
           setIsVisible(true);
         }
 
@@ -219,19 +219,11 @@ export function Navbar() {
       });
     };
 
-    const handleResize = () => {
-      if (window.innerWidth < 768) {
-        setIsVisible(true);
-      }
-    };
-
     window.addEventListener("scroll", handleScroll, { passive: true });
-    window.addEventListener("resize", handleResize, { passive: true });
     return () => {
       window.removeEventListener("scroll", handleScroll);
-      window.removeEventListener("resize", handleResize);
     };
-  }, []);
+  }, [isMobileMenuOpen]);
 
   // Prevent background scrolling when mobile menu is open
   React.useEffect(() => {
@@ -267,20 +259,18 @@ export function Navbar() {
     };
   }, [isMobileMenuOpen]);
 
-  const isHeaderVisible = isVisible || isMobileMenuOpen;
-
   return (
     <header
       onMouseEnter={() => { isHoveredRef.current = true; }}
       onMouseLeave={() => { isHoveredRef.current = false; }}
       onFocusCapture={() => setIsVisible(true)}
       className={cn(
-        "fixed top-0 left-0 right-0 z-50",
-        // Desktop-only auto-hide transitions, opacity and translateY
-        "md:transition-[translate,opacity] md:duration-300 md:ease-[cubic-bezier(0.16,1,0.3,1)] md:motion-reduce:transition-none",
-        isHeaderVisible
-          ? "md:translate-y-0 md:opacity-100"
-          : "md:-translate-y-full md:opacity-0 md:pointer-events-none"
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] motion-reduce:transition-none",
+        isMobileMenuOpen
+          ? "opacity-100"
+          : isVisible
+          ? "translate-y-0 opacity-100"
+          : "-translate-y-full opacity-0 pointer-events-none"
       )}
     >
       <TopTicker />
@@ -333,11 +323,11 @@ export function Navbar() {
               <div className="absolute top-full left-0 w-[640px] max-w-[calc(100vw-2.5rem)] bg-[#0c0e12] text-white border border-zinc-800 shadow-2xl rounded-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform origin-top-left translate-y-4 group-hover:translate-y-0 p-6 z-50">
                 <div className="flex items-center justify-between pb-4 mb-4 border-b border-zinc-800">
                   <div>
-                    <div className="text-xs font-mono font-bold tracking-widest text-zinc-400 uppercase">PRIVATE CLIENT DIVISION</div>
-                    <div className="text-sm font-bold text-white">Insurance for Extraordinary Assets</div>
+                    <div className="text-xs font-mono font-bold tracking-widest text-zinc-400 uppercase">PRIVATE CLIENT — INSURANCE ADVISORY</div>
+                    <div className="text-sm font-bold text-white">Protect what you have built. Plan for what comes next.</div>
                   </div>
                   <Button size="sm" className="rounded-full bg-white text-zinc-950 hover:bg-zinc-200 text-xs font-semibold px-4" asChild>
-                    <Link href="/private-client">Explore Division</Link>
+                    <Link href="/private-client">Explore Advisory</Link>
                   </Button>
                 </div>
                 <div className="grid grid-cols-2 gap-2.5">

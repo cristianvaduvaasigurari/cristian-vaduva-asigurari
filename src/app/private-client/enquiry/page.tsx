@@ -3,7 +3,7 @@ import Link from "next/link";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { PrivateClientEnquiryForm } from "@/components/private-client/PrivateClientEnquiryForm";
-import { ShieldCheck, Lock, ChevronRight, Phone, Mail, MessageSquare } from "lucide-react";
+import { ShieldCheck, Lock, ChevronRight, Phone, MessageSquare } from "lucide-react";
 import { CONTACT } from "@/config/contact";
 
 export const metadata: Metadata = {

@@ -78,8 +78,8 @@ const consequences: ConsequenceItem[] = [
     id: "afacere-oprita-incident",
     category: "Afaceri & Continuitate Operațională",
     title: "O afacere oprită brusc de un incendiu sau avarie industrială",
-    image: "/images/risks/commercial-fire.jpg",
-    alt: "Depozit industrial și hală comercială distruse după un incendiu masiv, cu sistarea completă a producției",
+    image: "/images/risks/industrial-fire-interruption.jpg",
+    alt: "Hală industrială de producție cu linii robotizate și utilaje complet distruse în incendiu, activitate de fabricație sistată",
     whatHappens: "O avarie la tabloul electric principal, un incendiu într-un depozit de logistică sau o defecțiune catastrofală a unui utilaj cheie opresc activitatea operațională timp de săptămâni sau luni.",
     financialImpact: "Veniturile încetează instantaneu, însă costurile fixe nu așteaptă: salarii, chirii, rate de leasing și credite bancare trebuie plătite în fiecare lună. În plus, clienții pot aplica penalități contractuale pentru nerespectarea termenelor de livrare.",
     whatToCheck: "Dacă polița acoperă explicit Întreruperea Activității (Business Interruption), care este perioada maximă de indemnizare (12, 18 sau 24 de luni) și ce franșiză temporală (număr de ore deductibile) se aplică."
