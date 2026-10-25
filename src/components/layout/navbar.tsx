@@ -5,6 +5,7 @@
 import * as React from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { Menu, X, ChevronDown, Shield, Car, Briefcase, Building2, Home } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -151,20 +152,70 @@ const privateClientMenuLinks = [
 ];
 
 export function Navbar() {
+  const pathname = usePathname();
+  const [isVisible, setIsVisible] = React.useState(true);
   const [isScrolled, setIsScrolled] = React.useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
   const [activeMobileMegaMenu, setActiveMobileMegaMenu] = React.useState<number | null>(null);
   const menuRef = React.useRef<HTMLDivElement>(null);
   const buttonRef = React.useRef<HTMLButtonElement>(null);
+  const isHoveredRef = React.useRef(false);
+  const lastScrollYRef = React.useRef(0);
+  const tickingRef = React.useRef(false);
 
+  // Keep header visible on route change and ensure drawer is closed
+  const [prevPathname, setPrevPathname] = React.useState(pathname);
+  if (prevPathname !== pathname) {
+    setPrevPathname(pathname);
+    setIsVisible(true);
+    setIsMobileMenuOpen(false);
+  }
 
+  // Smart Auto-Hide Scroll Logic
   React.useEffect(() => {
+    lastScrollYRef.current = Math.max(0, window.scrollY);
+
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+      if (tickingRef.current) return;
+      tickingRef.current = true;
+
+      requestAnimationFrame(() => {
+        const currentScrollY = Math.max(0, window.scrollY);
+        const lastScrollY = lastScrollYRef.current;
+        const delta = currentScrollY - lastScrollY;
+
+        // Backdrop blur & styling threshold
+        setIsScrolled(currentScrollY > 20);
+
+        // 1. Near the top of the page (within 60px), header is always visible
+        if (currentScrollY <= 60) {
+          setIsVisible(true);
+        }
+        // 2. Never auto-hide when mobile menu or desktop header is being interacted with
+        else if (isMobileMenuOpen || isHoveredRef.current) {
+          setIsVisible(true);
+        }
+        // 3. Prevent jitter when reaching bottom rubber-band on iOS/macOS
+        else if (window.innerHeight + currentScrollY >= document.documentElement.scrollHeight - 10) {
+          // Keep current visibility state
+        }
+        // 4. Intentional scroll down past 8px delta threshold
+        else if (delta > 8 && currentScrollY > 60) {
+          setIsVisible(false);
+        }
+        // 5. Intentional scroll up past 8px delta threshold
+        else if (delta < -8) {
+          setIsVisible(true);
+        }
+
+        lastScrollYRef.current = currentScrollY;
+        tickingRef.current = false;
+      });
     };
+
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [isMobileMenuOpen]);
 
   // Prevent background scrolling when mobile menu is open
   React.useEffect(() => {
@@ -200,9 +251,20 @@ export function Navbar() {
     };
   }, [isMobileMenuOpen]);
 
+  const isHeaderVisible = isVisible || isMobileMenuOpen;
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50">
+    <header
+      onMouseEnter={() => { isHoveredRef.current = true; }}
+      onMouseLeave={() => { isHoveredRef.current = false; }}
+      onFocusCapture={() => setIsVisible(true)}
+      className={cn(
+        "fixed top-0 left-0 right-0 z-50 transition-[transform,opacity] duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] motion-reduce:transition-none",
+        isHeaderVisible
+          ? "translate-y-0 opacity-100"
+          : "-translate-y-full opacity-0 pointer-events-none"
+      )}
+    >
       <TopTicker />
       <div
         className={cn(
