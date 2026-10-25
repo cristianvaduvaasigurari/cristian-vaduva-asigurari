@@ -31,8 +31,8 @@ const humanizeSlug = (slug: string) =>
 function getServiceRiskVisual(slug: string): ServiceRiskVisual {
   if (slug.includes("casco") || slug === "auto-insurance") {
     return {
-      image: "https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=1200&q=80",
-      alt: "Automobil premium avariat în coliziune frontală cu far Matrix spart și elemente de caroserie distruse",
+      image: "/images/risks/car-crash.jpg",
+      alt: "Automobil avariat grav în coliziune pe carosabil cu avarii structurale severe",
       categoryBadge: "Automobile & CASCO",
       headline: "Ce se întâmplă dacă automobilul tău este declarat daună totală sau avariat grav?",
       consequenceLead: "Costul pieselor originale de fabrică, decontarea în rețeaua oficială a constructorului și absența deprecierii forfetare de catalog fac diferența între o reparație garantată și o pierdere directă de mii de euro.",
@@ -41,8 +41,8 @@ function getServiceRiskVisual(slug: string): ServiceRiskVisual {
   }
   if (slug.includes("rca")) {
     return {
-      image: "https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?auto=format&fit=crop&w=1200&q=80",
-      alt: "Coliziune în lanț pe șosea cu avarii materiale severe și răspundere față de terți",
+      image: "/images/risks/car-collision-rca.jpg",
+      alt: "Coliziune pe șosea cu avarii materiale severe și răspundere față de terți",
       categoryBadge: "Răspundere Auto & RCA",
       headline: "Impact în lanț sau vătămări corporale produse terților",
       consequenceLead: "Când ești responsabil de un accident grav, limitele legale de răspundere și decontarea directă cu asiguratorul tău elimină stresul birocratic și întârzierile majore de plată.",
@@ -51,8 +51,8 @@ function getServiceRiskVisual(slug: string): ServiceRiskVisual {
   }
   if (slug.includes("fleet")) {
     return {
-      image: "https://images.unsplash.com/photo-1599819811279-d5ad9cccf838?auto=format&fit=crop&w=1200&q=80",
-      alt: "Vehicul comercial din flotă avariat în service mecanic cu blocarea livrărilor",
+      image: "/images/risks/car-crash.jpg",
+      alt: "Vehicul comercial din flotă avariat cu blocarea livrărilor",
       categoryBadge: "Flote Auto Comerciale",
       headline: "Imobilizarea flotei comerciale și penalități contractuale de întârziere",
       consequenceLead: "Fiecare autovehicul oprit din cauza unui incident rutier sau furt afectează direct fluxul operațional de livrări și veniturile companiei.",
@@ -61,7 +61,7 @@ function getServiceRiskVisual(slug: string): ServiceRiskVisual {
   }
   if (slug.includes("roadside")) {
     return {
-      image: "https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=1200&q=80",
+      image: "/images/risks/car-collision-rca.jpg",
       alt: "Automobil avariat pe carosabil și asistență tehnică de urgență",
       categoryBadge: "Asistență Rutieră & Tractare",
       headline: "Avarie mecanică, pană sau accident pe timp de noapte sau în afara țării",
@@ -71,8 +71,8 @@ function getServiceRiskVisual(slug: string): ServiceRiskVisual {
   }
   if (slug.includes("home") || slug.includes("pad")) {
     return {
-      image: "https://images.unsplash.com/photo-1542385151-efd9000785a0?auto=format&fit=crop&w=1200&q=80",
-      alt: "Incendiu violent și fum dens ce avariază structura și fațada unei locuințe",
+      image: "/images/risks/house-fire.jpg",
+      alt: "Incendiu violent și daune structurale ce avariază grav o locuință",
       categoryBadge: "Locuințe & Proprietăți",
       headline: "Cât ar costa reconstrucția completă a locuinței tale, nu prețul de vânzare?",
       consequenceLead: "Costurile reale de reconstrucție (demolare, evacuare moloz, materiale scumpe și manoperă) depășesc adesea suma asigurată a contractelor vechi, expunându-te riscului de subasigurare.",
@@ -81,8 +81,8 @@ function getServiceRiskVisual(slug: string): ServiceRiskVisual {
   }
   if (slug.includes("personal-goods")) {
     return {
-      image: "https://images.unsplash.com/photo-1584467735871-8e85353a8413?auto=format&fit=crop&w=1200&q=80",
-      alt: "Conductă spartă și inundație în locuință cu distrugerea mobilierului și a parchetului",
+      image: "/images/risks/flooded-interior.jpg",
+      alt: "Inundație în locuință cu distrugerea mobilierului și a parchetului",
       categoryBadge: "Bunuri & Valori Personale",
       headline: "Conductă spartă: mobilă, electronice și finisaje compromise",
       consequenceLead: "O conductă spartă în timp ce proprietarii sunt plecați poate distruge finisaje de zeci de mii de euro și bunurile vecinilor de la etajele inferioare.",
@@ -91,7 +91,7 @@ function getServiceRiskVisual(slug: string): ServiceRiskVisual {
   }
   if (slug.includes("cyber")) {
     return {
-      image: "https://images.unsplash.com/photo-1614064641938-3bbee52942c7?auto=format&fit=crop&w=1200&q=80",
+      image: "/images/risks/ransomware.jpg",
       alt: "Terminal de companie blocat prin atac de criptare ransomware și cerere de răscumpărare",
       categoryBadge: "Securitate Digitală & Cyber",
       headline: "Atac ransomware și compromiterea datelor confidențiale ale clienților",
@@ -101,8 +101,8 @@ function getServiceRiskVisual(slug: string): ServiceRiskVisual {
   }
   if (slug.includes("interruption") || slug.includes("imm")) {
     return {
-      image: "https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=1200&q=80",
-      alt: "Sediu comercial avariat de incendiu industrial cu activitatea operațională sistată complet",
+      image: "/images/risks/commercial-fire.jpg",
+      alt: "Depozit comercial avariat de incendiu industrial cu activitatea operațională sistată complet",
       categoryBadge: "Continuitatea Afacerii & IMM",
       headline: "Veniturile încetează instantaneu, însă costurile fixe continuă lună de lună",
       consequenceLead: "O avarie electrică sau un incendiu în depozit pot opri activitatea timp de luni de zile. Salariile, chiriile și ratele bancare trebuie plătite chiar dacă producția este sistată.",
@@ -111,8 +111,8 @@ function getServiceRiskVisual(slug: string): ServiceRiskVisual {
   }
   if (slug.includes("building")) {
     return {
-      image: "https://images.unsplash.com/photo-1542385151-efd9000785a0?auto=format&fit=crop&w=1200&q=80",
-      alt: "Clădire de birouri și sediu industrial avariat de incendiu și fenomene extreme",
+      image: "/images/risks/commercial-fire.jpg",
+      alt: "Hală industrială și clădire comercială avariate grav de incendiu",
       categoryBadge: "Clădiri & Spații Comerciale",
       headline: "Distrugerea parțială sau totală a patrimoniului imobiliar al companiei",
       consequenceLead: "Evaluarea la valoarea contabilă istorică lasă clădirile comerciale grav subasigurate în fața costurilor actuale de reconstrucție industrială.",
@@ -151,8 +151,8 @@ function getServiceRiskVisual(slug: string): ServiceRiskVisual {
   }
   if (slug.includes("liability") || slug.includes("malpractice") || slug.includes("directors")) {
     return {
-      image: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=1200&q=80",
-      alt: "Dosare de litigiu și ciocan de judecată pentru cereri masive de despăgubire civilă și profesională",
+      image: "/images/risks/legal-litigation.jpg",
+      alt: "Dosare de litigiu și balanța justiției pentru cereri masive de despăgubire civilă și profesională",
       categoryBadge: "Răspundere & Management (D&O)",
       headline: "Eroare profesională, litigiu al asociaților sau cereri de despăgubire",
       consequenceLead: "Cheltuielile cu echipele de avocați, taxele de timbru și experții independenți pot costa zeci de mii de euro chiar și atunci când acuzațiile sunt nefondate.",

@@ -20,26 +20,26 @@ export type ScenarioVisual = {
 export const SCENARIO_VISUALS: Record<string, ScenarioVisual> = {
   // ─── 01. CASCO (4 Scenarios) ───
   "casco-headlight-sensor": {
-    image: "https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=1200&q=80",
-    alt: "Avariere far Matrix LED și senzor frontal de distanță pe vehicul premium"
+    image: "/images/risks/car-crash.jpg",
+    alt: "Avariere severă de caroserie și senzor frontal pe vehicul premium"
   },
   "casco-parking-hit-run": {
-    image: "https://images.unsplash.com/photo-1599819811279-d5ad9cccf838?auto=format&fit=crop&w=1200&q=80",
+    image: "/images/risks/car-collision-rca.jpg",
     alt: "Acroșaj uși laterale și caroserie în parcare rezidențială fără autor"
   },
   "casco-severe-hail": {
-    image: "https://images.unsplash.com/photo-1515694346937-94d85e41e6f0?auto=format&fit=crop&w=1200&q=80",
-    alt: "Furtună violentă cu bucăți mari de grindină peste parbriz și plafon"
+    image: "/images/risks/hail-damage.jpg",
+    alt: "Furtună violentă cu bucăți mari de grindină spărgând parbrizul și deformând plafonul"
   },
   "casco-total-theft": {
-    image: "https://images.unsplash.com/photo-1508974239320-0a029497e820?auto=format&fit=crop&w=1200&q=80",
+    image: "/images/risks/car-window-burglary.jpg",
     alt: "Geam spart și efracție nocturnă în vehicul premium parcat"
   },
 
   // ─── 02. RCA (3 Scenarios) ───
   "rca-multi-car-chain": {
-    image: "https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?auto=format&fit=crop&w=1200&q=80",
-    alt: "Coliziune multiplă în lanț pe bulevard aglomerat cauzată de distragere"
+    image: "/images/risks/car-collision-rca.jpg",
+    alt: "Coliziune multiplă pe șosea cu avarierea gravă a caroseriei"
   },
   "rca-commercial-truck-impact": {
     image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1200&q=80",
@@ -52,16 +52,16 @@ export const SCENARIO_VISUALS: Record<string, ScenarioVisual> = {
 
   // ─── 03. HOME INSURANCE (3 Scenarios) ───
   "home-water-pipe-leak": {
-    image: "https://images.unsplash.com/photo-1584467735871-8e85353a8413?auto=format&fit=crop&w=1200&q=80",
-    alt: "Conductă spartă și inundație gravă în locuință cu distrugerea parchetului și finisajelor"
+    image: "/images/risks/flooded-interior.jpg",
+    alt: "Conductă spartă și inundație gravă în locuință cu distrugerea parchetului și a mobilierului"
   },
   "home-kitchen-electrical-fire": {
-    image: "https://images.unsplash.com/photo-1542385151-efd9000785a0?auto=format&fit=crop&w=1200&q=80",
-    alt: "Incendiu izbucnit în locuință cu fum dens și avarierea severă a finisajelor interioare"
+    image: "/images/risks/house-fire.jpg",
+    alt: "Incendiu violent izbucnit în locuință cu distrugerea completă a structurii interioare"
   },
   "home-roof-storm-damage": {
-    image: "https://images.unsplash.com/photo-1547683905-f686c993aae5?auto=format&fit=crop&w=1200&q=80",
-    alt: "Acoperiș distrus de furtună extremă și grindină masivă"
+    image: "/images/risks/tree-damage.jpg",
+    alt: "Copac masiv prăbușit peste acoperiș și carosabil în timpul unei furtuni violente"
   },
 
   // ─── 04. TRAVEL INSURANCE (3 Scenarios) ───
@@ -118,12 +118,12 @@ export const SCENARIO_VISUALS: Record<string, ScenarioVisual> = {
 
   // ─── 08. IMM & BUSINESS (4 Scenarios) ───
   "imm-business-interruption": {
-    image: "https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=1200&q=80",
-    alt: "Sediu comercial avariat de incendiu cu activitatea sistată complet"
+    image: "/images/risks/commercial-fire.jpg",
+    alt: "Sediu comercial și depozit industrial avariat grav de incendiu cu activitatea sistată complet"
   },
   "imm-stock-equipment-water-damage": {
-    image: "https://images.unsplash.com/photo-1584467735871-8e85353a8413?auto=format&fit=crop&w=1200&q=80",
-    alt: "Servere IT și stocuri de marfă distruse de inundația depozitului"
+    image: "/images/risks/flooded-interior.jpg",
+    alt: "Echipamente și bunuri comerciale distruse de inundație gravă în clădire"
   },
   "imm-premises-liability-customer": {
     image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1200&q=80",
@@ -136,8 +136,8 @@ export const SCENARIO_VISUALS: Record<string, ScenarioVisual> = {
 
   // ─── 09. CORPORATE & RĂSPUNDERI (3 Scenarios) ───
   "corporate-professional-indemnity": {
-    image: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=1200&q=80",
-    alt: "Notificare legală de daune corporate pentru eroare de calcul tehnic"
+    image: "/images/risks/legal-litigation.jpg",
+    alt: "Balanța dreptății și dosare de litigiu pentru daune corporate și eroare profesională"
   },
   "corporate-visitor-injury-industrial": {
     image: "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&w=1200&q=80",
@@ -150,8 +150,8 @@ export const SCENARIO_VISUALS: Record<string, ScenarioVisual> = {
 
   // ─── 10. CYBER RISK (3 Scenarios) ───
   "cyber-ransomware-monday": {
-    image: "https://images.unsplash.com/photo-1614064641938-3bbee52942c7?auto=format&fit=crop&w=1200&q=80",
-    alt: "Terminal de server blocat de un atac de criptare ransomware"
+    image: "/images/risks/ransomware.jpg",
+    alt: "Terminal de server blocat complet prin atac de criptare malware GoldenEye ransomware"
   },
   "cyber-data-breach-gdpr": {
     image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",

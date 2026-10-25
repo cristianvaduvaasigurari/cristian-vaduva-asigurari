@@ -40,8 +40,8 @@ interface CategoryRiskDetail {
 
 const CATEGORY_RISK_DETAILS: Record<string, CategoryRiskDetail> = {
   supercars: {
-    image: "https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=1200&q=80",
-    alt: "Supercar de colecție avariat sever în urma unui impact rutier, cu faruri Matrix sparte și caroserie din fibră de carbon distrusă",
+    image: "/images/risks/car-crash.jpg",
+    alt: "Supercar avariat sever în urma unui impact rutier, cu panouri de caroserie distruse și axă ruptă",
     badgeRo: "Automobile de Colecție & Supercars",
     badgeEn: "Supercars & Rare Vehicles",
     headlineRo: "O avariere severă sau o daună totală pe un vehicul de performanță",
@@ -60,8 +60,8 @@ const CATEGORY_RISK_DETAILS: Record<string, CategoryRiskDetail> = {
     ]
   },
   "luxury-homes": {
-    image: "https://images.unsplash.com/photo-1542385151-efd9000785a0?auto=format&fit=crop&w=1200&q=80",
-    alt: "Vilă rezidențială afectată grav de un incendiu violent, evidențiind costurile imense de demolare și reconstrucție structurală",
+    image: "/images/risks/house-fire.jpg",
+    alt: "Proprietate rezidențială afectată grav de un incendiu violent, evidențiind costurile imense de demolare și reconstrucție structurală",
     badgeRo: "Proprietăți Rezidențiale de Lux",
     badgeEn: "Prime Residential Estates",
     headlineRo: "Cât ar costa să reconstruiești proprietatea, nu cât ai putea să o vinzi?",
@@ -80,8 +80,8 @@ const CATEGORY_RISK_DETAILS: Record<string, CategoryRiskDetail> = {
     ]
   },
   "jewellery-watches": {
-    image: "https://images.unsplash.com/photo-1577741314755-048d8525d31e?auto=format&fit=crop&w=1200&q=80",
-    alt: "Vitrină de valori cu sticlă securizată spartă și urme vizibile de efracție și furt de ceasuri",
+    image: "/images/risks/burglary-jeweler.jpg",
+    alt: "Vitrină de magazin de ceasuri și bijuterii cu geam securizat spart și urme vizibile de efracție și furt",
     badgeRo: "Ceasuri & Bijuterii de Valoare",
     badgeEn: "Haute Horlogerie & High Jewellery",
     headlineRo: "Vitrină spartă, efracție și furtul pieselor de colecție",
@@ -100,8 +100,8 @@ const CATEGORY_RISK_DETAILS: Record<string, CategoryRiskDetail> = {
     ]
   },
   "fine-art-collectibles": {
-    image: "https://images.unsplash.com/photo-1582139329536-e7284fece509?auto=format&fit=crop&w=1200&q=80",
-    alt: "Operă de artă și pânză de patrimoniu examinată pentru avarii de umiditate și restaurare critică",
+    image: "/images/risks/art-damage.jpg",
+    alt: "Pânză de pictură rară cu ruptură structurală severă examinată pentru conservare și restaurare critică",
     badgeRo: "Artă & Piese de Patrimoniu",
     badgeEn: "Fine Art & Heritage Assets",
     headlineRo: "Opere de artă afectate de apă, fum sau deteriorare fizică",
@@ -120,8 +120,8 @@ const CATEGORY_RISK_DETAILS: Record<string, CategoryRiskDetail> = {
     ]
   },
   "private-aviation": {
-    image: "https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&fit=crop&w=1200&q=80",
-    alt: "Aeronave private reținute la sol pe timp de furtună extremă și avarii la trenul de aterizare",
+    image: "/images/risks/aviation-storm.jpg",
+    alt: "Aeronave private avariate grav pe aerodrom în urma unei furtuni violente cu vânt extrem",
     badgeRo: "Aviație Privată & Corporate",
     badgeEn: "Private Aviation & Jets",
     headlineRo: "Avarie la sol, incident pe pistă sau furtună extremă pe aerodrom",
@@ -140,8 +140,8 @@ const CATEGORY_RISK_DETAILS: Record<string, CategoryRiskDetail> = {
     ]
   },
   yachts: {
-    image: "https://images.unsplash.com/photo-1506521781263-d8422e82f27a?auto=format&fit=crop&w=1200&q=80",
-    alt: "Iaht privat înfruntând valuri gigantice și furtună maritimă extremă cu risc de avariere a corpului navei",
+    image: "/images/risks/yacht-storm.jpg",
+    alt: "Iaht de lux eșuat și avariat la mal în urma unei furtuni marine violente cu valuri uriașe",
     badgeRo: "Iahturi & Ambarcațiuni Marine",
     badgeEn: "Yachts & Marine Vessels",
     headlineRo: "Furtună pe mare, avarie la carenă sau eșuare pe stânci",
@@ -160,8 +160,8 @@ const CATEGORY_RISK_DETAILS: Record<string, CategoryRiskDetail> = {
     ]
   },
   collections: {
-    image: "https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=1200&q=80",
-    alt: "Geam securizat spart prin forțare la o colecție privată de monede, vinuri și obiecte rare",
+    image: "/images/risks/art-restoration.jpg",
+    alt: "Lucrare de colecție istorică degradată de fum și umiditate înainte și după procesul de restaurare",
     badgeRo: "Colecții Private & Valori",
     badgeEn: "Private Collections & Rare Assets",
     headlineRo: "Colecții compromise prin defectarea climatizării, efracție sau avarii fizice",
@@ -180,8 +180,8 @@ const CATEGORY_RISK_DETAILS: Record<string, CategoryRiskDetail> = {
     ]
   },
   "private-client-liability": {
-    image: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=1200&q=80",
-    alt: "Ciocan de judecată și dosare voluminoase de litigiu transfrontalier pentru cereri de daune financiare masive",
+    image: "/images/risks/legal-litigation.jpg",
+    alt: "Statuia Justiției cu balanța dreptății și dosare de litigiu pentru cereri de daune financiare masive",
     badgeRo: "Răspundere Civilă & Management",
     badgeEn: "Private Client & Executive Liability",
     headlineRo: "Litigiu civil transfrontalier sau cerere masivă de despăgubire",
