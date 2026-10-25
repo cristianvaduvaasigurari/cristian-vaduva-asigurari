@@ -1,12 +1,6 @@
 "use client";
 
 import { useState, useEffect, useSyncExternalStore, type ComponentType } from "react";
-import dynamic from "next/dynamic";
-
-const CookieBanner = dynamic(
-  () => import("@/components/ui/cookie-banner").then((m) => m.CookieBanner),
-  { ssr: false }
-);
 
 const emptySubscribe = () => () => {};
 
@@ -54,11 +48,6 @@ export default function ClientUI() {
 
   if (!mounted) return null;
 
-  return (
-    <>
-      <CookieBanner />
-      {IdleUIComponent ? <IdleUIComponent /> : null}
-    </>
-  );
+  return IdleUIComponent ? <IdleUIComponent /> : null;
 }
 

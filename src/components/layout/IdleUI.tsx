@@ -22,9 +22,15 @@ const InsuranceNeedModal = dynamic(
   { ssr: false }
 );
 
+const CookieBanner = dynamic(
+  () => import("@/components/ui/cookie-banner").then((m) => m.CookieBanner),
+  { ssr: false }
+);
+
 export default function IdleUI() {
   return (
     <>
+      <CookieBanner />
       <SmartPopup />
       <AiChatbot />
       <QuickOfferModal />

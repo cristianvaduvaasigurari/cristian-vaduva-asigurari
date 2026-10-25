@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -92,26 +91,16 @@ export function ContactForm({ customTitle, target, brokerName }: { customTitle?:
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-12">
             {customTitle !== " " && (
-              <motion.h2 
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                className="text-4xl font-heading font-bold mb-6"
-              >
+              <h2 className="text-4xl font-heading font-bold mb-6">
                 {customTitle || "Solicită o analiză confidențială a riscurilor"}
-              </motion.h2>
+              </h2>
             )}
             <p className="text-base sm:text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto">
               Nu promitem soluții universale. Analizăm ce deții, identificăm eventualele lacune din contractele existente și îți explicăm transparent opțiunile înainte să apară o daună.
             </p>
           </div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="glass p-8 md:p-12 rounded-[2.5rem] relative"
-          >
+          <div className="glass p-8 md:p-12 rounded-[2.5rem] relative">
             {status === "success" && (
               <div className="absolute inset-0 z-20 flex flex-col items-center justify-center bg-background/95 backdrop-blur-md rounded-[2.5rem]">
                 <CheckCircle2 className="w-16 h-16 text-green-500 mb-4" />
@@ -275,7 +264,7 @@ export function ContactForm({ customTitle, target, brokerName }: { customTitle?:
                 Ai întrebări sau nu ești sigur de acoperirile existente? Răspundem prompt, fără nicio obligație contractuală.
               </p>
             </form>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

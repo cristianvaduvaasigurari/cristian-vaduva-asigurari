@@ -244,6 +244,8 @@ export function PrivateClientEnquiryForm({
               </label>
               <div className="flex gap-2">
                 <select
+                  id="private-client-currency"
+                  aria-label="Monedă valoare estimată"
                   value={currency}
                   onChange={(e) => setCurrency(e.target.value)}
                   disabled={valueNotDetermined}

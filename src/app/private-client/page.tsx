@@ -451,7 +451,7 @@ export default function PrivateClientHubPage() {
         </section>
 
         {/* 7. PRECIZARE LEGALĂ & CONDIȚII DE SUBSCRIERE */}
-        <div className="py-8 bg-zinc-100 text-center text-[11px] text-zinc-500 px-4">
+        <div className="py-8 bg-zinc-100 text-center text-[11px] text-zinc-600 font-medium px-4">
           <div className="max-w-4xl mx-auto leading-relaxed">
             Acoperirile, eligibilitatea, sumele asigurate, excluderile și disponibilitatea depind de termenii polițelor, documentele puse la dispoziție și condițiile de subscriere ale asigurătorilor autorizați. Divizia Private Client reprezintă un serviciu de consultanță și plasament oferit de Cristian Văduva (insurance.cristianvaduva.com). Nu afirmăm că un anumit eveniment este acoperit fără verificarea prealabilă a condițiilor contractuale concrete.
           </div>

@@ -60,7 +60,7 @@ export default function ContactPage() {
                 src="/images/cristian-vaduva/cristian-vaduva-portrait-1.jpg"
                 alt="Cristian Văduva — Consultant Asigurări & Advisory"
                 fill
-                priority
+                loading="lazy"
                 sizes="(max-width: 640px) 96px, 112px"
                 className="object-cover object-top"
               />
