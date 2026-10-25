@@ -107,7 +107,7 @@ export default function PolicyReviewPage() {
               <div className="lg:col-span-6 relative aspect-[16/10] rounded-3xl overflow-hidden border border-zinc-200 shadow-xl bg-zinc-100">
                 <Image
                   src="/images/private-client/policy-audit-documents.jpg"
-                  alt="Birou executiv de consultanță cu dosare de polițe de asigurare și audit metodic al clauzelor"
+                  alt="Dosare de poliță de asigurare și audit metodic al termenilor contractuali pe biroul de consultanță"
                   fill
                   sizes="(max-width: 1024px) 100vw, 580px"
                   className="object-cover"
