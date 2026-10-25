@@ -88,7 +88,7 @@ const consequences: ConsequenceItem[] = [
     id: "arbore-doborat-garaj",
     category: "Daune Naturale & Răspundere",
     title: "Un copac prăbușit peste automobil sau garaj în timpul nopții",
-    image: "/images/risks/tree-crushed-car.jpg",
+    image: "/images/risks/storm-tree-crushed-car.jpg",
     alt: "Arbore masiv prăbușit peste automobil pe carosabil după o furtună violentă",
     whatHappens: "Vântul violent prăbușește un arbore masiv din spațiul public sau din curtea vecină direct peste vehiculul parcat, strivind plafonul și structura montantilor.",
     financialImpact: "Litigiile cu primăria sau proprietarul terenului durează ani de zile fără certitudinea recuperării banilor. Doar o poliță CASCO completă fără regres despăgubește imediat dauna totală.",

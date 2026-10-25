@@ -15,6 +15,8 @@ let scrollState: ScrollVisibilityState = {
 const listeners = new Set<() => void>();
 let isListening = false;
 let lastScrollY = 0;
+let lastDirectionChangeY = 0;
+let lastScrollDirection: "up" | "down" | "none" = "none";
 let ticking = false;
 
 function notify() {
@@ -33,6 +35,8 @@ function updateScrollState() {
   // 1. Near the top of the page (within 60px), elements are always visible
   if (currentScrollY <= 60) {
     isVisible = true;
+    lastDirectionChangeY = currentScrollY;
+    lastScrollDirection = "none";
   }
   // 2. Prevent jitter when reaching bottom rubber-band on iOS/macOS
   else if (
@@ -41,13 +45,27 @@ function updateScrollState() {
   ) {
     // Keep current visibility state
   }
-  // 3. Intentional scroll down past 10px delta threshold -> hide
-  else if (delta > 10 && currentScrollY > 60) {
-    isVisible = false;
+  // 3. Scrolling down
+  else if (delta > 0) {
+    if (lastScrollDirection !== "down") {
+      lastScrollDirection = "down";
+      lastDirectionChangeY = lastScrollY;
+    }
+    // If scrolled down by at least 15px since direction change and past top margin: hide
+    if (currentScrollY - lastDirectionChangeY > 15 && currentScrollY > 60) {
+      isVisible = false;
+    }
   }
-  // 4. Intentional scroll up past 10px delta threshold -> show
-  else if (delta < -10) {
-    isVisible = true;
+  // 4. Scrolling up
+  else if (delta < 0) {
+    if (lastScrollDirection !== "up") {
+      lastScrollDirection = "up";
+      lastDirectionChangeY = lastScrollY;
+    }
+    // If scrolled up by at least 10px since direction change: show
+    if (lastDirectionChangeY - currentScrollY > 10) {
+      isVisible = true;
+    }
   }
 
   lastScrollY = currentScrollY;
@@ -73,6 +91,8 @@ function subscribe(callback: () => void) {
   if (!isListening && typeof window !== "undefined") {
     isListening = true;
     lastScrollY = Math.max(0, window.scrollY);
+    lastDirectionChangeY = lastScrollY;
+    lastScrollDirection = "none";
     scrollState = {
       isVisible: true,
       isScrolled: lastScrollY > 20,
@@ -99,7 +119,7 @@ function getServerSnapshot(): ScrollVisibilityState {
 
 /**
  * Shared hook that provides synchronized scroll visibility and scrolled state.
- * Uses a single passive event listener with RAF throttling across all subscribers.
+ * Uses direction-accumulated delta thresholds with RAF throttling across all subscribers.
  */
 export function useAutoScrollHide(): ScrollVisibilityState {
   return useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);

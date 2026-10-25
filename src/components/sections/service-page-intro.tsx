@@ -51,7 +51,7 @@ function getServiceRiskVisual(slug: string): ServiceRiskVisual {
   }
   if (slug.includes("fleet")) {
     return {
-      image: "/images/risks/tree-crushed-car.jpg",
+      image: "/images/risks/storm-tree-crushed-car.jpg",
       alt: "Vehicul comercial din flotă avariat de căderea unui copac cu blocarea livrărilor",
       categoryBadge: "Flote Auto Comerciale",
       headline: "Imobilizarea flotei comerciale și penalități contractuale de întârziere",

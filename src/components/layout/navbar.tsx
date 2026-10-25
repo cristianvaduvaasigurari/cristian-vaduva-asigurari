@@ -160,7 +160,6 @@ export function Navbar() {
   const { isVisible: scrollVisible, isScrolled } = useAutoScrollHide();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
   const [activeMobileMegaMenu, setActiveMobileMegaMenu] = React.useState<number | null>(null);
-  const [isHovered, setIsHovered] = React.useState(false);
   const isMounted = React.useSyncExternalStore(
     emptySubscribe,
     () => true,
@@ -176,8 +175,8 @@ export function Navbar() {
     setIsMobileMenuOpen(false);
   }
 
-  // Header is visible when hovered, when mobile menu is open, or according to scroll
-  const isVisible = isHovered || isMobileMenuOpen || scrollVisible;
+  // Header is visible when mobile menu is open, or according to scroll visibility
+  const isVisible = isMobileMenuOpen || scrollVisible;
 
   // Prevent background scrolling when mobile menu is open
   React.useEffect(() => {
@@ -216,13 +215,9 @@ export function Navbar() {
   return (
     <>
       <header
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
-        onFocusCapture={() => setIsHovered(true)}
-        onBlurCapture={() => setIsHovered(false)}
         className={cn(
-          "fixed top-0 left-0 right-0 z-[80] transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] motion-reduce:transition-none",
-          isMobileMenuOpen || isVisible
+          "fixed top-0 left-0 right-0 z-[80] transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] motion-reduce:transition-none",
+          isVisible
             ? "translate-y-0 opacity-100 pointer-events-auto"
             : "-translate-y-full opacity-0 pointer-events-none"
         )}
