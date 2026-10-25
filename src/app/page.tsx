@@ -2,7 +2,6 @@ import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { Hero } from "@/components/sections/hero";
 import { Services } from "@/components/sections/services";
-import { CustomerReviews } from "@/components/sections/customer-reviews";
 import { InsuranceIntelligencePreview } from "@/components/sections/insurance-intelligence-preview";
 import { Ecosystem } from "@/components/sections/ecosystem";
 import { AboutAdvisorPreview } from "@/components/sections/about-advisor-preview";
@@ -13,6 +12,10 @@ import dynamic from 'next/dynamic';
 import type { Metadata } from "next";
 
 // Lazy load heavy interactive components
+const CustomerReviews = dynamic(() => import('@/components/sections/customer-reviews').then(mod => ({ default: mod.CustomerReviews })), {
+  loading: () => <div className="h-96 animate-pulse bg-muted/20 rounded-lg" />,
+});
+
 const RealWorldRiskScenarios = dynamic(() => import('@/components/sections/real-world-risk-scenarios').then(mod => ({ default: mod.RealWorldRiskScenarios })), {
   loading: () => <div className="h-96 animate-pulse bg-slate-950/20 rounded-lg" />,
 });

@@ -1,7 +1,12 @@
 "use client";
 
 import { useState, useEffect, useSyncExternalStore, type ComponentType } from "react";
-import { CookieBanner } from "@/components/ui/cookie-banner";
+import dynamic from "next/dynamic";
+
+const CookieBanner = dynamic(
+  () => import("@/components/ui/cookie-banner").then((m) => m.CookieBanner),
+  { ssr: false }
+);
 
 const emptySubscribe = () => () => {};
 

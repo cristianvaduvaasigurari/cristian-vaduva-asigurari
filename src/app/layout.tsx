@@ -13,8 +13,8 @@ import { CONTACT } from "@/config/contact";
 
 const inter = Inter({
   variable: "--font-inter",
-  subsets: ["latin"],
-  display: "optional",
+  subsets: ["latin", "latin-ext"],
+  display: "swap",
   adjustFontFallback: true,
 });
 
