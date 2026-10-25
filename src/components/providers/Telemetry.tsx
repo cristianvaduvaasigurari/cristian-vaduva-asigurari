@@ -10,11 +10,14 @@ export default function Telemetry() {
 
   useEffect(() => {
     if (typeof window !== "undefined") {
-      if ("requestIdleCallback" in window) {
-        window.requestIdleCallback(() => trackPageView());
-      } else {
-        setTimeout(() => trackPageView(), 100);
-      }
+      const timer = setTimeout(() => {
+        if ("requestIdleCallback" in window) {
+          window.requestIdleCallback(() => trackPageView());
+        } else {
+          trackPageView();
+        }
+      }, 2000);
+      return () => clearTimeout(timer);
     }
   }, [pathname, searchParams]);
 

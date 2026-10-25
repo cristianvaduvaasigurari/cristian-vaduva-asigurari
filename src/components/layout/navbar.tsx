@@ -234,7 +234,7 @@ export function Navbar() {
         <div className="container mx-auto px-4 md:px-6">
           <div className="flex items-center justify-between">
             <div className="flex flex-col items-start justify-center relative z-50">
-              <Link href="/" className="group flex flex-col items-start transition-colors">
+              <Link prefetch={false} href="/" className="group flex flex-col items-start transition-colors">
                 <span className="font-heading font-bold text-xl tracking-tight leading-none text-zinc-900 flex items-center group-hover:text-blue-600 transition-colors">
                   <Home className="w-5 h-5 mr-1 text-blue-600" />
                   Insurance
@@ -262,7 +262,7 @@ export function Navbar() {
           <nav className="hidden md:flex items-center gap-7">
             {/* Private Client Item */}
             <div className="group relative">
-              <Link
+              <Link prefetch={false}
                 href="/private-client"
                 className="flex items-center gap-1.5 text-xs font-bold tracking-widest text-zinc-900 hover:text-black transition-colors py-4 uppercase"
               >
@@ -276,12 +276,12 @@ export function Navbar() {
                     <div className="text-sm font-bold text-white">Protect what you have built. Plan for what comes next.</div>
                   </div>
                   <Button size="sm" className="rounded-full bg-white text-zinc-950 hover:bg-zinc-200 text-xs font-semibold px-4" asChild>
-                    <Link href="/private-client">Explore Advisory</Link>
+                    <Link prefetch={false} href="/private-client">Explore Advisory</Link>
                   </Button>
                 </div>
                 <div className="grid grid-cols-2 gap-2.5">
                   {privateClientMenuLinks.map((item, i) => (
-                    <Link
+                    <Link prefetch={false}
                       key={i}
                       href={item.href}
                       className="p-3 rounded-xl bg-zinc-900/60 hover:bg-zinc-800/80 border border-zinc-800/60 transition-colors flex items-center justify-between group/item"
@@ -296,7 +296,7 @@ export function Navbar() {
                 </div>
                 <div className="mt-4 pt-3 border-t border-zinc-800/80 flex items-center justify-between text-xs text-zinc-400">
                   <span>Confidential advisory & bespoke placement</span>
-                  <Link href="/private-client/enquiry" className="text-zinc-200 hover:text-white font-medium underline">
+                  <Link prefetch={false} href="/private-client/enquiry" className="text-zinc-200 hover:text-white font-medium underline">
                     Confidential Enquiry →
                   </Link>
                 </div>
@@ -321,7 +321,7 @@ export function Navbar() {
                       <ul className="space-y-3">
                         {col.items.map((item, j) => (
                           <li key={j}>
-                            <Link href={item.href} className="text-sm text-zinc-600 hover:text-blue-600 transition-colors block">
+                            <Link prefetch={false} href={item.href} className="text-sm text-zinc-600 hover:text-blue-600 transition-colors block">
                               {item.name}
                             </Link>
                           </li>
@@ -338,7 +338,7 @@ export function Navbar() {
                     className="h-auto min-h-[40px] py-2.5 px-5 text-xs sm:text-sm font-semibold bg-blue-600 hover:bg-blue-700 text-white rounded-full whitespace-normal text-center leading-snug shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2 transition-all shadow-xs"
                     asChild
                   >
-                    <Link href="/advisor">Deschide Recomandă-mi Asigurarea Potrivită</Link>
+                    <Link prefetch={false} href="/advisor">Deschide Recomandă-mi Asigurarea Potrivită</Link>
                   </Button>
                 </div>
               </div>
@@ -364,7 +364,7 @@ export function Navbar() {
                         "Credit Verde"
                       ].includes(i.name)).map((item, i) => (
                         <li key={i}>
-                          <Link href={item.href} className="block text-sm text-zinc-600 hover:text-blue-600 transition-colors">
+                          <Link prefetch={false} href={item.href} className="block text-sm text-zinc-600 hover:text-blue-600 transition-colors">
                             {item.name}
                           </Link>
                         </li>
@@ -381,7 +381,7 @@ export function Navbar() {
                         "Consolidare Credite"
                       ].includes(i.name)).map((item, i) => (
                         <li key={i}>
-                          <Link href={item.href} className="block text-sm text-zinc-600 hover:text-blue-600 transition-colors">
+                          <Link prefetch={false} href={item.href} className="block text-sm text-zinc-600 hover:text-blue-600 transition-colors">
                             {item.name}
                           </Link>
                         </li>
@@ -397,7 +397,7 @@ export function Navbar() {
                         "De ce să lucrezi cu un Broker de Credite"
                       ].includes(i.name)).map((item, i) => (
                         <li key={i}>
-                          <Link href={item.href} className="block text-sm text-zinc-600 hover:text-blue-600 transition-colors">
+                          <Link prefetch={false} href={item.href} className="block text-sm text-zinc-600 hover:text-blue-600 transition-colors">
                             {item.name}
                           </Link>
                         </li>
@@ -413,7 +413,7 @@ export function Navbar() {
                         "Contact Broker Credite"
                       ].includes(i.name)).map((item, i) => (
                         <li key={i}>
-                          <Link href={item.href} className="block text-sm text-zinc-600 hover:text-blue-600 transition-colors">
+                          <Link prefetch={false} href={item.href} className="block text-sm text-zinc-600 hover:text-blue-600 transition-colors">
                             {item.name}
                           </Link>
                         </li>
@@ -449,7 +449,7 @@ export function Navbar() {
                       <ul className="space-y-3">
                         {col.items.map((item, j) => (
                           <li key={j}>
-                            <Link href={item.href} className="text-sm text-zinc-600 hover:text-blue-600 transition-colors block">
+                            <Link prefetch={false} href={item.href} className="text-sm text-zinc-600 hover:text-blue-600 transition-colors block">
                               {item.name}
                             </Link>
                           </li>
@@ -461,7 +461,7 @@ export function Navbar() {
               </div>
             </div>
 
-            <Link
+            <Link prefetch={false}
               href="/stiri"
               className="text-sm font-medium text-zinc-700 hover:text-zinc-950 transition-colors py-4 inline-flex items-center gap-1.5"
             >
@@ -471,7 +471,7 @@ export function Navbar() {
               </span>
             </Link>
 
-            <Link
+            <Link prefetch={false}
               href="/despre-mine"
               className="text-sm font-medium text-zinc-700 hover:text-zinc-950 transition-colors py-4"
             >
@@ -481,13 +481,13 @@ export function Navbar() {
 
           <div className="hidden md:flex items-center gap-3">
             <Button variant="outline" className="rounded-full border-zinc-300 text-zinc-800 hover:bg-zinc-100" asChild>
-              <Link href="/gap-analyzer">Gap Analyzer</Link>
+              <Link prefetch={false} href="/gap-analyzer">Gap Analyzer</Link>
             </Button>
             <Button variant="outline" className="rounded-full border-zinc-300 text-zinc-800 hover:bg-zinc-100" asChild>
-              <Link href="/calculatoare">Calculatoare</Link>
+              <Link prefetch={false} href="/calculatoare">Calculatoare</Link>
             </Button>
             <Button className="rounded-full bg-zinc-900 text-white hover:bg-black font-semibold shadow-md" asChild>
-              <Link href="/oferta-rapida">Ofertă Rapidă</Link>
+              <Link prefetch={false} href="/oferta-rapida">Ofertă Rapidă</Link>
             </Button>
           </div>
 
@@ -558,17 +558,17 @@ export function Navbar() {
                 </button>
                 {activeMobileMegaMenu === 4 && (
                   <div className="pl-3 pb-3 flex flex-col gap-2 bg-[#0c0e12] text-white p-4 rounded-2xl my-2 border border-zinc-800">
-                    <Link href="/private-client" onClick={() => setIsMobileMenuOpen(false)} className="text-sm font-bold text-zinc-200 py-1.5 border-b border-zinc-800 flex justify-between items-center hover:text-white">
+                    <Link prefetch={false} href="/private-client" onClick={() => setIsMobileMenuOpen(false)} className="text-sm font-bold text-zinc-200 py-1.5 border-b border-zinc-800 flex justify-between items-center hover:text-white">
                       <span>Division Overview</span>
                       <span>→</span>
                     </Link>
                     {privateClientMenuLinks.map((item, i) => (
-                      <Link key={i} href={item.href} onClick={() => setIsMobileMenuOpen(false)} className="text-sm text-zinc-300 py-1.5 pl-2 hover:text-white flex justify-between items-center rounded-lg hover:bg-zinc-900">
+                      <Link prefetch={false} key={i} href={item.href} onClick={() => setIsMobileMenuOpen(false)} className="text-sm text-zinc-300 py-1.5 pl-2 hover:text-white flex justify-between items-center rounded-lg hover:bg-zinc-900">
                         <span>{item.name}</span>
                         <span className="text-xs text-zinc-400 bg-zinc-800/80 px-2 py-0.5 rounded">{item.badge}</span>
                       </Link>
                     ))}
-                    <Link href="/private-client/enquiry" onClick={() => setIsMobileMenuOpen(false)} className="mt-2 text-xs font-bold text-center py-2.5 rounded-xl bg-white text-zinc-950 hover:bg-zinc-200 transition-colors">
+                    <Link prefetch={false} href="/private-client/enquiry" onClick={() => setIsMobileMenuOpen(false)} className="mt-2 text-xs font-bold text-center py-2.5 rounded-xl bg-white text-zinc-950 hover:bg-zinc-200 transition-colors">
                       Start Confidential Enquiry
                     </Link>
                   </div>
@@ -596,7 +596,7 @@ export function Navbar() {
                         </h4>
                         <div className="flex flex-col gap-1 pl-2">
                           {col.items.map((item, j) => (
-                            <Link key={j} href={item.href} onClick={() => setIsMobileMenuOpen(false)} className="drawer-nav-sublink text-sm font-medium text-zinc-800 hover:text-blue-600 hover:bg-white py-1.5 px-2.5 rounded-lg transition-colors block">
+                            <Link prefetch={false} key={j} href={item.href} onClick={() => setIsMobileMenuOpen(false)} className="drawer-nav-sublink text-sm font-medium text-zinc-800 hover:text-blue-600 hover:bg-white py-1.5 px-2.5 rounded-lg transition-colors block">
                               {item.name}
                             </Link>
                           ))}
@@ -609,7 +609,7 @@ export function Navbar() {
                         <span className="font-bold text-zinc-900">Nu ești sigur ce să alegi?</span> Încearcă noul Recomandă-mi Asigurarea Potrivită.
                       </div>
                       <Button size="sm" className="h-auto min-h-[36px] py-2 px-3.5 bg-blue-600 hover:bg-blue-700 text-white rounded-full text-xs font-semibold w-full whitespace-normal text-center leading-snug focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600" asChild>
-                        <Link href="/advisor" onClick={() => setIsMobileMenuOpen(false)}>
+                        <Link prefetch={false} href="/advisor" onClick={() => setIsMobileMenuOpen(false)}>
                           Deschide Recomandă-mi Asigurarea Potrivită
                         </Link>
                       </Button>
@@ -632,7 +632,7 @@ export function Navbar() {
                 {activeMobileMegaMenu === 3 && (
                   <div className="drawer-sub-group pl-2 pb-3 flex flex-col gap-1.5 bg-zinc-50 border border-zinc-200 p-4 rounded-2xl my-2">
                     {creditsMenuLinks.map((item, i) => (
-                      <Link key={i} href={item.href} onClick={() => setIsMobileMenuOpen(false)} className="drawer-nav-sublink text-sm font-medium text-zinc-800 hover:text-blue-600 hover:bg-white py-1.5 px-2.5 rounded-lg transition-colors block">
+                      <Link prefetch={false} key={i} href={item.href} onClick={() => setIsMobileMenuOpen(false)} className="drawer-nav-sublink text-sm font-medium text-zinc-800 hover:text-blue-600 hover:bg-white py-1.5 px-2.5 rounded-lg transition-colors block">
                         {item.name}
                       </Link>
                     ))}
@@ -668,7 +668,7 @@ export function Navbar() {
                         <h4 className="font-bold text-xs text-zinc-600 uppercase tracking-widest mt-1">{col.title}</h4>
                         <div className="flex flex-col gap-1 pl-2">
                           {col.items.map((item, j) => (
-                            <Link key={j} href={item.href} onClick={() => setIsMobileMenuOpen(false)} className="drawer-nav-sublink text-sm font-medium text-zinc-800 hover:text-blue-600 hover:bg-white py-1.5 px-2.5 rounded-lg transition-colors block">
+                            <Link prefetch={false} key={j} href={item.href} onClick={() => setIsMobileMenuOpen(false)} className="drawer-nav-sublink text-sm font-medium text-zinc-800 hover:text-blue-600 hover:bg-white py-1.5 px-2.5 rounded-lg transition-colors block">
                               {item.name}
                             </Link>
                           ))}
@@ -680,7 +680,7 @@ export function Navbar() {
               </div>
 
               {/* Standalone Links & Key Financial Tools */}
-              <Link
+              <Link prefetch={false}
                 href="/gap-analyzer"
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="drawer-nav-link text-lg sm:text-xl font-bold p-2 border-b border-zinc-200/80 flex items-center justify-between text-zinc-900 hover:text-blue-600 active:text-blue-700 transition-colors"
@@ -689,7 +689,7 @@ export function Navbar() {
                 <span className="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-blue-500/10 text-blue-700 border border-blue-500/20">Audit</span>
               </Link>
 
-              <Link
+              <Link prefetch={false}
                 href="/calculatoare"
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="drawer-nav-link text-lg sm:text-xl font-bold p-2 border-b border-zinc-200/80 flex items-center justify-between text-zinc-900 hover:text-blue-600 active:text-blue-700 transition-colors"
@@ -698,19 +698,19 @@ export function Navbar() {
                 <span className="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-emerald-500/10 text-emerald-700 border border-emerald-500/20">Instrumente</span>
               </Link>
 
-              <Link href="/de-ce-asigurari" onClick={() => setIsMobileMenuOpen(false)} className="drawer-nav-link text-lg sm:text-xl font-bold p-2 border-b border-zinc-200/80 text-zinc-900 hover:text-blue-600 transition-colors block">
+              <Link prefetch={false} href="/de-ce-asigurari" onClick={() => setIsMobileMenuOpen(false)} className="drawer-nav-link text-lg sm:text-xl font-bold p-2 border-b border-zinc-200/80 text-zinc-900 hover:text-blue-600 transition-colors block">
                 De Ce Asigurări
               </Link>
 
-              <Link href="/real-estate" onClick={() => setIsMobileMenuOpen(false)} className="drawer-nav-link text-lg sm:text-xl font-bold p-2 border-b border-zinc-200/80 text-zinc-900 hover:text-blue-600 transition-colors block">
+              <Link prefetch={false} href="/real-estate" onClick={() => setIsMobileMenuOpen(false)} className="drawer-nav-link text-lg sm:text-xl font-bold p-2 border-b border-zinc-200/80 text-zinc-900 hover:text-blue-600 transition-colors block">
                 Real Estate
               </Link>
 
-              <Link href="/despre-mine" onClick={() => setIsMobileMenuOpen(false)} className="drawer-nav-link text-lg sm:text-xl font-bold p-2 border-b border-zinc-200/80 text-zinc-900 hover:text-blue-600 transition-colors block">
+              <Link prefetch={false} href="/despre-mine" onClick={() => setIsMobileMenuOpen(false)} className="drawer-nav-link text-lg sm:text-xl font-bold p-2 border-b border-zinc-200/80 text-zinc-900 hover:text-blue-600 transition-colors block">
                 Despre Mine
               </Link>
 
-              <Link href="/stiri" onClick={() => setIsMobileMenuOpen(false)} className="text-lg sm:text-xl font-bold p-2 border-b border-zinc-200/80 flex items-center justify-between text-amber-700 hover:text-amber-800 transition-colors">
+              <Link prefetch={false} href="/stiri" onClick={() => setIsMobileMenuOpen(false)} className="text-lg sm:text-xl font-bold p-2 border-b border-zinc-200/80 flex items-center justify-between text-amber-700 hover:text-amber-800 transition-colors">
                 <span className="text-amber-700">Insurance Intelligence</span>
                 <span className="text-xs font-semibold px-2 py-0.5 rounded-full bg-amber-500/10 text-amber-700 border border-amber-500/20">Știri</span>
               </Link>
@@ -718,10 +718,10 @@ export function Navbar() {
               {/* Action Buttons */}
               <div className="flex flex-col gap-3 mt-6 pt-2">
                 <Button variant="outline" className="w-full h-12 text-base justify-center rounded-xl border-2 border-blue-600 text-blue-600 hover:bg-blue-50 font-bold shadow-xs" asChild>
-                  <Link href="/oferta-rapida" onClick={() => setIsMobileMenuOpen(false)}>Ofertă Rapidă</Link>
+                  <Link prefetch={false} href="/oferta-rapida" onClick={() => setIsMobileMenuOpen(false)}>Ofertă Rapidă</Link>
                 </Button>
                 <Button className="w-full h-12 text-base justify-center rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold shadow-md" asChild>
-                  <Link href="/contact" onClick={() => setIsMobileMenuOpen(false)}>Solicită Consultanță</Link>
+                  <Link prefetch={false} href="/contact" onClick={() => setIsMobileMenuOpen(false)}>Solicită Consultanță</Link>
                 </Button>
               </div>
             </div>

@@ -68,13 +68,13 @@ export function Hero() {
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
             <CTAButton size="lg" conversionEvent="hero_primary_consultation" className="w-full sm:w-auto text-lg px-8 group bg-foreground text-background hover:bg-foreground/90 font-semibold shadow-lg" asChild>
-              <Link href="/contact">
+              <Link href="/contact" prefetch={false}>
                 Solicită Consultanță Gratuită
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
               </Link>
             </CTAButton>
             <CTAButton size="lg" variant="glass" conversionEvent="hero_secondary_services" className="w-full sm:w-auto text-lg px-8 border-border bg-white text-foreground hover:bg-muted font-medium" asChild>
-              <Link href="/#servicii">Descoperă Serviciile</Link>
+              <Link href="/#servicii" prefetch={false}>Descoperă Serviciile</Link>
             </CTAButton>
           </div>
 

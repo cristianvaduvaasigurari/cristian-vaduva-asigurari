@@ -105,7 +105,7 @@ export function Footer() {
       <div className="container mx-auto px-4 md:px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-7 gap-8 mb-16">
           <div className="lg:col-span-2">
-            <Link href="/" className="inline-block mb-6">
+            <Link prefetch={false} href="/" className="inline-block mb-6">
               <span className="font-heading font-bold text-2xl tracking-tight text-white">
                 Cristian Văduva<span className="text-blue-500">.</span>
               </span>
@@ -153,7 +153,7 @@ export function Footer() {
             <ul className="space-y-4">
               {footerLinks.ecosystem.map((link) => (
                 <li key={link.key}>
-                  <Link
+                  <Link prefetch={false}
                     href={link.href}
                     title={link.title}
                     className="text-white/50 hover:text-white transition-colors text-sm font-medium"
@@ -170,7 +170,7 @@ export function Footer() {
             <ul className="space-y-4">
               {footerLinks.servicesPersonal.map((link) => (
                 <li key={link.key}>
-                  <Link href={link.href} className="text-white/50 hover:text-white transition-colors text-sm font-medium">
+                  <Link prefetch={false} href={link.href} className="text-white/50 hover:text-white transition-colors text-sm font-medium">
                     {t(`footer.links.${link.key}`)}
                   </Link>
                 </li>
@@ -183,7 +183,7 @@ export function Footer() {
             <ul className="space-y-4">
               {footerLinks.servicesBusiness.map((link) => (
                 <li key={link.key}>
-                  <Link href={link.href} className="text-white/50 hover:text-white transition-colors text-sm font-medium">
+                  <Link prefetch={false} href={link.href} className="text-white/50 hover:text-white transition-colors text-sm font-medium">
                     {t(`footer.links.${link.key}`)}
                   </Link>
                 </li>
@@ -196,7 +196,7 @@ export function Footer() {
             <ul className="space-y-4">
               {footerLinks.tools.map((link) => (
                 <li key={link.key}>
-                  <Link href={link.href} className="text-white/50 hover:text-white transition-colors text-sm font-medium">
+                  <Link prefetch={false} href={link.href} className="text-white/50 hover:text-white transition-colors text-sm font-medium">
                     {t(`footer.links.${link.key}`)}
                   </Link>
                 </li>
@@ -212,7 +212,7 @@ export function Footer() {
             <ul className="space-y-3">
               {footerLinks.privateClient.map((link) => (
                 <li key={link.key}>
-                  <Link href={link.href} className="text-white/60 hover:text-white transition-colors text-sm font-medium">
+                  <Link prefetch={false} href={link.href} className="text-white/60 hover:text-white transition-colors text-sm font-medium">
                     {t(`footer.links.${link.key}`)}
                   </Link>
                 </li>
@@ -225,7 +225,7 @@ export function Footer() {
             <ul className="space-y-4">
               {footerLinks.company.map((link) => (
                 <li key={link.key}>
-                  <Link href={link.href} className="text-white/50 hover:text-white transition-colors text-sm font-medium">
+                  <Link prefetch={false} href={link.href} className="text-white/50 hover:text-white transition-colors text-sm font-medium">
                     {t(`footer.links.${link.key}`)}
                   </Link>
                 </li>

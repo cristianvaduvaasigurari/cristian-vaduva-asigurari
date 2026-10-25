@@ -147,6 +147,7 @@ export function RiskConsequences() {
                 fill
                 sizes="(max-width: 1024px) 100vw, 40vw"
                 className="object-cover opacity-55 group-hover:opacity-65 group-hover:scale-105 transition-all duration-700"
+                loading="lazy"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/50 to-transparent" />
               <div className="relative z-10 space-y-1.5">
@@ -169,6 +170,7 @@ export function RiskConsequences() {
                 fill
                 sizes="(max-width: 1024px) 100vw, 40vw"
                 className="object-cover opacity-55 group-hover:opacity-65 group-hover:scale-105 transition-all duration-700"
+                loading="lazy"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/50 to-transparent" />
               <div className="relative z-10 space-y-1.5">
