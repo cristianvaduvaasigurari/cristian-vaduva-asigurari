@@ -171,28 +171,33 @@ export function Navbar() {
     setIsMobileMenuOpen(false);
   }
 
-  // Smart Auto-Hide Scroll Logic
+  // Smart Auto-Hide Scroll Logic (Desktop only)
   React.useEffect(() => {
     lastScrollYRef.current = Math.max(0, window.scrollY);
 
     const handleScroll = () => {
+      const currentScrollY = Math.max(0, window.scrollY);
+      setIsScrolled(currentScrollY > 20);
+
+      // On mobile (< 768px), auto-hide is completely disabled - header is always visible
+      if (window.innerWidth < 768) {
+        setIsVisible(true);
+        return;
+      }
+
       if (tickingRef.current) return;
       tickingRef.current = true;
 
       requestAnimationFrame(() => {
-        const currentScrollY = Math.max(0, window.scrollY);
         const lastScrollY = lastScrollYRef.current;
         const delta = currentScrollY - lastScrollY;
-
-        // Backdrop blur & styling threshold
-        setIsScrolled(currentScrollY > 20);
 
         // 1. Near the top of the page (within 60px), header is always visible
         if (currentScrollY <= 60) {
           setIsVisible(true);
         }
-        // 2. Never auto-hide when mobile menu or desktop header is being interacted with
-        else if (isMobileMenuOpen || isHoveredRef.current) {
+        // 2. Never auto-hide when desktop header is hovered/focused
+        else if (isHoveredRef.current) {
           setIsVisible(true);
         }
         // 3. Prevent jitter when reaching bottom rubber-band on iOS/macOS
@@ -213,9 +218,19 @@ export function Navbar() {
       });
     };
 
+    const handleResize = () => {
+      if (window.innerWidth < 768) {
+        setIsVisible(true);
+      }
+    };
+
     window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [isMobileMenuOpen]);
+    window.addEventListener("resize", handleResize, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   // Prevent background scrolling when mobile menu is open
   React.useEffect(() => {
@@ -259,10 +274,12 @@ export function Navbar() {
       onMouseLeave={() => { isHoveredRef.current = false; }}
       onFocusCapture={() => setIsVisible(true)}
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-[transform,opacity] duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] motion-reduce:transition-none",
+        "fixed top-0 left-0 right-0 z-50",
+        // Desktop-only auto-hide transitions, opacity and translateY
+        "md:transition-[transform,opacity] md:duration-300 md:ease-[cubic-bezier(0.16,1,0.3,1)] md:motion-reduce:transition-none",
         isHeaderVisible
-          ? "translate-y-0 opacity-100"
-          : "-translate-y-full opacity-0 pointer-events-none"
+          ? "md:translate-y-0 md:opacity-100"
+          : "md:-translate-y-full md:opacity-0 md:pointer-events-none"
       )}
     >
       <TopTicker />
