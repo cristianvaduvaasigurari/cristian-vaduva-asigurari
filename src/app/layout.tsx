@@ -14,7 +14,7 @@ import { CONTACT } from "@/config/contact";
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin", "latin-ext"],
-  display: "optional",
+  display: "swap",
   preload: false,
   adjustFontFallback: true,
 });
