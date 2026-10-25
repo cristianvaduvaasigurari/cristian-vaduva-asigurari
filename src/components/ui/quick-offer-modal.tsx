@@ -5,7 +5,6 @@ import { useState, useEffect, useRef } from "react";
 import { createPortal } from "react-dom";
 import {
   X,
-  FileText,
   CheckCircle2,
   AlertCircle,
   Loader2,
@@ -17,10 +16,18 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import { trackConversion } from "@/lib/analytics";
-import { cn } from "@/lib/utils";
-import { useAutoScrollHide } from "@/hooks/useAutoScrollHide";
 
 const emptySubscribe = () => () => {};
+
+let openQuickOfferFn: (() => void) | null = null;
+
+export function openQuickOfferModal() {
+  if (openQuickOfferFn) {
+    openQuickOfferFn();
+  } else if (typeof window !== "undefined") {
+    window.dispatchEvent(new CustomEvent("open-quick-offer"));
+  }
+}
 
 export function QuickOfferModal() {
   const [isOpen, setIsOpen] = useState(false);
@@ -29,8 +36,6 @@ export function QuickOfferModal() {
     () => true,
     () => false
   );
-  const { isVisible: scrollVisible, isContactOpen } = useAutoScrollHide();
-  const isContactVisible = isContactOpen || scrollVisible;
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
   const [errorMessage, setErrorMessage] = useState("");
@@ -87,12 +92,35 @@ export function QuickOfferModal() {
       modalRef.current?.focus();
     } else {
       document.body.style.overflow = "";
-      triggerRef.current?.focus();
+      if (triggerRef.current) {
+        triggerRef.current.focus();
+      } else {
+        document.getElementById("quick-offer-trigger-button")?.focus();
+      }
     }
     return () => {
       document.body.style.overflow = "";
     };
   }, [isOpen]);
+
+  const handleOpen = React.useCallback((e?: React.MouseEvent) => {
+    if (e?.currentTarget) {
+      triggerRef.current = e.currentTarget as HTMLElement;
+    }
+    setIsOpen(true);
+    setStatus("idle");
+  }, []);
+
+  // Synchronize openQuickOffer function and event listener
+  useEffect(() => {
+    openQuickOfferFn = () => handleOpen();
+    const handleOpenEvent = () => handleOpen();
+    window.addEventListener("open-quick-offer", handleOpenEvent);
+    return () => {
+      openQuickOfferFn = null;
+      window.removeEventListener("open-quick-offer", handleOpenEvent);
+    };
+  }, [handleOpen]);
 
   // Handle ESC key
   useEffect(() => {
@@ -104,14 +132,6 @@ export function QuickOfferModal() {
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, [isOpen, handleClose]);
-
-  const handleOpen = (e?: React.MouseEvent) => {
-    if (e?.currentTarget) {
-      triggerRef.current = e.currentTarget as HTMLElement;
-    }
-    setIsOpen(true);
-    setStatus("idle");
-  };
 
   const isAutoService = service === "RCA" || service === "CASCO" || service === "RCA + CASCO";
   const isHomeService = service === "Locuință";
@@ -201,25 +221,6 @@ export function QuickOfferModal() {
 
   return (
     <>
-      {/* ALWAYS-ON FLOATING CTA BUTTON (Mobile: bottom-[96px] to align with contact button; Desktop: bottom-[16vh]) */}
-      <div
-        className={cn(
-          "fixed bottom-[96px] md:bottom-[16vh] right-4 sm:right-6 z-40 pb-[env(safe-area-inset-bottom)] pointer-events-none transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] motion-reduce:transition-none md:transform-none",
-          isContactVisible ? "translate-y-0" : "translate-y-[72px]"
-        )}
-      >
-        <button
-          type="button"
-          onClick={handleOpen}
-          aria-label="Deschide formularul Cere Ofertă"
-          className="group inline-flex items-center gap-2.5 px-5 py-3.5 rounded-full bg-slate-900 text-white hover:bg-slate-800 shadow-xl hover:shadow-2xl hover:scale-105 active:scale-95 transition-all duration-300 font-bold text-xs uppercase tracking-wider cursor-pointer pointer-events-auto border border-slate-700/60 focus:outline-none focus:ring-2 focus:ring-slate-900/30"
-        >
-          <div className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-          <FileText className="w-4 h-4 text-slate-300 group-hover:text-white transition-colors" />
-          <span>CERE OFERTĂ</span>
-        </button>
-      </div>
-
       {/* QUICK OFFER MODAL DIALOG (PORTAL TO BODY WITH z-[120] STRICTLY ABOVE FIXED HEADER z-[80]) */}
       {isMounted && isOpen && createPortal(
         <div

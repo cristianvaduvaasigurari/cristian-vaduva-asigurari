@@ -58,8 +58,8 @@ const consequences: ConsequenceItem[] = [
     id: "ceasuri-bijuterii-furt",
     category: "Ceasuri, Bijuterii & Colecții",
     title: "Ce se întâmplă dacă un obiect valoros nu este declarat corect în poliță?",
-    image: "/images/risks/burglary-jeweler.jpg",
-    alt: "Vitrină securizată cu geam spart și urme clare de efracție și sustragere de ceasuri de lux",
+    image: "/images/risks/luxury-timepiece-heritage.jpg",
+    alt: "Ceas de lux orologer din oțel nobil și cadran de înaltă precizie pe suprafață obsidian, ilustrând bunurile de patrimoniu și valoare ce necesită declarare nominativă",
     whatHappens: "Sustragerea dintr-o cameră de hotel în vacanță, efracția locuinței prin forțarea vitrinei sau pierderea accidentală a unei piese de orologerie unicat în călătorii.",
     financialImpact: "Polițele standard conțin o sub-limită severă pentru bunuri de valoare (1.000–2.500 EUR per obiect), complet insuficientă pentru un ceas Patek Philippe sau bijuterii de zeci de mii de euro. Restul este pierdere 100% suportată de proprietar.",
     whatToCheck: "Dacă bunurile sunt asigurate nominativ pe bază de certificate și facturi, cu acoperire All-Risks la nivel mondial (Worldwide) și fără clauze absurde privind purtarea în public."
@@ -193,6 +193,7 @@ export function RiskConsequences() {
           {consequences.map((item) => (
             <article 
               key={item.id}
+              id={item.id}
               className="bg-white rounded-2xl border border-zinc-200/90 shadow-sm overflow-hidden flex flex-col hover:border-zinc-300 hover:shadow-md transition-all duration-300"
             >
               <div className="relative aspect-[16/10] w-full overflow-hidden bg-zinc-100">

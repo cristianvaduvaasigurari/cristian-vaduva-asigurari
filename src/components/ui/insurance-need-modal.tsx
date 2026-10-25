@@ -12,10 +12,12 @@ import {
   Check,
   Sparkles,
   Gift,
+  FileText,
 } from "lucide-react";
 import Link from "next/link";
 import { trackConversion } from "@/lib/analytics";
 import { ReferralModal } from "./referral-modal";
+import { openQuickOfferModal } from "@/components/ui/quick-offer-modal";
 import { cn } from "@/lib/utils";
 import { useAutoScrollHide } from "@/hooks/useAutoScrollHide";
 
@@ -278,32 +280,31 @@ export function InsuranceNeedModal() {
         - Style: Premium minimalist white, dark slate text, subtle border, luxury shadow.
       */}
       {/* 
-        PERMANENT FLOATING CTA BUTTONS:
-        1. „Recomandă & Beneficiați” (Top)
-        2. „Ce nevoie ai?” (Bottom)
-        - Desktop: bottom-right area, positioned cleanly beside other controls without overlap.
-        - Mobile: compact, thumb-accessible stack at bottom-right above other controls.
-        - Style: Premium minimalist white, dark slate text, subtle border, luxury shadow.
+        PERMANENT FLOATING CTA BUTTONS (DESKTOP & MOBILE COLUMN STACK):
+        1. „Cere Ofertă” (Top)
+        2. „Ce nevoie ai?” (Middle)
+        3. „Recomandă & Beneficiați” (Above Contact)
+        Followed by Contact button (in SmartPopup).
+        When Contact hides via Auto-Hide, the entire group smoothly slides down into Contact's space.
       */}
       <aside
-        aria-label="Puncte permanente de consultanță și recomandare"
+        aria-label="Puncte permanente de acțiune și consultanță"
         className={cn(
-          "fixed z-40 bottom-[150px] right-4 sm:bottom-[150px] sm:right-6 md:bottom-[36px] md:right-28 pb-[env(safe-area-inset-bottom)] pointer-events-none flex flex-col items-end gap-2 sm:gap-2.5 transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] motion-reduce:transition-none md:transform-none",
-          isContactVisible ? "translate-y-0" : "translate-y-[72px]"
+          "fixed z-40 bottom-[98px] right-4 sm:right-6 pb-[env(safe-area-inset-bottom)] pointer-events-none flex flex-col items-end gap-2.5 transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] motion-reduce:transition-none",
+          isContactVisible ? "translate-y-0" : "translate-y-[74px]"
         )}
       >
-        {/* Buton 1: Recomandă & Beneficiați */}
+        {/* Buton 1: Cere Ofertă */}
         <button
-          ref={referralTriggerRef}
+          id="quick-offer-trigger-button"
           type="button"
-          onClick={() => setIsReferralOpen(true)}
-          aria-label="Deschide programul: Recomandă & Beneficiați"
-          aria-expanded={isReferralOpen}
-          aria-haspopup="dialog"
-          className="group relative inline-flex items-center gap-2 px-3.5 py-2 sm:px-4 sm:py-2.5 rounded-full bg-white text-slate-900 hover:bg-slate-50 active:bg-slate-100 border border-slate-200/90 shadow-[0_8px_30px_rgb(0,0,0,0.12)] hover:shadow-[0_12px_40px_rgb(0,0,0,0.18)] hover:scale-[1.03] active:scale-[0.98] transition-all duration-300 font-bold text-xs sm:text-sm tracking-tight cursor-pointer pointer-events-auto focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-900 focus-visible:ring-offset-2 max-w-[calc(100vw-2rem)] md:fixed md:left-6 md:right-auto md:bottom-[92px] md:mr-0"
+          onClick={() => openQuickOfferModal()}
+          aria-label="Deschide formularul Cere Ofertă"
+          className="group inline-flex items-center gap-2.5 px-4 py-2.5 sm:px-5 sm:py-3.5 rounded-full bg-slate-900 text-white hover:bg-slate-800 shadow-xl hover:shadow-2xl hover:scale-105 active:scale-95 transition-all duration-300 font-bold text-xs uppercase tracking-wider cursor-pointer pointer-events-auto border border-slate-700/60 focus:outline-none focus:ring-2 focus:ring-slate-900/30 max-w-[calc(100vw-2rem)]"
         >
-          <Gift className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-slate-700 group-hover:text-slate-900 transition-colors shrink-0" />
-          <span className="text-slate-900 select-none truncate">Recomandă &amp; Beneficiați</span>
+          <div className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+          <FileText className="w-4 h-4 text-slate-300 group-hover:text-white transition-colors" />
+          <span>CERE OFERTĂ</span>
         </button>
 
         {/* Buton 2: Ce nevoie ai? */}
@@ -325,6 +326,20 @@ export function InsuranceNeedModal() {
           <HelpCircle className="w-4 h-4 text-slate-700 group-hover:text-slate-900 transition-colors shrink-0" />
 
           <span className="text-slate-900 select-none truncate">Ce nevoie ai?</span>
+        </button>
+
+        {/* Buton 3: Recomandă & Beneficiați */}
+        <button
+          ref={referralTriggerRef}
+          type="button"
+          onClick={() => setIsReferralOpen(true)}
+          aria-label="Deschide programul: Recomandă & Beneficiați"
+          aria-expanded={isReferralOpen}
+          aria-haspopup="dialog"
+          className="group relative inline-flex items-center gap-2 px-3.5 py-2 sm:px-4 sm:py-2.5 rounded-full bg-white text-slate-900 hover:bg-slate-50 active:bg-slate-100 border border-slate-200/90 shadow-[0_8px_30px_rgb(0,0,0,0.12)] hover:shadow-[0_12px_40px_rgb(0,0,0,0.18)] hover:scale-[1.03] active:scale-[0.98] transition-all duration-300 font-bold text-xs sm:text-sm tracking-tight cursor-pointer pointer-events-auto focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-900 focus-visible:ring-offset-2 max-w-[calc(100vw-2rem)]"
+        >
+          <Gift className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-slate-700 group-hover:text-slate-900 transition-colors shrink-0" />
+          <span className="text-slate-900 select-none truncate">Recomandă &amp; Beneficiați</span>
         </button>
       </aside>
 
