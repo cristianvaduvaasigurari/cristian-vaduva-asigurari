@@ -15,6 +15,7 @@ const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin", "latin-ext"],
   display: "optional",
+  preload: false,
   adjustFontFallback: true,
 });
 
